@@ -1,8 +1,9 @@
 name: Sync and Modify WordPress
 
 on:
+  workflow_dispatch:  # Allows manual triggering of the workflow
   schedule:
-    - cron: '0 0 * * *'
+    - cron: '20 4 * * *'  # Runs daily at 4:20 AM UTC
 
 jobs:
   sync-and-modify:
