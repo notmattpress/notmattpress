@@ -27,7 +27,7 @@ jobs:
       - name: Merge Upstream Changes
         run: |
           git checkout main
-          git merge upstream/master
+          git merge upstream/master --allow-unrelated-histories
 
       - name: Replace Strings
         run: |
