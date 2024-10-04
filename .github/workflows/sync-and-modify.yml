@@ -9,70 +9,42 @@ jobs:
   sync-and-modify:
     runs-on: ubuntu-latest
     steps:
+      # Step 1: Checkout Repository
       - name: Checkout Repository
         uses: actions/checkout@v3
         with:
           persist-credentials: false
 
+      # Step 2: Configure Git
       - name: Configure Git
         run: |
           git config user.name 'Not Matt'
           git config user.email 'notmatt@momshouse.com'
 
+      # Step 3: Add Upstream Repository
       - name: Add Upstream Repository
         run: |
-          git remote add upstream https://github.com/wordpress/wordpress.git
+          git remote add upstream https://github.com/WordPress/WordPress.git
           git fetch upstream
 
+      # Step 4: Merge Upstream Changes
       - name: Merge Upstream Changes
         run: |
           git checkout main
-          git merge upstream/master --allow-unrelated-histories
+          git merge upstream/master
 
+      # Step 5: Replace Strings
       - name: Replace Strings
         run: |
           # Replace strings in .php and .html files only
           find . -type f \( -name "*.php" -o -name "*.html" \) -not -path './.git/*' -exec sed -i 's/WordPress/NotMattPress/g' {} +
           find . -type f \( -name "*.php" -o -name "*.html" \) -not -path './.git/*' -exec sed -i 's/wordpress\.org/stattic.site/g' {} +
 
-      - name: Run Automated Tests
-        run: |
-          # Assuming you have a test script in your repository
-          ./run-tests.sh
-
+      # Step 6: Commit and Push Changes
       - name: Commit and Push Changes
-        if: success() # Only push if tests pass
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git add .
-          git commit -m "Sync and modify from upstream repository"
-          git push origin main
-
-      - name: Add Upstream Repository
-        run: |
-          git remote add upstream https://github.com/WordPress/WordPress.git
-          git fetch upstream
-
-      - name: Merge Upstream Changes
-        run: |
-          git checkout main
-          git merge upstream/master --allow-unrelated-histories
-
-      - name: Replace Strings
-        run: |
-          # Replace 'WordPress' with 'NotMattPress'
-          find . -type f -not -path './.git/*' -exec sed -i 's/WordPress/NotMattPress/g' {} +
-          # Replace 'wordpress.org' with 'stattic.site'
-          find . -type f -not -path './.git/*' -exec sed -i 's/wordpress\.org/stattic.site/g' {} +
-
-      - name: Commit Changes
-        run: |
-          git add .
-          git commit -m "Automated sync and customization: 'WordPress' to 'NotMattPress', 'wordpress.org' to 'stattic.site'" || echo "No changes to commit"
-
-      - name: Push Changes
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
+          git commit -m "Automated sync and customization" || echo "No changes to commit"
           git push origin main
