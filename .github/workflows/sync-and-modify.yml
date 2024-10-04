@@ -1,0 +1,49 @@
+name: Sync and Modify WordPress
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+
+jobs:
+  sync-and-modify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+        with:
+          persist-credentials: false
+
+      - name: Configure Git
+        run: |
+          git config user.name 'Not Matt'
+          git config user.email 'notmatt@momshouse.com'
+
+      - name: Add Upstream Repository
+        run: |
+          git remote add upstream https://github.com/wordpress/wordpress.git
+          git fetch upstream
+
+      - name: Merge Upstream Changes
+        run: |
+          git checkout main
+          git merge upstream/master
+
+      - name: Replace Strings
+        run: |
+          # Replace strings in .php and .html files only
+          find . -type f \( -name "*.php" -o -name "*.html" \) -not -path './.git/*' -exec sed -i 's/WordPress/NotMattPress/g' {} +
+          find . -type f \( -name "*.php" -o -name "*.html" \) -not -path './.git/*' -exec sed -i 's/wordpress\.org/stattic.site/g' {} +
+
+      - name: Run Automated Tests
+        run: |
+          # Assuming you have a test script in your repository
+          ./run-tests.sh
+
+      - name: Commit and Push Changes
+        if: success() # Only push if tests pass
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git add .
+          git commit -m "Sync and modify from upstream repository"
+          git push origin main
