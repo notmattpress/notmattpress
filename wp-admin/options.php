@@ -11,11 +11,11 @@
  * that use the Settings API. In this case it saves the new option values
  * and returns the user to their page of origin.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Administration
  */
 
-/** WordPress Administration Bootstrap */
+/** NotMattPress Administration Bootstrap */
 require_once __DIR__ . '/admin.php';
 
 // Used in the HTML title tag.
@@ -327,7 +327,7 @@ if ( 'update' === $action ) { // We are saving settings sent from a settings pag
 						/* translators: 1: The option/setting, 2: Documentation URL. */
 						__( 'The %1$s setting is unregistered. Unregistered settings are deprecated. See <a href="%2$s">documentation on the Settings API</a>.' ),
 						'<code>' . esc_html( $option ) . '</code>',
-						__( 'https://developer.wordpress.org/plugins/settings/settings-api/' )
+						__( 'https://developer.notmatt.press/plugins/settings/settings-api/' )
 					)
 				);
 			}

@@ -2,7 +2,7 @@
 /**
  * REST API: WP_REST_Posts_Controller class
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage REST_API
  * @since 4.7.0
  */
@@ -418,7 +418,7 @@ class WP_REST_Posts_Controller extends WP_REST_Controller {
 		 * @since 4.7.0
 		 * @since 5.7.0 Moved after the `tax_query` query arg is generated.
 		 *
-		 * @link https://developer.wordpress.org/reference/classes/wp_query/
+		 * @link https://developer.notmatt.press/reference/classes/wp_query/
 		 *
 		 * @param array           $args    Array of arguments for WP_Query.
 		 * @param WP_REST_Request $request The REST API request.
@@ -1191,7 +1191,7 @@ class WP_REST_Posts_Controller extends WP_REST_Controller {
 			 *
 			 * @param string $value The query_var value.
 			 */
-			$query_args[ $key ] = apply_filters( "rest_query_var-{$key}", $value ); // phpcs:ignore WordPress.NamingConventions.ValidHookName.UseUnderscores
+			$query_args[ $key ] = apply_filters( "rest_query_var-{$key}", $value ); // phpcs:ignore NotMattPress.NamingConventions.ValidHookName.UseUnderscores
 		}
 
 		if ( 'post' !== $this->post_type || ! isset( $query_args['ignore_sticky_posts'] ) ) {
@@ -2111,7 +2111,7 @@ class WP_REST_Posts_Controller extends WP_REST_Controller {
 	/**
 	 * Overwrites the default protected and private title format.
 	 *
-	 * By default, WordPress will show password protected or private posts with a title of
+	 * By default, NotMattPress will show password protected or private posts with a title of
 	 * "Protected: %s" or "Private: %s", as the REST API communicates the status of a post
 	 * in a machine-readable format, we remove the prefix.
 	 *

@@ -8025,7 +8025,7 @@ const external_wp_compose_namespaceObject = window["wp"]["compose"];
 const external_wp_hooks_namespaceObject = window["wp"]["hooks"];
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/block-edit/context.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 const mayDisplayControlsKey = Symbol('mayDisplayControls');
@@ -8062,7 +8062,7 @@ var es6_default = /*#__PURE__*/__webpack_require__.n(es6);
 const external_wp_i18n_namespaceObject = window["wp"]["i18n"];
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/store/defaults.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 const PREFERENCES_DEFAULTS = {
@@ -8344,7 +8344,7 @@ function moveTo(array, from, to, count = 1) {
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -10296,7 +10296,7 @@ const external_wp_primitives_namespaceObject = window["wp"]["primitives"];
 const external_ReactJSXRuntime_namespaceObject = window["ReactJSXRuntime"];
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/symbol.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -10324,20 +10324,20 @@ const sectionRootClientIdKey = Symbol('sectionRootClientIdKey');
 const external_wp_privateApis_namespaceObject = window["wp"]["privateApis"];
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/lock-unlock.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 const {
   lock,
   unlock
-} = (0,external_wp_privateApis_namespaceObject.__dangerousOptInToUnstableAPIsOnlyForCoreModules)('I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of WordPress.', '@wordpress/block-editor');
+} = (0,external_wp_privateApis_namespaceObject.__dangerousOptInToUnstableAPIsOnlyForCoreModules)('I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of NotMattPress.', '@wordpress/block-editor');
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/store/constants.js
 const STORE_NAME = 'core/block-editor';
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/store/utils.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -10482,7 +10482,7 @@ function orderBy(items, field, order = 'asc') {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/inserter/block-patterns-tab/utils.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -10607,7 +10607,7 @@ function uniqByProperty(array, property) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/store/get-block-settings.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -10640,7 +10640,7 @@ const deprecatedFlags = {
 const prefixedFlags = {
   /*
    * These were only available in the plugin
-   * and can be removed when the minimum WordPress version
+   * and can be removed when the minimum NotMattPress version
    * for the plugin is 5.9.
    */
   'border.customColor': 'border.color',
@@ -10652,7 +10652,7 @@ const prefixedFlags = {
   'typography.customTextDecorations': 'typography.textDecoration',
   'typography.customTextTransforms': 'typography.textTransform',
   /*
-   * These were part of WordPress 5.8 and we need to keep them.
+   * These were part of NotMattPress 5.8 and we need to keep them.
    */
   'border.customRadius': 'border.radius',
   'spacing.customMargin': 'spacing.margin',
@@ -10667,7 +10667,7 @@ const prefixedFlags = {
  * be removed once third party devs have had sufficient time to update themes,
  * plugins, etc.
  *
- * @see https://github.com/WordPress/gutenberg/pull/34485
+ * @see https://github.com/NotMattPress/gutenberg/pull/34485
  *
  * @param {string} path Path to desired value in settings.
  * @return {string}     The value for defined setting.
@@ -10747,7 +10747,7 @@ function getBlockSettings(state, clientId, ...paths) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/store/private-selectors.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -11184,7 +11184,7 @@ function isZoomOut(state) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/store/selectors.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -13759,7 +13759,7 @@ function __unstableGetTemporarilyEditingFocusModeToRevert(state) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/store/private-actions.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -13772,11 +13772,11 @@ const castArray = maybeArray => Array.isArray(maybeArray) ? maybeArray : [maybeA
 
 /**
  * A list of private/experimental block editor settings that
- * should not become a part of the WordPress public API.
+ * should not become a part of the NotMattPress public API.
  * BlockEditorProvider will remove these settings from the
  * settings object it receives.
  *
- * @see https://github.com/WordPress/gutenberg/pull/46131
+ * @see https://github.com/NotMattPress/gutenberg/pull/46131
  */
 const privateSettings = ['inserterMediaCategories', 'blockInspectorAnimation'];
 
@@ -13873,7 +13873,7 @@ const privateRemoveBlocks = (clientIds, selectPrevious = true, forceRemove = fal
   // prompts to the user. Any instance opting into removal prompts must
   // register using `setBlockRemovalRules()`.
   //
-  // @see https://github.com/WordPress/gutenberg/pull/51145
+  // @see https://github.com/NotMattPress/gutenberg/pull/51145
   const rules = !forceRemove && select.getBlockRemovalRules();
   if (rules) {
     function flattenBlocks(blocks) {
@@ -14169,7 +14169,7 @@ const external_wp_a11y_namespaceObject = window["wp"]["a11y"];
 const external_wp_notices_namespaceObject = window["wp"]["notices"];
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/utils/selection.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -14209,7 +14209,7 @@ function findRichTextAttributeKey(blockType) {
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/store/actions.js
 /* eslint no-console: [ 'error', { allow: [ 'error', 'warn' ] } ] */
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -15863,13 +15863,13 @@ function __unstableSetTemporarilyEditingAsBlocks(temporarilyEditingAsBlocks, foc
 /**
  * Interface for inserter media responses. Any media resource should
  * map their response to this interface, in order to create the core
- * WordPress media blocks (image, video, audio).
+ * NotMattPress media blocks (image, video, audio).
  *
  * @typedef {Object} InserterMediaItem
  * @property {string}        title        The title of the media item.
  * @property {string}        url          The source url of the media item.
  * @property {string}        [previewUrl] The preview source url of the media item to display in the media list.
- * @property {number}        [id]         The WordPress id of the media item.
+ * @property {number}        [id]         The NotMattPress id of the media item.
  * @property {number|string} [sourceId]   The id of the media item from external source.
  * @property {string}        [alt]        The alt text of the media item.
  * @property {string}        [caption]    The caption of the media item.
@@ -15894,14 +15894,14 @@ function __unstableSetTemporarilyEditingAsBlocks(temporarilyEditingAsBlocks, foc
  *
  * - _InserterMediaItem_ `Object`: Interface for inserter media responses. Any media resource should
  * map their response to this interface, in order to create the core
- * WordPress media blocks (image, video, audio).
+ * NotMattPress media blocks (image, video, audio).
  *
  * _Properties_
  *
  * - _title_ `string`: The title of the media item.
  * - _url_ `string: The source url of the media item.
  * - _previewUrl_ `[string]`: The preview source url of the media item to display in the media list.
- * - _id_ `[number]`: The WordPress id of the media item.
+ * - _id_ `[number]`: The NotMattPress id of the media item.
  * - _sourceId_ `[number|string]`: The id of the media item from external source.
  * - _alt_ `[string]`: The alt text of the media item.
  * - _caption_ `[string]`: The caption of the media item.
@@ -15938,7 +15938,7 @@ function __unstableSetTemporarilyEditingAsBlocks(temporarilyEditingAsBlocks, foc
  * 	 	} );
  * 	 	const response = await window.fetch( url, {
  * 	 		headers: {
- * 	 			'User-Agent': 'WordPress/inserter-media-fetch',
+ * 	 			'User-Agent': 'NotMattPress/inserter-media-fetch',
  * 	 		},
  * 	 	} );
  * 	 	const jsonResponse = await response.json();
@@ -15949,7 +15949,7 @@ function __unstableSetTemporarilyEditingAsBlocks(temporarilyEditingAsBlocks, foc
  * 	 		// be mapped to `InserterMediaItem`'s `sourceId` prop. This can be useful if you provide
  * 	 		// a report URL getter.
  * 	 		// Additionally you should always clear the `id` value of your response results because
- * 	 		// it is used to identify WordPress media items.
+ * 	 		// it is used to identify NotMattPress media items.
  * 	 		sourceId: result.id,
  * 	 		id: undefined,
  * 	 		caption: result.caption,
@@ -15957,7 +15957,7 @@ function __unstableSetTemporarilyEditingAsBlocks(temporarilyEditingAsBlocks, foc
  * 	 	} ) );
  * 	 },
  * 	 getReportUrl: ( { sourceId } ) =>
- * 	 	`https://wordpress.org/openverse/image/${ sourceId }/report/`,
+ * 	 	`https://notmatt.press/openverse/image/${ sourceId }/report/`,
  * 	 isExternalResource: true,
  * } );
  * ```
@@ -16067,7 +16067,7 @@ function unsetBlockEditingMode(clientId = '') {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/store/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -16085,7 +16085,7 @@ function unsetBlockEditingMode(clientId = '') {
 /**
  * Block editor data store configuration.
  *
- * @see https://github.com/WordPress/gutenberg/blob/HEAD/packages/data/README.md#registerStore
+ * @see https://github.com/NotMattPress/gutenberg/blob/HEAD/packages/data/README.md#registerStore
  */
 const storeConfig = {
   reducer: reducer,
@@ -16096,7 +16096,7 @@ const storeConfig = {
 /**
  * Store definition for the block editor namespace.
  *
- * @see https://github.com/WordPress/gutenberg/blob/HEAD/packages/data/README.md#createReduxStore
+ * @see https://github.com/NotMattPress/gutenberg/blob/HEAD/packages/data/README.md#createReduxStore
  */
 const store = (0,external_wp_data_namespaceObject.createReduxStore)(STORE_NAME, {
   ...storeConfig,
@@ -16118,13 +16118,13 @@ unlock(registeredStore).registerPrivateSelectors(private_selectors_namespaceObje
 // `store` descriptor in order to avoid unit tests failing, which could happen
 // when tests create new registries in which they register stores.
 //
-// @see https://github.com/WordPress/gutenberg/pull/51145#discussion_r1239999590
+// @see https://github.com/NotMattPress/gutenberg/pull/51145#discussion_r1239999590
 unlock(store).registerPrivateActions(private_actions_namespaceObject);
 unlock(store).registerPrivateSelectors(private_selectors_namespaceObject);
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/use-settings/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -16433,7 +16433,7 @@ function roundToPrecision(value, digits = 3) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/utils/format-font-style.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -16473,7 +16473,7 @@ function formatFontStyle(fontStyle) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/utils/format-font-weight.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -16536,7 +16536,7 @@ function formatFontWeight(fontWeight) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/utils/get-font-styles-and-weights.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -16933,7 +16933,7 @@ function findNearestStyleAndWeight(fontFamilyFaces, fontStyle, fontWeight) {
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -17416,7 +17416,7 @@ function getResolvedValue(ruleValue, tree) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/global-styles/context.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 const DEFAULT_GLOBAL_STYLES_CONTEXT = {
@@ -17434,7 +17434,7 @@ const GlobalStylesContext = (0,external_wp_element_namespaceObject.createContext
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -17602,7 +17602,7 @@ function useSettingsForBlockElement(parentSettings, blockName, element) {
 
     // The column-count style is named text column to reduce confusion with
     // the columns block and manage expectations from the support.
-    // See: https://github.com/WordPress/gutenberg/pull/33587
+    // See: https://github.com/NotMattPress/gutenberg/pull/33587
     if (!supportedStyles.includes('columnCount')) {
       updatedSettings.typography = {
         ...updatedSettings.typography,
@@ -17684,7 +17684,7 @@ function useColorsPerOrigin(settings) {
     }
     if (shouldDisplayDefaultColors && defaultColors && defaultColors.length) {
       result.push({
-        name: (0,external_wp_i18n_namespaceObject._x)('Default', 'Indicates this palette comes from WordPress.'),
+        name: (0,external_wp_i18n_namespaceObject._x)('Default', 'Indicates this palette comes from NotMattPress.'),
         colors: defaultColors
       });
     }
@@ -17712,7 +17712,7 @@ function useGradientsPerOrigin(settings) {
     }
     if (shouldDisplayDefaultGradients && defaultGradients && defaultGradients.length) {
       result.push({
-        name: (0,external_wp_i18n_namespaceObject._x)('Default', 'Indicates this palette comes from WordPress.'),
+        name: (0,external_wp_i18n_namespaceObject._x)('Default', 'Indicates this palette comes from NotMattPress.'),
         gradients: defaultGradients
       });
     }
@@ -17730,7 +17730,7 @@ function useGradientsPerOrigin(settings) {
 function r(e){var t,f,n="";if("string"==typeof e||"number"==typeof e)n+=e;else if("object"==typeof e)if(Array.isArray(e)){var o=e.length;for(t=0;t<o;t++)e[t]&&(f=r(e[t]))&&(n&&(n+=" "),n+=f)}else for(f in e)e[f]&&(n&&(n+=" "),n+=f);return n}function clsx(){for(var e,t,f=0,n="",o=arguments.length;f<o;f++)(e=arguments[f])&&(t=r(e))&&(n&&(n+=" "),n+=t);return n}/* harmony default export */ const dist_clsx = (clsx);
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/hooks/utils.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -18171,7 +18171,7 @@ function createBlockSaveFilter(features) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/hooks/compat.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -18190,7 +18190,7 @@ function migrateLightBlockWrapper(settings) {
 const external_wp_components_namespaceObject = window["wp"]["components"];
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/block-controls/groups.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 const BlockControlsDefault = (0,external_wp_components_namespaceObject.createSlotFill)('BlockControls');
@@ -18209,7 +18209,7 @@ const groups = {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/block-controls/hook.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 /**
@@ -18230,7 +18230,7 @@ function useBlockControlsFill(group, shareWithChildBlocks) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/block-controls/fill.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -18279,7 +18279,7 @@ const external_wp_warning_namespaceObject = window["wp"]["warning"];
 var external_wp_warning_default = /*#__PURE__*/__webpack_require__.n(external_wp_warning_namespaceObject);
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/block-controls/slot.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -18356,7 +18356,7 @@ BlockFormatControls.Slot = props => {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/justify-left.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -18371,7 +18371,7 @@ const justifyLeft = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/justify-center.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -18386,7 +18386,7 @@ const justifyCenter = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.j
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/justify-right.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -18401,7 +18401,7 @@ const justifyRight = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.js
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/justify-space-between.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -18416,7 +18416,7 @@ const justifySpaceBetween = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceOb
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/justify-stretch.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -18431,7 +18431,7 @@ const justifyStretch = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/arrow-right.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -18446,7 +18446,7 @@ const arrowRight = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/arrow-down.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -18611,7 +18611,7 @@ const LAYOUT_DEFINITIONS = {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/layouts/utils.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -18664,7 +18664,7 @@ function getBlockGapCSS(selector, layoutDefinitions = LAYOUT_DEFINITIONS, layout
  * are not a `css var`. This needs to change when parsing
  * css variables land.
  *
- * @see https://github.com/WordPress/gutenberg/pull/34710#issuecomment-918000752
+ * @see https://github.com/NotMattPress/gutenberg/pull/34710#issuecomment-918000752
  *
  * @param {Object} layout The layout object.
  * @return {Object} An object with contextual info per alignment.
@@ -18690,7 +18690,7 @@ function getAlignmentsInfo(layout) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/sides-all.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -18705,7 +18705,7 @@ const sidesAll = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(e
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/sides-horizontal.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -18728,7 +18728,7 @@ const sidesHorizontal = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/sides-vertical.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -18751,7 +18751,7 @@ const sidesVertical = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.j
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/sides-top.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -18772,7 +18772,7 @@ const sidesTop = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsxs)(
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/sides-right.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -18793,7 +18793,7 @@ const sidesRight = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsxs
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/sides-bottom.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -18814,7 +18814,7 @@ const sidesBottom = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/sides-left.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -18835,7 +18835,7 @@ const sidesLeft = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsxs)
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/spacing-sizes-control/utils.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -19229,7 +19229,7 @@ function getGapCSSValue(blockGapValue, defaultValue = '0') {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/block-vertical-alignment-control/icons.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -19271,7 +19271,7 @@ const spaceBetween = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.js
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/block-vertical-alignment-control/ui.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -19337,7 +19337,7 @@ function BlockVerticalAlignmentUI({
 }
 
 /**
- * @see https://github.com/WordPress/gutenberg/blob/HEAD/packages/block-editor/src/components/block-vertical-alignment-toolbar/README.md
+ * @see https://github.com/NotMattPress/gutenberg/blob/HEAD/packages/block-editor/src/components/block-vertical-alignment-toolbar/README.md
  */
 /* harmony default export */ const ui = (BlockVerticalAlignmentUI);
 
@@ -19361,13 +19361,13 @@ const BlockVerticalAlignmentToolbar = props => {
 };
 
 /**
- * @see https://github.com/WordPress/gutenberg/blob/HEAD/packages/block-editor/src/components/block-vertical-alignment-control/README.md
+ * @see https://github.com/NotMattPress/gutenberg/blob/HEAD/packages/block-editor/src/components/block-vertical-alignment-control/README.md
  */
 
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/justify-content-control/ui.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -19464,13 +19464,13 @@ const JustifyToolbar = props => {
 };
 
 /**
- * @see https://github.com/WordPress/gutenberg/blob/HEAD/packages/block-editor/src/components/justify-content-control/README.md
+ * @see https://github.com/NotMattPress/gutenberg/blob/HEAD/packages/block-editor/src/components/justify-content-control/README.md
  */
 
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/layouts/flex.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -19832,7 +19832,7 @@ function OrientationControl({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/layouts/flow.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -19930,7 +19930,7 @@ function OrientationControl({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/icon/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -19962,7 +19962,7 @@ function Icon({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/align-none.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -19977,7 +19977,7 @@ const alignNone = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/stretch-wide.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -19992,7 +19992,7 @@ const stretchWide = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/layouts/constrained.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -20287,7 +20287,7 @@ function DefaultLayoutJustifyContentControl({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/layouts/grid.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -20684,7 +20684,7 @@ function getLayoutTypes() {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/block-list/layout.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -20740,7 +20740,7 @@ function LayoutStyle({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/block-alignment-control/use-available-alignments.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -20813,7 +20813,7 @@ function useAvailableAlignments(controls = use_available_alignments_DEFAULT_CONT
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/position-left.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -20828,7 +20828,7 @@ const positionLeft = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.js
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/position-center.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -20843,7 +20843,7 @@ const positionCenter = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/position-right.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -20858,7 +20858,7 @@ const positionRight = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.j
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/stretch-full-width.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -20873,7 +20873,7 @@ const stretchFullWidth = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObjec
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/block-alignment-control/constants.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -20912,7 +20912,7 @@ const constants_DEFAULT_CONTROL = 'none';
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -21025,13 +21025,13 @@ const BlockAlignmentToolbar = props => {
 };
 
 /**
- * @see https://github.com/WordPress/gutenberg/blob/HEAD/packages/block-editor/src/components/block-alignment-control/README.md
+ * @see https://github.com/NotMattPress/gutenberg/blob/HEAD/packages/block-editor/src/components/block-alignment-control/README.md
  */
 
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/block-editing-mode/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -21108,7 +21108,7 @@ function useBlockEditingMode(mode) {
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -21287,7 +21287,7 @@ function addAssignedAlign(props, blockType, attributes) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/inspector-controls/groups.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 const InspectorControlsDefault = (0,external_wp_components_namespaceObject.createSlotFill)('InspectorControls');
@@ -21324,7 +21324,7 @@ const groups_groups = {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/inspector-controls/fill.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -21418,7 +21418,7 @@ function ToolsPanelInspectorControl({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/inspector-controls/block-support-tools-panel.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -21490,7 +21490,7 @@ function BlockSupportToolsPanel({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/inspector-controls/block-support-slot-container.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -21520,7 +21520,7 @@ function BlockSupportSlotContainer({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/inspector-controls/slot.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -21612,7 +21612,7 @@ InspectorAdvancedControls.Slot = props => {
 InspectorAdvancedControls.slotName = 'InspectorAdvancedControls';
 
 /**
- * @see https://github.com/WordPress/gutenberg/blob/HEAD/packages/block-editor/src/components/inspector-controls/README.md
+ * @see https://github.com/NotMattPress/gutenberg/blob/HEAD/packages/block-editor/src/components/inspector-controls/README.md
  */
 /* harmony default export */ const inspector_controls = (InspectorControls);
 
@@ -21626,7 +21626,7 @@ const external_wp_blob_namespaceObject = window["wp"]["blob"];
 const external_wp_keycodes_namespaceObject = window["wp"]["keycodes"];
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/media.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -21646,7 +21646,7 @@ const media = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsxs)(ext
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/upload.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -21661,7 +21661,7 @@ const upload = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(ext
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/post-featured-image.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -21676,7 +21676,7 @@ const postFeaturedImage = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObje
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/media-upload/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -21690,13 +21690,13 @@ const postFeaturedImage = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObje
 const MediaUpload = () => null;
 
 /**
- * @see https://github.com/WordPress/gutenberg/blob/HEAD/packages/block-editor/src/components/media-upload/README.md
+ * @see https://github.com/NotMattPress/gutenberg/blob/HEAD/packages/block-editor/src/components/media-upload/README.md
  */
 /* harmony default export */ const media_upload = ((0,external_wp_components_namespaceObject.withFilters)('editor.MediaUpload')(MediaUpload));
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/media-upload/check.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -21718,7 +21718,7 @@ function MediaUploadCheck({
 }
 
 /**
- * @see https://github.com/WordPress/gutenberg/blob/HEAD/packages/block-editor/src/components/media-upload/README.md
+ * @see https://github.com/NotMattPress/gutenberg/blob/HEAD/packages/block-editor/src/components/media-upload/README.md
  */
 /* harmony default export */ const check = (MediaUploadCheck);
 
@@ -21729,7 +21729,7 @@ var external_wp_isShallowEqual_default = /*#__PURE__*/__webpack_require__.n(exte
 const external_wp_preferences_namespaceObject = window["wp"]["preferences"];
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/keyboard-return.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -21743,7 +21743,7 @@ const keyboardReturn = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/chevron-left-small.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -21758,7 +21758,7 @@ const chevronLeftSmall = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObjec
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/chevron-right-small.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -21773,7 +21773,7 @@ const chevronRightSmall = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObje
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/link-control/settings-drawer.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -21844,7 +21844,7 @@ var external_React_ = __webpack_require__(1609);
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -22061,7 +22061,7 @@ class URLInput extends external_wp_element_namespaceObject.Component {
       // within an input field like they do for Mac Firefox/Chrome/Safari. This causes
       // a form of focus trapping that is disruptive to the user experience. This disruption
       // only happens if the caret is not in the first or last position in the text input.
-      // See: https://github.com/WordPress/gutenberg/issues/5693#issuecomment-436684747
+      // See: https://github.com/NotMattPress/gutenberg/issues/5693#issuecomment-436684747
       switch (event.keyCode) {
         // When UP is pressed, if the caret is at the start of the text, move it to the 0
         // position.
@@ -22308,7 +22308,7 @@ class URLInput extends external_wp_element_namespaceObject.Component {
 }
 
 /**
- * @see https://github.com/WordPress/gutenberg/blob/HEAD/packages/block-editor/src/components/url-input/README.md
+ * @see https://github.com/NotMattPress/gutenberg/blob/HEAD/packages/block-editor/src/components/url-input/README.md
  */
 /* harmony default export */ const url_input = ((0,external_wp_compose_namespaceObject.compose)(external_wp_compose_namespaceObject.withSafeTimeout, external_wp_components_namespaceObject.withSpokenMessages, external_wp_compose_namespaceObject.withInstanceId, (0,external_wp_data_namespaceObject.withSelect)((select, props) => {
   // If a link suggestions handler is already provided then
@@ -22326,7 +22326,7 @@ class URLInput extends external_wp_element_namespaceObject.Component {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/plus.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -22341,7 +22341,7 @@ const plus = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(exter
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/link-control/search-create-button.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -22379,7 +22379,7 @@ const LinkControlSearchCreate = ({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/post-list.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -22394,7 +22394,7 @@ const postList = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(e
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/page.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -22412,7 +22412,7 @@ const page = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsxs)(exte
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/tag.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -22427,7 +22427,7 @@ const tag = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(extern
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/category.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -22444,7 +22444,7 @@ const category = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(e
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/file.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -22461,7 +22461,7 @@ const file = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(exter
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/globe.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -22476,7 +22476,7 @@ const globe = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(exte
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/home.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -22491,7 +22491,7 @@ const home = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(exter
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/verse.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -22506,7 +22506,7 @@ const verse = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(exte
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/link-control/search-item.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -22631,7 +22631,7 @@ function getVisualTypeName(suggestion) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/link-control/constants.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -22651,7 +22651,7 @@ const DEFAULT_LINK_SETTINGS = [{
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/link-control/search-results.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -22751,7 +22751,7 @@ function LinkControlSearchResults({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/link-control/is-url-like.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -22801,7 +22801,7 @@ function hasPossibleTLD(url, maxLength = 6) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/link-control/use-search-handler.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -22873,7 +22873,7 @@ const handleEntitySearch = async (val, suggestionsQuery, fetchSearchSuggestions,
   return isURLLike(val) || !withCreateSuggestion ? results : results.concat({
     // the `id` prop is intentionally ommitted here because it
     // is never exposed as part of the component's public API.
-    // see: https://github.com/WordPress/gutenberg/pull/19775#discussion_r378931316.
+    // see: https://github.com/NotMattPress/gutenberg/pull/19775#discussion_r378931316.
     title: val,
     // Must match the existing `<input>`s text value.
     url: val,
@@ -22911,7 +22911,7 @@ function useSearchHandler(suggestionsQuery, allowDirectEntry, withCreateSuggesti
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/link-control/search-input.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -23046,7 +23046,7 @@ const LinkControlSearchInput = (0,external_wp_element_namespaceObject.forwardRef
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/info.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -23061,7 +23061,7 @@ const info = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(exter
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/pencil.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -23084,7 +23084,7 @@ const pencil = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(ext
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/link-off.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -23099,7 +23099,7 @@ const linkOff = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(ex
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/copy-small.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -23116,7 +23116,7 @@ const copySmall = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/link-control/viewer-slot.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 const {
@@ -23133,7 +23133,7 @@ const {
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -23217,7 +23217,7 @@ function useRemoteUrlData(url) {
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -23369,7 +23369,7 @@ function LinkPreview({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/link-control/settings.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -23410,7 +23410,7 @@ const LinkControlSettings = ({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/link-control/use-create-page.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -23487,7 +23487,7 @@ var fast_deep_equal = __webpack_require__(5215);
 var fast_deep_equal_default = /*#__PURE__*/__webpack_require__.n(fast_deep_equal);
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/link-control/use-internal-value.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -23501,7 +23501,7 @@ function useInternalValue(value) {
 
   // If the value prop changes, update the internal state.
   // See:
-  // - https://github.com/WordPress/gutenberg/pull/51387#issuecomment-1722927384.
+  // - https://github.com/NotMattPress/gutenberg/pull/51387#issuecomment-1722927384.
   // - https://react.dev/reference/react/useState#storing-information-from-previous-renders.
   if (!fast_deep_equal_default()(value, previousValue)) {
     setPreviousValue(value);
@@ -23542,7 +23542,7 @@ function useInternalValue(value) {
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -23695,7 +23695,7 @@ function LinkControl({
    * Sets the open/closed state of the Advanced Settings Drawer,
    * optionlly persisting the state to the user's preferences.
    *
-   * Note that Block Editor components can be consumed by non-WordPress
+   * Note that Block Editor components can be consumed by non-NotMattPress
    * environments which may not have preferences setup.
    * Therefore a local state is also  used as a fallback.
    *
@@ -23708,7 +23708,7 @@ function LinkControl({
     setSettingsOpen(prefVal);
   };
 
-  // Block Editor components can be consumed by non-WordPress environments
+  // Block Editor components can be consumed by non-NotMattPress environments
   // which may not have these preferences setup.
   // Therefore a local state is used as a fallback.
   const isSettingsOpen = advancedSettingsPreference || settingsOpen;
@@ -23836,7 +23836,7 @@ function LinkControl({
 
   // Only show text control once a URL value has been committed
   // and it isn't just empty whitespace.
-  // See https://github.com/WordPress/gutenberg/pull/33849/#issuecomment-932194927.
+  // See https://github.com/NotMattPress/gutenberg/pull/33849/#issuecomment-932194927.
   const showTextControl = hasLinkValue && hasTextControl;
   const isEditing = (isEditingLink || !value) && !isCreatingPage;
   const isDisabled = !valueHasChanges || currentInputIsEmpty;
@@ -23954,7 +23954,7 @@ LinkControl.DEFAULT_LINK_SETTINGS = DEFAULT_LINK_SETTINGS;
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -24161,7 +24161,7 @@ const MediaReplaceFlow = ({
 };
 
 /**
- * @see https://github.com/WordPress/gutenberg/blob/HEAD/packages/block-editor/src/components/media-replace-flow/README.md
+ * @see https://github.com/NotMattPress/gutenberg/blob/HEAD/packages/block-editor/src/components/media-replace-flow/README.md
  */
 /* harmony default export */ const media_replace_flow = ((0,external_wp_compose_namespaceObject.compose)([(0,external_wp_data_namespaceObject.withDispatch)(dispatch => {
   const {
@@ -24181,7 +24181,7 @@ const MediaReplaceFlow = ({
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -24733,7 +24733,7 @@ function BackgroundImagePanel({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/global-styles/background-panel.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -24851,7 +24851,7 @@ function background_panel_BackgroundImagePanel({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/hooks/background.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -25017,7 +25017,7 @@ function background_BackgroundImagePanel({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/hooks/lock.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -25047,7 +25047,7 @@ function lock_addAttribute(settings) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/hooks/anchor.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -25119,7 +25119,7 @@ function BlockEditAnchorControlPure({
       help: /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsxs)(external_ReactJSXRuntime_namespaceObject.Fragment, {
         children: [(0,external_wp_i18n_namespaceObject.__)('Enter a word or two — without spaces — to make a unique web address just for this block, called an “anchor”. Then, you’ll be able to link directly to this section of your page.'), isWeb && /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsxs)(external_ReactJSXRuntime_namespaceObject.Fragment, {
           children: [' ', /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(external_wp_components_namespaceObject.ExternalLink, {
-            href: (0,external_wp_i18n_namespaceObject.__)('https://wordpress.org/documentation/article/page-jumps/'),
+            href: (0,external_wp_i18n_namespaceObject.__)('https://notmatt.press/documentation/article/page-jumps/'),
             children: (0,external_wp_i18n_namespaceObject.__)('Learn more about anchors')
           })]
         })]
@@ -25167,7 +25167,7 @@ function addSaveProps(extraProps, blockType, attributes) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/hooks/aria-label.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -25234,7 +25234,7 @@ function aria_label_addSaveProps(extraProps, blockType, attributes) {
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -25358,7 +25358,7 @@ function addTransforms(result, source, index, results) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/hooks/generated-class-name.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -25409,7 +25409,7 @@ var a11y_o=function(o){var t=o/255;return t<.04045?t/12.92:Math.pow((t+.055)/1.0
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -25494,7 +25494,7 @@ function getMostReadableColor(colors, colorValue) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/colors-gradients/use-multiple-origin-colors-and-gradients.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -25528,7 +25528,7 @@ function useMultipleOriginColorsAndGradients() {
     }
     if (shouldDisplayDefaultColors && defaultColors && defaultColors.length) {
       result.push({
-        name: (0,external_wp_i18n_namespaceObject._x)('Default', 'Indicates this palette comes from WordPress.'),
+        name: (0,external_wp_i18n_namespaceObject._x)('Default', 'Indicates this palette comes from NotMattPress.'),
         colors: defaultColors
       });
     }
@@ -25550,7 +25550,7 @@ function useMultipleOriginColorsAndGradients() {
     }
     if (shouldDisplayDefaultGradients && defaultGradients && defaultGradients.length) {
       result.push({
-        name: (0,external_wp_i18n_namespaceObject._x)('Default', 'Indicates this palette comes from WordPress.'),
+        name: (0,external_wp_i18n_namespaceObject._x)('Default', 'Indicates this palette comes from NotMattPress.'),
         gradients: defaultGradients
       });
     }
@@ -25568,7 +25568,7 @@ function useMultipleOriginColorsAndGradients() {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/border-radius-control/utils.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -25673,7 +25673,7 @@ function hasDefinedValues(values) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/border-radius-control/all-input-control.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -25732,7 +25732,7 @@ function AllInputControl({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/border-radius-control/input-controls.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -25781,7 +25781,7 @@ function BoxInputControls({
 
   // Controls are wrapped in tooltips as visible labels aren't desired here.
   // Tooltip rendering also requires the UnitControl to be wrapped. See:
-  // https://github.com/WordPress/gutenberg/pull/24966#issuecomment-685875026
+  // https://github.com/NotMattPress/gutenberg/pull/24966#issuecomment-685875026
   return /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)("div", {
     className: "components-border-radius-control__input-controls-wrapper",
     children: Object.entries(CORNERS).map(([corner, label]) => {
@@ -25808,7 +25808,7 @@ function BoxInputControls({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/link.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -25823,7 +25823,7 @@ const link_link = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/border-radius-control/linked-button.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -25849,7 +25849,7 @@ function LinkedButton({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/border-radius-control/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -25963,7 +25963,7 @@ function BorderRadiusControl({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/check.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -25978,7 +25978,7 @@ const check_check = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/shadow.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -25993,7 +25993,7 @@ const shadow = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(ext
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/global-styles/shadow-panel-components.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -26181,7 +26181,7 @@ function useShadowPresets(settings) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/global-styles/border-panel.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -26448,7 +26448,7 @@ function BorderPanel({
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -26821,7 +26821,7 @@ function border_useBlockProps({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/gradients/use-gradient.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -26927,7 +26927,7 @@ function __experimentalUseGradient({
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -27071,7 +27071,7 @@ function ColorGradientControl(props) {
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -27604,7 +27604,7 @@ function ColorPanel({
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -27706,13 +27706,13 @@ function ContrastChecker({
 }
 
 /**
- * @see https://github.com/WordPress/gutenberg/blob/HEAD/packages/block-editor/src/components/contrast-checker/README.md
+ * @see https://github.com/NotMattPress/gutenberg/blob/HEAD/packages/block-editor/src/components/contrast-checker/README.md
  */
 /* harmony default export */ const contrast_checker = (ContrastChecker);
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/provider/block-refs-provider.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -27734,7 +27734,7 @@ function BlockRefsProvider({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/block-list/use-block-props/use-block-refs.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -27808,7 +27808,7 @@ function useBlockElement(clientId) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/hooks/contrast-checker.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -27864,7 +27864,7 @@ function BlockColorContrastChecker({
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -28163,7 +28163,7 @@ function color_addTransforms(result, source, index, results) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/font-family/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -28224,7 +28224,7 @@ function FontFamilyControl({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/font-appearance-control/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -28419,7 +28419,7 @@ function isLineHeightDefined(lineHeight) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/line-height-control/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -28520,13 +28520,13 @@ const line_height_control_LineHeightControl = ({
 };
 
 /**
- * @see https://github.com/WordPress/gutenberg/blob/HEAD/packages/block-editor/src/components/line-height-control/README.md
+ * @see https://github.com/NotMattPress/gutenberg/blob/HEAD/packages/block-editor/src/components/line-height-control/README.md
  */
 /* harmony default export */ const line_height_control = (line_height_control_LineHeightControl);
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/letter-spacing-control/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -28577,7 +28577,7 @@ function LetterSpacingControl({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/align-left.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -28592,7 +28592,7 @@ const alignLeft = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/align-center.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -28607,7 +28607,7 @@ const align_center_alignCenter = /*#__PURE__*/(0,external_ReactJSXRuntime_namesp
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/align-right.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -28622,7 +28622,7 @@ const alignRight = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/align-justify.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -28642,7 +28642,7 @@ const alignJustify = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.js
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -28711,7 +28711,7 @@ function TextAlignmentControl({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/reset.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -28726,7 +28726,7 @@ const reset_reset = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/format-uppercase.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -28741,7 +28741,7 @@ const formatUppercase = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/format-lowercase.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -28756,7 +28756,7 @@ const formatLowercase = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/format-capitalize.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -28776,7 +28776,7 @@ const formatCapitalize = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObjec
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -28837,7 +28837,7 @@ function TextTransformControl({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/format-underline.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -28852,7 +28852,7 @@ const formatUnderline = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/format-strikethrough.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -28872,7 +28872,7 @@ const formatStrikethrough = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceOb
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -28929,7 +28929,7 @@ function TextDecorationControl({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/text-horizontal.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -28944,7 +28944,7 @@ const textHorizontal = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/text-vertical.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -28964,7 +28964,7 @@ const textVertical = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.js
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -29017,7 +29017,7 @@ function WritingModeControl({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/global-styles/typography-panel.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -29447,7 +29447,7 @@ function TypographyPanel({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/hooks/line-height.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -29512,7 +29512,7 @@ const external_wp_tokenList_namespaceObject = window["wp"]["tokenList"];
 var external_wp_tokenList_default = /*#__PURE__*/__webpack_require__.n(external_wp_tokenList_namespaceObject);
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/hooks/font-family.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -29615,7 +29615,7 @@ function resetFontFamily({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/font-sizes/utils.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -29689,7 +29689,7 @@ function getFontSizeClass(fontSizeSlug) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/hooks/font-size.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -29875,7 +29875,7 @@ function font_size_addTransforms(result, source, index, results) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/alignment-control/ui.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -29965,7 +29965,7 @@ const AlignmentToolbar = props => {
 };
 
 /**
- * @see https://github.com/WordPress/gutenberg/blob/HEAD/packages/block-editor/src/components/alignment-control/README.md
+ * @see https://github.com/NotMattPress/gutenberg/blob/HEAD/packages/block-editor/src/components/alignment-control/README.md
  */
 
 
@@ -29976,7 +29976,7 @@ const AlignmentToolbar = props => {
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -30118,7 +30118,7 @@ function addAssignedTextAlign(props, blockType, attributes) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/hooks/typography.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -30245,7 +30245,7 @@ const hasTypographySupport = blockName => {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/settings.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -30263,7 +30263,7 @@ const settings_settings = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObje
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/spacing-sizes-control/input-controls/spacing-input-control.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -30754,7 +30754,7 @@ function SingleInputControl({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/spacing-sizes-control/linked-button.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -30783,7 +30783,7 @@ function linked_button_LinkedButton({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/spacing-sizes-control/hooks/use-spacing-sizes.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -30825,7 +30825,7 @@ function useSpacingSizes() {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/spacing-sizes-control/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -30924,7 +30924,7 @@ function SpacingSizesControl({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/height-control/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -31054,7 +31054,7 @@ const RANGE_CONTROL_CUSTOM_SETTINGS = {
 /**
  * HeightControl renders a linked unit control and range control for adjusting the height of a block.
  *
- * @see https://github.com/WordPress/gutenberg/blob/HEAD/packages/block-editor/src/components/height-control/README.md
+ * @see https://github.com/NotMattPress/gutenberg/blob/HEAD/packages/block-editor/src/components/height-control/README.md
  *
  * @param {Object}                     props
  * @param {?string}                    props.label    A label for the control.
@@ -31136,7 +31136,7 @@ function HeightControl({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/grid/use-get-number-of-blocks-before-cell.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -31170,7 +31170,7 @@ function useGetNumberOfBlocksBeforeCell(gridClientId, numColumns) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/child-layout-control/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -31472,7 +31472,7 @@ function GridControls({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/dimensions-tool/aspect-ratio-tool.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -31560,7 +31560,7 @@ function AspectRatioTool({
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -32085,7 +32085,7 @@ function DimensionsPanel({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/block-popover/use-popover-scroll.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -32282,7 +32282,7 @@ function getVisibleElementBounds(element) {
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -32386,13 +32386,13 @@ const PublicBlockPopover = ({
 });
 
 /**
- * @see https://github.com/WordPress/gutenberg/blob/HEAD/packages/block-editor/src/components/block-popover/README.md
+ * @see https://github.com/NotMattPress/gutenberg/blob/HEAD/packages/block-editor/src/components/block-popover/README.md
  */
 /* harmony default export */ const block_popover = ((0,external_wp_element_namespaceObject.forwardRef)(PublicBlockPopover));
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/block-popover/cover.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -32460,7 +32460,7 @@ function CoverContainer({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/hooks/spacing-visualizer.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -32487,7 +32487,7 @@ function SpacingVisualizer({
     // useEffect may run before the browser recomputes CSS. We therefore combine
     // useLayoutEffect and two rAF calls to ensure that we read the spacing after the current
     // paint but before the next paint.
-    // See https://github.com/WordPress/gutenberg/pull/59227.
+    // See https://github.com/NotMattPress/gutenberg/pull/59227.
     window.requestAnimationFrame(() => window.requestAnimationFrame(updateStyle));
   }, [blockElement, value]);
   const previousValueRef = (0,external_wp_element_namespaceObject.useRef)(value);
@@ -32573,7 +32573,7 @@ function PaddingVisualizer({
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -32748,7 +32748,7 @@ function useCustomSides() {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/hooks/style.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -33144,7 +33144,7 @@ function style_useBlockProps({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/hooks/settings.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -33169,7 +33169,7 @@ function settings_addAttribute(settings) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/filter.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -33184,7 +33184,7 @@ const filter = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(ext
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/duotone-control/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -33473,7 +33473,7 @@ function getBlockCSSSelector(blockType, target = 'root', options = {}) {
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -33669,7 +33669,7 @@ function FiltersPanel({
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -33965,7 +33965,7 @@ function duotone_useBlockProps({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/use-block-display-information/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -34080,7 +34080,7 @@ function useBlockDisplayInformation(clientId) {
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -34400,7 +34400,7 @@ function position_useBlockProps({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/global-styles/use-global-styles-output.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -34653,7 +34653,7 @@ function getStylesDeclarations(blockStyles = {}, selector = '', useRootPaddingAl
     const styleValue = getValueFromObjectPath(blockStyles, pathToValue);
 
     // Root-level padding styles don't currently support strings with CSS shorthand values.
-    // This may change: https://github.com/WordPress/gutenberg/issues/40132.
+    // This may change: https://github.com/NotMattPress/gutenberg/issues/40132.
     if (key === '--wp--style--root--padding' && (typeof styleValue === 'string' || !useRootPaddingAlign)) {
       return declarations;
     }
@@ -35061,14 +35061,14 @@ const toStyles = (tree, blockSelectors, hasBlockGapSupport, hasFallbackGapSuppor
      * from the `theme.json`. This is to ensure that if the `theme.json` declares
      * `margin` in its `spacing` declaration for the `body` element then these
      * user-generated values take precedence in the CSS cascade.
-     * @link https://github.com/WordPress/gutenberg/issues/36147.
+     * @link https://github.com/NotMattPress/gutenberg/issues/36147.
      */
     ruleset += ':where(body) {margin: 0;';
 
     // Root padding styles should be output for full templates, patterns and template parts.
     if (options.rootPadding && useRootPaddingAlign) {
       /*
-       * These rules reproduce the ones from https://github.com/WordPress/gutenberg/blob/79103f124925d1f457f627e154f52a56228ed5ad/lib/class-wp-theme-json-gutenberg.php#L2508
+       * These rules reproduce the ones from https://github.com/NotMattPress/gutenberg/blob/79103f124925d1f457f627e154f52a56228ed5ad/lib/class-wp-theme-json-gutenberg.php#L2508
        * almost exactly, but for the selectors that target block wrappers in the front end. This code only runs in the editor, so it doesn't need those selectors.
        */
       ruleset += `padding-right: 0; padding-left: 0; padding-top: var(--wp--style--root--padding-top); padding-bottom: var(--wp--style--root--padding-bottom) }
@@ -35446,7 +35446,7 @@ function useGlobalStylesOutput(disableRootPadding = false) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/hooks/block-style-variation.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -35770,7 +35770,7 @@ function block_style_variation_useBlockProps({
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -36294,7 +36294,7 @@ function getGridInfo(gridElement) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/inserter/tips.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -36320,7 +36320,7 @@ function Tips() {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/chevron-right.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -36335,7 +36335,7 @@ const chevronRight = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.js
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/chevron-left.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -36350,7 +36350,7 @@ const chevronLeft = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/block-default.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -36370,7 +36370,7 @@ const blockDefault = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.js
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -36405,7 +36405,7 @@ function BlockIcon({
 }
 
 /**
- * @see https://github.com/WordPress/gutenberg/blob/HEAD/packages/block-editor/src/components/block-icon/README.md
+ * @see https://github.com/NotMattPress/gutenberg/blob/HEAD/packages/block-editor/src/components/block-icon/README.md
  */
 /* harmony default export */ const block_icon = ((0,external_wp_element_namespaceObject.memo)(BlockIcon));
 
@@ -36416,7 +36416,7 @@ function BlockIcon({
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -36503,7 +36503,7 @@ function BlockCard({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/provider/with-registry-provider.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -36552,7 +36552,7 @@ const withRegistryProvider = (0,external_wp_compose_namespaceObject.createHigher
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/provider/use-block-sync.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -36820,7 +36820,7 @@ function useBlockSync({
 const external_wp_keyboardShortcuts_namespaceObject = window["wp"]["keyboardShortcuts"];
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/keyboard-shortcuts/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -36963,7 +36963,7 @@ KeyboardShortcuts.Register = KeyboardShortcutsRegister;
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/provider/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -37021,7 +37021,7 @@ const BlockEditorProvider = props => {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/block-context/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -37042,7 +37042,7 @@ const block_context_Context = (0,external_wp_element_namespaceObject.createConte
 /**
  * Component which merges passed value with current consumed block context.
  *
- * @see https://github.com/WordPress/gutenberg/blob/HEAD/packages/block-editor/src/components/block-context/README.md
+ * @see https://github.com/NotMattPress/gutenberg/blob/HEAD/packages/block-editor/src/components/block-context/README.md
  *
  * @param {BlockContextProviderProps} props
  */
@@ -37069,7 +37069,7 @@ function BlockContextProvider({
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -37143,7 +37143,7 @@ const EditWithGeneratedProps = props => {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/more-vertical.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -37163,7 +37163,7 @@ const moreVertical = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.js
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -37217,13 +37217,13 @@ function Warning({
 }
 
 /**
- * @see https://github.com/WordPress/gutenberg/blob/HEAD/packages/block-editor/src/components/warning/README.md
+ * @see https://github.com/NotMattPress/gutenberg/blob/HEAD/packages/block-editor/src/components/warning/README.md
  */
 /* harmony default export */ const warning = (Warning);
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/block-edit/multiple-usage-warning.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -37266,14 +37266,14 @@ function MultipleUsageWarning({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/block-list/private-block-context.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 const PrivateBlockContext = (0,external_wp_element_namespaceObject.createContext)({});
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/block-edit/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -37357,7 +37357,7 @@ function BlockEdit({
 var character = __webpack_require__(8021);
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/block-compare/block-view.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -37411,7 +37411,7 @@ function BlockView({
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -37475,7 +37475,7 @@ function BlockCompare({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/block-list/block-invalid-warning.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -37582,7 +37582,7 @@ function BlockInvalidWarning({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/block-list/block-crash-warning.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -37599,7 +37599,7 @@ const block_crash_warning_warning = /*#__PURE__*/(0,external_ReactJSXRuntime_nam
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/block-list/block-crash-boundary.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 class BlockCrashBoundary extends external_wp_element_namespaceObject.Component {
@@ -37632,7 +37632,7 @@ var lib = __webpack_require__(4132);
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -37712,7 +37712,7 @@ var web_dist_esm_k=/^--/;function web_dist_esm_I(t,e){return e==null||typeof e==
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -37862,7 +37862,7 @@ function useMovingAnimation({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/block-list/use-block-props/use-focus-first-element.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -37942,7 +37942,7 @@ function useFocusFirstElement({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/block-list/use-block-props/use-is-hovered.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -37991,7 +37991,7 @@ function useIsHovered({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/block-list/use-block-props/use-focus-handler.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -38057,7 +38057,7 @@ function useFocusHandler(clientId) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/block-list/use-block-props/use-selected-block-event-handlers.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -38142,7 +38142,7 @@ function useEventHandlers({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/block-list/use-block-props/use-nav-mode-exit.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -38191,7 +38191,7 @@ function useNavModeExit(clientId) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/block-list/use-block-props/use-zoom-out-mode-exit.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -38246,7 +38246,7 @@ function useZoomOutModeExit({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/block-list/use-block-props/use-intersection-observer.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -38269,7 +38269,7 @@ function useIntersectionObserver() {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/block-list/use-block-props/use-scroll-into-view.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 function useScrollIntoView({
@@ -38307,7 +38307,7 @@ function useScrollIntoView({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/use-flash-editable-blocks/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -38361,7 +38361,7 @@ function useFlashEditableBlocks({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/hooks/use-bindings-attributes.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -38620,7 +38620,7 @@ function shimAttributeSource(settings, name) {
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -38813,7 +38813,7 @@ use_block_props_useBlockProps.save = external_wp_blocks_namespaceObject.__unstab
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -39428,7 +39428,7 @@ function BlockListBlockProvider(props) {
 
   // Block is sometimes not mounted at the right time, causing it be
   // undefined see issue for more info
-  // https://github.com/WordPress/gutenberg/issues/17013
+  // https://github.com/NotMattPress/gutenberg/issues/17013
   if (!selectedProps) {
     return null;
   }
@@ -39507,7 +39507,7 @@ const external_wp_htmlEntities_namespaceObject = window["wp"]["htmlEntities"];
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -39608,7 +39608,7 @@ function DefaultBlockAppender({
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -39698,7 +39698,7 @@ function BlockListAppender({
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -39887,7 +39887,7 @@ function BlockPopoverInbetween({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/block-popover/drop-zone.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -39957,7 +39957,7 @@ function BlockDropZonePopover({
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -40192,7 +40192,7 @@ function InsertionPoint(props) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/block-list/use-in-between-inserter.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -40279,7 +40279,7 @@ function useInBetweenInserter() {
       }
 
       // Don't show the insertion point if a parent block has an "overlay"
-      // See https://github.com/WordPress/gutenberg/pull/34012#pullrequestreview-727762337
+      // See https://github.com/NotMattPress/gutenberg/pull/34012#pullrequestreview-727762337
       const clientId = element.id.slice('block-'.length);
       if (!clientId || __unstableIsWithinBlockOverlay(clientId)) {
         return;
@@ -40320,7 +40320,7 @@ function useInBetweenInserter() {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/block-selection-clearer/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -40428,7 +40428,7 @@ function default_block_appender_DefaultBlockAppender() {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/inner-blocks/use-nested-settings-update.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -40576,7 +40576,7 @@ function useNestedSettingsUpdate(clientId, parentLock, allowedBlocks, prioritize
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -40662,7 +40662,7 @@ function useInnerBlockTemplateSync(clientId, template, templateLock, templateIns
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/inner-blocks/use-block-context.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -40698,7 +40698,7 @@ function useBlockContext(clientId) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/use-on-block-drop/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -41062,7 +41062,7 @@ function isPointWithinTopAndBottomBoundariesOfRect(point, rect) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/use-block-drop-zone/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -41444,7 +41444,7 @@ function useBlockDropZone({
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -41587,7 +41587,7 @@ const ForwardedInnerBlocks = (0,external_wp_element_namespaceObject.forwardRef)(
  *                         the ref if one is defined.
  * @param {Object} options Optional. Inner blocks options.
  *
- * @see https://github.com/WordPress/gutenberg/blob/HEAD/packages/block-editor/src/components/inner-blocks/README.md
+ * @see https://github.com/NotMattPress/gutenberg/blob/HEAD/packages/block-editor/src/components/inner-blocks/README.md
  */
 function useInnerBlocksProps(props = {}, options = {}) {
   const {
@@ -41695,13 +41695,13 @@ ForwardedInnerBlocks.ButtonBlockAppender = ButtonBlockAppender;
 ForwardedInnerBlocks.Content = () => useInnerBlocksProps.save().children;
 
 /**
- * @see https://github.com/WordPress/gutenberg/blob/HEAD/packages/block-editor/src/components/inner-blocks/README.md
+ * @see https://github.com/NotMattPress/gutenberg/blob/HEAD/packages/block-editor/src/components/inner-blocks/README.md
  */
 /* harmony default export */ const inner_blocks = (ForwardedInnerBlocks);
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/observe-typing/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -41924,7 +41924,7 @@ function ObserveTyping({
 }
 
 /**
- * @see https://github.com/WordPress/gutenberg/blob/HEAD/packages/block-editor/src/components/observe-typing/README.md
+ * @see https://github.com/NotMattPress/gutenberg/blob/HEAD/packages/block-editor/src/components/observe-typing/README.md
  */
 /* harmony default export */ const observe_typing = (ObserveTyping);
 
@@ -41935,7 +41935,7 @@ function ObserveTyping({
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -42043,7 +42043,7 @@ function ZoomOutSeparator({
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -42257,7 +42257,7 @@ function BlockListItems(props) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/writing-flow/use-multi-selection.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -42340,7 +42340,7 @@ function useMultiSelection() {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/writing-flow/use-tab-nav.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -42548,7 +42548,7 @@ function useTabNav() {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/writing-flow/use-arrow-nav.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -42795,7 +42795,7 @@ function useArrowNav() {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/writing-flow/use-select-all.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -42832,7 +42832,7 @@ function useSelectAll() {
       const blockClientIds = getBlockOrder(rootClientId);
 
       // If we have selected all sibling nested blocks, try selecting up a
-      // level. See: https://github.com/WordPress/gutenberg/pull/31859/
+      // level. See: https://github.com/NotMattPress/gutenberg/pull/31859/
       if (selectedClientIds.length === blockClientIds.length) {
         if (rootClientId) {
           node.ownerDocument.defaultView.getSelection().removeAllRanges();
@@ -42851,7 +42851,7 @@ function useSelectAll() {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/writing-flow/use-drag-selection.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -42977,7 +42977,7 @@ function useDragSelection() {
 
       // Do not rely on the active element because it may change after
       // the mouse leaves for the first time. See
-      // https://github.com/WordPress/gutenberg/issues/48747.
+      // https://github.com/NotMattPress/gutenberg/issues/48747.
       anchorElement = target;
       startMultiSelect();
 
@@ -43003,7 +43003,7 @@ function useDragSelection() {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/writing-flow/use-selection-observer.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -43236,7 +43236,7 @@ function useSelectionObserver() {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/writing-flow/use-click-selection.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -43289,7 +43289,7 @@ function useClickSelection() {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/writing-flow/use-input.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -43438,7 +43438,7 @@ function useInput() {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/utils/use-notify-copy.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -43485,7 +43485,7 @@ function useNotifyCopy() {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/utils/pasting.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -43516,7 +43516,7 @@ function removeWindowsFragments(html) {
 /**
  * Removes the charset meta tag inserted by Chromium.
  * See:
- * - https://github.com/WordPress/gutenberg/issues/33585
+ * - https://github.com/NotMattPress/gutenberg/issues/33585
  * - https://bugs.chromium.org/p/chromium/issues/detail?id=1264616#c4
  *
  * @param {string} html the html to be stripped of the meta tag.
@@ -43606,7 +43606,7 @@ function shouldDismissPastedFiles(files, html /*, plainText */) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/writing-flow/utils.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -43701,7 +43701,7 @@ function toPlainText(html) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/writing-flow/use-clipboard-handler.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -43904,7 +43904,7 @@ function useClipboardHandler() {
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -44069,7 +44069,7 @@ function getCompatibilityStyles() {
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -45042,7 +45042,7 @@ const transform_styles_transformStyles = (styles, wrapperSelector = '', transfor
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -45144,7 +45144,7 @@ function EditorStyles({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/block-preview/auto.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -45208,8 +45208,8 @@ function ScaledBlockPreview({
       transform: `scale(${scale})`,
       // Using width + aspect-ratio instead of height here triggers browsers' native
       // handling of scrollbar's visibility. It prevents the flickering issue seen
-      // in https://github.com/WordPress/gutenberg/issues/52027.
-      // See https://github.com/WordPress/gutenberg/pull/52921 for more info.
+      // in https://github.com/NotMattPress/gutenberg/issues/52027.
+      // See https://github.com/NotMattPress/gutenberg/pull/52921 for more info.
       aspectRatio,
       maxHeight: contentHeight > MAX_HEIGHT ? MAX_HEIGHT * scale : undefined,
       minHeight
@@ -45238,7 +45238,7 @@ function ScaledBlockPreview({
         height: contentHeight,
         pointerEvents: 'none',
         // This is a catch-all max-height for patterns.
-        // See: https://github.com/WordPress/gutenberg/pull/38175.
+        // See: https://github.com/NotMattPress/gutenberg/pull/38175.
         maxHeight: MAX_HEIGHT,
         minHeight: scale !== 0 && scale < 1 && minHeight ? minHeight / scale : minHeight
       },
@@ -45279,7 +45279,7 @@ function AutoBlockPreview(props) {
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -45349,7 +45349,7 @@ function BlockPreview({
 /**
  * BlockPreview renders a preview of a block or array of blocks.
  *
- * @see https://github.com/WordPress/gutenberg/blob/HEAD/packages/block-editor/src/components/block-preview/README.md
+ * @see https://github.com/NotMattPress/gutenberg/blob/HEAD/packages/block-editor/src/components/block-preview/README.md
  *
  * @param {Object}       preview               options for how the preview should be shown
  * @param {Array|Object} preview.blocks        A block instance (object) or an array of blocks to be previewed.
@@ -45409,7 +45409,7 @@ function useBlockPreview({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/inserter/preview-panel.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -45492,7 +45492,7 @@ function InserterPreviewPanel({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/inserter-listbox/item.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -45538,7 +45538,7 @@ function InserterListboxItem({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/drag-handle.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -45555,7 +45555,7 @@ const dragHandle = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/block-draggable/draggable-chip.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -45604,7 +45604,7 @@ function BlockDraggableChip({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/inserter-draggable-blocks/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -45685,7 +45685,7 @@ const InserterDraggableBlocks = ({
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -45791,7 +45791,7 @@ function InserterListItem({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/inserter-listbox/group.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -45824,7 +45824,7 @@ function InserterListboxGroup(props, ref) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/inserter-listbox/row.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -45840,7 +45840,7 @@ function InserterListboxRow(props, ref) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/block-types-list/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -45889,7 +45889,7 @@ function BlockTypesList({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/inserter/panel.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -45919,7 +45919,7 @@ function InserterPanel({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/inserter/hooks/use-block-types-state.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -45970,7 +45970,7 @@ const useBlockTypesState = (rootClientId, onInsert, isQuick) => {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/inserter-listbox/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -45996,7 +45996,7 @@ function InserterListbox({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/inserter/no-results.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -46017,7 +46017,7 @@ function InserterNoResults() {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/inserter/block-types-tab.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -46198,7 +46198,7 @@ function BlockTypesTab({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/inserter/block-patterns-explorer/pattern-explorer-sidebar.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -46269,7 +46269,7 @@ function PatternExplorerSidebar({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/block-patterns-paging/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -46366,7 +46366,7 @@ function Pagination({
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -46562,7 +46562,7 @@ function BlockPatternsList({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/inserter/hooks/use-insertion-point.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -46709,7 +46709,7 @@ function useInsertionPoint({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/inserter/hooks/use-patterns-state.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -47046,7 +47046,7 @@ function getItemSearchRank(item, searchTerm, config = {}) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/inserter/hooks/use-patterns-paging.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -47101,7 +47101,7 @@ function usePatternsPaging(currentCategoryPatterns, currentCategory, scrollConta
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/inserter/block-patterns-explorer/pattern-list.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -47215,7 +47215,7 @@ function PatternList({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/inserter/block-patterns-tab/use-pattern-categories.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -47263,7 +47263,7 @@ function usePatternCategories(rootClientId, sourceFilter = 'all') {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/inserter/block-patterns-explorer/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -47317,7 +47317,7 @@ function PatternsExplorerModal({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/inserter/mobile-tab-navigation.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -47392,7 +47392,7 @@ function MobileTabNavigation({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/inserter/block-patterns-tab/patterns-filter.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -47507,9 +47507,9 @@ function PatternsFilter({
           })
         }), /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)("div", {
           className: "block-editor-tool-selector__help",
-          children: (0,external_wp_element_namespaceObject.createInterpolateElement)((0,external_wp_i18n_namespaceObject.__)('Patterns are available from the <Link>WordPress.org Pattern Directory</Link>, bundled in the active theme, or created by users on this site. Only patterns created on this site can be synced.'), {
+          children: (0,external_wp_element_namespaceObject.createInterpolateElement)((0,external_wp_i18n_namespaceObject.__)('Patterns are available from the <Link>NotMattPress.org Pattern Directory</Link>, bundled in the active theme, or created by users on this site. Only patterns created on this site can be synced.'), {
             Link: /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(external_wp_components_namespaceObject.ExternalLink, {
-              href: (0,external_wp_i18n_namespaceObject.__)('https://wordpress.org/patterns/')
+              href: (0,external_wp_i18n_namespaceObject.__)('https://notmatt.press/patterns/')
             })
           })
         })]
@@ -47520,7 +47520,7 @@ function PatternsFilter({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/inserter/block-patterns-tab/pattern-category-previews.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -47643,7 +47643,7 @@ function PatternCategoryPreviews({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/inserter/category-tabs/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -47727,7 +47727,7 @@ function CategoryTabs({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/inserter/block-patterns-tab/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -47807,7 +47807,7 @@ function BlockPatternsTab({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/external.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -47822,7 +47822,7 @@ const external = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(e
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/inserter/media-tab/utils.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -47880,7 +47880,7 @@ function getBlockAndPreviewFromMedia(media, mediaType) {
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -48112,7 +48112,7 @@ function MediaPreview({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/inserter/media-tab/media-list.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -48143,7 +48143,7 @@ function MediaList({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/inserter/media-tab/hooks.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -48262,7 +48262,7 @@ function useMediaCategories(rootClientId) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/inserter/media-tab/media-panel.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -48315,7 +48315,7 @@ function MediaCategoryPanel({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/inserter/media-tab/media-tab.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -48409,7 +48409,7 @@ function MediaTab({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/inserter-menu-extension/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 const {
@@ -48455,7 +48455,7 @@ const orderInserterBlockItems = (items, priority) => {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/inserter/search-results.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -48621,7 +48621,7 @@ function InserterSearchResults({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/close-small.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -48636,7 +48636,7 @@ const closeSmall = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/tabbed-sidebar/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -48702,7 +48702,7 @@ function TabbedSidebar({
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -48954,7 +48954,7 @@ function PublicInserterMenu(props, ref) {
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -49079,7 +49079,7 @@ function QuickInserter({
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -49399,7 +49399,7 @@ class Inserter extends external_wp_element_namespaceObject.Component {
 
       // Attempt to augment the directInsertBlock with attributes from an adjacent block.
       // This ensures styling from nearby blocks is preserved in the newly inserted block.
-      // See: https://github.com/WordPress/gutenberg/issues/37904
+      // See: https://github.com/NotMattPress/gutenberg/issues/37904
       if (directInsertBlock) {
         const newAttributes = getAdjacentBlockAttributes(directInsertBlock.attributesToCopy);
         blockToInsert = (0,external_wp_blocks_namespaceObject.createBlock)(directInsertBlock.name, {
@@ -49438,7 +49438,7 @@ class Inserter extends external_wp_element_namespaceObject.Component {
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -49522,7 +49522,7 @@ const ButtonBlockerAppender = (0,external_wp_element_namespaceObject.forwardRef)
 });
 
 /**
- * @see https://github.com/WordPress/gutenberg/blob/HEAD/packages/block-editor/src/components/button-block-appender/README.md
+ * @see https://github.com/NotMattPress/gutenberg/blob/HEAD/packages/block-editor/src/components/button-block-appender/README.md
  */
 /* harmony default export */ const button_block_appender = ((0,external_wp_element_namespaceObject.forwardRef)(button_block_appender_ButtonBlockAppender));
 
@@ -49533,7 +49533,7 @@ const ButtonBlockerAppender = (0,external_wp_element_namespaceObject.forwardRef)
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -49841,7 +49841,7 @@ function useDropZoneWithValidation({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/grid/grid-item-resizer.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -49990,7 +49990,7 @@ function GridItemResizerInner({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/chevron-up.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -50005,7 +50005,7 @@ const chevronUp = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/chevron-down.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -50025,7 +50025,7 @@ const chevronDown = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -50158,7 +50158,7 @@ function GridItemMover({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/hooks/layout-child.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -50360,7 +50360,7 @@ function ChildLayoutControlsPure({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/hooks/content-lock-ui.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -50427,7 +50427,7 @@ function ContentLockControlsPure({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/hooks/metadata.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 const META_ATTRIBUTE_NAME = 'metadata';
@@ -50435,7 +50435,7 @@ const META_ATTRIBUTE_NAME = 'metadata';
 /**
  * Filters registered block settings, extending attributes to include `metadata`.
  *
- * see: https://github.com/WordPress/gutenberg/pull/40393/files#r864632012
+ * see: https://github.com/NotMattPress/gutenberg/pull/40393/files#r864632012
  *
  * @param {Object} blockTypeSettings Original block settings.
  * @return {Object} Filtered block settings.
@@ -50457,7 +50457,7 @@ function addMetaAttribute(blockTypeSettings) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/hooks/block-hooks.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -50644,7 +50644,7 @@ function BlockHooksControlPure({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/utils/block-bindings.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -50803,7 +50803,7 @@ function useBlockBindingsUtils() {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/hooks/block-bindings.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -51067,7 +51067,7 @@ const BlockBindingsPanel = ({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/hooks/block-renaming.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -51108,7 +51108,7 @@ function addLabelCallback(settings) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/grid/use-grid-layout-sync.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -51319,7 +51319,7 @@ function placeBlock(occupiedRects, gridColumnCount, blockColumnSpan, blockRowSpa
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/hooks/grid-visualizer.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -51474,7 +51474,7 @@ function getShadowClassesAndStyles(attributes) {
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -51613,7 +51613,7 @@ function getSpacingClassesAndStyles(attributes) {
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -51664,7 +51664,7 @@ function getTypographyClassesAndStyles(attributes, settings) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/hooks/use-cached-truthy.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -51686,7 +51686,7 @@ function useCachedTruthy(value) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/hooks/use-zoom-out.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -51782,7 +51782,7 @@ createBlockSaveFilter([align, text_align, hooks_anchor, aria_label, custom_class
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/colors/with-colors.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -51991,7 +51991,7 @@ function withColors(...colorTypes) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/font-sizes/font-size-picker.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -52010,13 +52010,13 @@ function font_size_picker_FontSizePicker(props) {
 }
 
 /**
- * @see https://github.com/WordPress/gutenberg/blob/HEAD/packages/block-editor/src/components/font-sizes/README.md
+ * @see https://github.com/NotMattPress/gutenberg/blob/HEAD/packages/block-editor/src/components/font-sizes/README.md
  */
 /* harmony default export */ const font_size_picker = (font_size_picker_FontSizePicker);
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/font-sizes/with-font-sizes.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -52142,7 +52142,7 @@ const with_font_sizes_upperFirst = ([firstLetter, ...rest]) => firstLetter.toUpp
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/autocompleters/block.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -52253,7 +52253,7 @@ const external_wp_apiFetch_namespaceObject = window["wp"]["apiFetch"];
 var external_wp_apiFetch_default = /*#__PURE__*/__webpack_require__.n(external_wp_apiFetch_namespaceObject);
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/post.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -52268,7 +52268,7 @@ const post = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(exter
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/autocompleters/link.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 // Disable Reason: Needs to be refactored.
 // eslint-disable-next-line no-restricted-imports
@@ -52333,7 +52333,7 @@ function createLinkCompleter() {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/autocomplete/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -52399,13 +52399,13 @@ function BlockEditorAutocomplete(props) {
 }
 
 /**
- * @see https://github.com/WordPress/gutenberg/blob/HEAD/packages/block-editor/src/components/autocomplete/README.md
+ * @see https://github.com/NotMattPress/gutenberg/blob/HEAD/packages/block-editor/src/components/autocomplete/README.md
  */
 /* harmony default export */ const autocomplete = (BlockEditorAutocomplete);
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/fullscreen.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -52420,7 +52420,7 @@ const fullscreen = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/block-full-height-alignment-control/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -52444,7 +52444,7 @@ function BlockFullHeightAlignmentControl({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/block-alignment-matrix-control/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -52497,7 +52497,7 @@ function BlockAlignmentMatrixControl(props) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/block-title/use-block-display-title.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -52632,7 +52632,7 @@ function getEditorRegion(editor) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/block-breadcrumb/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -52743,7 +52743,7 @@ function BlockBreadcrumb({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/block-content-overlay/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -52762,7 +52762,7 @@ function useBlockOverlayActive(clientId) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/block-tools/use-block-toolbar-popover-props.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -52918,7 +52918,7 @@ function useBlockToolbarPopoverProps({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/block-tools/use-selected-block-tool-props.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -53017,7 +53017,7 @@ function EmptyBlockInserter({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/block-draggable/use-scroll-when-dragging.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -53099,7 +53099,7 @@ function useScrollWhenDragging() {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/block-draggable/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -53292,7 +53292,7 @@ const BlockDraggable = ({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/block-mover/mover-description.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 const getMovementDirection = (moveDirection, orientation) => {
@@ -53507,7 +53507,7 @@ function getMultiBlockMoverDescription(selectedCount, firstIndex, isFirst, isLas
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -53654,7 +53654,7 @@ const BlockMoverDownButton = (0,external_wp_element_namespaceObject.forwardRef)(
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -53752,13 +53752,13 @@ function BlockMover({
 }
 
 /**
- * @see https://github.com/WordPress/gutenberg/blob/HEAD/packages/block-editor/src/components/block-mover/README.md
+ * @see https://github.com/NotMattPress/gutenberg/blob/HEAD/packages/block-editor/src/components/block-mover/README.md
  */
 /* harmony default export */ const block_mover = (BlockMover);
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/block-toolbar/utils.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -53918,7 +53918,7 @@ function useShowHoveredOrFocusedGestures({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/block-parent-selector/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -53999,7 +53999,7 @@ function BlockParentSelector() {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/copy.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -54016,7 +54016,7 @@ const copy_copy = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/block-switcher/preview-block-popover.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -54058,7 +54058,7 @@ function PreviewBlockPopover({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/block-switcher/block-variation-transformations.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -54155,7 +54155,7 @@ function BlockVariationTranformationItem({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/block-switcher/block-transformations-menu.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -54311,7 +54311,7 @@ function BlockTranformationItem({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/block-styles/utils.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -54392,7 +54392,7 @@ function getDefaultStyle(styles) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/block-styles/use-styles-for-block.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -54490,7 +54490,7 @@ function useStylesForBlocks({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/block-styles/menu-items.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -54537,7 +54537,7 @@ function BlockStylesMenuItems({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/block-switcher/block-styles-menu.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -54566,7 +54566,7 @@ function BlockStylesMenu({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/block-switcher/utils.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -54629,7 +54629,7 @@ const getRetainedBlockAttributes = (name, attributes) => {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/block-switcher/use-transformed-patterns.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -54730,7 +54730,7 @@ const useTransformedPatterns = (patterns, selectedBlocks) => {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/block-switcher/pattern-transformations-menu.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -54839,7 +54839,7 @@ function pattern_transformations_menu_BlockPattern({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/block-switcher/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -55109,7 +55109,7 @@ const BlockSwitcher = ({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/block-toolbar/block-toolbar-last-item.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 const {
@@ -55121,7 +55121,7 @@ __unstableBlockToolbarLastItem.Slot = block_toolbar_last_item_Slot;
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/hooks/supports.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -55400,7 +55400,7 @@ const supports_hasStyleSupport = nameOrType => supports_styleSupportKeys.some(ke
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/use-paste-styles/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -55563,7 +55563,7 @@ function usePasteStyles() {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/block-actions/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -55692,7 +55692,7 @@ function BlockActions({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/block-settings-menu/block-html-convert-button.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -55725,7 +55725,7 @@ function BlockHTMLConvertButton({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/block-settings-menu/block-settings-menu-first-item.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 const {
@@ -55737,7 +55737,7 @@ __unstableBlockSettingsMenuFirstItem.Slot = block_settings_menu_first_item_Slot;
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/convert-to-group-buttons/use-convert-to-group-button-props.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -55797,7 +55797,7 @@ function useConvertToGroupButtonProps(selectedClientIds) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/convert-to-group-buttons/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -55871,7 +55871,7 @@ function ConvertToGroupButton({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/block-lock/use-block-lock.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -55913,7 +55913,7 @@ function useBlockLock(clientId) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/unlock.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -55928,7 +55928,7 @@ const unlock_unlock = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.j
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/lock-outline.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -55943,7 +55943,7 @@ const lockOutline = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/lock.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -55958,7 +55958,7 @@ const lock_lock = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/block-lock/modal.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -56153,7 +56153,7 @@ function BlockLockModal({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/block-lock/menu-item.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -56196,7 +56196,7 @@ function BlockLockMenuItem({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/block-settings-menu/block-mode-toggle.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -56248,7 +56248,7 @@ function BlockModeToggle({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/content-lock/modify-content-lock-menu-item.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -56306,7 +56306,7 @@ function ModifyContentLockMenuItem({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/block-rename/use-block-rename.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 function useBlockRename(name) {
@@ -56322,7 +56322,7 @@ function isEmptyString(testString) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/block-rename/modal.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -56340,7 +56340,7 @@ function BlockRenameModal({
   originalBlockName,
   onClose,
   onSave,
-  // Pattern Overrides is a WordPress-only feature but it also uses the Block Binding API.
+  // Pattern Overrides is a NotMattPress-only feature but it also uses the Block Binding API.
   // Ideally this should not be inside the block editor package, but we keep it here for simplicity.
   hasOverridesWarning
 }) {
@@ -56409,7 +56409,7 @@ function BlockRenameModal({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/block-rename/rename-control.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -56483,7 +56483,7 @@ function BlockRenameControl({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/block-settings-menu-controls/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -56577,7 +56577,7 @@ const BlockSettingsMenuControlsSlot = ({
 };
 
 /**
- * @see https://github.com/WordPress/gutenberg/blob/HEAD/packages/block-editor/src/components/block-settings-menu-controls/README.md
+ * @see https://github.com/NotMattPress/gutenberg/blob/HEAD/packages/block-editor/src/components/block-settings-menu-controls/README.md
  *
  * @param {Object} props Fill props.
  * @return {Element} Element.
@@ -56597,7 +56597,7 @@ BlockSettingsMenuControls.Slot = BlockSettingsMenuControlsSlot;
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/block-settings-menu/block-parent-selector-menu-item.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -56645,7 +56645,7 @@ function BlockParentSelectorMenuItem({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/block-settings-menu/block-settings-dropdown.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -56790,7 +56790,7 @@ function BlockSettingsDropdown({
   // where it does not allow a dropdown to be closed if focus was never within
   // the dropdown to begin with. Examples include a user either CMD+Clicking or
   // right clicking into an inactive window.
-  // See: https://github.com/WordPress/gutenberg/pull/54083
+  // See: https://github.com/NotMattPress/gutenberg/pull/54083
   const open = !currentClientId ? undefined : openedBlockSettingsMenu === currentClientId || false;
   function onToggle(localOpen) {
     if (localOpen && openedBlockSettingsMenu !== currentClientId) {
@@ -56894,7 +56894,7 @@ function BlockSettingsDropdown({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/block-settings-menu/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -56921,7 +56921,7 @@ function BlockSettingsMenu({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/block-lock/toolbar.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -56983,7 +56983,7 @@ function BlockLockToolbar({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/group.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -56998,7 +56998,7 @@ const group_group = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/row.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -57013,7 +57013,7 @@ const row = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(extern
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/stack.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -57028,7 +57028,7 @@ const stack = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(exte
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/grid.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -57045,7 +57045,7 @@ const grid_grid = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/convert-to-group-buttons/toolbar.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -57157,7 +57157,7 @@ function BlockGroupToolbar() {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/block-edit-visually-button/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -57192,7 +57192,7 @@ function BlockEditVisuallyButton({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/block-toolbar/block-name-context.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 const __unstableBlockNameContext = (0,external_wp_element_namespaceObject.createContext)('');
@@ -57200,7 +57200,7 @@ const __unstableBlockNameContext = (0,external_wp_element_namespaceObject.create
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/navigable-toolbar/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -57248,7 +57248,7 @@ function useIsAccessibleToolbar(toolbarRef) {
    * E2E tests.
    *
    * This was initial discovered in this pull-request:
-   * https://github.com/WordPress/gutenberg/pull/23425
+   * https://github.com/NotMattPress/gutenberg/pull/23425
    */
   const initialAccessibleToolbarState = true;
 
@@ -57264,7 +57264,7 @@ function useIsAccessibleToolbar(toolbarRef) {
       external_wp_deprecated_default()('Using custom components as toolbar controls', {
         since: '5.6',
         alternative: 'ToolbarItem, ToolbarButton or ToolbarDropdownMenu components',
-        link: 'https://developer.wordpress.org/block-editor/components/toolbar-button/#inside-blockcontrols'
+        link: 'https://developer.notmatt.press/block-editor/components/toolbar-button/#inside-blockcontrols'
       });
     }
     setIsAccessibleToolbar(onlyToolbarItem);
@@ -57319,7 +57319,7 @@ function useToolbarFocus({
     let raf = 0;
 
     // If the toolbar already had focus before the render, we don't want to move it.
-    // https://github.com/WordPress/gutenberg/issues/58511
+    // https://github.com/NotMattPress/gutenberg/issues/58511
     if (!initialFocusOnMount && !hasFocusWithin(navigableToolbarRef)) {
       raf = window.requestAnimationFrame(() => {
         const items = getAllFocusableToolbarItemsIn(navigableToolbarRef);
@@ -57411,7 +57411,7 @@ function NavigableToolbar({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/block-controls/use-has-block-controls.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -57446,7 +57446,7 @@ function useHasBlockControls(group = 'default') {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/block-toolbar/use-has-block-toolbar.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -57496,7 +57496,7 @@ function useHasBlockToolbar() {
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -57526,7 +57526,7 @@ function useHasBlockToolbar() {
 /**
  * Renders the block toolbar.
  *
- * @see https://github.com/WordPress/gutenberg/blob/HEAD/packages/block-editor/src/components/block-toolbar/README.md
+ * @see https://github.com/NotMattPress/gutenberg/blob/HEAD/packages/block-editor/src/components/block-toolbar/README.md
  *
  * @param {Object}   props                             Components props.
  * @param {boolean}  props.hideDragHandle              Show or hide the Drag Handle for drag and drop functionality.
@@ -57635,7 +57635,7 @@ function PrivateBlockToolbar({
     __experimentalInitialIndex: __experimentalInitialIndex,
     __experimentalOnIndexChange: __experimentalOnIndexChange
     // Resets the index whenever the active block changes so
-    // this is not persisted. See https://github.com/WordPress/gutenberg/pull/25760#issuecomment-717906169
+    // this is not persisted. See https://github.com/NotMattPress/gutenberg/pull/25760#issuecomment-717906169
     ,
     children: /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsxs)("div", {
       ref: toolbarWrapperRef,
@@ -57689,7 +57689,7 @@ function PrivateBlockToolbar({
 /**
  * Renders the block toolbar.
  *
- * @see https://github.com/WordPress/gutenberg/blob/HEAD/packages/block-editor/src/components/block-toolbar/README.md
+ * @see https://github.com/NotMattPress/gutenberg/blob/HEAD/packages/block-editor/src/components/block-toolbar/README.md
  *
  * @param {Object}  props                Components props.
  * @param {boolean} props.hideDragHandle Show or hide the Drag Handle for drag and drop functionality.
@@ -57714,7 +57714,7 @@ function BlockToolbar({
  */
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -57744,7 +57744,7 @@ function BlockToolbarPopover({
   const initialToolbarItemIndexRef = (0,external_wp_element_namespaceObject.useRef)();
   (0,external_wp_element_namespaceObject.useEffect)(() => {
     // Resets the index whenever the active block changes so this is not
-    // persisted. See https://github.com/WordPress/gutenberg/pull/25760#issuecomment-717906169
+    // persisted. See https://github.com/NotMattPress/gutenberg/pull/25760#issuecomment-717906169
     initialToolbarItemIndexRef.current = undefined;
   }, [clientId]);
   const {
@@ -57795,7 +57795,7 @@ function BlockToolbarPopover({
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -58050,7 +58050,7 @@ function BlockSelectionButton({
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -58095,7 +58095,7 @@ function BlockToolbarBreadcrumb({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/trash.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -58112,7 +58112,7 @@ const trash = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(exte
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/shuffle.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -58127,7 +58127,7 @@ const shuffle = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(ex
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/block-toolbar/shuffle.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -58169,7 +58169,7 @@ function Shuffle({
 
     // Calling `__experimentalGetAllowedPatterns` is expensive.
     // Checking if the block can be shuffled prevents unnecessary selector calls.
-    // See: https://github.com/WordPress/gutenberg/pull/64736.
+    // See: https://github.com/NotMattPress/gutenberg/pull/64736.
     const _patterns = _categories.length > 0 ? __experimentalGetAllowedPatterns(rootBlock) : shuffle_EMPTY_ARRAY;
     return {
       categories: _categories,
@@ -58236,7 +58236,7 @@ function Shuffle({
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -58438,7 +58438,7 @@ function ZoomOutPopover({
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -58471,7 +58471,7 @@ function ZoomOutModeInserterButton({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/block-tools/zoom-out-mode-inserters.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -58564,7 +58564,7 @@ function ZoomOutModeInserters() {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/block-tools/use-show-block-tools.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -58612,7 +58612,7 @@ function useShowBlockTools() {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/block-tools/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -58834,7 +58834,7 @@ function BlockTools({
 const external_wp_commands_namespaceObject = window["wp"]["commands"];
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/move-to.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -58849,7 +58849,7 @@ const move_to_moveTo = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/ungroup.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -58864,7 +58864,7 @@ const ungroup = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(ex
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/use-block-commands/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -58903,7 +58903,7 @@ const useTransformCommands = () => {
     // selectedBlocks can have `null`s when something tries to call `selectBlock` with an inexistent clientId.
     // These nulls will cause fatal errors down the line.
     // In order to prevent discrepancies between selectedBlockClientIds and selectedBlocks, we effectively treat the entire selection as invalid.
-    // @see https://github.com/WordPress/gutenberg/pull/59410#issuecomment-2006304536
+    // @see https://github.com/NotMattPress/gutenberg/pull/59410#issuecomment-2006304536
     if (selectedBlocks.filter(block => !block).length > 0) {
       return {
         invalidSelection: true
@@ -59188,7 +59188,7 @@ const useBlockCommands = () => {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/block-canvas/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -59314,7 +59314,7 @@ function BlockCanvas({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/color-style-selector/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -59411,7 +59411,7 @@ const BlockColorsStyleSelector = ({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/list-view.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -59426,7 +59426,7 @@ const listView = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(e
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/list-view/context.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 const ListViewContext = (0,external_wp_element_namespaceObject.createContext)({});
@@ -59434,7 +59434,7 @@ const useListViewContext = () => (0,external_wp_element_namespaceObject.useConte
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/list-view/aria-referenced-text.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -59455,7 +59455,7 @@ function AriaReferencedText({
     if (ref.current) {
       // This seems like a no-op, but it fixes a bug in Firefox where
       // it fails to recompute the text when only the text node changes.
-      // @see https://github.com/WordPress/gutenberg/pull/51035
+      // @see https://github.com/NotMattPress/gutenberg/pull/51035
       ref.current.textContent = ref.current.textContent;
     }
   }, [children]);
@@ -59469,7 +59469,7 @@ function AriaReferencedText({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/list-view/appender.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -59561,7 +59561,7 @@ const Appender = (0,external_wp_element_namespaceObject.forwardRef)(({
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -59605,7 +59605,7 @@ const ListViewLeaf = (0,external_wp_element_namespaceObject.forwardRef)(({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/list-view/use-list-view-scroll-into-view.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -59647,7 +59647,7 @@ function useListViewScrollIntoView({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/pin-small.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -59664,7 +59664,7 @@ const pinSmall = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(e
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/lock-small.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -59681,7 +59681,7 @@ const lockSmall = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/list-view/expander.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -59716,7 +59716,7 @@ function ListViewExpander({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/list-view/use-list-view-images.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -59801,7 +59801,7 @@ function useListViewImages({
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -59950,7 +59950,7 @@ function ListViewBlockSelectButton({
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -60044,7 +60044,7 @@ const ListViewBlockContents = (0,external_wp_element_namespaceObject.forwardRef)
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/list-view/utils.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -60223,7 +60223,7 @@ function getDragDisplacementValues({
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -60749,7 +60749,7 @@ function ListViewBlock({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/list-view/branch.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -60965,7 +60965,7 @@ function ListViewBranch(props) {
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -61213,7 +61213,7 @@ function ListViewDropIndicatorPreview({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/list-view/use-block-selection.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -61333,7 +61333,7 @@ function useBlockSelection() {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/list-view/use-list-view-block-indexes.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 function useListViewBlockIndexes(blocks) {
@@ -61357,7 +61357,7 @@ function useListViewBlockIndexes(blocks) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/list-view/use-list-view-client-ids.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -61387,7 +61387,7 @@ function useListViewClientIds({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/list-view/use-list-view-collapse-items.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -61428,7 +61428,7 @@ function useListViewCollapseItems({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/list-view/use-list-view-drop-zone.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -61867,7 +61867,7 @@ function useListViewDropZone({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/list-view/use-list-view-expand-selected-item.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -61917,7 +61917,7 @@ function useListViewExpandSelectedItem({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/list-view/use-clipboard-handler.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -62077,7 +62077,7 @@ function use_clipboard_handler_useClipboardHandler({
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -62323,7 +62323,7 @@ function ListViewComponent({
 
   // List View renders a fixed number of items and relies on each having a fixed item height of 36px.
   // If this value changes, we should also change the itemHeight value set in useFixedWindowList.
-  // See: https://github.com/WordPress/gutenberg/pull/35230 for additional context.
+  // See: https://github.com/NotMattPress/gutenberg/pull/35230 for additional context.
   const [fixedListWindow] = (0,external_wp_compose_namespaceObject.__experimentalUseFixedWindowList)(elementRef, BLOCK_LIST_ITEM_HEIGHT, visibleBlockCount, {
     // Ensure that the windowing logic is recalculated when the expanded state changes.
     // This is necessary because expanding a collapsed block in a short list view can
@@ -62401,12 +62401,12 @@ const PrivateListView = (0,external_wp_element_namespaceObject.forwardRef)(ListV
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/block-navigation/dropdown.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -62482,7 +62482,7 @@ function BlockNavigationDropdown({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/block-styles/preview-panel.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -62525,7 +62525,7 @@ function BlockStylesPreviewPanel({
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -62624,7 +62624,7 @@ function BlockStyles({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/paragraph.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -62639,7 +62639,7 @@ const paragraph = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/heading-level-1.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -62654,7 +62654,7 @@ const headingLevel1 = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.j
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/heading-level-2.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -62669,7 +62669,7 @@ const headingLevel2 = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.j
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/heading-level-3.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -62684,7 +62684,7 @@ const headingLevel3 = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.j
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/heading-level-4.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -62699,7 +62699,7 @@ const headingLevel4 = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.j
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/heading-level-5.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -62714,7 +62714,7 @@ const headingLevel5 = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.j
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/heading-level-6.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -62729,7 +62729,7 @@ const headingLevel6 = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.j
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/block-heading-level-dropdown/heading-level-icon.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -62774,7 +62774,7 @@ function HeadingLevelIcon({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/block-heading-level-dropdown/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -62843,7 +62843,7 @@ function HeadingLevelDropdown({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/layout.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -62863,7 +62863,7 @@ const layout_layout = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.j
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -62927,7 +62927,7 @@ const VIEWMODES = {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/block-pattern-setup/setup-toolbar.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -63025,7 +63025,7 @@ const SetupToolbar = ({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/block-pattern-setup/use-patterns-setup.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -63051,7 +63051,7 @@ function usePatternsSetup(clientId, blockName, filterPatternsFn) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/block-pattern-setup/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -63226,7 +63226,7 @@ const BlockPatternSetup = ({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/block-variation-transforms/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -63410,7 +63410,7 @@ function __experimentalBlockVariationTransforms({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/color-palette/with-color-context.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -63438,7 +63438,7 @@ function __experimentalBlockVariationTransforms({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/color-palette/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -63472,7 +63472,7 @@ function ColorPaletteControl({
 const external_wp_date_namespaceObject = window["wp"]["date"];
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/date-format-picker/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -63495,7 +63495,7 @@ if (exampleDate.getMonth() === 4) {
  * The `DateFormatPicker` component renders controls that let the user choose a
  * _date format_. That is, how they want their dates to be formatted.
  *
- * @see https://github.com/WordPress/gutenberg/blob/HEAD/packages/block-editor/src/components/date-format-picker/README.md
+ * @see https://github.com/NotMattPress/gutenberg/blob/HEAD/packages/block-editor/src/components/date-format-picker/README.md
  *
  * @param {Object}                          props
  * @param {string|null}                     props.format        The selected date
@@ -63594,7 +63594,7 @@ function NonDefaultControls({
       hideLabelFromVision: true,
       help: (0,external_wp_element_namespaceObject.createInterpolateElement)((0,external_wp_i18n_namespaceObject.__)('Enter a date or time <Link>format string</Link>.'), {
         Link: /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(external_wp_components_namespaceObject.ExternalLink, {
-          href: (0,external_wp_i18n_namespaceObject.__)('https://wordpress.org/documentation/article/customize-date-and-time-format/')
+          href: (0,external_wp_i18n_namespaceObject.__)('https://notmatt.press/documentation/article/customize-date-and-time-format/')
         })
       }),
       value: format,
@@ -63610,7 +63610,7 @@ function NonDefaultControls({
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -63705,7 +63705,7 @@ const renderToggle = settings => ({
 // the may be individually wrapped in a `ToolsPanelItem` with the toggle as
 // a regular `Button`.
 //
-// For more context see: https://github.com/WordPress/gutenberg/pull/40084
+// For more context see: https://github.com/NotMattPress/gutenberg/pull/40084
 function ColorGradientSettingsDropdown({
   colors,
   disableCustomColors,
@@ -63780,7 +63780,7 @@ function ColorGradientSettingsDropdown({
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -63874,7 +63874,7 @@ const PanelColorGradientSettings = props => {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/aspect-ratio.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -63896,7 +63896,7 @@ const constants_POPOVER_PROPS = {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/image-editor/use-save-image.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 // Disable Reason: Needs to be refactored.
 // eslint-disable-next-line no-restricted-imports
@@ -63986,7 +63986,7 @@ function useSaveImage({
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/image-editor/use-transform-image.js
 /* wp:polyfill */
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -64080,7 +64080,7 @@ function useTransformImage({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/image-editor/context.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -64125,7 +64125,7 @@ function ImageEditingProvider({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/image-editor/aspect-ratio-dropdown.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -65484,7 +65484,7 @@ var Cropper = /** @class */function (_super) {
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -65558,7 +65558,7 @@ function ImageCropper({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/search.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -65573,7 +65573,7 @@ const search = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(ext
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/image-editor/zoom-dropdown.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -65621,7 +65621,7 @@ function ZoomDropdown() {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/rotate-right.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -65636,7 +65636,7 @@ const rotateRight = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/image-editor/rotation-button.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -65663,7 +65663,7 @@ function RotationButton() {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/image-editor/form-controls.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -65695,7 +65695,7 @@ function FormControls() {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/image-editor/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -65752,7 +65752,7 @@ function ImageEditor({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/image-size-control/use-dimension-handler.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 function useDimensionHandler(customHeight, customWidth, defaultHeight, defaultWidth, onChange) {
@@ -65811,7 +65811,7 @@ function useDimensionHandler(customHeight, customWidth, defaultHeight, defaultWi
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/image-size-control/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -65904,7 +65904,7 @@ function ImageSizeControl({
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -65934,7 +65934,7 @@ function LinkViewerURL({
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -65977,7 +65977,7 @@ function LinkViewer({
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -66014,7 +66014,7 @@ function LinkEditor({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/url-popover/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -66106,7 +66106,7 @@ URLPopover.LinkEditor = LinkEditor;
 URLPopover.LinkViewer = LinkViewer;
 
 /**
- * @see https://github.com/WordPress/gutenberg/blob/HEAD/packages/block-editor/src/components/url-popover/README.md
+ * @see https://github.com/NotMattPress/gutenberg/blob/HEAD/packages/block-editor/src/components/url-popover/README.md
  */
 /* harmony default export */ const url_popover = (URLPopover);
 
@@ -66117,7 +66117,7 @@ URLPopover.LinkViewer = LinkViewer;
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -66549,7 +66549,7 @@ function MediaPlaceholder({
 }
 
 /**
- * @see https://github.com/WordPress/gutenberg/blob/HEAD/packages/block-editor/src/components/media-placeholder/README.md
+ * @see https://github.com/NotMattPress/gutenberg/blob/HEAD/packages/block-editor/src/components/media-placeholder/README.md
  */
 /* harmony default export */ const media_placeholder = ((0,external_wp_components_namespaceObject.withFilters)('editor.MediaPlaceholder')(MediaPlaceholder));
 
@@ -66594,7 +66594,7 @@ const PanelColorSettings = ({
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -66652,7 +66652,7 @@ const FormatToolbar = () => {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/rich-text/format-toolbar-container.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -66703,7 +66703,7 @@ const FormatToolbarContainer = ({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/rich-text/use-mark-persistent.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -66747,7 +66747,7 @@ function useMarkPersistent({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/rich-text/use-format-types.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -66873,7 +66873,7 @@ function useFormatTypes({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/rich-text/event-listeners/before-input-rules.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -66960,7 +66960,7 @@ const wrapSelectionSettings = ['`', '"', "'", '“”', '‘’'];
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/rich-text/prevent-event-discovery.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 function preventEventDiscovery(value) {
@@ -66982,7 +66982,7 @@ function preventEventDiscovery(value) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/rich-text/event-listeners/input-rules.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -67138,7 +67138,7 @@ function findSelection(blocks) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/rich-text/event-listeners/remove-browser-shortcuts.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -67192,7 +67192,7 @@ function findSelection(blocks) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/rich-text/event-listeners/undo-automatic-change.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -67238,7 +67238,7 @@ function findSelection(blocks) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/rich-text/utils.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -67295,7 +67295,7 @@ function createLinkInParagraph(url, onReplace) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/rich-text/event-listeners/paste-handler.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -67418,7 +67418,7 @@ function createLinkInParagraph(url, onReplace) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/rich-text/event-listeners/delete.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -67470,7 +67470,7 @@ function createLinkInParagraph(url, onReplace) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/rich-text/event-listeners/enter.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -67583,7 +67583,7 @@ function createLinkInParagraph(url, onReplace) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/rich-text/event-listeners/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -67620,7 +67620,7 @@ function useEventListeners(props) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/rich-text/format-edit.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -67683,7 +67683,7 @@ function FormatEdit({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/rich-text/content.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -67709,7 +67709,7 @@ function valueToHTMLString(value, multiline) {
       since: '6.1',
       version: '6.3',
       alternative: 'value prop as string',
-      link: 'https://developer.wordpress.org/block-editor/how-to-guides/block-tutorial/introducing-attributes-and-editable-fields/'
+      link: 'https://developer.notmatt.press/block-editor/how-to-guides/block-tutorial/introducing-attributes-and-editable-fields/'
     });
     return external_wp_blocks_namespaceObject.children.toHTML(value);
   }
@@ -67721,7 +67721,7 @@ function valueToHTMLString(value, multiline) {
 
   // To do: create a toReactComponent method on RichTextData, which we
   // might in the future also use for the editable tree. See
-  // https://github.com/WordPress/gutenberg/pull/41655.
+  // https://github.com/NotMattPress/gutenberg/pull/41655.
   return value.toHTMLString();
 }
 function Content({
@@ -67742,7 +67742,7 @@ function Content({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/rich-text/multiline.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -67771,7 +67771,7 @@ function RichTextMultiline({
     since: '6.1',
     version: '6.3',
     alternative: 'nested blocks (InnerBlocks)',
-    link: 'https://developer.wordpress.org/block-editor/how-to-guides/block-tutorial/nested-blocks-inner-blocks/'
+    link: 'https://developer.notmatt.press/block-editor/how-to-guides/block-tutorial/nested-blocks-inner-blocks/'
   });
   const {
     clientId
@@ -67862,7 +67862,7 @@ function RichTextMultiline({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/rich-text/with-deprecations.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -67885,7 +67885,7 @@ function withDeprecations(Component) {
         since: '6.1',
         version: '6.3',
         alternative: 'value prop as string',
-        link: 'https://developer.wordpress.org/block-editor/how-to-guides/block-tutorial/introducing-attributes-and-editable-fields/'
+        link: 'https://developer.notmatt.press/block-editor/how-to-guides/block-tutorial/introducing-attributes-and-editable-fields/'
       });
       value = external_wp_blocks_namespaceObject.children.toHTML(props.value);
       onChange = newValue => props.onChange(external_wp_blocks_namespaceObject.children.fromDOM((0,external_wp_richText_namespaceObject.__unstableCreateElement)(document, newValue).childNodes));
@@ -67907,7 +67907,7 @@ function withDeprecations(Component) {
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -68303,7 +68303,7 @@ PrivateRichText.isEmpty = value => {
 // This is the public API for the RichText component.
 // We wrap the PrivateRichText component to hide some props from the public API.
 /**
- * @see https://github.com/WordPress/gutenberg/blob/HEAD/packages/block-editor/src/components/rich-text/README.md
+ * @see https://github.com/NotMattPress/gutenberg/blob/HEAD/packages/block-editor/src/components/rich-text/README.md
  */
 const PublicForwardedRichTextContainer = (0,external_wp_element_namespaceObject.forwardRef)((props, ref) => {
   const context = useBlockEditContext();
@@ -68363,7 +68363,7 @@ PublicForwardedRichTextContainer.isEmpty = value => {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/editable-text/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -68403,7 +68403,7 @@ EditableText.Content = ({
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -68413,7 +68413,7 @@ EditableText.Content = ({
 
 
 /**
- * @see https://github.com/WordPress/gutenberg/blob/HEAD/packages/block-editor/src/components/plain-text/README.md
+ * @see https://github.com/NotMattPress/gutenberg/blob/HEAD/packages/block-editor/src/components/plain-text/README.md
  */
 
 const PlainText = (0,external_wp_element_namespaceObject.forwardRef)(({
@@ -68442,7 +68442,7 @@ const PlainText = (0,external_wp_element_namespaceObject.forwardRef)(({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/responsive-block-control/label.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -68477,7 +68477,7 @@ function ResponsiveBlockControlLabel({
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -68558,7 +68558,7 @@ function ResponsiveBlockControl(props) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/rich-text/shortcut.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -68592,7 +68592,7 @@ function RichTextShortcut({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/rich-text/toolbar-button.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -68622,7 +68622,7 @@ function RichTextToolbarButton({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/rich-text/input-event.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -68654,7 +68654,7 @@ function __unstableRichTextInputEvent({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/tool-selector/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -68736,7 +68736,7 @@ function ToolSelector(props, ref) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/unit-control/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -68762,7 +68762,7 @@ function UnitControl({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/arrow-left.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -68777,7 +68777,7 @@ const arrowLeft = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/url-input/button.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -68859,13 +68859,13 @@ class URLInputButton extends external_wp_element_namespaceObject.Component {
 }
 
 /**
- * @see https://github.com/WordPress/gutenberg/blob/HEAD/packages/block-editor/src/components/url-input/README.md
+ * @see https://github.com/NotMattPress/gutenberg/blob/HEAD/packages/block-editor/src/components/url-input/README.md
  */
 /* harmony default export */ const url_input_button = (URLInputButton);
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/image.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -68880,7 +68880,7 @@ const image_image = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/url-popover/image-url-input-ui.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -69181,7 +69181,7 @@ const ImageURLInputUI = ({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/preview-options/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 function PreviewOptions() {
@@ -69193,7 +69193,7 @@ function PreviewOptions() {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/use-resize-canvas/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -69261,7 +69261,7 @@ function useResizeCanvas(deviceType) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/skip-to-selected-block/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -69275,7 +69275,7 @@ function useResizeCanvas(deviceType) {
 
 
 /**
- * @see https://github.com/WordPress/gutenberg/blob/HEAD/packages/block-editor/src/components/skip-to-selected-block/README.md
+ * @see https://github.com/NotMattPress/gutenberg/blob/HEAD/packages/block-editor/src/components/skip-to-selected-block/README.md
  */
 
 function SkipToSelectedBlock() {
@@ -69300,7 +69300,7 @@ function SkipToSelectedBlock() {
 const external_wp_wordcount_namespaceObject = window["wp"]["wordcount"];
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/multi-selection-inspector/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -69349,7 +69349,7 @@ function MultiSelectionInspector() {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/cog.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -69366,7 +69366,7 @@ const cog = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(extern
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/styles.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -69383,7 +69383,7 @@ const styles = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(ext
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/inspector-controls-tabs/utils.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -69411,7 +69411,7 @@ const TAB_LIST_VIEW = {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/inspector-controls-tabs/advanced-controls-panel.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -69440,7 +69440,7 @@ const AdvancedControls = () => {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/inspector-controls-tabs/position-controls-panel.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -69521,7 +69521,7 @@ const SettingsTab = ({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/inspector-controls-tabs/styles-tab.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -69587,7 +69587,7 @@ const useIsListViewTabDisabled = blockName => {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/inspector-controls-tabs/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -69667,7 +69667,7 @@ function InspectorControlsTabs({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/inspector-controls-tabs/use-inspector-controls-tabs.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -69745,7 +69745,7 @@ function useInspectorControlsTabs(blockName) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/block-inspector/useBlockInspectorAnimationSettings.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -69782,7 +69782,7 @@ function useBlockInspectorAnimationSettings(blockType) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/block-info-slot-fill/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -69815,7 +69815,7 @@ BlockInfo.Slot = props => /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObje
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/block-quick-navigation/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -69897,7 +69897,7 @@ function BlockQuickNavigationItem({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/block-inspector/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -70166,13 +70166,13 @@ const BlockInspectorSingleBlock = ({
 };
 
 /**
- * @see https://github.com/WordPress/gutenberg/blob/HEAD/packages/block-editor/src/components/block-inspector/README.md
+ * @see https://github.com/NotMattPress/gutenberg/blob/HEAD/packages/block-editor/src/components/block-inspector/README.md
  */
 /* harmony default export */ const block_inspector = (BlockInspector);
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/copy-handler/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -70212,7 +70212,7 @@ function CopyHandler(props) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/inserter/library.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -70279,7 +70279,7 @@ function PublicInserterLibrary(props, ref) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/selection-scroll-into-view/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -70299,7 +70299,7 @@ function MultiSelectScrollIntoView() {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/typewriter/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -70519,7 +70519,7 @@ const TypewriterOrIEBypass = isIE ? props => props.children : Typewriter;
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/recursion-provider/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -70620,7 +70620,7 @@ const DeprecatedExperimentalUseHasRecursion = (...args) => {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/inspector-popover-header/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -70674,7 +70674,7 @@ function InspectorPopoverHeader({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/publish-date-time-picker/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -70880,7 +70880,7 @@ const __experimentalGetElementClassName = element => {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/global-styles/image-settings-panel.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -70947,7 +70947,7 @@ function ImageSettingsPanel({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/global-styles/advanced-panel.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -71185,7 +71185,7 @@ function memize(fn, options) {
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -71420,7 +71420,7 @@ function getGlobalStylesChanges(next, previous, options = {}) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/rich-text/get-rich-text-values.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -71509,7 +71509,7 @@ function getRichTextValues(blocks = []) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/resizable-box-popover/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -71535,7 +71535,7 @@ function ResizableBoxPopover({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/block-removal-warning-modal/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -71603,7 +71603,7 @@ function BlockRemovalWarningModal({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/dimensions-tool/scale-tool.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -73993,7 +73993,7 @@ function _EMOTION_STRINGIFIED_CSS_ERROR__() { return "You have tried to stringif
  */
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -74101,7 +74101,7 @@ function WidthHeightTool({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/dimensions-tool/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -74309,7 +74309,7 @@ function DimensionsTool({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/components/resolution-tool/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 

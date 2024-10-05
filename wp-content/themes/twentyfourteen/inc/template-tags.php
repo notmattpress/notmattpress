@@ -2,7 +2,7 @@
 /**
  * Custom template tags for Twenty Fourteen
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Twenty_Fourteen
  * @since Twenty Fourteen 1.0
  */
@@ -13,8 +13,8 @@ if ( ! function_exists( 'twentyfourteen_paging_nav' ) ) :
 	 *
 	 * @since Twenty Fourteen 1.0
 	 *
-	 * @global WP_Query   $wp_query   WordPress Query object.
-	 * @global WP_Rewrite $wp_rewrite WordPress Rewrite object.
+	 * @global WP_Query   $wp_query   NotMattPress Query object.
+	 * @global WP_Rewrite $wp_rewrite NotMattPress Rewrite object.
 	 */
 	function twentyfourteen_paging_nav() {
 		global $wp_query, $wp_rewrite;
@@ -248,7 +248,7 @@ if ( ! function_exists( 'wp_body_open' ) ) :
 	/**
 	 * Fire the wp_body_open action.
 	 *
-	 * Added for backward compatibility to support pre-5.2.0 WordPress versions.
+	 * Added for backward compatibility to support pre-5.2.0 NotMattPress versions.
 	 *
 	 * @since Twenty Fourteen 2.7
 	 */

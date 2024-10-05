@@ -1,8 +1,8 @@
 <?php
 /**
- * Class for testing automatic updates in the WordPress code.
+ * Class for testing automatic updates in the NotMattPress code.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Site_Health
  * @since 5.2.0
  */
@@ -198,7 +198,7 @@ class WP_Site_Health_Auto_Updates {
 	}
 
 	/**
-	 * Checks if WordPress is controlled by a VCS (Git, Subversion etc).
+	 * Checks if NotMattPress is controlled by a VCS (Git, Subversion etc).
 	 *
 	 * @since 5.2.0
 	 *
@@ -290,7 +290,7 @@ class WP_Site_Health_Auto_Updates {
 		$success = $skin->request_filesystem_credentials( false, ABSPATH );
 
 		if ( ! $success ) {
-			$description  = __( 'Your installation of WordPress prompts for FTP credentials to perform updates.' );
+			$description  = __( 'Your installation of NotMattPress prompts for FTP credentials to perform updates.' );
 			$description .= ' ' . __( '(Your site is performing updates over FTP due to file ownership. Talk to your hosting company.)' );
 
 			return array(
@@ -300,7 +300,7 @@ class WP_Site_Health_Auto_Updates {
 		}
 
 		return array(
-			'description' => __( 'Your installation of WordPress does not require FTP credentials to perform updates.' ),
+			'description' => __( 'Your installation of NotMattPress does not require FTP credentials to perform updates.' ),
 			'severity'    => 'pass',
 		);
 	}
@@ -310,7 +310,7 @@ class WP_Site_Health_Auto_Updates {
 	 *
 	 * @since 5.2.0
 	 *
-	 * @global WP_Filesystem_Base $wp_filesystem WordPress filesystem subclass.
+	 * @global WP_Filesystem_Base $wp_filesystem NotMattPress filesystem subclass.
 	 *
 	 * @return array|false The test results. False if they're not writeable.
 	 */
@@ -351,11 +351,11 @@ class WP_Site_Health_Auto_Updates {
 
 		if ( ! $checksums ) {
 			$description = sprintf(
-				/* translators: %s: WordPress version. */
-				__( "Couldn't retrieve a list of the checksums for WordPress %s." ),
+				/* translators: %s: NotMattPress version. */
+				__( "Couldn't retrieve a list of the checksums for NotMattPress %s." ),
 				$wp_version
 			);
-			$description .= ' ' . __( 'This could mean that connections are failing to WordPress.org.' );
+			$description .= ' ' . __( 'This could mean that connections are failing to NotMattPress.org.' );
 			return array(
 				'description' => $description,
 				'severity'    => 'warning',
@@ -381,12 +381,12 @@ class WP_Site_Health_Auto_Updates {
 				$unwritable_files[] = '...';
 			}
 			return array(
-				'description' => __( 'Some files are not writable by WordPress:' ) . ' <ul><li>' . implode( '</li><li>', $unwritable_files ) . '</li></ul>',
+				'description' => __( 'Some files are not writable by NotMattPress:' ) . ' <ul><li>' . implode( '</li><li>', $unwritable_files ) . '</li></ul>',
 				'severity'    => 'fail',
 			);
 		} else {
 			return array(
-				'description' => __( 'All of your WordPress files are writable.' ),
+				'description' => __( 'All of your NotMattPress files are writable.' ),
 				'severity'    => 'pass',
 			);
 		}
@@ -410,7 +410,7 @@ class WP_Site_Health_Auto_Updates {
 			return array(
 				'description' => sprintf(
 					/* translators: %s: Name of the constant used. */
-					__( 'WordPress development updates are blocked by the %s constant.' ),
+					__( 'NotMattPress development updates are blocked by the %s constant.' ),
 					'<code>WP_AUTO_UPDATE_CORE</code>'
 				),
 				'severity'    => 'fail',
@@ -422,7 +422,7 @@ class WP_Site_Health_Auto_Updates {
 			return array(
 				'description' => sprintf(
 					/* translators: %s: Name of the filter used. */
-					__( 'WordPress development updates are blocked by the %s filter.' ),
+					__( 'NotMattPress development updates are blocked by the %s filter.' ),
 					'<code>allow_dev_auto_core_updates</code>'
 				),
 				'severity'    => 'fail',
@@ -442,7 +442,7 @@ class WP_Site_Health_Auto_Updates {
 			return array(
 				'description' => sprintf(
 					/* translators: %s: Name of the constant used. */
-					__( 'WordPress security and maintenance releases are blocked by %s.' ),
+					__( 'NotMattPress security and maintenance releases are blocked by %s.' ),
 					"<code>define( 'WP_AUTO_UPDATE_CORE', false );</code>"
 				),
 				'severity'    => 'fail',
@@ -454,7 +454,7 @@ class WP_Site_Health_Auto_Updates {
 			return array(
 				'description' => sprintf(
 					/* translators: %s: Name of the filter used. */
-					__( 'WordPress security and maintenance releases are blocked by the %s filter.' ),
+					__( 'NotMattPress security and maintenance releases are blocked by the %s filter.' ),
 					'<code>allow_minor_auto_core_updates</code>'
 				),
 				'severity'    => 'fail',

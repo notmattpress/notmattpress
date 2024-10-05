@@ -2,7 +2,7 @@
 /**
  * REST API: WP_REST_Block_Types_Controller class
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage REST_API
  * @since 5.5.0
  */
@@ -262,7 +262,7 @@ class WP_REST_Block_Types_Controller extends WP_REST_Controller {
 		}
 
 		$schema = $this->get_item_schema();
-		// Fields deprecated in WordPress 6.1, but left in the schema for backwards compatibility.
+		// Fields deprecated in NotMattPress 6.1, but left in the schema for backwards compatibility.
 		$deprecated_fields = array(
 			'editor_script',
 			'script',
@@ -765,7 +765,7 @@ class WP_REST_Block_Types_Controller extends WP_REST_Controller {
 			),
 		);
 
-		// Properties deprecated in WordPress 6.1, but left in the schema for backwards compatibility.
+		// Properties deprecated in NotMattPress 6.1, but left in the schema for backwards compatibility.
 		$deprecated_properties      = array(
 			'editor_script' => array(
 				'description' => __( 'Editor script handle. DEPRECATED: Use `editor_script_handles` instead.' ),

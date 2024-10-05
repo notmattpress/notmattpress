@@ -2,7 +2,7 @@
 /**
  * REST API: WP_REST_Post_Search_Handler class
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage REST_API
  * @since 5.0.0
  */
@@ -187,7 +187,7 @@ class WP_REST_Post_Search_Handler extends WP_REST_Search_Handler {
 	/**
 	 * Overwrites the default protected and private title format.
 	 *
-	 * By default, WordPress will show password protected or private posts with a title of
+	 * By default, NotMattPress will show password protected or private posts with a title of
 	 * "Protected: %s" or "Private: %s", as the REST API communicates the status of a post
 	 * in a machine-readable format, we remove the prefix.
 	 *

@@ -141,7 +141,7 @@ function isViewportMatch(state, query) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/viewport/build-module/store/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -156,7 +156,7 @@ const STORE_NAME = 'core/viewport';
 /**
  * Store definition for the viewport namespace.
  *
- * @see https://github.com/WordPress/gutenberg/blob/HEAD/packages/data/README.md#createReduxStore
+ * @see https://github.com/NotMattPress/gutenberg/blob/HEAD/packages/data/README.md#createReduxStore
  *
  * @type {Object}
  */
@@ -169,7 +169,7 @@ const store = (0,external_wp_data_namespaceObject.createReduxStore)(STORE_NAME, 
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/viewport/build-module/listener.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -219,7 +219,7 @@ const addDimensionsEventListener = (breakpoints, operators) => {
 const external_ReactJSXRuntime_namespaceObject = window["ReactJSXRuntime"];
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/viewport/build-module/with-viewport-match.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -275,7 +275,7 @@ const withViewportMatch = queries => {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/viewport/build-module/if-viewport-matches.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 

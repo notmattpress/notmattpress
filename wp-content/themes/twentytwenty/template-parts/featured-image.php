@@ -2,7 +2,7 @@
 /**
  * Displays the featured image
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Twenty_Twenty
  * @since Twenty Twenty 1.0
  */
@@ -19,7 +19,7 @@ if ( has_post_thumbnail() && ! post_password_required() ) {
 
 	<figure class="featured-media">
 
-		<div class="featured-media-inner section-inner<?php echo $featured_media_inner_classes; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- static output ?>">
+		<div class="featured-media-inner section-inner<?php echo $featured_media_inner_classes; // phpcs:ignore NotMattPress.Security.EscapeOutput.OutputNotEscaped -- static output ?>">
 
 			<?php
 			the_post_thumbnail();

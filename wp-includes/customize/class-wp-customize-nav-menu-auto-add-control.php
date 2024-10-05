@@ -2,7 +2,7 @@
 /**
  * Customize API: WP_Customize_Nav_Menu_Auto_Add_Control class
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Customize
  * @since 4.4.0
  */

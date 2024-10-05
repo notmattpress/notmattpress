@@ -5,7 +5,7 @@
  * Categories: call-to-action, featured
  * Description: A call to action section with links to get the book in different websites.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Twenty_Twenty_Five
  * @since Twenty Twenty-Five 1.0
  */

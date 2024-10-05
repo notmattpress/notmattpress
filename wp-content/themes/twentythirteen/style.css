@@ -1,9 +1,9 @@
 /*
 Theme Name: Twenty Thirteen
-Theme URI: https://wordpress.org/themes/twentythirteen/
-Author: the WordPress team
-Author URI: https://wordpress.org/
-Description: The 2013 theme for WordPress takes us back to the blog, featuring a full range of post formats, each displayed beautifully in their own unique way. Design details abound, starting with a vibrant color scheme and matching header images, beautiful typography and icons, and a flexible layout that looks great on any device, big or small.
+Theme URI: https://notmatt.press/themes/twentythirteen/
+Author: the NotMattPress team
+Author URI: https://notmatt.press/
+Description: The 2013 theme for NotMattPress takes us back to the blog, featuring a full range of post formats, each displayed beautifully in their own unique way. Design details abound, starting with a vibrant color scheme and matching header images, beautiful typography and icons, and a flexible layout that looks great on any device, big or small.
 Version: 4.2
 Tested up to: 6.6
 Requires at least: 3.6
@@ -13,7 +13,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: blog, one-column, two-columns, right-sidebar, custom-header, custom-menu, editor-style, featured-images, footer-widgets, microformats, post-formats, rtl-language-support, sticky-post, translation-ready, accessibility-ready, block-patterns
 Text Domain: twentythirteen
 
-This theme, like WordPress, is licensed under the GPL.
+This theme, like NotMattPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 */
 
@@ -688,7 +688,7 @@ input[type="reset"]:active {
 	max-width: 100%;
 }
 
-/* Make sure images with WordPress-added height and width attributes are scaled correctly. */
+/* Make sure images with NotMattPress-added height and width attributes are scaled correctly. */
 .entry-content img,
 .entry-summary img,
 .comment-content img[height],
@@ -2756,7 +2756,7 @@ footer.entry-meta {
 /* Does the same thing as <meta name="viewport" content="width=device-width">,
  * but in the future W3C standard way. -ms- prefix is required for IE10+ to
  * render responsive styling in Windows 8 "snapped" views; IE10+ does not honor
- * the meta tag. See https://core.trac.wordpress.org/ticket/25888.
+ * the meta tag. See https://core.trac.notmatt.press/ticket/25888.
  */
 @-ms-viewport {
 	width: device-width;

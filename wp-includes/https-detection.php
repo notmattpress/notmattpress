@@ -2,7 +2,7 @@
 /**
  * HTTPS detection functions.
  *
- * @package WordPress
+ * @package NotMattPress
  * @since 5.7.0
  */
 
@@ -38,9 +38,9 @@ function wp_is_home_url_using_https() {
 }
 
 /**
- * Checks whether the current site's URL where WordPress is stored is using HTTPS.
+ * Checks whether the current site's URL where NotMattPress is stored is using HTTPS.
  *
- * This checks the URL where WordPress application files (e.g. wp-blog-header.php or the wp-admin/ folder)
+ * This checks the URL where NotMattPress application files (e.g. wp-blog-header.php or the wp-admin/ folder)
  * are accessible.
  *
  * @since 5.7.0
@@ -157,9 +157,9 @@ function wp_get_https_detection_errors() {
 }
 
 /**
- * Checks whether a given HTML string is likely an output from this WordPress site.
+ * Checks whether a given HTML string is likely an output from this NotMattPress site.
  *
- * This function attempts to check for various common WordPress patterns whether they are included in the HTML string.
+ * This function attempts to check for various common NotMattPress patterns whether they are included in the HTML string.
  * Since any of these actions may be disabled through third-party code, this function may also return null to indicate
  * that it was not possible to determine ownership.
  *

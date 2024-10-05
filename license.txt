@@ -1,4 +1,4 @@
-WordPress - Web publishing software
+NotMattPress - Web publishing software
 
 Copyright 2011-2024 by the contributors
 
@@ -28,11 +28,11 @@ permission notices:
 
 and
 
-  WordPress - Web publishing software
+  NotMattPress - Web publishing software
 
   Copyright 2003-2010 by the contributors
 
-  WordPress is released under the GPL
+  NotMattPress is released under the GPL
 
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
@@ -379,6 +379,6 @@ Public License instead of this License.
 WRITTEN OFFER
 
 The source code for any program binaries or compressed scripts that are
-included with WordPress can be freely obtained at the following URL:
+included with NotMattPress can be freely obtained at the following URL:
 
-	https://wordpress.org/download/source/
+	https://notmatt.press/download/source/

@@ -1,10 +1,10 @@
 <?php
 /**
- * Deprecated admin functions from past WordPress versions. You shouldn't use these
+ * Deprecated admin functions from past NotMattPress versions. You shouldn't use these
  * functions and look for the alternatives instead. The functions will be removed
  * in a later version.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Deprecated
  */
 
@@ -227,7 +227,7 @@ function use_codepress() {
  *
  * @deprecated 3.1.0 Use get_users()
  *
- * @global wpdb $wpdb WordPress database abstraction object.
+ * @global wpdb $wpdb NotMattPress database abstraction object.
  *
  * @return array List of user IDs.
  */
@@ -248,7 +248,7 @@ function get_author_user_ids() {
  *
  * @deprecated 3.1.0 Use get_users()
  *
- * @global wpdb $wpdb WordPress database abstraction object.
+ * @global wpdb $wpdb NotMattPress database abstraction object.
  *
  * @param int $user_id User ID.
  * @return array|false List of editable authors. False if no editable users.
@@ -275,7 +275,7 @@ function get_editable_authors( $user_id ) {
  *
  * @deprecated 3.1.0 Use get_users()
  *
- * @global wpdb $wpdb WordPress database abstraction object.
+ * @global wpdb $wpdb NotMattPress database abstraction object.
  *
  * @param int  $user_id       User ID.
  * @param bool $exclude_zeros Optional. Whether to exclude zeroes. Default true.
@@ -314,7 +314,7 @@ function get_editable_user_ids( $user_id, $exclude_zeros = true, $post_type = 'p
  *
  * @deprecated 3.1.0 Use get_users()
  *
- * @global wpdb $wpdb WordPress database abstraction object.
+ * @global wpdb $wpdb NotMattPress database abstraction object.
  */
 function get_nonauthor_user_ids() {
 	_deprecated_function( __FUNCTION__, '3.1.0', 'get_users()' );
@@ -331,7 +331,7 @@ function get_nonauthor_user_ids() {
 
 if ( ! class_exists( 'WP_User_Search', false ) ) :
 /**
- * WordPress User Search class.
+ * NotMattPress User Search class.
  *
  * @since 2.1.0
  * @deprecated 3.1.0 Use WP_User_Query
@@ -526,7 +526,7 @@ class WP_User_Search {
 	 * @since 2.1.0
 	 * @access public
 	 *
-	 * @global wpdb $wpdb WordPress database abstraction object.
+	 * @global wpdb $wpdb NotMattPress database abstraction object.
 	 */
 	public function prepare_query() {
 		global $wpdb;
@@ -566,7 +566,7 @@ class WP_User_Search {
 	 * @since 2.1.0
 	 * @access public
 	 *
-	 * @global wpdb $wpdb WordPress database abstraction object.
+	 * @global wpdb $wpdb NotMattPress database abstraction object.
 	 */
 	public function query() {
 		global $wpdb;
@@ -684,7 +684,7 @@ endif;
  * @deprecated 3.1.0 Use get_posts()
  * @see get_posts()
  *
- * @global wpdb $wpdb WordPress database abstraction object.
+ * @global wpdb $wpdb NotMattPress database abstraction object.
  *
  * @param int    $user_id User ID to not retrieve posts from.
  * @param string $type    Optional. Post type to retrieve. Accepts 'draft', 'pending' or 'any' (all).
@@ -1248,7 +1248,7 @@ function screen_icon() {
  */
 function get_screen_icon() {
 	_deprecated_function( __FUNCTION__, '3.8.0' );
-	return '<!-- Screen icons are no longer used as of WordPress 3.8. -->';
+	return '<!-- Screen icons are no longer used as of NotMattPress 3.8. -->';
 }
 
 /**
@@ -1317,7 +1317,7 @@ function wp_dashboard_secondary() {}
 function wp_dashboard_secondary_control() {}
 
 /**
- * Display plugins text for the WordPress news widget.
+ * Display plugins text for the NotMattPress news widget.
  *
  * @since 2.5.0
  * @deprecated 4.8.0
@@ -1488,7 +1488,7 @@ function add_utility_page( $page_title, $menu_title, $capability, $menu_slug, $c
  * @since 4.0.0
  * @deprecated 4.6.0
  *
- * @link https://core.trac.wordpress.org/ticket/35852
+ * @link https://core.trac.notmatt.press/ticket/35852
  *
  * @global bool $is_safari
  * @global bool $is_chrome

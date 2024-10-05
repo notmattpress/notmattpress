@@ -5,7 +5,7 @@
  * Categories: about
  * Description: A section with overlapping images, and a description.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Twenty_Twenty_Five
  * @since Twenty Twenty-Five 1.0
  */

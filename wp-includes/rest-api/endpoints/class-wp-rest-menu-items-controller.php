@@ -2,7 +2,7 @@
 /**
  * REST API: WP_REST_Menu_Items_Controller class
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage REST_API
  * @since 5.9.0
  */
@@ -328,9 +328,9 @@ class WP_REST_Menu_Items_Controller extends WP_REST_Posts_Controller {
 	protected function prepare_item_for_database( $request ) {
 		$menu_item_db_id = $request['id'];
 		$menu_item_obj   = $this->get_nav_menu_item( $menu_item_db_id );
-		// Need to persist the menu item data. See https://core.trac.wordpress.org/ticket/28138
+		// Need to persist the menu item data. See https://core.trac.notmatt.press/ticket/28138
 		if ( ! is_wp_error( $menu_item_obj ) ) {
-			// Correct the menu position if this was the first item. See https://core.trac.wordpress.org/ticket/28140
+			// Correct the menu position if this was the first item. See https://core.trac.notmatt.press/ticket/28140
 			$position = ( 0 === $menu_item_obj->menu_order ) ? 1 : $menu_item_obj->menu_order;
 
 			$prepared_nav_item = array(
