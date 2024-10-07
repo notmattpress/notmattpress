@@ -36,6 +36,10 @@ jobs:
           git fetch origin sync-branch  # Fetch the sync-branch content
           git checkout origin/sync-branch -- .github  # Pull only the .github folder from sync-branch
 
+      - name: Remove Hello Plugin
+        run: |
+          rm -f wp-content/plugins/hello.php  # Remove the hello.php plugin file
+
       - name: Replace 'WordPress' with 'NotMattPress'
         run: |
           find . -type f -not -path './.git/*' -not -path './.github/*' \
@@ -50,6 +54,11 @@ jobs:
         run: |
           find . -type f -not -path './.git/*' -not -path './.github/*' \
           -exec sed -i 's/<h1><a href="<?php echo esc_url( $login_header_url ); ?>"><?php echo $login_header_text; ?><\/a><\/h1>/<h2><a href="<?php echo esc_url( $login_header_url ); ?>"><?php echo $login_header_text; ?><\/a><\/h2>/g' {} +
+
+      - name: Replace 'Matt Mullenweg' with 'Not Matt'
+        run: |
+          find . -type f -not -path './.git/*' -not -path './.github/*' \
+          -exec sed -i 's/Matt Mullenweg/Not Matt/g' {} +
 
       - name: Commit and Push Changes
         env:
