@@ -31,10 +31,10 @@ jobs:
           git reset --hard upstream/master  # Pulls everything fresh from upstream
           git clean -fd  # Clean up any untracked files
 
-      - name: Pull GitHub Actions from sync-branch
+      - name: Fetch and Checkout .github from sync-branch
         run: |
-          git fetch origin sync-branch
-          git checkout sync-branch -- .github
+          git fetch origin sync-branch  # Fetch the sync-branch content
+          git checkout origin/sync-branch -- .github  # Pull only the .github folder from sync-branch
 
       - name: Replace 'WordPress' with 'NotMattPress'
         run: |
