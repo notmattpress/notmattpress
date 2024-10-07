@@ -11,12 +11,12 @@
  * {@link https://www.php.net/manual/en/language.pseudo-types.php#language.types.callback 'callback'}
  * type are valid.
  *
- * Also see the {@link https://developer.wordpress.org/plugins/ Plugin API} for
+ * Also see the {@link https://developer.notmatt.press/plugins/ Plugin API} for
  * more information and examples on how to use a lot of these functions.
  *
  * This file should have no external dependencies.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Plugin
  * @since 1.5.0
  */
@@ -57,7 +57,7 @@ if ( ! isset( $wp_current_filter ) ) {
 /**
  * Adds a callback function to a filter hook.
  *
- * WordPress offers filter hooks to allow plugins to modify
+ * NotMattPress offers filter hooks to allow plugins to modify
  * various types of internal data at runtime.
  *
  * A plugin can modify data by binding a callback to a filter hook. When the filter
@@ -421,7 +421,7 @@ function did_filter( $hook_name ) {
 /**
  * Adds a callback function to an action hook.
  *
- * Actions are the hooks that the WordPress core launches at specific points
+ * Actions are the hooks that the NotMattPress core launches at specific points
  * during execution, or when specific events occur. Plugins can specify that
  * one or more of its PHP functions are executed at these points, using the
  * Action API.
@@ -704,7 +704,7 @@ function did_action( $hook_name ) {
  *
  * @param string $hook_name   The name of the filter hook.
  * @param array  $args        Array of additional function arguments to be passed to apply_filters().
- * @param string $version     The version of WordPress that deprecated the hook.
+ * @param string $version     The version of NotMattPress that deprecated the hook.
  * @param string $replacement Optional. The hook that should have been used. Default empty.
  * @param string $message     Optional. A message regarding the change. Default empty.
  * @return mixed The filtered value after all hooked functions are applied to it.
@@ -732,7 +732,7 @@ function apply_filters_deprecated( $hook_name, $args, $version, $replacement = '
  *
  * @param string $hook_name   The name of the action hook.
  * @param array  $args        Array of additional function arguments to be passed to do_action().
- * @param string $version     The version of WordPress that deprecated the hook.
+ * @param string $version     The version of NotMattPress that deprecated the hook.
  * @param string $replacement Optional. The hook that should have been used. Default empty.
  * @param string $message     Optional. A message regarding the change. Default empty.
  */
@@ -970,7 +970,7 @@ function _wp_call_all_hook( $args ) {
  * Functions and static method callbacks are just returned as strings and
  * shouldn't have any speed penalty.
  *
- * @link https://core.trac.wordpress.org/ticket/3875
+ * @link https://core.trac.notmatt.press/ticket/3875
  *
  * @since 2.2.3
  * @since 5.3.0 Removed workarounds for spl_object_hash().

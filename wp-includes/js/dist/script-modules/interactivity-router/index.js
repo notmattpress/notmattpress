@@ -72,7 +72,7 @@ const interactivity_namespaceObject = x({ ["getConfig"]: () => (__WEBPACK_EXTERN
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/interactivity-router/build-module/index.js
 var _getConfig$navigation;
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -89,7 +89,7 @@ const {
   parseServerData,
   populateServerData,
   batch
-} = (0,interactivity_namespaceObject.privateApis)('I acknowledge that using private APIs means my theme or plugin will inevitably break in the next version of WordPress.');
+} = (0,interactivity_namespaceObject.privateApis)('I acknowledge that using private APIs means my theme or plugin will inevitably break in the next version of NotMattPress.');
 // Check if the navigation mode is full page or region based.
 const navigationMode = (_getConfig$navigation = (0,interactivity_namespaceObject.getConfig)('core/router').navigationMode) !== null && _getConfig$navigation !== void 0 ? _getConfig$navigation : 'regionBased';
 

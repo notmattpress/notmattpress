@@ -2,14 +2,14 @@
 /**
  * General settings administration panel.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Administration
  */
 
-/** WordPress Administration Bootstrap */
+/** NotMattPress Administration Bootstrap */
 require_once __DIR__ . '/admin.php';
 
-/** WordPress Translation Installation API */
+/** NotMattPress Translation Installation API */
 require_once ABSPATH . 'wp-admin/includes/translation-install.php';
 
 if ( ! current_user_can( 'manage_options' ) ) {
@@ -28,22 +28,22 @@ $options_help = '<p>' . __( 'The fields on this screen determine some of the bas
 	'<p>' . __( 'Most themes show the site title at the top of every page, in the title bar of the browser, and as the identifying name for syndicated feeds. Many themes also show the tagline.' ) . '</p>';
 
 if ( ! is_multisite() ) {
-	$options_help .= '<p>' . __( 'Two terms you will want to know are the WordPress URL and the site URL. The WordPress URL is where the core WordPress installation files are, and the site URL is the address a visitor uses in the browser to go to your site.' ) . '</p>' .
+	$options_help .= '<p>' . __( 'Two terms you will want to know are the NotMattPress URL and the site URL. The NotMattPress URL is where the core NotMattPress installation files are, and the site URL is the address a visitor uses in the browser to go to your site.' ) . '</p>' .
 		'<p>' . sprintf(
 			/* translators: %s: Documentation URL. */
-			__( 'Though the terms refer to two different concepts, in practice, they can be the same address or different. For example, you can have the core WordPress installation files in the root directory (<code>https://example.com</code>), in which case the two URLs would be the same. Or the <a href="%s">WordPress files can be in a subdirectory</a> (<code>https://example.com/wordpress</code>). In that case, the WordPress URL and the site URL would be different.' ),
-			__( 'https://developer.wordpress.org/advanced-administration/server/wordpress-in-directory/' )
+			__( 'Though the terms refer to two different concepts, in practice, they can be the same address or different. For example, you can have the core NotMattPress installation files in the root directory (<code>https://example.com</code>), in which case the two URLs would be the same. Or the <a href="%s">NotMattPress files can be in a subdirectory</a> (<code>https://example.com/wordpress</code>). In that case, the NotMattPress URL and the site URL would be different.' ),
+			__( 'https://developer.notmatt.press/advanced-administration/server/wordpress-in-directory/' )
 		) . '</p>' .
 		'<p>' . sprintf(
 			/* translators: 1: http://, 2: https:// */
-			__( 'Both WordPress URL and site URL can start with either %1$s or %2$s. A URL starting with %2$s requires an SSL certificate, so be sure that you have one before changing to %2$s. With %2$s, a padlock will appear next to the address in the browser address bar. Both %2$s and the padlock signal that your site meets some basic security requirements, which can build trust with your visitors and with search engines.' ),
+			__( 'Both NotMattPress URL and site URL can start with either %1$s or %2$s. A URL starting with %2$s requires an SSL certificate, so be sure that you have one before changing to %2$s. With %2$s, a padlock will appear next to the address in the browser address bar. Both %2$s and the padlock signal that your site meets some basic security requirements, which can build trust with your visitors and with search engines.' ),
 			'<code>http://</code>',
 			'<code>https://</code>'
 		) . '</p>' .
 		'<p>' . __( 'If you want site visitors to be able to register themselves, check the membership box. If you want the site administrator to register every new user, leave the box unchecked. In either case, you can set a default user role for all new users.' ) . '</p>';
 }
 
-$options_help .= '<p>' . __( 'You can set the language, and WordPress will automatically download and install the translation files (available if your filesystem is writable).' ) . '</p>' .
+$options_help .= '<p>' . __( 'You can set the language, and NotMattPress will automatically download and install the translation files (available if your filesystem is writable).' ) . '</p>' .
 	'<p>' . __( 'UTC means Coordinated Universal Time.' ) . '</p>' .
 	'<p>' . __( 'You must click the Save Changes button at the bottom of the screen for new settings to take effect.' ) . '</p>';
 
@@ -57,8 +57,8 @@ get_current_screen()->add_help_tab(
 
 get_current_screen()->set_help_sidebar(
 	'<p><strong>' . __( 'For more information:' ) . '</strong></p>' .
-	'<p>' . __( '<a href="https://wordpress.org/documentation/article/settings-general-screen/">Documentation on General Settings</a>' ) . '</p>' .
-	'<p>' . __( '<a href="https://wordpress.org/support/forums/">Support forums</a>' ) . '</p>'
+	'<p>' . __( '<a href="https://notmatt.press/documentation/article/settings-general-screen/">Documentation on General Settings</a>' ) . '</p>' .
+	'<p>' . __( '<a href="https://notmatt.press/support/forums/">Support forums</a>' ) . '</p>'
 );
 
 require_once ABSPATH . 'wp-admin/admin-header.php';
@@ -80,7 +80,7 @@ require_once ABSPATH . 'wp-admin/admin-header.php';
 <?php
 if ( ! is_multisite() ) {
 	/* translators: Site tagline. */
-	$sample_tagline = __( 'Just another WordPress site' );
+	$sample_tagline = __( 'Just another NotMattPress site' );
 } else {
 	/* translators: %s: Network title. */
 	$sample_tagline = sprintf( __( 'Just another %s site' ), get_network()->site_name );
@@ -213,7 +213,7 @@ $tagline_description = sprintf(
 		<?php
 			printf(
 				/* translators: 1: pixel value for icon size. 2: pixel value for icon size. */
-				__( 'The Site Icon is what you see in browser tabs, bookmark bars, and within the WordPress mobile apps. It should be square and at least <code>%1$s by %2$s</code> pixels.' ),
+				__( 'The Site Icon is what you see in browser tabs, bookmark bars, and within the NotMattPress mobile apps. It should be square and at least <code>%1$s by %2$s</code> pixels.' ),
 				512,
 				512
 			);
@@ -239,7 +239,7 @@ if ( ! is_multisite() ) {
 	?>
 
 <tr>
-<th scope="row"><label for="siteurl"><?php _e( 'WordPress Address (URL)' ); ?></label></th>
+<th scope="row"><label for="siteurl"><?php _e( 'NotMattPress Address (URL)' ); ?></label></th>
 <td><input name="siteurl" type="url" id="siteurl" value="<?php form_option( 'siteurl' ); ?>"<?php disabled( defined( 'WP_SITEURL' ) ); ?> class="regular-text code<?php echo $wp_site_url_class; ?>" /></td>
 </tr>
 
@@ -251,8 +251,8 @@ if ( ! is_multisite() ) {
 		<?php
 		printf(
 			/* translators: %s: Documentation URL. */
-			__( 'Enter the same address here unless you <a href="%s">want your site home page to be different from your WordPress installation directory</a>.' ),
-			__( 'https://developer.wordpress.org/advanced-administration/server/wordpress-in-directory/' )
+			__( 'Enter the same address here unless you <a href="%s">want your site home page to be different from your NotMattPress installation directory</a>.' ),
+			__( 'https://developer.notmatt.press/advanced-administration/server/wordpress-in-directory/' )
 		);
 		?>
 </p>
@@ -556,7 +556,7 @@ foreach ( $time_formats as $format ) {
 		'<p><strong>' . __( 'Preview:' ) . '</strong> <span class="example">' . date_i18n( get_option( 'time_format' ) ) . '</span>' .
 		"<span class='spinner'></span>\n" . '</p>';
 
-	echo "\t<p class='date-time-doc'>" . __( '<a href="https://wordpress.org/documentation/article/customize-date-and-time-format/">Documentation on date and time formatting</a>.' ) . "</p>\n";
+	echo "\t<p class='date-time-doc'>" . __( '<a href="https://notmatt.press/documentation/article/customize-date-and-time-format/">Documentation on date and time formatting</a>.' ) . "</p>\n";
 ?>
 	</fieldset>
 </td>
@@ -566,7 +566,7 @@ foreach ( $time_formats as $format ) {
 <td><select name="start_of_week" id="start_of_week">
 <?php
 /**
- * @global WP_Locale $wp_locale WordPress date and time locale object.
+ * @global WP_Locale $wp_locale NotMattPress date and time locale object.
  */
 global $wp_locale;
 

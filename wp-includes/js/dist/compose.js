@@ -11,7 +11,7 @@
 /* harmony import */ var _wordpress_is_shallow_equal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(923);
 /* harmony import */ var _wordpress_is_shallow_equal__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_is_shallow_equal__WEBPACK_IMPORTED_MODULE_0__);
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -3307,7 +3307,7 @@ const external_wp_element_namespaceObject = window["wp"]["element"];
  */
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -3389,7 +3389,7 @@ class Listener {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/compose/build-module/higher-order/with-global-events/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -3486,7 +3486,7 @@ function withGlobalEvents(eventTypesToHandlers) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/compose/build-module/hooks/use-instance-id/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 const instanceMap = new WeakMap();
@@ -3560,7 +3560,7 @@ const withInstanceId = createHigherOrderComponent(WrappedComponent => {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/compose/build-module/higher-order/with-safe-timeout/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -3623,7 +3623,7 @@ const withSafeTimeout = createHigherOrderComponent(OriginalComponent => {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/compose/build-module/higher-order/with-state/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -3675,7 +3675,7 @@ const external_wp_dom_namespaceObject = window["wp"]["dom"];
  */
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -3711,7 +3711,7 @@ function useRefEffect(callback, dependencies) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/compose/build-module/hooks/use-constrained-tabbing/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -3760,7 +3760,7 @@ function useConstrainedTabbing() {
       // container, browsers may disagree on where to move focus next.
       // In this case we can't rely on native browsers behavior. We need
       // to manage focus instead.
-      // See https://github.com/WordPress/gutenberg/issues/46041.
+      // See https://github.com/NotMattPress/gutenberg/issues/46041.
       if ( /** @type {HTMLElement} */target.contains(nextElement)) {
         event.preventDefault();
         nextElement?.focus();
@@ -3808,7 +3808,7 @@ var clipboard_default = /*#__PURE__*/__webpack_require__.n(dist_clipboard);
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -3884,7 +3884,7 @@ function useCopyOnClick(ref, text, timeout = 4000) {
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -3947,7 +3947,7 @@ function useCopyToClipboard(text, onSuccess) {
 const external_wp_keycodes_namespaceObject = window["wp"]["keycodes"];
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/compose/build-module/hooks/use-focus-on-mount/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -4029,7 +4029,7 @@ function useFocusOnMount(focusOnMount = 'firstElement') {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/compose/build-module/hooks/use-focus-return/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -4102,7 +4102,7 @@ function useFocusReturn(onFocusReturn) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/compose/build-module/hooks/use-focus-outside/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -4255,7 +4255,7 @@ function useFocusOutside(onFocusOutside) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/compose/build-module/hooks/use-merge-refs/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -4386,7 +4386,7 @@ function useMergeRefs(refs) {
  */
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -4532,7 +4532,7 @@ function useDisabled({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/compose/build-module/hooks/use-event/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -4578,7 +4578,7 @@ callback) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/compose/build-module/hooks/use-isomorphic-layout-effect/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -4592,7 +4592,7 @@ const useIsomorphicLayoutEffect = typeof window !== 'undefined' ? external_wp_el
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/compose/build-module/hooks/use-dragging/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -4676,7 +4676,7 @@ var mousetrap_global_bind = __webpack_require__(5760);
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -4753,7 +4753,7 @@ shortcuts, callback, {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/compose/build-module/hooks/use-media-query/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 const matchMediaCache = new Map();
@@ -4813,7 +4813,7 @@ function useMediaQuery(query) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/compose/build-module/hooks/use-previous/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -4855,7 +4855,7 @@ const useReducedMotion = () => useMediaQuery('(prefers-reduced-motion: reduce)')
 var build_module = __webpack_require__(6689);
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/compose/build-module/hooks/use-state-with-history/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -4943,7 +4943,7 @@ function useStateWithHistory(initialValue) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/compose/build-module/hooks/use-viewport-match/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -5028,7 +5028,7 @@ useViewportMatch.__experimentalWidthProvider = ViewportMatchWidthContext.Provide
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/compose/build-module/hooks/use-resize-observer/use-resize-observer.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 /**
@@ -5076,7 +5076,7 @@ function useResizeObserver(callback, resizeObserverOptions = {}) {
  */
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 /**
@@ -5269,7 +5269,7 @@ function use_resize_observer_useResizeObserver(callback, options = {}) {
 const external_wp_priorityQueue_namespaceObject = window["wp"]["priorityQueue"];
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/compose/build-module/hooks/use-async-list/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -5424,7 +5424,7 @@ var useCallback = (/* unused pure expression or super */ null && (useCallbackOne
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -5456,7 +5456,7 @@ function useDebounce(fn, wait, options) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/compose/build-module/hooks/use-debounced-input/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -5488,7 +5488,7 @@ function useDebouncedInput(defaultValue = '') {
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -5520,7 +5520,7 @@ function useThrottle(fn, wait, options) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/compose/build-module/hooks/use-drop-zone/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -5778,7 +5778,7 @@ function useFocusableIframe() {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/compose/build-module/hooks/use-fixed-window-list/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -5914,7 +5914,7 @@ function useFixedWindowList(elementRef, itemHeight, totalItems, options) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/compose/build-module/hooks/use-observable-value/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 

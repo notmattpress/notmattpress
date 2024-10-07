@@ -1,9 +1,9 @@
 /*
 Theme Name: Twenty Sixteen
-Theme URI: https://wordpress.org/themes/twentysixteen/
-Author: the WordPress team
-Author URI: https://wordpress.org/
-Description: Twenty Sixteen is a modernized take on an ever-popular WordPress layout — the horizontal masthead with an optional right sidebar that works perfectly for blogs and websites. It has custom color options with beautiful default color schemes, a harmonious fluid grid using a mobile-first approach, and impeccable polish in every detail. Twenty Sixteen will make your WordPress look beautiful everywhere.
+Theme URI: https://notmatt.press/themes/twentysixteen/
+Author: the NotMattPress team
+Author URI: https://notmatt.press/
+Description: Twenty Sixteen is a modernized take on an ever-popular NotMattPress layout — the horizontal masthead with an optional right sidebar that works perfectly for blogs and websites. It has custom color options with beautiful default color schemes, a harmonious fluid grid using a mobile-first approach, and impeccable polish in every detail. Twenty Sixteen will make your NotMattPress look beautiful everywhere.
 Version: 3.3
 Tested up to: 6.6
 Requires at least: 4.4
@@ -13,7 +13,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, right-sidebar, accessibility-ready, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, microformats, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready, blog, block-patterns
 Text Domain: twentysixteen
 
-This theme, like WordPress, is licensed under the GPL.
+This theme, like NotMattPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 */
 
@@ -1031,7 +1031,7 @@ a:active {
 }
 
 .social-navigation a[href*="wordpress.com"]:before,
-.social-navigation a[href*="wordpress.org"]:before {
+.social-navigation a[href*="notmatt.press"]:before {
 	content: "\f205";
 }
 
@@ -2759,7 +2759,7 @@ p > video {
  * Does the same thing as <meta name="viewport" content="width=device-width">,
  * but in the future W3C standard way. -ms- prefix is required for IE10+ to
  * render responsive styling in Windows 8 "snapped" views; IE10+ does not honor
- * the meta tag. See https://core.trac.wordpress.org/ticket/25888.
+ * the meta tag. See https://core.trac.notmatt.press/ticket/25888.
  */
 @-ms-viewport {
 	width: device-width;

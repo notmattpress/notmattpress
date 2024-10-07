@@ -9,7 +9,7 @@
  * Viewport width: 1400
  * Description: A full-width, full-height link in bio section with an image, a paragraph and social links.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Twenty_Twenty_Five
  * @since Twenty Twenty-Five 1.0
  */

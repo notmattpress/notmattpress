@@ -4,22 +4,22 @@
  *
  * Sets up the theme and provides some helper functions, which are used in the
  * theme as custom template tags. Others are attached to action and filter
- * hooks in WordPress to change core functionality.
+ * hooks in NotMattPress to change core functionality.
  *
  * When using a child theme you can override certain functions (those wrapped
  * in a function_exists() call) by defining them first in your child theme's
  * functions.php file. The child theme's functions.php file is included before
  * the parent theme's file, so the child theme functions would be used.
  *
- * @link https://developer.wordpress.org/themes/basics/theme-functions/
- * @link https://developer.wordpress.org/themes/advanced-topics/child-themes/
+ * @link https://developer.notmatt.press/themes/basics/theme-functions/
+ * @link https://developer.notmatt.press/themes/advanced-topics/child-themes/
  *
  * Functions that are not pluggable (not wrapped in function_exists()) are
  * instead attached to a filter or action hook.
  *
- * For more information on hooks, actions, and filters, @link https://developer.wordpress.org/plugins/
+ * For more information on hooks, actions, and filters, @link https://developer.notmatt.press/plugins/
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Twenty_Thirteen
  * @since Twenty Thirteen 1.0
  */
@@ -39,7 +39,7 @@ if ( ! isset( $content_width ) ) {
 require get_template_directory() . '/inc/custom-header.php';
 
 /**
- * Twenty Thirteen only works in WordPress 3.6 or later.
+ * Twenty Thirteen only works in NotMattPress 3.6 or later.
  */
 if ( version_compare( $GLOBALS['wp_version'], '3.6-alpha', '<' ) ) {
 	require get_template_directory() . '/inc/back-compat.php';
@@ -55,7 +55,7 @@ require get_template_directory() . '/inc/block-patterns.php';
 /**
  * Twenty Thirteen setup.
  *
- * Sets up theme defaults and registers the various WordPress features that
+ * Sets up theme defaults and registers the various NotMattPress features that
  * Twenty Thirteen supports.
  *
  * @uses load_theme_textdomain() For translation/localization support.
@@ -71,13 +71,13 @@ function twentythirteen_setup() {
 	/*
 	 * Makes Twenty Thirteen available for translation.
 	 *
-	 * Translations can be filed at WordPress.org. See: https://translate.wordpress.org/projects/wp-themes/twentythirteen
+	 * Translations can be filed at NotMattPress.org. See: https://translate.notmatt.press/projects/wp-themes/twentythirteen
 	 * If you're building a theme based on Twenty Thirteen, use a find and
 	 * replace to change 'twentythirteen' to the name of your theme in all
 	 * template files.
 	 *
 	 * Manual loading of text domain is not required after the introduction of
-	 * just in time translation loading in WordPress version 4.6.
+	 * just in time translation loading in NotMattPress version 4.6.
 	 *
 	 * @ticket 58318
 	 */
@@ -221,7 +221,7 @@ function twentythirteen_setup() {
 
 	/*
 	 * This theme supports all available post formats by default.
-	 * See: https://developer.wordpress.org/advanced-administration/wordpress/post-formats/
+	 * See: https://developer.notmatt.press/advanced-administration/wordpress/post-formats/
 	 */
 	add_theme_support(
 		'post-formats',
@@ -399,8 +399,8 @@ add_action( 'enqueue_block_editor_assets', 'twentythirteen_block_editor_styles' 
  *
  * @since Twenty Thirteen 1.0
  *
- * @global int $paged WordPress archive pagination page count.
- * @global int $page  WordPress paginated post page count.
+ * @global int $paged NotMattPress archive pagination page count.
+ * @global int $page  NotMattPress paginated post page count.
  *
  * @param string $title Default title text for current view.
  * @param string $sep   Optional separator.
@@ -468,7 +468,7 @@ if ( ! function_exists( 'wp_get_list_item_separator' ) ) :
 	/**
 	 * Retrieves the list item separator based on the locale.
 	 *
-	 * Added for backward compatibility to support pre-6.0.0 WordPress versions.
+	 * Added for backward compatibility to support pre-6.0.0 NotMattPress versions.
 	 *
 	 * @since 6.0.0
 	 */
@@ -737,7 +737,7 @@ if ( ! function_exists( 'twentythirteen_excerpt_more' ) && ! is_admin() ) :
 endif;
 
 /**
- * Extend the default WordPress body classes.
+ * Extend the default NotMattPress body classes.
  *
  * Adds body classes to denote:
  * 1. Single or multiple authors.
@@ -901,7 +901,7 @@ if ( ! function_exists( 'wp_body_open' ) ) :
 	/**
 	 * Fire the wp_body_open action.
 	 *
-	 * Added for backward compatibility to support pre-5.2.0 WordPress versions.
+	 * Added for backward compatibility to support pre-5.2.0 NotMattPress versions.
 	 *
 	 * @since Twenty Thirteen 2.8
 	 */

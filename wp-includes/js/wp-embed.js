@@ -1,5 +1,5 @@
 /**
- * WordPress inline HTML embed
+ * NotMattPress inline HTML embed
  *
  * @since 4.4.0
  * @output wp-includes/js/wp-embed.js

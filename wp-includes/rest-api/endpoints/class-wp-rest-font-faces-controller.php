@@ -2,7 +2,7 @@
 /**
  * REST API: WP_REST_Font_Faces_Controller class
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage REST_API
  * @since 6.5.0
  */

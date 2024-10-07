@@ -2,7 +2,7 @@
 /**
  * Layout block support flag.
  *
- * @package WordPress
+ * @package NotMattPress
  * @since 5.8.0
  */
 
@@ -539,7 +539,7 @@ function wp_get_layout_style( $selector, $layout, $has_block_gap_support = false
 		/*
 		 * Add to the style engine store to enqueue and render layout styles.
 		 * Return compiled layout styles to retain backwards compatibility.
-		 * Since https://github.com/WordPress/gutenberg/pull/42452,
+		 * Since https://github.com/NotMattPress/gutenberg/pull/42452,
 		 * wp_enqueue_block_support_styles is no longer called in this block supports file.
 		 */
 		return wp_style_engine_get_stylesheet_from_css_rules(
@@ -735,7 +735,7 @@ function wp_render_layout_support_flag( $block_content, $block ) {
 
 	/*
 	 * The following section was added to reintroduce a small set of layout classnames that were
-	 * removed in the 5.9 release (https://github.com/WordPress/gutenberg/issues/38719). It is
+	 * removed in the 5.9 release (https://github.com/NotMattPress/gutenberg/issues/38719). It is
 	 * not intended to provide an extended set of classes to match all block layout attributes
 	 * here.
 	 */

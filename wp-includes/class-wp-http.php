@@ -2,7 +2,7 @@
 /**
  * HTTP API: WP_Http class
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage HTTP
  * @since 2.7.0
  */
@@ -19,7 +19,7 @@ if ( ! class_exists( 'WpOrg\Requests\Autoload' ) ) {
  *
  * This class is used to consistently make outgoing HTTP requests easy for developers
  * while still being compatible with the many PHP configurations under which
- * WordPress runs.
+ * NotMattPress runs.
  *
  * Debugging includes several actions, which pass different variables for debugging the HTTP API.
  *
@@ -117,7 +117,7 @@ class WP_Http {
 	 *     @type string       $httpversion         Version of the HTTP protocol to use. Accepts '1.0' and '1.1'.
 	 *                                             Default '1.0'.
 	 *     @type string       $user-agent          User-agent value sent.
-	 *                                             Default 'WordPress/' . get_bloginfo( 'version' ) . '; ' . get_bloginfo( 'url' ).
+	 *                                             Default 'NotMattPress/' . get_bloginfo( 'version' ) . '; ' . get_bloginfo( 'url' ).
 	 *     @type bool         $reject_unsafe_urls  Whether to pass URLs through wp_http_validate_url().
 	 *                                             Default false.
 	 *     @type bool         $blocking            Whether the calling code requires the result of the request.
@@ -200,10 +200,10 @@ class WP_Http {
 			 * @since 2.7.0
 			 * @since 5.1.0 The `$url` parameter was added.
 			 *
-			 * @param string $user_agent WordPress user agent string.
+			 * @param string $user_agent NotMattPress user agent string.
 			 * @param string $url        The request URL.
 			 */
-			'user-agent'          => apply_filters( 'http_headers_useragent', 'WordPress/' . get_bloginfo( 'version' ) . '; ' . get_bloginfo( 'url' ), $url ),
+			'user-agent'          => apply_filters( 'http_headers_useragent', 'NotMattPress/' . get_bloginfo( 'version' ) . '; ' . get_bloginfo( 'url' ), $url ),
 			/**
 			 * Filters whether to pass URLs through wp_http_validate_url() in an HTTP request.
 			 *
@@ -682,7 +682,7 @@ class WP_Http {
 	 *     @type string $body    HTTP response body.
 	 * }
 	 */
-	public static function processResponse( $response ) { // phpcs:ignore WordPress.NamingConventions.ValidFunctionName.MethodNameInvalid
+	public static function processResponse( $response ) { // phpcs:ignore NotMattPress.NamingConventions.ValidFunctionName.MethodNameInvalid
 		$response = explode( "\r\n\r\n", $response, 2 );
 
 		return array(
@@ -714,7 +714,7 @@ class WP_Http {
 	 *                                        an array containing `WP_Http_Cookie` objects is returned.
 	 * }
 	 */
-	public static function processHeaders( $headers, $url = '' ) { // phpcs:ignore WordPress.NamingConventions.ValidFunctionName.MethodNameInvalid
+	public static function processHeaders( $headers, $url = '' ) { // phpcs:ignore NotMattPress.NamingConventions.ValidFunctionName.MethodNameInvalid
 		// Split headers, one per array element.
 		if ( is_string( $headers ) ) {
 			// Tolerate line terminator: CRLF = LF (RFC 2616 19.3).
@@ -797,7 +797,7 @@ class WP_Http {
 	 *
 	 * @param array $r Full array of args passed into ::request()
 	 */
-	public static function buildCookieHeader( &$r ) { // phpcs:ignore WordPress.NamingConventions.ValidFunctionName.MethodNameInvalid
+	public static function buildCookieHeader( &$r ) { // phpcs:ignore NotMattPress.NamingConventions.ValidFunctionName.MethodNameInvalid
 		if ( ! empty( $r['cookies'] ) ) {
 			// Upgrade any name => value cookie pairs to WP_HTTP_Cookie instances.
 			foreach ( $r['cookies'] as $name => $value ) {
@@ -833,7 +833,7 @@ class WP_Http {
 	 * @param string $body Body content.
 	 * @return string Chunked decoded body on success or raw body on failure.
 	 */
-	public static function chunkTransferDecode( $body ) { // phpcs:ignore WordPress.NamingConventions.ValidFunctionName.MethodNameInvalid
+	public static function chunkTransferDecode( $body ) { // phpcs:ignore NotMattPress.NamingConventions.ValidFunctionName.MethodNameInvalid
 		// The body is not chunked encoded or is malformed.
 		if ( ! preg_match( '/^([0-9a-f]+)[^\r\n]*\r\n/i', trim( $body ) ) ) {
 			return $body;
@@ -870,18 +870,18 @@ class WP_Http {
 	 * Determines whether an HTTP API request to the given URL should be blocked.
 	 *
 	 * Those who are behind a proxy and want to prevent access to certain hosts may do so. This will
-	 * prevent plugins from working and core functionality, if you don't include `api.wordpress.org`.
+	 * prevent plugins from working and core functionality, if you don't include `api.notmatt.press`.
 	 *
 	 * You block external URL requests by defining `WP_HTTP_BLOCK_EXTERNAL` as true in your `wp-config.php`
 	 * file and this will only allow localhost and your site to make requests. The constant
 	 * `WP_ACCESSIBLE_HOSTS` will allow additional hosts to go through for requests. The format of the
 	 * `WP_ACCESSIBLE_HOSTS` constant is a comma separated list of hostnames to allow, wildcard domains
-	 * are supported, eg `*.wordpress.org` will allow for all subdomains of `wordpress.org` to be contacted.
+	 * are supported, eg `*.notmatt.press` will allow for all subdomains of `notmatt.press` to be contacted.
 	 *
 	 * @since 2.8.0
 	 *
-	 * @link https://core.trac.wordpress.org/ticket/8927 Allow preventing external requests.
-	 * @link https://core.trac.wordpress.org/ticket/14636 Allow wildcard domains in WP_ACCESSIBLE_HOSTS
+	 * @link https://core.trac.notmatt.press/ticket/8927 Allow preventing external requests.
+	 * @link https://core.trac.notmatt.press/ticket/14636 Allow wildcard domains in WP_ACCESSIBLE_HOSTS
 	 *
 	 * @param string $uri URI of url.
 	 * @return bool True to block, false to allow.

@@ -6146,13 +6146,13 @@ var a11y_o=function(o){var t=o/255;return t<.04045?t/12.92:Math.pow((t+.055)/1.0
 const external_wp_privateApis_namespaceObject = window["wp"]["privateApis"];
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/lock-unlock.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 const {
   lock,
   unlock
-} = (0,external_wp_privateApis_namespaceObject.__dangerousOptInToUnstableAPIsOnlyForCoreModules)('I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of WordPress.', '@wordpress/edit-site');
+} = (0,external_wp_privateApis_namespaceObject.__dangerousOptInToUnstableAPIsOnlyForCoreModules)('I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of NotMattPress.', '@wordpress/edit-site');
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/global-styles/hooks.js
 /**
@@ -6162,7 +6162,7 @@ const {
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -6281,7 +6281,7 @@ const external_ReactJSXRuntime_namespaceObject = window["ReactJSXRuntime"];
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/hooks/push-changes-to-global-styles/index.js
 /* wp:polyfill */
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -6619,7 +6619,7 @@ const withPushChangesToGlobalStyles = (0,external_wp_compose_namespaceObject.cre
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/store/reducer.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -6725,7 +6725,7 @@ function editorCanvasContainerView(state = undefined, action) {
 const external_wp_patterns_namespaceObject = window["wp"]["patterns"];
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/utils/constants.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -6778,7 +6778,7 @@ const OPERATOR_IS_NONE = 'isNone';
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/store/actions.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -7188,7 +7188,7 @@ const toggleDistractionFree = () => ({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/store/private-actions.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -7233,7 +7233,7 @@ const setCanvasMode = mode => ({
 
   /*
    * Skip transition in mobile, otherwise it crashes the browser.
-   * See: https://github.com/WordPress/gutenberg/pull/63002.
+   * See: https://github.com/NotMattPress/gutenberg/pull/63002.
    */
   if (!isMediumOrBigger || !document.startViewTransition) {
     switchCanvasMode();
@@ -7262,7 +7262,7 @@ const setEditorCanvasContainerView = view => ({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/utils/get-filtered-template-parts.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 const EMPTY_ARRAY = [];
@@ -7320,7 +7320,7 @@ function getFilteredTemplatePartBlocks(blocks = EMPTY_ARRAY, templateParts) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/store/selectors.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -7671,7 +7671,7 @@ const STORE_NAME = 'core/edit-site';
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/store/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -7709,7 +7709,7 @@ const external_wp_commands_namespaceObject = window["wp"]["commands"];
 const external_wp_coreCommands_namespaceObject = window["wp"]["coreCommands"];
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/error-boundary/warning.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -7745,7 +7745,7 @@ function ErrorBoundaryWarning({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/error-boundary/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -7788,7 +7788,7 @@ const external_wp_htmlEntities_namespaceObject = window["wp"]["htmlEntities"];
 const external_wp_primitives_namespaceObject = window["wp"]["primitives"];
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/search.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -7807,7 +7807,7 @@ const external_wp_keycodes_namespaceObject = window["wp"]["keycodes"];
 const external_wp_url_namespaceObject = window["wp"]["url"];
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/wordpress.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -7827,7 +7827,7 @@ const wordpress = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -7881,7 +7881,7 @@ const external_wp_dom_namespaceObject = window["wp"]["dom"];
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -7968,7 +7968,7 @@ function SidebarContent({
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -8158,7 +8158,7 @@ const SiteHubMobile = (0,external_wp_element_namespaceObject.memo)((0,external_w
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -8429,7 +8429,7 @@ function ResizableFrame({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/keyboard-shortcuts/register.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -8457,7 +8457,7 @@ function KeyboardShortcutsRegister() {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/keyboard-shortcuts/global.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -8504,7 +8504,7 @@ function KeyboardShortcutsGlobal() {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/use-edited-entity-record/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -8558,7 +8558,7 @@ function useEditedEntityRecord(postType, postId) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/layout/hooks.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -8645,7 +8645,7 @@ var web_dist_esm_k=/^--/;function web_dist_esm_I(t,e){return e==null||typeof e==
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 function getAbsolutePosition(element) {
@@ -8764,7 +8764,7 @@ function useMovingAnimation({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/check.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -8779,7 +8779,7 @@ const check = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(exte
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/utils/is-previewing-theme.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 function isPreviewingTheme() {
@@ -8794,7 +8794,7 @@ function currentlyPreviewingTheme() {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/save-button/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -8930,7 +8930,7 @@ function SaveButton({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/save-hub/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -8976,7 +8976,7 @@ function SaveHub() {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/utils/use-activate-theme.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -9026,7 +9026,7 @@ const external_wp_apiFetch_namespaceObject = window["wp"]["apiFetch"];
 var external_wp_apiFetch_default = /*#__PURE__*/__webpack_require__.n(external_wp_apiFetch_namespaceObject);
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/utils/use-actual-current-theme.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -9056,7 +9056,7 @@ function useActualCurrentTheme() {
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -9196,7 +9196,7 @@ function SavePanel() {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/sync-state-with-url/use-sync-canvas-mode-with-url.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -9264,7 +9264,7 @@ function useSyncCanvasModeWithURL() {
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -9456,7 +9456,7 @@ function Layout({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/styles.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -9473,7 +9473,7 @@ const styles = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(ext
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/help.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -9488,7 +9488,7 @@ const help = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(exter
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/rotate-right.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -9503,7 +9503,7 @@ const rotateRight = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/rotate-left.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -9518,7 +9518,7 @@ const rotateLeft = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/brush.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -9533,7 +9533,7 @@ const brush = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(exte
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/backup.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -9548,7 +9548,7 @@ const backup = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(ext
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/external.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -9563,7 +9563,7 @@ const external = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(e
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/hooks/commands/use-common-commands.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -9859,7 +9859,7 @@ function useCommonCommands() {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/layout.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -9874,7 +9874,7 @@ const layout = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(ext
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/page.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -9892,7 +9892,7 @@ const page = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsxs)(exte
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/trash.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -9949,7 +9949,7 @@ function isTemplateRevertable(template) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/routes/link.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -10008,7 +10008,7 @@ function Link({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/hooks/commands/use-edit-mode-commands.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -10176,7 +10176,7 @@ function useEditModeCommands() {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/sync-state-with-url/use-init-edited-entity-from-url.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -10232,7 +10232,7 @@ function useResolveEditedEntityAndContext({
   }, []);
 
   /**
-   * This is a hook that recreates the logic to resolve a template for a given WordPress postID postTypeId
+   * This is a hook that recreates the logic to resolve a template for a given NotMattPress postID postTypeId
    * in order to match the frontend as closely as possible in the site editor.
    *
    * It is not possible to rely on the server logic because there maybe unsaved changes that impact the template resolution.
@@ -10384,7 +10384,7 @@ function useInitEditedEntityFromURL() {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/icon/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -10416,7 +10416,7 @@ function Icon({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/arrow-up-left.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -10454,7 +10454,7 @@ function WelcomeGuideImage({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/welcome-guide/editor.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -10519,7 +10519,7 @@ function WelcomeGuideEditor() {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/welcome-guide/styles.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -10615,7 +10615,7 @@ function WelcomeGuideStyles() {
         }), /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsxs)("p", {
           className: "edit-site-welcome-guide__text",
           children: [(0,external_wp_i18n_namespaceObject.__)('New to block themes and styling your site?'), ' ', /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(external_wp_components_namespaceObject.ExternalLink, {
-            href: (0,external_wp_i18n_namespaceObject.__)('https://wordpress.org/documentation/article/styles-overview/'),
+            href: (0,external_wp_i18n_namespaceObject.__)('https://notmatt.press/documentation/article/styles-overview/'),
             children: (0,external_wp_i18n_namespaceObject.__)('Here’s a detailed guide to learn how to make the most of it.')
           })]
         })]
@@ -10626,7 +10626,7 @@ function WelcomeGuideStyles() {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/welcome-guide/page.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -10689,7 +10689,7 @@ function WelcomeGuidePage() {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/welcome-guide/template.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -10783,7 +10783,7 @@ function WelcomeGuide() {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/global-styles-renderer/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -10830,7 +10830,7 @@ function GlobalStylesRenderer() {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/canvas-loader/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -10888,7 +10888,7 @@ function CanvasLoader({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/block-editor/use-navigate-to-entity-record.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -10914,7 +10914,7 @@ function useNavigateToEntityRecord() {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/block-editor/use-site-editor-settings.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -10943,7 +10943,7 @@ function useNavigateToPreviousEntityRecord() {
     return showBackButton ? () => history.back() : undefined;
     // Disable reason: previousLocation changes when the component updates for any reason, not
     // just when location changes. Until this is fixed we can't add it to deps. See
-    // https://github.com/WordPress/gutenberg/pull/58710#discussion_r1479219465.
+    // https://github.com/NotMattPress/gutenberg/pull/58710#discussion_r1479219465.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location, history]);
   return goBack;
@@ -10965,7 +10965,7 @@ function useSpecificEditorSettings() {
       canvasMode: getCanvasMode(),
       settings: getSettings(),
       // TODO: The `postType` check should be removed when the default rendering mode per post type is merged.
-      // @see https://github.com/WordPress/gutenberg/pull/62304/
+      // @see https://github.com/NotMattPress/gutenberg/pull/62304/
       shouldUseTemplateAsDefaultRenderingMode: _context?.postId && _context?.postType !== 'post'
     };
   }, []);
@@ -10992,7 +10992,7 @@ function useSpecificEditorSettings() {
  */
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -11045,7 +11045,7 @@ PluginTemplateSettingPanel.Slot = Slot;
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/seen.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -11060,7 +11060,7 @@ const seen = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(exter
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/more-vertical.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -11075,7 +11075,7 @@ const moreVertical = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.js
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/chevron-left.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -11090,7 +11090,7 @@ const chevronLeft = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/chevron-right.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -11110,7 +11110,7 @@ const chevronRight = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.js
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -11126,7 +11126,7 @@ function IconWithCurrentColor({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/global-styles/navigation-button.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -11170,7 +11170,7 @@ function NavigationBackButtonAsItem(props) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/typography.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -11185,7 +11185,7 @@ const typography = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/color.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -11200,7 +11200,7 @@ const color = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(exte
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/background.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -11219,7 +11219,7 @@ const background = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/shadow.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -11234,7 +11234,7 @@ const shadow = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(ext
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/global-styles/root-menu.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -11504,7 +11504,7 @@ function getFontFamilies(themeJson) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/global-styles/typography-example.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -11572,7 +11572,7 @@ function PreviewTypography({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/global-styles/highlighted-colors.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -11615,7 +11615,7 @@ function HighlightedColors({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/global-styles/preview-iframe.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -11690,7 +11690,7 @@ function PreviewIframe({
    * Use the throttled ratio if it has been calculated, otherwise
    * use the fallback ratio. The throttled ratio is used to avoid
    * an endless loop of updates at particular viewport heights.
-   * See: https://github.com/WordPress/gutenberg/issues/55112
+   * See: https://github.com/NotMattPress/gutenberg/issues/55112
    */
   const ratio = ratioState ? ratioState : fallbackRatio;
 
@@ -11746,7 +11746,7 @@ function PreviewIframe({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/global-styles/preview-styles.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -11908,7 +11908,7 @@ const PreviewStyles = ({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/global-styles/screen-root.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -12035,7 +12035,7 @@ function ScreenRoot() {
 const external_wp_a11y_namespaceObject = window["wp"]["a11y"];
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/global-styles/variations/variations-panel.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -12090,7 +12090,7 @@ function VariationsPanel({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/global-styles/header.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -12136,7 +12136,7 @@ function ScreenHeader({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/global-styles/screen-block-list.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -12248,7 +12248,7 @@ function BlockList({
     // TODO: We should find a better way of handling this as it's
     // fragile and depends on the number of rendered elements of `BlockMenuItem`,
     // which is now one.
-    // @see https://github.com/WordPress/gutenberg/pull/39117#discussion_r816022116
+    // @see https://github.com/NotMattPress/gutenberg/pull/39117#discussion_r816022116
     const count = blockTypesListRef.current.childElementCount;
     const resultsFoundMessage = (0,external_wp_i18n_namespaceObject.sprintf)( /* translators: %d: number of results. */
     (0,external_wp_i18n_namespaceObject._n)('%d result found.', '%d results found.', count), count);
@@ -12286,7 +12286,7 @@ function ScreenBlockList() {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/global-styles/block-preview-panel.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -12363,7 +12363,7 @@ const BlockPreviewPanel = ({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/global-styles/subtitle.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -12381,7 +12381,7 @@ function Subtitle({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/global-styles/screen-block.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -12677,7 +12677,7 @@ function ScreenBlock({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/global-styles/typography-elements.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -12774,7 +12774,7 @@ function TypographyElements() {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/global-styles/preview-typography.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -12815,7 +12815,7 @@ const StylesPreviewTypography = ({
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/hooks/use-theme-style-variations/use-theme-style-variations-by-property.js
 /* wp:polyfill */
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -12967,7 +12967,7 @@ function isVariationWithProperties(variation, properties) {
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -13057,7 +13057,7 @@ function Variation({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/global-styles/variations/variations-typography.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -13106,7 +13106,7 @@ function TypographyVariations({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/global-styles/font-sizes/font-sizes-count.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -13150,7 +13150,7 @@ function FontSizes() {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/global-styles/font-library-modal/resolvers.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 const FONT_FAMILIES_URL = '/wp/v2/font-families';
@@ -13220,7 +13220,7 @@ async function fetchFontCollection(id) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/global-styles/font-library-modal/utils/constants.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 const ALLOWED_FILE_EXTENSIONS = ['otf', 'ttf', 'woff', 'woff2'];
@@ -13242,7 +13242,7 @@ const FONT_STYLES = {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/global-styles/font-library-modal/utils/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -13623,7 +13623,7 @@ function toggleFont(font, face, initialfonts) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/global-styles/font-library-modal/context.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -14016,7 +14016,7 @@ function FontLibraryProvider({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/global-styles/font-library-modal/font-demo.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -14114,7 +14114,7 @@ function FontDemo({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/global-styles/font-library-modal/font-card.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -14173,7 +14173,7 @@ function FontCard({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/global-styles/font-library-modal/library-font-variant.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -14269,7 +14269,7 @@ function sortFontFaces(faces) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/global-styles/font-library-modal/installed-fonts.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -14653,7 +14653,7 @@ function isFontFontFaceInOutline(slug, face, outline) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/global-styles/font-library-modal/google-fonts-confirm-dialog.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -14698,7 +14698,7 @@ function GoogleFontsConfirmDialog() {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/global-styles/font-library-modal/collection-font-variant.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -14754,7 +14754,7 @@ function CollectionFontVariant({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/global-styles/font-library-modal/font-collection.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -19026,7 +19026,7 @@ var vmtx$1 = Object.freeze( { __proto__: null, vmtx: vmtx } );
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/global-styles/font-library-modal/utils/make-families-from-faces.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -19055,7 +19055,7 @@ function makeFamiliesFromFaces(fontFaces) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/global-styles/font-library-modal/upload-fonts.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -19266,7 +19266,7 @@ function UploadFonts() {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/global-styles/font-library-modal/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -19367,7 +19367,7 @@ function FontLibraryModal({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/global-styles/font-family-item.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -19412,7 +19412,7 @@ function FontFamilyItem({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/global-styles/font-families.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -19498,7 +19498,7 @@ function FontFamilies() {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/global-styles/screen-typography.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -19537,7 +19537,7 @@ function ScreenTypography() {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/global-styles/typography-panel.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -19582,7 +19582,7 @@ function TypographyPanel({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/global-styles/typography-preview.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -19636,7 +19636,7 @@ function TypographyPreview({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/global-styles/screen-typography-element.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -19745,7 +19745,7 @@ function ScreenTypographyElement({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/global-styles/font-sizes/font-size-preview.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -19783,7 +19783,7 @@ function FontSizePreview({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/global-styles/font-sizes/confirm-delete-font-size-dialog.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -19816,7 +19816,7 @@ function ConfirmDeleteFontSizeDialog({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/global-styles/font-sizes/rename-font-size-dialog.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -19878,7 +19878,7 @@ function RenameFontSizeDialog({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/global-styles/size-control/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 /**
@@ -19963,7 +19963,7 @@ function SizeControl({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/global-styles/font-sizes/font-size.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -20181,7 +20181,7 @@ function FontSize() {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/plus.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -20196,7 +20196,7 @@ const plus = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(exter
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/global-styles/font-sizes/confirm-reset-font-sizes-dialog.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -20229,7 +20229,7 @@ function ConfirmResetFontSizesDialog({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/global-styles/font-sizes/font-sizes.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -20385,7 +20385,7 @@ function font_sizes_FontSizes() {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/shuffle.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -20405,7 +20405,7 @@ const shuffle = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(ex
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -20422,7 +20422,7 @@ function ColorIndicatorWrapper({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/global-styles/palette.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -20498,7 +20498,7 @@ function Palette({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/global-styles/screen-colors.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -20572,7 +20572,7 @@ function PresetColors() {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/global-styles/preview-colors.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -20625,7 +20625,7 @@ const StylesPreviewColors = ({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/global-styles/variations/variations-color.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -20669,7 +20669,7 @@ function ColorVariations({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/global-styles/color-palette-panel.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -20735,7 +20735,7 @@ function ColorPalettePanel({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/global-styles/gradients-palette-panel.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -20818,7 +20818,7 @@ function GradientPalettePanel({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/global-styles/screen-color-palette.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -20872,7 +20872,7 @@ function ScreenColorPalette({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/global-styles/background-panel.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -20921,7 +20921,7 @@ function BackgroundPanel() {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/global-styles/screen-background.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -20956,7 +20956,7 @@ function ScreenBackground() {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/global-styles/shadows-panel.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -21078,7 +21078,7 @@ function ShadowItem({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/reset.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -21320,7 +21320,7 @@ function shadowObjectToString(shadowObj) {
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -21740,7 +21740,7 @@ function ScreenShadowsEdit() {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/global-styles/dimensions-panel.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -21821,7 +21821,7 @@ function DimensionsPanel() {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/global-styles/screen-layout.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -21854,7 +21854,7 @@ function ScreenLayout() {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/global-styles/style-variations-container.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -21963,7 +21963,7 @@ function StyleVariationsContainer({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/sidebar-navigation-screen-global-styles/content.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -22021,7 +22021,7 @@ function SidebarNavigationScreenGlobalStylesContent() {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/global-styles/screen-style-variations.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -22057,7 +22057,7 @@ function ScreenStyleVariations() {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/close-small.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -22072,7 +22072,7 @@ const closeSmall = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/editor-canvas-container/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -22200,7 +22200,7 @@ function useHasEditorCanvasContainer() {
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -22579,7 +22579,7 @@ const Example = ({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/global-styles/screen-css.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -22610,7 +22610,7 @@ function ScreenCSS() {
       title: (0,external_wp_i18n_namespaceObject.__)('CSS'),
       description: /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsxs)(external_ReactJSXRuntime_namespaceObject.Fragment, {
         children: [description, /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(external_wp_components_namespaceObject.ExternalLink, {
-          href: (0,external_wp_i18n_namespaceObject.__)('https://developer.wordpress.org/advanced-administration/wordpress/css/'),
+          href: (0,external_wp_i18n_namespaceObject.__)('https://developer.notmatt.press/advanced-administration/wordpress/css/'),
           className: "edit-site-global-styles-screen-css-help-link",
           children: (0,external_wp_i18n_namespaceObject.__)('Learn more about CSS')
         })]
@@ -22629,7 +22629,7 @@ function ScreenCSS() {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/revisions/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -22713,7 +22713,7 @@ function Revisions({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/global-styles/screen-revisions/use-global-styles-revisions.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -22850,7 +22850,7 @@ const external_wp_date_namespaceObject = window["wp"]["date"];
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -23030,7 +23030,7 @@ function RevisionsButtons({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/next.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -23045,7 +23045,7 @@ const next = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(exter
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/previous.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -23065,7 +23065,7 @@ const previous = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(e
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -23148,7 +23148,7 @@ function Pagination({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/global-styles/screen-revisions/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -23239,7 +23239,7 @@ function ScreenRevisions() {
      * when no revision is selected and the selected styles don't match the current editor styles.
      * This is required in case editor styles are changed outside the revisions panel,
      * e.g., via the reset styles function of useGlobalStylesReset().
-     * See: https://github.com/WordPress/gutenberg/issues/55866
+     * See: https://github.com/NotMattPress/gutenberg/issues/55866
      */
     if (shouldSelectFirstItem) {
       setCurrentlySelectedRevision(firstRevision);
@@ -23300,7 +23300,7 @@ function ScreenRevisions() {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/global-styles/ui.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -23630,7 +23630,7 @@ function GlobalStylesUI() {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/global-styles-sidebar/default-sidebar.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -23682,7 +23682,7 @@ function DefaultSidebar({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/global-styles-sidebar/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -23832,7 +23832,7 @@ function GlobalStylesSidebar() {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/download.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -23849,7 +23849,7 @@ const download = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(e
 const external_wp_blob_namespaceObject = window["wp"]["blob"];
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/more-menu/site-export.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -23899,7 +23899,7 @@ function SiteExport() {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/more-menu/welcome-guide-menu-item.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -23918,7 +23918,7 @@ function WelcomeGuideMenuItem() {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/more-menu/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -23955,7 +23955,7 @@ function MoreMenu() {
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -24031,7 +24031,7 @@ function useEditorIframeProps() {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/routes/use-title.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -24061,9 +24061,9 @@ function useTitle(title) {
       return;
     }
     if (title && siteTitle) {
-      // @see https://github.com/WordPress/wordpress-develop/blob/94849898192d271d533e09756007e176feb80697/src/wp-admin/admin-header.php#L67-L68
+      // @see https://github.com/NotMattPress/wordpress-develop/blob/94849898192d271d533e09756007e176feb80697/src/wp-admin/admin-header.php#L67-L68
       const formattedTitle = (0,external_wp_i18n_namespaceObject.sprintf)( /* translators: Admin document title. 1: Admin screen name, 2: Network or site name. */
-      (0,external_wp_i18n_namespaceObject.__)('%1$s ‹ %2$s ‹ Editor — WordPress'), (0,external_wp_htmlEntities_namespaceObject.decodeEntities)(title), (0,external_wp_htmlEntities_namespaceObject.decodeEntities)(siteTitle));
+      (0,external_wp_i18n_namespaceObject.__)('%1$s ‹ %2$s ‹ Editor — NotMattPress'), (0,external_wp_htmlEntities_namespaceObject.decodeEntities)(title), (0,external_wp_htmlEntities_namespaceObject.decodeEntities)(siteTitle));
       document.title = formattedTitle;
 
       // Announce title on route change for screen readers.
@@ -24074,7 +24074,7 @@ function useTitle(title) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/editor/use-editor-title.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -24111,7 +24111,7 @@ function useEditorTitle() {
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -24373,7 +24373,7 @@ var remove_accents = __webpack_require__(9681);
 var remove_accents_default = /*#__PURE__*/__webpack_require__.n(remove_accents);
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/arrow-up.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -24388,7 +24388,7 @@ const arrowUp = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(ex
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/arrow-down.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -24403,7 +24403,7 @@ const arrowDown = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/dataviews/build-module/constants.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -24594,7 +24594,7 @@ function getFieldTypeDefinition(type) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/dataviews/build-module/dataform-controls/datetime.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -24638,7 +24638,7 @@ function DateTime({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/dataviews/build-module/dataform-controls/integer.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -24677,7 +24677,7 @@ function Integer({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/dataviews/build-module/dataform-controls/radio.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -24716,7 +24716,7 @@ function Radio({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/dataviews/build-module/dataform-controls/select.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -24768,7 +24768,7 @@ function Select({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/dataviews/build-module/dataform-controls/text.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -25050,7 +25050,7 @@ function filterSortAndPaginate(data, view, fields) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/dataviews/build-module/components/dataviews-context/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -25081,7 +25081,7 @@ const DataViewsContext = (0,external_wp_element_namespaceObject.createContext)({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/funnel.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -29913,7 +29913,7 @@ var ComboboxItemValue = forwardRef2(function ComboboxItemValue2(props) {
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -30143,7 +30143,7 @@ function SearchWidget(props) {
  */
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -30359,13 +30359,13 @@ function FilterSummary({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/dataviews/build-module/lock-unlock.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 const {
   lock: lock_unlock_lock,
   unlock: lock_unlock_unlock
-} = (0,external_wp_privateApis_namespaceObject.__dangerousOptInToUnstableAPIsOnlyForCoreModules)('I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of WordPress.', '@wordpress/dataviews');
+} = (0,external_wp_privateApis_namespaceObject.__dangerousOptInToUnstableAPIsOnlyForCoreModules)('I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of NotMattPress.', '@wordpress/dataviews');
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/dataviews/build-module/components/dataviews-filters/add-filter.js
 /**
@@ -30373,7 +30373,7 @@ const {
  */
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -30450,7 +30450,7 @@ function AddFilter({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/dataviews/build-module/components/dataviews-filters/reset-filters.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -30510,7 +30510,7 @@ function sanitizeOperators(field) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/dataviews/build-module/components/dataviews-filters/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -30667,7 +30667,7 @@ function Filters() {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/block-table.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -30682,7 +30682,7 @@ const blockTable = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/category.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -30699,7 +30699,7 @@ const category = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(e
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/format-list-bullets-rtl.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -30714,7 +30714,7 @@ const formatListBulletsRTL = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceO
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/format-list-bullets.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -30729,7 +30729,7 @@ const formatListBullets = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObje
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/dataviews/build-module/components/dataviews-selection-checkbox/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -30779,7 +30779,7 @@ function DataViewsSelectionCheckbox({
  */
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -30975,7 +30975,7 @@ function CompactItemActions({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/dataviews/build-module/components/dataviews-bulk-actions/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -31180,7 +31180,7 @@ function BulkActionsFooter() {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/arrow-left.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -31195,7 +31195,7 @@ const arrowLeft = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/arrow-right.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -31210,7 +31210,7 @@ const arrowRight = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/unseen.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -31229,7 +31229,7 @@ const unseen = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(ext
  */
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -31416,7 +31416,7 @@ const ColumnHeaderMenu = _HeaderMenu;
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -31733,7 +31733,7 @@ function ViewTable({
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -31925,7 +31925,7 @@ function ViewGrid({
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -32258,7 +32258,7 @@ function ViewList(props) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/dataviews/build-module/dataviews-layouts/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -32350,7 +32350,7 @@ function getHiddenFieldIds(view, fields) {
  */
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -32392,7 +32392,7 @@ function DataViewsLayout() {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/dataviews/build-module/components/dataviews-pagination/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -32495,7 +32495,7 @@ function DataViewsPagination() {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/dataviews/build-module/components/dataviews-footer/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -32534,7 +32534,7 @@ function DataViewsFooter() {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/dataviews/build-module/components/dataviews-search/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -32588,7 +32588,7 @@ const DataViewsSearch = (0,external_wp_element_namespaceObject.memo)(function Se
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/chevron-up.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -32603,7 +32603,7 @@ const chevronUp = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/chevron-down.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -32618,7 +32618,7 @@ const chevronDown = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/cog.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -32638,7 +32638,7 @@ const external_wp_warning_namespaceObject = window["wp"]["warning"];
 var external_wp_warning_default = /*#__PURE__*/__webpack_require__.n(external_wp_warning_namespaceObject);
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/dataviews/build-module/dataviews-layouts/grid/density-picker.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -32750,7 +32750,7 @@ function DensityPicker({
  */
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -33201,7 +33201,7 @@ const DataViewsViewConfig = (0,external_wp_element_namespaceObject.memo)(_DataVi
  */
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -33311,7 +33311,7 @@ function DataViews({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/drawer-right.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -33330,7 +33330,7 @@ const drawerRight = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/page/header.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -33377,7 +33377,7 @@ function Header({
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -33416,7 +33416,7 @@ function Page({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/pages.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -33436,7 +33436,7 @@ const pages = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsxs)(ext
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/published.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -33453,7 +33453,7 @@ const published = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/scheduled.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -33470,7 +33470,7 @@ const scheduled = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/drafts.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -33487,7 +33487,7 @@ const drafts = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(ext
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/pending.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -33504,7 +33504,7 @@ const pending = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(ex
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/not-allowed.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -33521,7 +33521,7 @@ const notAllowed = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/sidebar-dataviews/default-views.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -33658,7 +33658,7 @@ function useDefaultViews({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/add-new-post/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -33761,7 +33761,7 @@ function AddNewPostModal({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/pencil.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -33784,7 +33784,7 @@ const pencil = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(ext
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/dataviews-actions/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -33826,7 +33826,7 @@ const useEditPostAction = () => {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/comment-author-avatar.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -33843,7 +33843,7 @@ const commentAuthorAvatar = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceOb
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/media/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -33875,7 +33875,7 @@ function Media({
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -33893,7 +33893,7 @@ function Media({
 
 
 
-// See https://github.com/WordPress/gutenberg/issues/55886
+// See https://github.com/NotMattPress/gutenberg/issues/55886
 // We do not support custom statutes at the moment.
 
 
@@ -34199,7 +34199,7 @@ function usePostFields(viewType) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/post-list/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -34569,7 +34569,7 @@ const filterOutDuplicatesByName = (currentItem, index, items) => index === items
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/page-patterns/use-pattern-settings.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -34611,7 +34611,7 @@ function usePatternSettings() {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/page-patterns/search-items.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -34753,7 +34753,7 @@ function getItemSearchRank(item, searchTerm, config) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/page-patterns/use-patterns.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -34958,7 +34958,7 @@ const usePatterns = (postType, categoryId, {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/symbol.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -34973,7 +34973,7 @@ const symbol_symbol = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.j
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/symbol-filled.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -34988,7 +34988,7 @@ const symbolFilled = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.js
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/upload.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -35003,7 +35003,7 @@ const upload = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(ext
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/add-new-pattern/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -35212,7 +35212,7 @@ function AddNewPattern() {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/sidebar-navigation-screen-patterns/use-default-pattern-categories.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -35237,7 +35237,7 @@ function useDefaultPatternCategories() {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/sidebar-navigation-screen-patterns/use-theme-patterns.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -35265,7 +35265,7 @@ function useThemePatterns() {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/sidebar-navigation-screen-patterns/use-pattern-categories.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -35365,7 +35365,7 @@ function usePatternCategories() {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/page-patterns/rename-category-menu-item.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -35431,7 +35431,7 @@ function RenameModal({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/page-patterns/delete-category-menu-item.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -35524,7 +35524,7 @@ function DeleteCategoryMenuItem({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/page-patterns/header.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -35614,7 +35614,7 @@ function PatternsHeader({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/lock-small.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -35633,7 +35633,7 @@ const lockSmall = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(
 const external_wp_priorityQueue_namespaceObject = window["wp"]["priorityQueue"];
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/async/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -35661,7 +35661,7 @@ function Async({
     const context = {};
     blockPreviewQueue.add(context, () => {
       // Synchronously run all renders so it consumes timeRemaining.
-      // See https://github.com/WordPress/gutenberg/pull/48238
+      // See https://github.com/NotMattPress/gutenberg/pull/48238
       (0,external_wp_element_namespaceObject.flushSync)(() => {
         setShouldRender(true);
       });
@@ -35678,7 +35678,7 @@ function Async({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/plugins.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -35693,7 +35693,7 @@ const plugins = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(ex
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/globe.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -35708,7 +35708,7 @@ const globe = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(exte
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/page-templates/hooks.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -35799,7 +35799,7 @@ function useAddedBy(postType, postId) {
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -35916,7 +35916,7 @@ function TitleField({
         variant: "link",
         onClick: onClick
         // Required for the grid's roving tab index system.
-        // See https://github.com/WordPress/gutenberg/pull/51898#discussion_r1243399243.
+        // See https://github.com/NotMattPress/gutenberg/pull/51898#discussion_r1243399243.
         ,
         tabIndex: "-1",
         children: title
@@ -36019,7 +36019,7 @@ const templatePartAuthorField = {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/page-patterns/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -36212,7 +36212,7 @@ function DataviewsPatterns() {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/home.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -36227,7 +36227,7 @@ const home = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(exter
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/verse.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -36242,7 +36242,7 @@ const verse = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(exte
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/pin.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -36257,7 +36257,7 @@ const pin = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(extern
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/archive.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -36274,7 +36274,7 @@ const archive = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(ex
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/not-found.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -36289,7 +36289,7 @@ const notFound = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(e
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/list.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -36304,7 +36304,7 @@ const list = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(exter
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/block-meta.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -36321,7 +36321,7 @@ const blockMeta = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/calendar.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -36336,7 +36336,7 @@ const calendar = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(e
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/tag.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -36351,7 +36351,7 @@ const tag = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(extern
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/media.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -36371,7 +36371,7 @@ const media = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsxs)(ext
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/post.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -36386,7 +36386,7 @@ const post_post = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/add-new-template/utils.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -36957,7 +36957,7 @@ const useEntitiesInfo = (entityName, templatePrefixes, additionalQueryParameters
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/add-new-template/add-custom-template-modal-content.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -37637,7 +37637,7 @@ function paramCase(input, options) {
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -37710,7 +37710,7 @@ function AddCustomGenericTemplateModalContent({
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -38024,7 +38024,7 @@ function useMissingTemplates(setEntityForSuggestions, onClick) {
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -38180,7 +38180,7 @@ const authorField = {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/page-templates/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -38379,7 +38379,7 @@ function PageTemplates() {
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -38398,7 +38398,7 @@ function SidebarButton(props) {
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -38511,7 +38511,7 @@ function SidebarNavigationScreen({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/chevron-left-small.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -38526,7 +38526,7 @@ const chevronLeftSmall = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObjec
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/chevron-right-small.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -38546,7 +38546,7 @@ const chevronRightSmall = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObje
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -38618,7 +38618,7 @@ function SidebarNavigationItem({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/sidebar-navigation-screen-details-panel/sidebar-navigation-screen-details-panel-label.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -38638,7 +38638,7 @@ function SidebarNavigationScreenDetailsPanelLabel({
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -38659,7 +38659,7 @@ function SidebarNavigationScreenDetailsPanelRow({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/sidebar-navigation-screen-details-panel/sidebar-navigation-screen-details-panel-value.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -38674,7 +38674,7 @@ function SidebarNavigationScreenDetailsPanelValue({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/sidebar-navigation-screen-details-panel/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -38705,7 +38705,7 @@ function SidebarNavigationScreenDetailsPanel({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/sidebar-navigation-screen-details-footer/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -38770,7 +38770,7 @@ function SidebarNavigationScreenDetailsFooter({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/sidebar-navigation-screen-global-styles/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -38925,7 +38925,7 @@ function SidebarNavigationScreenGlobalStyles({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/navigation.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -38940,7 +38940,7 @@ const navigation = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/sidebar-navigation-screen-main/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -39035,7 +39035,7 @@ const PRELOADED_NAVIGATION_MENUS_QUERY = {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/sidebar-navigation-screen-navigation-menu/rename-modal.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -39102,7 +39102,7 @@ function rename_modal_RenameModal({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/sidebar-navigation-screen-navigation-menu/delete-confirm-dialog.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -39128,7 +39128,7 @@ function DeleteConfirmDialog({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/sidebar-navigation-screen-navigation-menu/more-menu.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -39225,7 +39225,7 @@ function ScreenNavigationMoreMenu(props) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/sidebar-navigation-screen-navigation-menus/leaf-more-menu.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -39356,7 +39356,7 @@ function LeafMoreMenu(props) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/sidebar-navigation-screen-navigation-menus/navigation-menu-content.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -39381,7 +39381,7 @@ const MAX_PAGE_COUNT = 100;
 const PAGES_QUERY = ['postType', 'page', {
   per_page: MAX_PAGE_COUNT,
   _fields: ['id', 'link', 'menu_order', 'parent', 'title', 'type'],
-  // TODO: When https://core.trac.wordpress.org/ticket/39037 REST API support for multiple orderby
+  // TODO: When https://core.trac.notmatt.press/ticket/39037 REST API support for multiple orderby
   // values is resolved, update 'orderby' to [ 'menu_order', 'post_title' ] to provide a consistent
   // sort.
   orderby: 'menu_order',
@@ -39442,7 +39442,7 @@ function NavigationMenuContent({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/sidebar-navigation-screen-navigation-menu/navigation-menu-editor.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -39497,7 +39497,7 @@ function NavigationMenuEditor({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/sidebar-navigation-screen-navigation-menus/build-navigation-label.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -39518,7 +39518,7 @@ function buildNavigationLabel(title, id, status) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/sidebar-navigation-screen-navigation-menu/single-navigation-menu.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -39560,7 +39560,7 @@ function SingleNavigationMenu({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/sidebar-navigation-screen-navigation-menu/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -39658,7 +39658,7 @@ function SidebarNavigationScreenNavigationMenu({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/sidebar-navigation-screen-navigation-menu/use-navigation-menu-handlers.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -39805,7 +39805,7 @@ function useNavigationMenuHandlers() {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/sidebar-navigation-screen-navigation-menus/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -39950,7 +39950,7 @@ const NavMenuItem = ({
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -40009,7 +40009,7 @@ function DataViewItem({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/sidebar-navigation-screen-templates-browse/content.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -40079,7 +40079,7 @@ function DataviewsTemplatesSidebarContent({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/sidebar-navigation-screen-templates-browse/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -40115,7 +40115,7 @@ function SidebarNavigationScreenTemplatesBrowse({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/file.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -40166,7 +40166,7 @@ function CategoryItem({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/sidebar-navigation-screen-patterns/use-template-part-areas.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -40215,7 +40215,7 @@ function useTemplatePartAreas() {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/sidebar-navigation-screen-patterns/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -40333,7 +40333,7 @@ function SidebarNavigationScreenPatterns({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/sidebar-dataviews/add-new-view.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -40466,7 +40466,7 @@ function AddNewItem({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/sidebar-dataviews/custom-dataviews-list.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -40673,7 +40673,7 @@ function CustomDataViewsList({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/sidebar-dataviews/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -40728,7 +40728,7 @@ function DataViewsSidebarContent() {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/dataviews/build-module/dataforms-layouts/regular/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -40764,7 +40764,7 @@ function FormRegular({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/dataviews/build-module/dataforms-layouts/panel/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -40936,7 +40936,7 @@ function DataForm({
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -41042,7 +41042,7 @@ function PostEdit({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/layout/router.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -41249,7 +41249,7 @@ function useLayoutAreas() {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/hooks/commands/use-set-command-context.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -41298,7 +41298,7 @@ function useSetCommandContext() {
     /*
      * The editor canvas overlay will likely be deprecated in the future, so for now we clear the command context
      * to remove the suggested commands that may not make sense with Style Book or Style Revisions open.
-     * See https://github.com/WordPress/gutenberg/issues/62216.
+     * See https://github.com/NotMattPress/gutenberg/issues/62216.
      */
     commandContext = '';
   }
@@ -41307,7 +41307,7 @@ function useSetCommandContext() {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/app/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -41367,7 +41367,7 @@ function App() {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/deprecated.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -41424,7 +41424,7 @@ function PluginSidebarMoreMenuItem(props) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/posts-app/router.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -41502,7 +41502,7 @@ function router_useLayoutAreas() {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/components/posts-app/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -41540,7 +41540,7 @@ function PostsApp() {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/posts.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -41620,7 +41620,7 @@ function initializePostsDashboard(id, settings) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-site/build-module/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 

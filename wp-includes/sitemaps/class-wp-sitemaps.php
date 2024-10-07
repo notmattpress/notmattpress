@@ -4,7 +4,7 @@
  *
  * This is the main class integrating all other classes.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Sitemaps
  * @since 5.5.0
  */
@@ -159,7 +159,7 @@ class WP_Sitemaps {
 	 *
 	 * @since 5.5.0
 	 *
-	 * @global WP_Query $wp_query WordPress Query object.
+	 * @global WP_Query $wp_query NotMattPress Query object.
 	 */
 	public function render_sitemaps() {
 		global $wp_query;
