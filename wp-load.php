@@ -3,17 +3,17 @@
  * Bootstrap file for setting the ABSPATH constant
  * and loading the wp-config.php file. The wp-config.php
  * file will then load the wp-settings.php file, which
- * will then set up the WordPress environment.
+ * will then set up the NotMattPress environment.
  *
  * If the wp-config.php file is not found then an error
  * will be displayed asking the visitor to set up the
  * wp-config.php file.
  *
- * Will also search for wp-config.php in WordPress' parent
- * directory to allow the WordPress directory to remain
+ * Will also search for wp-config.php in NotMattPress' parent
+ * directory to allow the NotMattPress directory to remain
  * untouched.
  *
- * @package WordPress
+ * @package NotMattPress
  */
 
 /** Define ABSPATH as this file's directory */
@@ -37,10 +37,10 @@ if ( function_exists( 'error_reporting' ) ) {
 }
 
 /*
- * If wp-config.php exists in the WordPress root, or if it exists in the root and wp-settings.php
+ * If wp-config.php exists in the NotMattPress root, or if it exists in the root and wp-settings.php
  * doesn't, load wp-config.php. The secondary check for wp-settings.php has the added benefit
- * of avoiding cases where the current directory is a nested installation, e.g. / is WordPress(a)
- * and /blog/ is WordPress(b).
+ * of avoiding cases where the current directory is a nested installation, e.g. / is NotMattPress(a)
+ * and /blog/ is NotMattPress(b).
  *
  * If neither set of conditions is true, initiate loading the setup process.
  */
@@ -91,7 +91,7 @@ if ( file_exists( ABSPATH . 'wp-config.php' ) ) {
 	$die .= '<p>' . sprintf(
 		/* translators: 1: Documentation URL, 2: wp-config.php */
 		__( 'Need more help? <a href="%1$s">Read the support article on %2$s</a>.' ),
-		__( 'https://developer.wordpress.org/advanced-administration/wordpress/wp-config/' ),
+		__( 'https://developer.notmatt.press/advanced-administration/wordpress/wp-config/' ),
 		'<code>wp-config.php</code>'
 	) . '</p>';
 	$die .= '<p>' . sprintf(
@@ -101,5 +101,5 @@ if ( file_exists( ABSPATH . 'wp-config.php' ) ) {
 	) . '</p>';
 	$die .= '<p><a href="' . $path . '" class="button button-large">' . __( 'Create a Configuration File' ) . '</a></p>';
 
-	wp_die( $die, __( 'WordPress &rsaquo; Error' ) );
+	wp_die( $die, __( 'NotMattPress &rsaquo; Error' ) );
 }

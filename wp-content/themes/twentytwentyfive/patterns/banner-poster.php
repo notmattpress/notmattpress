@@ -5,7 +5,7 @@
  * Categories: banner, media, featured
  * Description: A section that can be used as a banner or a landing page to announce an event.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Twenty_Twenty_Five
  * @since Twenty Twenty-Five 1.0
  */

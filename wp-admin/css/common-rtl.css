@@ -710,7 +710,7 @@ ul.striped > :nth-child(odd),
 	border-left-color: #4f94d4;
 }
 
-/* Helper classes for plugins to leverage the active WordPress color scheme */
+/* Helper classes for plugins to leverage the active NotMattPress color scheme */
 
 .highlight {
 	background-color: #f0f6fc;

@@ -1621,13 +1621,13 @@ const builtinControls = {
 const external_wp_privateApis_namespaceObject = window["wp"]["privateApis"];
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/data/build-module/lock-unlock.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 const {
   lock,
   unlock
-} = (0,external_wp_privateApis_namespaceObject.__dangerousOptInToUnstableAPIsOnlyForCoreModules)('I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of WordPress.', '@wordpress/data');
+} = (0,external_wp_privateApis_namespaceObject.__dangerousOptInToUnstableAPIsOnlyForCoreModules)('I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of NotMattPress.', '@wordpress/data');
 
 ;// CONCATENATED MODULE: ./node_modules/is-promise/index.mjs
 function isPromise(obj) {
@@ -2188,7 +2188,7 @@ function isShallowEqual(a, b, fromIndex) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/data/build-module/redux-store/metadata/selectors.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -2543,7 +2543,7 @@ function invalidateResolutionForStoreSelector(selectorName) {
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -3141,7 +3141,7 @@ function createEmitter() {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/data/build-module/registry.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -3230,7 +3230,7 @@ function createRegistry(storeConfigs = {}, parent = null) {
     // Trying to access a store that hasn't been registered,
     // this is a pattern rarely used but seen in some places.
     // We fallback to global `subscribe` here for backward-compatibility for now.
-    // See https://github.com/WordPress/gutenberg/pull/27466 for more info.
+    // See https://github.com/NotMattPress/gutenberg/pull/27466 for more info.
     if (!parent) {
       return emitter.subscribe(listener);
     }
@@ -3801,7 +3801,7 @@ const external_wp_isShallowEqual_namespaceObject = window["wp"]["isShallowEqual"
 var external_wp_isShallowEqual_default = /*#__PURE__*/__webpack_require__.n(external_wp_isShallowEqual_namespaceObject);
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/data/build-module/components/registry-provider/context.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -3859,7 +3859,7 @@ const RegistryConsumer = Consumer;
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/data/build-module/components/registry-provider/use-registry.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -3913,7 +3913,7 @@ function useRegistry() {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/data/build-module/components/async-mode-provider/context.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 const context_Context = (0,external_wp_element_namespaceObject.createContext)(false);
@@ -3962,7 +3962,7 @@ const AsyncModeConsumer = (/* unused pure expression or super */ null && (contex
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/data/build-module/components/async-mode-provider/use-async-mode.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -3976,7 +3976,7 @@ function useAsyncMode() {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/data/build-module/components/use-select/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -4282,7 +4282,7 @@ function useSuspenseSelect(mapSelect, deps) {
 const external_ReactJSXRuntime_namespaceObject = window["ReactJSXRuntime"];
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/data/build-module/components/with-select/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -4346,7 +4346,7 @@ const withSelect = mapSelectToProps => (0,external_wp_compose_namespaceObject.cr
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/data/build-module/components/use-dispatch/use-dispatch-with-map.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -4391,7 +4391,7 @@ const useDispatchWithMap = (dispatchMap, deps) => {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/data/build-module/components/with-dispatch/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -4496,7 +4496,7 @@ const withDispatch = mapDispatchToProps => (0,external_wp_compose_namespaceObjec
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/data/build-module/components/with-registry/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 

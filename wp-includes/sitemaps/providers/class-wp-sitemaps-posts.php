@@ -4,7 +4,7 @@
  *
  * Builds the sitemaps for the 'post' object type.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Sitemaps
  * @since 5.5.0
  */

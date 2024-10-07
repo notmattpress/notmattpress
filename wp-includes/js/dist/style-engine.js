@@ -606,7 +606,7 @@ function generateBoxRules(style, options, path, ruleKeys, individualProperties =
 }
 
 /**
- * Returns a WordPress CSS custom var value from incoming style preset value,
+ * Returns a NotMattPress CSS custom var value from incoming style preset value,
  * if one is detected.
  *
  * The preset value is a string and follows the pattern `var:description|context|slug`.
@@ -1063,7 +1063,7 @@ const styleDefinitions = [...border, ...styles_color, ...dimensions, ...outline,
 /**
  * Generates a stylesheet for a given style object and selector.
  *
- * @since 6.1.0 Introduced in WordPress core.
+ * @since 6.1.0 Introduced in NotMattPress core.
  *
  * @param style   Style object, for example, the value of a block's attributes.style object or the top level styles in theme.json
  * @param options Options object with settings to adjust how the styles are generated.
@@ -1104,7 +1104,7 @@ function compileCSS(style, options = {}) {
 /**
  * Returns a JSON representation of the generated CSS rules.
  *
- * @since 6.1.0 Introduced in WordPress core.
+ * @since 6.1.0 Introduced in NotMattPress core.
  *
  * @param style   Style object, for example, the value of a block's attributes.style object or the top level styles in theme.json
  * @param options Options object with settings to adjust how the styles are generated.

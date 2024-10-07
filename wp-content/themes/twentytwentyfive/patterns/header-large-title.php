@@ -6,7 +6,7 @@
  * Block Types: core/template-part/header
  * Description: Header with large site title and right-aligned navigation.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Twenty_Twenty_Five
  * @since Twenty Twenty-Five 1.0
  */

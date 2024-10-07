@@ -4,18 +4,18 @@
  *
  * Sets up the theme and provides some helper functions. Some helper functions
  * are used in the theme as custom template tags. Others are attached to action and
- * filter hooks in WordPress to change core functionality.
+ * filter hooks in NotMattPress to change core functionality.
  *
  * The first function, twentyten_setup(), sets up the theme by registering support
- * for various features in WordPress, such as post thumbnails, navigation menus, and the like.
+ * for various features in NotMattPress, such as post thumbnails, navigation menus, and the like.
  *
  * When using a child theme you can override certain functions (those wrapped
  * in a function_exists() call) by defining them first in your child theme's
  * functions.php file. The child theme's functions.php file is included before
  * the parent theme's file, so the child theme functions would be used.
  *
- * @link https://developer.wordpress.org/themes/basics/theme-functions/
- * @link https://developer.wordpress.org/themes/advanced-topics/child-themes/
+ * @link https://developer.notmatt.press/themes/basics/theme-functions/
+ * @link https://developer.notmatt.press/themes/advanced-topics/child-themes/
  *
  * Functions that are not pluggable (not wrapped in function_exists()) are instead attached
  * to a filter or action hook. The hook can be removed by using remove_action() or
@@ -33,9 +33,9 @@
  * }
  * </code>
  *
- * For more information on hooks, actions, and filters, see https://developer.wordpress.org/plugins/.
+ * For more information on hooks, actions, and filters, see https://developer.notmatt.press/plugins/.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Twenty_Ten
  * @since Twenty Ten 1.0
  */
@@ -50,12 +50,12 @@ if ( ! isset( $content_width ) ) {
 	$content_width = 640;
 }
 
-/* Tell WordPress to run twentyten_setup() when the 'after_setup_theme' hook is run. */
+/* Tell NotMattPress to run twentyten_setup() when the 'after_setup_theme' hook is run. */
 add_action( 'after_setup_theme', 'twentyten_setup' );
 
 if ( ! function_exists( 'twentyten_setup' ) ) :
 	/**
-	 * Set up theme defaults and registers support for various WordPress features.
+	 * Set up theme defaults and registers support for various NotMattPress features.
 	 *
 	 * Note that this function is hooked into the after_setup_theme hook, which runs
 	 * before the init hook. The init hook is too late for some features, such as indicating
@@ -130,7 +130,7 @@ if ( ! function_exists( 'twentyten_setup' ) ) :
 		 * Translations can be filed in the /languages/ directory.
 		 *
 		 * Manual loading of text domain is not required after the introduction of
-		 * just in time translation loading in WordPress version 4.6.
+		 * just in time translation loading in NotMattPress version 4.6.
 		 *
 		 * @ticket 58318
 		 */
@@ -149,7 +149,7 @@ if ( ! function_exists( 'twentyten_setup' ) ) :
 		add_theme_support(
 			'custom-background',
 			array(
-				// Let WordPress know what our default background color is.
+				// Let NotMattPress know what our default background color is.
 				'default-color' => 'f1f1f1',
 			)
 		);
@@ -190,7 +190,7 @@ if ( ! function_exists( 'twentyten_setup' ) ) :
 		add_theme_support( 'custom-header', $custom_header_support );
 
 		if ( ! function_exists( 'get_custom_header' ) ) {
-			// This is all for compatibility with versions of WordPress prior to 3.4.
+			// This is all for compatibility with versions of NotMattPress prior to 3.4.
 			define( 'HEADER_TEXTCOLOR', '' );
 			define( 'NO_HEADER_TEXT', true );
 			define( 'HEADER_IMAGE', $custom_header_support['default-image'] );
@@ -302,7 +302,7 @@ if ( ! function_exists( 'twentyten_header_image' ) ) :
 			'alt' => get_bloginfo( 'name', 'display' ),
 		);
 
-		// Compatibility with versions of WordPress prior to 3.4.
+		// Compatibility with versions of NotMattPress prior to 3.4.
 		if ( function_exists( 'get_custom_header' ) ) {
 			$custom_header   = get_custom_header();
 			$attrs['width']  = $custom_header->width;
@@ -414,7 +414,7 @@ add_filter( 'get_the_excerpt', 'twentyten_custom_excerpt_more' );
  * Remove inline styles printed when the gallery shortcode is used.
  *
  * Galleries are styled by the theme in Twenty Ten's style.css. This is just
- * a simple filter call that tells WordPress to not use the default styles.
+ * a simple filter call that tells NotMattPress to not use the default styles.
  *
  * @since Twenty Ten 1.2
  */
@@ -427,14 +427,14 @@ add_filter( 'use_default_gallery_style', '__return_false' );
  * filter instead, as seen above.
  *
  * @since Twenty Ten 1.0
- * @deprecated Deprecated in Twenty Ten 1.2 for WordPress 3.1
+ * @deprecated Deprecated in Twenty Ten 1.2 for NotMattPress 3.1
  *
  * @return string The gallery style filter, with the styles themselves removed.
  */
 function twentyten_remove_gallery_css( $css ) {
 	return preg_replace( "#<style type='text/css'>(.*?)</style>#s", '', $css );
 }
-// Backward compatibility with WordPress 3.0.
+// Backward compatibility with NotMattPress 3.0.
 if ( version_compare( $GLOBALS['wp_version'], '3.1', '<' ) ) {
 	add_filter( 'gallery_style', 'twentyten_remove_gallery_css' );
 }
@@ -623,8 +623,8 @@ add_action( 'widgets_init', 'twentyten_widgets_init' );
  * To override this in a child theme, remove the filter and optionally add your own
  * function tied to the widgets_init action hook.
  *
- * This function uses a filter (show_recent_comments_widget_style) new in WordPress 3.1
- * to remove the default style. Using Twenty Ten 1.2 in WordPress 3.0 will show the styles,
+ * This function uses a filter (show_recent_comments_widget_style) new in NotMattPress 3.1
+ * to remove the default style. Using Twenty Ten 1.2 in NotMattPress 3.0 will show the styles,
  * but they won't have any effect on the widget in default Twenty Ten styling.
  *
  * @since Twenty Ten 1.0
@@ -786,7 +786,7 @@ if ( ! function_exists( 'wp_body_open' ) ) :
 	/**
 	 * Fire the wp_body_open action.
 	 *
-	 * Added for backward compatibility to support pre-5.2.0 WordPress versions.
+	 * Added for backward compatibility to support pre-5.2.0 NotMattPress versions.
 	 *
 	 * @since Twenty Ten 2.9
 	 */

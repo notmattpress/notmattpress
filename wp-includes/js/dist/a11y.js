@@ -87,7 +87,7 @@ function addContainer(ariaLive = 'polite') {
 const external_wp_i18n_namespaceObject = window["wp"]["i18n"];
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/a11y/build-module/script/add-intro-text.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -215,7 +215,7 @@ function speak(message, ariaLive) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/a11y/build-module/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 

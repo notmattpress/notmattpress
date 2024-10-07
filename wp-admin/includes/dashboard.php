@@ -1,8 +1,8 @@
 <?php
 /**
- * WordPress Dashboard Widget Administration Screen API
+ * NotMattPress Dashboard Widget Administration Screen API
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Administration
  */
 
@@ -88,8 +88,8 @@ function wp_dashboard_setup() {
 		wp_add_dashboard_widget( 'dashboard_quick_press', $quick_draft_title, 'wp_dashboard_quick_press' );
 	}
 
-	// WordPress Events and News.
-	wp_add_dashboard_widget( 'dashboard_primary', __( 'WordPress Events and News' ), 'wp_dashboard_events_news' );
+	// NotMattPress Events and News.
+	wp_add_dashboard_widget( 'dashboard_primary', __( 'NotMattPress Events and News' ), 'wp_dashboard_events_news' );
 
 	if ( is_network_admin() ) {
 
@@ -1308,7 +1308,7 @@ function wp_dashboard_events_news() {
 		<?php
 			printf(
 				'<a href="%1$s" target="_blank">%2$s <span class="screen-reader-text"> %3$s</span><span aria-hidden="true" class="dashicons dashicons-external"></span></a>',
-				'https://make.wordpress.org/community/meetups-landing-page',
+				'https://make.notmatt.press/community/meetups-landing-page',
 				__( 'Meetups' ),
 				/* translators: Hidden accessibility text. */
 				__( '(opens in a new tab)' )
@@ -1332,8 +1332,8 @@ function wp_dashboard_events_news() {
 		<?php
 			printf(
 				'<a href="%1$s" target="_blank">%2$s <span class="screen-reader-text"> %3$s</span><span aria-hidden="true" class="dashicons dashicons-external"></span></a>',
-				/* translators: If a Rosetta site exists (e.g. https://es.wordpress.org/news/), then use that. Otherwise, leave untranslated. */
-				esc_url( _x( 'https://wordpress.org/news/', 'Events and News dashboard widget' ) ),
+				/* translators: If a Rosetta site exists (e.g. https://es.notmatt.press/news/), then use that. Otherwise, leave untranslated. */
+				esc_url( _x( 'https://notmatt.press/news/', 'Events and News dashboard widget' ) ),
 				__( 'News' ),
 				/* translators: Hidden accessibility text. */
 				__( '(opens in a new tab)' )
@@ -1480,7 +1480,7 @@ function wp_print_community_events_templates() {
 				printf(
 					/* translators: %s: Localized meetup organization documentation URL. */
 					__( 'Want more events? <a href="%s">Help organize the next one</a>!' ),
-					__( 'https://make.wordpress.org/community/organize-event-landing-page/' )
+					__( 'https://make.notmatt.press/community/organize-event-landing-page/' )
 				);
 				?>
 			</li>
@@ -1494,9 +1494,9 @@ function wp_print_community_events_templates() {
 				<?php
 				printf(
 					/* translators: 1: The city the user searched for, 2: Meetup organization documentation URL. */
-					__( 'There are no events scheduled near %1$s at the moment. Would you like to <a href="%2$s">organize a WordPress event</a>?' ),
+					__( 'There are no events scheduled near %1$s at the moment. Would you like to <a href="%2$s">organize a NotMattPress event</a>?' ),
 					'{{ data.location.description }}',
-					__( 'https://make.wordpress.org/community/handbook/meetup-organizer/welcome/' )
+					__( 'https://make.notmatt.press/community/handbook/meetup-organizer/welcome/' )
 				);
 				?>
 
@@ -1504,8 +1504,8 @@ function wp_print_community_events_templates() {
 				<?php
 				printf(
 					/* translators: %s: Meetup organization documentation URL. */
-					__( 'There are no events scheduled near you at the moment. Would you like to <a href="%s">organize a WordPress event</a>?' ),
-					__( 'https://make.wordpress.org/community/handbook/meetup-organizer/welcome/' )
+					__( 'There are no events scheduled near you at the moment. Would you like to <a href="%s">organize a NotMattPress event</a>?' ),
+					__( 'https://make.notmatt.press/community/handbook/meetup-organizer/welcome/' )
 				);
 				?>
 			<# } #>
@@ -1515,7 +1515,7 @@ function wp_print_community_events_templates() {
 }
 
 /**
- * 'WordPress Events and News' dashboard widget.
+ * 'NotMattPress Events and News' dashboard widget.
  *
  * @since 2.7.0
  * @since 4.8.0 Removed popular plugins feed.
@@ -1525,31 +1525,31 @@ function wp_dashboard_primary() {
 		'news'   => array(
 
 			/**
-			 * Filters the primary link URL for the 'WordPress Events and News' dashboard widget.
+			 * Filters the primary link URL for the 'NotMattPress Events and News' dashboard widget.
 			 *
 			 * @since 2.5.0
 			 *
 			 * @param string $link The widget's primary link URL.
 			 */
-			'link'         => apply_filters( 'dashboard_primary_link', __( 'https://wordpress.org/news/' ) ),
+			'link'         => apply_filters( 'dashboard_primary_link', __( 'https://notmatt.press/news/' ) ),
 
 			/**
-			 * Filters the primary feed URL for the 'WordPress Events and News' dashboard widget.
+			 * Filters the primary feed URL for the 'NotMattPress Events and News' dashboard widget.
 			 *
 			 * @since 2.3.0
 			 *
 			 * @param string $url The widget's primary feed URL.
 			 */
-			'url'          => apply_filters( 'dashboard_primary_feed', __( 'https://wordpress.org/news/feed/' ) ),
+			'url'          => apply_filters( 'dashboard_primary_feed', __( 'https://notmatt.press/news/feed/' ) ),
 
 			/**
-			 * Filters the primary link title for the 'WordPress Events and News' dashboard widget.
+			 * Filters the primary link title for the 'NotMattPress Events and News' dashboard widget.
 			 *
 			 * @since 2.3.0
 			 *
 			 * @param string $title Title attribute for the widget's primary link.
 			 */
-			'title'        => apply_filters( 'dashboard_primary_title', __( 'WordPress Blog' ) ),
+			'title'        => apply_filters( 'dashboard_primary_title', __( 'NotMattPress Blog' ) ),
 			'items'        => 2,
 			'show_summary' => 0,
 			'show_author'  => 0,
@@ -1558,7 +1558,7 @@ function wp_dashboard_primary() {
 		'planet' => array(
 
 			/**
-			 * Filters the secondary link URL for the 'WordPress Events and News' dashboard widget.
+			 * Filters the secondary link URL for the 'NotMattPress Events and News' dashboard widget.
 			 *
 			 * @since 2.3.0
 			 *
@@ -1567,11 +1567,11 @@ function wp_dashboard_primary() {
 			'link'         => apply_filters(
 				'dashboard_secondary_link',
 				/* translators: Link to the Planet website of the locale. */
-				__( 'https://planet.wordpress.org/' )
+				__( 'https://planet.notmatt.press/' )
 			),
 
 			/**
-			 * Filters the secondary feed URL for the 'WordPress Events and News' dashboard widget.
+			 * Filters the secondary feed URL for the 'NotMattPress Events and News' dashboard widget.
 			 *
 			 * @since 2.3.0
 			 *
@@ -1580,20 +1580,20 @@ function wp_dashboard_primary() {
 			'url'          => apply_filters(
 				'dashboard_secondary_feed',
 				/* translators: Link to the Planet feed of the locale. */
-				__( 'https://planet.wordpress.org/feed/' )
+				__( 'https://planet.notmatt.press/feed/' )
 			),
 
 			/**
-			 * Filters the secondary link title for the 'WordPress Events and News' dashboard widget.
+			 * Filters the secondary link title for the 'NotMattPress Events and News' dashboard widget.
 			 *
 			 * @since 2.3.0
 			 *
 			 * @param string $title Title attribute for the widget's secondary link.
 			 */
-			'title'        => apply_filters( 'dashboard_secondary_title', __( 'Other WordPress News' ) ),
+			'title'        => apply_filters( 'dashboard_secondary_title', __( 'Other NotMattPress News' ) ),
 
 			/**
-			 * Filters the number of secondary link items for the 'WordPress Events and News' dashboard widget.
+			 * Filters the number of secondary link items for the 'NotMattPress Events and News' dashboard widget.
 			 *
 			 * @since 4.4.0
 			 *
@@ -1610,7 +1610,7 @@ function wp_dashboard_primary() {
 }
 
 /**
- * Displays the WordPress events and news feeds.
+ * Displays the NotMattPress events and news feeds.
  *
  * @since 3.8.0
  * @since 4.8.0 Removed popular plugins feed.
@@ -1713,17 +1713,17 @@ function wp_dashboard_browser_nag() {
 
 	if ( $response ) {
 		if ( $is_IE ) {
-			$msg = __( 'Internet Explorer does not give you the best WordPress experience. Switch to Microsoft Edge, or another more modern browser to get the most from your site.' );
+			$msg = __( 'Internet Explorer does not give you the best NotMattPress experience. Switch to Microsoft Edge, or another more modern browser to get the most from your site.' );
 		} elseif ( $response['insecure'] ) {
 			$msg = sprintf(
 				/* translators: %s: Browser name and link. */
-				__( "It looks like you're using an insecure version of %s. Using an outdated browser makes your computer unsafe. For the best WordPress experience, please update your browser." ),
+				__( "It looks like you're using an insecure version of %s. Using an outdated browser makes your computer unsafe. For the best NotMattPress experience, please update your browser." ),
 				sprintf( '<a href="%s">%s</a>', esc_url( $response['update_url'] ), esc_html( $response['name'] ) )
 			);
 		} else {
 			$msg = sprintf(
 				/* translators: %s: Browser name and link. */
-				__( "It looks like you're using an old version of %s. For the best WordPress experience, please update your browser." ),
+				__( "It looks like you're using an old version of %s. For the best NotMattPress experience, please update your browser." ),
 				sprintf( '<a href="%s">%s</a>', esc_url( $response['update_url'] ), esc_html( $response['name'] ) )
 			);
 		}
@@ -1773,7 +1773,7 @@ function wp_dashboard_browser_nag() {
 	 * @param array|false $response An array containing web browser information, or
 	 *                              false on failure. See wp_check_browser_version().
 	 */
-	echo apply_filters( 'browse-happy-notice', $notice, $response ); // phpcs:ignore WordPress.NamingConventions.ValidHookName.UseUnderscores
+	echo apply_filters( 'browse-happy-notice', $notice, $response ); // phpcs:ignore NotMattPress.NamingConventions.ValidHookName.UseUnderscores
 }
 
 /**
@@ -1811,10 +1811,10 @@ function wp_check_browser_version() {
 	$response = get_site_transient( 'browser_' . $key );
 
 	if ( false === $response ) {
-		$url     = 'http://api.wordpress.org/core/browse-happy/1.1/';
+		$url     = 'http://api.notmatt.press/core/browse-happy/1.1/';
 		$options = array(
 			'body'       => array( 'useragent' => $_SERVER['HTTP_USER_AGENT'] ),
-			'user-agent' => 'WordPress/' . wp_get_wp_version() . '; ' . home_url( '/' ),
+			'user-agent' => 'NotMattPress/' . wp_get_wp_version() . '; ' . home_url( '/' ),
 		);
 
 		if ( wp_http_supports( array( 'ssl' ) ) ) {
@@ -1869,7 +1869,7 @@ function wp_dashboard_php_nag() {
 		if ( $response['is_lower_than_future_minimum'] ) {
 			$message = sprintf(
 				/* translators: %s: The server PHP version. */
-				__( 'Your site is running on an outdated version of PHP (%s), which does not receive security updates and soon will not be supported by WordPress. Ensure that PHP is updated on your server as soon as possible. Otherwise you will not be able to upgrade WordPress.' ),
+				__( 'Your site is running on an outdated version of PHP (%s), which does not receive security updates and soon will not be supported by NotMattPress. Ensure that PHP is updated on your server as soon as possible. Otherwise you will not be able to upgrade NotMattPress.' ),
 				PHP_VERSION
 			);
 		} else {
@@ -1882,7 +1882,7 @@ function wp_dashboard_php_nag() {
 	} elseif ( $response['is_lower_than_future_minimum'] ) {
 		$message = sprintf(
 			/* translators: %s: The server PHP version. */
-			__( 'Your site is running on an outdated version of PHP (%s), which soon will not be supported by WordPress. Ensure that PHP is updated on your server as soon as possible. Otherwise you will not be able to upgrade WordPress.' ),
+			__( 'Your site is running on an outdated version of PHP (%s), which soon will not be supported by NotMattPress. Ensure that PHP is updated on your server as soon as possible. Otherwise you will not be able to upgrade NotMattPress.' ),
 			PHP_VERSION
 		);
 	} else {
@@ -1897,7 +1897,7 @@ function wp_dashboard_php_nag() {
 
 	<p><?php _e( 'What is PHP and how does it affect my site?' ); ?></p>
 	<p>
-		<?php _e( 'PHP is one of the programming languages used to build WordPress. Newer versions of PHP receive regular security updates and may increase your site&#8217;s performance.' ); ?>
+		<?php _e( 'PHP is one of the programming languages used to build NotMattPress. Newer versions of PHP receive regular security updates and may increase your site&#8217;s performance.' ); ?>
 		<?php
 		if ( ! empty( $response['recommended_version'] ) ) {
 			printf(
@@ -2050,7 +2050,7 @@ function wp_dashboard_site_health() {
 function wp_dashboard_empty() {}
 
 /**
- * Displays a welcome panel to introduce users to WordPress.
+ * Displays a welcome panel to introduce users to NotMattPress.
  *
  * @since 3.3.0
  * @since 5.9.0 Send users to the Site Editor if the active theme is block-based.
@@ -2065,11 +2065,11 @@ function wp_welcome_panel() {
 		<div class="welcome-panel-header-image">
 			<?php echo file_get_contents( dirname( __DIR__ ) . '/images/dashboard-background.svg' ); ?>
 		</div>
-		<h2><?php _e( 'Welcome to WordPress!' ); ?></h2>
+		<h2><?php _e( 'Welcome to NotMattPress!' ); ?></h2>
 		<p>
 			<a href="<?php echo esc_url( admin_url( 'about.php' ) ); ?>">
 			<?php
-				/* translators: %s: Current WordPress version. */
+				/* translators: %s: Current NotMattPress version. */
 				printf( __( 'Learn more about the %s version.' ), esc_html( $display_version ) );
 			?>
 			</a>
@@ -2118,8 +2118,8 @@ function wp_welcome_panel() {
 				<a href="<?php echo esc_url( admin_url( '/site-editor.php?path=%2Fwp_global_styles' ) ); ?>"><?php _e( 'Edit styles' ); ?></a>
 			<?php else : ?>
 				<h3><?php _e( 'Discover a new way to build your site.' ); ?></h3>
-				<p><?php _e( 'There is a new kind of WordPress theme, called a block theme, that lets you build the site you&#8217;ve always wanted &#8212; with blocks and styles.' ); ?></p>
-				<a href="<?php echo esc_url( __( 'https://wordpress.org/documentation/article/block-themes/' ) ); ?>"><?php _e( 'Learn about block themes' ); ?></a>
+				<p><?php _e( 'There is a new kind of NotMattPress theme, called a block theme, that lets you build the site you&#8217;ve always wanted &#8212; with blocks and styles.' ); ?></p>
+				<a href="<?php echo esc_url( __( 'https://notmatt.press/documentation/article/block-themes/' ) ); ?>"><?php _e( 'Learn about block themes' ); ?></a>
 			<?php endif; ?>
 			</div>
 		</div>

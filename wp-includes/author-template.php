@@ -2,11 +2,11 @@
 /**
  * Author Template functions for use in themes.
  *
- * These functions must be used within the WordPress Loop.
+ * These functions must be used within the NotMattPress Loop.
  *
- * @link https://codex.wordpress.org/Author_Templates
+ * @link https://codex.notmatt.press/Author_Templates
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Template
  */
 
@@ -52,7 +52,7 @@ function get_the_author( $deprecated = '' ) {
  * @since 0.71
  *
  * @see get_the_author()
- * @link https://developer.wordpress.org/reference/functions/the_author/
+ * @link https://developer.notmatt.press/reference/functions/the_author/
  *
  * @param string $deprecated      Deprecated.
  * @param bool   $deprecated_echo Deprecated. Use get_the_author(). Echo the string or return it.
@@ -266,7 +266,7 @@ function get_the_author_link() {
  * If the author has a home page set, echo an HTML link, otherwise just echo the
  * author's name.
  *
- * @link https://developer.wordpress.org/reference/functions/the_author_link/
+ * @link https://developer.notmatt.press/reference/functions/the_author_link/
  *
  * @since 2.1.0
  */
@@ -292,7 +292,7 @@ function get_the_author_posts() {
 /**
  * Displays the number of posts by the author of the current post.
  *
- * @link https://developer.wordpress.org/reference/functions/the_author_posts/
+ * @link https://developer.notmatt.press/reference/functions/the_author_posts/
  * @since 0.71
  */
 function the_author_posts() {
@@ -355,7 +355,7 @@ function the_author_posts_link( $deprecated = '' ) {
  *
  * @since 2.1.0
  *
- * @global WP_Rewrite $wp_rewrite WordPress rewrite component.
+ * @global WP_Rewrite $wp_rewrite NotMattPress rewrite component.
  *
  * @param int    $author_id       Author ID.
  * @param string $author_nicename Optional. The author's nicename (slug). Default empty.
@@ -398,11 +398,11 @@ function get_author_posts_url( $author_id, $author_nicename = '' ) {
 /**
  * Lists all the authors of the site, with several options available.
  *
- * @link https://developer.wordpress.org/reference/functions/wp_list_authors/
+ * @link https://developer.notmatt.press/reference/functions/wp_list_authors/
  *
  * @since 1.2.0
  *
- * @global wpdb $wpdb WordPress database abstraction object.
+ * @global wpdb $wpdb NotMattPress database abstraction object.
  *
  * @param string|array $args {
  *     Optional. Array or string of default arguments.
@@ -590,12 +590,12 @@ function wp_list_authors( $args = '' ) {
  * Checks to see if more than one author has published posts.
  *
  * For more information on this and similar theme functions, check out
- * the {@link https://developer.wordpress.org/themes/basics/conditional-tags/
+ * the {@link https://developer.notmatt.press/themes/basics/conditional-tags/
  * Conditional Tags} article in the Theme Developer Handbook.
  *
  * @since 3.2.0
  *
- * @global wpdb $wpdb WordPress database abstraction object.
+ * @global wpdb $wpdb NotMattPress database abstraction object.
  *
  * @return bool Whether or not we have more than one author
  */
@@ -625,6 +625,6 @@ function is_multi_author() {
  * @since 3.2.0
  * @access private
  */
-function __clear_multi_author_cache() { // phpcs:ignore WordPress.NamingConventions.ValidFunctionName.FunctionDoubleUnderscore,PHPCompatibility.FunctionNameRestrictions.ReservedFunctionNames.FunctionDoubleUnderscore
+function __clear_multi_author_cache() { // phpcs:ignore NotMattPress.NamingConventions.ValidFunctionName.FunctionDoubleUnderscore,PHPCompatibility.FunctionNameRestrictions.ReservedFunctionNames.FunctionDoubleUnderscore
 	delete_transient( 'is_multi_author' );
 }

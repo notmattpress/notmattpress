@@ -508,7 +508,7 @@ function closeOuterElement(endOffset) {
 
 
 /**
- * A base class to create WordPress Components (Refs, state and lifecycle hooks)
+ * A base class to create NotMattPress Components (Refs, state and lifecycle hooks)
  */
 
 
@@ -762,7 +762,7 @@ var client = __webpack_require__(4140);
 /**
  * Renders a given element into the target DOM node.
  *
- * @deprecated since WordPress 6.2.0. Use `createRoot` instead.
+ * @deprecated since NotMattPress 6.2.0. Use `createRoot` instead.
  * @see https://react.dev/reference/react-dom/render
  */
 
@@ -770,7 +770,7 @@ var client = __webpack_require__(4140);
 /**
  * Hydrates a given element into the target DOM node.
  *
- * @deprecated since WordPress 6.2.0. Use `hydrateRoot` instead.
+ * @deprecated since NotMattPress 6.2.0. Use `hydrateRoot` instead.
  * @see https://react.dev/reference/react-dom/hydrate
  */
 
@@ -778,7 +778,7 @@ var client = __webpack_require__(4140);
 /**
  * Creates a new React root for the target DOM node.
  *
- * @since 6.2.0 Introduced in WordPress core.
+ * @since 6.2.0 Introduced in NotMattPress core.
  * @see https://react.dev/reference/react-dom/client/createRoot
  */
 
@@ -786,7 +786,7 @@ var client = __webpack_require__(4140);
 /**
  * Creates a new React root for the target DOM node and hydrates it with a pre-generated markup.
  *
- * @since 6.2.0 Introduced in WordPress core.
+ * @since 6.2.0 Introduced in NotMattPress core.
  * @see https://react.dev/reference/react-dom/client/hydrateRoot
  */
 
@@ -794,7 +794,7 @@ var client = __webpack_require__(4140);
 /**
  * Removes any mounted element from the target DOM node.
  *
- * @deprecated since WordPress 6.2.0. Use `root.unmount()` instead.
+ * @deprecated since NotMattPress 6.2.0. Use `root.unmount()` instead.
  * @see https://react.dev/reference/react-dom/unmountComponentAtNode
  */
 
@@ -1436,7 +1436,7 @@ function RawHTML({
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 

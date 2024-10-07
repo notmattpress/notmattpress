@@ -2,7 +2,7 @@
 /**
  * Shadow block support flag.
  *
- * @package WordPress
+ * @package NotMattPress
  * @since 6.3.0
  */
 

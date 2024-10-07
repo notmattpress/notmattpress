@@ -1,19 +1,19 @@
 <?php
 /**
- * XML-RPC protocol support for WordPress.
+ * XML-RPC protocol support for NotMattPress.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Publishing
  */
 
 /**
- * WordPress XMLRPC server implementation.
+ * NotMattPress XMLRPC server implementation.
  *
  * Implements compatibility for Blogger API, MetaWeblog API, MovableType, and
- * pingback. Additional WordPress API for managing comments, pages, posts,
+ * pingback. Additional NotMattPress API for managing comments, pages, posts,
  * options, etc.
  *
- * As of WordPress 3.5.0, XML-RPC is enabled by default. It can be disabled
+ * As of NotMattPress 3.5.0, XML-RPC is enabled by default. It can be disabled
  * via the {@see 'xmlrpc_enabled'} filter found in wp_xmlrpc_server::set_is_enabled().
  *
  * @since 1.5.0
@@ -68,7 +68,7 @@ class wp_xmlrpc_server extends IXR_Server {
 	 */
 	public function __construct() {
 		$this->methods = array(
-			// WordPress API.
+			// NotMattPress API.
 			'wp.getUsersBlogs'                 => 'this:wp_getUsersBlogs',
 			'wp.newPost'                       => 'this:wp_newPost',
 			'wp.editPost'                      => 'this:wp_editPost',
@@ -181,7 +181,7 @@ class wp_xmlrpc_server extends IXR_Server {
 	/**
 	 * Sets wp_xmlrpc_server::$is_enabled property.
 	 *
-	 * Determines whether the xmlrpc server is enabled on this WordPress install
+	 * Determines whether the xmlrpc server is enabled on this NotMattPress install
 	 * and set the is_enabled property accordingly.
 	 *
 	 * @since 5.7.3
@@ -523,7 +523,7 @@ class wp_xmlrpc_server extends IXR_Server {
 			'software_name'           => array(
 				'desc'     => __( 'Software Name' ),
 				'readonly' => true,
-				'value'    => 'WordPress',
+				'value'    => 'NotMattPress',
 			),
 			'software_version'        => array(
 				'desc'     => __( 'Software Version' ),
@@ -531,7 +531,7 @@ class wp_xmlrpc_server extends IXR_Server {
 				'value'    => get_bloginfo( 'version' ),
 			),
 			'blog_url'                => array(
-				'desc'     => __( 'WordPress Address (URL)' ),
+				'desc'     => __( 'NotMattPress Address (URL)' ),
 				'readonly' => true,
 				'option'   => 'siteurl',
 			),
@@ -870,7 +870,7 @@ class wp_xmlrpc_server extends IXR_Server {
 	}
 
 	/**
-	 * Converts a WordPress date string to an IXR_Date object.
+	 * Converts a NotMattPress date string to an IXR_Date object.
 	 *
 	 * @param string $date Date string to convert.
 	 * @return IXR_Date IXR_Date object.
@@ -883,9 +883,9 @@ class wp_xmlrpc_server extends IXR_Server {
 	}
 
 	/**
-	 * Converts a WordPress GMT date string to an IXR_Date object.
+	 * Converts a NotMattPress GMT date string to an IXR_Date object.
 	 *
-	 * @param string $date_gmt WordPress GMT date string.
+	 * @param string $date_gmt NotMattPress GMT date string.
 	 * @param string $date     Date string.
 	 * @return IXR_Date IXR_Date object.
 	 */
@@ -3152,7 +3152,7 @@ class wp_xmlrpc_server extends IXR_Server {
 		 * @param int   $page_id ID of the deleted page.
 		 * @param array $args    An array of arguments to delete the page.
 		 */
-		do_action( 'xmlrpc_call_success_wp_deletePage', $page_id, $args ); // phpcs:ignore WordPress.NamingConventions.ValidHookName.NotLowercase
+		do_action( 'xmlrpc_call_success_wp_deletePage', $page_id, $args ); // phpcs:ignore NotMattPress.NamingConventions.ValidHookName.NotLowercase
 
 		return true;
 	}
@@ -3225,7 +3225,7 @@ class wp_xmlrpc_server extends IXR_Server {
 	 *
 	 * @since 2.2.0
 	 *
-	 * @global wpdb $wpdb WordPress database abstraction object.
+	 * @global wpdb $wpdb NotMattPress database abstraction object.
 	 *
 	 * @param array $args {
 	 *     Method arguments. Note: arguments must be ordered as documented.
@@ -3418,7 +3418,7 @@ class wp_xmlrpc_server extends IXR_Server {
 
 		/*
 		 * If no slug was provided, make it empty
-		 * so that WordPress will generate one.
+		 * so that NotMattPress will generate one.
 		 */
 		if ( empty( $category['slug'] ) ) {
 			$category['slug'] = '';
@@ -3463,7 +3463,7 @@ class wp_xmlrpc_server extends IXR_Server {
 		 * @param int   $cat_id ID of the new category.
 		 * @param array $args   An array of new category arguments.
 		 */
-		do_action( 'xmlrpc_call_success_wp_newCategory', $cat_id, $args ); // phpcs:ignore WordPress.NamingConventions.ValidHookName.NotLowercase
+		do_action( 'xmlrpc_call_success_wp_newCategory', $cat_id, $args ); // phpcs:ignore NotMattPress.NamingConventions.ValidHookName.NotLowercase
 
 		return $cat_id;
 	}
@@ -3513,7 +3513,7 @@ class wp_xmlrpc_server extends IXR_Server {
 			 * @param int   $category_id ID of the deleted category.
 			 * @param array $args        An array of arguments to delete the category.
 			 */
-			do_action( 'xmlrpc_call_success_wp_deleteCategory', $category_id, $args ); // phpcs:ignore WordPress.NamingConventions.ValidHookName.NotLowercase
+			do_action( 'xmlrpc_call_success_wp_deleteCategory', $category_id, $args ); // phpcs:ignore NotMattPress.NamingConventions.ValidHookName.NotLowercase
 		}
 
 		return $status;
@@ -3763,7 +3763,7 @@ class wp_xmlrpc_server extends IXR_Server {
 			 * @param int   $comment_id ID of the deleted comment.
 			 * @param array $args       An array of arguments to delete the comment.
 			 */
-			do_action( 'xmlrpc_call_success_wp_deleteComment', $comment_id, $args ); // phpcs:ignore WordPress.NamingConventions.ValidHookName.NotLowercase
+			do_action( 'xmlrpc_call_success_wp_deleteComment', $comment_id, $args ); // phpcs:ignore NotMattPress.NamingConventions.ValidHookName.NotLowercase
 		}
 
 		return $status;
@@ -3875,7 +3875,7 @@ class wp_xmlrpc_server extends IXR_Server {
 		 * @param int   $comment_id ID of the updated comment.
 		 * @param array $args       An array of arguments to update the comment.
 		 */
-		do_action( 'xmlrpc_call_success_wp_editComment', $comment_id, $args ); // phpcs:ignore WordPress.NamingConventions.ValidHookName.NotLowercase
+		do_action( 'xmlrpc_call_success_wp_editComment', $comment_id, $args ); // phpcs:ignore NotMattPress.NamingConventions.ValidHookName.NotLowercase
 
 		return true;
 	}
@@ -4030,7 +4030,7 @@ class wp_xmlrpc_server extends IXR_Server {
 		 * @param int   $comment_id ID of the new comment.
 		 * @param array $args       An array of new comment arguments.
 		 */
-		do_action( 'xmlrpc_call_success_wp_newComment', $comment_id, $args ); // phpcs:ignore WordPress.NamingConventions.ValidHookName.NotLowercase
+		do_action( 'xmlrpc_call_success_wp_newComment', $comment_id, $args ); // phpcs:ignore NotMattPress.NamingConventions.ValidHookName.NotLowercase
 
 		return $comment_id;
 	}
@@ -5163,7 +5163,7 @@ class wp_xmlrpc_server extends IXR_Server {
 		 * @param int   $post_id ID of the new post.
 		 * @param array $args    An array of new post arguments.
 		 */
-		do_action( 'xmlrpc_call_success_blogger_newPost', $post_id, $args ); // phpcs:ignore WordPress.NamingConventions.ValidHookName.NotLowercase
+		do_action( 'xmlrpc_call_success_blogger_newPost', $post_id, $args ); // phpcs:ignore NotMattPress.NamingConventions.ValidHookName.NotLowercase
 
 		return $post_id;
 	}
@@ -5242,7 +5242,7 @@ class wp_xmlrpc_server extends IXR_Server {
 		 * @param int   $post_id ID of the updated post.
 		 * @param array $args    An array of arguments for the post to edit.
 		 */
-		do_action( 'xmlrpc_call_success_blogger_editPost', $post_id, $args ); // phpcs:ignore WordPress.NamingConventions.ValidHookName.NotLowercase
+		do_action( 'xmlrpc_call_success_blogger_editPost', $post_id, $args ); // phpcs:ignore NotMattPress.NamingConventions.ValidHookName.NotLowercase
 
 		return true;
 	}
@@ -5301,7 +5301,7 @@ class wp_xmlrpc_server extends IXR_Server {
 		 * @param int   $post_id ID of the deleted post.
 		 * @param array $args    An array of arguments to delete the post.
 		 */
-		do_action( 'xmlrpc_call_success_blogger_deletePost', $post_id, $args ); // phpcs:ignore WordPress.NamingConventions.ValidHookName.NotLowercase
+		do_action( 'xmlrpc_call_success_blogger_deletePost', $post_id, $args ); // phpcs:ignore NotMattPress.NamingConventions.ValidHookName.NotLowercase
 
 		return true;
 	}
@@ -5421,7 +5421,7 @@ class wp_xmlrpc_server extends IXR_Server {
 			}
 		}
 
-		// Let WordPress generate the 'post_name' (slug) unless
+		// Let NotMattPress generate the 'post_name' (slug) unless
 		// one has been provided.
 		$post_name = null;
 		if ( isset( $content_struct['wp_slug'] ) ) {
@@ -5652,7 +5652,7 @@ class wp_xmlrpc_server extends IXR_Server {
 		 * @param int   $post_id ID of the new post.
 		 * @param array $args    An array of arguments to create the new post.
 		 */
-		do_action( 'xmlrpc_call_success_mw_newPost', $post_id, $args ); // phpcs:ignore WordPress.NamingConventions.ValidHookName.NotLowercase
+		do_action( 'xmlrpc_call_success_mw_newPost', $post_id, $args ); // phpcs:ignore NotMattPress.NamingConventions.ValidHookName.NotLowercase
 
 		return (string) $post_id;
 	}
@@ -5690,7 +5690,7 @@ class wp_xmlrpc_server extends IXR_Server {
 	 *
 	 * @since 2.1.0
 	 *
-	 * @global wpdb $wpdb WordPress database abstraction object.
+	 * @global wpdb $wpdb NotMattPress database abstraction object.
 	 *
 	 * @param int    $post_id      Post ID.
 	 * @param string $post_content Post Content for attachment.
@@ -5787,7 +5787,7 @@ class wp_xmlrpc_server extends IXR_Server {
 		$ping_status    = $postdata['ping_status'];
 		$comment_status = $postdata['comment_status'];
 
-		// Let WordPress manage slug if none was provided.
+		// Let NotMattPress manage slug if none was provided.
 		$post_name = $postdata['post_name'];
 		if ( isset( $content_struct['wp_slug'] ) ) {
 			$post_name = $content_struct['wp_slug'];
@@ -6036,7 +6036,7 @@ class wp_xmlrpc_server extends IXR_Server {
 		 * @param int   $post_id ID of the updated post.
 		 * @param array $args    An array of arguments to update the post.
 		 */
-		do_action( 'xmlrpc_call_success_mw_editPost', $post_id, $args ); // phpcs:ignore WordPress.NamingConventions.ValidHookName.NotLowercase
+		do_action( 'xmlrpc_call_success_mw_editPost', $post_id, $args ); // phpcs:ignore NotMattPress.NamingConventions.ValidHookName.NotLowercase
 
 		return true;
 	}
@@ -6466,7 +6466,7 @@ class wp_xmlrpc_server extends IXR_Server {
 		 * @param int   $id   ID of the new attachment.
 		 * @param array $args An array of arguments to add the attachment.
 		 */
-		do_action( 'xmlrpc_call_success_mw_newMediaObject', $id, $args ); // phpcs:ignore WordPress.NamingConventions.ValidHookName.NotLowercase
+		do_action( 'xmlrpc_call_success_mw_newMediaObject', $id, $args ); // phpcs:ignore NotMattPress.NamingConventions.ValidHookName.NotLowercase
 
 		$struct = $this->_prepare_media_item( get_post( $id ) );
 
@@ -6740,7 +6740,7 @@ class wp_xmlrpc_server extends IXR_Server {
 	 *
 	 * @since 1.5.0
 	 *
-	 * @global wpdb $wpdb WordPress database abstraction object.
+	 * @global wpdb $wpdb NotMattPress database abstraction object.
 	 *
 	 * @param int $post_id
 	 * @return array|IXR_Error
@@ -6836,7 +6836,7 @@ class wp_xmlrpc_server extends IXR_Server {
 	 *
 	 * @since 1.5.0
 	 *
-	 * @global wpdb $wpdb WordPress database abstraction object.
+	 * @global wpdb $wpdb NotMattPress database abstraction object.
 	 *
 	 * @param array $args {
 	 *     Method arguments. Note: arguments must be ordered as documented.
@@ -6957,7 +6957,7 @@ class wp_xmlrpc_server extends IXR_Server {
 		$remote_ip = preg_replace( '/[^0-9a-fA-F:., ]/', '', $_SERVER['REMOTE_ADDR'] );
 
 		/** This filter is documented in wp-includes/class-wp-http.php */
-		$user_agent = apply_filters( 'http_headers_useragent', 'WordPress/' . get_bloginfo( 'version' ) . '; ' . get_bloginfo( 'url' ), $pagelinkedfrom );
+		$user_agent = apply_filters( 'http_headers_useragent', 'NotMattPress/' . get_bloginfo( 'version' ) . '; ' . get_bloginfo( 'url' ), $pagelinkedfrom );
 
 		// Let's check the remote site.
 		$http_api_args = array(
@@ -7097,7 +7097,7 @@ class wp_xmlrpc_server extends IXR_Server {
 	 *
 	 * @since 1.5.0
 	 *
-	 * @global wpdb $wpdb WordPress database abstraction object.
+	 * @global wpdb $wpdb NotMattPress database abstraction object.
 	 *
 	 * @param string $url
 	 * @return array|IXR_Error

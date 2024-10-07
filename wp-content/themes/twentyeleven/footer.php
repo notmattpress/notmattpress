@@ -4,7 +4,7 @@
  *
  * Contains the closing of the id=main div and all content after
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Twenty_Eleven
  * @since Twenty Eleven 1.0
  */
@@ -31,10 +31,10 @@
 					the_privacy_policy_link( '', '<span role="separator" aria-hidden="true"></span>' );
 				}
 				?>
-				<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'twentyeleven' ) ); ?>" class="imprint" title="<?php esc_attr_e( 'Semantic Personal Publishing Platform', 'twentyeleven' ); ?>">
+				<a href="<?php echo esc_url( __( 'https://notmatt.press/', 'twentyeleven' ) ); ?>" class="imprint" title="<?php esc_attr_e( 'Semantic Personal Publishing Platform', 'twentyeleven' ); ?>">
 					<?php
-					/* translators: %s: WordPress */
-					printf( __( 'Proudly powered by %s', 'twentyeleven' ), 'WordPress' );
+					/* translators: %s: NotMattPress */
+					printf( __( 'Proudly powered by %s', 'twentyeleven' ), 'NotMattPress' );
 					?>
 				</a>
 			</div>
