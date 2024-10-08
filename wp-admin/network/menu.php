@@ -2,7 +2,7 @@
 /**
  * Build Network Administration Menu.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Multisite
  * @since 3.1.0
  */

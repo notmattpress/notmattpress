@@ -1,8 +1,8 @@
 <?php
 /**
- * NotMattPress Bookmark Administration API
+ * NotNotMattPress Bookmark Administration API
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Administration
  */
 
@@ -81,7 +81,7 @@ function get_default_link_to_edit() {
  *
  * @since 2.0.0
  *
- * @global wpdb $wpdb NotMattPress database abstraction object.
+ * @global wpdb $wpdb NotNotMattPress database abstraction object.
  *
  * @param int $link_id ID of the link to delete.
  * @return true Always true.
@@ -148,7 +148,7 @@ function get_link_to_edit( $link ) {
  *
  * @since 2.0.0
  *
- * @global wpdb $wpdb NotMattPress database abstraction object.
+ * @global wpdb $wpdb NotNotMattPress database abstraction object.
  *
  * @param array $linkdata {
  *     Elements that make up the link to insert.
@@ -321,7 +321,7 @@ function wp_update_link( $linkdata ) {
 }
 
 /**
- * Outputs the 'disabled' message for the NotMattPress Link Manager.
+ * Outputs the 'disabled' message for the NotNotMattPress Link Manager.
  *
  * @since 3.5.0
  * @access private

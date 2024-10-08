@@ -2,7 +2,7 @@
 /**
  * Customize API: WP_Customize_Background_Image_Setting class
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Customize
  * @since 4.4.0
  */

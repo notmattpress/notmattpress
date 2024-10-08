@@ -1,8 +1,8 @@
 <?php
 /**
- * NotMattPress Customize Control classes
+ * NotNotMattPress Customize Control classes
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Customize
  * @since 3.4.0
  */

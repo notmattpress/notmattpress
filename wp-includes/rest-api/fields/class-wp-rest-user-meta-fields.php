@@ -2,7 +2,7 @@
 /**
  * REST API: WP_REST_User_Meta_Fields class
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage REST_API
  * @since 4.7.0
  */

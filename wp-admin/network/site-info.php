@@ -2,12 +2,12 @@
 /**
  * Edit Site Info Administration Screen
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Multisite
  * @since 3.1.0
  */
 
-/** Load NotMattPress Administration Bootstrap */
+/** Load NotNotMattPress Administration Bootstrap */
 require_once __DIR__ . '/admin.php';
 
 if ( ! current_user_can( 'manage_sites' ) ) {

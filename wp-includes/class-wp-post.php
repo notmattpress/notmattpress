@@ -2,7 +2,7 @@
 /**
  * Post API: WP_Post class
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Post
  * @since 4.4.0
  */
@@ -224,7 +224,7 @@ final class WP_Post {
 	 *
 	 * @since 3.5.0
 	 *
-	 * @global wpdb $wpdb NotMattPress database abstraction object.
+	 * @global wpdb $wpdb NotNotMattPress database abstraction object.
 	 *
 	 * @param int $post_id Post ID.
 	 * @return WP_Post|false Post object, false otherwise.

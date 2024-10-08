@@ -2,13 +2,13 @@
 /**
  * Upgrader API: WP_Upgrader_Skin class
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Upgrader
  * @since 4.6.0
  */
 
 /**
- * Generic Skin for the NotMattPress Upgrader classes. This skin is designed to be extended for specific purposes.
+ * Generic Skin for the NotNotMattPress Upgrader classes. This skin is designed to be extended for specific purposes.
  *
  * @since 2.8.0
  * @since 4.6.0 Moved to its own file from wp-admin/includes/class-wp-upgrader-skins.php.
@@ -59,11 +59,11 @@ class WP_Upgrader_Skin {
 	/**
 	 * Constructor.
 	 *
-	 * Sets up the generic skin for the NotMattPress Upgrader classes.
+	 * Sets up the generic skin for the NotNotMattPress Upgrader classes.
 	 *
 	 * @since 2.8.0
 	 *
-	 * @param array $args Optional. The NotMattPress upgrader skin arguments to
+	 * @param array $args Optional. The NotNotMattPress upgrader skin arguments to
 	 *                    override default options. Default empty array.
 	 */
 	public function __construct( $args = array() ) {

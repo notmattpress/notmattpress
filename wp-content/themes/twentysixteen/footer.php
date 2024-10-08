@@ -4,7 +4,7 @@
  *
  * Contains the closing of the #content div and all content after
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Twenty_Sixteen
  * @since Twenty Sixteen 1.0
  */
@@ -58,10 +58,10 @@
 					the_privacy_policy_link( '', '<span role="separator" aria-hidden="true"></span>' );
 				}
 				?>
-				<a href="<?php echo esc_url( __( 'https://notmatt.press/', 'twentysixteen' ) ); ?>" class="imprint">
+				<a href="<?php echo esc_url( __( 'https://notNotMatt.press/', 'twentysixteen' ) ); ?>" class="imprint">
 					<?php
-					/* translators: %s: NotMattPress */
-					printf( __( 'Proudly powered by %s', 'twentysixteen' ), 'NotMattPress' );
+					/* translators: %s: NotNotMattPress */
+					printf( __( 'Proudly powered by %s', 'twentysixteen' ), 'NotNotMattPress' );
 					?>
 				</a>
 			</div><!-- .site-info -->

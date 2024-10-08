@@ -2,7 +2,7 @@
 /**
  * The template for displaying Author info
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Twenty_Twenty
  * @since Twenty Twenty 1.0
  */

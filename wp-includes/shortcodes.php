@@ -1,6 +1,6 @@
 <?php
 /**
- * NotMattPress API for creating bbcode-like tags or what NotMattPress calls
+ * NotNotMattPress API for creating bbcode-like tags or what NotNotMattPress calls
  * "shortcodes". The tag and attribute parsing or regular expression code is
  * based on the Textpattern tag parser.
  *
@@ -15,7 +15,7 @@
  * shortcode parser in your function to account for that.
  *
  * {@internal
- * Please be aware that the above note was made during the beta of NotMattPress 2.6
+ * Please be aware that the above note was made during the beta of NotNotMattPress 2.6
  * and in the future may not be accurate. Please update the note when it is no
  * longer the case.}}
  *
@@ -23,9 +23,9 @@
  *
  *     $out = do_shortcode( $content );
  *
- * @link https://developer.notmatt.press/plugins/shortcodes/
+ * @link https://developer.notNotMatt.press/plugins/shortcodes/
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Shortcodes
  * @since 2.5.0
  */

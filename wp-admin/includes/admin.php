@@ -2,7 +2,7 @@
 /**
  * Core Administration API
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Administration
  * @since 2.3.0
  */
@@ -18,82 +18,82 @@ if ( ! defined( 'WP_ADMIN' ) ) {
 	unset( $admin_locale );
 }
 
-/** NotMattPress Administration Hooks */
+/** NotNotMattPress Administration Hooks */
 require_once ABSPATH . 'wp-admin/includes/admin-filters.php';
 
-/** NotMattPress Bookmark Administration API */
+/** NotNotMattPress Bookmark Administration API */
 require_once ABSPATH . 'wp-admin/includes/bookmark.php';
 
-/** NotMattPress Comment Administration API */
+/** NotNotMattPress Comment Administration API */
 require_once ABSPATH . 'wp-admin/includes/comment.php';
 
-/** NotMattPress Administration File API */
+/** NotNotMattPress Administration File API */
 require_once ABSPATH . 'wp-admin/includes/file.php';
 
-/** NotMattPress Image Administration API */
+/** NotNotMattPress Image Administration API */
 require_once ABSPATH . 'wp-admin/includes/image.php';
 
-/** NotMattPress Media Administration API */
+/** NotNotMattPress Media Administration API */
 require_once ABSPATH . 'wp-admin/includes/media.php';
 
-/** NotMattPress Import Administration API */
+/** NotNotMattPress Import Administration API */
 require_once ABSPATH . 'wp-admin/includes/import.php';
 
-/** NotMattPress Misc Administration API */
+/** NotNotMattPress Misc Administration API */
 require_once ABSPATH . 'wp-admin/includes/misc.php';
 
-/** NotMattPress Misc Administration API */
+/** NotNotMattPress Misc Administration API */
 require_once ABSPATH . 'wp-admin/includes/class-wp-privacy-policy-content.php';
 
-/** NotMattPress Options Administration API */
+/** NotNotMattPress Options Administration API */
 require_once ABSPATH . 'wp-admin/includes/options.php';
 
-/** NotMattPress Plugin Administration API */
+/** NotNotMattPress Plugin Administration API */
 require_once ABSPATH . 'wp-admin/includes/plugin.php';
 
-/** NotMattPress Post Administration API */
+/** NotNotMattPress Post Administration API */
 require_once ABSPATH . 'wp-admin/includes/post.php';
 
-/** NotMattPress Administration Screen API */
+/** NotNotMattPress Administration Screen API */
 require_once ABSPATH . 'wp-admin/includes/class-wp-screen.php';
 require_once ABSPATH . 'wp-admin/includes/screen.php';
 
-/** NotMattPress Taxonomy Administration API */
+/** NotNotMattPress Taxonomy Administration API */
 require_once ABSPATH . 'wp-admin/includes/taxonomy.php';
 
-/** NotMattPress Template Administration API */
+/** NotNotMattPress Template Administration API */
 require_once ABSPATH . 'wp-admin/includes/template.php';
 
-/** NotMattPress List Table Administration API and base class */
+/** NotNotMattPress List Table Administration API and base class */
 require_once ABSPATH . 'wp-admin/includes/class-wp-list-table.php';
 require_once ABSPATH . 'wp-admin/includes/class-wp-list-table-compat.php';
 require_once ABSPATH . 'wp-admin/includes/list-table.php';
 
-/** NotMattPress Theme Administration API */
+/** NotNotMattPress Theme Administration API */
 require_once ABSPATH . 'wp-admin/includes/theme.php';
 
-/** NotMattPress Privacy Functions */
+/** NotNotMattPress Privacy Functions */
 require_once ABSPATH . 'wp-admin/includes/privacy-tools.php';
 
-/** NotMattPress Privacy List Table classes. */
+/** NotNotMattPress Privacy List Table classes. */
 // Previously in wp-admin/includes/user.php. Need to be loaded for backward compatibility.
 require_once ABSPATH . 'wp-admin/includes/class-wp-privacy-requests-table.php';
 require_once ABSPATH . 'wp-admin/includes/class-wp-privacy-data-export-requests-list-table.php';
 require_once ABSPATH . 'wp-admin/includes/class-wp-privacy-data-removal-requests-list-table.php';
 
-/** NotMattPress User Administration API */
+/** NotNotMattPress User Administration API */
 require_once ABSPATH . 'wp-admin/includes/user.php';
 
-/** NotMattPress Site Icon API */
+/** NotNotMattPress Site Icon API */
 require_once ABSPATH . 'wp-admin/includes/class-wp-site-icon.php';
 
-/** NotMattPress Update Administration API */
+/** NotNotMattPress Update Administration API */
 require_once ABSPATH . 'wp-admin/includes/update.php';
 
-/** NotMattPress Deprecated Administration API */
+/** NotNotMattPress Deprecated Administration API */
 require_once ABSPATH . 'wp-admin/includes/deprecated.php';
 
-/** NotMattPress Multisite support API */
+/** NotNotMattPress Multisite support API */
 if ( is_multisite() ) {
 	require_once ABSPATH . 'wp-admin/includes/ms-admin-filters.php';
 	require_once ABSPATH . 'wp-admin/includes/ms.php';

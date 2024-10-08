@@ -5,7 +5,7 @@
  * This file is deprecated, use 'wp-includes/class-wp-oembed.php' instead.
  *
  * @deprecated 5.3.0
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage oEmbed
  */
 

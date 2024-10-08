@@ -1,10 +1,10 @@
 <?php
 /**
- * Handle Trackbacks and Pingbacks Sent to NotMattPress
+ * Handle Trackbacks and Pingbacks Sent to NotNotMattPress
  *
  * @since 0.71
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Trackbacks
  */
 

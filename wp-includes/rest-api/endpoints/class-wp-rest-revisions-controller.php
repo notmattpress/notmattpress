@@ -2,7 +2,7 @@
 /**
  * REST API: WP_REST_Revisions_Controller class
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage REST_API
  * @since 4.7.0
  */
@@ -534,7 +534,7 @@ class WP_REST_Revisions_Controller extends WP_REST_Controller {
 
 		foreach ( $prepared_args as $key => $value ) {
 			/** This filter is documented in wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php */
-			$query_args[ $key ] = apply_filters( "rest_query_var-{$key}", $value ); // phpcs:ignore NotMattPress.NamingConventions.ValidHookName.UseUnderscores
+			$query_args[ $key ] = apply_filters( "rest_query_var-{$key}", $value ); // phpcs:ignore NotNotMattPress.NamingConventions.ValidHookName.UseUnderscores
 		}
 
 		// Map to proper WP_Query orderby param.
@@ -675,7 +675,7 @@ class WP_REST_Revisions_Controller extends WP_REST_Controller {
 	 *
 	 * @param string      $date_gmt GMT publication time.
 	 * @param string|null $date     Optional. Local publication time. Default null.
-	 * @return string|null ISO8601/RFC3339 formatted datetime, otherwise null.
+	 * @return string|null ISO8601/RFC3339 forNotMatted datetime, otherwise null.
 	 */
 	protected function prepare_date_response( $date_gmt, $date = null ) {
 		if ( '0000-00-00 00:00:00' === $date_gmt ) {

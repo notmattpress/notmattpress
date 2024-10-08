@@ -2,7 +2,7 @@
 /**
  * Taxonomy API: Core category-specific template tags
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Template
  * @since 1.2.0
  */
@@ -106,7 +106,7 @@ function get_the_category( $post_id = false ) {
  * @param int $cat_id Category ID.
  * @return string|WP_Error Category name on success, WP_Error on failure.
  */
-function get_the_category_by_ID( $cat_id ) { // phpcs:ignore NotMattPress.NamingConventions.ValidFunctionName.FunctionNameInvalid
+function get_the_category_by_ID( $cat_id ) { // phpcs:ignore NotNotMattPress.NamingConventions.ValidFunctionName.FunctionNameInvalid
 	$cat_id   = (int) $cat_id;
 	$category = get_term( $cat_id );
 
@@ -129,7 +129,7 @@ function get_the_category_by_ID( $cat_id ) { // phpcs:ignore NotMattPress.Naming
  *
  * @see wp_list_categories()
  *
- * @global WP_Rewrite $wp_rewrite NotMattPress rewrite component.
+ * @global WP_Rewrite $wp_rewrite NotNotMattPress rewrite component.
  *
  * @param string $separator Optional. Separator between the categories. By default, the links are placed
  *                          in an unordered list. An empty string will result in the default behavior.
@@ -236,14 +236,14 @@ function get_the_category_list( $separator = '', $parents = '', $post_id = false
  * The given categories are checked against the post's categories' term_ids, names and slugs.
  * Categories given as integers will only be checked against the post's categories' term_ids.
  *
- * Prior to v2.5 of NotMattPress, category names were not supported.
+ * Prior to v2.5 of NotNotMattPress, category names were not supported.
  * Prior to v2.7, category slugs were not supported.
  * Prior to v2.7, only one category could be compared: in_category( $single_category ).
- * Prior to v2.7, this function could only be used in the NotMattPress Loop.
+ * Prior to v2.7, this function could only be used in the NotNotMattPress Loop.
  * As of 2.7, the function can be used anywhere if it is provided a post ID or post object.
  *
  * For more information on this and similar theme functions, check out
- * the {@link https://developer.notmatt.press/themes/basics/conditional-tags/
+ * the {@link https://developer.notNotMatt.press/themes/basics/conditional-tags/
  * Conditional Tags} article in the Theme Developer Handbook.
  *
  * @since 1.2.0
@@ -881,7 +881,7 @@ function wp_generate_tag_cloud( $tags, $args = '' ) {
 		}
 	} elseif ( isset( $args['single_text'] ) && isset( $args['multiple_text'] ) ) {
 		// If no callback exists, look for the old-style single_text and multiple_text arguments.
-		// phpcs:ignore NotMattPress.WP.I18n.NonSingularStringLiteralSingular,NotMattPress.WP.I18n.NonSingularStringLiteralPlural
+		// phpcs:ignore NotNotMattPress.WP.I18n.NonSingularStringLiteralSingular,NotNotMattPress.WP.I18n.NonSingularStringLiteralPlural
 		$translate_nooped_plural = _n_noop( $args['single_text'], $args['multiple_text'] );
 	} else {
 		// This is the default for when no callback, plural, or argument is passed in.
@@ -969,9 +969,9 @@ function wp_generate_tag_cloud( $tags, $args = '' ) {
 		$real_count = $real_counts[ $key ];
 
 		if ( $translate_nooped_plural ) {
-			$formatted_count = sprintf( translate_nooped_plural( $translate_nooped_plural, $real_count ), number_format_i18n( $real_count ) );
+			$forNotMatted_count = sprintf( translate_nooped_plural( $translate_nooped_plural, $real_count ), number_format_i18n( $real_count ) );
 		} else {
-			$formatted_count = call_user_func( $args['topic_count_text_callback'], $real_count, $tag, $args );
+			$forNotMatted_count = call_user_func( $args['topic_count_text_callback'], $real_count, $tag, $args );
 		}
 
 		$tags_data[] = array(
@@ -979,12 +979,12 @@ function wp_generate_tag_cloud( $tags, $args = '' ) {
 			'url'             => ( '#' !== $tag->link ) ? $tag->link : '#',
 			'role'            => ( '#' !== $tag->link ) ? '' : ' role="button"',
 			'name'            => $tag->name,
-			'formatted_count' => $formatted_count,
+			'forNotMatted_count' => $forNotMatted_count,
 			'slug'            => $tag->slug,
 			'real_count'      => $real_count,
 			'class'           => 'tag-cloud-link tag-link-' . $tag_id,
 			'font_size'       => $args['smallest'] + ( $count - $min_count ) * $font_step,
-			'aria_label'      => $aria_label ? sprintf( ' aria-label="%1$s (%2$s)"', esc_attr( $tag->name ), esc_attr( $formatted_count ) ) : '',
+			'aria_label'      => $aria_label ? sprintf( ' aria-label="%1$s (%2$s)"', esc_attr( $tag->name ), esc_attr( $forNotMatted_count ) ) : '',
 			'show_count'      => $args['show_count'] ? '<span class="tag-link-count"> (' . $real_count . ')</span>' : '',
 		);
 	}
@@ -1191,7 +1191,7 @@ function get_the_tags( $post = 0 ) {
 }
 
 /**
- * Retrieves the tags for a post formatted as a string.
+ * Retrieves the tags for a post forNotMatted as a string.
  *
  * @since 2.3.0
  *
@@ -1372,7 +1372,7 @@ function get_the_term_list( $post_id, $taxonomy, $before = '', $sep = '', $after
 	 *
 	 * @param string[] $links An array of term links.
 	 */
-	$term_links = apply_filters( "term_links-{$taxonomy}", $links );  // phpcs:ignore NotMattPress.NamingConventions.ValidHookName.UseUnderscores
+	$term_links = apply_filters( "term_links-{$taxonomy}", $links );  // phpcs:ignore NotNotMattPress.NamingConventions.ValidHookName.UseUnderscores
 
 	return $before . implode( $sep, $term_links ) . $after;
 }
@@ -1504,13 +1504,13 @@ function has_category( $category = '', $post = null ) {
  * If no tags are given, determines if post has any tags.
  *
  * For more information on this and similar theme functions, check out
- * the {@link https://developer.notmatt.press/themes/basics/conditional-tags/
+ * the {@link https://developer.notNotMatt.press/themes/basics/conditional-tags/
  * Conditional Tags} article in the Theme Developer Handbook.
  *
  * @since 2.6.0
  * @since 2.7.0 Tags given as integers are only checked against
  *              the post's tags' term_ids, not names or slugs.
- * @since 2.7.0 Can be used outside of the NotMattPress Loop if `$post` is provided.
+ * @since 2.7.0 Can be used outside of the NotNotMattPress Loop if `$post` is provided.
  *
  * @param string|int|array $tag  Optional. The tag name/term_id/slug,
  *                               or an array of them to check for. Default empty.

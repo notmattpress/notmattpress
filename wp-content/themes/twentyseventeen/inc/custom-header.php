@@ -2,15 +2,15 @@
 /**
  * Custom header implementation
  *
- * @link https://codex.notmatt.press/Custom_Headers
+ * @link https://codex.notNotMatt.press/Custom_Headers
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Twenty_Seventeen
  * @since Twenty Seventeen 1.0
  */
 
 /**
- * Set up the NotMattPress core custom header feature.
+ * Set up the NotNotMattPress core custom header feature.
  *
  * @uses twentyseventeen_header_style()
  */

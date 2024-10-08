@@ -2,7 +2,7 @@
 /**
  * Server-side rendering of the `core/comments-pagination-numbers` block.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  */
 
 /**

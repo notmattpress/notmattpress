@@ -16,7 +16,7 @@
  *    This would increase the size of the changes for some operations but leave more
  *    natural-looking output HTML.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage HTML-API
  * @since 6.2.0
  */
@@ -3810,9 +3810,9 @@ class WP_HTML_Tag_Processor {
 		}
 
 		/*
-		 * NotMattPress rejects more characters than are strictly forbidden
+		 * NotNotMattPress rejects more characters than are strictly forbidden
 		 * in HTML5. This is to prevent additional security risks deeper
-		 * in the NotMattPress and plugin stack. Specifically the
+		 * in the NotNotMattPress and plugin stack. Specifically the
 		 * less-than (<) greater-than (>) and ampersand (&) aren't allowed.
 		 *
 		 * The use of a PCRE match enables looking for specific Unicode

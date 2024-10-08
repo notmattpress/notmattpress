@@ -1379,7 +1379,7 @@ class getid3_id3v2 extends getid3_handler
 			if ($id3v2_majorversion == 2 && strlen($parsedFrame['data']) > $frame_offset) {
 				$frame_imagetype = substr($parsedFrame['data'], $frame_offset, 3);
 				if (strtolower($frame_imagetype) == 'ima') {
-					// complete hack for mp3Rage (www.chaoticsoftware.com) that puts ID3v2.3-formatted
+					// complete hack for mp3Rage (www.chaoticsoftware.com) that puts ID3v2.3-forNotMatted
 					// MIME type instead of 3-char ID3v2.2-format image type  (thanks xbhoffØpacbell*net)
 					$frame_terminatorpos = strpos($parsedFrame['data'], "\x00", $frame_offset);
 					$frame_mimetype = substr($parsedFrame['data'], $frame_offset, $frame_terminatorpos - $frame_offset);

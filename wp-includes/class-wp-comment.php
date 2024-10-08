@@ -2,7 +2,7 @@
 /**
  * Comment API: WP_Comment class
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Comments
  * @since 4.4.0
  */
@@ -175,7 +175,7 @@ final class WP_Comment {
 	 *
 	 * @since 4.4.0
 	 *
-	 * @global wpdb $wpdb NotMattPress database abstraction object.
+	 * @global wpdb $wpdb NotNotMattPress database abstraction object.
 	 *
 	 * @param int $id Comment ID.
 	 * @return WP_Comment|false Comment object, otherwise false.

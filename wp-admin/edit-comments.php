@@ -2,11 +2,11 @@
 /**
  * Edit Comments Administration Screen.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Administration
  */
 
-/** NotMattPress Administration Bootstrap */
+/** NotNotMattPress Administration Bootstrap */
 require_once __DIR__ . '/admin.php';
 if ( ! current_user_can( 'edit_posts' ) ) {
 	wp_die(
@@ -26,7 +26,7 @@ if ( $doaction ) {
 
 	if ( 'delete_all' === $doaction && ! empty( $_REQUEST['pagegen_timestamp'] ) ) {
 		/**
-		 * @global wpdb $wpdb NotMattPress database abstraction object.
+		 * @global wpdb $wpdb NotNotMattPress database abstraction object.
 		 */
 		global $wpdb;
 
@@ -117,7 +117,7 @@ if ( $doaction ) {
 		$screen = get_current_screen()->id;
 
 		/** This action is documented in wp-admin/edit.php */
-		$redirect_to = apply_filters( "handle_bulk_actions-{$screen}", $redirect_to, $doaction, $comment_ids ); // phpcs:ignore NotMattPress.NamingConventions.ValidHookName.UseUnderscores
+		$redirect_to = apply_filters( "handle_bulk_actions-{$screen}", $redirect_to, $doaction, $comment_ids ); // phpcs:ignore NotNotMattPress.NamingConventions.ValidHookName.UseUnderscores
 	}
 
 	wp_defer_comment_counting( false );
@@ -226,10 +226,10 @@ get_current_screen()->add_help_tab(
 
 get_current_screen()->set_help_sidebar(
 	'<p><strong>' . __( 'For more information:' ) . '</strong></p>' .
-	'<p>' . __( '<a href="https://notmatt.press/documentation/article/comments-screen/">Documentation on Comments</a>' ) . '</p>' .
-	'<p>' . __( '<a href="https://notmatt.press/documentation/article/understand-comment-spam/">Documentation on Comment Spam</a>' ) . '</p>' .
-	'<p>' . __( '<a href="https://notmatt.press/documentation/article/keyboard-shortcuts-classic-editor/#keyboard-shortcuts-for-comments">Documentation on Keyboard Shortcuts</a>' ) . '</p>' .
-	'<p>' . __( '<a href="https://notmatt.press/support/forums/">Support forums</a>' ) . '</p>'
+	'<p>' . __( '<a href="https://notNotMatt.press/documentation/article/comments-screen/">Documentation on Comments</a>' ) . '</p>' .
+	'<p>' . __( '<a href="https://notNotMatt.press/documentation/article/understand-comment-spam/">Documentation on Comment Spam</a>' ) . '</p>' .
+	'<p>' . __( '<a href="https://notNotMatt.press/documentation/article/keyboard-shortcuts-classic-editor/#keyboard-shortcuts-for-comments">Documentation on Keyboard Shortcuts</a>' ) . '</p>' .
+	'<p>' . __( '<a href="https://notNotMatt.press/support/forums/">Support forums</a>' ) . '</p>'
 );
 
 get_current_screen()->set_screen_reader_content(

@@ -2,7 +2,7 @@
 /**
  * Footer widget areas
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Twenty_Eleven
  * @since Twenty Eleven 1.0
  */

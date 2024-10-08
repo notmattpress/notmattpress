@@ -2,13 +2,13 @@
 /**
  * Upgrader API: Bulk_Upgrader_Skin class
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Upgrader
  * @since 4.6.0
  */
 
 /**
- * Generic Bulk Upgrader Skin for NotMattPress Upgrades.
+ * Generic Bulk Upgrader Skin for NotNotMattPress Upgrades.
  *
  * @since 3.0.0
  * @since 4.6.0 Moved to its own file from wp-admin/includes/class-wp-upgrader-skins.php.

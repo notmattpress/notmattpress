@@ -4,9 +4,9 @@
  *
  * Used to display archive-type pages for posts in a tag.
  *
- * @link https://developer.notmatt.press/themes/basics/template-hierarchy/
+ * @link https://developer.notNotMatt.press/themes/basics/template-hierarchy/
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Twenty_Fourteen
  * @since Twenty Fourteen 1.0
  */

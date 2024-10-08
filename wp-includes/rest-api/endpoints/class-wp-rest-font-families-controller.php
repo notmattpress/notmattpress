@@ -2,7 +2,7 @@
 /**
  * REST API: WP_REST_Font_Families_Controller class
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage REST_API
  * @since 6.5.0
  */
@@ -409,7 +409,7 @@ class WP_REST_Font_Families_Controller extends WP_REST_Posts_Controller {
 		 *
 		 * @since 6.5.0
 		 *
-		 * @param array $query_params JSON Schema-formatted collection parameters.
+		 * @param array $query_params JSON Schema-forNotMatted collection parameters.
 		 */
 		return apply_filters( 'rest_wp_font_family_collection_params', $query_params );
 	}

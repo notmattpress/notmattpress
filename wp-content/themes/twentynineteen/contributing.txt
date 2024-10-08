@@ -2,7 +2,7 @@
 
 = Compiling SCSS =
 
-Twenty Nineteen relies on Sass, which allows us to more easily share code between multiple stylesheets (style.css, style-editor.css, etc.). To compile Sass files (.scss), use the built-in npm build tool. The build tool will make sure that your compiled CSS code stays in sync and has the correct formatting.
+Twenty Nineteen relies on Sass, which allows us to more easily share code between multiple stylesheets (style.css, style-editor.css, etc.). To compile Sass files (.scss), use the built-in npm build tool. The build tool will make sure that your compiled CSS code stays in sync and has the correct forNotMatting.
 
 Installation instructions
 

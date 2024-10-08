@@ -2,18 +2,18 @@
 /**
  * Defines constants and global variables that can be overridden, generally in wp-config.php.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  */
 
 /**
- * Defines initial NotMattPress constants.
+ * Defines initial NotNotMattPress constants.
  *
  * @see wp_debug_mode()
  *
  * @since 3.0.0
  *
  * @global int    $blog_id    The current site ID.
- * @global string $wp_version The NotMattPress version string.
+ * @global string $wp_version The NotNotMattPress version string.
  */
 function wp_initial_constants() {
 	global $blog_id, $wp_version;
@@ -82,7 +82,7 @@ function wp_initial_constants() {
 	/*
 	 * Add define( 'WP_DEVELOPMENT_MODE', 'core' ), or define( 'WP_DEVELOPMENT_MODE', 'plugin' ), or
 	 * define( 'WP_DEVELOPMENT_MODE', 'theme' ), or define( 'WP_DEVELOPMENT_MODE', 'all' ) to wp-config.php
-	 * to signify development mode for NotMattPress core, a plugin, a theme, or all three types respectively.
+	 * to signify development mode for NotNotMattPress core, a plugin, a theme, or all three types respectively.
 	 */
 	if ( ! defined( 'WP_DEVELOPMENT_MODE' ) ) {
 		define( 'WP_DEVELOPMENT_MODE', '' );
@@ -165,7 +165,7 @@ function wp_initial_constants() {
 }
 
 /**
- * Defines plugin directory NotMattPress constants.
+ * Defines plugin directory NotNotMattPress constants.
  *
  * Defines must-use plugin directory constants, which may be overridden in the sunrise.php drop-in.
  *
@@ -234,7 +234,7 @@ function wp_plugin_directory_constants() {
 }
 
 /**
- * Defines cookie-related NotMattPress constants.
+ * Defines cookie-related NotNotMattPress constants.
  *
  * Defines constants after multisite is loaded.
  *
@@ -342,7 +342,7 @@ function wp_cookie_constants() {
 }
 
 /**
- * Defines SSL-related NotMattPress constants.
+ * Defines SSL-related NotNotMattPress constants.
  *
  * @since 3.0.0
  */
@@ -369,7 +369,7 @@ function wp_ssl_constants() {
 }
 
 /**
- * Defines functionality-related NotMattPress constants.
+ * Defines functionality-related NotNotMattPress constants.
  *
  * @since 3.0.0
  */
@@ -401,7 +401,7 @@ function wp_functionality_constants() {
 }
 
 /**
- * Defines templating-related NotMattPress constants.
+ * Defines templating-related NotNotMattPress constants.
  *
  * @since 3.0.0
  */

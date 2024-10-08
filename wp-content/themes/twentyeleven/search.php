@@ -2,7 +2,7 @@
 /**
  * Template for displaying Search Results pages
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Twenty_Eleven
  * @since Twenty Eleven 1.0
  */

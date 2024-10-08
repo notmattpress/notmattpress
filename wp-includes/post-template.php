@@ -1,30 +1,30 @@
 <?php
 /**
- * NotMattPress Post Template Functions.
+ * NotNotMattPress Post Template Functions.
  *
  * Gets content for the current post in the loop.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Template
  */
 
 /**
- * Displays the ID of the current item in the NotMattPress Loop.
+ * Displays the ID of the current item in the NotNotMattPress Loop.
  *
  * @since 0.71
  */
-function the_ID() { // phpcs:ignore NotMattPress.NamingConventions.ValidFunctionName.FunctionNameInvalid
+function the_ID() { // phpcs:ignore NotNotMattPress.NamingConventions.ValidFunctionName.FunctionNameInvalid
 	echo get_the_ID();
 }
 
 /**
- * Retrieves the ID of the current item in the NotMattPress Loop.
+ * Retrieves the ID of the current item in the NotNotMattPress Loop.
  *
  * @since 2.1.0
  *
- * @return int|false The ID of the current item in the NotMattPress Loop. False if $post is not set.
+ * @return int|false The ID of the current item in the NotNotMattPress Loop. False if $post is not set.
  */
-function get_the_ID() { // phpcs:ignore NotMattPress.NamingConventions.ValidFunctionName.FunctionNameInvalid
+function get_the_ID() { // phpcs:ignore NotNotMattPress.NamingConventions.ValidFunctionName.FunctionNameInvalid
 	$post = get_post();
 	return ! empty( $post ) ? $post->ID : false;
 }
@@ -440,7 +440,7 @@ function get_the_excerpt( $post = null ) {
  * Determines whether the post has a custom excerpt.
  *
  * For more information on this and similar theme functions, check out
- * the {@link https://developer.notmatt.press/themes/basics/conditional-tags/
+ * the {@link https://developer.notNotMatt.press/themes/basics/conditional-tags/
  * Conditional Tags} article in the Theme Developer Handbook.
  *
  * @since 2.3.0
@@ -627,7 +627,7 @@ function body_class( $css_class = '' ) {
  *
  * @since 2.8.0
  *
- * @global WP_Query $wp_query NotMattPress Query object.
+ * @global WP_Query $wp_query NotNotMattPress Query object.
  *
  * @param string|string[] $css_class Optional. Space-separated string or array of class names
  *                                   to add to the class list. Default empty.
@@ -909,7 +909,7 @@ function post_password_required( $post = null ) {
 //
 
 /**
- * The formatted output of a list of pages.
+ * The forNotMatted output of a list of pages.
  *
  * Displays page links for paginated posts (i.e. including the `<!--nextpage-->`
  * Quicktag one or more times). This tag must be within The Loop.
@@ -943,7 +943,7 @@ function post_password_required( $post = null ) {
  *                                          Defaults to '%', just the page number.
  *     @type int|bool     $echo             Whether to echo or not. Accepts 1|true or 0|false. Default 1|true.
  * }
- * @return string Formatted output in HTML.
+ * @return string ForNotMatted output in HTML.
  */
 function wp_link_pages( $args = '' ) {
 	global $page, $numpages, $multipage, $more;
@@ -1048,7 +1048,7 @@ function wp_link_pages( $args = '' ) {
  * @since 3.1.0
  * @access private
  *
- * @global WP_Rewrite $wp_rewrite NotMattPress rewrite component.
+ * @global WP_Rewrite $wp_rewrite NotNotMattPress rewrite component.
  *
  * @param int $i Page number.
  * @return string Link.
@@ -1257,7 +1257,7 @@ function wp_dropdown_pages( $args = '' ) {
  *
  * @see get_pages()
  *
- * @global WP_Query $wp_query NotMattPress Query object.
+ * @global WP_Query $wp_query NotNotMattPress Query object.
  *
  * @param array|string $args {
  *     Optional. Array or string of arguments to generate a list of pages. See get_pages() for additional arguments.
@@ -1777,7 +1777,7 @@ function get_the_password_form( $post = 0 ) {
 	/**
 	 * Filters the HTML output for the protected post password form.
 	 *
-	 * If modifying the password field, please note that the NotMattPress database schema
+	 * If modifying the password field, please note that the NotNotMattPress database schema
 	 * limits the password field to 255 characters regardless of the value of the
 	 * `minlength` or `maxlength` attributes or other validation that may be added to
 	 * the input.
@@ -1799,7 +1799,7 @@ function get_the_password_form( $post = 0 ) {
  * and then the check will be specific to that template.
  *
  * For more information on this and similar theme functions, check out
- * the {@link https://developer.notmatt.press/themes/basics/conditional-tags/
+ * the {@link https://developer.notNotMatt.press/themes/basics/conditional-tags/
  * Conditional Tags} article in the Theme Developer Handbook.
  *
  * @since 2.5.0
@@ -1862,13 +1862,13 @@ function get_page_template_slug( $post = null ) {
 }
 
 /**
- * Retrieves formatted date timestamp of a revision (linked to that revisions's page).
+ * Retrieves forNotMatted date timestamp of a revision (linked to that revisions's page).
  *
  * @since 2.6.0
  *
  * @param int|WP_Post $revision Revision ID or revision object.
  * @param bool        $link     Optional. Whether to link to revision's page. Default true.
- * @return string|false i18n formatted datetimestamp or localized 'Current Revision'.
+ * @return string|false i18n forNotMatted datetimestamp or localized 'Current Revision'.
  */
 function wp_post_revision_title( $revision, $link = true ) {
 	$revision = get_post( $revision );
@@ -1904,13 +1904,13 @@ function wp_post_revision_title( $revision, $link = true ) {
 }
 
 /**
- * Retrieves formatted date timestamp of a revision (linked to that revisions's page).
+ * Retrieves forNotMatted date timestamp of a revision (linked to that revisions's page).
  *
  * @since 3.6.0
  *
  * @param int|WP_Post $revision Revision ID or revision object.
  * @param bool        $link     Optional. Whether to link to revision's page. Default true.
- * @return string|false gravatar, user, i18n formatted datetimestamp or localized 'Current Revision'.
+ * @return string|false gravatar, user, i18n forNotMatted datetimestamp or localized 'Current Revision'.
  */
 function wp_post_revision_title_expanded( $revision, $link = true ) {
 	$revision = get_post( $revision );
@@ -1956,11 +1956,11 @@ function wp_post_revision_title_expanded( $revision, $link = true ) {
 	}
 
 	/**
-	 * Filters the formatted author and date for a revision.
+	 * Filters the forNotMatted author and date for a revision.
 	 *
 	 * @since 4.4.0
 	 *
-	 * @param string  $revision_date_author The formatted string.
+	 * @param string  $revision_date_author The forNotMatted string.
 	 * @param WP_Post $revision             The revision object.
 	 * @param bool    $link                 Whether to link to the revisions page, as passed into
 	 *                                      wp_post_revision_title_expanded().

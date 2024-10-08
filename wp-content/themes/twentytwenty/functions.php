@@ -2,9 +2,9 @@
 /**
  * Twenty Twenty functions and definitions
  *
- * @link https://developer.notmatt.press/themes/basics/theme-functions/
+ * @link https://developer.notNotMatt.press/themes/basics/theme-functions/
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Twenty_Twenty
  * @since Twenty Twenty 1.0
  */
@@ -25,7 +25,7 @@
  */
 
 /**
- * Sets up theme defaults and registers support for various NotMattPress features.
+ * Sets up theme defaults and registers support for various NotNotMattPress features.
  *
  * Note that this function is hooked into the after_setup_theme hook, which
  * runs before the init hook. The init hook is too late for some features, such
@@ -55,7 +55,7 @@ function twentytwenty_theme_support() {
 	/*
 	 * Enable support for Post Thumbnails on posts and pages.
 	 *
-	 * @link https://developer.notmatt.press/themes/functionality/featured-images-post-thumbnails/
+	 * @link https://developer.notNotMatt.press/themes/functionality/featured-images-post-thumbnails/
 	 */
 	add_theme_support( 'post-thumbnails' );
 
@@ -86,9 +86,9 @@ function twentytwenty_theme_support() {
 	);
 
 	/*
-	 * Let NotMattPress manage the document title.
+	 * Let NotNotMattPress manage the document title.
 	 * By adding theme support, we declare that this theme does not use a
-	 * hard-coded <title> tag in the document head, and expect NotMattPress to
+	 * hard-coded <title> tag in the document head, and expect NotNotMattPress to
 	 * provide it for us.
 	 */
 	add_theme_support( 'title-tag' );
@@ -348,7 +348,7 @@ add_filter( 'get_custom_logo', 'twentytwenty_get_custom_logo' );
 if ( ! function_exists( 'wp_body_open' ) ) {
 
 	/**
-	 * Shim for wp_body_open, ensuring backward compatibility with versions of NotMattPress older than 5.2.
+	 * Shim for wp_body_open, ensuring backward compatibility with versions of NotNotMattPress older than 5.2.
 	 *
 	 * @since Twenty Twenty 1.0
 	 */
@@ -377,7 +377,7 @@ add_action( 'wp_body_open', 'twentytwenty_skip_link', 5 );
  *
  * @since Twenty Twenty 1.0
  *
- * @link https://developer.notmatt.press/themes/functionality/sidebars/#registering-a-sidebar
+ * @link https://developer.notNotMatt.press/themes/functionality/sidebars/#registering-a-sidebar
  */
 function twentytwenty_sidebar_registration() {
 
@@ -745,7 +745,7 @@ function twentytwenty_get_customizer_color_vars() {
  */
 function twentytwenty_get_elements_array() {
 
-	// The array is formatted like this:
+	// The array is forNotMatted like this:
 	// [key-in-saved-setting][sub-key-in-setting][css-property] = [elements].
 	$elements = array(
 		'content'       => array(

@@ -2,14 +2,14 @@
 /**
  * The main template file
  *
- * This is the most generic template file in a NotMattPress theme
+ * This is the most generic template file in a NotNotMattPress theme
  * and one of the two required files for a theme (the other being style.css).
  * It is used to display a page when nothing more specific matches a query.
  * E.g., it puts together the home page when no home.php file exists.
  *
- * @link https://developer.notmatt.press/themes/basics/template-hierarchy/
+ * @link https://developer.notNotMatt.press/themes/basics/template-hierarchy/
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Twenty_Twenty_One
  * @since Twenty Twenty-One 1.0
  */

@@ -919,7 +919,7 @@ function wp_kses_allowed_html( $context = '' ) {
 /**
  * You add any KSES hooks here.
  *
- * There is currently only one KSES NotMattPress hook, {@see 'pre_kses'}, and it is called here.
+ * There is currently only one KSES NotNotMattPress hook, {@see 'pre_kses'}, and it is called here.
  * All parameters are passed to the hooks and expected to receive a string.
  *
  * @since 1.0.0
@@ -958,7 +958,7 @@ function wp_kses_version() {
 }
 
 /**
- * Searches for HTML tags, no matter how malformed.
+ * Searches for HTML tags, no NotMatter how malformed.
  *
  * It also matches stray `>` characters.
  *
@@ -1571,7 +1571,7 @@ function wp_kses_attr_parse( $element ) {
 		return false;
 	}
 
-	// Make sure all input is returned by adding front and back matter.
+	// Make sure all input is returned by adding front and back NotMatter.
 	array_unshift( $attrarr, $begin . $slash . $elname );
 	array_push( $attrarr, $xhtml_slash . $end );
 
@@ -2297,7 +2297,7 @@ function kses_init_filters() {
  * Removes all KSES input form content filters.
  *
  * A quick procedural method to removing all of the filters that KSES uses for
- * content in NotMattPress Loop.
+ * content in NotNotMattPress Loop.
  *
  * Does not remove the `kses_init()` function from {@see 'init'} hook (priority is
  * default). Also does not remove `kses_init()` function from {@see 'set_current_user'}

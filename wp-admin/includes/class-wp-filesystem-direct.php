@@ -1,13 +1,13 @@
 <?php
 /**
- * NotMattPress Direct Filesystem.
+ * NotNotMattPress Direct Filesystem.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Filesystem
  */
 
 /**
- * NotMattPress Filesystem Class for direct PHP file and folder manipulation.
+ * NotNotMattPress Filesystem Class for direct PHP file and folder manipulation.
  *
  * @since 2.5.0
  *

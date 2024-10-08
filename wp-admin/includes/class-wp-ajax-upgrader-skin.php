@@ -2,13 +2,13 @@
 /**
  * Upgrader API: WP_Ajax_Upgrader_Skin class
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Upgrader
  * @since 4.6.0
  */
 
 /**
- * Upgrader Skin for Ajax NotMattPress upgrades.
+ * Upgrader Skin for Ajax NotNotMattPress upgrades.
  *
  * This skin is designed to be used for Ajax updates.
  *
@@ -51,13 +51,13 @@ class WP_Ajax_Upgrader_Skin extends Automatic_Upgrader_Skin {
 	/**
 	 * Constructor.
 	 *
-	 * Sets up the NotMattPress Ajax upgrader skin.
+	 * Sets up the NotNotMattPress Ajax upgrader skin.
 	 *
 	 * @since 4.6.0
 	 *
 	 * @see WP_Upgrader_Skin::__construct()
 	 *
-	 * @param array $args Optional. The NotMattPress Ajax upgrader skin arguments to
+	 * @param array $args Optional. The NotNotMattPress Ajax upgrader skin arguments to
 	 *                    override default options. See WP_Upgrader_Skin::__construct().
 	 *                    Default empty array.
 	 */

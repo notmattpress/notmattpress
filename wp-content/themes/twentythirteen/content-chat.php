@@ -2,7 +2,7 @@
 /**
  * The template for displaying posts in the Chat post format
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Twenty_Thirteen
  * @since Twenty Thirteen 1.0
  */

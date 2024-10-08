@@ -2,7 +2,7 @@
 /**
  * Template for displaying Category Archive pages
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Twenty_Ten
  * @since Twenty Ten 1.0
  */

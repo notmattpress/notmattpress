@@ -2,7 +2,7 @@
 /**
  * Query: Grid.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  */
 
 return array(

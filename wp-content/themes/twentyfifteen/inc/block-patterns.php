@@ -2,10 +2,10 @@
 /**
  * Block Patterns
  *
- * @link https://developer.notmatt.press/reference/functions/register_block_pattern/
- * @link https://developer.notmatt.press/reference/functions/register_block_pattern_category/
+ * @link https://developer.notNotMatt.press/reference/functions/register_block_pattern/
+ * @link https://developer.notNotMatt.press/reference/functions/register_block_pattern_category/
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Twenty_Fifteen
  * @since Twenty Fifteen 3.0
  */

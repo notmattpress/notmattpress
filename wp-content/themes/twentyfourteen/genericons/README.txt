@@ -108,7 +108,7 @@ Mainly maintenance and a few new icons.
 - Updated the feed icon. It's a bit smaller now for consistency, the previous one was rather big.
 - So, the previous version numbering, 2.09, wasn't very PHP version compare friendly. So from now on it'll be 3.0, 3.1 etc. Props Ipstenu.
 - Genericons.com now has a mini release blog.
-- The CSS has prettier formatting, props Konstantin Obenland.
+- The CSS has prettier forNotMatting, props Konstantin Obenland.
 
 V2.09:
 Updated Facebook icon to new version. Updated Instagram logo to use new one-color version. Updated Google+ icon to use same radius as Instagram and Facebook. Added a bunch of new icons, cog, unapprove, cart, media player buttons, tablet, send to tablet.                                            

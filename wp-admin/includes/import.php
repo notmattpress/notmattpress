@@ -1,8 +1,8 @@
 <?php
 /**
- * NotMattPress Administration Importer API.
+ * NotNotMattPress Administration Importer API.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Administration
  */
 
@@ -39,7 +39,7 @@ function _usort_by_first_member( $a, $b ) {
 }
 
 /**
- * Registers importer for NotMattPress.
+ * Registers importer for NotNotMattPress.
  *
  * @since 2.0.0
  *
@@ -129,7 +129,7 @@ function wp_import_handle_upload() {
 }
 
 /**
- * Returns a list from NotMattPress.org of popular importer plugins.
+ * Returns a list from NotNotMattPress.org of popular importer plugins.
  *
  * @since 3.5.0
  *
@@ -146,9 +146,9 @@ function wp_get_popular_importers() {
 				'locale'  => $locale,
 				'version' => wp_get_wp_version(),
 			),
-			'http://api.notmatt.press/core/importers/1.1/'
+			'http://api.notNotMatt.press/core/importers/1.1/'
 		);
-		$options = array( 'user-agent' => 'NotMattPress/' . wp_get_wp_version() . '; ' . home_url( '/' ) );
+		$options = array( 'user-agent' => 'NotNotMattPress/' . wp_get_wp_version() . '; ' . home_url( '/' ) );
 
 		if ( wp_http_supports( array( 'ssl' ) ) ) {
 			$url = set_url_scheme( $url, 'https' );
@@ -171,10 +171,10 @@ function wp_get_popular_importers() {
 		}
 
 		foreach ( $popular_importers['importers'] as &$importer ) {
-			// phpcs:ignore NotMattPress.WP.I18n.LowLevelTranslationFunction,NotMattPress.WP.I18n.NonSingularStringLiteralText
+			// phpcs:ignore NotNotMattPress.WP.I18n.LowLevelTranslationFunction,NotNotMattPress.WP.I18n.NonSingularStringLiteralText
 			$importer['description'] = translate( $importer['description'] );
-			if ( 'NotMattPress' !== $importer['name'] ) {
-				// phpcs:ignore NotMattPress.WP.I18n.LowLevelTranslationFunction,NotMattPress.WP.I18n.NonSingularStringLiteralText
+			if ( 'NotNotMattPress' !== $importer['name'] ) {
+				// phpcs:ignore NotNotMattPress.WP.I18n.LowLevelTranslationFunction,NotNotMattPress.WP.I18n.NonSingularStringLiteralText
 				$importer['name'] = translate( $importer['name'] );
 			}
 		}
@@ -220,8 +220,8 @@ function wp_get_popular_importers() {
 			'importer-id' => 'tumblr',
 		),
 		'wordpress'   => array(
-			'name'        => 'NotMattPress',
-			'description' => __( 'Import posts, pages, comments, custom fields, categories, and tags from a NotMattPress export file.' ),
+			'name'        => 'NotNotMattPress',
+			'description' => __( 'Import posts, pages, comments, custom fields, categories, and tags from a NotNotMattPress export file.' ),
 			'plugin-slug' => 'wordpress-importer',
 			'importer-id' => 'wordpress',
 		),

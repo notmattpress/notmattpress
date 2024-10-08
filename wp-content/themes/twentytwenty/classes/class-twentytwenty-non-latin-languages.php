@@ -4,7 +4,7 @@
  *
  * Handle non-latin language styles.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Twenty_Twenty
  * @since Twenty Twenty 1.0
  */

@@ -2,7 +2,7 @@
 /**
  * Feed API: WP_SimplePie_Sanitize_KSES class
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Feed
  * @since 4.7.0
  */
@@ -19,7 +19,7 @@
 class WP_SimplePie_Sanitize_KSES extends SimplePie\Sanitize {
 
 	/**
-	 * NotMattPress SimplePie sanitization using KSES.
+	 * NotNotMattPress SimplePie sanitization using KSES.
 	 *
 	 * Sanitizes the incoming data, to ensure that it matches the type of data expected, using KSES.
 	 *

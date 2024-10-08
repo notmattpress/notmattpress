@@ -2,13 +2,13 @@
 /**
  * Twenty Sixteen Customizer functionality
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Twenty_Sixteen
  * @since Twenty Sixteen 1.0
  */
 
 /**
- * Sets up the NotMattPress core custom header and custom background features.
+ * Sets up the NotNotMattPress core custom header and custom background features.
  *
  * @since Twenty Sixteen 1.0
  *

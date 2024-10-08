@@ -1,6 +1,6 @@
 <?php
 /**
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Theme_Compat
  * @deprecated 3.0.0
  *

@@ -2,7 +2,7 @@
 /**
  * Query: Image at left.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  */
 
 return array(

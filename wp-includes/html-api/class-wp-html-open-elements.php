@@ -2,7 +2,7 @@
 /**
  * HTML API: WP_HTML_Open_Elements class
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage HTML-API
  * @since 6.4.0
  */

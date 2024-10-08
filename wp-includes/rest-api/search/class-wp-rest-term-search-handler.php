@@ -2,7 +2,7 @@
 /**
  * REST API: WP_REST_Term_Search_Handler class
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage REST_API
  * @since 5.6.0
  */

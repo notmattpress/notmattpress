@@ -2,7 +2,7 @@
 /**
  * Upgrade API: File_Upload_Upgrader class
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Upgrader
  * @since 4.6.0
  */

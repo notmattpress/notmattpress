@@ -2,9 +2,9 @@
 /**
  * Show the appropriate content for the Chat post format.
  *
- * @link https://developer.notmatt.press/themes/basics/template-hierarchy/
+ * @link https://developer.notNotMatt.press/themes/basics/template-hierarchy/
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Twenty_Twenty_One
  * @since Twenty Twenty-One 1.0
  */

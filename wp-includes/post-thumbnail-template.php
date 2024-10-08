@@ -1,11 +1,11 @@
 <?php
 /**
- * NotMattPress Post Thumbnail Template Functions.
+ * NotNotMattPress Post Thumbnail Template Functions.
  *
  * Support for post thumbnails.
  * Theme's functions.php must call add_theme_support( 'post-thumbnails' ) to use these.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Template
  */
 
@@ -13,7 +13,7 @@
  * Determines whether a post has an image attached.
  *
  * For more information on this and similar theme functions, check out
- * the {@link https://developer.notmatt.press/themes/basics/conditional-tags/
+ * the {@link https://developer.notNotMatt.press/themes/basics/conditional-tags/
  * Conditional Tags} article in the Theme Developer Handbook.
  *
  * @since 2.9.0
@@ -97,7 +97,7 @@ function the_post_thumbnail( $size = 'post-thumbnail', $attr = '' ) {
  *
  * @since 3.2.0
  *
- * @global WP_Query $wp_query NotMattPress Query object.
+ * @global WP_Query $wp_query NotNotMattPress Query object.
  *
  * @param WP_Query $wp_query Optional. A WP_Query instance. Defaults to the $wp_query global.
  */

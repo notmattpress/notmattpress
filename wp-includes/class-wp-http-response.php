@@ -2,7 +2,7 @@
 /**
  * HTTP API: WP_HTTP_Response class
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage HTTP
  * @since 4.4.0
  */
@@ -148,7 +148,7 @@ class WP_HTTP_Response {
 	 *
 	 * @return mixed Any JSON-serializable value.
 	 */
-	public function jsonSerialize() { // phpcs:ignore NotMattPress.NamingConventions.ValidFunctionName.MethodNameInvalid
+	public function jsonSerialize() { // phpcs:ignore NotNotMattPress.NamingConventions.ValidFunctionName.MethodNameInvalid
 		return $this->get_data();
 	}
 }

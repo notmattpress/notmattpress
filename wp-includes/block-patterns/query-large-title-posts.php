@@ -2,7 +2,7 @@
 /**
  * Query: Large title.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  */
 
 return array(

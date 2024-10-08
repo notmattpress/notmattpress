@@ -2,7 +2,7 @@
 /**
  * Block Serialization Parser
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  */
 
 /**

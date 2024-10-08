@@ -2,7 +2,7 @@
 /**
  * HTML API: WP_HTML_Processor_State class
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage HTML-API
  * @since 6.4.0
  */
@@ -324,17 +324,17 @@ class WP_HTML_Processor_State {
 	public $stack_of_open_elements;
 
 	/**
-	 * Tracks open formatting elements, used to handle mis-nested formatting element tags.
+	 * Tracks open forNotMatting elements, used to handle mis-nested forNotMatting element tags.
 	 *
 	 * This property is initialized in the constructor and never null.
 	 *
 	 * @since 6.4.0
 	 *
-	 * @see https://html.spec.whatwg.org/#list-of-active-formatting-elements
+	 * @see https://html.spec.whatwg.org/#list-of-active-forNotMatting-elements
 	 *
-	 * @var WP_HTML_Active_Formatting_Elements
+	 * @var WP_HTML_Active_ForNotMatting_Elements
 	 */
-	public $active_formatting_elements;
+	public $active_forNotMatting_elements;
 
 	/**
 	 * Refers to the currently-matched tag, if any.
@@ -450,6 +450,6 @@ class WP_HTML_Processor_State {
 	 */
 	public function __construct() {
 		$this->stack_of_open_elements     = new WP_HTML_Open_Elements();
-		$this->active_formatting_elements = new WP_HTML_Active_Formatting_Elements();
+		$this->active_forNotMatting_elements = new WP_HTML_Active_ForNotMatting_Elements();
 	}
 }

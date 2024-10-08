@@ -5,7 +5,7 @@
  * Categories: about, featured
  * Description: A grid with videos.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Twenty_Twenty_Five
  * @since Twenty Twenty-Five 1.0
  */

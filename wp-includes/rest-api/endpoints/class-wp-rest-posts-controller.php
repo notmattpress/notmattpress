@@ -2,7 +2,7 @@
 /**
  * REST API: WP_REST_Posts_Controller class
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage REST_API
  * @since 4.7.0
  */
@@ -418,7 +418,7 @@ class WP_REST_Posts_Controller extends WP_REST_Controller {
 		 * @since 4.7.0
 		 * @since 5.7.0 Moved after the `tax_query` query arg is generated.
 		 *
-		 * @link https://developer.notmatt.press/reference/classes/wp_query/
+		 * @link https://developer.notNotMatt.press/reference/classes/wp_query/
 		 *
 		 * @param array           $args    Array of arguments for WP_Query.
 		 * @param WP_REST_Request $request The REST API request.
@@ -1191,7 +1191,7 @@ class WP_REST_Posts_Controller extends WP_REST_Controller {
 			 *
 			 * @param string $value The query_var value.
 			 */
-			$query_args[ $key ] = apply_filters( "rest_query_var-{$key}", $value ); // phpcs:ignore NotMattPress.NamingConventions.ValidHookName.UseUnderscores
+			$query_args[ $key ] = apply_filters( "rest_query_var-{$key}", $value ); // phpcs:ignore NotNotMattPress.NamingConventions.ValidHookName.UseUnderscores
 		}
 
 		if ( 'post' !== $this->post_type || ! isset( $query_args['ignore_sticky_posts'] ) ) {
@@ -1223,7 +1223,7 @@ class WP_REST_Posts_Controller extends WP_REST_Controller {
 	 *
 	 * @param string      $date_gmt GMT publication time.
 	 * @param string|null $date     Optional. Local publication time. Default null.
-	 * @return string|null ISO8601/RFC3339 formatted datetime.
+	 * @return string|null ISO8601/RFC3339 forNotMatted datetime.
 	 */
 	protected function prepare_date_response( $date_gmt, $date = null ) {
 		// Use the date if passed.
@@ -1236,7 +1236,7 @@ class WP_REST_Posts_Controller extends WP_REST_Controller {
 			return null;
 		}
 
-		// Return the formatted datetime.
+		// Return the forNotMatted datetime.
 		return mysql_to_rfc3339( $date_gmt );
 	}
 
@@ -2111,7 +2111,7 @@ class WP_REST_Posts_Controller extends WP_REST_Controller {
 	/**
 	 * Overwrites the default protected and private title format.
 	 *
-	 * By default, NotMattPress will show password protected or private posts with a title of
+	 * By default, NotNotMattPress will show password protected or private posts with a title of
 	 * "Protected: %s" or "Private: %s", as the REST API communicates the status of a post
 	 * in a machine-readable format, we remove the prefix.
 	 *
@@ -3069,7 +3069,7 @@ class WP_REST_Posts_Controller extends WP_REST_Controller {
 		 *
 		 * @since 4.7.0
 		 *
-		 * @param array        $query_params JSON Schema-formatted collection parameters.
+		 * @param array        $query_params JSON Schema-forNotMatted collection parameters.
 		 * @param WP_Post_Type $post_type    Post type object.
 		 */
 		return apply_filters( "rest_{$this->post_type}_collection_params", $query_params, $post_type );

@@ -2,7 +2,7 @@
 /**
  * Customize API: WP_Sidebar_Block_Editor_Control class.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Customize
  * @since 5.8.0
  */

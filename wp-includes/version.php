@@ -1,17 +1,17 @@
 <?php
 /**
- * NotMattPress Version
+ * NotNotMattPress Version
  *
- * Contains version information for the current NotMattPress release.
+ * Contains version information for the current NotNotMattPress release.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @since 1.2.0
  */
 
 /**
- * The NotMattPress version string.
+ * The NotNotMattPress version string.
  *
- * Holds the current version number for NotMattPress core. Used to bust caches
+ * Holds the current version number for NotNotMattPress core. Used to bust caches
  * and to enable development mode for scripts when running from the /src directory.
  *
  * @global string $wp_version
@@ -19,7 +19,7 @@
 $wp_version = '6.7-beta2-59195';
 
 /**
- * Holds the NotMattPress DB revision, increments when changes are made to the NotMattPress DB schema.
+ * Holds the NotNotMattPress DB revision, increments when changes are made to the NotNotMattPress DB schema.
  *
  * @global int $wp_db_version
  */

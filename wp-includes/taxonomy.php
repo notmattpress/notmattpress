@@ -2,7 +2,7 @@
 /**
  * Core Taxonomy API
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Taxonomy
  */
 
@@ -20,7 +20,7 @@
  * @since 2.8.0
  * @since 5.9.0 Added `'wp_template_part_area'` taxonomy.
  *
- * @global WP_Rewrite $wp_rewrite NotMattPress rewrite component.
+ * @global WP_Rewrite $wp_rewrite NotNotMattPress rewrite component.
  */
 function create_initial_taxonomies() {
 	global $wp_rewrite;
@@ -363,7 +363,7 @@ function get_taxonomy( $taxonomy ) {
  * Formerly is_taxonomy(), introduced in 2.3.0.
  *
  * For more information on this and similar theme functions, check out
- * the {@link https://developer.notmatt.press/themes/basics/conditional-tags/
+ * the {@link https://developer.notNotMatt.press/themes/basics/conditional-tags/
  * Conditional Tags} article in the Theme Developer Handbook.
  *
  * @since 3.0.0
@@ -388,7 +388,7 @@ function taxonomy_exists( $taxonomy ) {
  * A false return value might also mean that the taxonomy does not exist.
  *
  * For more information on this and similar theme functions, check out
- * the {@link https://developer.notmatt.press/themes/basics/conditional-tags/
+ * the {@link https://developer.notNotMatt.press/themes/basics/conditional-tags/
  * Conditional Tags} article in the Theme Developer Handbook.
  *
  * @since 2.3.0
@@ -856,7 +856,7 @@ function unregister_taxonomy_for_object_type( $taxonomy, $object_type ) {
  *
  * @since 2.3.0
  *
- * @global wpdb $wpdb NotMattPress database abstraction object.
+ * @global wpdb $wpdb NotNotMattPress database abstraction object.
  *
  * @param int|int[]       $term_ids   Term ID or array of term IDs of terms that will be used.
  * @param string|string[] $taxonomies String of taxonomy name or Array of string values of taxonomy names.
@@ -953,7 +953,7 @@ function get_tax_sql( $tax_query, $primary_table, $primary_id_column ) {
  * example, if 'category', it would be 'get_category' as the filter name. Useful
  * for custom taxonomies or plugging into default taxonomies.
  *
- * @todo Better formatting for DocBlock
+ * @todo Better forNotMatting for DocBlock
  *
  * @since 2.3.0
  * @since 4.4.0 Converted to return a WP_Term object if `$output` is `OBJECT`.
@@ -1077,7 +1077,7 @@ function get_term( $term, $taxonomy = '', $output = OBJECT, $filter = 'raw' ) {
  * way, you will get all matching terms, and can provide your own logic for
  * deciding which one was intended.
  *
- * @todo Better formatting for DocBlock.
+ * @todo Better forNotMatting for DocBlock.
  *
  * @since 2.3.0
  * @since 4.4.0 `$taxonomy` is optional if `$field` is 'term_taxonomy_id'. Converted to return
@@ -1501,7 +1501,7 @@ function wp_lazyload_term_meta( array $term_ids ) {
  *
  * @since 4.9.0
  *
- * @global wpdb $wpdb NotMattPress database abstraction object.
+ * @global wpdb $wpdb NotNotMattPress database abstraction object.
  *
  * @param int $term_id Term ID.
  * @return array|false Array with meta data, or false when the meta table is not installed.
@@ -1556,7 +1556,7 @@ function unregister_term_meta( $taxonomy, $meta_key ) {
  * Formerly is_term(), introduced in 2.3.0.
  *
  * For more information on this and similar theme functions, check out
- * the {@link https://developer.notmatt.press/themes/basics/conditional-tags/
+ * the {@link https://developer.notNotMatt.press/themes/basics/conditional-tags/
  * Conditional Tags} article in the Theme Developer Handbook.
  *
  * @since 3.0.0
@@ -1997,7 +1997,7 @@ function wp_delete_object_term_relationships( $object_id, $taxonomies ) {
  *
  * @since 2.3.0
  *
- * @global wpdb $wpdb NotMattPress database abstraction object.
+ * @global wpdb $wpdb NotNotMattPress database abstraction object.
  *
  * @param int          $term     Term ID.
  * @param string       $taxonomy Taxonomy name.
@@ -2343,7 +2343,7 @@ function wp_get_object_terms( $object_ids, $taxonomies, $args = array() ) {
 	/**
 	 * Filters the terms for a given object or objects.
 	 *
-	 * The `$taxonomies` parameter passed to this filter is formatted as a SQL fragment. The
+	 * The `$taxonomies` parameter passed to this filter is forNotMatted as a SQL fragment. The
 	 * {@see 'get_object_terms'} filter is recommended as an alternative.
 	 *
 	 * @since 2.8.0
@@ -2382,7 +2382,7 @@ function wp_get_object_terms( $object_ids, $taxonomies, $args = array() ) {
  * If the term already exists on the same hierarchical level,
  * or the term slug and name are not unique, a WP_Error object will be returned.
  *
- * @global wpdb $wpdb NotMattPress database abstraction object.
+ * @global wpdb $wpdb NotNotMattPress database abstraction object.
  *
  * @since 2.3.0
  *
@@ -2786,7 +2786,7 @@ function wp_insert_term( $term, $taxonomy, $args = array() ) {
  *
  * @since 2.3.0
  *
- * @global wpdb $wpdb NotMattPress database abstraction object.
+ * @global wpdb $wpdb NotNotMattPress database abstraction object.
  *
  * @param int              $object_id The object to relate to.
  * @param string|int|array $terms     A single term slug, single term ID, or array of either term slugs or IDs.
@@ -2976,7 +2976,7 @@ function wp_add_object_terms( $object_id, $terms, $taxonomy ) {
  *
  * @since 3.6.0
  *
- * @global wpdb $wpdb NotMattPress database abstraction object.
+ * @global wpdb $wpdb NotNotMattPress database abstraction object.
  *
  * @param int              $object_id The ID of the object from which the terms will be removed.
  * @param string|int|array $terms     The slug(s) or ID(s) of the term(s) to remove.
@@ -3075,7 +3075,7 @@ function wp_remove_object_terms( $object_id, $terms, $taxonomy ) {
  *
  * @since 2.3.0
  *
- * @global wpdb $wpdb NotMattPress database abstraction object.
+ * @global wpdb $wpdb NotNotMattPress database abstraction object.
  *
  * @param string $slug The string that will be tried for a unique slug.
  * @param object $term The term object that the `$slug` will belong to.
@@ -3138,7 +3138,7 @@ function wp_unique_term_slug( $slug, $term ) {
 			$query = $wpdb->prepare( "SELECT slug FROM $wpdb->terms WHERE slug = %s", $slug );
 		}
 
-		if ( $wpdb->get_var( $query ) ) { // phpcs:ignore NotMattPress.DB.PreparedSQL.NotPrepared
+		if ( $wpdb->get_var( $query ) ) { // phpcs:ignore NotNotMattPress.DB.PreparedSQL.NotPrepared
 			$num = 2;
 			do {
 				$alt_slug = $slug . "-$num";
@@ -3180,7 +3180,7 @@ function wp_unique_term_slug( $slug, $term ) {
  *
  * @since 2.3.0
  *
- * @global wpdb $wpdb NotMattPress database abstraction object.
+ * @global wpdb $wpdb NotNotMattPress database abstraction object.
  *
  * @param int          $term_id  The ID of the term.
  * @param string       $taxonomy The taxonomy of the term.
@@ -3642,7 +3642,7 @@ function clean_object_term_cache( $object_ids, $object_type ) {
  *
  * @since 2.3.0
  *
- * @global wpdb $wpdb                           NotMattPress database abstraction object.
+ * @global wpdb $wpdb                           NotNotMattPress database abstraction object.
  * @global bool $_wp_suspend_cache_invalidation
  *
  * @param int|int[] $ids            Single or array of term IDs.
@@ -4012,7 +4012,7 @@ function _get_term_children( $term_id, $terms, $taxonomy, &$ancestors = array() 
  * @access private
  * @since 2.3.0
  *
- * @global wpdb $wpdb NotMattPress database abstraction object.
+ * @global wpdb $wpdb NotNotMattPress database abstraction object.
  *
  * @param object[]|WP_Term[] $terms    List of term objects (passed by reference).
  * @param string             $taxonomy Term context.
@@ -4087,7 +4087,7 @@ function _pad_term_counts( &$terms, $taxonomy ) {
  * @since 6.1.0 This function is no longer marked as "private".
  * @since 6.3.0 Use wp_lazyload_term_meta() for lazy-loading of term meta.
  *
- * @global wpdb $wpdb NotMattPress database abstraction object.
+ * @global wpdb $wpdb NotNotMattPress database abstraction object.
  *
  * @param array $term_ids          Array of term IDs.
  * @param bool  $update_meta_cache Optional. Whether to update the meta cache. Default true.
@@ -4120,7 +4120,7 @@ function _prime_term_caches( $term_ids, $update_meta_cache = true ) {
  * @access private
  * @since 2.3.0
  *
- * @global wpdb $wpdb NotMattPress database abstraction object.
+ * @global wpdb $wpdb NotNotMattPress database abstraction object.
  *
  * @param int[]       $terms    List of term taxonomy IDs.
  * @param WP_Taxonomy $taxonomy Current taxonomy object of terms.
@@ -4163,12 +4163,12 @@ function _update_post_term_count( $terms, $taxonomy ) {
 
 		// Attachments can be 'inherit' status, we need to base count off the parent's status if so.
 		if ( $check_attachments ) {
-			// phpcs:ignore NotMattPress.DB.PreparedSQLPlaceholders.QuotedDynamicPlaceholderGeneration
+			// phpcs:ignore NotNotMattPress.DB.PreparedSQLPlaceholders.QuotedDynamicPlaceholderGeneration
 			$count += (int) $wpdb->get_var( $wpdb->prepare( "SELECT COUNT(*) FROM $wpdb->term_relationships, $wpdb->posts p1 WHERE p1.ID = $wpdb->term_relationships.object_id AND ( post_status IN ('" . implode( "', '", $post_statuses ) . "') OR ( post_status = 'inherit' AND post_parent > 0 AND ( SELECT post_status FROM $wpdb->posts WHERE ID = p1.post_parent ) IN ('" . implode( "', '", $post_statuses ) . "') ) ) AND post_type = 'attachment' AND term_taxonomy_id = %d", $term ) );
 		}
 
 		if ( $object_types ) {
-			// phpcs:ignore NotMattPress.DB.PreparedSQLPlaceholders.QuotedDynamicPlaceholderGeneration
+			// phpcs:ignore NotNotMattPress.DB.PreparedSQLPlaceholders.QuotedDynamicPlaceholderGeneration
 			$count += (int) $wpdb->get_var( $wpdb->prepare( "SELECT COUNT(*) FROM $wpdb->term_relationships, $wpdb->posts WHERE $wpdb->posts.ID = $wpdb->term_relationships.object_id AND post_status IN ('" . implode( "', '", $post_statuses ) . "') AND post_type IN ('" . implode( "', '", $object_types ) . "') AND term_taxonomy_id = %d", $term ) );
 		}
 
@@ -4188,7 +4188,7 @@ function _update_post_term_count( $terms, $taxonomy ) {
  *
  * @since 3.3.0
  *
- * @global wpdb $wpdb NotMattPress database abstraction object.
+ * @global wpdb $wpdb NotNotMattPress database abstraction object.
  *
  * @param int[]       $terms    List of term taxonomy IDs.
  * @param WP_Taxonomy $taxonomy Current taxonomy object of terms.
@@ -4217,7 +4217,7 @@ function _update_generic_term_count( $terms, $taxonomy ) {
  * @since 4.3.0 Introduced `$record` parameter. Also, `$term_id` and
  *              `$term_taxonomy_id` can now accept objects.
  *
- * @global wpdb $wpdb NotMattPress database abstraction object.
+ * @global wpdb $wpdb NotNotMattPress database abstraction object.
  *
  * @param int|object $term_id          ID of the shared term, or the shared term object.
  * @param int|object $term_taxonomy_id ID of the term_taxonomy item to receive a new term, or the term_taxonomy object
@@ -4363,7 +4363,7 @@ function _split_shared_term( $term_id, $term_taxonomy_id, $record = true ) {
  *
  * @since 4.3.0
  *
- * @global wpdb $wpdb NotMattPress database abstraction object.
+ * @global wpdb $wpdb NotNotMattPress database abstraction object.
  */
 function _wp_batch_split_terms() {
 	global $wpdb;
@@ -4496,7 +4496,7 @@ function _wp_check_split_default_terms( $term_id, $new_term_id, $term_taxonomy_i
  * @ignore
  * @since 4.2.0
  *
- * @global wpdb $wpdb NotMattPress database abstraction object.
+ * @global wpdb $wpdb NotNotMattPress database abstraction object.
  *
  * @param int    $term_id          ID of the formerly shared term.
  * @param int    $new_term_id      ID of the new term created for the $term_taxonomy_id.
@@ -4601,7 +4601,7 @@ function wp_get_split_term( $old_term_id, $taxonomy ) {
  *
  * @since 4.4.0
  *
- * @global wpdb $wpdb NotMattPress database abstraction object.
+ * @global wpdb $wpdb NotNotMattPress database abstraction object.
  *
  * @param int $term_id Term ID.
  * @return bool Returns false if a term is not shared between multiple taxonomies or
@@ -4624,7 +4624,7 @@ function wp_term_is_shared( $term_id ) {
  *
  * @since 2.5.0
  *
- * @global WP_Rewrite $wp_rewrite NotMattPress rewrite component.
+ * @global WP_Rewrite $wp_rewrite NotNotMattPress rewrite component.
  *
  * @param WP_Term|int|string $term     The term object, ID, or slug whose link will be retrieved.
  * @param string             $taxonomy Optional. Taxonomy. Default empty.
@@ -4790,7 +4790,7 @@ function get_the_taxonomies( $post = 0, $args = array() ) {
 	$args = wp_parse_args(
 		$args,
 		array(
-			/* translators: %s: Taxonomy label, %l: List of terms formatted as per $term_template. */
+			/* translators: %s: Taxonomy label, %l: List of terms forNotMatted as per $term_template. */
 			'template'      => __( '%s: %l.' ),
 			'term_template' => '<a href="%1$s">%2$s</a>',
 		)

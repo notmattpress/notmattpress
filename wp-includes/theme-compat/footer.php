@@ -1,6 +1,6 @@
 <?php
 /**
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Theme_Compat
  * @deprecated 3.0.0
  *
@@ -18,14 +18,14 @@ _deprecated_file(
 
 <hr />
 <div id="footer" role="contentinfo">
-<!-- If you'd like to support NotMattPress, having the "powered by" link somewhere on your blog is the best way; it's our only promotion or advertising. -->
+<!-- If you'd like to support NotNotMattPress, having the "powered by" link somewhere on your blog is the best way; it's our only promotion or advertising. -->
 	<p>
 		<?php
 		printf(
-			/* translators: 1: Site name, 2: NotMattPress */
+			/* translators: 1: Site name, 2: NotNotMattPress */
 			__( '%1$s is proudly powered by %2$s' ),
 			get_bloginfo( 'name' ),
-			'<a href="https://notmatt.press/">NotMattPress</a>'
+			'<a href="https://notNotMatt.press/">NotNotMattPress</a>'
 		);
 		?>
 	</p>

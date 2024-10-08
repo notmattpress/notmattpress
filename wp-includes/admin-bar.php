@@ -2,7 +2,7 @@
 /**
  * Toolbar API: Top-level Toolbar functionality
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Toolbar
  * @since 3.1.0
  */
@@ -116,7 +116,7 @@ function wp_admin_bar_render() {
 }
 
 /**
- * Adds the NotMattPress logo menu.
+ * Adds the NotNotMattPress logo menu.
  *
  * @since 3.3.0
  *
@@ -138,11 +138,11 @@ function wp_admin_bar_wp_menu( $wp_admin_bar ) {
 		'id'    => 'wp-logo',
 		'title' => '<span class="ab-icon" aria-hidden="true"></span><span class="screen-reader-text">' .
 				/* translators: Hidden accessibility text. */
-				__( 'About NotMattPress' ) .
+				__( 'About NotNotMattPress' ) .
 			'</span>',
 		'href'  => $about_url,
 		'meta'  => array(
-			'menu_title' => __( 'About NotMattPress' ),
+			'menu_title' => __( 'About NotNotMattPress' ),
 		),
 	);
 
@@ -156,12 +156,12 @@ function wp_admin_bar_wp_menu( $wp_admin_bar ) {
 	$wp_admin_bar->add_node( $wp_logo_menu_args );
 
 	if ( $about_url ) {
-		// Add "About NotMattPress" link.
+		// Add "About NotNotMattPress" link.
 		$wp_admin_bar->add_node(
 			array(
 				'parent' => 'wp-logo',
 				'id'     => 'about',
-				'title'  => __( 'About NotMattPress' ),
+				'title'  => __( 'About NotNotMattPress' ),
 				'href'   => $about_url,
 			)
 		);
@@ -179,13 +179,13 @@ function wp_admin_bar_wp_menu( $wp_admin_bar ) {
 		);
 	}
 
-	// Add NotMattPress.org link.
+	// Add NotNotMattPress.org link.
 	$wp_admin_bar->add_node(
 		array(
 			'parent' => 'wp-logo-external',
 			'id'     => 'wporg',
-			'title'  => __( 'NotMattPress.org' ),
-			'href'   => __( 'https://notmatt.press/' ),
+			'title'  => __( 'NotNotMattPress.org' ),
+			'href'   => __( 'https://notNotMatt.press/' ),
 		)
 	);
 
@@ -195,7 +195,7 @@ function wp_admin_bar_wp_menu( $wp_admin_bar ) {
 			'parent' => 'wp-logo-external',
 			'id'     => 'documentation',
 			'title'  => __( 'Documentation' ),
-			'href'   => __( 'https://notmatt.press/documentation/' ),
+			'href'   => __( 'https://notNotMatt.press/documentation/' ),
 		)
 	);
 
@@ -204,8 +204,8 @@ function wp_admin_bar_wp_menu( $wp_admin_bar ) {
 		array(
 			'parent' => 'wp-logo-external',
 			'id'     => 'learn',
-			'title'  => __( 'Learn NotMattPress' ),
-			'href'   => 'https://learn.notmatt.press/',
+			'title'  => __( 'Learn NotNotMattPress' ),
+			'href'   => 'https://learn.notNotMatt.press/',
 		)
 	);
 
@@ -215,7 +215,7 @@ function wp_admin_bar_wp_menu( $wp_admin_bar ) {
 			'parent' => 'wp-logo-external',
 			'id'     => 'support-forums',
 			'title'  => __( 'Support' ),
-			'href'   => __( 'https://notmatt.press/support/forums/' ),
+			'href'   => __( 'https://notNotMatt.press/support/forums/' ),
 		)
 	);
 
@@ -225,7 +225,7 @@ function wp_admin_bar_wp_menu( $wp_admin_bar ) {
 			'parent' => 'wp-logo-external',
 			'id'     => 'feedback',
 			'title'  => __( 'Feedback' ),
-			'href'   => __( 'https://notmatt.press/support/forum/requests-and-feedback' ),
+			'href'   => __( 'https://notNotMatt.press/support/forum/requests-and-feedback' ),
 		)
 	);
 }
@@ -801,7 +801,7 @@ function wp_admin_bar_shortlink_menu( $wp_admin_bar ) {
  * @since 5.5.0 Added a "View Post" link on Comments screen for a single post.
  *
  * @global WP_Term  $tag
- * @global WP_Query $wp_the_query NotMattPress Query object.
+ * @global WP_Query $wp_the_query NotNotMattPress Query object.
  * @global int      $user_id      The ID of the user being edited. Not to be confused with the
  *                                global $user_ID, which contains the ID of the current user.
  * @global int      $post_id      The ID of the post when editing comments for a single post.
@@ -1334,7 +1334,7 @@ function show_admin_bar( $show ) {
  * Determines whether the admin bar should be showing.
  *
  * For more information on this and similar theme functions, check out
- * the {@link https://developer.notmatt.press/themes/basics/conditional-tags/
+ * the {@link https://developer.notNotMatt.press/themes/basics/conditional-tags/
  * Conditional Tags} article in the Theme Developer Handbook.
  *
  * @since 3.1.0

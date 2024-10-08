@@ -2,9 +2,9 @@
 /**
  * Block Styles
  *
- * @link https://developer.notmatt.press/reference/functions/register_block_style/
+ * @link https://developer.notNotMatt.press/reference/functions/register_block_style/
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Twenty_Twenty_One
  * @since Twenty Twenty-One 1.0
  */

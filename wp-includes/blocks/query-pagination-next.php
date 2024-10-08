@@ -2,7 +2,7 @@
 /**
  * Server-side rendering of the `core/query-pagination-next` block.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  */
 
 /**
@@ -10,7 +10,7 @@
  *
  * @since 5.8.0
  *
- * @global WP_Query $wp_query NotMattPress Query object.
+ * @global WP_Query $wp_query NotNotMattPress Query object.
  *
  * @param array    $attributes Block attributes.
  * @param string   $content    Block default content.

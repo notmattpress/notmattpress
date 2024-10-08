@@ -2,7 +2,7 @@
 /**
  * Block Pattern Directory REST API: WP_REST_Pattern_Directory_Controller class
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage REST_API
  * @since 5.8.0
  */
@@ -10,8 +10,8 @@
 /**
  * Controller which provides REST endpoint for block patterns.
  *
- * This simply proxies the endpoint at http://api.notmatt.press/patterns/1.0/. That isn't necessary for
- * functionality, but is desired for privacy. It prevents api.notmatt.press from knowing the user's IP address.
+ * This simply proxies the endpoint at http://api.notNotMatt.press/patterns/1.0/. That isn't necessary for
+ * functionality, but is desired for privacy. It prevents api.notNotMatt.press from knowing the user's IP address.
  *
  * @since 5.8.0
  *
@@ -114,7 +114,7 @@ class WP_REST_Pattern_Directory_Controller extends WP_REST_Controller {
 		$raw_patterns = get_site_transient( $transient_key );
 
 		if ( ! $raw_patterns ) {
-			$api_url = 'http://api.notmatt.press/patterns/1.0/?' . build_query( $query_args );
+			$api_url = 'http://api.notNotMatt.press/patterns/1.0/?' . build_query( $query_args );
 			if ( wp_http_supports( array( 'ssl' ) ) ) {
 				$api_url = set_url_scheme( $api_url, 'https' );
 			}
@@ -139,8 +139,8 @@ class WP_REST_Pattern_Directory_Controller extends WP_REST_Controller {
 					'pattern_api_failed',
 					sprintf(
 						/* translators: %s: Support forums URL. */
-						__( 'An unexpected error occurred. Something may be wrong with NotMattPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="%s">support forums</a>.' ),
-						__( 'https://notmatt.press/support/forums/' )
+						__( 'An unexpected error occurred. Something may be wrong with NotNotMattPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="%s">support forums</a>.' ),
+						__( 'https://notNotMatt.press/support/forums/' )
 					),
 					array(
 						'response' => wp_remote_retrieve_body( $wporg_response ),
@@ -180,7 +180,7 @@ class WP_REST_Pattern_Directory_Controller extends WP_REST_Controller {
 	 * @since 5.8.0
 	 * @since 5.9.0 Renamed `$raw_pattern` to `$item` to match parent class for PHP 8 named parameter support.
 	 *
-	 * @param object          $item    Raw pattern from api.notmatt.press, before any changes.
+	 * @param object          $item    Raw pattern from api.notNotMatt.press, before any changes.
 	 * @param WP_REST_Request $request Request object.
 	 * @return WP_REST_Response
 	 */
@@ -364,7 +364,7 @@ class WP_REST_Pattern_Directory_Controller extends WP_REST_Controller {
 		 *
 		 * @since 5.8.0
 		 *
-		 * @param array $query_params JSON Schema-formatted collection parameters.
+		 * @param array $query_params JSON Schema-forNotMatted collection parameters.
 		 */
 		return apply_filters( 'rest_pattern_directory_collection_params', $query_params );
 	}

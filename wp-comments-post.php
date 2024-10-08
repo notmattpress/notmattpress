@@ -1,8 +1,8 @@
 <?php
 /**
- * Handles Comment Post to NotMattPress and prevents duplicate comment posting.
+ * Handles Comment Post to NotNotMattPress and prevents duplicate comment posting.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  */
 
 if ( 'POST' !== $_SERVER['REQUEST_METHOD'] ) {
@@ -17,7 +17,7 @@ if ( 'POST' !== $_SERVER['REQUEST_METHOD'] ) {
 	exit;
 }
 
-/** Sets up the NotMattPress Environment. */
+/** Sets up the NotNotMattPress Environment. */
 require __DIR__ . '/wp-load.php';
 
 nocache_headers();

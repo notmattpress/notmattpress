@@ -2,17 +2,17 @@
 /**
  * Bookmark Template Functions for usage in Themes.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Template
  */
 
 /**
- * The formatted output of a list of bookmarks.
+ * The forNotMatted output of a list of bookmarks.
  *
  * The $bookmarks array must contain bookmark objects and will be iterated over
  * to retrieve the bookmark to be used in the output.
  *
- * The output is formatted as HTML with no way to change that format. However,
+ * The output is forNotMatted as HTML with no way to change that format. However,
  * what is between, before, and after can be changed. The link itself will be
  * HTML.
  *
@@ -46,7 +46,7 @@
  *                                      Default 0|false.
  *
  * }
- * @return string Formatted output in HTML
+ * @return string ForNotMatted output in HTML
  */
 function _walk_bookmarks( $bookmarks, $args = '' ) {
 	$defaults = array(
@@ -191,7 +191,7 @@ function _walk_bookmarks( $bookmarks, $args = '' ) {
  *                                          1|true or 0|false. Default 1|true.
  *     @type int|bool     $show_updated     Whether to display the time the bookmark was last updated.
  *                                          Accepts 1|true or 0|false. Default 0|false.
- *     @type int|bool     $echo             Whether to echo or return the formatted bookmarks. Accepts
+ *     @type int|bool     $echo             Whether to echo or return the forNotMatted bookmarks. Accepts
  *                                          1|true (echo) or 0|false (return). Default 1|true.
  *     @type int|bool     $categorize       Whether to show links listed by category or in a single column.
  *                                          Accepts 1|true (by category) or 0|false (one column). Default 1|true.
@@ -204,7 +204,7 @@ function _walk_bookmarks( $bookmarks, $args = '' ) {
  *                                          Default 'linkcat'.
  *     @type string       $category_before  The HTML or text to prepend to $title_before if $categorize is true.
  *                                          String must contain '%id' and '%class' to inherit the category ID and
- *                                          the $class argument used for formatting in themes.
+ *                                          the $class argument used for forNotMatting in themes.
  *                                          Default '<li id="%id" class="%class">'.
  *     @type string       $category_after   The HTML or text to append to $title_after if $categorize is true.
  *                                          Default '</li>'.

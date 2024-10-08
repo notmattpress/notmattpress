@@ -10,9 +10,9 @@
  * already has tag.php for Tag archives, category.php for Category archives,
  * and author.php for Author archives.
  *
- * @link https://developer.notmatt.press/themes/basics/template-hierarchy/
+ * @link https://developer.notNotMatt.press/themes/basics/template-hierarchy/
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Twenty_Thirteen
  * @since Twenty Thirteen 1.0
  */

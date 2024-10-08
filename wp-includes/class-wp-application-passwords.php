@@ -2,14 +2,14 @@
 /**
  * WP_Application_Passwords class
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @since   5.6.0
  */
 
 /**
  * Class for displaying, modifying, and sanitizing application passwords.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  */
 #[AllowDynamicProperties]
 class WP_Application_Passwords {

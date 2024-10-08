@@ -2,7 +2,7 @@
 /**
  * Deprecated. No longer needed.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @deprecated 3.1.0
  */
 

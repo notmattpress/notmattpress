@@ -2,7 +2,7 @@
 /**
  * Widget API: WP_Widget_Tag_Cloud class
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Widgets
  * @since 4.4.0
  */

@@ -2,7 +2,7 @@
 /**
  * Common theme functions
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Twenty_Nineteen
  * @since Twenty Nineteen 1.5
  */

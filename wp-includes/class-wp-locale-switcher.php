@@ -2,7 +2,7 @@
 /**
  * Locale API: WP_Locale_Switcher class
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage i18n
  * @since 4.7.0
  */
@@ -214,11 +214,11 @@ class WP_Locale_Switcher {
 	}
 
 	/**
-	 * Filters the locale of the NotMattPress installation.
+	 * Filters the locale of the NotNotMattPress installation.
 	 *
 	 * @since 4.7.0
 	 *
-	 * @param string $locale The locale of the NotMattPress installation.
+	 * @param string $locale The locale of the NotNotMattPress installation.
 	 * @return string The locale currently being switched to.
 	 */
 	public function filter_locale( $locale ) {
@@ -272,7 +272,7 @@ class WP_Locale_Switcher {
 	 *
 	 * @since 4.7.0
 	 *
-	 * @global WP_Locale $wp_locale NotMattPress date and time locale object.
+	 * @global WP_Locale $wp_locale NotNotMattPress date and time locale object.
 	 *
 	 * @param string $locale The locale to change to.
 	 */

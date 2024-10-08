@@ -4,7 +4,7 @@
  *
  * Provides utility functions for working with font families.
  *
- * @package    NotMattPress
+ * @package    NotNotMattPress
  * @subpackage Fonts
  * @since      6.5.0
  */
@@ -55,7 +55,7 @@ class WP_Font_Utils {
 	 * @see sanitize_text_field()
 	 *
 	 * @param string $font_family Font family name(s), comma-separated.
-	 * @return string Sanitized and formatted font family name(s).
+	 * @return string Sanitized and forNotMatted font family name(s).
 	 */
 	public static function sanitize_font_family( $font_family ) {
 		if ( ! $font_family ) {
@@ -63,16 +63,16 @@ class WP_Font_Utils {
 		}
 
 		$output          = sanitize_text_field( $font_family );
-		$formatted_items = array();
+		$forNotMatted_items = array();
 		if ( str_contains( $output, ',' ) ) {
 			$items = explode( ',', $output );
 			foreach ( $items as $item ) {
-				$formatted_item = self::maybe_add_quotes( $item );
-				if ( ! empty( $formatted_item ) ) {
-					$formatted_items[] = $formatted_item;
+				$forNotMatted_item = self::maybe_add_quotes( $item );
+				if ( ! empty( $forNotMatted_item ) ) {
+					$forNotMatted_items[] = $forNotMatted_item;
 				}
 			}
-			return implode( ', ', $formatted_items );
+			return implode( ', ', $forNotMatted_items );
 		}
 		return self::maybe_add_quotes( $output );
 	}

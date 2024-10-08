@@ -2,15 +2,15 @@
 /**
  * About This Version administration panel.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Administration
  */
 
-/** NotMattPress Administration Bootstrap */
+/** NotNotMattPress Administration Bootstrap */
 require_once __DIR__ . '/admin.php';
 
 // Used in the HTML title tag.
-/* translators: Page title of the About NotMattPress page in the admin. */
+/* translators: Page title of the About NotNotMattPress page in the admin. */
 $title = _x( 'About', 'page title' );
 
 list( $display_version ) = explode( '-', get_bloginfo( 'version' ) );
@@ -25,7 +25,7 @@ require_once ABSPATH . 'wp-admin/admin-header.php';
 					<?php
 					printf(
 						/* translators: %s: Version number. */
-						__( 'NotMattPress %s' ),
+						__( 'NotNotMattPress %s' ),
 						$display_version
 					);
 					?>
@@ -47,13 +47,13 @@ require_once ABSPATH . 'wp-admin/admin-header.php';
 					<?php
 					printf(
 						/* translators: %s: Version number. */
-						__( 'Welcome to NotMattPress %s' ),
+						__( 'Welcome to NotNotMattPress %s' ),
 						$display_version
 					);
 					?>
 				</h2>
 				<p class="is-subheading">
-					<?php _e( 'Create and deploy beautiful and coherent design elements across your sites with NotMattPress 6.6. A new rollback option for auto-updating plugins gives you control, flexibility, and peace of mind.' ); ?>
+					<?php _e( 'Create and deploy beautiful and coherent design elements across your sites with NotNotMattPress 6.6. A new rollback option for auto-updating plugins gives you control, flexibility, and peace of mind.' ); ?>
 				</p>
 			</div>
 		</div>
@@ -124,8 +124,8 @@ require_once ABSPATH . 'wp-admin/admin-header.php';
 				<p>
 					<?php
 					printf(
-						/* translators: %1$s: code-formatted "WP_Theme_JSON", %2$s: code-formatted "data-wp-on-async", %%: escaped percent sign, leave as %%. */
-						__( 'NotMattPress 6.6 includes important updates like removing redundant %1$s calls, disabling autoload for large options, eliminating unnecessary polyfill dependencies, lazy loading post embeds, introducing the %2$s directive, and a 33%% reduction in template loading time in the editor.' ),
+						/* translators: %1$s: code-forNotMatted "WP_Theme_JSON", %2$s: code-forNotMatted "data-wp-on-async", %%: escaped percent sign, leave as %%. */
+						__( 'NotNotMattPress 6.6 includes important updates like removing redundant %1$s calls, disabling autoload for large options, eliminating unnecessary polyfill dependencies, lazy loading post embeds, introducing the %2$s directive, and a 33%% reduction in template loading time in the editor.' ),
 						'<code>WP_Theme_JSON</code>',
 						'<code>data-wp-on-async</code>'
 					);
@@ -140,7 +140,7 @@ require_once ABSPATH . 'wp-admin/admin-header.php';
 					</svg>
 				</div>
 				<h3><?php _e( 'Accessibility improvements' ); ?></h3>
-				<p><?php _e( '55+ accessibility fixes and enhancements focus on foundational aspects of the NotMattPress experience, particularly the data views component powering the new site editing experience and areas like the Inserter that provide a key way of interacting with blocks and patterns.' ); ?></p>
+				<p><?php _e( '55+ accessibility fixes and enhancements focus on foundational aspects of the NotNotMattPress experience, particularly the data views component powering the new site editing experience and areas like the Inserter that provide a key way of interacting with blocks and patterns.' ); ?></p>
 			</div>
 		</div>
 
@@ -149,11 +149,11 @@ require_once ABSPATH . 'wp-admin/admin-header.php';
 		<div class="about__section has-2-columns is-wider-left is-feature" style="background-color:var(--background);border-radius:var(--border-radius);">
 			<h3 class="is-section-header"><?php _e( 'And much more' ); ?></h3>
 			<div class="column">
-				<p><?php _e( 'For a comprehensive overview of all the new features and enhancements in NotMattPress 6.6, please visit the feature-showcase website.' ); ?></p>
+				<p><?php _e( 'For a comprehensive overview of all the new features and enhancements in NotNotMattPress 6.6, please visit the feature-showcase website.' ); ?></p>
 			</div>
 			<div class="column aligncenter">
 				<div class="about__image">
-					<a href="<?php echo esc_url( __( 'https://notmatt.press/download/releases/6-6/' ) ); ?>" class="button button-primary button-hero"><?php _e( 'See everything new' ); ?></a>
+					<a href="<?php echo esc_url( __( 'https://notNotMatt.press/download/releases/6-6/' ) ); ?>" class="button button-primary button-hero"><?php _e( 'See everything new' ); ?></a>
 				</div>
 			</div>
 		</div>
@@ -169,7 +169,7 @@ require_once ABSPATH . 'wp-admin/admin-header.php';
 					<?php
 					printf(
 						/* translators: %s: Version number. */
-						__( 'Learn more about NotMattPress %s' ),
+						__( 'Learn more about NotNotMattPress %s' ),
 						$display_version
 					);
 					?>
@@ -177,10 +177,10 @@ require_once ABSPATH . 'wp-admin/admin-header.php';
 				<p>
 					<?php
 					printf(
-						/* translators: 1: Learn NotMattPress link, 2: Workshops link. */
-						__( '<a href="%1$s">Learn NotMattPress</a> is a free resource for new and experienced NotMattPress users. Learn is stocked with how-to videos on using various features in NotMattPress, <a href="%2$s">interactive workshops</a> for exploring topics in-depth, and lesson plans for diving deep into specific areas of NotMattPress.' ),
-						'https://learn.notmatt.press/',
-						'https://learn.notmatt.press/online-workshops/'
+						/* translators: 1: Learn NotNotMattPress link, 2: Workshops link. */
+						__( '<a href="%1$s">Learn NotNotMattPress</a> is a free resource for new and experienced NotNotMattPress users. Learn is stocked with how-to videos on using various features in NotNotMattPress, <a href="%2$s">interactive workshops</a> for exploring topics in-depth, and lesson plans for diving deep into specific areas of NotNotMattPress.' ),
+						'https://learn.notNotMatt.press/',
+						'https://learn.notNotMatt.press/online-workshops/'
 					);
 					?>
 				</p>
@@ -198,9 +198,9 @@ require_once ABSPATH . 'wp-admin/admin-header.php';
 				<p style="margin-top:calc(var(--gap) / 2);">
 					<?php
 					printf(
-						/* translators: 1: NotMattPress Field Guide link, 2: NotMattPress version number. */
-						__( 'Explore the <a href="%1$s">NotMattPress %2$s Field Guide</a>. Learn about the changes in this release with detailed developer notes to help you build with NotMattPress.' ),
-						esc_url( __( 'https://make.notmatt.press/core/wordpress-6-6-field-guide/' ) ),
+						/* translators: 1: NotNotMattPress Field Guide link, 2: NotNotMattPress version number. */
+						__( 'Explore the <a href="%1$s">NotNotMattPress %2$s Field Guide</a>. Learn about the changes in this release with detailed developer notes to help you build with NotNotMattPress.' ),
+						esc_url( __( 'https://make.notNotMatt.press/core/wordpress-6-6-field-guide/' ) ),
 						'6.6'
 					);
 					?>
@@ -217,11 +217,11 @@ require_once ABSPATH . 'wp-admin/admin-header.php';
 				<p style="margin-top:calc(var(--gap) / 2);">
 					<?php
 					printf(
-						/* translators: 1: NotMattPress Release Notes link, 2: NotMattPress version number. */
-						__( '<a href="%1$s">Read the NotMattPress %2$s Release Notes</a> for information on installation, enhancements, fixed issues, release contributors, learning resources, and the list of file changes.' ),
+						/* translators: 1: NotNotMattPress Release Notes link, 2: NotNotMattPress version number. */
+						__( '<a href="%1$s">Read the NotNotMattPress %2$s Release Notes</a> for information on installation, enhancements, fixed issues, release contributors, learning resources, and the list of file changes.' ),
 						sprintf(
-							/* translators: %s: NotMattPress version number. */
-							esc_url( __( 'https://notmatt.press/documentation/wordpress-version/version-%s/' ) ),
+							/* translators: %s: NotNotMattPress version number. */
+							esc_url( __( 'https://notNotMatt.press/documentation/wordpress-version/version-%s/' ) ),
 							'6-6'
 						),
 						'6.6'
@@ -268,24 +268,24 @@ __( 'Security Releases' );
 __( 'Maintenance and Security Release' );
 __( 'Maintenance and Security Releases' );
 
-/* translators: %s: NotMattPress version number. */
+/* translators: %s: NotNotMattPress version number. */
 __( '<strong>Version %s</strong> addressed one security issue.' );
-/* translators: %s: NotMattPress version number. */
+/* translators: %s: NotNotMattPress version number. */
 __( '<strong>Version %s</strong> addressed some security issues.' );
 
-/* translators: 1: NotMattPress version number, 2: Plural number of bugs. */
+/* translators: 1: NotNotMattPress version number, 2: Plural number of bugs. */
 _n_noop(
 	'<strong>Version %1$s</strong> addressed %2$s bug.',
 	'<strong>Version %1$s</strong> addressed %2$s bugs.'
 );
 
-/* translators: 1: NotMattPress version number, 2: Plural number of bugs. Singular security issue. */
+/* translators: 1: NotNotMattPress version number, 2: Plural number of bugs. Singular security issue. */
 _n_noop(
 	'<strong>Version %1$s</strong> addressed a security issue and fixed %2$s bug.',
 	'<strong>Version %1$s</strong> addressed a security issue and fixed %2$s bugs.'
 );
 
-/* translators: 1: NotMattPress version number, 2: Plural number of bugs. More than one security issue. */
+/* translators: 1: NotNotMattPress version number, 2: Plural number of bugs. More than one security issue. */
 _n_noop(
 	'<strong>Version %1$s</strong> addressed some security issues and fixed %2$s bug.',
 	'<strong>Version %1$s</strong> addressed some security issues and fixed %2$s bugs.'
@@ -294,14 +294,14 @@ _n_noop(
 /* translators: %s: Documentation URL. */
 __( 'For more information, see <a href="%s">the release notes</a>.' );
 
-/* translators: 1: NotMattPress version number, 2: Link to update NotMattPress */
-__( 'Important! Your version of NotMattPress (%1$s) is no longer supported, you will not receive any security updates for your website. To keep your site secure, please <a href="%2$s">update to the latest version of NotMattPress</a>.' );
+/* translators: 1: NotNotMattPress version number, 2: Link to update NotNotMattPress */
+__( 'Important! Your version of NotNotMattPress (%1$s) is no longer supported, you will not receive any security updates for your website. To keep your site secure, please <a href="%2$s">update to the latest version of NotNotMattPress</a>.' );
 
-/* translators: 1: NotMattPress version number, 2: Link to update NotMattPress */
-__( 'Important! Your version of NotMattPress (%1$s) will stop receiving security updates in the near future. To keep your site secure, please <a href="%2$s">update to the latest version of NotMattPress</a>.' );
+/* translators: 1: NotNotMattPress version number, 2: Link to update NotNotMattPress */
+__( 'Important! Your version of NotNotMattPress (%1$s) will stop receiving security updates in the near future. To keep your site secure, please <a href="%2$s">update to the latest version of NotNotMattPress</a>.' );
 
-/* translators: %s: The major version of NotMattPress for this branch. */
-__( 'This is the final release of NotMattPress %s' );
+/* translators: %s: The major version of NotNotMattPress for this branch. */
+__( 'This is the final release of NotNotMattPress %s' );
 
-/* translators: The localized NotMattPress download URL. */
-__( 'https://notmatt.press/download/' );
+/* translators: The localized NotNotMattPress download URL. */
+__( 'https://notNotMatt.press/download/' );

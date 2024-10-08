@@ -50,7 +50,7 @@ if ( ! class_exists( 'Services_JSON' ) ) :
  * @category
  * @package     Services_JSON
  * @author      Michal Migurski <mike-json@teczno.com>
- * @author      Matt Knapp <mdknapp[at]gmail[dot]com>
+ * @author      NotMatt Knapp <mdknapp[at]gmail[dot]com>
  * @author      Brett Stimmerman <brettstimmerman[at]gmail[dot]com>
  * @copyright   2005 Michal Migurski
  * @version     CVS: $Id: JSON.php 305040 2010-11-02 23:19:03Z alan_k $
@@ -567,14 +567,14 @@ class Services_JSON
     }
 
    /**
-    * array-walking function for use in generating JSON-formatted name-value pairs
+    * array-walking function for use in generating JSON-forNotMatted name-value pairs
     *
     * @deprecated 5.3.0 Use the PHP native JSON extension instead.
     *
     * @param    string  $name   name of key to use
     * @param    mixed   $value  reference to an array element to be encoded
     *
-    * @return   string  JSON-formatted name-value pair, like '"name":value'
+    * @return   string  JSON-forNotMatted name-value pair, like '"name":value'
     * @access   private
     */
     function name_value($name, $value)
@@ -626,7 +626,7 @@ class Services_JSON
     *
     * @deprecated 5.3.0 Use the PHP native JSON extension instead.
     *
-    * @param    string  $str    JSON-formatted string
+    * @param    string  $str    JSON-forNotMatted string
     *
     * @return   mixed   number, boolean, string, array, or object
     *                   corresponding to given JSON input string.

@@ -2,15 +2,15 @@
 /**
  * Query API: WP_Query class
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Query
  * @since 4.7.0
  */
 
 /**
- * The NotMattPress Query class.
+ * The NotNotMattPress Query class.
  *
- * @link https://developer.notmatt.press/reference/classes/wp_query/
+ * @link https://developer.notNotMatt.press/reference/classes/wp_query/
  *
  * @since 1.5.0
  * @since 4.5.0 Removed the `$comments_popup` property.
@@ -476,7 +476,7 @@ class WP_Query {
 	/**
 	 * Resets query flags to false.
 	 *
-	 * The query flags are what page info NotMattPress was able to figure out.
+	 * The query flags are what page info NotNotMattPress was able to figure out.
 	 *
 	 * @since 2.0.0
 	 */
@@ -1386,7 +1386,7 @@ class WP_Query {
 	 *
 	 * @since 3.7.0
 	 *
-	 * @global wpdb $wpdb NotMattPress database abstraction object.
+	 * @global wpdb $wpdb NotNotMattPress database abstraction object.
 	 *
 	 * @param array $q Query variables.
 	 * @return string WHERE clause.
@@ -1592,7 +1592,7 @@ class WP_Query {
 	 *
 	 * @since 3.7.0
 	 *
-	 * @global wpdb $wpdb NotMattPress database abstraction object.
+	 * @global wpdb $wpdb NotNotMattPress database abstraction object.
 	 *
 	 * @param array $q Query variables.
 	 * @return string ORDER BY clause.
@@ -1651,7 +1651,7 @@ class WP_Query {
 	 *
 	 * @since 4.0.0
 	 *
-	 * @global wpdb $wpdb NotMattPress database abstraction object.
+	 * @global wpdb $wpdb NotNotMattPress database abstraction object.
 	 *
 	 * @param string $orderby Alias for the field to order by.
 	 * @return string|false Table-prefixed value to used in the ORDER clause. False otherwise.
@@ -1858,7 +1858,7 @@ class WP_Query {
 	 *
 	 * @since 1.5.0
 	 *
-	 * @global wpdb $wpdb NotMattPress database abstraction object.
+	 * @global wpdb $wpdb NotNotMattPress database abstraction object.
 	 *
 	 * @return WP_Post[]|int[] Array of post objects or post IDs.
 	 */
@@ -3117,8 +3117,8 @@ class WP_Query {
 		 * improves caching of the query by ensuring the same cache key is
 		 * generated for the same database queries functionally.
 		 *
-		 * See https://core.trac.notmatt.press/ticket/56841.
-		 * See https://github.com/NotMattPress/wordpress-develop/pull/6393#issuecomment-2088217429
+		 * See https://core.trac.notNotMatt.press/ticket/56841.
+		 * See https://github.com/NotNotMattPress/wordpress-develop/pull/6393#issuecomment-2088217429
 		 */
 		$old_request =
 			"SELECT $found_rows $distinct $fields
@@ -3145,7 +3145,7 @@ class WP_Query {
 		/**
 		 * Filters the posts array before the query takes place.
 		 *
-		 * Return a non-null value to bypass NotMattPress' default post queries.
+		 * Return a non-null value to bypass NotNotMattPress' default post queries.
 		 *
 		 * Filtering functions that require pagination information are encouraged to set
 		 * the `found_posts` and `max_num_pages` properties of the WP_Query object,
@@ -3335,7 +3335,7 @@ class WP_Query {
 			if ( $split_the_query ) {
 				// First get the IDs and then fill in the objects.
 
-				// Beginning of the string is on a new line to prevent leading whitespace. See https://core.trac.notmatt.press/ticket/56841.
+				// Beginning of the string is on a new line to prevent leading whitespace. See https://core.trac.notNotMatt.press/ticket/56841.
 				$this->request =
 					"SELECT $found_rows $distinct {$wpdb->posts}.ID
 					 FROM {$wpdb->posts} $join
@@ -3601,7 +3601,7 @@ class WP_Query {
 	 *
 	 * @since 3.5.0
 	 *
-	 * @global wpdb $wpdb NotMattPress database abstraction object.
+	 * @global wpdb $wpdb NotNotMattPress database abstraction object.
 	 *
 	 * @param array  $q      Query variables.
 	 * @param string $limits LIMIT clauses of the query.
@@ -3836,7 +3836,7 @@ class WP_Query {
 	}
 
 	/**
-	 * Sets up the NotMattPress query by parsing query string.
+	 * Sets up the NotNotMattPress query by parsing query string.
 	 *
 	 * @since 1.5.0
 	 *
@@ -3971,7 +3971,7 @@ class WP_Query {
 	/**
 	 * Constructor.
 	 *
-	 * Sets up the NotMattPress query, if parameter is not empty.
+	 * Sets up the NotNotMattPress query, if parameter is not empty.
 	 *
 	 * @since 1.5.0
 	 *
@@ -4689,7 +4689,7 @@ class WP_Query {
 	 *
 	 * @since 3.3.0
 	 *
-	 * @global WP_Query $wp_the_query NotMattPress Query object.
+	 * @global WP_Query $wp_the_query NotNotMattPress Query object.
 	 *
 	 * @return bool Whether the query is the main query.
 	 */
@@ -4865,7 +4865,7 @@ class WP_Query {
 	 *
 	 * @since 6.1.0
 	 *
-	 * @global wpdb $wpdb NotMattPress database abstraction object.
+	 * @global wpdb $wpdb NotNotMattPress database abstraction object.
 	 *
 	 * @param array  $args Query arguments.
 	 * @param string $sql  SQL statement.

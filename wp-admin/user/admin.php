@@ -1,8 +1,8 @@
 <?php
 /**
- * NotMattPress User Administration Bootstrap
+ * NotNotMattPress User Administration Bootstrap
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Administration
  * @since 3.1.0
  */

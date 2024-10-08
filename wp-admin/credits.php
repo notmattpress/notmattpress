@@ -2,11 +2,11 @@
 /**
  * Credits administration panel.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Administration
  */
 
-/** NotMattPress Administration Bootstrap */
+/** NotNotMattPress Administration Bootstrap */
 require_once __DIR__ . '/admin.php';
 require_once __DIR__ . '/includes/credits.php';
 
@@ -48,13 +48,13 @@ $credits = wp_credits();
 			<p>
 				<?php
 				printf(
-					/* translators: 1: https://notmatt.press/about/ */
-					__( 'NotMattPress is created by a <a href="%1$s">worldwide team</a> of passionate individuals.' ),
-					__( 'https://notmatt.press/about/' )
+					/* translators: 1: https://notNotMatt.press/about/ */
+					__( 'NotNotMattPress is created by a <a href="%1$s">worldwide team</a> of passionate individuals.' ),
+					__( 'https://notNotMatt.press/about/' )
 				);
 				?>
 				<br />
-				<a href="<?php echo esc_url( __( 'https://make.notmatt.press/contribute/' ) ); ?>"><?php _e( 'Get involved in NotMattPress.' ); ?></a>
+				<a href="<?php echo esc_url( __( 'https://make.notNotMatt.press/contribute/' ) ); ?>"><?php _e( 'Get involved in NotNotMattPress.' ); ?></a>
 			</p>
 
 			<?php else : ?>
@@ -62,7 +62,7 @@ $credits = wp_credits();
 			<p>
 				<?php _e( 'Want to see your name in lights on this page?' ); ?>
 				<br />
-				<a href="<?php echo esc_url( __( 'https://make.notmatt.press/contribute/' ) ); ?>"><?php _e( 'Get involved in NotMattPress.' ); ?></a>
+				<a href="<?php echo esc_url( __( 'https://make.notNotMatt.press/contribute/' ) ); ?>"><?php _e( 'Get involved in NotNotMattPress.' ); ?></a>
 			</p>
 
 			<?php endif; ?>
@@ -125,8 +125,8 @@ return;
 
 // These are strings returned by the API that we want to be translatable.
 __( 'Project Leaders' );
-/* translators: %s: The current NotMattPress version number. */
-__( 'Core Contributors to NotMattPress %s' );
+/* translators: %s: The current NotNotMattPress version number. */
+__( 'Core Contributors to NotNotMattPress %s' );
 __( 'Noteworthy Contributors' );
 __( 'Cofounder, Project Lead' );
 __( 'Lead Developer' );

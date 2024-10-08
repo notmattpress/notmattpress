@@ -2,7 +2,7 @@
 /**
  * Server-side rendering of the `core/widget-group` block.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  */
 
 /**
@@ -62,7 +62,7 @@ function register_block_core_widget_group() {
 add_action( 'init', 'register_block_core_widget_group' );
 
 /**
- * Make a note of the sidebar being rendered before NotMattPress starts rendering
+ * Make a note of the sidebar being rendered before NotNotMattPress starts rendering
  * it. This lets us get to the current sidebar in
  * render_block_core_widget_group().
  *
@@ -79,7 +79,7 @@ function note_sidebar_being_rendered( $index ) {
 add_action( 'dynamic_sidebar_before', 'note_sidebar_being_rendered' );
 
 /**
- * Clear whatever we set in note_sidebar_being_rendered() after NotMattPress
+ * Clear whatever we set in note_sidebar_being_rendered() after NotNotMattPress
  * finishes rendering a sidebar.
  *
  * @since 5.9.0

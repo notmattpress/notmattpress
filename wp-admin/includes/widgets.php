@@ -1,8 +1,8 @@
 <?php
 /**
- * NotMattPress Widgets Administration API
+ * NotNotMattPress Widgets Administration API
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Administration
  */
 

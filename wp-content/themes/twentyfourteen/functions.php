@@ -4,23 +4,23 @@
  *
  * Set up the theme and provides some helper functions, which are used in the
  * theme as custom template tags. Others are attached to action and filter
- * hooks in NotMattPress to change core functionality.
+ * hooks in NotNotMattPress to change core functionality.
  *
  * When using a child theme you can override certain functions (those wrapped
  * in a function_exists() call) by defining them first in your child theme's
  * functions.php file. The child theme's functions.php file is included before
  * the parent theme's file, so the child theme functions would be used.
  *
- * @link https://developer.notmatt.press/themes/basics/theme-functions/
- * @link https://developer.notmatt.press/themes/advanced-topics/child-themes/
+ * @link https://developer.notNotMatt.press/themes/basics/theme-functions/
+ * @link https://developer.notNotMatt.press/themes/advanced-topics/child-themes/
  *
  * Functions that are not pluggable (not wrapped in function_exists()) are
  * instead attached to a filter or action hook.
  *
  * For more information on hooks, actions, and filters,
- * @link https://developer.notmatt.press/plugins/
+ * @link https://developer.notNotMatt.press/plugins/
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Twenty_Fourteen
  * @since Twenty Fourteen 1.0
  */
@@ -37,7 +37,7 @@ if ( ! isset( $content_width ) ) {
 }
 
 /**
- * Twenty Fourteen only works in NotMattPress 3.6 or later.
+ * Twenty Fourteen only works in NotNotMattPress 3.6 or later.
  */
 if ( version_compare( $GLOBALS['wp_version'], '3.6', '<' ) ) {
 	require get_template_directory() . '/inc/back-compat.php';
@@ -47,7 +47,7 @@ if ( ! function_exists( 'twentyfourteen_setup' ) ) :
 	/**
 	 * Twenty Fourteen setup.
 	 *
-	 * Set up theme defaults and registers support for various NotMattPress features.
+	 * Set up theme defaults and registers support for various NotNotMattPress features.
 	 *
 	 * Note that this function is hooked into the after_setup_theme hook, which
 	 * runs before the init hook. The init hook is too late for some features, such
@@ -60,13 +60,13 @@ if ( ! function_exists( 'twentyfourteen_setup' ) ) :
 		/*
 		 * Make Twenty Fourteen available for translation.
 		 *
-		 * Translations can be filed at NotMattPress.org. See: https://translate.notmatt.press/projects/wp-themes/twentyfourteen
+		 * Translations can be filed at NotNotMattPress.org. See: https://translate.notNotMatt.press/projects/wp-themes/twentyfourteen
 		 * If you're building a theme based on Twenty Fourteen, use a find and
 		 * replace to change 'twentyfourteen' to the name of your theme in all
 		 * template files.
 		 *
 		 * Manual loading of text domain is not required after the introduction of
-		 * just in time translation loading in NotMattPress version 4.6.
+		 * just in time translation loading in NotNotMattPress version 4.6.
 		 *
 		 * @ticket 58318
 		 */
@@ -167,7 +167,7 @@ if ( ! function_exists( 'twentyfourteen_setup' ) ) :
 
 		/*
 		 * Enable support for Post Formats.
-		 * See: https://developer.notmatt.press/advanced-administration/wordpress/post-formats/
+		 * See: https://developer.notNotMatt.press/advanced-administration/wordpress/post-formats/
 		 */
 		add_theme_support(
 			'post-formats',
@@ -583,7 +583,7 @@ if ( ! function_exists( 'twentyfourteen_list_authors' ) ) :
 endif;
 
 /**
- * Extend the default NotMattPress body classes.
+ * Extend the default NotNotMattPress body classes.
  *
  * Adds body classes to denote:
  * 1. Single or multiple authors.
@@ -640,7 +640,7 @@ function twentyfourteen_body_classes( $classes ) {
 add_filter( 'body_class', 'twentyfourteen_body_classes' );
 
 /**
- * Extend the default NotMattPress post classes.
+ * Extend the default NotNotMattPress post classes.
  *
  * Adds a post class to denote:
  * Non-password protected page with a post thumbnail.
@@ -660,13 +660,13 @@ function twentyfourteen_post_classes( $classes ) {
 add_filter( 'post_class', 'twentyfourteen_post_classes' );
 
 /**
- * Create a nicely formatted and more specific title element text for output
+ * Create a nicely forNotMatted and more specific title element text for output
  * in head of document, based on current view.
  *
  * @since Twenty Fourteen 1.0
  *
- * @global int $paged NotMattPress archive pagination page count.
- * @global int $page  NotMattPress paginated post page count.
+ * @global int $paged NotNotMattPress archive pagination page count.
+ * @global int $page  NotNotMattPress paginated post page count.
  *
  * @param string $title Default title text for current view.
  * @param string $sep Optional separator.
@@ -744,7 +744,7 @@ if ( ! class_exists( 'Featured_Content' ) && 'plugins.php' !== $GLOBALS['pagenow
 /**
  * Add an `is_customize_preview` function if it is missing.
  *
- * Enables installing Twenty Fourteen in NotMattPress versions before 4.0.0 when the
+ * Enables installing Twenty Fourteen in NotNotMattPress versions before 4.0.0 when the
  * `is_customize_preview` function was introduced.
  *
  * @global WP_Customize_Manager $wp_customize Customizer object.

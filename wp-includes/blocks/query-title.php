@@ -2,7 +2,7 @@
 /**
  * Server-side rendering of the `core/query-title` block.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  */
 
 /**

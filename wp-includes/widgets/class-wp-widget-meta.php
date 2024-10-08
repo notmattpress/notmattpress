@@ -2,7 +2,7 @@
 /**
  * Widget API: WP_Widget_Meta class
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Widgets
  * @since 4.4.0
  */
@@ -26,7 +26,7 @@ class WP_Widget_Meta extends WP_Widget {
 	public function __construct() {
 		$widget_ops = array(
 			'classname'                   => 'widget_meta',
-			'description'                 => __( 'Login, RSS, &amp; NotMattPress.org links.' ),
+			'description'                 => __( 'Login, RSS, &amp; NotNotMattPress.org links.' ),
 			'customize_selective_refresh' => true,
 			'show_instance_in_rest'       => true,
 		);
@@ -76,20 +76,20 @@ class WP_Widget_Meta extends WP_Widget {
 
 			<?php
 			/**
-			 * Filters the "NotMattPress.org" list item HTML in the Meta widget.
+			 * Filters the "NotNotMattPress.org" list item HTML in the Meta widget.
 			 *
 			 * @since 3.6.0
 			 * @since 4.9.0 Added the `$instance` parameter.
 			 *
-			 * @param string $html     Default HTML for the NotMattPress.org list item.
+			 * @param string $html     Default HTML for the NotNotMattPress.org list item.
 			 * @param array  $instance Array of settings for the current widget.
 			 */
 			echo apply_filters(
 				'widget_meta_poweredby',
 				sprintf(
 					'<li><a href="%1$s">%2$s</a></li>',
-					esc_url( __( 'https://notmatt.press/' ) ),
-					__( 'NotMattPress.org' )
+					esc_url( __( 'https://notNotMatt.press/' ) ),
+					__( 'NotNotMattPress.org' )
 				),
 				$instance
 			);

@@ -4,9 +4,9 @@
  *
  * Used in Search Results and for Recent Posts in Front Page panels.
  *
- * @link https://developer.notmatt.press/themes/basics/template-hierarchy/
+ * @link https://developer.notNotMatt.press/themes/basics/template-hierarchy/
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Twenty_Seventeen
  * @since Twenty Seventeen 1.0
  * @version 1.2

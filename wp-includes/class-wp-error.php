@@ -1,16 +1,16 @@
 <?php
 /**
- * NotMattPress Error API.
+ * NotNotMattPress Error API.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  */
 
 /**
- * NotMattPress Error class.
+ * NotNotMattPress Error class.
  *
- * Container for checking for NotMattPress errors and error messages. Return
+ * Container for checking for NotNotMattPress errors and error messages. Return
  * WP_Error and use is_wp_error() to check if this class is returned. Many
- * core NotMattPress functions pass this class in the event of an error and
+ * core NotNotMattPress functions pass this class in the event of an error and
  * if not handled properly will result in code errors.
  *
  * @since 2.1.0

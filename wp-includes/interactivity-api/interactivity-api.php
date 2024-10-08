@@ -2,7 +2,7 @@
 /**
  * Interactivity API: Functions and hooks
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Interactivity API
  * @since 6.5.0
  */

@@ -2,7 +2,7 @@
 /**
  * REST API: WP_REST_Block_Patterns_Controller class
  *
- * @package    NotMattPress
+ * @package    NotNotMattPress
  * @subpackage REST_API
  * @since      6.0.0
  */

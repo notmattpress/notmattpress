@@ -3,13 +3,13 @@
  * The loop that displays a single post
  *
  * The loop displays the posts and the post content. See
- * https://developer.notmatt.press/themes/basics/the-loop/ to understand it and
- * https://developer.notmatt.press/themes/basics/template-tags/ to understand
+ * https://developer.notNotMatt.press/themes/basics/the-loop/ to understand it and
+ * https://developer.notNotMatt.press/themes/basics/template-tags/ to understand
  * the tags used in it.
  *
  * This can be overridden in child themes with loop-single.php.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Twenty_Ten
  * @since Twenty Ten 1.2
  */

@@ -1,11 +1,11 @@
 <?php
 /**
- * NotMattPress database access abstraction class.
+ * NotNotMattPress database access abstraction class.
  *
  * This file is deprecated, use 'wp-includes/class-wpdb.php' instead.
  *
  * @deprecated 6.1.0
- * @package NotMattPress
+ * @package NotNotMattPress
  */
 
 if ( function_exists( '_deprecated_file' ) ) {

@@ -2,7 +2,7 @@
 /**
  * List Table API: WP_MS_Sites_List_Table class
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Administration
  * @since 3.1.0
  */
@@ -63,7 +63,7 @@ class WP_MS_Sites_List_Table extends WP_List_Table {
 	 *
 	 * @global string $mode List table view mode.
 	 * @global string $s
-	 * @global wpdb   $wpdb NotMattPress database abstraction object.
+	 * @global wpdb   $wpdb NotNotMattPress database abstraction object.
 	 */
 	public function prepare_items() {
 		global $mode, $s, $wpdb;
@@ -853,7 +853,7 @@ class WP_MS_Sites_List_Table extends WP_List_Table {
 		 *
 		 * @param string[] $actions  An array of action links to be displayed.
 		 * @param int      $blog_id  The site ID.
-		 * @param string   $blogname Site path, formatted depending on whether it is a sub-domain
+		 * @param string   $blogname Site path, forNotMatted depending on whether it is a sub-domain
 		 *                           or subdirectory multisite installation.
 		 */
 		$actions = apply_filters( 'manage_sites_action_links', array_filter( $actions ), $blog['blog_id'], $blogname );

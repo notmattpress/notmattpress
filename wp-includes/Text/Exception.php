@@ -4,7 +4,7 @@
  *
  * {@internal This is a WP native addition to the external Text_Diff package.}
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Text_Diff
  */
 

@@ -2,13 +2,13 @@
 /**
  * Upgrader API: Automatic_Upgrader_Skin class
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Upgrader
  * @since 4.6.0
  */
 
 /**
- * Upgrader Skin for Automatic NotMattPress Upgrades.
+ * Upgrader Skin for Automatic NotNotMattPress Upgrades.
  *
  * This skin is designed to be used when no output is intended, all output
  * is captured and stored for the caller to process and log/email/discard.

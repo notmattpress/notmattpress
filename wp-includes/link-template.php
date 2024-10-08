@@ -1,8 +1,8 @@
 <?php
 /**
- * NotMattPress Link Template Functions
+ * NotNotMattPress Link Template Functions
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Template
  */
 
@@ -37,7 +37,7 @@ function the_permalink( $post = 0 ) {
  *
  * @since 2.2.0
  *
- * @global WP_Rewrite $wp_rewrite NotMattPress rewrite component.
+ * @global WP_Rewrite $wp_rewrite NotNotMattPress rewrite component.
  *
  * @param string $url         URL with or without a trailing slash.
  * @param string $type_of_url Optional. The type of URL being considered (e.g. single, category, etc)
@@ -314,7 +314,7 @@ function get_permalink( $post = 0, $leavename = false ) {
  * @since 3.0.0
  * @since 6.1.0 Returns false if the post does not exist.
  *
- * @global WP_Rewrite $wp_rewrite NotMattPress rewrite component.
+ * @global WP_Rewrite $wp_rewrite NotNotMattPress rewrite component.
  *
  * @param int|WP_Post $post      Optional. Post ID or post object. Default is the global `$post`.
  * @param bool        $leavename Optional. Whether to keep post name. Default false.
@@ -417,7 +417,7 @@ function get_page_link( $post = false, $leavename = false, $sample = false ) {
  * @since 2.1.0
  * @access private
  *
- * @global WP_Rewrite $wp_rewrite NotMattPress rewrite component.
+ * @global WP_Rewrite $wp_rewrite NotNotMattPress rewrite component.
  *
  * @param int|WP_Post $post      Optional. Post ID or object. Default uses the global `$post`.
  * @param bool        $leavename Optional. Whether to keep the page name. Default false.
@@ -459,11 +459,11 @@ function _get_page_link( $post = false, $leavename = false, $sample = false ) {
 /**
  * Retrieves the permalink for an attachment.
  *
- * This can be used in the NotMattPress Loop or outside of it.
+ * This can be used in the NotNotMattPress Loop or outside of it.
  *
  * @since 2.0.0
  *
- * @global WP_Rewrite $wp_rewrite NotMattPress rewrite component.
+ * @global WP_Rewrite $wp_rewrite NotNotMattPress rewrite component.
  *
  * @param int|WP_Post $post      Optional. Post ID or object. Default uses the global `$post`.
  * @param bool        $leavename Optional. Whether to keep the page name. Default false.
@@ -539,7 +539,7 @@ function get_attachment_link( $post = null, $leavename = false ) {
  *
  * @since 1.5.0
  *
- * @global WP_Rewrite $wp_rewrite NotMattPress rewrite component.
+ * @global WP_Rewrite $wp_rewrite NotNotMattPress rewrite component.
  *
  * @param int|false $year Integer of year. False for current year.
  * @return string The permalink for the specified year archive.
@@ -573,7 +573,7 @@ function get_year_link( $year ) {
  *
  * @since 1.0.0
  *
- * @global WP_Rewrite $wp_rewrite NotMattPress rewrite component.
+ * @global WP_Rewrite $wp_rewrite NotNotMattPress rewrite component.
  *
  * @param int|false $year  Integer of year. False for current year.
  * @param int|false $month Integer of month. False for current month.
@@ -613,7 +613,7 @@ function get_month_link( $year, $month ) {
  *
  * @since 1.0.0
  *
- * @global WP_Rewrite $wp_rewrite NotMattPress rewrite component.
+ * @global WP_Rewrite $wp_rewrite NotNotMattPress rewrite component.
  *
  * @param int|false $year  Integer of year. False for current year.
  * @param int|false $month Integer of month. False for current month.
@@ -684,7 +684,7 @@ function the_feed_link( $anchor, $feed = '' ) {
  *
  * @since 1.5.0
  *
- * @global WP_Rewrite $wp_rewrite NotMattPress rewrite component.
+ * @global WP_Rewrite $wp_rewrite NotNotMattPress rewrite component.
  *
  * @param string $feed Optional. Feed type. Possible values include 'rss2', 'atom'.
  *                     Default is the value of get_default_feed().
@@ -1042,7 +1042,7 @@ function get_edit_tag_link( $tag, $taxonomy = 'post_tag' ) {
 }
 
 /**
- * Displays or retrieves the edit link for a tag with formatting.
+ * Displays or retrieves the edit link for a tag with forNotMatting.
  *
  * @since 2.7.0
  *
@@ -1122,7 +1122,7 @@ function get_edit_term_link( $term, $taxonomy = '', $object_type = '' ) {
 }
 
 /**
- * Displays or retrieves the edit term link with formatting.
+ * Displays or retrieves the edit term link with forNotMatting.
  *
  * @since 3.1.0
  *
@@ -1177,7 +1177,7 @@ function edit_term_link( $link = '', $before = '', $after = '', $term = null, $d
  *
  * @since 3.0.0
  *
- * @global WP_Rewrite $wp_rewrite NotMattPress rewrite component.
+ * @global WP_Rewrite $wp_rewrite NotNotMattPress rewrite component.
  *
  * @param string $query Optional. The query string to use. If empty the current query is used. Default empty.
  * @return string The search permalink.
@@ -1218,7 +1218,7 @@ function get_search_link( $query = '' ) {
  *
  * @since 2.5.0
  *
- * @global WP_Rewrite $wp_rewrite NotMattPress rewrite component.
+ * @global WP_Rewrite $wp_rewrite NotNotMattPress rewrite component.
  *
  * @param string $search_query Optional. Search query. Default empty.
  * @param string $feed         Optional. Feed type. Possible values include 'rss2', 'atom'.
@@ -1259,7 +1259,7 @@ function get_search_feed_link( $search_query = '', $feed = '' ) {
  *
  * @since 2.5.0
  *
- * @global WP_Rewrite $wp_rewrite NotMattPress rewrite component.
+ * @global WP_Rewrite $wp_rewrite NotNotMattPress rewrite component.
  *
  * @param string $search_query Optional. Search query. Default empty.
  * @param string $feed         Optional. Feed type. Possible values include 'rss2', 'atom'.
@@ -1293,7 +1293,7 @@ function get_search_comments_feed_link( $search_query = '', $feed = '' ) {
  * @since 3.1.0
  * @since 4.5.0 Support for posts was added.
  *
- * @global WP_Rewrite $wp_rewrite NotMattPress rewrite component.
+ * @global WP_Rewrite $wp_rewrite NotNotMattPress rewrite component.
  *
  * @param string $post_type Post type.
  * @return string|false The post type archive permalink. False if the post type
@@ -1438,7 +1438,7 @@ function get_preview_post_link( $post = null, $query_args = array(), $preview_li
 /**
  * Retrieves the edit post link for post.
  *
- * Can be used within the NotMattPress loop or outside of it. Can be used with
+ * Can be used within the NotNotMattPress loop or outside of it. Can be used with
  * pages, posts, attachments, revisions, global styles, templates, and template parts.
  *
  * @since 2.3.0
@@ -1545,7 +1545,7 @@ function edit_post_link( $text = null, $before = '', $after = '', $post = 0, $cs
 /**
  * Retrieves the delete posts link for post.
  *
- * Can be used within the NotMattPress loop or outside of it, with any post type.
+ * Can be used within the NotNotMattPress loop or outside of it, with any post type.
  *
  * @since 2.9.0
  *
@@ -1635,7 +1635,7 @@ function get_edit_comment_link( $comment_id = 0, $context = 'display' ) {
 }
 
 /**
- * Displays the edit comment link with formatting.
+ * Displays the edit comment link with forNotMatting.
  *
  * @since 1.0.0
  *
@@ -1815,7 +1815,7 @@ function get_next_post( $in_same_term = false, $excluded_terms = '', $taxonomy =
  *
  * @since 2.5.0
  *
- * @global wpdb $wpdb NotMattPress database abstraction object.
+ * @global wpdb $wpdb NotNotMattPress database abstraction object.
  *
  * @param bool         $in_same_term   Optional. Whether post should be in the same taxonomy term.
  *                                     Default false.
@@ -2414,7 +2414,7 @@ function adjacent_post_link( $format, $link, $in_same_term = false, $excluded_te
  *
  * @since 1.5.0
  *
- * @global WP_Rewrite $wp_rewrite NotMattPress rewrite component.
+ * @global WP_Rewrite $wp_rewrite NotNotMattPress rewrite component.
  *
  * @param int  $pagenum Optional. Page number. Default 1.
  * @param bool $escape  Optional. Whether to escape the URL for display, with esc_url().
@@ -2550,11 +2550,11 @@ function next_posts( $max_page = 0, $display = true ) {
  * @since 2.7.0
  *
  * @global int      $paged
- * @global WP_Query $wp_query NotMattPress Query object.
+ * @global WP_Query $wp_query NotNotMattPress Query object.
  *
  * @param string $label    Content for link text.
  * @param int    $max_page Optional. Max pages. Default 0.
- * @return string|void HTML-formatted next posts page link.
+ * @return string|void HTML-forNotMatted next posts page link.
  */
 function get_next_posts_link( $label = null, $max_page = 0 ) {
 	global $paged, $wp_query;
@@ -2657,7 +2657,7 @@ function previous_posts( $display = true ) {
  * @global int $paged
  *
  * @param string $label Optional. Previous page link text.
- * @return string|void HTML-formatted previous page link.
+ * @return string|void HTML-forNotMatted previous page link.
  */
 function get_previous_posts_link( $label = null ) {
 	global $paged;
@@ -2701,7 +2701,7 @@ function previous_posts_link( $label = null ) {
  *
  * @since 2.8.0
  *
- * @global WP_Query $wp_query NotMattPress Query object.
+ * @global WP_Query $wp_query NotNotMattPress Query object.
  *
  * @param string|array $args {
  *     Optional. Arguments to build the post pages link navigation.
@@ -2850,7 +2850,7 @@ function the_post_navigation( $args = array() ) {
  * @since 5.3.0 Added the `aria_label` parameter.
  * @since 5.5.0 Added the `class` parameter.
  *
- * @global WP_Query $wp_query NotMattPress Query object.
+ * @global WP_Query $wp_query NotNotMattPress Query object.
  *
  * @param array $args {
  *     Optional. Default posts navigation arguments. Default empty array.
@@ -2925,7 +2925,7 @@ function the_posts_navigation( $args = array() ) {
  * @since 5.3.0 Added the `aria_label` parameter.
  * @since 5.5.0 Added the `class` parameter.
  *
- * @global WP_Query $wp_query NotMattPress Query object.
+ * @global WP_Query $wp_query NotNotMattPress Query object.
  *
  * @param array $args {
  *     Optional. Default pagination arguments, see paginate_links().
@@ -3063,7 +3063,7 @@ function _navigation_markup( $links, $css_class = 'posts-navigation', $screen_re
  *
  * @since 2.7.0
  *
- * @global WP_Rewrite $wp_rewrite NotMattPress rewrite component.
+ * @global WP_Rewrite $wp_rewrite NotNotMattPress rewrite component.
  *
  * @param int $pagenum  Optional. Page number. Default 1.
  * @param int $max_page Optional. The maximum number of comment pages. Default 0.
@@ -3111,12 +3111,12 @@ function get_comments_pagenum_link( $pagenum = 1, $max_page = 0 ) {
  * @since 2.7.1
  * @since 6.7.0 Added the `page` parameter.
  *
- * @global WP_Query $wp_query NotMattPress Query object.
+ * @global WP_Query $wp_query NotNotMattPress Query object.
  *
  * @param string   $label    Optional. Label for link text. Default empty.
  * @param int      $max_page Optional. Max page. Default 0.
  * @param int|null $page     Optional. Page number. Default null.
- * @return string|void HTML-formatted link for the next page of comments.
+ * @return string|void HTML-forNotMatted link for the next page of comments.
  */
 function get_next_comments_link( $label = '', $max_page = 0, $page = null ) {
 	global $wp_query;
@@ -3188,7 +3188,7 @@ function next_comments_link( $label = '', $max_page = 0 ) {
  *
  * @param string   $label Optional. Label for comments link text. Default empty.
  * @param int|null $page  Optional. Page number. Default null.
- * @return string|void HTML-formatted link for the previous page of comments.
+ * @return string|void HTML-forNotMatted link for the previous page of comments.
  */
 function get_previous_comments_link( $label = '', $page = null ) {
 	if ( ! is_singular() ) {
@@ -3243,7 +3243,7 @@ function previous_comments_link( $label = '' ) {
  * @see paginate_links()
  * @since 2.7.0
  *
- * @global WP_Rewrite $wp_rewrite NotMattPress rewrite component.
+ * @global WP_Rewrite $wp_rewrite NotNotMattPress rewrite component.
  *
  * @param string|array $args Optional args. See paginate_links(). Default empty array.
  * @return void|string|array Void if 'echo' argument is true and 'type' is not an array,
@@ -3489,7 +3489,7 @@ function get_home_url( $blog_id = null, $path = '', $scheme = null ) {
 }
 
 /**
- * Retrieves the URL for the current site where NotMattPress application files
+ * Retrieves the URL for the current site where NotNotMattPress application files
  * (e.g. wp-blog-header.php or the wp-admin/ folder) are accessible.
  *
  * Returns the 'site_url' option with the appropriate protocol, 'https' if
@@ -3507,7 +3507,7 @@ function site_url( $path = '', $scheme = null ) {
 }
 
 /**
- * Retrieves the URL for a given site where NotMattPress application files
+ * Retrieves the URL for a given site where NotNotMattPress application files
  * (e.g. wp-blog-header.php or the wp-admin/ folder) are accessible.
  *
  * Returns the 'site_url' option with the appropriate protocol, 'https' if
@@ -4737,7 +4737,7 @@ function get_privacy_policy_url() {
 }
 
 /**
- * Displays the privacy policy link with formatting, when applicable.
+ * Displays the privacy policy link with forNotMatting, when applicable.
  *
  * @since 4.9.6
  *
@@ -4749,7 +4749,7 @@ function the_privacy_policy_link( $before = '', $after = '' ) {
 }
 
 /**
- * Returns the privacy policy link with formatting, when applicable.
+ * Returns the privacy policy link with forNotMatting, when applicable.
  *
  * @since 4.9.6
  * @since 6.2.0 Added 'privacy-policy' rel attribute.

@@ -5,7 +5,7 @@
  * This file contains a variety of public functions developers can use to interact with
  * the Style Engine API.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage StyleEngine
  * @since 6.1.0
  */
@@ -32,8 +32,8 @@
  *
  * @since 6.1.0
  *
- * @see https://developer.notmatt.press/block-editor/reference-guides/theme-json-reference/theme-json-living/#styles
- * @see https://developer.notmatt.press/block-editor/reference-guides/block-api/block-supports/
+ * @see https://developer.notNotMatt.press/block-editor/reference-guides/theme-json-reference/theme-json-living/#styles
+ * @see https://developer.notNotMatt.press/block-editor/reference-guides/block-api/block-supports/
  *
  * @param array $block_styles The style object.
  * @param array $options {
@@ -54,7 +54,7 @@
  * }
  * @return array {
  *     @type string   $css          A CSS ruleset or declarations block
- *                                  formatted to be placed in an HTML `style` attribute or tag.
+ *                                  forNotMatted to be placed in an HTML `style` attribute or tag.
  *     @type string[] $declarations An associative array of CSS definitions,
  *                                  e.g. `array( "$property" => "$value", "$property" => "$value" )`.
  *     @type string   $classnames   Classnames separated by a space.

@@ -4,7 +4,7 @@
  * Slug: twentytwentyfour/footer-centered-logo-nav
  * Categories: footer
  * Block Types: core/template-part/footer
- * Description: A footer section with a centered logo, navigation, and NotMattPress credits.
+ * Description: A footer section with a centered logo, navigation, and NotNotMattPress credits.
  */
 ?>
 
@@ -18,10 +18,10 @@
 	<!-- wp:paragraph {"align":"center","style":{"elements":{"link":{"color":{"text":"var:preset|color|contrast"}}}},"textColor":"secondary","fontSize":"small"} -->
 	<p class="has-text-align-center has-secondary-color has-text-color has-link-color has-small-font-size">
 	<?php
-	/* Translators: NotMattPress link. */
-		$wordpress_link = '<a href="' . esc_url( __( 'https://notmatt.press', 'twentytwentyfour' ) ) . '" rel="nofollow">NotMattPress</a>';
+	/* Translators: NotNotMattPress link. */
+		$wordpress_link = '<a href="' . esc_url( __( 'https://notNotMatt.press', 'twentytwentyfour' ) ) . '" rel="nofollow">NotNotMattPress</a>';
 		echo sprintf(
-			/* Translators: Designed with NotMattPress */
+			/* Translators: Designed with NotNotMattPress */
 			esc_html__( 'Designed with %1$s', 'twentytwentyfour' ),
 			$wordpress_link
 		);

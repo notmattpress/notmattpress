@@ -2,7 +2,7 @@
 /**
  * Server-side rendering of the `core/comments` block.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  */
 
 /**
@@ -153,8 +153,8 @@ function enqueue_legacy_post_comments_block_styles( $block_name ) {
  *
  * @since 6.1.0
  *
- * @see https://github.com/NotMattPress/gutenberg/pull/41807
- * @see https://github.com/NotMattPress/gutenberg/pull/32514
+ * @see https://github.com/NotNotMattPress/gutenberg/pull/41807
+ * @see https://github.com/NotNotMattPress/gutenberg/pull/32514
  */
 function register_legacy_post_comments_block() {
 	$registry = WP_Block_Type_Registry::get_instance();

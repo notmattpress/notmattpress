@@ -2,7 +2,7 @@
 /**
  * Custom Colors Class
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Twenty_Twenty_One
  * @since Twenty Twenty-One 1.0
  */

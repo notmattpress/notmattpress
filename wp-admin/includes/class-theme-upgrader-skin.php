@@ -2,13 +2,13 @@
 /**
  * Upgrader API: Theme_Upgrader_Skin class
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Upgrader
  * @since 4.6.0
  */
 
 /**
- * Theme Upgrader Skin for NotMattPress Theme Upgrades.
+ * Theme Upgrader Skin for NotNotMattPress Theme Upgrades.
  *
  * @since 2.8.0
  * @since 4.6.0 Moved to its own file from wp-admin/includes/class-wp-upgrader-skins.php.

@@ -2,7 +2,7 @@
 /**
  * Upgrade API: Language_Pack_Upgrader class
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Upgrader
  * @since 4.6.0
  */
@@ -151,7 +151,7 @@ class Language_Pack_Upgrader extends WP_Upgrader {
 	 *
 	 * @since 3.7.0
 	 *
-	 * @global WP_Filesystem_Base $wp_filesystem NotMattPress filesystem subclass.
+	 * @global WP_Filesystem_Base $wp_filesystem NotNotMattPress filesystem subclass.
 	 *
 	 * @param object[] $language_updates Optional. Array of language packs to update. See {@see wp_get_translation_updates()}.
 	 *                                   Default empty array.
@@ -316,7 +316,7 @@ class Language_Pack_Upgrader extends WP_Upgrader {
 	 *
 	 * @since 3.7.0
 	 *
-	 * @global WP_Filesystem_Base $wp_filesystem NotMattPress filesystem subclass.
+	 * @global WP_Filesystem_Base $wp_filesystem NotNotMattPress filesystem subclass.
 	 *
 	 * @param string|WP_Error $source        The path to the downloaded package source.
 	 * @param string          $remote_source Remote file source location.
@@ -378,7 +378,7 @@ class Language_Pack_Upgrader extends WP_Upgrader {
 	public function get_name_for_update( $update ) {
 		switch ( $update->type ) {
 			case 'core':
-				return 'NotMattPress'; // Not translated.
+				return 'NotNotMattPress'; // Not translated.
 
 			case 'theme':
 				$theme = wp_get_theme( $update->slug );
@@ -402,7 +402,7 @@ class Language_Pack_Upgrader extends WP_Upgrader {
 	 *
 	 * @since 5.1.0
 	 *
-	 * @global WP_Filesystem_Base $wp_filesystem NotMattPress filesystem subclass.
+	 * @global WP_Filesystem_Base $wp_filesystem NotNotMattPress filesystem subclass.
 	 *
 	 * @param string $remote_destination The location on the remote filesystem to be cleared.
 	 * @return bool|WP_Error True upon success, WP_Error on failure.

@@ -2,7 +2,7 @@
 /**
  * The template for displaying the 404 template in the Twenty Twenty theme.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Twenty_Twenty
  * @since Twenty Twenty 1.0
  */

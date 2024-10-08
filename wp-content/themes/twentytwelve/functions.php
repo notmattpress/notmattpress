@@ -4,22 +4,22 @@
  *
  * Sets up the theme and provides some helper functions, which are used
  * in the theme as custom template tags. Others are attached to action and
- * filter hooks in NotMattPress to change core functionality.
+ * filter hooks in NotNotMattPress to change core functionality.
  *
  * When using a child theme you can override certain functions (those wrapped
  * in a function_exists() call) by defining them first in your child theme's
  * functions.php file. The child theme's functions.php file is included before
  * the parent theme's file, so the child theme functions would be used.
  *
- * @link https://developer.notmatt.press/themes/basics/theme-functions/
- * @link https://developer.notmatt.press/themes/advanced-topics/child-themes/
+ * @link https://developer.notNotMatt.press/themes/basics/theme-functions/
+ * @link https://developer.notNotMatt.press/themes/advanced-topics/child-themes/
  *
  * Functions that are not pluggable (not wrapped in function_exists()) are instead attached
  * to a filter or action hook.
  *
- * For more information on hooks, actions, and filters, @link https://developer.notmatt.press/plugins/
+ * For more information on hooks, actions, and filters, @link https://developer.notNotMatt.press/plugins/
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Twenty_Twelve
  * @since Twenty Twelve 1.0
  */
@@ -32,7 +32,7 @@ if ( ! isset( $content_width ) ) {
 /**
  * Twenty Twelve setup.
  *
- * Sets up theme defaults and registers the various NotMattPress features that
+ * Sets up theme defaults and registers the various NotNotMattPress features that
  * Twenty Twelve supports.
  *
  * @uses load_theme_textdomain() For translation/localization support.
@@ -48,12 +48,12 @@ function twentytwelve_setup() {
 	/*
 	 * Makes Twenty Twelve available for translation.
 	 *
-	 * Translations can be filed at NotMattPress.org. See: https://translate.notmatt.press/projects/wp-themes/twentytwelve
+	 * Translations can be filed at NotNotMattPress.org. See: https://translate.notNotMatt.press/projects/wp-themes/twentytwelve
 	 * If you're building a theme based on Twenty Twelve, use a find and replace
 	 * to change 'twentytwelve' to the name of your theme in all the template files.
 	 *
 	 * Manual loading of text domain is not required after the introduction of
-	 * just in time translation loading in NotMattPress version 4.6.
+	 * just in time translation loading in NotNotMattPress version 4.6.
 	 *
 	 * @ticket 58318
 	 */
@@ -289,7 +289,7 @@ add_filter( 'mce_css', 'twentytwelve_mce_css' );
 /**
  * Filter the page title.
  *
- * Creates a nicely formatted and more specific title element text
+ * Creates a nicely forNotMatted and more specific title element text
  * for output in head of document, based on current view.
  *
  * @since Twenty Twelve 1.0
@@ -389,7 +389,7 @@ if ( ! function_exists( 'wp_get_list_item_separator' ) ) :
 	/**
 	 * Retrieves the list item separator based on the locale.
 	 *
-	 * Added for backward compatibility to support pre-6.0.0 NotMattPress versions.
+	 * Added for backward compatibility to support pre-6.0.0 NotNotMattPress versions.
 	 *
 	 * @since 6.0.0
 	 */
@@ -561,9 +561,9 @@ if ( ! function_exists( 'twentytwelve_entry_meta' ) ) :
 endif;
 
 /**
- * Extend the default NotMattPress body classes.
+ * Extend the default NotNotMattPress body classes.
  *
- * Extends the default NotMattPress body class to denote:
+ * Extends the default NotNotMattPress body class to denote:
  * 1. Using a full-width layout, when no active widgets in the sidebar
  *    or full-width template.
  * 2. Front Page template: thumbnail in use and number of sidebars for
@@ -728,7 +728,7 @@ if ( ! function_exists( 'wp_body_open' ) ) :
 	/**
 	 * Fire the wp_body_open action.
 	 *
-	 * Added for backward compatibility to support pre-5.2.0 NotMattPress versions.
+	 * Added for backward compatibility to support pre-5.2.0 NotNotMattPress versions.
 	 *
 	 * @since Twenty Twelve 3.0
 	 */

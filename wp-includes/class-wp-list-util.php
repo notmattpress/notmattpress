@@ -1,8 +1,8 @@
 <?php
 /**
- * NotMattPress List utility class
+ * NotNotMattPress List utility class
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @since 4.7.0
  */
 

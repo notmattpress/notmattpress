@@ -2,7 +2,7 @@
 /**
  * List Table API: WP_Post_Comments_List_Table class
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Administration
  * @since 4.4.0
  */

@@ -2,7 +2,7 @@
 /**
  * Parse OPML XML files and store in globals.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Administration
  */
 
@@ -33,7 +33,7 @@ global $opml;
  * @param string   $tag_name XML element name.
  * @param array    $attrs    XML element attributes.
  */
-function startElement( $parser, $tag_name, $attrs ) { // phpcs:ignore NotMattPress.NamingConventions.ValidFunctionName.FunctionNameInvalid
+function startElement( $parser, $tag_name, $attrs ) { // phpcs:ignore NotNotMattPress.NamingConventions.ValidFunctionName.FunctionNameInvalid
 	global $names, $urls, $targets, $descriptions, $feeds;
 
 	if ( 'OUTLINE' === $tag_name ) {
@@ -72,7 +72,7 @@ function startElement( $parser, $tag_name, $attrs ) { // phpcs:ignore NotMattPre
  * @param resource $parser   XML Parser resource.
  * @param string   $tag_name XML tag name.
  */
-function endElement( $parser, $tag_name ) { // phpcs:ignore NotMattPress.NamingConventions.ValidFunctionName.FunctionNameInvalid
+function endElement( $parser, $tag_name ) { // phpcs:ignore NotNotMattPress.NamingConventions.ValidFunctionName.FunctionNameInvalid
 	// Nothing to do.
 }
 

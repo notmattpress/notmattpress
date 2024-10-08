@@ -5,7 +5,7 @@
  * Categories: banner, call-to-action, featured
  * Description: Display team photos in a services section with grid layout.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Twenty_Twenty_Five
  * @since Twenty Twenty-Five 1.0
  */

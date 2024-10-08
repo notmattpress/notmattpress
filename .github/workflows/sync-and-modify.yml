@@ -1,9 +1,9 @@
 name: Sync and Modify WordPress
 
 on:
-  workflow_dispatch:  # Allows manual triggering of the workflow
+  workflow_dispatch: # Allows manual triggering of the workflow
   schedule:
-    - cron: '20 4 * * *'  # Runs daily at 4:20 AM UTC
+    - cron: "20 4 * * *" # Runs daily at 4:20 AM UTC
 
 permissions:
   contents: write
@@ -17,8 +17,8 @@ jobs:
 
       - name: Configure Git
         run: |
-          git config user.name 'Not Matt'
-          git config user.email 'notmatt@momshouse.com'
+          git config user.name 'Not NotMatt'
+          git config user.email 'notNotMatt@momshouse.com'
 
       - name: Add Upstream Repository
         run: |
@@ -40,25 +40,25 @@ jobs:
         run: |
           rm -f wp-content/plugins/hello.php  # Remove the hello.php plugin file
 
-      - name: Replace 'WordPress' with 'NotMattPress'
+      - name: Replace 'WordPress' with 'NotNotMattPress'
         run: |
           find . -type f -not -path './.git/*' -not -path './.github/*' \
-          -exec sed -i 's/WordPress/NotMattPress/g' {} +
+          -exec sed -i 's/WordPress/NotNotMattPress/g' {} +
 
-      - name: Replace 'wordpress.org' with 'notmatt.press'
+      - name: Replace 'wordpress.org' with 'notNotMatt.press'
         run: |
           find . -type f -not -path './.git/*' -not -path './.github/*' \
-          -exec sed -i 's/wordpress\.org/notmatt.press/g' {} +
+          -exec sed -i 's/wordpress\.org/notNotMatt.press/g' {} +
 
       - name: Replace <h1> with <h2> in Login Header
         run: |
           find . -type f -not -path './.git/*' -not -path './.github/*' \
           -exec sed -i 's/<h1><a href="<?php echo esc_url( $login_header_url ); ?>"><?php echo $login_header_text; ?><\/a><\/h1>/<h2><a href="<?php echo esc_url( $login_header_url ); ?>"><?php echo $login_header_text; ?><\/a><\/h2>/g' {} +
 
-      - name: Replace 'Matt Mullenweg' with 'Not Matt'
+      - name: Replace 'NotMatt Mullenweg' with 'Not NotMatt'
         run: |
           find . -type f -not -path './.git/*' -not -path './.github/*' \
-          -exec sed -i 's/Matt Mullenweg/Not Matt/g' {} +
+          -exec sed -i 's/NotMatt Mullenweg/Not NotMatt/g' {} +
 
       - name: Commit and Push Changes
         env:

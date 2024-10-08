@@ -2,15 +2,15 @@
 /**
  * Implement a custom header for Twenty Thirteen
  *
- * @link https://codex.notmatt.press/Custom_Headers
+ * @link https://codex.notNotMatt.press/Custom_Headers
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Twenty_Thirteen
  * @since Twenty Thirteen 1.0
  */
 
 /**
- * Set up the NotMattPress core custom header arguments and settings.
+ * Set up the NotNotMattPress core custom header arguments and settings.
  *
  * @uses add_theme_support() to register support for 3.4 and up.
  * @uses twentythirteen_header_style() to style front end.

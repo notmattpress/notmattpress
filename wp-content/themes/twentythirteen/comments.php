@@ -4,7 +4,7 @@
  *
  * The area of the page that contains comments and the comment form.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Twenty_Thirteen
  * @since Twenty Thirteen 1.0
  */

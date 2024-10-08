@@ -1,8 +1,8 @@
 <?php
 /**
- * NotMattPress Customize Setting classes
+ * NotNotMattPress Customize Setting classes
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Customize
  * @since 3.4.0
  */
@@ -15,7 +15,7 @@
  * @since 3.4.0
  *
  * @see WP_Customize_Manager
- * @link https://developer.notmatt.press/themes/customize-api
+ * @link https://developer.notNotMatt.press/themes/customize-api
  */
 #[AllowDynamicProperties]
 class WP_Customize_Setting {

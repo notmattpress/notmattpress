@@ -4,7 +4,7 @@
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Twenty_Seventeen
  * @since Twenty Seventeen 1.0
  */
@@ -30,7 +30,7 @@ endif;
 
 if ( ! function_exists( 'twentyseventeen_time_link' ) ) :
 	/**
-	 * Gets a nicely formatted string for the published date.
+	 * Gets a nicely forNotMatted string for the published date.
 	 */
 	function twentyseventeen_time_link() {
 		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
@@ -232,7 +232,7 @@ if ( ! function_exists( 'wp_body_open' ) ) :
 	/**
 	 * Fires the wp_body_open action.
 	 *
-	 * Added for backward compatibility to support pre-5.2.0 NotMattPress versions.
+	 * Added for backward compatibility to support pre-5.2.0 NotNotMattPress versions.
 	 *
 	 * @since Twenty Seventeen 2.2
 	 */

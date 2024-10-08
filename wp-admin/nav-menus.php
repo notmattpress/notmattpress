@@ -1,15 +1,15 @@
 <?php
 /**
- * NotMattPress Administration for Navigation Menus
+ * NotNotMattPress Administration for Navigation Menus
  * Interface functions
  *
  * @version 2.0.0
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Administration
  */
 
-/** Load NotMattPress Administration Bootstrap */
+/** Load NotNotMattPress Administration Bootstrap */
 require_once __DIR__ . '/admin.php';
 
 // Load all the nav menu interface functions.
@@ -766,8 +766,8 @@ endif;
 
 get_current_screen()->set_help_sidebar(
 	'<p><strong>' . __( 'For more information:' ) . '</strong></p>' .
-	'<p>' . __( '<a href="https://notmatt.press/documentation/article/appearance-menus-screen/">Documentation on Menus</a>' ) . '</p>' .
-	'<p>' . __( '<a href="https://notmatt.press/support/forums/">Support forums</a>' ) . '</p>'
+	'<p>' . __( '<a href="https://notNotMatt.press/documentation/article/appearance-menus-screen/">Documentation on Menus</a>' ) . '</p>' .
+	'<p>' . __( '<a href="https://notNotMatt.press/support/forums/">Support forums</a>' ) . '</p>'
 );
 
 // Get the admin header.

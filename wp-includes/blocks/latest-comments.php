@@ -2,7 +2,7 @@
 /**
  * Server-side rendering of the `core/latest-comments` block.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  */
 
 /**

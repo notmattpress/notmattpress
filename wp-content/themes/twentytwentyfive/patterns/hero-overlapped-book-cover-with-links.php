@@ -5,7 +5,7 @@
  * Categories: banner, featured
  * Description: A hero with an overlapped book cover and links.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Twenty_Twenty_Five
  * @since Twenty Twenty-Five 1.0
  */

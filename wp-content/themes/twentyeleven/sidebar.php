@@ -2,7 +2,7 @@
 /**
  * Sidebar containing the main widget area
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Twenty_Eleven
  * @since Twenty Eleven 1.0
  */

@@ -2,7 +2,7 @@
 /**
  * Block level presets support.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @since 6.2.0
  */
 

@@ -2,7 +2,7 @@
 /**
  * Server-side rendering of the `core/comment-edit-link` block.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  */
 
 /**

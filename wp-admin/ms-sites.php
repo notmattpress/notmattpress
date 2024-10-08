@@ -2,7 +2,7 @@
 /**
  * Multisite sites administration panel.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Multisite
  * @since 3.0.0
  */

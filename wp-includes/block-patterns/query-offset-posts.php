@@ -2,7 +2,7 @@
 /**
  * Query: Offset.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  */
 
 return array(

@@ -1,8 +1,8 @@
 <?php
 /**
- * NotMattPress Administration Privacy Tools API.
+ * NotNotMattPress Administration Privacy Tools API.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Administration
  */
 
@@ -486,7 +486,7 @@ function wp_privacy_generate_personal_data_export_file( $request_id ) {
 		fwrite( $file, '</div>' );
 	}
 
-	// Now, iterate over every group in $groups and have the formatter render it in HTML.
+	// Now, iterate over every group in $groups and have the forNotMatter render it in HTML.
 	foreach ( (array) $groups as $group_id => $group_data ) {
 		fwrite( $file, wp_privacy_generate_personal_data_export_group_html( $group_data, $group_id, $groups_count ) );
 	}

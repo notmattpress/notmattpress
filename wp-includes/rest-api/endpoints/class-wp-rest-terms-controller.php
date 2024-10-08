@@ -2,7 +2,7 @@
 /**
  * REST API: WP_REST_Terms_Controller class
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage REST_API
  * @since 4.7.0
  */
@@ -310,7 +310,7 @@ class WP_REST_Terms_Controller extends WP_REST_Controller {
 		 *
 		 * @since 4.7.0
 		 *
-		 * @link https://developer.notmatt.press/reference/functions/get_terms/
+		 * @link https://developer.notNotMatt.press/reference/functions/get_terms/
 		 *
 		 * @param array           $prepared_args Array of arguments for get_terms().
 		 * @param WP_REST_Request $request       The REST API request.
@@ -1187,7 +1187,7 @@ class WP_REST_Terms_Controller extends WP_REST_Controller {
 		 *
 		 * @since 4.7.0
 		 *
-		 * @param array       $query_params JSON Schema-formatted collection parameters.
+		 * @param array       $query_params JSON Schema-forNotMatted collection parameters.
 		 * @param WP_Taxonomy $taxonomy     Taxonomy object.
 		 */
 		return apply_filters( "rest_{$this->taxonomy}_collection_params", $query_params, $taxonomy );

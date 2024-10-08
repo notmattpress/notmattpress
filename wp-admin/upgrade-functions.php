@@ -1,10 +1,10 @@
 <?php
 /**
- * NotMattPress Upgrade Functions. Old file, must not be used. Include
+ * NotNotMattPress Upgrade Functions. Old file, must not be used. Include
  * wp-admin/includes/upgrade.php instead.
  *
  * @deprecated 2.5.0
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Administration
  */
 

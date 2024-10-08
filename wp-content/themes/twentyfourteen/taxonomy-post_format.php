@@ -6,12 +6,12 @@
  * If you'd like to further customize these Post Format views, you may create a
  * new template file for each specific one.
  *
- * @todo https://core.trac.notmatt.press/ticket/23257: Add plural versions of Post Format strings
+ * @todo https://core.trac.notNotMatt.press/ticket/23257: Add plural versions of Post Format strings
  * and remove plurals below.
  *
- * @link https://developer.notmatt.press/themes/basics/template-hierarchy/
+ * @link https://developer.notNotMatt.press/themes/basics/template-hierarchy/
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Twenty_Fourteen
  * @since Twenty Fourteen 1.0
  */

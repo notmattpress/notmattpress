@@ -1,8 +1,8 @@
 <?php
 /**
- * NotMattPress Customize Nav Menus classes
+ * NotNotMattPress Customize Nav Menus classes
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Customize
  * @since 4.3.0
  */

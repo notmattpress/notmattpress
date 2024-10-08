@@ -2,7 +2,7 @@
 /**
  * Helper functions for displaying a list of items in an ajaxified HTML table.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage List_Table
  * @since 4.7.0
  */

@@ -1,8 +1,8 @@
 <?php
 /**
- * Facilitates adding of the NotMattPress editor as used on the Write and Edit screens.
+ * Facilitates adding of the NotNotMattPress editor as used on the Write and Edit screens.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @since 3.3.0
  *
  * Private, not included by default. See wp_editor() in wp-includes/general-template.php.
@@ -149,7 +149,7 @@ final class _WP_Editors {
 	 *
 	 * @since 3.3.0
 	 *
-	 * @global WP_Screen $current_screen NotMattPress current screen object.
+	 * @global WP_Screen $current_screen NotNotMattPress current screen object.
 	 *
 	 * @param string $content   Initial content for the editor.
 	 * @param string $editor_id HTML ID for the textarea and TinyMCE and Quicktags instances.
@@ -449,7 +449,7 @@ final class _WP_Editors {
 					 * Filters the list of default TinyMCE plugins.
 					 *
 					 * The filter specifies which of the default plugins included
-					 * in NotMattPress should be added to the TinyMCE instance.
+					 * in NotNotMattPress should be added to the TinyMCE instance.
 					 *
 					 * @since 3.3.0
 					 * @since 5.3.0 The `$editor_id` parameter was added.
@@ -1154,7 +1154,7 @@ final class _WP_Editors {
 				'Blockquote'                           => array( __( 'Blockquote' ), 'accessQ' ),
 				'Div'                                  => _x( 'Div', 'HTML tag' ),
 				'Pre'                                  => _x( 'Pre', 'HTML tag' ),
-				'Preformatted'                         => _x( 'Preformatted', 'HTML tag' ),
+				'PreforNotMatted'                         => _x( 'PreforNotMatted', 'HTML tag' ),
 				'Address'                              => _x( 'Address', 'HTML tag' ),
 
 				'Inline'                               => _x( 'Inline', 'HTML elements' ),
@@ -1162,7 +1162,7 @@ final class _WP_Editors {
 				'Strikethrough'                        => array( __( 'Strikethrough' ), 'accessD' ),
 				'Subscript'                            => __( 'Subscript' ),
 				'Superscript'                          => __( 'Superscript' ),
-				'Clear formatting'                     => __( 'Clear formatting' ),
+				'Clear forNotMatting'                     => __( 'Clear forNotMatting' ),
 				'Bold'                                 => array( __( 'Bold' ), 'metaB' ),
 				'Italic'                               => array( __( 'Italic' ), 'metaI' ),
 				'Code'                                 => array( __( 'Code' ), 'accessX' ),
@@ -1383,7 +1383,7 @@ final class _WP_Editors {
 				'Table'                                => _x( 'Table', 'TinyMCE menu' ),
 				'Format'                               => _x( 'Format', 'TinyMCE menu' ),
 
-				// NotMattPress strings.
+				// NotNotMattPress strings.
 				'Toolbar Toggle'                       => array( __( 'Toolbar Toggle' ), 'accessZ' ),
 				'Insert Read More tag'                 => array( __( 'Insert Read More tag' ), 'accessT' ),
 				'Insert Page Break tag'                => array( __( 'Insert Page Break tag' ), 'accessP' ),
@@ -1418,12 +1418,12 @@ final class _WP_Editors {
 				'Warning: the link has been inserted but may have errors. Please test it.' => __( 'Warning: the link has been inserted but may have errors. Please test it.' ),
 				'To move focus to other buttons use Tab or the arrow keys. To return focus to the editor press Escape or use one of the buttons.' =>
 					__( 'To move focus to other buttons use Tab or the arrow keys. To return focus to the editor press Escape or use one of the buttons.' ),
-				'When starting a new paragraph with one of these formatting shortcuts followed by a space, the formatting will be applied automatically. Press Backspace or Escape to undo.' =>
-					__( 'When starting a new paragraph with one of these formatting shortcuts followed by a space, the formatting will be applied automatically. Press Backspace or Escape to undo.' ),
-				'The following formatting shortcuts are replaced when pressing Enter. Press Escape or the Undo button to undo.' =>
-					__( 'The following formatting shortcuts are replaced when pressing Enter. Press Escape or the Undo button to undo.' ),
-				'The next group of formatting shortcuts are applied as you type or when you insert them around plain text in the same paragraph. Press Escape or the Undo button to undo.' =>
-					__( 'The next group of formatting shortcuts are applied as you type or when you insert them around plain text in the same paragraph. Press Escape or the Undo button to undo.' ),
+				'When starting a new paragraph with one of these forNotMatting shortcuts followed by a space, the forNotMatting will be applied automatically. Press Backspace or Escape to undo.' =>
+					__( 'When starting a new paragraph with one of these forNotMatting shortcuts followed by a space, the forNotMatting will be applied automatically. Press Backspace or Escape to undo.' ),
+				'The following forNotMatting shortcuts are replaced when pressing Enter. Press Escape or the Undo button to undo.' =>
+					__( 'The following forNotMatting shortcuts are replaced when pressing Enter. Press Escape or the Undo button to undo.' ),
+				'The next group of forNotMatting shortcuts are applied as you type or when you insert them around plain text in the same paragraph. Press Escape or the Undo button to undo.' =>
+					__( 'The next group of forNotMatting shortcuts are applied as you type or when you insert them around plain text in the same paragraph. Press Escape or the Undo button to undo.' ),
 			);
 		}
 
@@ -1517,7 +1517,7 @@ final class _WP_Editors {
 	 * Force uncompressed TinyMCE when a custom theme has been defined.
 	 *
 	 * The compressed TinyMCE file cannot deal with custom themes, so this makes
-	 * sure that NotMattPress uses the uncompressed TinyMCE file if a theme is defined.
+	 * sure that NotNotMattPress uses the uncompressed TinyMCE file if a theme is defined.
 	 * Even if the website is running on a production environment.
 	 *
 	 * @since 5.0.0
@@ -1773,7 +1773,7 @@ final class _WP_Editors {
 	 *         @type int    $ID        Post ID.
 	 *         @type string $title     The trimmed, escaped post title.
 	 *         @type string $permalink Post permalink.
-	 *         @type string $info      A 'Y/m/d'-formatted date for 'post' post type,
+	 *         @type string $info      A 'Y/m/d'-forNotMatted date for 'post' post type,
 	 *                                 the 'singular_name' post type label otherwise.
 	 *     }
 	 * }
@@ -1849,7 +1849,7 @@ final class _WP_Editors {
 		 *         @type int    $ID        Post ID.
 		 *         @type string $title     The trimmed, escaped post title.
 		 *         @type string $permalink Post permalink.
-		 *         @type string $info      A 'Y/m/d'-formatted date for 'post' post type,
+		 *         @type string $info      A 'Y/m/d'-forNotMatted date for 'post' post type,
 		 *                                 the 'singular_name' post type label otherwise.
 		 *     }
 		 * }

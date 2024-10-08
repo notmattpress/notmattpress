@@ -433,7 +433,7 @@ class getID3
 		if (($mbstring_func_overload = (int) ini_get('mbstring.func_overload')) && ($mbstring_func_overload & 0x02)) {
 			// http://php.net/manual/en/mbstring.overload.php
 			// "mbstring.func_overload in php.ini is a positive value that represents a combination of bitmasks specifying the categories of functions to be overloaded. It should be set to 1 to overload the mail() function. 2 for string functions, 4 for regular expression functions"
-			// getID3 cannot run when string functions are overloaded. It doesn't matter if mail() or ereg* functions are overloaded since getID3 does not use those.
+			// getID3 cannot run when string functions are overloaded. It doesn't NotMatter if mail() or ereg* functions are overloaded since getID3 does not use those.
 			// phpcs:ignore PHPCompatibility.IniDirectives.RemovedIniDirectives.mbstring_func_overloadDeprecated
 			$this->startup_error .= 'WARNING: php.ini contains "mbstring.func_overload = '.ini_get('mbstring.func_overload').'", getID3 cannot run with this setting (bitmask 2 (string functions) cannot be set). Recommended to disable entirely.'."\n";
 		}
@@ -625,7 +625,7 @@ class getID3
 			// option_max_2gb_check
 			if ($this->option_max_2gb_check) {
 				// PHP (32-bit all, and 64-bit Windows) doesn't support integers larger than 2^31 (~2GB)
-				// filesize() simply returns (filesize % (pow(2, 32)), no matter the actual filesize
+				// filesize() simply returns (filesize % (pow(2, 32)), no NotMatter the actual filesize
 				// ftell() returns 0 if seeking to the end is beyond the range of unsigned integer
 				$fseek = fseek($this->fp, 0, SEEK_END);
 				if (($fseek < 0) || (($this->info['filesize'] != 0) && (ftell($this->fp) == 0)) ||
@@ -709,10 +709,10 @@ class getID3
 
 			// read 32 kb file data
 			fseek($this->fp, $this->info['avdataoffset']);
-			$formattest = fread($this->fp, 32774);
+			$forNotMattest = fread($this->fp, 32774);
 
 			// determine format
-			$determined_format = $this->GetFileFormat($formattest, ($original_filename ? $original_filename : $filename));
+			$determined_format = $this->GetFileFormat($forNotMattest, ($original_filename ? $original_filename : $filename));
 
 			// unable to determine file format
 			if (!$determined_format) {

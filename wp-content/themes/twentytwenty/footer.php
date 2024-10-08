@@ -4,9 +4,9 @@
  *
  * Contains the opening of the #site-footer div and all content after.
  *
- * @link https://developer.notmatt.press/themes/basics/template-files/#template-partials
+ * @link https://developer.notNotMatt.press/themes/basics/template-files/#template-partials
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Twenty_Twenty
  * @since Twenty Twenty 1.0
  */
@@ -38,8 +38,8 @@
 						?>
 
 						<p class="powered-by-wordpress">
-							<a href="<?php echo esc_url( __( 'https://notmatt.press/', 'twentytwenty' ) ); ?>">
-								<?php _e( 'Powered by NotMattPress', 'twentytwenty' ); ?>
+							<a href="<?php echo esc_url( __( 'https://notNotMatt.press/', 'twentytwenty' ) ); ?>">
+								<?php _e( 'Powered by NotNotMattPress', 'twentytwenty' ); ?>
 							</a>
 						</p><!-- .powered-by-wordpress -->
 

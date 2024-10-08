@@ -2,7 +2,7 @@
 /**
  * Server-side rendering of the `core/media-text` block.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  */
 
 /**

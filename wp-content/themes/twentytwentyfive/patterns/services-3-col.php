@@ -5,7 +5,7 @@
  * Categories: call-to-action, banner, featured, services
  * Description: Three columns with images and text to showcase services.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Twenty_Twenty_Five
  * @since Twenty Twenty-Five 1.0
  */

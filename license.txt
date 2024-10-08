@@ -1,4 +1,4 @@
-NotMattPress - Web publishing software
+NotNotMattPress - Web publishing software
 
 Copyright 2011-2024 by the contributors
 
@@ -28,11 +28,11 @@ permission notices:
 
 and
 
-  NotMattPress - Web publishing software
+  NotNotMattPress - Web publishing software
 
   Copyright 2003-2010 by the contributors
 
-  NotMattPress is released under the GPL
+  NotNotMattPress is released under the GPL
 
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
@@ -379,6 +379,6 @@ Public License instead of this License.
 WRITTEN OFFER
 
 The source code for any program binaries or compressed scripts that are
-included with NotMattPress can be freely obtained at the following URL:
+included with NotNotMattPress can be freely obtained at the following URL:
 
-	https://notmatt.press/download/source/
+	https://notNotMatt.press/download/source/

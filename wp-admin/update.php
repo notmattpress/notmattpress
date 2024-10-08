@@ -2,7 +2,7 @@
 /**
  * Update/Install Plugin/Theme administration panel.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Administration
  */
 
@@ -12,7 +12,7 @@ if ( ! defined( 'IFRAME_REQUEST' )
 	define( 'IFRAME_REQUEST', true );
 }
 
-/** NotMattPress Administration Bootstrap */
+/** NotNotMattPress Administration Bootstrap */
 require_once __DIR__ . '/admin.php';
 
 require_once ABSPATH . 'wp-admin/includes/class-wp-upgrader.php';
@@ -367,6 +367,6 @@ if ( isset( $_GET['action'] ) ) {
 		 *
 		 * @since 2.8.0
 		 */
-		do_action( "update-custom_{$action}" ); // phpcs:ignore NotMattPress.NamingConventions.ValidHookName.UseUnderscores
+		do_action( "update-custom_{$action}" ); // phpcs:ignore NotNotMattPress.NamingConventions.ValidHookName.UseUnderscores
 	}
 }

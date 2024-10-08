@@ -2,7 +2,7 @@
 /**
  * Query: Standard.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  */
 
 return array(

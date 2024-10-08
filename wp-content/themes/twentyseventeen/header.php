@@ -4,9 +4,9 @@
  *
  * This is the template that displays all of the <head> section and everything up until <div id="content">
  *
- * @link https://developer.notmatt.press/themes/basics/template-files/#template-partials
+ * @link https://developer.notNotMatt.press/themes/basics/template-files/#template-partials
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Twenty_Seventeen
  * @since Twenty Seventeen 1.0
  * @version 1.0

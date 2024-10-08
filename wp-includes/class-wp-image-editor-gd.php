@@ -1,13 +1,13 @@
 <?php
 /**
- * NotMattPress GD Image Editor
+ * NotNotMattPress GD Image Editor
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Image_Editor
  */
 
 /**
- * NotMattPress Image Editor Class for Image Manipulation through GD
+ * NotNotMattPress Image Editor Class for Image Manipulation through GD
  *
  * @since 3.5.0
  *

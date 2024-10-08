@@ -4,9 +4,9 @@
  *
  * Handles displaying Aside, Link, Status, and Quote Posts available with Twenty Eleven.
  *
- * @link https://developer.notmatt.press/themes/functionality/widgets/#developing-widgets
+ * @link https://developer.notNotMatt.press/themes/functionality/widgets/#developing-widgets
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Twenty_Eleven
  * @since Twenty Eleven 1.0
  */

@@ -3,7 +3,7 @@
  * Pattern Overrides source for the Block Bindings.
  *
  * @since 6.5.0
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Block Bindings
  */
 

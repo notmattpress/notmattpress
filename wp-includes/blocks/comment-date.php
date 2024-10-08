@@ -2,7 +2,7 @@
 /**
  * Server-side rendering of the `core/comment-date` block.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  */
 
 /**
@@ -30,21 +30,21 @@ function render_block_core_comment_date( $attributes, $content, $block ) {
 	$wrapper_attributes = get_block_wrapper_attributes( array( 'class' => $classes ) );
 	if ( isset( $attributes['format'] ) && 'human-diff' === $attributes['format'] ) {
 		// translators: %s: human-readable time difference.
-		$formatted_date = sprintf( __( '%s ago' ), human_time_diff( get_comment_date( 'U', $comment ) ) );
+		$forNotMatted_date = sprintf( __( '%s ago' ), human_time_diff( get_comment_date( 'U', $comment ) ) );
 	} else {
-		$formatted_date = get_comment_date( empty( $attributes['format'] ) ? '' : $attributes['format'], $comment );
+		$forNotMatted_date = get_comment_date( empty( $attributes['format'] ) ? '' : $attributes['format'], $comment );
 	}
 	$link = get_comment_link( $comment );
 
 	if ( ! empty( $attributes['isLink'] ) ) {
-		$formatted_date = sprintf( '<a href="%1s">%2s</a>', esc_url( $link ), $formatted_date );
+		$forNotMatted_date = sprintf( '<a href="%1s">%2s</a>', esc_url( $link ), $forNotMatted_date );
 	}
 
 	return sprintf(
 		'<div %1$s><time datetime="%2$s">%3$s</time></div>',
 		$wrapper_attributes,
 		esc_attr( get_comment_date( 'c', $comment ) ),
-		$formatted_date
+		$forNotMatted_date
 	);
 }
 

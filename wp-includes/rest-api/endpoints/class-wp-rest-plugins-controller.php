@@ -2,7 +2,7 @@
 /**
  * REST API: WP_REST_Plugins_Controller class
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage REST_API
  * @since 5.5.0
  */
@@ -52,7 +52,7 @@ class WP_REST_Plugins_Controller extends WP_REST_Controller {
 						'slug'   => array(
 							'type'        => 'string',
 							'required'    => true,
-							'description' => __( 'NotMattPress.org plugin directory slug.' ),
+							'description' => __( 'NotNotMattPress.org plugin directory slug.' ),
 							'pattern'     => '[\w\-]+',
 						),
 						'status' => array(
@@ -265,7 +265,7 @@ class WP_REST_Plugins_Controller extends WP_REST_Controller {
 	 *
 	 * @since 5.5.0
 	 *
-	 * @global WP_Filesystem_Base $wp_filesystem NotMattPress filesystem subclass.
+	 * @global WP_Filesystem_Base $wp_filesystem NotNotMattPress filesystem subclass.
 	 *
 	 * @param WP_REST_Request $request Full details about the request.
 	 * @return WP_REST_Response|WP_Error Response object on success, or WP_Error object on failure.
@@ -935,7 +935,7 @@ class WP_REST_Plugins_Controller extends WP_REST_Controller {
 							'type'        => 'string',
 						),
 						'rendered' => array(
-							'description' => __( 'The plugin description formatted for display.' ),
+							'description' => __( 'The plugin description forNotMatted for display.' ),
 							'type'        => 'string',
 						),
 					),
@@ -953,7 +953,7 @@ class WP_REST_Plugins_Controller extends WP_REST_Controller {
 					'context'     => array( 'view', 'edit', 'embed' ),
 				),
 				'requires_wp'  => array(
-					'description' => __( 'Minimum required version of NotMattPress.' ),
+					'description' => __( 'Minimum required version of NotNotMattPress.' ),
 					'type'        => 'string',
 					'readonly'    => true,
 					'context'     => array( 'view', 'edit', 'embed' ),

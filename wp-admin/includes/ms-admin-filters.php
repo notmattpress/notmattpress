@@ -2,7 +2,7 @@
 /**
  * Multisite Administration hooks
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Administration
  * @since 4.3.0
  */

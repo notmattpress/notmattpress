@@ -2,11 +2,11 @@
 /**
  * Authorize Application Screen
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Administration
  */
 
-/** NotMattPress Administration Bootstrap */
+/** NotNotMattPress Administration Bootstrap */
 require_once __DIR__ . '/admin.php';
 
 $error        = null;
@@ -320,7 +320,7 @@ require_once ABSPATH . 'wp-admin/admin-header.php';
 							'<strong><code>' . esc_html( $reject_url ) . '</code></strong>'
 						);
 					} else {
-						_e( 'You will be returned to the NotMattPress Dashboard, and no changes will be made.' );
+						_e( 'You will be returned to the NotNotMattPress Dashboard, and no changes will be made.' );
 					}
 					?>
 				</p>

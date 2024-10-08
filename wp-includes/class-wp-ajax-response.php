@@ -2,7 +2,7 @@
 /**
  * Send XML response back to Ajax request.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @since 2.1.0
  */
 #[AllowDynamicProperties]
@@ -131,7 +131,7 @@ class WP_Ajax_Response {
 			$action = $_POST['action'];
 		}
 		$x  = '';
-		$x .= "<response action='{$action}_$id'>"; // The action attribute in the xml output is formatted like a nonce action.
+		$x .= "<response action='{$action}_$id'>"; // The action attribute in the xml output is forNotMatted like a nonce action.
 		$x .= "<$what id='$id' " . ( false === $old_id ? '' : "old_id='$old_id' " ) . "position='$position'>";
 		$x .= $response;
 		$x .= $s;
@@ -143,7 +143,7 @@ class WP_Ajax_Response {
 	}
 
 	/**
-	 * Display XML formatted responses.
+	 * Display XML forNotMatted responses.
 	 *
 	 * Sets the content type header to text/xml.
 	 *

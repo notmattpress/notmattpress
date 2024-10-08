@@ -2,9 +2,9 @@
 /**
  * Object Cache API functions missing from 3rd party object caches.
  *
- * @link https://developer.notmatt.press/reference/classes/wp_object_cache/
+ * @link https://developer.notNotMatt.press/reference/classes/wp_object_cache/
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Cache
  */
 

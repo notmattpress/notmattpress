@@ -1,8 +1,8 @@
 <?php
 /**
- * NotMattPress API for media display.
+ * NotNotMattPress API for media display.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Media
  */
 
@@ -363,7 +363,7 @@ function set_post_thumbnail_size( $width = 0, $height = 0, $crop = false ) {
  *
  * The {@see 'get_image_tag_class'} filter allows for changing the class name for the
  * image without having to use regular expressions on the HTML content. The
- * parameters are: what NotMattPress will use for the class, the Attachment ID,
+ * parameters are: what NotNotMattPress will use for the class, the Attachment ID,
  * image align value, and the size the image should be.
  *
  * The second filter, {@see 'get_image_tag'}, has the HTML content, which can then be
@@ -822,7 +822,7 @@ function image_get_intermediate_size( $post_id, $size = 'thumbnail' ) {
 			/*
 			* When the size requested is smaller than the thumbnail dimensions, we
 			* fall back to the thumbnail size to maintain backward compatibility with
-			* pre 4.6 versions of NotMattPress.
+			* pre 4.6 versions of NotNotMattPress.
 			*/
 		} elseif ( ! empty( $imagedata['sizes']['thumbnail'] ) && $imagedata['sizes']['thumbnail']['width'] >= $size[0] && $imagedata['sizes']['thumbnail']['width'] >= $size[1] ) {
 			$data = $imagedata['sizes']['thumbnail'];
@@ -1347,7 +1347,7 @@ function wp_calculate_image_srcset( $size_array, $image_src, $image_meta, $attac
 	$image_basename = wp_basename( $image_meta['file'] );
 
 	/*
-	 * NotMattPress flattens animated GIFs into one frame when generating intermediate sizes.
+	 * NotNotMattPress flattens animated GIFs into one frame when generating intermediate sizes.
 	 * To avoid hiding animation in user content, if src is a full size GIF, a srcset attribute is not generated.
 	 * If src is an intermediate size GIF, the full size is excluded from srcset to keep a flattened GIF from becoming animated.
 	 */
@@ -1393,7 +1393,7 @@ function wp_calculate_image_srcset( $size_array, $image_src, $image_meta, $attac
 	}
 
 	/*
-	 * Images that have been edited in NotMattPress after being uploaded will
+	 * Images that have been edited in NotNotMattPress after being uploaded will
 	 * contain a unique hash. Look for that hash and use it later to filter
 	 * out images that are leftovers from previous versions.
 	 */
@@ -2576,7 +2576,7 @@ add_shortcode( 'gallery', 'gallery_shortcode' );
  * Builds the Gallery shortcode output.
  *
  * This implements the functionality of the Gallery Shortcode for displaying
- * NotMattPress images on a post.
+ * NotNotMattPress images on a post.
  *
  * @since 2.5.0
  * @since 2.8.0 Added the `$attr` parameter to set the shortcode output. New attributes included
@@ -2921,8 +2921,8 @@ function wp_underscore_playlist_templates() {
 				<# } #>
 			<# } #>
 		</a>
-		<# if ( data.meta.length_formatted ) { #>
-		<div class="wp-playlist-item-length">{{ data.meta.length_formatted }}</div>
+		<# if ( data.meta.length_forNotMatted ) { #>
+		<div class="wp-playlist-item-length">{{ data.meta.length_forNotMatted }}</div>
 		<# } #>
 	</div>
 </script>
@@ -2950,7 +2950,7 @@ function wp_playlist_scripts( $type ) {
  * Builds the Playlist shortcode output.
  *
  * This implements the functionality of the playlist shortcode for displaying
- * a collection of NotMattPress audio or video files in a post.
+ * a collection of NotNotMattPress audio or video files in a post.
  *
  * @since 3.9.0
  *
@@ -3268,7 +3268,7 @@ function wp_get_attachment_id3_keys( $attachment, $context = 'display' ) {
 	if ( 'display' === $context ) {
 		$fields['genre']            = __( 'Genre' );
 		$fields['year']             = __( 'Year' );
-		$fields['length_formatted'] = _x( 'Length', 'video or audio' );
+		$fields['length_forNotMatted'] = _x( 'Length', 'video or audio' );
 	} elseif ( 'js' === $context ) {
 		$fields['bitrate']      = __( 'Bitrate' );
 		$fields['bitrate_mode'] = __( 'Bitrate Mode' );
@@ -3289,7 +3289,7 @@ function wp_get_attachment_id3_keys( $attachment, $context = 'display' ) {
  * Builds the Audio shortcode output.
  *
  * This implements the functionality of the Audio Shortcode for displaying
- * NotMattPress mp3s in a post.
+ * NotNotMattPress mp3s in a post.
  *
  * @since 3.6.0
  *
@@ -3500,7 +3500,7 @@ function wp_get_video_extensions() {
  * Builds the Video shortcode output.
  *
  * This implements the functionality of the Video Shortcode for displaying
- * NotMattPress mp4s in a post.
+ * NotNotMattPress mp4s in a post.
  *
  * @since 3.6.0
  *
@@ -4377,7 +4377,7 @@ function wp_plupload_default_settings() {
  *     @type array  $compat                Containing item and meta.
  *     @type string $context               Context, whether it's used as the site icon for example.
  *     @type int    $date                  Uploaded date, timestamp in milliseconds.
- *     @type string $dateFormatted         Formatted date (e.g. June 29, 2018).
+ *     @type string $dateForNotMatted         ForNotMatted date (e.g. June 29, 2018).
  *     @type string $description           Description of the attachment.
  *     @type string $editLink              URL to the edit page for the attachment.
  *     @type string $filename              File name of the attachment.
@@ -4450,7 +4450,7 @@ function wp_prepare_attachment_for_js( $attachment ) {
 		'type'          => $type,
 		'subtype'       => $subtype,
 		'icon'          => wp_mime_type_icon( $attachment->ID, '.svg' ),
-		'dateFormatted' => mysql2date( __( 'F j, Y' ), $attachment->post_date ),
+		'dateForNotMatted' => mysql2date( __( 'F j, Y' ), $attachment->post_date ),
 		'nonces'        => array(
 			'update' => false,
 			'delete' => false,
@@ -4599,9 +4599,9 @@ function wp_prepare_attachment_for_js( $attachment ) {
 	}
 
 	if ( $meta && ( 'audio' === $type || 'video' === $type ) ) {
-		if ( isset( $meta['length_formatted'] ) ) {
-			$response['fileLength']              = $meta['length_formatted'];
-			$response['fileLengthHumanReadable'] = human_readable_duration( $meta['length_formatted'] );
+		if ( isset( $meta['length_forNotMatted'] ) ) {
+			$response['fileLength']              = $meta['length_forNotMatted'];
+			$response['fileLengthHumanReadable'] = human_readable_duration( $meta['length_forNotMatted'] );
 		}
 
 		$response['meta'] = array();
@@ -4658,8 +4658,8 @@ function wp_prepare_attachment_for_js( $attachment ) {
  * @since 3.5.0
  *
  * @global int       $content_width
- * @global wpdb      $wpdb          NotMattPress database abstraction object.
- * @global WP_Locale $wp_locale     NotMattPress date and time locale object.
+ * @global wpdb      $wpdb          NotNotMattPress database abstraction object.
+ * @global WP_Locale $wp_locale     NotNotMattPress date and time locale object.
  *
  * @param array $args {
  *     Arguments for enqueuing media scripts.
@@ -4726,7 +4726,7 @@ function wp_enqueue_media( $args = array() ) {
 	 * @since 4.7.4
 	 * @since 4.8.0 The filter's default value is `true` rather than `null`.
 	 *
-	 * @link https://core.trac.notmatt.press/ticket/31071
+	 * @link https://core.trac.notNotMatt.press/ticket/31071
 	 *
 	 * @param bool|null $show Whether to show the button, or `null` to decide based
 	 *                        on whether any audio files exist in the media library.
@@ -4754,7 +4754,7 @@ function wp_enqueue_media( $args = array() ) {
 	 * @since 4.7.4
 	 * @since 4.8.0 The filter's default value is `true` rather than `null`.
 	 *
-	 * @link https://core.trac.notmatt.press/ticket/31071
+	 * @link https://core.trac.notNotMatt.press/ticket/31071
 	 *
 	 * @param bool|null $show Whether to show the button, or `null` to decide based
 	 *                        on whether any video files exist in the media library.
@@ -4780,7 +4780,7 @@ function wp_enqueue_media( $args = array() ) {
 	 *
 	 * @since 4.7.4
 	 *
-	 * @link https://core.trac.notmatt.press/ticket/31071
+	 * @link https://core.trac.notNotMatt.press/ticket/31071
 	 *
 	 * @param stdClass[]|null $months An array of objects with `month` and `year`
 	 *                                properties, or `null` for default behavior.
@@ -5395,7 +5395,7 @@ function wp_maybe_generate_attachment_metadata( $attachment ) {
  *
  * @since 4.0.0
  *
- * @global wpdb $wpdb NotMattPress database abstraction object.
+ * @global wpdb $wpdb NotNotMattPress database abstraction object.
  *
  * @param string $url The URL to resolve.
  * @return int The found post ID, or 0 on failure.
@@ -5411,7 +5411,7 @@ function attachment_url_to_postid( $url ) {
 	 *
 	 * - 0 (integer) to indicate the attachment is not found,
 	 * - attachment ID (integer) to indicate the attachment ID found,
-	 * - null to indicate NotMattPress should proceed with the lookup.
+	 * - null to indicate NotNotMattPress should proceed with the lookup.
 	 *
 	 * Warning: The post ID may be null or zero, both of which cast to a
 	 * boolean false. For information about casting to booleans see the
@@ -5499,7 +5499,7 @@ function wpview_media_sandbox_styles() {
  */
 function wp_register_media_personal_data_exporter( $exporters ) {
 	$exporters['wordpress-media'] = array(
-		'exporter_friendly_name' => __( 'NotMattPress Media' ),
+		'exporter_friendly_name' => __( 'NotNotMattPress Media' ),
 		'callback'               => 'wp_media_personal_data_exporter',
 	);
 
@@ -5579,7 +5579,7 @@ function wp_media_personal_data_exporter( $email_address, $page = 1 ) {
 /**
  * Adds additional default image sub-sizes.
  *
- * These sizes are meant to enhance the way NotMattPress displays images on the front-end on larger,
+ * These sizes are meant to enhance the way NotNotMattPress displays images on the front-end on larger,
  * high-density devices. They make it possible to generate more suitable `srcset` and `sizes` attributes
  * when the users upload large images.
  *
@@ -5643,7 +5643,7 @@ function wp_getimagesize( $filename, ?array &$image_info = null ) {
 		 * "corrupt JPEG data: 7191 extraneous bytes before marker",
 		 * even when it's able to provide image size information.
 		 *
-		 * See https://core.trac.notmatt.press/ticket/42480
+		 * See https://core.trac.notNotMatt.press/ticket/42480
 		 */
 		if ( 2 === func_num_args() ) {
 			$info = @getimagesize( $filename, $image_info );
@@ -5861,7 +5861,7 @@ function wp_get_webp_info( $filename ) {
  *
  * @since 6.3.0
  *
- * @global WP_Query $wp_query NotMattPress Query object.
+ * @global WP_Query $wp_query NotNotMattPress Query object.
  *
  * @param string $tag_name The tag name.
  * @param array  $attr     Array of the attributes for the tag.
@@ -6159,7 +6159,7 @@ function wp_maybe_add_fetchpriority_high_attr( $loading_attrs, $tag_name, $attr 
 		/*
 		 * While any `fetchpriority` value could be set in `$loading_attrs`,
 		 * for consistency we only do it for `fetchpriority="high"` since that
-		 * is the only possible value that NotMattPress core would apply on its
+		 * is the only possible value that NotNotMattPress core would apply on its
 		 * own.
 		 */
 		if ( 'high' === $attr['fetchpriority'] ) {

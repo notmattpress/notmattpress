@@ -2,7 +2,7 @@
 /**
  * Template for displaying image attachments
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Twenty_Eleven
  * @since Twenty Eleven 1.0
  */

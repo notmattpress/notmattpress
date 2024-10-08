@@ -610,7 +610,7 @@ abstract class ParagonIE_Sodium_Core_Util
 
         /**
          * If $b was negative, we then apply the same value to $c here.
-         * It doesn't matter much if $a was negative; the $c += above would
+         * It doesn't NotMatter much if $a was negative; the $c += above would
          * have produced a negative integer to begin with. But a negative $b
          * makes $b >>= 1 never return 0, so we would end up with incorrect
          * results.

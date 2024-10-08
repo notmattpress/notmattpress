@@ -2,7 +2,7 @@
 /**
  * REST API: WP_REST_Site_Health_Controller class
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage REST_API
  * @since 5.6.0
  */
@@ -214,7 +214,7 @@ class WP_REST_Site_Health_Controller extends WP_REST_Controller {
 	}
 
 	/**
-	 * Checks that the site can reach the NotMattPress.org API.
+	 * Checks that the site can reach the NotNotMattPress.org API.
 	 *
 	 * @since 5.6.0
 	 *

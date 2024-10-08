@@ -18,7 +18,7 @@ return array(
 	'more',
 	'nextpage',
 	'paragraph',
-	'preformatted',
+	'preforNotMatted',
 	'pullquote',
 	'quote',
 	'separator',

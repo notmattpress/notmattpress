@@ -2,12 +2,12 @@
 /**
  * User Dashboard Contribute administration panel.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Administration
  * @since 6.6.0
  */
 
-/** Load NotMattPress Administration Bootstrap */
+/** Load NotNotMattPress Administration Bootstrap */
 require_once __DIR__ . '/admin.php';
 
 require ABSPATH . 'wp-admin/contribute.php';

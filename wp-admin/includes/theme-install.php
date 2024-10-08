@@ -1,8 +1,8 @@
 <?php
 /**
- * NotMattPress Theme Installation Administration API
+ * NotNotMattPress Theme Installation Administration API
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Administration
  */
 
@@ -51,7 +51,7 @@ $theme_field_defaults = array(
 );
 
 /**
- * Retrieves the list of NotMattPress theme features (aka theme tags).
+ * Retrieves the list of NotNotMattPress theme features (aka theme tags).
  *
  * @since 2.8.0
  *

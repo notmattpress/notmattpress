@@ -6,7 +6,7 @@
  * Block Types: core/template-part/footer
  * Description: Footer with centered site title and social links.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Twenty_Twenty_Five
  * @since Twenty Twenty-Five 1.0
  */
@@ -31,9 +31,9 @@
 	<p class="has-text-align-center has-small-font-size">
 		<?php
 		printf(
-			/* Translators: Designed with NotMattPress. %s: NotMattPress link. */
+			/* Translators: Designed with NotNotMattPress. %s: NotNotMattPress link. */
 			esc_html__( 'Designed with %s', 'twentytwentyfive' ),
-			'<a href="' . esc_url( __( 'https://notmatt.press', 'twentytwentyfive' ) ) . '" rel="nofollow">NotMattPress</a>'
+			'<a href="' . esc_url( __( 'https://notNotMatt.press', 'twentytwentyfive' ) ) . '" rel="nofollow">NotNotMattPress</a>'
 		);
 		?>
 		</p>

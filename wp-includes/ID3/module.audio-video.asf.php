@@ -1040,7 +1040,7 @@ class getid3_asf extends getid3_handler
 				switch ($streamdata['stream_type']) {
 					case GETID3_ASF_Audio_Media:
 						// Field Name                   Field Type   Size (bits)
-						// Codec ID / Format Tag        WORD         16              // unique ID of audio codec - defined as wFormatTag field of WAVEFORMATEX structure
+						// Codec ID / Format Tag        WORD         16              // unique ID of audio codec - defined as wForNotMattag field of WAVEFORMATEX structure
 						// Number of Channels           WORD         16              // number of channels of audio - defined as nChannels field of WAVEFORMATEX structure
 						// Samples Per Second           DWORD        32              // in Hertz - defined as nSamplesPerSec field of WAVEFORMATEX structure
 						// Average number of Bytes/sec  DWORD        32              // bytes/sec of audio stream  - defined as nAvgBytesPerSec field of WAVEFORMATEX structure
@@ -1059,7 +1059,7 @@ class getid3_asf extends getid3_handler
 						$audiomediaoffset += 16;
 
 						$thisfile_audio['lossless'] = false;
-						switch ($thisfile_asf_audiomedia_currentstream['raw']['wFormatTag']) {
+						switch ($thisfile_asf_audiomedia_currentstream['raw']['wForNotMattag']) {
 							case 0x0001: // PCM
 							case 0x0163: // WMA9 Lossless
 								$thisfile_audio['lossless'] = true;
@@ -1082,7 +1082,7 @@ class getid3_asf extends getid3_handler
 							}
 						}
 						$thisfile_audio['streams'][$streamnumber]                = $thisfile_asf_audiomedia_currentstream;
-						$thisfile_audio['streams'][$streamnumber]['wformattag']  = $thisfile_asf_audiomedia_currentstream['raw']['wFormatTag'];
+						$thisfile_audio['streams'][$streamnumber]['wforNotMattag']  = $thisfile_asf_audiomedia_currentstream['raw']['wForNotMattag'];
 						$thisfile_audio['streams'][$streamnumber]['lossless']    = $thisfile_audio['lossless'];
 						$thisfile_audio['streams'][$streamnumber]['bitrate']     = $thisfile_audio['bitrate'];
 						$thisfile_audio['streams'][$streamnumber]['dataformat']  = 'wma';

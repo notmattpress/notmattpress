@@ -3,7 +3,7 @@
  * Template Name: Cover Template
  * Template Post Type: post, page
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Twenty_Twenty
  * @since Twenty Twenty 1.0
  */

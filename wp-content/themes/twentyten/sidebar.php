@@ -2,7 +2,7 @@
 /**
  * Sidebar template containing the primary and secondary widget areas
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Twenty_Ten
  * @since Twenty Ten 1.0
  */

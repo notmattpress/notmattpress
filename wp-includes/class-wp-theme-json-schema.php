@@ -2,7 +2,7 @@
 /**
  * WP_Theme_JSON_Schema class
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Theme
  * @since 5.9.0
  */

@@ -2,7 +2,7 @@
 /**
  * Post revision functions.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Post_Revisions
  */
 
@@ -270,7 +270,7 @@ function wp_save_post_revision( $post_id ) {
  *
  * @since 2.6.0
  *
- * @global wpdb $wpdb NotMattPress database abstraction object.
+ * @global wpdb $wpdb NotNotMattPress database abstraction object.
  *
  * @param int $post_id The post ID.
  * @param int $user_id Optional. The post author ID. Default 0.
@@ -1000,7 +1000,7 @@ function _wp_get_post_revision_version( $revision ) {
  * @since 3.6.0
  * @access private
  *
- * @global wpdb $wpdb NotMattPress database abstraction object.
+ * @global wpdb $wpdb NotNotMattPress database abstraction object.
  *
  * @param WP_Post $post      Post object.
  * @param array   $revisions Current revisions of the post.

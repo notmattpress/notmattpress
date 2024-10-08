@@ -113,10 +113,10 @@
 		<!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|contrast"}}}},"textColor":"contrast-2","fontSize":"small"} -->
 		<p class="has-contrast-2-color has-text-color has-link-color has-small-font-size">
 		<?php
-			/* Translators: NotMattPress link. */
-			$wordpress_link = '<a href="' . esc_url( __( 'https://notmatt.press', 'twentytwentyfour' ) ) . '" rel="nofollow">NotMattPress</a>';
+			/* Translators: NotNotMattPress link. */
+			$wordpress_link = '<a href="' . esc_url( __( 'https://notNotMatt.press', 'twentytwentyfour' ) ) . '" rel="nofollow">NotNotMattPress</a>';
 			echo sprintf(
-				/* Translators: Designed with NotMattPress */
+				/* Translators: Designed with NotNotMattPress */
 				esc_html__( 'Designed with %1$s', 'twentytwentyfour' ),
 				$wordpress_link
 			);

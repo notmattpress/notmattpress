@@ -5,7 +5,7 @@
  * Template Types: page
  * Viewport width: 1400
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Twenty_Twenty_Five
  * @since Twenty Twenty-Five 1.0
  */

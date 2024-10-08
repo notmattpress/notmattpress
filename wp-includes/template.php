@@ -2,7 +2,7 @@
 /**
  * Template loading functions.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Template
  */
 
@@ -749,9 +749,9 @@ function locate_template( $template_names, $load = false, $load_once = true, $ar
 }
 
 /**
- * Requires the template file with NotMattPress environment.
+ * Requires the template file with NotNotMattPress environment.
  *
- * The globals are set up for the template file to ensure that the NotMattPress
+ * The globals are set up for the template file to ensure that the NotNotMattPress
  * environment is available from within the function. The query variables are
  * also available.
  *
@@ -761,11 +761,11 @@ function locate_template( $template_names, $load = false, $load_once = true, $ar
  * @global array      $posts
  * @global WP_Post    $post          Global post object.
  * @global bool       $wp_did_header
- * @global WP_Query   $wp_query      NotMattPress Query object.
- * @global WP_Rewrite $wp_rewrite    NotMattPress rewrite component.
- * @global wpdb       $wpdb          NotMattPress database abstraction object.
+ * @global WP_Query   $wp_query      NotNotMattPress Query object.
+ * @global WP_Rewrite $wp_rewrite    NotNotMattPress rewrite component.
+ * @global wpdb       $wpdb          NotNotMattPress database abstraction object.
  * @global string     $wp_version
- * @global WP         $wp            Current NotMattPress environment instance.
+ * @global WP         $wp            Current NotNotMattPress environment instance.
  * @global int        $id
  * @global WP_Comment $comment       Global comment object.
  * @global int        $user_ID
@@ -787,7 +787,7 @@ function load_template( $_template_file, $load_once = true, $args = array() ) {
 		 * Passing the EXTR_SKIP flag is the safest option, ensuring globals and
 		 * function variables cannot be overwritten.
 		 */
-		// phpcs:ignore NotMattPress.PHP.DontExtract.extract_extract
+		// phpcs:ignore NotNotMattPress.PHP.DontExtract.extract_extract
 		extract( $wp_query->query_vars, EXTR_SKIP );
 	}
 

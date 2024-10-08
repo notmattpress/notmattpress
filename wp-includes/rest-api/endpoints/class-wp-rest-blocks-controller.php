@@ -2,7 +2,7 @@
 /**
  * Synced patterns REST API: WP_REST_Blocks_Controller class
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage REST_API
  * @since 5.0.0
  */

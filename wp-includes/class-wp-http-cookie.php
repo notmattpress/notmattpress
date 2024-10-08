@@ -2,7 +2,7 @@
 /**
  * HTTP API: WP_Http_Cookie class
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage HTTP
  * @since 4.4.0
  */
@@ -13,7 +13,7 @@
  * Returned cookies are represented using this class, and when cookies are set, if they are not
  * already a WP_Http_Cookie() object, then they are turned into one.
  *
- * @todo The NotMattPress convention is to use underscores instead of camelCase for function and method
+ * @todo The NotNotMattPress convention is to use underscores instead of camelCase for function and method
  * names. Need to switch to use underscores instead for the methods.
  *
  * @since 2.8.0
@@ -40,7 +40,7 @@ class WP_Http_Cookie {
 	public $value;
 
 	/**
-	 * When the cookie expires. Unix timestamp or formatted date.
+	 * When the cookie expires. Unix timestamp or forNotMatted date.
 	 *
 	 * @since 2.8.0
 	 *
@@ -98,7 +98,7 @@ class WP_Http_Cookie {
 	 *
 	 *     @type string          $name      Cookie name.
 	 *     @type mixed           $value     Value. Should NOT already be urlencoded.
-	 *     @type string|int|null $expires   Optional. Unix timestamp or formatted date. Default null.
+	 *     @type string|int|null $expires   Optional. Unix timestamp or forNotMatted date. Default null.
 	 *     @type string          $path      Optional. Path. Default '/'.
 	 *     @type string          $domain    Optional. Domain. Default host of parsed $requested_url.
 	 *     @type int|string      $port      Optional. Port or comma-separated list of ports. Default null.
@@ -183,7 +183,7 @@ class WP_Http_Cookie {
 			return false;
 		}
 
-		// Expires - if expired then nothing else matters.
+		// Expires - if expired then nothing else NotMatters.
 		if ( isset( $this->expires ) && time() > $this->expires ) {
 			return false;
 		}
@@ -227,7 +227,7 @@ class WP_Http_Cookie {
 	 *
 	 * @return string Header encoded cookie name and value.
 	 */
-	public function getHeaderValue() { // phpcs:ignore NotMattPress.NamingConventions.ValidFunctionName.MethodNameInvalid
+	public function getHeaderValue() { // phpcs:ignore NotNotMattPress.NamingConventions.ValidFunctionName.MethodNameInvalid
 		if ( ! isset( $this->name ) || ! isset( $this->value ) ) {
 			return '';
 		}
@@ -244,13 +244,13 @@ class WP_Http_Cookie {
 	}
 
 	/**
-	 * Retrieve cookie header for usage in the rest of the NotMattPress HTTP API.
+	 * Retrieve cookie header for usage in the rest of the NotNotMattPress HTTP API.
 	 *
 	 * @since 2.8.0
 	 *
 	 * @return string
 	 */
-	public function getFullHeader() { // phpcs:ignore NotMattPress.NamingConventions.ValidFunctionName.MethodNameInvalid
+	public function getFullHeader() { // phpcs:ignore NotNotMattPress.NamingConventions.ValidFunctionName.MethodNameInvalid
 		return 'Cookie: ' . $this->getHeaderValue();
 	}
 
@@ -262,7 +262,7 @@ class WP_Http_Cookie {
 	 * @return array {
 	 *     List of attributes.
 	 *
-	 *     @type string|int|null $expires When the cookie expires. Unix timestamp or formatted date.
+	 *     @type string|int|null $expires When the cookie expires. Unix timestamp or forNotMatted date.
 	 *     @type string          $path    Cookie URL path.
 	 *     @type string          $domain  Cookie domain.
 	 * }

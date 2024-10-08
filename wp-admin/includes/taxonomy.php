@@ -1,8 +1,8 @@
 <?php
 /**
- * NotMattPress Taxonomy Administration API.
+ * NotNotMattPress Taxonomy Administration API.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Administration
  */
 

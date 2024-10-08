@@ -2,7 +2,7 @@
 /**
  * Server-side rendering of the `core/block` block.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  */
 
 /**

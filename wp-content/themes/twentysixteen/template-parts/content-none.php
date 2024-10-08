@@ -2,7 +2,7 @@
 /**
  * The template part for displaying a message that posts cannot be found
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Twenty_Sixteen
  * @since Twenty Sixteen 1.0
  */

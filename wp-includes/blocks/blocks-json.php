@@ -1093,7 +1093,7 @@
     'ancestor' => array(
       'core/comment-template'
     ),
-    'description' => 'Displays a link to edit the comment in the NotMattPress Dashboard. This link is only visible to users with the edit comment capability.',
+    'description' => 'Displays a link to edit the comment in the NotNotMattPress Dashboard. This link is only visible to users with the edit comment capability.',
     'textdomain' => 'default',
     'usesContext' => array(
       'commentId'
@@ -2064,7 +2064,7 @@
     'name' => 'core/freeform',
     'title' => 'Classic',
     'category' => 'text',
-    'description' => 'Use the classic NotMattPress editor.',
+    'description' => 'Use the classic NotNotMattPress editor.',
     'textdomain' => 'default',
     'attributes' => array(
       'content' => array(
@@ -4906,11 +4906,11 @@
     ),
     'style' => 'wp-block-post-title'
   ),
-  'preformatted' => array(
+  'preforNotMatted' => array(
     '$schema' => 'https://schemas.wp.org/trunk/block.json',
     'apiVersion' => 3,
-    'name' => 'core/preformatted',
-    'title' => 'Preformatted',
+    'name' => 'core/preforNotMatted',
+    'title' => 'PreforNotMatted',
     'category' => 'text',
     'description' => 'Add text that respects your spacing and tabs, and also allows styling.',
     'textdomain' => 'default',
@@ -4965,7 +4965,7 @@
         )
       )
     ),
-    'style' => 'wp-block-preformatted'
+    'style' => 'wp-block-preforNotMatted'
   ),
   'pullquote' => array(
     '$schema' => 'https://schemas.wp.org/trunk/block.json',
@@ -5888,7 +5888,7 @@
     'name' => 'core/shortcode',
     'title' => 'Shortcode',
     'category' => 'widgets',
-    'description' => 'Insert additional custom elements with a NotMattPress shortcode.',
+    'description' => 'Insert additional custom elements with a NotNotMattPress shortcode.',
     'textdomain' => 'default',
     'attributes' => array(
       'text' => array(

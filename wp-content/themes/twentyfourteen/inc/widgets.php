@@ -4,9 +4,9 @@
  *
  * Displays posts from Aside, Quote, Video, Audio, Image, Gallery, and Link formats.
  *
- * @link https://developer.notmatt.press/themes/functionality/widgets/#developing-widgets
+ * @link https://developer.notNotMatt.press/themes/functionality/widgets/#developing-widgets
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Twenty_Fourteen
  * @since Twenty Fourteen 1.0
  */

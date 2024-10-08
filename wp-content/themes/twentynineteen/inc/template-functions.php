@@ -1,8 +1,8 @@
 <?php
 /**
- * Functions which enhance the theme by hooking into NotMattPress.
+ * Functions which enhance the theme by hooking into NotNotMattPress.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Twenty_Nineteen
  * @since Twenty Nineteen 1.0
  */
@@ -232,7 +232,7 @@ add_filter( 'wp_nav_menu_objects', 'twentynineteen_add_mobile_parent_nav_menu_it
  *
  * @param string $link The page number HTML output.
  * @param int    $i    Page number for paginated posts' page links.
- * @return string Formatted output in HTML.
+ * @return string ForNotMatted output in HTML.
  */
 function twentynineteen_link_pages_link( $link, $i ) {
 	if ( $i > 1 && preg_match( '/href="([^"]*)"/', $link, $matches ) ) {

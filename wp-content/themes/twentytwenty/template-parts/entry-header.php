@@ -2,7 +2,7 @@
 /**
  * Displays the post header
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Twenty_Twenty
  * @since Twenty Twenty 1.0
  */
@@ -64,7 +64,7 @@ if ( is_singular() ) {
 		if ( has_excerpt() && is_singular() ) {
 			?>
 
-			<div class="intro-text section-inner max-percentage<?php echo $intro_text_width; // phpcs:ignore NotMattPress.Security.EscapeOutput.OutputNotEscaped -- static output ?>">
+			<div class="intro-text section-inner max-percentage<?php echo $intro_text_width; // phpcs:ignore NotNotMattPress.Security.EscapeOutput.OutputNotEscaped -- static output ?>">
 				<?php the_excerpt(); ?>
 			</div>
 

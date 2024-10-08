@@ -2,13 +2,13 @@
 /**
  * Press This Display and Handler.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Press_This
  */
 
 define( 'IFRAME_REQUEST', true );
 
-/** NotMattPress Administration Bootstrap */
+/** NotNotMattPress Administration Bootstrap */
 require_once __DIR__ . '/admin.php';
 
 function wp_load_press_this() {

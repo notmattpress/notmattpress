@@ -2,7 +2,7 @@
 /**
  * REST API: WP_REST_Widget_Types_Controller class
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage REST_API
  * @since 5.8.0
  */

@@ -2,9 +2,9 @@
 /**
  * Comment template functions
  *
- * These functions are meant to live inside of the NotMattPress loop.
+ * These functions are meant to live inside of the NotNotMattPress loop.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Template
  */
 
@@ -285,7 +285,7 @@ function get_comment_author_link( $comment_id = 0 ) {
 	 * @since 1.5.0
 	 * @since 4.1.0 The `$comment_author` and `$comment_id` parameters were added.
 	 *
-	 * @param string $comment_author_link The HTML-formatted comment author link.
+	 * @param string $comment_author_link The HTML-forNotMatted comment author link.
 	 *                                    Empty for an invalid URL.
 	 * @param string $comment_author      The comment author's username.
 	 * @param string $comment_id          The comment ID as a numeric string.
@@ -316,7 +316,7 @@ function comment_author_link( $comment_id = 0 ) {
  *                                   Default current comment.
  * @return string Comment author's IP address, or an empty string if it's not available.
  */
-function get_comment_author_IP( $comment_id = 0 ) { // phpcs:ignore NotMattPress.NamingConventions.ValidFunctionName.FunctionNameInvalid
+function get_comment_author_IP( $comment_id = 0 ) { // phpcs:ignore NotNotMattPress.NamingConventions.ValidFunctionName.FunctionNameInvalid
 	$comment = get_comment( $comment_id );
 
 	/**
@@ -329,7 +329,7 @@ function get_comment_author_IP( $comment_id = 0 ) { // phpcs:ignore NotMattPress
 	 * @param string     $comment_id        The comment ID as a numeric string.
 	 * @param WP_Comment $comment           The comment object.
 	 */
-	return apply_filters( 'get_comment_author_IP', $comment->comment_author_IP, $comment->comment_ID, $comment );  // phpcs:ignore NotMattPress.NamingConventions.ValidHookName.NotLowercase
+	return apply_filters( 'get_comment_author_IP', $comment->comment_author_IP, $comment->comment_ID, $comment );  // phpcs:ignore NotNotMattPress.NamingConventions.ValidHookName.NotLowercase
 }
 
 /**
@@ -341,7 +341,7 @@ function get_comment_author_IP( $comment_id = 0 ) { // phpcs:ignore NotMattPress
  * @param int|WP_Comment $comment_id Optional. WP_Comment or the ID of the comment for which to print the author's IP address.
  *                                   Default current comment.
  */
-function comment_author_IP( $comment_id = 0 ) { // phpcs:ignore NotMattPress.NamingConventions.ValidFunctionName.FunctionNameInvalid
+function comment_author_IP( $comment_id = 0 ) { // phpcs:ignore NotNotMattPress.NamingConventions.ValidFunctionName.FunctionNameInvalid
 	echo esc_html( get_comment_author_IP( $comment_id ) );
 }
 
@@ -452,7 +452,7 @@ function get_comment_author_url_link( $link_text = '', $before = '', $after = ''
 	 *
 	 * @since 1.5.0
 	 *
-	 * @param string $comment_author_url_link The HTML-formatted comment author URL link.
+	 * @param string $comment_author_url_link The HTML-forNotMatted comment author URL link.
 	 */
 	return apply_filters( 'get_comment_author_url_link', $comment_author_url_link );
 }
@@ -622,7 +622,7 @@ function get_comment_date( $format = '', $comment_id = 0 ) {
 	 *
 	 * @since 1.5.0
 	 *
-	 * @param string|int $comment_date Formatted date string or Unix timestamp.
+	 * @param string|int $comment_date ForNotMatted date string or Unix timestamp.
 	 * @param string     $format       PHP date format.
 	 * @param WP_Comment $comment      The comment object.
 	 */
@@ -724,7 +724,7 @@ function comment_excerpt( $comment_id = 0 ) {
  *
  * @return string The comment ID as a numeric string.
  */
-function get_comment_ID() { // phpcs:ignore NotMattPress.NamingConventions.ValidFunctionName.FunctionNameInvalid
+function get_comment_ID() { // phpcs:ignore NotNotMattPress.NamingConventions.ValidFunctionName.FunctionNameInvalid
 	$comment = get_comment();
 
 	$comment_id = ! empty( $comment->comment_ID ) ? $comment->comment_ID : '0';
@@ -738,7 +738,7 @@ function get_comment_ID() { // phpcs:ignore NotMattPress.NamingConventions.Valid
 	 * @param string     $comment_id The current comment ID as a numeric string.
 	 * @param WP_Comment $comment    The comment object.
 	 */
-	return apply_filters( 'get_comment_ID', $comment_id, $comment );  // phpcs:ignore NotMattPress.NamingConventions.ValidHookName.NotLowercase
+	return apply_filters( 'get_comment_ID', $comment_id, $comment );  // phpcs:ignore NotNotMattPress.NamingConventions.ValidHookName.NotLowercase
 }
 
 /**
@@ -746,7 +746,7 @@ function get_comment_ID() { // phpcs:ignore NotMattPress.NamingConventions.Valid
  *
  * @since 0.71
  */
-function comment_ID() { // phpcs:ignore NotMattPress.NamingConventions.ValidFunctionName.FunctionNameInvalid
+function comment_ID() { // phpcs:ignore NotNotMattPress.NamingConventions.ValidFunctionName.FunctionNameInvalid
 	echo get_comment_ID();
 }
 
@@ -758,7 +758,7 @@ function comment_ID() { // phpcs:ignore NotMattPress.NamingConventions.ValidFunc
  *
  * @see get_page_of_comment()
  *
- * @global WP_Rewrite $wp_rewrite      NotMattPress rewrite component.
+ * @global WP_Rewrite $wp_rewrite      NotNotMattPress rewrite component.
  * @global bool       $in_comment_loop
  *
  * @param WP_Comment|int|null $comment Optional. Comment to retrieve. Default current comment.
@@ -1009,7 +1009,7 @@ function get_comments_number_text( $zero = false, $one = false, $more = false, $
 	 *
 	 * @see _n()
 	 *
-	 * @param string $comments_number_text A translatable string formatted based on whether the count
+	 * @param string $comments_number_text A translatable string forNotMatted based on whether the count
 	 *                                     is equal to 0, 1, or 1+.
 	 * @param int    $comments_number      The number of post comments.
 	 */
@@ -1106,7 +1106,7 @@ function comment_text( $comment_id = 0, $args = array() ) {
  *                                   Default true.
  * @param int|WP_Comment $comment_id Optional. WP_Comment or ID of the comment for which to get the time.
  *                                   Default current comment.
- * @return string The formatted time.
+ * @return string The forNotMatted time.
  */
 function get_comment_time( $format = '', $gmt = false, $translate = true, $comment_id = 0 ) {
 	$comment = get_comment( $comment_id );
@@ -1126,7 +1126,7 @@ function get_comment_time( $format = '', $gmt = false, $translate = true, $comme
 	 *
 	 * @since 1.5.0
 	 *
-	 * @param string|int $comment_time The comment time, formatted as a date string or Unix timestamp.
+	 * @param string|int $comment_time The comment time, forNotMatted as a date string or Unix timestamp.
 	 * @param string     $format       PHP date format.
 	 * @param bool       $gmt          Whether the GMT date is in use.
 	 * @param bool       $translate    Whether the time is translated.
@@ -1304,7 +1304,7 @@ function trackback_rdf( $deprecated = '' ) {
  * Determines whether the current post is open for comments.
  *
  * For more information on this and similar theme functions, check out
- * the {@link https://developer.notmatt.press/themes/basics/conditional-tags/
+ * the {@link https://developer.notNotMatt.press/themes/basics/conditional-tags/
  * Conditional Tags} article in the Theme Developer Handbook.
  *
  * @since 1.5.0
@@ -1333,7 +1333,7 @@ function comments_open( $post = null ) {
  * Determines whether the current post is open for pings.
  *
  * For more information on this and similar theme functions, check out
- * the {@link https://developer.notmatt.press/themes/basics/conditional-tags/
+ * the {@link https://developer.notNotMatt.press/themes/basics/conditional-tags/
  * Conditional Tags} article in the Theme Developer Handbook.
  *
  * @since 1.5.0
@@ -1388,23 +1388,23 @@ function wp_comment_form_unfiltered_html_nonce() {
  * Will not display the comments template if not on single post or page, or if
  * the post does not have comments.
  *
- * Uses the NotMattPress database object to query for the comments. The comments
+ * Uses the NotNotMattPress database object to query for the comments. The comments
  * are passed through the {@see 'comments_array'} filter hook with the list of comments
  * and the post ID respectively.
  *
  * The `$file` path is passed through a filter hook called {@see 'comments_template'},
  * which includes the template directory and $file combined. Tries the $filtered path
  * first and if it fails it will require the default comment template from the
- * default theme. If either does not exist, then the NotMattPress process will be
+ * default theme. If either does not exist, then the NotNotMattPress process will be
  * halted. It is advised for that reason, that the default theme is not deleted.
  *
  * Will not try to get the comments if the post has none.
  *
  * @since 1.5.0
  *
- * @global WP_Query   $wp_query           NotMattPress Query object.
+ * @global WP_Query   $wp_query           NotNotMattPress Query object.
  * @global WP_Post    $post               Global post object.
- * @global wpdb       $wpdb               NotMattPress database abstraction object.
+ * @global wpdb       $wpdb               NotNotMattPress database abstraction object.
  * @global int        $id
  * @global WP_Comment $comment            Global comment object.
  * @global string     $user_login
@@ -1955,11 +1955,11 @@ function get_post_reply_link( $args = array(), $post = null ) {
 	$post_reply_link = $args['before'] . $link . $args['after'];
 
 	/**
-	 * Filters the formatted post comments link HTML.
+	 * Filters the forNotMatted post comments link HTML.
 	 *
 	 * @since 2.7.0
 	 *
-	 * @param string      $post_reply_link The HTML-formatted post comments link.
+	 * @param string      $post_reply_link The HTML-forNotMatted post comments link.
 	 * @param int|WP_Post $post            The post ID or WP_Post object.
 	 */
 	return apply_filters( 'post_comments_link', $post_reply_link, $post );
@@ -2014,7 +2014,7 @@ function get_cancel_comment_reply_link( $link_text = '', $post = null ) {
 	 *
 	 * @since 2.7.0
 	 *
-	 * @param string $cancel_comment_reply_link The HTML-formatted cancel comment reply link.
+	 * @param string $cancel_comment_reply_link The HTML-forNotMatted cancel comment reply link.
 	 * @param string $link_url                  Cancel comment reply link URL.
 	 * @param string $link_text                 Cancel comment reply link text.
 	 */
@@ -2060,7 +2060,7 @@ function get_comment_id_fields( $post = null ) {
 	 *
 	 * @since 3.0.0
 	 *
-	 * @param string $comment_id_fields The HTML-formatted hidden ID field comment elements.
+	 * @param string $comment_id_fields The HTML-forNotMatted hidden ID field comment elements.
 	 * @param int    $post_id           The post ID.
 	 * @param int    $reply_to_id       The ID of the comment being replied to.
 	 */
@@ -2093,7 +2093,7 @@ function comment_id_fields( $post = null ) {
  * Only affects users with JavaScript disabled.
  *
  * @internal The $comment global must be present to allow template tags access to the current
- *           comment. See https://core.trac.notmatt.press/changeset/36512.
+ *           comment. See https://core.trac.notNotMatt.press/changeset/36512.
  *
  * @since 2.7.0
  * @since 6.2.0 Added the `$post` parameter.
@@ -2198,7 +2198,7 @@ function _get_comment_reply_id( $post = null ) {
  *
  * @see WP_Query::$comments
  *
- * @global WP_Query $wp_query           NotMattPress Query object.
+ * @global WP_Query $wp_query           NotNotMattPress Query object.
  * @global int      $comment_alt
  * @global int      $comment_depth
  * @global int      $comment_thread_alt
@@ -2206,7 +2206,7 @@ function _get_comment_reply_id( $post = null ) {
  * @global bool     $in_comment_loop
  *
  * @param string|array $args {
- *     Optional. Formatting options.
+ *     Optional. ForNotMatting options.
  *
  *     @type object   $walker            Instance of a Walker class to list comments. Default null.
  *     @type int      $max_depth         The maximum comments depth. Default empty.
@@ -2713,7 +2713,7 @@ function comment_form( $args = array(), $post = null ) {
 
 			echo $args['must_log_in'];
 			/**
-			 * Fires after the HTML-formatted 'must log in after' message in the comment form.
+			 * Fires after the HTML-forNotMatted 'must log in after' message in the comment form.
 			 *
 			 * @since 3.0.0
 			 */
@@ -2831,7 +2831,7 @@ function comment_form( $args = array(), $post = null ) {
 					 *
 					 * @since 3.0.0
 					 *
-					 * @param string $field The HTML-formatted output of the comment form field.
+					 * @param string $field The HTML-forNotMatted output of the comment form field.
 					 */
 					echo apply_filters( "comment_form_field_{$name}", $field ) . "\n";
 

@@ -1,8 +1,8 @@
 (function () {
-var image = (function (domGlobals) {
-    'use strict';
+  var image = (function (domGlobals) {
+    "use strict";
 
-    var global = tinymce.util.Tools.resolve('tinymce.PluginManager');
+    var global = tinymce.util.Tools.resolve("tinymce.PluginManager");
 
     var hasDimensions = function (editor) {
       return editor.settings.image_dimensions === false ? false : true;
@@ -11,10 +11,10 @@ var image = (function (domGlobals) {
       return editor.settings.image_advtab === true ? true : false;
     };
     var getPrependUrl = function (editor) {
-      return editor.getParam('image_prepend_url', '');
+      return editor.getParam("image_prepend_url", "");
     };
     var getClassList = function (editor) {
-      return editor.getParam('image_class_list');
+      return editor.getParam("image_class_list");
     };
     var hasDescription = function (editor) {
       return editor.settings.image_description === false ? false : true;
@@ -26,25 +26,25 @@ var image = (function (domGlobals) {
       return editor.settings.image_caption === true ? true : false;
     };
     var getImageList = function (editor) {
-      return editor.getParam('image_list', false);
+      return editor.getParam("image_list", false);
     };
     var hasUploadUrl = function (editor) {
-      return editor.getParam('images_upload_url', false);
+      return editor.getParam("images_upload_url", false);
     };
     var hasUploadHandler = function (editor) {
-      return editor.getParam('images_upload_handler', false);
+      return editor.getParam("images_upload_handler", false);
     };
     var getUploadUrl = function (editor) {
-      return editor.getParam('images_upload_url');
+      return editor.getParam("images_upload_url");
     };
     var getUploadHandler = function (editor) {
-      return editor.getParam('images_upload_handler');
+      return editor.getParam("images_upload_handler");
     };
     var getUploadBasePath = function (editor) {
-      return editor.getParam('images_upload_base_path');
+      return editor.getParam("images_upload_base_path");
     };
     var getUploadCredentials = function (editor) {
-      return editor.getParam('images_upload_credentials');
+      return editor.getParam("images_upload_credentials");
     };
     var Settings = {
       hasDimensions: hasDimensions,
@@ -60,10 +60,13 @@ var image = (function (domGlobals) {
       getUploadUrl: getUploadUrl,
       getUploadHandler: getUploadHandler,
       getUploadBasePath: getUploadBasePath,
-      getUploadCredentials: getUploadCredentials
+      getUploadCredentials: getUploadCredentials,
     };
 
-    var Global = typeof domGlobals.window !== 'undefined' ? domGlobals.window : Function('return this;')();
+    var Global =
+      typeof domGlobals.window !== "undefined"
+        ? domGlobals.window
+        : Function("return this;")();
 
     var path = function (parts, scope) {
       var o = scope !== undefined && scope !== null ? scope : Global;
@@ -73,7 +76,7 @@ var image = (function (domGlobals) {
       return o;
     };
     var resolve = function (p, scope) {
-      var parts = p.split('.');
+      var parts = p.split(".");
       return path(parts, scope);
     };
 
@@ -83,35 +86,35 @@ var image = (function (domGlobals) {
     var getOrDie = function (name, scope) {
       var actual = unsafe(name, scope);
       if (actual === undefined || actual === null) {
-        throw new Error(name + ' not available on this browser');
+        throw new Error(name + " not available on this browser");
       }
       return actual;
     };
     var Global$1 = { getOrDie: getOrDie };
 
-    function FileReader () {
-      var f = Global$1.getOrDie('FileReader');
+    function FileReader() {
+      var f = Global$1.getOrDie("FileReader");
       return new f();
     }
 
-    var global$1 = tinymce.util.Tools.resolve('tinymce.util.Promise');
+    var global$1 = tinymce.util.Tools.resolve("tinymce.util.Promise");
 
-    var global$2 = tinymce.util.Tools.resolve('tinymce.util.Tools');
+    var global$2 = tinymce.util.Tools.resolve("tinymce.util.Tools");
 
-    var global$3 = tinymce.util.Tools.resolve('tinymce.util.XHR');
+    var global$3 = tinymce.util.Tools.resolve("tinymce.util.XHR");
 
     var parseIntAndGetMax = function (val1, val2) {
       return Math.max(parseInt(val1, 10), parseInt(val2, 10));
     };
     var getImageSize = function (url, callback) {
-      var img = domGlobals.document.createElement('img');
+      var img = domGlobals.document.createElement("img");
       function done(width, height) {
         if (img.parentNode) {
           img.parentNode.removeChild(img);
         }
         callback({
           width: width,
-          height: height
+          height: height,
         });
       }
       img.onload = function () {
@@ -123,10 +126,10 @@ var image = (function (domGlobals) {
         done(0, 0);
       };
       var style = img.style;
-      style.visibility = 'hidden';
-      style.position = 'fixed';
-      style.bottom = style.left = '0px';
-      style.width = style.height = 'auto';
+      style.visibility = "hidden";
+      style.position = "fixed";
+      style.bottom = style.left = "0px";
+      style.width = style.height = "auto";
       domGlobals.document.body.appendChild(img);
       img.src = url;
     };
@@ -149,43 +152,43 @@ var image = (function (domGlobals) {
     };
     var removePixelSuffix = function (value) {
       if (value) {
-        value = value.replace(/px$/, '');
+        value = value.replace(/px$/, "");
       }
       return value;
     };
     var addPixelSuffix = function (value) {
       if (value.length > 0 && /^[0-9]+$/.test(value)) {
-        value += 'px';
+        value += "px";
       }
       return value;
     };
     var mergeMargins = function (css) {
       if (css.margin) {
-        var splitMargin = css.margin.split(' ');
+        var splitMargin = css.margin.split(" ");
         switch (splitMargin.length) {
-        case 1:
-          css['margin-top'] = css['margin-top'] || splitMargin[0];
-          css['margin-right'] = css['margin-right'] || splitMargin[0];
-          css['margin-bottom'] = css['margin-bottom'] || splitMargin[0];
-          css['margin-left'] = css['margin-left'] || splitMargin[0];
-          break;
-        case 2:
-          css['margin-top'] = css['margin-top'] || splitMargin[0];
-          css['margin-right'] = css['margin-right'] || splitMargin[1];
-          css['margin-bottom'] = css['margin-bottom'] || splitMargin[0];
-          css['margin-left'] = css['margin-left'] || splitMargin[1];
-          break;
-        case 3:
-          css['margin-top'] = css['margin-top'] || splitMargin[0];
-          css['margin-right'] = css['margin-right'] || splitMargin[1];
-          css['margin-bottom'] = css['margin-bottom'] || splitMargin[2];
-          css['margin-left'] = css['margin-left'] || splitMargin[1];
-          break;
-        case 4:
-          css['margin-top'] = css['margin-top'] || splitMargin[0];
-          css['margin-right'] = css['margin-right'] || splitMargin[1];
-          css['margin-bottom'] = css['margin-bottom'] || splitMargin[2];
-          css['margin-left'] = css['margin-left'] || splitMargin[3];
+          case 1:
+            css["margin-top"] = css["margin-top"] || splitMargin[0];
+            css["margin-right"] = css["margin-right"] || splitMargin[0];
+            css["margin-bottom"] = css["margin-bottom"] || splitMargin[0];
+            css["margin-left"] = css["margin-left"] || splitMargin[0];
+            break;
+          case 2:
+            css["margin-top"] = css["margin-top"] || splitMargin[0];
+            css["margin-right"] = css["margin-right"] || splitMargin[1];
+            css["margin-bottom"] = css["margin-bottom"] || splitMargin[0];
+            css["margin-left"] = css["margin-left"] || splitMargin[1];
+            break;
+          case 3:
+            css["margin-top"] = css["margin-top"] || splitMargin[0];
+            css["margin-right"] = css["margin-right"] || splitMargin[1];
+            css["margin-bottom"] = css["margin-bottom"] || splitMargin[2];
+            css["margin-left"] = css["margin-left"] || splitMargin[1];
+            break;
+          case 4:
+            css["margin-top"] = css["margin-top"] || splitMargin[0];
+            css["margin-right"] = css["margin-right"] || splitMargin[1];
+            css["margin-bottom"] = css["margin-bottom"] || splitMargin[2];
+            css["margin-left"] = css["margin-left"] || splitMargin[3];
         }
         delete css.margin;
       }
@@ -193,14 +196,14 @@ var image = (function (domGlobals) {
     };
     var createImageList = function (editor, callback) {
       var imageList = Settings.getImageList(editor);
-      if (typeof imageList === 'string') {
+      if (typeof imageList === "string") {
         global$3.send({
           url: imageList,
           success: function (text) {
             callback(JSON.parse(text));
-          }
+          },
         });
-      } else if (typeof imageList === 'function') {
+      } else if (typeof imageList === "function") {
         imageList(callback);
       } else {
         callback(imageList);
@@ -218,7 +221,7 @@ var image = (function (domGlobals) {
         if (!data.width && !data.height && Settings.hasDimensions(editor)) {
           editor.dom.setAttribs(imgElm, {
             width: imgElm.clientWidth,
-            height: imgElm.clientHeight
+            height: imgElm.clientHeight,
           });
         }
         selectImage();
@@ -245,10 +248,10 @@ var image = (function (domGlobals) {
       mergeMargins: mergeMargins,
       createImageList: createImageList,
       waitLoadImage: waitLoadImage,
-      blobToDataUri: blobToDataUri
+      blobToDataUri: blobToDataUri,
     };
 
-    var global$4 = tinymce.util.Tools.resolve('tinymce.dom.DOMUtils');
+    var global$4 = tinymce.util.Tools.resolve("tinymce.dom.DOMUtils");
 
     var hasOwnProperty = Object.prototype.hasOwnProperty;
     var shallow = function (old, nu) {
@@ -261,7 +264,7 @@ var image = (function (domGlobals) {
           objects[i] = arguments[i];
         }
         if (objects.length === 0) {
-          throw new Error('Can\'t merge zero objects');
+          throw new Error("Can't merge zero objects");
         }
         var ret = {};
         for (var j = 0; j < objects.length; j++) {
@@ -279,48 +282,60 @@ var image = (function (domGlobals) {
 
     var DOM = global$4.DOM;
     var getHspace = function (image) {
-      if (image.style.marginLeft && image.style.marginRight && image.style.marginLeft === image.style.marginRight) {
+      if (
+        image.style.marginLeft &&
+        image.style.marginRight &&
+        image.style.marginLeft === image.style.marginRight
+      ) {
         return Utils.removePixelSuffix(image.style.marginLeft);
       } else {
-        return '';
+        return "";
       }
     };
     var getVspace = function (image) {
-      if (image.style.marginTop && image.style.marginBottom && image.style.marginTop === image.style.marginBottom) {
+      if (
+        image.style.marginTop &&
+        image.style.marginBottom &&
+        image.style.marginTop === image.style.marginBottom
+      ) {
         return Utils.removePixelSuffix(image.style.marginTop);
       } else {
-        return '';
+        return "";
       }
     };
     var getBorder = function (image) {
       if (image.style.borderWidth) {
         return Utils.removePixelSuffix(image.style.borderWidth);
       } else {
-        return '';
+        return "";
       }
     };
     var getAttrib = function (image, name) {
       if (image.hasAttribute(name)) {
         return image.getAttribute(name);
       } else {
-        return '';
+        return "";
       }
     };
     var getStyle = function (image, name) {
-      return image.style[name] ? image.style[name] : '';
+      return image.style[name] ? image.style[name] : "";
     };
     var hasCaption = function (image) {
-      return image.parentNode !== null && image.parentNode.nodeName === 'FIGURE';
+      return (
+        image.parentNode !== null && image.parentNode.nodeName === "FIGURE"
+      );
     };
     var setAttrib = function (image, name, value) {
       image.setAttribute(name, value);
     };
     var wrapInFigure = function (image) {
-      var figureElm = DOM.create('figure', { class: 'image' });
+      var figureElm = DOM.create("figure", { class: "image" });
       DOM.insertAfter(figureElm, image);
       figureElm.appendChild(image);
-      figureElm.appendChild(DOM.create('figcaption', { contentEditable: true }, 'Caption'));
-      figureElm.contentEditable = 'false';
+      figureElm.appendChild(
+        DOM.create("figcaption", { contentEditable: true }, "Caption")
+      );
+      figureElm.contentEditable = "false";
     };
     var removeFigure = function (image) {
       var figureElm = image.parentNode;
@@ -335,13 +350,13 @@ var image = (function (domGlobals) {
       }
     };
     var normalizeStyle = function (image, normalizeCss) {
-      var attrValue = image.getAttribute('style');
-      var value = normalizeCss(attrValue !== null ? attrValue : '');
+      var attrValue = image.getAttribute("style");
+      var value = normalizeCss(attrValue !== null ? attrValue : "");
       if (value.length > 0) {
-        image.setAttribute('style', value);
-        image.setAttribute('data-mce-style', value);
+        image.setAttribute("style", value);
+        image.setAttribute("data-mce-style", value);
       } else {
-        image.removeAttribute('style');
+        image.removeAttribute("style");
       }
     };
     var setSize = function (name, normalizeCss) {
@@ -379,53 +394,55 @@ var image = (function (domGlobals) {
       image.style.borderStyle = value;
     };
     var getBorderStyle = function (image) {
-      return getStyle(image, 'borderStyle');
+      return getStyle(image, "borderStyle");
     };
     var isFigure = function (elm) {
-      return elm.nodeName === 'FIGURE';
+      return elm.nodeName === "FIGURE";
     };
     var defaultData = function () {
       return {
-        src: '',
-        alt: '',
-        title: '',
-        width: '',
-        height: '',
-        class: '',
-        style: '',
+        src: "",
+        alt: "",
+        title: "",
+        width: "",
+        height: "",
+        class: "",
+        style: "",
         caption: false,
-        hspace: '',
-        vspace: '',
-        border: '',
-        borderStyle: ''
+        hspace: "",
+        vspace: "",
+        border: "",
+        borderStyle: "",
       };
     };
     var getStyleValue = function (normalizeCss, data) {
-      var image = domGlobals.document.createElement('img');
-      setAttrib(image, 'style', data.style);
-      if (getHspace(image) || data.hspace !== '') {
+      var image = domGlobals.document.createElement("img");
+      setAttrib(image, "style", data.style);
+      if (getHspace(image) || data.hspace !== "") {
         setHspace(image, data.hspace);
       }
-      if (getVspace(image) || data.vspace !== '') {
+      if (getVspace(image) || data.vspace !== "") {
         setVspace(image, data.vspace);
       }
-      if (getBorder(image) || data.border !== '') {
+      if (getBorder(image) || data.border !== "") {
         setBorder(image, data.border);
       }
-      if (getBorderStyle(image) || data.borderStyle !== '') {
+      if (getBorderStyle(image) || data.borderStyle !== "") {
         setBorderStyle(image, data.borderStyle);
       }
-      return normalizeCss(image.getAttribute('style'));
+      return normalizeCss(image.getAttribute("style"));
     };
     var create = function (normalizeCss, data) {
-      var image = domGlobals.document.createElement('img');
+      var image = domGlobals.document.createElement("img");
       write(normalizeCss, merge(data, { caption: false }), image);
-      setAttrib(image, 'alt', data.alt);
+      setAttrib(image, "alt", data.alt);
       if (data.caption) {
-        var figure = DOM.create('figure', { class: 'image' });
+        var figure = DOM.create("figure", { class: "image" });
         figure.appendChild(image);
-        figure.appendChild(DOM.create('figcaption', { contentEditable: true }, 'Caption'));
-        figure.contentEditable = 'false';
+        figure.appendChild(
+          DOM.create("figcaption", { contentEditable: true }, "Caption")
+        );
+        figure.contentEditable = "false";
         return figure;
       } else {
         return image;
@@ -433,18 +450,18 @@ var image = (function (domGlobals) {
     };
     var read = function (normalizeCss, image) {
       return {
-        src: getAttrib(image, 'src'),
-        alt: getAttrib(image, 'alt'),
-        title: getAttrib(image, 'title'),
-        width: getSize(image, 'width'),
-        height: getSize(image, 'height'),
-        class: getAttrib(image, 'class'),
-        style: normalizeCss(getAttrib(image, 'style')),
+        src: getAttrib(image, "src"),
+        alt: getAttrib(image, "alt"),
+        title: getAttrib(image, "title"),
+        width: getSize(image, "width"),
+        height: getSize(image, "height"),
+        class: getAttrib(image, "class"),
+        style: normalizeCss(getAttrib(image, "style")),
         caption: hasCaption(image),
         hspace: getHspace(image),
         vspace: getVspace(image),
         border: getBorder(image),
-        borderStyle: getStyle(image, 'borderStyle')
+        borderStyle: getStyle(image, "borderStyle"),
       };
     };
     var updateProp = function (image, oldData, newData, name, set) {
@@ -460,46 +477,105 @@ var image = (function (domGlobals) {
     };
     var write = function (normalizeCss, newData, image) {
       var oldData = read(normalizeCss, image);
-      updateProp(image, oldData, newData, 'caption', function (image, _name, _value) {
-        return toggleCaption(image);
-      });
-      updateProp(image, oldData, newData, 'src', setAttrib);
-      updateProp(image, oldData, newData, 'alt', setAttrib);
-      updateProp(image, oldData, newData, 'title', setAttrib);
-      updateProp(image, oldData, newData, 'width', setSize('width', normalizeCss));
-      updateProp(image, oldData, newData, 'height', setSize('height', normalizeCss));
-      updateProp(image, oldData, newData, 'class', setAttrib);
-      updateProp(image, oldData, newData, 'style', normalized(function (image, value) {
-        return setAttrib(image, 'style', value);
-      }, normalizeCss));
-      updateProp(image, oldData, newData, 'hspace', normalized(setHspace, normalizeCss));
-      updateProp(image, oldData, newData, 'vspace', normalized(setVspace, normalizeCss));
-      updateProp(image, oldData, newData, 'border', normalized(setBorder, normalizeCss));
-      updateProp(image, oldData, newData, 'borderStyle', normalized(setBorderStyle, normalizeCss));
+      updateProp(
+        image,
+        oldData,
+        newData,
+        "caption",
+        function (image, _name, _value) {
+          return toggleCaption(image);
+        }
+      );
+      updateProp(image, oldData, newData, "src", setAttrib);
+      updateProp(image, oldData, newData, "alt", setAttrib);
+      updateProp(image, oldData, newData, "title", setAttrib);
+      updateProp(
+        image,
+        oldData,
+        newData,
+        "width",
+        setSize("width", normalizeCss)
+      );
+      updateProp(
+        image,
+        oldData,
+        newData,
+        "height",
+        setSize("height", normalizeCss)
+      );
+      updateProp(image, oldData, newData, "class", setAttrib);
+      updateProp(
+        image,
+        oldData,
+        newData,
+        "style",
+        normalized(function (image, value) {
+          return setAttrib(image, "style", value);
+        }, normalizeCss)
+      );
+      updateProp(
+        image,
+        oldData,
+        newData,
+        "hspace",
+        normalized(setHspace, normalizeCss)
+      );
+      updateProp(
+        image,
+        oldData,
+        newData,
+        "vspace",
+        normalized(setVspace, normalizeCss)
+      );
+      updateProp(
+        image,
+        oldData,
+        newData,
+        "border",
+        normalized(setBorder, normalizeCss)
+      );
+      updateProp(
+        image,
+        oldData,
+        newData,
+        "borderStyle",
+        normalized(setBorderStyle, normalizeCss)
+      );
     };
 
     var normalizeCss = function (editor, cssText) {
       var css = editor.dom.styles.parse(cssText);
       var mergedCss = Utils.mergeMargins(css);
-      var compressed = editor.dom.styles.parse(editor.dom.styles.serialize(mergedCss));
+      var compressed = editor.dom.styles.parse(
+        editor.dom.styles.serialize(mergedCss)
+      );
       return editor.dom.styles.serialize(compressed);
     };
     var getSelectedImage = function (editor) {
       var imgElm = editor.selection.getNode();
-      var figureElm = editor.dom.getParent(imgElm, 'figure.image');
+      var figureElm = editor.dom.getParent(imgElm, "figure.image");
       if (figureElm) {
-        return editor.dom.select('img', figureElm)[0];
+        return editor.dom.select("img", figureElm)[0];
       }
-      if (imgElm && (imgElm.nodeName !== 'IMG' || imgElm.getAttribute('data-mce-object') || imgElm.getAttribute('data-mce-placeholder'))) {
+      if (
+        imgElm &&
+        (imgElm.nodeName !== "IMG" ||
+          imgElm.getAttribute("data-mce-object") ||
+          imgElm.getAttribute("data-mce-placeholder"))
+      ) {
         return null;
       }
       return imgElm;
     };
     var splitTextBlock = function (editor, figure) {
       var dom = editor.dom;
-      var textBlock = dom.getParent(figure.parentNode, function (node) {
-        return editor.schema.getTextBlockElements()[node.nodeName];
-      }, editor.getBody());
+      var textBlock = dom.getParent(
+        figure.parentNode,
+        function (node) {
+          return editor.schema.getTextBlockElements()[node.nodeName];
+        },
+        editor.getBody()
+      );
       if (textBlock) {
         return dom.split(textBlock, figure);
       } else {
@@ -508,19 +584,21 @@ var image = (function (domGlobals) {
     };
     var readImageDataFromSelection = function (editor) {
       var image = getSelectedImage(editor);
-      return image ? read(function (css) {
-        return normalizeCss(editor, css);
-      }, image) : defaultData();
+      return image
+        ? read(function (css) {
+            return normalizeCss(editor, css);
+          }, image)
+        : defaultData();
     };
     var insertImageAtCaret = function (editor, data) {
       var elm = create(function (css) {
         return normalizeCss(editor, css);
       }, data);
-      editor.dom.setAttrib(elm, 'data-mce-id', '__mcenew');
+      editor.dom.setAttrib(elm, "data-mce-id", "__mcenew");
       editor.focus();
       editor.selection.setContent(elm.outerHTML);
       var insertedElm = editor.dom.select('*[data-mce-id="__mcenew"]')[0];
-      editor.dom.setAttrib(insertedElm, 'data-mce-id', null);
+      editor.dom.setAttrib(insertedElm, "data-mce-id", null);
       if (isFigure(insertedElm)) {
         var figure = splitTextBlock(editor, insertedElm);
         editor.selection.select(figure);
@@ -529,25 +607,31 @@ var image = (function (domGlobals) {
       }
     };
     var syncSrcAttr = function (editor, image) {
-      editor.dom.setAttrib(image, 'src', image.getAttribute('src'));
+      editor.dom.setAttrib(image, "src", image.getAttribute("src"));
     };
     var deleteImage = function (editor, image) {
       if (image) {
-        var elm = editor.dom.is(image.parentNode, 'figure.image') ? image.parentNode : image;
+        var elm = editor.dom.is(image.parentNode, "figure.image")
+          ? image.parentNode
+          : image;
         editor.dom.remove(elm);
         editor.focus();
         editor.nodeChanged();
         if (editor.dom.isEmpty(editor.getBody())) {
-          editor.setContent('');
+          editor.setContent("");
           editor.selection.setCursorLocation();
         }
       }
     };
     var writeImageDataToSelection = function (editor, data) {
       var image = getSelectedImage(editor);
-      write(function (css) {
-        return normalizeCss(editor, css);
-      }, data, image);
+      write(
+        function (css) {
+          return normalizeCss(editor, css);
+        },
+        data,
+        image
+      );
       syncSrcAttr(editor, image);
       if (isFigure(image.parentNode)) {
         var figure = image.parentNode;
@@ -580,36 +664,47 @@ var image = (function (domGlobals) {
         }
         var data = rootControl.toJSON();
         var css = dom.parseStyle(data.style);
-        rootControl.find('#vspace').value('');
-        rootControl.find('#hspace').value('');
+        rootControl.find("#vspace").value("");
+        rootControl.find("#hspace").value("");
         css = Utils.mergeMargins(css);
-        if (css['margin-top'] && css['margin-bottom'] || css['margin-right'] && css['margin-left']) {
-          if (css['margin-top'] === css['margin-bottom']) {
-            rootControl.find('#vspace').value(Utils.removePixelSuffix(css['margin-top']));
+        if (
+          (css["margin-top"] && css["margin-bottom"]) ||
+          (css["margin-right"] && css["margin-left"])
+        ) {
+          if (css["margin-top"] === css["margin-bottom"]) {
+            rootControl
+              .find("#vspace")
+              .value(Utils.removePixelSuffix(css["margin-top"]));
           } else {
-            rootControl.find('#vspace').value('');
+            rootControl.find("#vspace").value("");
           }
-          if (css['margin-right'] === css['margin-left']) {
-            rootControl.find('#hspace').value(Utils.removePixelSuffix(css['margin-right']));
+          if (css["margin-right"] === css["margin-left"]) {
+            rootControl
+              .find("#hspace")
+              .value(Utils.removePixelSuffix(css["margin-right"]));
           } else {
-            rootControl.find('#hspace').value('');
+            rootControl.find("#hspace").value("");
           }
         }
-        if (css['border-width']) {
-          rootControl.find('#border').value(Utils.removePixelSuffix(css['border-width']));
+        if (css["border-width"]) {
+          rootControl
+            .find("#border")
+            .value(Utils.removePixelSuffix(css["border-width"]));
         } else {
-          rootControl.find('#border').value('');
+          rootControl.find("#border").value("");
         }
-        if (css['border-style']) {
-          rootControl.find('#borderStyle').value(css['border-style']);
+        if (css["border-style"]) {
+          rootControl.find("#borderStyle").value(css["border-style"]);
         } else {
-          rootControl.find('#borderStyle').value('');
+          rootControl.find("#borderStyle").value("");
         }
-        rootControl.find('#style').value(dom.serializeStyle(dom.parseStyle(dom.serializeStyle(css))));
+        rootControl
+          .find("#style")
+          .value(dom.serializeStyle(dom.parseStyle(dom.serializeStyle(css))));
       };
     };
     var updateStyle = function (editor, win) {
-      win.find('#style').each(function (ctrl) {
+      win.find("#style").each(function (ctrl) {
         var value = getStyleValue(function (css) {
           return normalizeCss(editor, css);
         }, merge(defaultData(), win.toJSON()));
@@ -618,46 +713,46 @@ var image = (function (domGlobals) {
     };
     var makeTab = function (editor) {
       return {
-        title: 'Advanced',
-        type: 'form',
-        pack: 'start',
+        title: "Advanced",
+        type: "form",
+        pack: "start",
         items: [
           {
-            label: 'Style',
-            name: 'style',
-            type: 'textbox',
-            onchange: updateVSpaceHSpaceBorder(editor)
+            label: "Style",
+            name: "style",
+            type: "textbox",
+            onchange: updateVSpaceHSpaceBorder(editor),
           },
           {
-            type: 'form',
-            layout: 'grid',
-            packV: 'start',
+            type: "form",
+            layout: "grid",
+            packV: "start",
             columns: 2,
             padding: 0,
             defaults: {
-              type: 'textbox',
+              type: "textbox",
               maxWidth: 50,
               onchange: function (evt) {
                 updateStyle(editor, evt.control.rootControl);
-              }
+              },
             },
             items: [
               {
-                label: 'Vertical space',
-                name: 'vspace'
+                label: "Vertical space",
+                name: "vspace",
               },
               {
-                label: 'Border width',
-                name: 'border'
+                label: "Border width",
+                name: "border",
               },
               {
-                label: 'Horizontal space',
-                name: 'hspace'
+                label: "Horizontal space",
+                name: "hspace",
               },
               {
-                label: 'Border style',
-                type: 'listbox',
-                name: 'borderStyle',
+                label: "Border style",
+                type: "listbox",
+                name: "borderStyle",
                 width: 90,
                 maxWidth: 90,
                 onselect: function (evt) {
@@ -665,83 +760,83 @@ var image = (function (domGlobals) {
                 },
                 values: [
                   {
-                    text: 'Select...',
-                    value: ''
+                    text: "Select...",
+                    value: "",
                   },
                   {
-                    text: 'Solid',
-                    value: 'solid'
+                    text: "Solid",
+                    value: "solid",
                   },
                   {
-                    text: 'Dotted',
-                    value: 'dotted'
+                    text: "Dotted",
+                    value: "dotted",
                   },
                   {
-                    text: 'Dashed',
-                    value: 'dashed'
+                    text: "Dashed",
+                    value: "dashed",
                   },
                   {
-                    text: 'Double',
-                    value: 'double'
+                    text: "Double",
+                    value: "double",
                   },
                   {
-                    text: 'Groove',
-                    value: 'groove'
+                    text: "Groove",
+                    value: "groove",
                   },
                   {
-                    text: 'Ridge',
-                    value: 'ridge'
+                    text: "Ridge",
+                    value: "ridge",
                   },
                   {
-                    text: 'Inset',
-                    value: 'inset'
+                    text: "Inset",
+                    value: "inset",
                   },
                   {
-                    text: 'Outset',
-                    value: 'outset'
+                    text: "Outset",
+                    value: "outset",
                   },
                   {
-                    text: 'None',
-                    value: 'none'
+                    text: "None",
+                    value: "none",
                   },
                   {
-                    text: 'Hidden',
-                    value: 'hidden'
-                  }
-                ]
-              }
-            ]
-          }
-        ]
+                    text: "Hidden",
+                    value: "hidden",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
       };
     };
     var AdvTab = { makeTab: makeTab };
 
     var doSyncSize = function (widthCtrl, heightCtrl) {
-      widthCtrl.state.set('oldVal', widthCtrl.value());
-      heightCtrl.state.set('oldVal', heightCtrl.value());
+      widthCtrl.state.set("oldVal", widthCtrl.value());
+      heightCtrl.state.set("oldVal", heightCtrl.value());
     };
     var doSizeControls = function (win, f) {
-      var widthCtrl = win.find('#width')[0];
-      var heightCtrl = win.find('#height')[0];
-      var constrained = win.find('#constrain')[0];
+      var widthCtrl = win.find("#width")[0];
+      var heightCtrl = win.find("#height")[0];
+      var constrained = win.find("#constrain")[0];
       if (widthCtrl && heightCtrl && constrained) {
         f(widthCtrl, heightCtrl, constrained.checked());
       }
     };
     var doUpdateSize = function (widthCtrl, heightCtrl, isContrained) {
-      var oldWidth = widthCtrl.state.get('oldVal');
-      var oldHeight = heightCtrl.state.get('oldVal');
+      var oldWidth = widthCtrl.state.get("oldVal");
+      var oldHeight = heightCtrl.state.get("oldVal");
       var newWidth = widthCtrl.value();
       var newHeight = heightCtrl.value();
       if (isContrained && oldWidth && oldHeight && newWidth && newHeight) {
         if (newWidth !== oldWidth) {
-          newHeight = Math.round(newWidth / oldWidth * newHeight);
+          newHeight = Math.round((newWidth / oldWidth) * newHeight);
           if (!isNaN(newHeight)) {
             heightCtrl.value(newHeight);
           }
         } else {
-          newWidth = Math.round(newHeight / oldHeight * newWidth);
+          newWidth = Math.round((newHeight / oldHeight) * newWidth);
           if (!isNaN(newWidth)) {
             widthCtrl.value(newWidth);
           }
@@ -760,45 +855,45 @@ var image = (function (domGlobals) {
         updateSize(evt.control.rootControl);
       };
       return {
-        type: 'container',
-        label: 'Dimensions',
-        layout: 'flex',
-        align: 'center',
+        type: "container",
+        label: "Dimensions",
+        layout: "flex",
+        align: "center",
         spacing: 5,
         items: [
           {
-            name: 'width',
-            type: 'textbox',
+            name: "width",
+            type: "textbox",
             maxLength: 5,
             size: 5,
             onchange: recalcSize,
-            ariaLabel: 'Width'
+            ariaLabel: "Width",
           },
           {
-            type: 'label',
-            text: 'x'
+            type: "label",
+            text: "x",
           },
           {
-            name: 'height',
-            type: 'textbox',
+            name: "height",
+            type: "textbox",
             maxLength: 5,
             size: 5,
             onchange: recalcSize,
-            ariaLabel: 'Height'
+            ariaLabel: "Height",
           },
           {
-            name: 'constrain',
-            type: 'checkbox',
+            name: "constrain",
+            type: "checkbox",
             checked: true,
-            text: 'Constrain proportions'
-          }
-        ]
+            text: "Constrain proportions",
+          },
+        ],
       };
     };
     var SizeManager = {
       createUi: createUi,
       syncSize: syncSize,
-      updateSize: updateSize
+      updateSize: updateSize,
     };
 
     var onSrcChange = function (evt, editor) {
@@ -806,28 +901,35 @@ var image = (function (domGlobals) {
       var meta = evt.meta || {};
       var control = evt.control;
       var rootControl = control.rootControl;
-      var imageListCtrl = rootControl.find('#image-list')[0];
+      var imageListCtrl = rootControl.find("#image-list")[0];
       if (imageListCtrl) {
-        imageListCtrl.value(editor.convertURL(control.value(), 'src'));
+        imageListCtrl.value(editor.convertURL(control.value(), "src"));
       }
       global$2.each(meta, function (value, key) {
-        rootControl.find('#' + key).value(value);
+        rootControl.find("#" + key).value(value);
       });
       if (!meta.width && !meta.height) {
-        srcURL = editor.convertURL(control.value(), 'src');
+        srcURL = editor.convertURL(control.value(), "src");
         prependURL = Settings.getPrependUrl(editor);
-        absoluteURLPattern = new RegExp('^(?:[a-z]+:)?//', 'i');
-        if (prependURL && !absoluteURLPattern.test(srcURL) && srcURL.substring(0, prependURL.length) !== prependURL) {
+        absoluteURLPattern = new RegExp("^(?:[a-z]+:)?//", "i");
+        if (
+          prependURL &&
+          !absoluteURLPattern.test(srcURL) &&
+          srcURL.substring(0, prependURL.length) !== prependURL
+        ) {
           srcURL = prependURL + srcURL;
         }
         control.value(srcURL);
-        Utils.getImageSize(editor.documentBaseURI.toAbsolute(control.value()), function (data) {
-          if (data.width && data.height && Settings.hasDimensions(editor)) {
-            rootControl.find('#width').value(data.width);
-            rootControl.find('#height').value(data.height);
-            SizeManager.syncSize(rootControl);
+        Utils.getImageSize(
+          editor.documentBaseURI.toAbsolute(control.value()),
+          function (data) {
+            if (data.width && data.height && Settings.hasDimensions(editor)) {
+              rootControl.find("#width").value(data.width);
+              rootControl.find("#height").value(data.height);
+              SizeManager.syncSize(rootControl);
+            }
           }
-        });
+        );
       }
     };
     var onBeforeCall = function (evt) {
@@ -836,30 +938,30 @@ var image = (function (domGlobals) {
     var getGeneralItems = function (editor, imageListCtrl) {
       var generalFormItems = [
         {
-          name: 'src',
-          type: 'filepicker',
-          filetype: 'image',
-          label: 'Source',
+          name: "src",
+          type: "filepicker",
+          filetype: "image",
+          label: "Source",
           autofocus: true,
           onchange: function (evt) {
             onSrcChange(evt, editor);
           },
-          onbeforecall: onBeforeCall
+          onbeforecall: onBeforeCall,
         },
-        imageListCtrl
+        imageListCtrl,
       ];
       if (Settings.hasDescription(editor)) {
         generalFormItems.push({
-          name: 'alt',
-          type: 'textbox',
-          label: 'Image description'
+          name: "alt",
+          type: "textbox",
+          label: "Image description",
         });
       }
       if (Settings.hasImageTitle(editor)) {
         generalFormItems.push({
-          name: 'title',
-          type: 'textbox',
-          label: 'Image Title'
+          name: "title",
+          type: "textbox",
+          label: "Image Title",
         });
       }
       if (Settings.hasDimensions(editor)) {
@@ -867,44 +969,47 @@ var image = (function (domGlobals) {
       }
       if (Settings.getClassList(editor)) {
         generalFormItems.push({
-          name: 'class',
-          type: 'listbox',
-          label: 'Class',
-          values: Utils.buildListItems(Settings.getClassList(editor), function (item) {
-            if (item.value) {
-              item.textStyle = function () {
-                return editor.formatter.getCssText({
-                  inline: 'img',
-                  classes: [item.value]
-                });
-              };
+          name: "class",
+          type: "listbox",
+          label: "Class",
+          values: Utils.buildListItems(
+            Settings.getClassList(editor),
+            function (item) {
+              if (item.value) {
+                item.textStyle = function () {
+                  return editor.forNotMatter.getCssText({
+                    inline: "img",
+                    classes: [item.value],
+                  });
+                };
+              }
             }
-          })
+          ),
         });
       }
       if (Settings.hasImageCaption(editor)) {
         generalFormItems.push({
-          name: 'caption',
-          type: 'checkbox',
-          label: 'Caption'
+          name: "caption",
+          type: "checkbox",
+          label: "Caption",
         });
       }
       return generalFormItems;
     };
     var makeTab$1 = function (editor, imageListCtrl) {
       return {
-        title: 'General',
-        type: 'form',
-        items: getGeneralItems(editor, imageListCtrl)
+        title: "General",
+        type: "form",
+        items: getGeneralItems(editor, imageListCtrl),
       };
     };
     var MainTab = {
       makeTab: makeTab$1,
-      getGeneralItems: getGeneralItems
+      getGeneralItems: getGeneralItems,
     };
 
     var url = function () {
-      return Global$1.getOrDie('URL');
+      return Global$1.getOrDie("URL");
     };
     var createObjectURL = function (blob) {
       return url().createObjectURL(blob);
@@ -914,51 +1019,53 @@ var image = (function (domGlobals) {
     };
     var URL = {
       createObjectURL: createObjectURL,
-      revokeObjectURL: revokeObjectURL
+      revokeObjectURL: revokeObjectURL,
     };
 
-    var global$5 = tinymce.util.Tools.resolve('tinymce.ui.Factory');
+    var global$5 = tinymce.util.Tools.resolve("tinymce.ui.Factory");
 
-    function XMLHttpRequest () {
-      var f = Global$1.getOrDie('XMLHttpRequest');
+    function XMLHttpRequest() {
+      var f = Global$1.getOrDie("XMLHttpRequest");
       return new f();
     }
 
-    var noop = function () {
-    };
+    var noop = function () {};
     var pathJoin = function (path1, path2) {
       if (path1) {
-        return path1.replace(/\/$/, '') + '/' + path2.replace(/^\//, '');
+        return path1.replace(/\/$/, "") + "/" + path2.replace(/^\//, "");
       }
       return path2;
     };
-    function Uploader (settings) {
+    function Uploader(settings) {
       var defaultHandler = function (blobInfo, success, failure, progress) {
         var xhr, formData;
         xhr = XMLHttpRequest();
-        xhr.open('POST', settings.url);
+        xhr.open("POST", settings.url);
         xhr.withCredentials = settings.credentials;
         xhr.upload.onprogress = function (e) {
-          progress(e.loaded / e.total * 100);
+          progress((e.loaded / e.total) * 100);
         };
         xhr.onerror = function () {
-          failure('Image upload failed due to a XHR Transport error. Code: ' + xhr.status);
+          failure(
+            "Image upload failed due to a XHR Transport error. Code: " +
+              xhr.status
+          );
         };
         xhr.onload = function () {
           var json;
           if (xhr.status < 200 || xhr.status >= 300) {
-            failure('HTTP Error: ' + xhr.status);
+            failure("HTTP Error: " + xhr.status);
             return;
           }
           json = JSON.parse(xhr.responseText);
-          if (!json || typeof json.location !== 'string') {
-            failure('Invalid JSON: ' + xhr.responseText);
+          if (!json || typeof json.location !== "string") {
+            failure("Invalid JSON: " + xhr.responseText);
             return;
           }
           success(pathJoin(settings.basePath, json.location));
         };
         formData = new domGlobals.FormData();
-        formData.append('file', blobInfo.blob(), blobInfo.filename());
+        formData.append("file", blobInfo.blob(), blobInfo.filename());
         xhr.send(formData);
       };
       var uploadBlob = function (blobInfo, handler) {
@@ -974,18 +1081,23 @@ var image = (function (domGlobals) {
         return handler === defaultHandler;
       };
       var upload = function (blobInfo) {
-        return !settings.url && isDefaultHandler(settings.handler) ? global$1.reject('Upload url missing from the settings.') : uploadBlob(blobInfo, settings.handler);
+        return !settings.url && isDefaultHandler(settings.handler)
+          ? global$1.reject("Upload url missing from the settings.")
+          : uploadBlob(blobInfo, settings.handler);
       };
-      settings = global$2.extend({
-        credentials: false,
-        handler: defaultHandler
-      }, settings);
+      settings = global$2.extend(
+        {
+          credentials: false,
+          handler: defaultHandler,
+        },
+        settings
+      );
       return { upload: upload };
     }
 
     var onFileInput = function (editor) {
       return function (evt) {
-        var Throbber = global$5.get('Throbber');
+        var Throbber = global$5.get("Throbber");
         var rootControl = evt.control.rootControl;
         var throbber = new Throbber(rootControl.getEl());
         var file = evt.control.value();
@@ -994,71 +1106,73 @@ var image = (function (domGlobals) {
           url: Settings.getUploadUrl(editor),
           basePath: Settings.getUploadBasePath(editor),
           credentials: Settings.getUploadCredentials(editor),
-          handler: Settings.getUploadHandler(editor)
+          handler: Settings.getUploadHandler(editor),
         });
         var finalize = function () {
           throbber.hide();
           URL.revokeObjectURL(blobUri);
         };
         throbber.show();
-        return Utils.blobToDataUri(file).then(function (dataUrl) {
-          var blobInfo = editor.editorUpload.blobCache.create({
-            blob: file,
-            blobUri: blobUri,
-            name: file.name ? file.name.replace(/\.[^\.]+$/, '') : null,
-            base64: dataUrl.split(',')[1]
-          });
-          return uploader.upload(blobInfo).then(function (url) {
-            var src = rootControl.find('#src');
-            src.value(url);
-            rootControl.find('tabpanel')[0].activateTab(0);
-            src.fire('change');
+        return Utils.blobToDataUri(file)
+          .then(function (dataUrl) {
+            var blobInfo = editor.editorUpload.blobCache.create({
+              blob: file,
+              blobUri: blobUri,
+              name: file.name ? file.name.replace(/\.[^\.]+$/, "") : null,
+              base64: dataUrl.split(",")[1],
+            });
+            return uploader.upload(blobInfo).then(function (url) {
+              var src = rootControl.find("#src");
+              src.value(url);
+              rootControl.find("tabpanel")[0].activateTab(0);
+              src.fire("change");
+              finalize();
+              return url;
+            });
+          })
+          .catch(function (err) {
+            editor.windowManager.alert(err);
             finalize();
-            return url;
           });
-        }).catch(function (err) {
-          editor.windowManager.alert(err);
-          finalize();
-        });
       };
     };
-    var acceptExts = '.jpg,.jpeg,.png,.gif';
+    var acceptExts = ".jpg,.jpeg,.png,.gif";
     var makeTab$2 = function (editor) {
       return {
-        title: 'Upload',
-        type: 'form',
-        layout: 'flex',
-        direction: 'column',
-        align: 'stretch',
-        padding: '20 20 20 20',
+        title: "Upload",
+        type: "form",
+        layout: "flex",
+        direction: "column",
+        align: "stretch",
+        padding: "20 20 20 20",
         items: [
           {
-            type: 'container',
-            layout: 'flex',
-            direction: 'column',
-            align: 'center',
+            type: "container",
+            layout: "flex",
+            direction: "column",
+            align: "center",
             spacing: 10,
             items: [
               {
-                text: 'Browse for an image',
-                type: 'browsebutton',
+                text: "Browse for an image",
+                type: "browsebutton",
                 accept: acceptExts,
-                onchange: onFileInput(editor)
+                onchange: onFileInput(editor),
               },
               {
-                text: 'OR',
-                type: 'label'
-              }
-            ]
+                text: "OR",
+                type: "label",
+              },
+            ],
           },
           {
-            text: 'Drop an image here',
-            type: 'dropzone',
+            text: "Drop an image here",
+            type: "dropzone",
             accept: acceptExts,
             height: 100,
-            onchange: onFileInput(editor)
-          }
-        ]
+            onchange: onFileInput(editor),
+          },
+        ],
       };
     };
     var UploadTab = { makeTab: makeTab$2 };
@@ -1087,55 +1201,71 @@ var image = (function (domGlobals) {
       });
       editor.editorUpload.uploadImagesAuto();
     };
-    function Dialog (editor) {
+    function Dialog(editor) {
       function showDialog(imageList) {
         var data = readImageDataFromSelection(editor);
         var win, imageListCtrl;
         if (imageList) {
           imageListCtrl = {
-            type: 'listbox',
-            label: 'Image list',
-            name: 'image-list',
-            values: Utils.buildListItems(imageList, function (item) {
-              item.value = editor.convertURL(item.value || item.url, 'src');
-            }, [{
-                text: 'None',
-                value: ''
-              }]),
-            value: data.src && editor.convertURL(data.src, 'src'),
+            type: "listbox",
+            label: "Image list",
+            name: "image-list",
+            values: Utils.buildListItems(
+              imageList,
+              function (item) {
+                item.value = editor.convertURL(item.value || item.url, "src");
+              },
+              [
+                {
+                  text: "None",
+                  value: "",
+                },
+              ]
+            ),
+            value: data.src && editor.convertURL(data.src, "src"),
             onselect: function (e) {
-              var altCtrl = win.find('#alt');
-              if (!altCtrl.value() || e.lastControl && altCtrl.value() === e.lastControl.text()) {
+              var altCtrl = win.find("#alt");
+              if (
+                !altCtrl.value() ||
+                (e.lastControl && altCtrl.value() === e.lastControl.text())
+              ) {
                 altCtrl.value(e.control.text());
               }
-              win.find('#src').value(e.control.value()).fire('change');
+              win.find("#src").value(e.control.value()).fire("change");
             },
             onPostRender: function () {
               imageListCtrl = this;
-            }
+            },
           };
         }
-        if (Settings.hasAdvTab(editor) || Settings.hasUploadUrl(editor) || Settings.hasUploadHandler(editor)) {
+        if (
+          Settings.hasAdvTab(editor) ||
+          Settings.hasUploadUrl(editor) ||
+          Settings.hasUploadHandler(editor)
+        ) {
           var body = [MainTab.makeTab(editor, imageListCtrl)];
           if (Settings.hasAdvTab(editor)) {
             body.push(AdvTab.makeTab(editor));
           }
-          if (Settings.hasUploadUrl(editor) || Settings.hasUploadHandler(editor)) {
+          if (
+            Settings.hasUploadUrl(editor) ||
+            Settings.hasUploadHandler(editor)
+          ) {
             body.push(UploadTab.makeTab(editor));
           }
           win = editor.windowManager.open({
-            title: 'Insert/edit image',
+            title: "Insert/edit image",
             data: data,
-            bodyType: 'tabpanel',
+            bodyType: "tabpanel",
             body: body,
-            onSubmit: curry(submitForm, editor)
+            onSubmit: curry(submitForm, editor),
           });
         } else {
           win = editor.windowManager.open({
-            title: 'Insert/edit image',
+            title: "Insert/edit image",
             data: data,
             body: MainTab.getGeneralItems(editor, imageListCtrl),
-            onSubmit: curry(submitForm, editor)
+            onSubmit: curry(submitForm, editor),
           });
         }
         SizeManager.syncSize(win);
@@ -1147,63 +1277,66 @@ var image = (function (domGlobals) {
     }
 
     var register = function (editor) {
-      editor.addCommand('mceImage', Dialog(editor).open);
+      editor.addCommand("mceImage", Dialog(editor).open);
     };
     var Commands = { register: register };
 
     var hasImageClass = function (node) {
-      var className = node.attr('class');
+      var className = node.attr("class");
       return className && /\bimage\b/.test(className);
     };
     var toggleContentEditableState = function (state) {
       return function (nodes) {
-        var i = nodes.length, node;
+        var i = nodes.length,
+          node;
         var toggleContentEditable = function (node) {
-          node.attr('contenteditable', state ? 'true' : null);
+          node.attr("contenteditable", state ? "true" : null);
         };
         while (i--) {
           node = nodes[i];
           if (hasImageClass(node)) {
-            node.attr('contenteditable', state ? 'false' : null);
-            global$2.each(node.getAll('figcaption'), toggleContentEditable);
+            node.attr("contenteditable", state ? "false" : null);
+            global$2.each(node.getAll("figcaption"), toggleContentEditable);
           }
         }
       };
     };
     var setup = function (editor) {
-      editor.on('preInit', function () {
-        editor.parser.addNodeFilter('figure', toggleContentEditableState(true));
-        editor.serializer.addNodeFilter('figure', toggleContentEditableState(false));
+      editor.on("preInit", function () {
+        editor.parser.addNodeFilter("figure", toggleContentEditableState(true));
+        editor.serializer.addNodeFilter(
+          "figure",
+          toggleContentEditableState(false)
+        );
       });
     };
     var FilterContent = { setup: setup };
 
     var register$1 = function (editor) {
-      editor.addButton('image', {
-        icon: 'image',
-        tooltip: 'Insert/edit image',
+      editor.addButton("image", {
+        icon: "image",
+        tooltip: "Insert/edit image",
         onclick: Dialog(editor).open,
-        stateSelector: 'img:not([data-mce-object],[data-mce-placeholder]),figure.image'
+        stateSelector:
+          "img:not([data-mce-object],[data-mce-placeholder]),figure.image",
       });
-      editor.addMenuItem('image', {
-        icon: 'image',
-        text: 'Image',
+      editor.addMenuItem("image", {
+        icon: "image",
+        text: "Image",
         onclick: Dialog(editor).open,
-        context: 'insert',
-        prependToContext: true
+        context: "insert",
+        prependToContext: true,
       });
     };
     var Buttons = { register: register$1 };
 
-    global.add('image', function (editor) {
+    global.add("image", function (editor) {
       FilterContent.setup(editor);
       Buttons.register(editor);
       Commands.register(editor);
     });
-    function Plugin () {
-    }
+    function Plugin() {}
 
     return Plugin;
-
-}(window));
+  })(window);
 })();

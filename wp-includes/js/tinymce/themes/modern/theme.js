@@ -1,69 +1,69 @@
 (function () {
-var modern = (function (domGlobals) {
-    'use strict';
+  var modern = (function (domGlobals) {
+    "use strict";
 
-    var global = tinymce.util.Tools.resolve('tinymce.ThemeManager');
+    var global = tinymce.util.Tools.resolve("tinymce.ThemeManager");
 
-    var global$1 = tinymce.util.Tools.resolve('tinymce.EditorManager');
+    var global$1 = tinymce.util.Tools.resolve("tinymce.EditorManager");
 
-    var global$2 = tinymce.util.Tools.resolve('tinymce.util.Tools');
+    var global$2 = tinymce.util.Tools.resolve("tinymce.util.Tools");
 
     var isBrandingEnabled = function (editor) {
-      return editor.getParam('branding', true, 'boolean');
+      return editor.getParam("branding", true, "boolean");
     };
     var hasMenubar = function (editor) {
       return getMenubar(editor) !== false;
     };
     var getMenubar = function (editor) {
-      return editor.getParam('menubar');
+      return editor.getParam("menubar");
     };
     var hasStatusbar = function (editor) {
-      return editor.getParam('statusbar', true, 'boolean');
+      return editor.getParam("statusbar", true, "boolean");
     };
     var getToolbarSize = function (editor) {
-      return editor.getParam('toolbar_items_size');
+      return editor.getParam("toolbar_items_size");
     };
     var isReadOnly = function (editor) {
-      return editor.getParam('readonly', false, 'boolean');
+      return editor.getParam("readonly", false, "boolean");
     };
     var getFixedToolbarContainer = function (editor) {
-      return editor.getParam('fixed_toolbar_container');
+      return editor.getParam("fixed_toolbar_container");
     };
     var getInlineToolbarPositionHandler = function (editor) {
-      return editor.getParam('inline_toolbar_position_handler');
+      return editor.getParam("inline_toolbar_position_handler");
     };
     var getMenu = function (editor) {
-      return editor.getParam('menu');
+      return editor.getParam("menu");
     };
     var getRemovedMenuItems = function (editor) {
-      return editor.getParam('removed_menuitems', '');
+      return editor.getParam("removed_menuitems", "");
     };
     var getMinWidth = function (editor) {
-      return editor.getParam('min_width', 100, 'number');
+      return editor.getParam("min_width", 100, "number");
     };
     var getMinHeight = function (editor) {
-      return editor.getParam('min_height', 100, 'number');
+      return editor.getParam("min_height", 100, "number");
     };
     var getMaxWidth = function (editor) {
-      return editor.getParam('max_width', 65535, 'number');
+      return editor.getParam("max_width", 65535, "number");
     };
     var getMaxHeight = function (editor) {
-      return editor.getParam('max_height', 65535, 'number');
+      return editor.getParam("max_height", 65535, "number");
     };
     var isSkinDisabled = function (editor) {
       return editor.settings.skin === false;
     };
     var isInline = function (editor) {
-      return editor.getParam('inline', false, 'boolean');
+      return editor.getParam("inline", false, "boolean");
     };
     var getResize = function (editor) {
-      var resize = editor.getParam('resize', 'vertical');
+      var resize = editor.getParam("resize", "vertical");
       if (resize === false) {
-        return 'none';
-      } else if (resize === 'both') {
-        return 'both';
+        return "none";
+      } else if (resize === "both") {
+        return "both";
       } else {
-        return 'vertical';
+        return "vertical";
       }
     };
     var getSkinUrl = function (editor) {
@@ -71,11 +71,11 @@ var modern = (function (domGlobals) {
       var skin = settings.skin;
       var skinUrl = settings.skin_url;
       if (skin !== false) {
-        var skinName = skin ? skin : 'lightgray';
+        var skinName = skin ? skin : "lightgray";
         if (skinUrl) {
           skinUrl = editor.documentBaseURI.toAbsolute(skinUrl);
         } else {
-          skinUrl = global$1.baseURL + '/skins/' + skinName;
+          skinUrl = global$1.baseURL + "/skins/" + skinName;
         }
       }
       return skinUrl;
@@ -83,18 +83,21 @@ var modern = (function (domGlobals) {
     var getIndexedToolbars = function (settings, defaultToolbar) {
       var toolbars = [];
       for (var i = 1; i < 10; i++) {
-        var toolbar = settings['toolbar' + i];
+        var toolbar = settings["toolbar" + i];
         if (!toolbar) {
           break;
         }
         toolbars.push(toolbar);
       }
-      var mainToolbar = settings.toolbar ? [settings.toolbar] : [defaultToolbar];
+      var mainToolbar = settings.toolbar
+        ? [settings.toolbar]
+        : [defaultToolbar];
       return toolbars.length > 0 ? toolbars : mainToolbar;
     };
     var getToolbars = function (editor) {
-      var toolbar = editor.getParam('toolbar');
-      var defaultToolbar = 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image';
+      var toolbar = editor.getParam("toolbar");
+      var defaultToolbar =
+        "undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image";
       if (toolbar === false) {
         return [];
       } else if (global$2.isArray(toolbar)) {
@@ -106,25 +109,25 @@ var modern = (function (domGlobals) {
       }
     };
 
-    var global$3 = tinymce.util.Tools.resolve('tinymce.dom.DOMUtils');
+    var global$3 = tinymce.util.Tools.resolve("tinymce.dom.DOMUtils");
 
-    var global$4 = tinymce.util.Tools.resolve('tinymce.ui.Factory');
+    var global$4 = tinymce.util.Tools.resolve("tinymce.ui.Factory");
 
-    var global$5 = tinymce.util.Tools.resolve('tinymce.util.I18n');
+    var global$5 = tinymce.util.Tools.resolve("tinymce.util.I18n");
 
     var fireSkinLoaded = function (editor) {
-      return editor.fire('SkinLoaded');
+      return editor.fire("SkinLoaded");
     };
     var fireResizeEditor = function (editor) {
-      return editor.fire('ResizeEditor');
+      return editor.fire("ResizeEditor");
     };
     var fireBeforeRenderUI = function (editor) {
-      return editor.fire('BeforeRenderUI');
+      return editor.fire("BeforeRenderUI");
     };
     var Events = {
       fireSkinLoaded: fireSkinLoaded,
       fireResizeEditor: fireResizeEditor,
-      fireBeforeRenderUI: fireBeforeRenderUI
+      fireBeforeRenderUI: fireBeforeRenderUI,
     };
 
     var focus = function (panel, type) {
@@ -136,21 +139,20 @@ var modern = (function (domGlobals) {
       };
     };
     var addKeys = function (editor, panel) {
-      editor.shortcuts.add('Alt+F9', '', focus(panel, 'menubar'));
-      editor.shortcuts.add('Alt+F10,F10', '', focus(panel, 'toolbar'));
-      editor.shortcuts.add('Alt+F11', '', focus(panel, 'elementpath'));
-      panel.on('cancel', function () {
+      editor.shortcuts.add("Alt+F9", "", focus(panel, "menubar"));
+      editor.shortcuts.add("Alt+F10,F10", "", focus(panel, "toolbar"));
+      editor.shortcuts.add("Alt+F11", "", focus(panel, "elementpath"));
+      panel.on("cancel", function () {
         editor.focus();
       });
     };
     var A11y = { addKeys: addKeys };
 
-    var global$6 = tinymce.util.Tools.resolve('tinymce.geom.Rect');
+    var global$6 = tinymce.util.Tools.resolve("tinymce.geom.Rect");
 
-    var global$7 = tinymce.util.Tools.resolve('tinymce.util.Delay');
+    var global$7 = tinymce.util.Tools.resolve("tinymce.util.Delay");
 
-    var noop = function () {
-    };
+    var noop = function () {};
     var constant = function (value) {
       return function () {
         return value;
@@ -162,7 +164,7 @@ var modern = (function (domGlobals) {
     var none = function () {
       return NONE;
     };
-    var NONE = function () {
+    var NONE = (function () {
       var eq = function (o) {
         return o.isNone();
       };
@@ -182,7 +184,7 @@ var modern = (function (domGlobals) {
         getOr: id,
         getOrThunk: call,
         getOrDie: function (msg) {
-          throw new Error(msg || 'error: getOrDie called on none.');
+          throw new Error(msg || "error: getOrDie called on none.");
         },
         getOrNull: constant(null),
         getOrUndefined: constant(undefined),
@@ -199,13 +201,13 @@ var modern = (function (domGlobals) {
         toArray: function () {
           return [];
         },
-        toString: constant('none()')
+        toString: constant("none()"),
       };
       if (Object.freeze) {
         Object.freeze(me);
       }
       return me;
-    }();
+    })();
     var some = function (a) {
       var constant_a = constant(a);
       var self = function () {
@@ -246,7 +248,7 @@ var modern = (function (domGlobals) {
           return [a];
         },
         toString: function () {
-          return 'some(' + a + ')';
+          return "some(" + a + ")";
         },
         equals: function (o) {
           return o.is(a);
@@ -255,7 +257,7 @@ var modern = (function (domGlobals) {
           return o.fold(never, function (b) {
             return elementEq(a, b);
           });
-        }
+        },
       };
       return me;
     };
@@ -265,18 +267,21 @@ var modern = (function (domGlobals) {
     var Option = {
       some: some,
       none: none,
-      from: from
+      from: from,
     };
 
     var getUiContainerDelta = function (ctrl) {
       var uiContainer = getUiContainer(ctrl);
-      if (uiContainer && global$3.DOM.getStyle(uiContainer, 'position', true) !== 'static') {
+      if (
+        uiContainer &&
+        global$3.DOM.getStyle(uiContainer, "position", true) !== "static"
+      ) {
         var containerPos = global$3.DOM.getPos(uiContainer);
         var dx = uiContainer.scrollLeft - containerPos.x;
         var dy = uiContainer.scrollTop - containerPos.y;
         return Option.some({
           x: dx,
-          y: dy
+          y: dy,
         });
       } else {
         return Option.none();
@@ -290,13 +295,13 @@ var modern = (function (domGlobals) {
       return ctrl ? ctrl.getRoot().uiContainer : null;
     };
     var inheritUiContainer = function (fromCtrl, toCtrl) {
-      return toCtrl.uiContainer = getUiContainer(fromCtrl);
+      return (toCtrl.uiContainer = getUiContainer(fromCtrl));
     };
     var UiContainer = {
       getUiContainerDelta: getUiContainerDelta,
       setUiContainer: setUiContainer,
       getUiContainer: getUiContainer,
-      inheritUiContainer: inheritUiContainer
+      inheritUiContainer: inheritUiContainer,
     };
 
     var createToolbar = function (editor, items, size) {
@@ -310,48 +315,55 @@ var modern = (function (domGlobals) {
         var bindSelectorChanged = function () {
           var selection = editor.selection;
           if (item.settings.stateSelector) {
-            selection.selectorChanged(item.settings.stateSelector, function (state) {
-              item.active(state);
-            }, true);
+            selection.selectorChanged(
+              item.settings.stateSelector,
+              function (state) {
+                item.active(state);
+              },
+              true
+            );
           }
           if (item.settings.disabledStateSelector) {
-            selection.selectorChanged(item.settings.disabledStateSelector, function (state) {
-              item.disabled(state);
-            });
+            selection.selectorChanged(
+              item.settings.disabledStateSelector,
+              function (state) {
+                item.disabled(state);
+              }
+            );
           }
         };
-        if (item === '|') {
+        if (item === "|") {
           buttonGroup = null;
         } else {
           if (!buttonGroup) {
             buttonGroup = {
-              type: 'buttongroup',
-              items: []
+              type: "buttongroup",
+              items: [],
             };
             toolbarItems.push(buttonGroup);
           }
           if (editor.buttons[item]) {
             itemName = item;
             item = editor.buttons[itemName];
-            if (typeof item === 'function') {
+            if (typeof item === "function") {
               item = item();
             }
-            item.type = item.type || 'button';
+            item.type = item.type || "button";
             item.size = size;
             item = global$4.create(item);
             buttonGroup.items.push(item);
             if (editor.initialized) {
               bindSelectorChanged();
             } else {
-              editor.on('init', bindSelectorChanged);
+              editor.on("init", bindSelectorChanged);
             }
           }
         }
       });
       return {
-        type: 'toolbar',
-        layout: 'flow',
-        items: toolbarItems
+        type: "toolbar",
+        layout: "flow",
+        items: toolbarItems,
       };
     };
     var createToolbars = function (editor, size) {
@@ -366,18 +378,18 @@ var modern = (function (domGlobals) {
       });
       if (toolbars.length) {
         return {
-          type: 'panel',
-          layout: 'stack',
-          classes: 'toolbar-grp',
+          type: "panel",
+          layout: "stack",
+          classes: "toolbar-grp",
           ariaRoot: true,
           ariaRemember: true,
-          items: toolbars
+          items: toolbars,
         };
       }
     };
     var Toolbar = {
       createToolbar: createToolbar,
-      createToolbars: createToolbars
+      createToolbars: createToolbars,
     };
 
     var DOM = global$3.DOM;
@@ -388,7 +400,7 @@ var modern = (function (domGlobals) {
         width: geomRect.w,
         height: geomRect.h,
         right: geomRect.x + geomRect.w,
-        bottom: geomRect.y + geomRect.h
+        bottom: geomRect.y + geomRect.h,
       };
     };
     var hideAllFloatingPanels = function (editor) {
@@ -402,32 +414,51 @@ var modern = (function (domGlobals) {
       panel.moveTo(pos.left, pos.top);
     };
     var togglePositionClass = function (panel, relPos, predicate) {
-      relPos = relPos ? relPos.substr(0, 2) : '';
-      global$2.each({
-        t: 'down',
-        b: 'up'
-      }, function (cls, pos) {
-        panel.classes.toggle('arrow-' + cls, predicate(pos, relPos.substr(0, 1)));
-      });
-      global$2.each({
-        l: 'left',
-        r: 'right'
-      }, function (cls, pos) {
-        panel.classes.toggle('arrow-' + cls, predicate(pos, relPos.substr(1, 1)));
-      });
+      relPos = relPos ? relPos.substr(0, 2) : "";
+      global$2.each(
+        {
+          t: "down",
+          b: "up",
+        },
+        function (cls, pos) {
+          panel.classes.toggle(
+            "arrow-" + cls,
+            predicate(pos, relPos.substr(0, 1))
+          );
+        }
+      );
+      global$2.each(
+        {
+          l: "left",
+          r: "right",
+        },
+        function (cls, pos) {
+          panel.classes.toggle(
+            "arrow-" + cls,
+            predicate(pos, relPos.substr(1, 1))
+          );
+        }
+      );
     };
-    var userConstrain = function (handler, x, y, elementRect, contentAreaRect, panelRect) {
+    var userConstrain = function (
+      handler,
+      x,
+      y,
+      elementRect,
+      contentAreaRect,
+      panelRect
+    ) {
       panelRect = toClientRect({
         x: x,
         y: y,
         w: panelRect.w,
-        h: panelRect.h
+        h: panelRect.h,
       });
       if (handler) {
         panelRect = handler({
           elementRect: toClientRect(elementRect),
           contentAreaRect: toClientRect(contentAreaRect),
-          panelRect: panelRect
+          panelRect: panelRect,
         });
       }
       return panelRect;
@@ -442,16 +473,25 @@ var modern = (function (domGlobals) {
         pos = DOM.getPos(editor.getContentAreaContainer());
         targetRect = editor.dom.getRect(elm);
         root = editor.dom.getRoot();
-        if (root.nodeName === 'BODY') {
-          targetRect.x -= root.ownerDocument.documentElement.scrollLeft || root.scrollLeft;
-          targetRect.y -= root.ownerDocument.documentElement.scrollTop || root.scrollTop;
+        if (root.nodeName === "BODY") {
+          targetRect.x -=
+            root.ownerDocument.documentElement.scrollLeft || root.scrollLeft;
+          targetRect.y -=
+            root.ownerDocument.documentElement.scrollTop || root.scrollTop;
         }
         targetRect.x += pos.x;
         targetRect.y += pos.y;
         return targetRect;
       };
       var reposition = function (match, shouldShow) {
-        var relPos, panelRect, elementRect, contentAreaRect, panel, relRect, testPositions, smallElementWidthThreshold;
+        var relPos,
+          panelRect,
+          elementRect,
+          contentAreaRect,
+          panel,
+          relRect,
+          testPositions,
+          smallElementWidthThreshold;
         var handler = getInlineToolbarPositionHandler(editor);
         if (editor.removed) {
           return;
@@ -460,24 +500,19 @@ var modern = (function (domGlobals) {
           hideAllFloatingPanels(editor);
           return;
         }
-        testPositions = [
-          'bc-tc',
-          'tc-bc',
-          'tl-bl',
-          'bl-tl',
-          'tr-br',
-          'br-tr'
-        ];
+        testPositions = ["bc-tc", "tc-bc", "tl-bl", "bl-tl", "tr-br", "br-tr"];
         panel = match.toolbar.panel;
         if (shouldShow) {
           panel.show();
         }
         elementRect = getElementRect(match.element);
         panelRect = DOM.getRect(panel.getEl());
-        contentAreaRect = DOM.getRect(editor.getContentAreaContainer() || editor.getBody());
+        contentAreaRect = DOM.getRect(
+          editor.getContentAreaContainer() || editor.getBody()
+        );
         var delta = UiContainer.getUiContainerDelta(panel).getOr({
           x: 0,
-          y: 0
+          y: 0,
         });
         elementRect.x += delta.x;
         elementRect.y += delta.y;
@@ -486,7 +521,7 @@ var modern = (function (domGlobals) {
         contentAreaRect.x += delta.x;
         contentAreaRect.y += delta.y;
         smallElementWidthThreshold = 25;
-        if (DOM.getStyle(match.element, 'display', true) !== 'inline') {
+        if (DOM.getStyle(match.element, "display", true) !== "inline") {
           var clientRect = match.element.getBoundingClientRect();
           elementRect.w = clientRect.width;
           elementRect.h = clientRect.height;
@@ -494,28 +529,71 @@ var modern = (function (domGlobals) {
         if (!editor.inline) {
           contentAreaRect.w = editor.getDoc().documentElement.offsetWidth;
         }
-        if (editor.selection.controlSelection.isResizable(match.element) && elementRect.w < smallElementWidthThreshold) {
+        if (
+          editor.selection.controlSelection.isResizable(match.element) &&
+          elementRect.w < smallElementWidthThreshold
+        ) {
           elementRect = global$6.inflate(elementRect, 0, 8);
         }
-        relPos = global$6.findBestRelativePosition(panelRect, elementRect, contentAreaRect, testPositions);
+        relPos = global$6.findBestRelativePosition(
+          panelRect,
+          elementRect,
+          contentAreaRect,
+          testPositions
+        );
         elementRect = global$6.clamp(elementRect, contentAreaRect);
         if (relPos) {
           relRect = global$6.relativePosition(panelRect, elementRect, relPos);
-          movePanelTo(panel, userConstrain(handler, relRect.x, relRect.y, elementRect, contentAreaRect, panelRect));
+          movePanelTo(
+            panel,
+            userConstrain(
+              handler,
+              relRect.x,
+              relRect.y,
+              elementRect,
+              contentAreaRect,
+              panelRect
+            )
+          );
         } else {
           contentAreaRect.h += panelRect.h;
           elementRect = global$6.intersect(contentAreaRect, elementRect);
           if (elementRect) {
-            relPos = global$6.findBestRelativePosition(panelRect, elementRect, contentAreaRect, [
-              'bc-tc',
-              'bl-tl',
-              'br-tr'
-            ]);
+            relPos = global$6.findBestRelativePosition(
+              panelRect,
+              elementRect,
+              contentAreaRect,
+              ["bc-tc", "bl-tl", "br-tr"]
+            );
             if (relPos) {
-              relRect = global$6.relativePosition(panelRect, elementRect, relPos);
-              movePanelTo(panel, userConstrain(handler, relRect.x, relRect.y, elementRect, contentAreaRect, panelRect));
+              relRect = global$6.relativePosition(
+                panelRect,
+                elementRect,
+                relPos
+              );
+              movePanelTo(
+                panel,
+                userConstrain(
+                  handler,
+                  relRect.x,
+                  relRect.y,
+                  elementRect,
+                  contentAreaRect,
+                  panelRect
+                )
+              );
             } else {
-              movePanelTo(panel, userConstrain(handler, elementRect.x, elementRect.y, elementRect, contentAreaRect, panelRect));
+              movePanelTo(
+                panel,
+                userConstrain(
+                  handler,
+                  elementRect.x,
+                  elementRect.y,
+                  elementRect,
+                  contentAreaRect,
+                  panelRect
+                )
+              );
             }
           } else {
             panel.hide();
@@ -539,12 +617,13 @@ var modern = (function (domGlobals) {
         if (!scrollContainer) {
           var reposition_1 = repositionHandler(true);
           var uiContainer_1 = UiContainer.getUiContainer(panel);
-          scrollContainer = editor.selection.getScrollContainer() || editor.getWin();
-          DOM.bind(scrollContainer, 'scroll', reposition_1);
-          DOM.bind(uiContainer_1, 'scroll', reposition_1);
-          editor.on('remove', function () {
-            DOM.unbind(scrollContainer, 'scroll', reposition_1);
-            DOM.unbind(uiContainer_1, 'scroll', reposition_1);
+          scrollContainer =
+            editor.selection.getScrollContainer() || editor.getWin();
+          DOM.bind(scrollContainer, "scroll", reposition_1);
+          DOM.bind(uiContainer_1, "scroll", reposition_1);
+          editor.on("remove", function () {
+            DOM.unbind(scrollContainer, "scroll", reposition_1);
+            DOM.unbind(uiContainer_1, "scroll", reposition_1);
           });
         }
       };
@@ -556,13 +635,13 @@ var modern = (function (domGlobals) {
           return;
         }
         panel = global$4.create({
-          type: 'floatpanel',
-          role: 'dialog',
-          classes: 'tinymce tinymce-inline arrow',
-          ariaLabel: 'Inline toolbar',
-          layout: 'flex',
-          direction: 'column',
-          align: 'stretch',
+          type: "floatpanel",
+          role: "dialog",
+          classes: "tinymce tinymce-inline arrow",
+          ariaLabel: "Inline toolbar",
+          layout: "flex",
+          direction: "column",
+          align: "stretch",
           autohide: false,
           autofix: true,
           fixed: true,
@@ -570,7 +649,7 @@ var modern = (function (domGlobals) {
           items: Toolbar.createToolbar(editor, match.toolbar.items),
           oncancel: function () {
             editor.focus();
-          }
+          },
         });
         UiContainer.setUiContainer(editor, panel);
         bindScrollEvent(panel);
@@ -594,15 +673,15 @@ var modern = (function (domGlobals) {
             if (toolbars[y].predicate(parentsAndSelf[i])) {
               return {
                 toolbar: toolbars[y],
-                element: parentsAndSelf[i]
+                element: parentsAndSelf[i],
               };
             }
           }
         }
         return null;
       };
-      editor.on('click keyup setContent ObjectResized', function (e) {
-        if (e.type === 'setcontent' && !e.selection) {
+      editor.on("click keyup setContent ObjectResized", function (e) {
+        if (e.type === "setcontent" && !e.selection) {
           return;
         }
         global$7.setEditorTimeout(editor, function () {
@@ -616,16 +695,16 @@ var modern = (function (domGlobals) {
           }
         });
       });
-      editor.on('blur hide contextmenu', hideAllContextToolbars);
-      editor.on('ObjectResizeStart', function () {
+      editor.on("blur hide contextmenu", hideAllContextToolbars);
+      editor.on("ObjectResizeStart", function () {
         var match = findFrontMostMatch(editor.selection.getNode());
         if (match && match.toolbar.panel) {
           match.toolbar.panel.hide();
         }
       });
-      editor.on('ResizeEditor ResizeWindow', repositionHandler(true));
-      editor.on('nodeChange', repositionHandler(false));
-      editor.on('remove', function () {
+      editor.on("ResizeEditor ResizeWindow", repositionHandler(true));
+      editor.on("nodeChange", repositionHandler(false));
+      editor.on("remove", function () {
         global$2.each(getContextToolbars(), function (toolbar) {
           if (toolbar.panel) {
             toolbar.panel.remove();
@@ -633,7 +712,7 @@ var modern = (function (domGlobals) {
         });
         editor.contextToolbars = {};
       });
-      editor.shortcuts.add('ctrl+F9', '', function () {
+      editor.shortcuts.add("ctrl+F9", "", function () {
         var match = findFrontMostMatch(editor.selection.getNode());
         if (match && match.toolbar.panel) {
           match.toolbar.panel.items()[0].focus();
@@ -644,14 +723,22 @@ var modern = (function (domGlobals) {
 
     var typeOf = function (x) {
       if (x === null) {
-        return 'null';
+        return "null";
       }
       var t = typeof x;
-      if (t === 'object' && (Array.prototype.isPrototypeOf(x) || x.constructor && x.constructor.name === 'Array')) {
-        return 'array';
+      if (
+        t === "object" &&
+        (Array.prototype.isPrototypeOf(x) ||
+          (x.constructor && x.constructor.name === "Array"))
+      ) {
+        return "array";
       }
-      if (t === 'object' && (String.prototype.isPrototypeOf(x) || x.constructor && x.constructor.name === 'String')) {
-        return 'string';
+      if (
+        t === "object" &&
+        (String.prototype.isPrototypeOf(x) ||
+          (x.constructor && x.constructor.name === "String"))
+      ) {
+        return "string";
       }
       return t;
     };
@@ -660,9 +747,9 @@ var modern = (function (domGlobals) {
         return typeOf(value) === type;
       };
     };
-    var isArray = isType('array');
-    var isFunction = isType('function');
-    var isNumber = isType('number');
+    var isArray = isType("array");
+    var isFunction = isType("function");
+    var isNumber = isType("number");
 
     var nativeSlice = Array.prototype.slice;
     var nativeIndexOf = Array.prototype.indexOf;
@@ -736,56 +823,65 @@ var modern = (function (domGlobals) {
       var r = [];
       for (var i = 0, len = xs.length; i < len; ++i) {
         if (!isArray(xs[i])) {
-          throw new Error('Arr.flatten item ' + i + ' was not an array, input: ' + xs);
+          throw new Error(
+            "Arr.flatten item " + i + " was not an array, input: " + xs
+          );
         }
         nativePush.apply(r, xs[i]);
       }
       return r;
     };
-    var from$1 = isFunction(Array.from) ? Array.from : function (x) {
-      return nativeSlice.call(x);
-    };
+    var from$1 = isFunction(Array.from)
+      ? Array.from
+      : function (x) {
+          return nativeSlice.call(x);
+        };
 
     var defaultMenus = {
       file: {
-        title: 'File',
-        items: 'newdocument restoredraft | preview | print'
+        title: "File",
+        items: "newdocument restoredraft | preview | print",
       },
       edit: {
-        title: 'Edit',
-        items: 'undo redo | cut copy paste pastetext | selectall'
+        title: "Edit",
+        items: "undo redo | cut copy paste pastetext | selectall",
       },
       view: {
-        title: 'View',
-        items: 'code | visualaid visualchars visualblocks | spellchecker | preview fullscreen'
+        title: "View",
+        items:
+          "code | visualaid visualchars visualblocks | spellchecker | preview fullscreen",
       },
       insert: {
-        title: 'Insert',
-        items: 'image link media template codesample inserttable | charmap hr | pagebreak nonbreaking anchor toc | insertdatetime'
+        title: "Insert",
+        items:
+          "image link media template codesample inserttable | charmap hr | pagebreak nonbreaking anchor toc | insertdatetime",
       },
       format: {
-        title: 'Format',
-        items: 'bold italic underline strikethrough superscript subscript codeformat | blockformats align | removeformat'
+        title: "Format",
+        items:
+          "bold italic underline strikethrough superscript subscript codeformat | blockformats align | removeformat",
       },
       tools: {
-        title: 'Tools',
-        items: 'spellchecker spellcheckerlanguage | a11ycheck code'
+        title: "Tools",
+        items: "spellchecker spellcheckerlanguage | a11ycheck code",
       },
-      table: { title: 'Table' },
-      help: { title: 'Help' }
+      table: { title: "Table" },
+      help: { title: "Help" },
     };
     var delimiterMenuNamePair = function () {
       return {
-        name: '|',
-        item: { text: '|' }
+        name: "|",
+        item: { text: "|" },
       };
     };
     var createMenuNameItemPair = function (name, item) {
-      var menuItem = item ? {
-        name: name,
-        item: item
-      } : null;
-      return name === '|' ? delimiterMenuNamePair() : menuItem;
+      var menuItem = item
+        ? {
+            name: name,
+            item: item,
+          }
+        : null;
+      return name === "|" ? delimiterMenuNamePair() : menuItem;
     };
     var hasItemName = function (namedMenuItems, name) {
       return findIndex(namedMenuItems, function (namedMenuItem) {
@@ -793,20 +889,30 @@ var modern = (function (domGlobals) {
       }).isSome();
     };
     var isSeparator = function (namedMenuItem) {
-      return namedMenuItem && namedMenuItem.item.text === '|';
+      return namedMenuItem && namedMenuItem.item.text === "|";
     };
     var cleanupMenu = function (namedMenuItems, removedMenuItems) {
       var menuItemsPass1 = filter(namedMenuItems, function (namedMenuItem) {
         return removedMenuItems.hasOwnProperty(namedMenuItem.name) === false;
       });
       var menuItemsPass2 = filter(menuItemsPass1, function (namedMenuItem, i) {
-        return !isSeparator(namedMenuItem) || !isSeparator(menuItemsPass1[i - 1]);
+        return (
+          !isSeparator(namedMenuItem) || !isSeparator(menuItemsPass1[i - 1])
+        );
       });
       return filter(menuItemsPass2, function (namedMenuItem, i) {
-        return !isSeparator(namedMenuItem) || i > 0 && i < menuItemsPass2.length - 1;
+        return (
+          !isSeparator(namedMenuItem) ||
+          (i > 0 && i < menuItemsPass2.length - 1)
+        );
       });
     };
-    var createMenu = function (editorMenuItems, menus, removedMenuItems, context) {
+    var createMenu = function (
+      editorMenuItems,
+      menus,
+      removedMenuItems,
+      context
+    ) {
       var menuButton, menu, namedMenuItems, isUserDefined;
       if (menus) {
         menu = menus[context];
@@ -817,16 +923,22 @@ var modern = (function (domGlobals) {
       if (menu) {
         menuButton = { text: menu.title };
         namedMenuItems = [];
-        global$2.each((menu.items || '').split(/[ ,]/), function (name) {
-          var namedMenuItem = createMenuNameItemPair(name, editorMenuItems[name]);
+        global$2.each((menu.items || "").split(/[ ,]/), function (name) {
+          var namedMenuItem = createMenuNameItemPair(
+            name,
+            editorMenuItems[name]
+          );
           if (namedMenuItem) {
             namedMenuItems.push(namedMenuItem);
           }
         });
         if (!isUserDefined) {
           global$2.each(editorMenuItems, function (item, name) {
-            if (item.context === context && !hasItemName(namedMenuItems, name)) {
-              if (item.separator === 'before') {
+            if (
+              item.context === context &&
+              !hasItemName(namedMenuItems, name)
+            ) {
+              if (item.separator === "before") {
                 namedMenuItems.push(delimiterMenuNamePair());
               }
               if (item.prependToContext) {
@@ -834,15 +946,18 @@ var modern = (function (domGlobals) {
               } else {
                 namedMenuItems.push(createMenuNameItemPair(name, item));
               }
-              if (item.separator === 'after') {
+              if (item.separator === "after") {
                 namedMenuItems.push(delimiterMenuNamePair());
               }
             }
           });
         }
-        menuButton.menu = map(cleanupMenu(namedMenuItems, removedMenuItems), function (menuItem) {
-          return menuItem.item;
-        });
+        menuButton.menu = map(
+          cleanupMenu(namedMenuItems, removedMenuItems),
+          function (menuItem) {
+            return menuItem.item;
+          }
+        );
         if (!menuButton.menu.length) {
           return null;
         }
@@ -867,12 +982,20 @@ var modern = (function (domGlobals) {
     var createMenuButtons = function (editor) {
       var menuButtons = [];
       var defaultMenuBar = getDefaultMenubar(editor);
-      var removedMenuItems = global$2.makeMap(getRemovedMenuItems(editor).split(/[ ,]/));
+      var removedMenuItems = global$2.makeMap(
+        getRemovedMenuItems(editor).split(/[ ,]/)
+      );
       var menubar = getMenubar(editor);
-      var enabledMenuNames = typeof menubar === 'string' ? menubar.split(/[ ,]/) : defaultMenuBar;
+      var enabledMenuNames =
+        typeof menubar === "string" ? menubar.split(/[ ,]/) : defaultMenuBar;
       for (var i = 0; i < enabledMenuNames.length; i++) {
         var menuItems = enabledMenuNames[i];
-        var menu = createMenu(editor.menuItems, getMenu(editor), removedMenuItems, menuItems);
+        var menu = createMenu(
+          editor.menuItems,
+          getMenu(editor),
+          removedMenuItems,
+          menuItems
+        );
         if (menu) {
           menuButtons.push(menu);
         }
@@ -885,7 +1008,7 @@ var modern = (function (domGlobals) {
     var getSize = function (elm) {
       return {
         width: elm.clientWidth,
-        height: elm.clientHeight
+        height: elm.clientHeight,
       };
     };
     var resizeTo = function (editor, width, height) {
@@ -897,12 +1020,16 @@ var modern = (function (domGlobals) {
       if (width !== null) {
         width = Math.max(getMinWidth(editor), width);
         width = Math.min(getMaxWidth(editor), width);
-        DOM$1.setStyle(containerElm, 'width', width + (containerSize.width - iframeSize.width));
-        DOM$1.setStyle(iframeElm, 'width', width);
+        DOM$1.setStyle(
+          containerElm,
+          "width",
+          width + (containerSize.width - iframeSize.width)
+        );
+        DOM$1.setStyle(iframeElm, "width", width);
       }
       height = Math.max(getMinHeight(editor), height);
       height = Math.min(getMaxHeight(editor), height);
-      DOM$1.setStyle(iframeElm, 'height', height);
+      DOM$1.setStyle(iframeElm, "height", height);
       Events.fireResizeEditor(editor);
     };
     var resizeBy = function (editor, dw, dh) {
@@ -911,29 +1038,29 @@ var modern = (function (domGlobals) {
     };
     var Resize = {
       resizeTo: resizeTo,
-      resizeBy: resizeBy
+      resizeBy: resizeBy,
     };
 
-    var global$8 = tinymce.util.Tools.resolve('tinymce.Env');
+    var global$8 = tinymce.util.Tools.resolve("tinymce.Env");
 
     var api = function (elm) {
       return {
         element: function () {
           return elm;
-        }
+        },
       };
     };
     var trigger = function (sidebar, panel, callbackName) {
       var callback = sidebar.settings[callbackName];
       if (callback) {
-        callback(api(panel.getEl('body')));
+        callback(api(panel.getEl("body")));
       }
     };
     var hidePanels = function (name, container, sidebars) {
       global$2.each(sidebars, function (sidebar) {
-        var panel = container.items().filter('#' + sidebar.name)[0];
+        var panel = container.items().filter("#" + sidebar.name)[0];
         if (panel && panel.visible() && sidebar.name !== name) {
-          trigger(sidebar, panel, 'onhide');
+          trigger(sidebar, panel, "onhide");
           panel.visible(false);
         }
       });
@@ -951,30 +1078,30 @@ var modern = (function (domGlobals) {
     var showPanel = function (editor, name, sidebars) {
       return function (e) {
         var btnCtrl = e.control;
-        var container = btnCtrl.parents().filter('panel')[0];
-        var panel = container.find('#' + name)[0];
+        var container = btnCtrl.parents().filter("panel")[0];
+        var panel = container.find("#" + name)[0];
         var sidebar = findSidebar(sidebars, name);
         hidePanels(name, container, sidebars);
         deactivateButtons(btnCtrl.parent());
         if (panel && panel.visible()) {
-          trigger(sidebar, panel, 'onhide');
+          trigger(sidebar, panel, "onhide");
           panel.hide();
           btnCtrl.active(false);
         } else {
           if (panel) {
             panel.show();
-            trigger(sidebar, panel, 'onshow');
+            trigger(sidebar, panel, "onshow");
           } else {
             panel = global$4.create({
-              type: 'container',
+              type: "container",
               name: name,
-              layout: 'stack',
-              classes: 'sidebar-panel',
-              html: ''
+              layout: "stack",
+              classes: "sidebar-panel",
+              html: "",
             });
             container.prepend(panel);
-            trigger(sidebar, panel, 'onrender');
-            trigger(sidebar, panel, 'onshow');
+            trigger(sidebar, panel, "onrender");
+            trigger(sidebar, panel, "onshow");
           }
           btnCtrl.active(true);
         }
@@ -985,35 +1112,39 @@ var modern = (function (domGlobals) {
       return !global$8.ie || global$8.ie >= 11;
     };
     var hasSidebar = function (editor) {
-      return isModernBrowser() && editor.sidebars ? editor.sidebars.length > 0 : false;
+      return isModernBrowser() && editor.sidebars
+        ? editor.sidebars.length > 0
+        : false;
     };
     var createSidebar = function (editor) {
       var buttons = global$2.map(editor.sidebars, function (sidebar) {
         var settings = sidebar.settings;
         return {
-          type: 'button',
+          type: "button",
           icon: settings.icon,
           image: settings.image,
           tooltip: settings.tooltip,
-          onclick: showPanel(editor, sidebar.name, editor.sidebars)
+          onclick: showPanel(editor, sidebar.name, editor.sidebars),
         };
       });
       return {
-        type: 'panel',
-        name: 'sidebar',
-        layout: 'stack',
-        classes: 'sidebar',
-        items: [{
-            type: 'toolbar',
-            layout: 'stack',
-            classes: 'sidebar-toolbar',
-            items: buttons
-          }]
+        type: "panel",
+        name: "sidebar",
+        layout: "stack",
+        classes: "sidebar",
+        items: [
+          {
+            type: "toolbar",
+            layout: "stack",
+            classes: "sidebar-toolbar",
+            items: buttons,
+          },
+        ],
       };
     };
     var Sidebar = {
       hasSidebar: hasSidebar,
-      createSidebar: createSidebar
+      createSidebar: createSidebar,
     };
 
     var fireSkinLoaded$1 = function (editor) {
@@ -1025,7 +1156,7 @@ var modern = (function (domGlobals) {
         if (editor.initialized) {
           done();
         } else {
-          editor.on('init', done);
+          editor.on("init", done);
         }
       };
     };
@@ -1034,143 +1165,151 @@ var modern = (function (domGlobals) {
     var DOM$2 = global$3.DOM;
     var switchMode = function (panel) {
       return function (e) {
-        panel.find('*').disabled(e.mode === 'readonly');
+        panel.find("*").disabled(e.mode === "readonly");
       };
     };
     var editArea = function (border) {
       return {
-        type: 'panel',
-        name: 'iframe',
-        layout: 'stack',
-        classes: 'edit-area',
+        type: "panel",
+        name: "iframe",
+        layout: "stack",
+        classes: "edit-area",
         border: border,
-        html: ''
+        html: "",
       };
     };
     var editAreaContainer = function (editor) {
       return {
-        type: 'panel',
-        layout: 'stack',
-        classes: 'edit-aria-container',
-        border: '1 0 0 0',
-        items: [
-          editArea('0'),
-          Sidebar.createSidebar(editor)
-        ]
+        type: "panel",
+        layout: "stack",
+        classes: "edit-aria-container",
+        border: "1 0 0 0",
+        items: [editArea("0"), Sidebar.createSidebar(editor)],
       };
     };
     var render = function (editor, theme, args) {
       var panel, resizeHandleCtrl, startSize;
       if (isSkinDisabled(editor) === false && args.skinUiCss) {
-        DOM$2.styleSheetLoader.load(args.skinUiCss, SkinLoaded.fireSkinLoaded(editor));
+        DOM$2.styleSheetLoader.load(
+          args.skinUiCss,
+          SkinLoaded.fireSkinLoaded(editor)
+        );
       } else {
         SkinLoaded.fireSkinLoaded(editor)();
       }
       panel = theme.panel = global$4.create({
-        type: 'panel',
-        role: 'application',
-        classes: 'tinymce',
-        style: 'visibility: hidden',
-        layout: 'stack',
+        type: "panel",
+        role: "application",
+        classes: "tinymce",
+        style: "visibility: hidden",
+        layout: "stack",
         border: 1,
         items: [
           {
-            type: 'container',
-            classes: 'top-part',
+            type: "container",
+            classes: "top-part",
             items: [
-              hasMenubar(editor) === false ? null : {
-                type: 'menubar',
-                border: '0 0 1 0',
-                items: Menubar.createMenuButtons(editor)
-              },
-              Toolbar.createToolbars(editor, getToolbarSize(editor))
-            ]
+              hasMenubar(editor) === false
+                ? null
+                : {
+                    type: "menubar",
+                    border: "0 0 1 0",
+                    items: Menubar.createMenuButtons(editor),
+                  },
+              Toolbar.createToolbars(editor, getToolbarSize(editor)),
+            ],
           },
-          Sidebar.hasSidebar(editor) ? editAreaContainer(editor) : editArea('1 0 0 0')
-        ]
+          Sidebar.hasSidebar(editor)
+            ? editAreaContainer(editor)
+            : editArea("1 0 0 0"),
+        ],
       });
       UiContainer.setUiContainer(editor, panel);
-      if (getResize(editor) !== 'none') {
+      if (getResize(editor) !== "none") {
         resizeHandleCtrl = {
-          type: 'resizehandle',
+          type: "resizehandle",
           direction: getResize(editor),
           onResizeStart: function () {
             var elm = editor.getContentAreaContainer().firstChild;
             startSize = {
               width: elm.clientWidth,
-              height: elm.clientHeight
+              height: elm.clientHeight,
             };
           },
           onResize: function (e) {
-            if (getResize(editor) === 'both') {
-              Resize.resizeTo(editor, startSize.width + e.deltaX, startSize.height + e.deltaY);
+            if (getResize(editor) === "both") {
+              Resize.resizeTo(
+                editor,
+                startSize.width + e.deltaX,
+                startSize.height + e.deltaY
+              );
             } else {
               Resize.resizeTo(editor, null, startSize.height + e.deltaY);
             }
-          }
+          },
         };
       }
       if (hasStatusbar(editor)) {
-        var linkHtml = '<a href="https://www.tiny.cloud/?utm_campaign=editor_referral&amp;utm_medium=poweredby&amp;utm_source=tinymce" rel="noopener" target="_blank" role="presentation" tabindex="-1">Tiny</a>';
-        var html = global$5.translate([
-          'Powered by {0}',
-          linkHtml
-        ]);
-        var brandingLabel = isBrandingEnabled(editor) ? {
-          type: 'label',
-          classes: 'branding',
-          html: ' ' + html
-        } : null;
+        var linkHtml =
+          '<a href="https://www.tiny.cloud/?utm_campaign=editor_referral&amp;utm_medium=poweredby&amp;utm_source=tinymce" rel="noopener" target="_blank" role="presentation" tabindex="-1">Tiny</a>';
+        var html = global$5.translate(["Powered by {0}", linkHtml]);
+        var brandingLabel = isBrandingEnabled(editor)
+          ? {
+              type: "label",
+              classes: "branding",
+              html: " " + html,
+            }
+          : null;
         panel.add({
-          type: 'panel',
-          name: 'statusbar',
-          classes: 'statusbar',
-          layout: 'flow',
-          border: '1 0 0 0',
+          type: "panel",
+          name: "statusbar",
+          classes: "statusbar",
+          layout: "flow",
+          border: "1 0 0 0",
           ariaRoot: true,
           items: [
             {
-              type: 'elementpath',
-              editor: editor
+              type: "elementpath",
+              editor: editor,
             },
             resizeHandleCtrl,
-            brandingLabel
-          ]
+            brandingLabel,
+          ],
         });
       }
       Events.fireBeforeRenderUI(editor);
-      editor.on('SwitchMode', switchMode(panel));
+      editor.on("SwitchMode", switchMode(panel));
       panel.renderBefore(args.targetNode).reflow();
       if (isReadOnly(editor)) {
-        editor.setMode('readonly');
+        editor.setMode("readonly");
       }
       if (args.width) {
-        DOM$2.setStyle(panel.getEl(), 'width', args.width);
+        DOM$2.setStyle(panel.getEl(), "width", args.width);
       }
-      editor.on('remove', function () {
+      editor.on("remove", function () {
         panel.remove();
         panel = null;
       });
       A11y.addKeys(editor, panel);
       ContextToolbars.addContextualToolbars(editor);
       return {
-        iframeContainer: panel.find('#iframe')[0].getEl(),
-        editorContainer: panel.getEl()
+        iframeContainer: panel.find("#iframe")[0].getEl(),
+        editorContainer: panel.getEl(),
       };
     };
     var Iframe = { render: render };
 
-    var global$9 = tinymce.util.Tools.resolve('tinymce.dom.DomQuery');
+    var global$9 = tinymce.util.Tools.resolve("tinymce.dom.DomQuery");
 
     var count = 0;
     var funcs = {
       id: function () {
-        return 'mceu_' + count++;
+        return "mceu_" + count++;
       },
       create: function (name, attrs, children) {
         var elm = domGlobals.document.createElement(name);
         global$3.DOM.setAttribs(elm, attrs);
-        if (typeof children === 'string') {
+        if (typeof children === "string") {
           elm.innerHTML = children;
         } else {
           global$2.each(children, function (child) {
@@ -1191,22 +1330,30 @@ var modern = (function (domGlobals) {
         var width, height;
         if (elm.getBoundingClientRect) {
           var rect = elm.getBoundingClientRect();
-          width = Math.max(rect.width || rect.right - rect.left, elm.offsetWidth);
-          height = Math.max(rect.height || rect.bottom - rect.bottom, elm.offsetHeight);
+          width = Math.max(
+            rect.width || rect.right - rect.left,
+            elm.offsetWidth
+          );
+          height = Math.max(
+            rect.height || rect.bottom - rect.bottom,
+            elm.offsetHeight
+          );
         } else {
           width = elm.offsetWidth;
           height = elm.offsetHeight;
         }
         return {
           width: width,
-          height: height
+          height: height,
         };
       },
       getPos: function (elm, root) {
         return global$3.DOM.getPos(elm, root || funcs.getContainer());
       },
       getContainer: function () {
-        return global$8.container ? global$8.container : domGlobals.document.body;
+        return global$8.container
+          ? global$8.container
+          : domGlobals.document.body;
       },
       getViewPort: function (win) {
         return global$3.DOM.getViewPort(win);
@@ -1243,14 +1390,14 @@ var modern = (function (domGlobals) {
       },
       innerHtml: function (elm, html) {
         global$3.DOM.setHTML(elm, html);
-      }
+      },
     };
 
     var isStatic = function (elm) {
-      return funcs.getRuntimeStyle(elm, 'position') === 'static';
+      return funcs.getRuntimeStyle(elm, "position") === "static";
     };
     var isFixed = function (ctrl) {
-      return ctrl.state.get('fixed');
+      return ctrl.state.get("fixed");
     };
     function calculateRelativePosition(ctrl, targetElm, rel) {
       var ctrlElm, pos, x, y, selfW, selfH, targetW, targetH, viewport, size;
@@ -1269,36 +1416,36 @@ var modern = (function (domGlobals) {
       size = funcs.getSize(targetElm);
       targetW = size.width;
       targetH = size.height;
-      rel = (rel || '').split('');
-      if (rel[0] === 'b') {
+      rel = (rel || "").split("");
+      if (rel[0] === "b") {
         y += targetH;
       }
-      if (rel[1] === 'r') {
+      if (rel[1] === "r") {
         x += targetW;
       }
-      if (rel[0] === 'c') {
+      if (rel[0] === "c") {
         y += Math.round(targetH / 2);
       }
-      if (rel[1] === 'c') {
+      if (rel[1] === "c") {
         x += Math.round(targetW / 2);
       }
-      if (rel[3] === 'b') {
+      if (rel[3] === "b") {
         y -= selfH;
       }
-      if (rel[4] === 'r') {
+      if (rel[4] === "r") {
         x -= selfW;
       }
-      if (rel[3] === 'c') {
+      if (rel[3] === "c") {
         y -= Math.round(selfH / 2);
       }
-      if (rel[4] === 'c') {
+      if (rel[4] === "c") {
         x -= Math.round(selfW / 2);
       }
       return {
         x: x,
         y: y,
         w: selfW,
-        h: selfH
+        h: selfH,
       };
     }
     var getUiContainerViewPort = function (customUiContainer) {
@@ -1306,25 +1453,36 @@ var modern = (function (domGlobals) {
         x: 0,
         y: 0,
         w: customUiContainer.scrollWidth - 1,
-        h: customUiContainer.scrollHeight - 1
+        h: customUiContainer.scrollHeight - 1,
       };
     };
     var getWindowViewPort = function () {
       var win = domGlobals.window;
-      var x = Math.max(win.pageXOffset, domGlobals.document.body.scrollLeft, domGlobals.document.documentElement.scrollLeft);
-      var y = Math.max(win.pageYOffset, domGlobals.document.body.scrollTop, domGlobals.document.documentElement.scrollTop);
+      var x = Math.max(
+        win.pageXOffset,
+        domGlobals.document.body.scrollLeft,
+        domGlobals.document.documentElement.scrollLeft
+      );
+      var y = Math.max(
+        win.pageYOffset,
+        domGlobals.document.body.scrollTop,
+        domGlobals.document.documentElement.scrollTop
+      );
       var w = win.innerWidth || domGlobals.document.documentElement.clientWidth;
-      var h = win.innerHeight || domGlobals.document.documentElement.clientHeight;
+      var h =
+        win.innerHeight || domGlobals.document.documentElement.clientHeight;
       return {
         x: x,
         y: y,
         w: w,
-        h: h
+        h: h,
       };
     };
     var getViewPortRect = function (ctrl) {
       var customUiContainer = UiContainer.getUiContainer(ctrl);
-      return customUiContainer && !isFixed(ctrl) ? getUiContainerViewPort(customUiContainer) : getWindowViewPort();
+      return customUiContainer && !isFixed(ctrl)
+        ? getUiContainerViewPort(customUiContainer)
+        : getWindowViewPort();
     };
     var Movable = {
       testMoveRel: function (elm, rels) {
@@ -1332,11 +1490,21 @@ var modern = (function (domGlobals) {
         for (var i = 0; i < rels.length; i++) {
           var pos = calculateRelativePosition(this, elm, rels[i]);
           if (isFixed(this)) {
-            if (pos.x > 0 && pos.x + pos.w < viewPortRect.w && pos.y > 0 && pos.y + pos.h < viewPortRect.h) {
+            if (
+              pos.x > 0 &&
+              pos.x + pos.w < viewPortRect.w &&
+              pos.y > 0 &&
+              pos.y + pos.h < viewPortRect.h
+            ) {
               return rels[i];
             }
           } else {
-            if (pos.x > viewPortRect.x && pos.x + pos.w < viewPortRect.w + viewPortRect.x && pos.y > viewPortRect.y && pos.y + pos.h < viewPortRect.h + viewPortRect.y) {
+            if (
+              pos.x > viewPortRect.x &&
+              pos.x + pos.w < viewPortRect.w + viewPortRect.x &&
+              pos.y > viewPortRect.y &&
+              pos.y + pos.h < viewPortRect.h + viewPortRect.y
+            ) {
               return rels[i];
             }
           }
@@ -1344,14 +1512,15 @@ var modern = (function (domGlobals) {
         return rels[0];
       },
       moveRel: function (elm, rel) {
-        if (typeof rel !== 'string') {
+        if (typeof rel !== "string") {
           rel = this.testMoveRel(elm, rel);
         }
         var pos = calculateRelativePosition(this, elm, rel);
         return this.moveTo(pos.x, pos.y);
       },
       moveBy: function (dx, dy) {
-        var self = this, rect = self.layoutRect();
+        var self = this,
+          rect = self.layoutRect();
         self.moveTo(rect.x + dx, rect.y + dy);
         return self;
       },
@@ -1382,26 +1551,28 @@ var modern = (function (domGlobals) {
           x += 1;
           y += 1;
         }
-        if (self.state.get('rendered')) {
-          self.layoutRect({
-            x: x,
-            y: y
-          }).repaint();
+        if (self.state.get("rendered")) {
+          self
+            .layoutRect({
+              x: x,
+              y: y,
+            })
+            .repaint();
         } else {
           self.settings.x = x;
           self.settings.y = y;
         }
-        self.fire('move', {
+        self.fire("move", {
           x: x,
-          y: y
+          y: y,
         });
         return self;
-      }
+      },
     };
 
-    var global$a = tinymce.util.Tools.resolve('tinymce.util.Class');
+    var global$a = tinymce.util.Tools.resolve("tinymce.util.Class");
 
-    var global$b = tinymce.util.Tools.resolve('tinymce.util.EventDispatcher');
+    var global$b = tinymce.util.Tools.resolve("tinymce.util.EventDispatcher");
 
     var BoxUtils = {
       parseBox: function (value) {
@@ -1410,16 +1581,16 @@ var modern = (function (domGlobals) {
         if (!value) {
           return;
         }
-        if (typeof value === 'number') {
+        if (typeof value === "number") {
           value = value || 0;
           return {
             top: value,
             left: value,
             bottom: value,
-            right: value
+            right: value,
           };
         }
-        value = value.split(' ');
+        value = value.split(" ");
         len = value.length;
         if (len === 1) {
           value[1] = value[2] = value[3] = value[0];
@@ -1433,7 +1604,7 @@ var modern = (function (domGlobals) {
           top: parseInt(value[0], radix) || 0,
           right: parseInt(value[1], radix) || 0,
           bottom: parseInt(value[2], radix) || 0,
-          left: parseInt(value[3], radix) || 0
+          left: parseInt(value[3], radix) || 0,
         };
       },
       measureBox: function (elm, prefix) {
@@ -1443,7 +1614,7 @@ var modern = (function (domGlobals) {
             var computedStyle = defaultView.getComputedStyle(elm, null);
             if (computedStyle) {
               name = name.replace(/[A-Z]/g, function (a) {
-                return '-' + a;
+                return "-" + a;
               });
               return computedStyle.getPropertyValue(name);
             } else {
@@ -1457,21 +1628,20 @@ var modern = (function (domGlobals) {
           return isNaN(val) ? 0 : val;
         }
         return {
-          top: getSide(prefix + 'TopWidth'),
-          right: getSide(prefix + 'RightWidth'),
-          bottom: getSide(prefix + 'BottomWidth'),
-          left: getSide(prefix + 'LeftWidth')
+          top: getSide(prefix + "TopWidth"),
+          right: getSide(prefix + "RightWidth"),
+          bottom: getSide(prefix + "BottomWidth"),
+          left: getSide(prefix + "LeftWidth"),
         };
-      }
+      },
     };
 
-    function noop$1() {
-    }
+    function noop$1() {}
     function ClassList(onchange) {
       this.cls = [];
       this.cls._map = {};
       this.onchange = onchange || noop$1;
-      this.prefix = '';
+      this.prefix = "";
     }
     global$2.extend(ClassList.prototype, {
       add: function (cls) {
@@ -1514,17 +1684,17 @@ var modern = (function (domGlobals) {
       _change: function () {
         delete this.clsValue;
         this.onchange.call(this);
-      }
+      },
     });
     ClassList.prototype.toString = function () {
       var value;
       if (this.clsValue) {
         return this.clsValue;
       }
-      value = '';
+      value = "";
       for (var i = 0; i < this.cls.length; i++) {
         if (i > 0) {
-          value += ' ';
+          value += " ";
         }
         value += this.prefix + this.cls[i];
       }
@@ -1533,7 +1703,8 @@ var modern = (function (domGlobals) {
 
     function unique(array) {
       var uniqueItems = [];
-      var i = array.length, item;
+      var i = array.length,
+        item;
       while (i--) {
         item = array[i];
         if (!item.__checked) {
@@ -1547,8 +1718,10 @@ var modern = (function (domGlobals) {
       }
       return uniqueItems;
     }
-    var expression = /^([\w\\*]+)?(?:#([\w\-\\]+))?(?:\.([\w\\\.]+))?(?:\[\@?([\w\\]+)([\^\$\*!~]?=)([\w\\]+)\])?(?:\:(.+))?/i;
-    var chunker = /((?:\((?:\([^()]+\)|[^()]+)+\)|\[(?:\[[^\[\]]*\]|['"][^'"]*['"]|[^\[\]'"]+)+\]|\\.|[^ >+~,(\[\\]+)+|[>+~])(\s*,\s*)?((?:.|\r|\n)*)/g;
+    var expression =
+      /^([\w\\*]+)?(?:#([\w\-\\]+))?(?:\.([\w\\\.]+))?(?:\[\@?([\w\\]+)([\^\$\*!~]?=)([\w\\]+)\])?(?:\:(.+))?/i;
+    var chunker =
+      /((?:\((?:\([^()]+\)|[^()]+)+\)|\[(?:\[[^\[\]]*\]|['"][^'"]*['"]|[^\[\]'"]+)+\]|\\.|[^ >+~,(\[\\]+)+|[>+~])(\s*,\s*)?((?:.|\r|\n)*)/g;
     var whiteSpace = /^\s*|\s*$/g;
     var Collection;
     var Selector = global$a.extend({
@@ -1558,7 +1731,7 @@ var modern = (function (domGlobals) {
           if (name) {
             name = name.toLowerCase();
             return function (item) {
-              return name === '*' || item.type === name;
+              return name === "*" || item.type === name;
             };
           }
         }
@@ -1571,7 +1744,7 @@ var modern = (function (domGlobals) {
         }
         function compileClassesFilter(classes) {
           if (classes) {
-            classes = classes.split('.');
+            classes = classes.split(".");
             return function (item) {
               var i = classes.length;
               while (i--) {
@@ -1586,8 +1759,22 @@ var modern = (function (domGlobals) {
         function compileAttrFilter(name, cmp, check) {
           if (name) {
             return function (item) {
-              var value = item[name] ? item[name]() : '';
-              return !cmp ? !!check : cmp === '=' ? value === check : cmp === '*=' ? value.indexOf(check) >= 0 : cmp === '~=' ? (' ' + value + ' ').indexOf(' ' + check + ' ') >= 0 : cmp === '!=' ? value !== check : cmp === '^=' ? value.indexOf(check) === 0 : cmp === '$=' ? value.substr(value.length - check.length) === check : false;
+              var value = item[name] ? item[name]() : "";
+              return !cmp
+                ? !!check
+                : cmp === "="
+                ? value === check
+                : cmp === "*="
+                ? value.indexOf(check) >= 0
+                : cmp === "~="
+                ? (" " + value + " ").indexOf(" " + check + " ") >= 0
+                : cmp === "!="
+                ? value !== check
+                : cmp === "^="
+                ? value.indexOf(check) === 0
+                : cmp === "$="
+                ? value.substr(value.length - check.length) === check
+                : false;
             };
           }
         }
@@ -1598,7 +1785,17 @@ var modern = (function (domGlobals) {
             if (!name[1]) {
               name = name[2];
               return function (item, index, length) {
-                return name === 'first' ? index === 0 : name === 'last' ? index === length - 1 : name === 'even' ? index % 2 === 0 : name === 'odd' ? index % 2 === 1 : item[name] ? item[name]() : false;
+                return name === "first"
+                  ? index === 0
+                  : name === "last"
+                  ? index === length - 1
+                  : name === "even"
+                  ? index % 2 === 0
+                  : name === "odd"
+                  ? index % 2 === 1
+                  : item[name]
+                  ? item[name]()
+                  : false;
               };
             }
             notSelectors = parseChunks(name[1], []);
@@ -1614,7 +1811,7 @@ var modern = (function (domGlobals) {
               filters.push(filter);
             }
           }
-          parts = expression.exec(selector.replace(whiteSpace, ''));
+          parts = expression.exec(selector.replace(whiteSpace, ""));
           add(compileNameFilter(parts[1]));
           add(compileIdFilter(parts[2]));
           add(compileClassesFilter(parts[3]));
@@ -1628,7 +1825,7 @@ var modern = (function (domGlobals) {
           var parts = [];
           var extra, matches, i;
           do {
-            chunker.exec('');
+            chunker.exec("");
             matches = chunker.exec(selector);
             if (matches) {
               selector = matches[3];
@@ -1644,8 +1841,8 @@ var modern = (function (domGlobals) {
           }
           selector = [];
           for (i = 0; i < parts.length; i++) {
-            if (parts[i] !== '>') {
-              selector.push(compile(parts[i], [], parts[i - 1] === '>'));
+            if (parts[i] !== ">") {
+              selector.push(compile(parts[i], [], parts[i - 1] === ">"));
             }
           }
           selectors.push(selector);
@@ -1654,7 +1851,19 @@ var modern = (function (domGlobals) {
         this._selectors = parseChunks(selector, []);
       },
       match: function (control, selectors) {
-        var i, l, si, sl, selector, fi, fl, filters, index, length, siblings, count, item;
+        var i,
+          l,
+          si,
+          sl,
+          selector,
+          fi,
+          fl,
+          filters,
+          index,
+          length,
+          siblings,
+          count,
+          item;
         selectors = selectors || this._selectors;
         for (i = 0, l = selectors.length; i < l; i++) {
           selector = selectors[i];
@@ -1697,7 +1906,9 @@ var modern = (function (domGlobals) {
         return false;
       },
       find: function (container) {
-        var matches = [], i, l;
+        var matches = [],
+          i,
+          l;
         var selectors = this._selectors;
         function collect(items, selector, index) {
           var i, l, fi, fl, item;
@@ -1738,11 +1949,12 @@ var modern = (function (domGlobals) {
           Collection = Selector.Collection;
         }
         return new Collection(matches);
-      }
+      },
     });
 
     var Collection$1, proto;
-    var push = Array.prototype.push, slice = Array.prototype.slice;
+    var push = Array.prototype.push,
+      slice = Array.prototype.slice;
     proto = {
       length: 0,
       init: function (items) {
@@ -1779,7 +1991,7 @@ var modern = (function (domGlobals) {
         var i, l;
         var matches = [];
         var item, match;
-        if (typeof selector === 'string') {
+        if (typeof selector === "string") {
           selector = new Selector(selector);
           match = function (item) {
             return selector.match(item);
@@ -1841,7 +2053,8 @@ var modern = (function (domGlobals) {
         }
       },
       exec: function (name) {
-        var self = this, args = global$2.toArray(arguments).slice(1);
+        var self = this,
+          args = global$2.toArray(arguments).slice(1);
         self.each(function (item) {
           if (item[name]) {
             item[name].apply(item, args);
@@ -1865,24 +2078,32 @@ var modern = (function (domGlobals) {
         return this.each(function (item) {
           item.classes.remove(cls);
         });
-      }
+      },
     };
-    global$2.each('fire on off show hide append prepend before after reflow'.split(' '), function (name) {
-      proto[name] = function () {
-        var args = global$2.toArray(arguments);
-        this.each(function (ctrl) {
-          if (name in ctrl) {
-            ctrl[name].apply(ctrl, args);
-          }
-        });
-        return this;
-      };
-    });
-    global$2.each('text name disabled active selected checked visible parent value data'.split(' '), function (name) {
-      proto[name] = function (value) {
-        return this.prop(name, value);
-      };
-    });
+    global$2.each(
+      "fire on off show hide append prepend before after reflow".split(" "),
+      function (name) {
+        proto[name] = function () {
+          var args = global$2.toArray(arguments);
+          this.each(function (ctrl) {
+            if (name in ctrl) {
+              ctrl[name].apply(ctrl, args);
+            }
+          });
+          return this;
+        };
+      }
+    );
+    global$2.each(
+      "text name disabled active selected checked visible parent value data".split(
+        " "
+      ),
+      function (name) {
+        proto[name] = function (value) {
+          return this.prop(name, value);
+        };
+      }
+    );
     Collection$1 = global$a.extend(proto);
     Selector.Collection = Collection$1;
     var Collection$2 = Collection$1;
@@ -1900,12 +2121,12 @@ var modern = (function (domGlobals) {
           var fromOtherToSelf = function (e) {
             model.set(name, e.value);
           };
-          otherModel.on('change:' + otherName, fromOtherToSelf);
-          model.on('change:' + name, fromSelfToOther);
+          otherModel.on("change:" + otherName, fromOtherToSelf);
+          model.on("change:" + name, fromSelfToOther);
           bindings = otherModel._bindings;
           if (!bindings) {
             bindings = otherModel._bindings = [];
-            otherModel.on('destroy', function () {
+            otherModel.on("destroy", function () {
               var i = bindings.length;
               while (i--) {
                 bindings[i]();
@@ -1913,14 +2134,14 @@ var modern = (function (domGlobals) {
             });
           }
           bindings.push(function () {
-            model.off('change:' + name, fromSelfToOther);
+            model.off("change:" + name, fromSelfToOther);
           });
           return model.get(name);
-        }
+        },
       });
     };
 
-    var global$c = tinymce.util.Tools.resolve('tinymce.util.Observable');
+    var global$c = tinymce.util.Tools.resolve("tinymce.util.Observable");
 
     function isNode(node) {
       return node.nodeType > 0;
@@ -1933,7 +2154,7 @@ var modern = (function (domGlobals) {
       if (a === null || b === null) {
         return a === b;
       }
-      if (typeof a !== 'object' || typeof b !== 'object') {
+      if (typeof a !== "object" || typeof b !== "object") {
         return a === b;
       }
       if (global$2.isArray(b)) {
@@ -1983,7 +2204,7 @@ var modern = (function (domGlobals) {
         if (value instanceof Binding) {
           value = value.create(this, name);
         }
-        if (typeof name === 'object') {
+        if (typeof name === "object") {
           for (key in name) {
             this.set(key, name[key]);
           }
@@ -1995,10 +2216,10 @@ var modern = (function (domGlobals) {
             target: this,
             name: name,
             value: value,
-            oldValue: oldValue
+            oldValue: oldValue,
           };
-          this.fire('change:' + name, args);
-          this.fire('change', args);
+          this.fire("change:" + name, args);
+          this.fire("change", args);
         }
         return this;
       },
@@ -2012,11 +2233,12 @@ var modern = (function (domGlobals) {
         return Binding.create(this, name);
       },
       destroy: function () {
-        this.fire('destroy');
-      }
+        this.fire("destroy");
+      },
     });
 
-    var dirtyCtrls = {}, animationFrameRequested;
+    var dirtyCtrls = {},
+      animationFrameRequested;
     var ReflowQueue = {
       add: function (ctrl) {
         var parent = ctrl.parent();
@@ -2034,7 +2256,7 @@ var modern = (function (domGlobals) {
               animationFrameRequested = false;
               for (id in dirtyCtrls) {
                 ctrl = dirtyCtrls[id];
-                if (ctrl.state.get('rendered')) {
+                if (ctrl.state.get("rendered")) {
                   ctrl.reflow();
                 }
               }
@@ -2047,13 +2269,14 @@ var modern = (function (domGlobals) {
         if (dirtyCtrls[ctrl._id]) {
           delete dirtyCtrls[ctrl._id];
         }
-      }
+      },
     };
 
-    var hasMouseWheelEventSupport = 'onmousewheel' in domGlobals.document;
+    var hasMouseWheelEventSupport = "onmousewheel" in domGlobals.document;
     var hasWheelEventSupport = false;
-    var classPrefix = 'mce-';
-    var Control, idCounter = 0;
+    var classPrefix = "mce-";
+    var Control,
+      idCounter = 0;
     var proto$1 = {
       Statics: { classPrefix: classPrefix },
       isRtl: function () {
@@ -2065,13 +2288,13 @@ var modern = (function (domGlobals) {
         var classes, defaultClasses;
         function applyClasses(classes) {
           var i;
-          classes = classes.split(' ');
+          classes = classes.split(" ");
           for (i = 0; i < classes.length; i++) {
             self.classes.add(classes[i]);
           }
         }
         self.settings = settings = global$2.extend({}, self.Defaults, settings);
-        self._id = settings.id || 'mceu_' + idCounter++;
+        self._id = settings.id || "mceu_" + idCounter++;
         self._aria = { role: settings.role };
         self._elmCache = {};
         self.$ = global$9;
@@ -2079,11 +2302,11 @@ var modern = (function (domGlobals) {
           visible: true,
           active: false,
           disabled: false,
-          value: ''
+          value: "",
         });
         self.data = new ObservableObject(settings.data);
         self.classes = new ClassList(function () {
-          if (self.state.get('rendered')) {
+          if (self.state.get("rendered")) {
             self.getEl().className = this.toString();
           }
         });
@@ -2098,12 +2321,15 @@ var modern = (function (domGlobals) {
           }
           applyClasses(classes);
         }
-        global$2.each('title text name visible disabled active value'.split(' '), function (name) {
-          if (name in settings) {
-            self[name](settings[name]);
+        global$2.each(
+          "title text name visible disabled active value".split(" "),
+          function (name) {
+            if (name in settings) {
+              self[name](settings[name]);
+            }
           }
-        });
-        self.on('click', function () {
+        );
+        self.on("click", function () {
           if (self.disabled()) {
             return false;
           }
@@ -2116,7 +2342,7 @@ var modern = (function (domGlobals) {
           self.hide();
         }
       },
-      Properties: 'parent,name',
+      Properties: "parent,name",
       getContainerElm: function () {
         var uiContainer = UiContainer.getUiContainer(this);
         return uiContainer ? uiContainer : funcs.getContainer();
@@ -2140,9 +2366,11 @@ var modern = (function (domGlobals) {
         var elm = self.getEl();
         var width, height, minWidth, minHeight, autoResize;
         var startMinWidth, startMinHeight, initialSize;
-        borderBox = self.borderBox = self.borderBox || BoxUtils.measureBox(elm, 'border');
-        self.paddingBox = self.paddingBox || BoxUtils.measureBox(elm, 'padding');
-        self.marginBox = self.marginBox || BoxUtils.measureBox(elm, 'margin');
+        borderBox = self.borderBox =
+          self.borderBox || BoxUtils.measureBox(elm, "border");
+        self.paddingBox =
+          self.paddingBox || BoxUtils.measureBox(elm, "padding");
+        self.marginBox = self.marginBox || BoxUtils.measureBox(elm, "margin");
         initialSize = funcs.getSize(elm);
         startMinWidth = settings.minWidth;
         startMinHeight = settings.minHeight;
@@ -2151,7 +2379,8 @@ var modern = (function (domGlobals) {
         width = settings.width;
         height = settings.height;
         autoResize = settings.autoResize;
-        autoResize = typeof autoResize !== 'undefined' ? autoResize : !width && !height;
+        autoResize =
+          typeof autoResize !== "undefined" ? autoResize : !width && !height;
         width = width || minWidth;
         height = height || minHeight;
         var deltaW = borderBox.left + borderBox.right;
@@ -2176,14 +2405,19 @@ var modern = (function (domGlobals) {
           maxW: maxW,
           maxH: maxH,
           autoResize: autoResize,
-          scrollW: 0
+          scrollW: 0,
         };
         self._lastLayoutRect = {};
         return layoutRect;
       },
       layoutRect: function (newRect) {
         var self = this;
-        var curRect = self._layoutRect, lastLayoutRect, size, deltaWidth, deltaHeight, repaintControls;
+        var curRect = self._layoutRect,
+          lastLayoutRect,
+          size,
+          deltaWidth,
+          deltaHeight,
+          repaintControls;
         if (!curRect) {
           curRect = self.initLayoutRect();
         }
@@ -2218,15 +2452,27 @@ var modern = (function (domGlobals) {
           }
           size = newRect.innerW;
           if (size !== undefined) {
-            size = size < curRect.minW - deltaWidth ? curRect.minW - deltaWidth : size;
-            size = size > curRect.maxW - deltaWidth ? curRect.maxW - deltaWidth : size;
+            size =
+              size < curRect.minW - deltaWidth
+                ? curRect.minW - deltaWidth
+                : size;
+            size =
+              size > curRect.maxW - deltaWidth
+                ? curRect.maxW - deltaWidth
+                : size;
             curRect.innerW = size;
             curRect.w = size + deltaWidth;
           }
           size = newRect.innerH;
           if (size !== undefined) {
-            size = size < curRect.minH - deltaHeight ? curRect.minH - deltaHeight : size;
-            size = size > curRect.maxH - deltaHeight ? curRect.maxH - deltaHeight : size;
+            size =
+              size < curRect.minH - deltaHeight
+                ? curRect.minH - deltaHeight
+                : size;
+            size =
+              size > curRect.maxH - deltaHeight
+                ? curRect.maxH - deltaHeight
+                : size;
             curRect.innerH = size;
             curRect.h = size + deltaHeight;
           }
@@ -2237,7 +2483,12 @@ var modern = (function (domGlobals) {
             curRect.contentH = newRect.contentH;
           }
           lastLayoutRect = self._lastLayoutRect;
-          if (lastLayoutRect.x !== curRect.x || lastLayoutRect.y !== curRect.y || lastLayoutRect.w !== curRect.w || lastLayoutRect.h !== curRect.h) {
+          if (
+            lastLayoutRect.x !== curRect.x ||
+            lastLayoutRect.y !== curRect.y ||
+            lastLayoutRect.w !== curRect.w ||
+            lastLayoutRect.h !== curRect.h
+          ) {
             repaintControls = Control.repaintControls;
             if (repaintControls) {
               if (repaintControls.map && !repaintControls.map[self._id]) {
@@ -2258,9 +2509,11 @@ var modern = (function (domGlobals) {
         var self = this;
         var style, bodyStyle, bodyElm, rect, borderBox;
         var borderW, borderH, lastRepaintRect, round, value;
-        round = !domGlobals.document.createRange ? Math.round : function (value) {
-          return value;
-        };
+        round = !domGlobals.document.createRange
+          ? Math.round
+          : function (value) {
+              return value;
+            };
         style = self.getEl().style;
         rect = self._layoutRect;
         lastRepaintRect = self._lastRepaintRect || {};
@@ -2268,50 +2521,50 @@ var modern = (function (domGlobals) {
         borderW = borderBox.left + borderBox.right;
         borderH = borderBox.top + borderBox.bottom;
         if (rect.x !== lastRepaintRect.x) {
-          style.left = round(rect.x) + 'px';
+          style.left = round(rect.x) + "px";
           lastRepaintRect.x = rect.x;
         }
         if (rect.y !== lastRepaintRect.y) {
-          style.top = round(rect.y) + 'px';
+          style.top = round(rect.y) + "px";
           lastRepaintRect.y = rect.y;
         }
         if (rect.w !== lastRepaintRect.w) {
           value = round(rect.w - borderW);
-          style.width = (value >= 0 ? value : 0) + 'px';
+          style.width = (value >= 0 ? value : 0) + "px";
           lastRepaintRect.w = rect.w;
         }
         if (rect.h !== lastRepaintRect.h) {
           value = round(rect.h - borderH);
-          style.height = (value >= 0 ? value : 0) + 'px';
+          style.height = (value >= 0 ? value : 0) + "px";
           lastRepaintRect.h = rect.h;
         }
         if (self._hasBody && rect.innerW !== lastRepaintRect.innerW) {
           value = round(rect.innerW);
-          bodyElm = self.getEl('body');
+          bodyElm = self.getEl("body");
           if (bodyElm) {
             bodyStyle = bodyElm.style;
-            bodyStyle.width = (value >= 0 ? value : 0) + 'px';
+            bodyStyle.width = (value >= 0 ? value : 0) + "px";
           }
           lastRepaintRect.innerW = rect.innerW;
         }
         if (self._hasBody && rect.innerH !== lastRepaintRect.innerH) {
           value = round(rect.innerH);
-          bodyElm = bodyElm || self.getEl('body');
+          bodyElm = bodyElm || self.getEl("body");
           if (bodyElm) {
             bodyStyle = bodyStyle || bodyElm.style;
-            bodyStyle.height = (value >= 0 ? value : 0) + 'px';
+            bodyStyle.height = (value >= 0 ? value : 0) + "px";
           }
           lastRepaintRect.innerH = rect.innerH;
         }
         self._lastRepaintRect = lastRepaintRect;
-        self.fire('repaint', {}, false);
+        self.fire("repaint", {}, false);
       },
       updateLayoutRect: function () {
         var self = this;
         self.parent()._lastRect = null;
         funcs.css(self.getEl(), {
-          width: '',
-          height: ''
+          width: "",
+          height: "",
         });
         self._layoutRect = self._lastRepaintRect = self._lastLayoutRect = null;
         self.initLayoutRect();
@@ -2320,7 +2573,7 @@ var modern = (function (domGlobals) {
         var self = this;
         function resolveCallbackName(name) {
           var callback, scope;
-          if (typeof name !== 'string') {
+          if (typeof name !== "string") {
             return name;
           }
           return function (e) {
@@ -2335,7 +2588,7 @@ var modern = (function (domGlobals) {
             }
             if (!callback) {
               e.action = name;
-              this.fire('execute', e);
+              this.fire("execute", e);
               return;
             }
             return callback.call(scope, e);
@@ -2369,7 +2622,8 @@ var modern = (function (domGlobals) {
       },
       parents: function (selector) {
         var self = this;
-        var ctrl, parents = new Collection$2();
+        var ctrl,
+          parents = new Collection$2();
         for (ctrl = self.parent(); ctrl; ctrl = ctrl.parent()) {
           parents.add(ctrl);
         }
@@ -2394,9 +2648,9 @@ var modern = (function (domGlobals) {
         return this;
       },
       getEl: function (suffix) {
-        var id = suffix ? this._id + '-' + suffix : this._id;
+        var id = suffix ? this._id + "-" + suffix : this._id;
         if (!this._elmCache[id]) {
-          this._elmCache[id] = global$9('#' + id)[0];
+          this._elmCache[id] = global$9("#" + id)[0];
         }
         return this._elmCache[id];
       },
@@ -2409,8 +2663,7 @@ var modern = (function (domGlobals) {
       focus: function () {
         try {
           this.getEl().focus();
-        } catch (ex) {
-        }
+        } catch (ex) {}
         return this;
       },
       blur: function () {
@@ -2418,13 +2671,14 @@ var modern = (function (domGlobals) {
         return this;
       },
       aria: function (name, value) {
-        var self = this, elm = self.getEl(self.ariaTarget);
-        if (typeof value === 'undefined') {
+        var self = this,
+          elm = self.getEl(self.ariaTarget);
+        if (typeof value === "undefined") {
           return self._aria[name];
         }
         self._aria[name] = value;
-        if (self.state.get('rendered')) {
-          elm.setAttribute(name === 'role' ? name : 'aria-' + name, value);
+        if (self.state.get("rendered")) {
+          elm.setAttribute(name === "role" ? name : "aria-" + name, value);
         }
         return self;
       },
@@ -2432,22 +2686,24 @@ var modern = (function (domGlobals) {
         if (translate !== false) {
           text = this.translate(text);
         }
-        return (text || '').replace(/[&<>"]/g, function (match) {
-          return '&#' + match.charCodeAt(0) + ';';
+        return (text || "").replace(/[&<>"]/g, function (match) {
+          return "&#" + match.charCodeAt(0) + ";";
         });
       },
       translate: function (text) {
         return Control.translate ? Control.translate(text) : text;
       },
       before: function (items) {
-        var self = this, parent = self.parent();
+        var self = this,
+          parent = self.parent();
         if (parent) {
           parent.insert(items, parent.items().indexOf(self), true);
         }
         return self;
       },
       after: function (items) {
-        var self = this, parent = self.parent();
+        var self = this,
+          parent = self.parent();
         if (parent) {
           parent.insert(items, parent.items().indexOf(self));
         }
@@ -2485,9 +2741,9 @@ var modern = (function (domGlobals) {
         if (elm && elm.parentNode) {
           elm.parentNode.removeChild(elm);
         }
-        self.state.set('rendered', false);
+        self.state.set("rendered", false);
         self.state.destroy();
-        self.fire('remove');
+        self.fire("remove");
         return self;
       },
       renderBefore: function (elm) {
@@ -2500,10 +2756,8 @@ var modern = (function (domGlobals) {
         this.postRender();
         return this;
       },
-      preRender: function () {
-      },
-      render: function () {
-      },
+      preRender: function () {},
+      render: function () {},
       renderHtml: function () {
         return '<div id="' + this._id + '" class="' + this.classes + '"></div>';
       },
@@ -2512,14 +2766,18 @@ var modern = (function (domGlobals) {
         var settings = self.settings;
         var elm, box, parent, name, parentEventsRoot;
         self.$el = global$9(self.getEl());
-        self.state.set('rendered', true);
+        self.state.set("rendered", true);
         for (name in settings) {
-          if (name.indexOf('on') === 0) {
+          if (name.indexOf("on") === 0) {
             self.on(name.substr(2), settings[name]);
           }
         }
         if (self._eventsRoot) {
-          for (parent = self.parent(); !parentEventsRoot && parent; parent = parent.parent()) {
+          for (
+            parent = self.parent();
+            !parentEventsRoot && parent;
+            parent = parent.parent()
+          ) {
             parentEventsRoot = parent._eventsRoot;
           }
           if (parentEventsRoot) {
@@ -2532,17 +2790,17 @@ var modern = (function (domGlobals) {
         if (settings.style) {
           elm = self.getEl();
           if (elm) {
-            elm.setAttribute('style', settings.style);
+            elm.setAttribute("style", settings.style);
             elm.style.cssText = settings.style;
           }
         }
         if (self.settings.border) {
           box = self.borderBox;
           self.$el.css({
-            'border-top-width': box.top,
-            'border-right-width': box.right,
-            'border-bottom-width': box.bottom,
-            'border-left-width': box.left
+            "border-top-width": box.top,
+            "border-right-width": box.right,
+            "border-bottom-width": box.bottom,
+            "border-left-width": box.left,
           });
         }
         var root = self.getRoot();
@@ -2553,31 +2811,32 @@ var modern = (function (domGlobals) {
         for (var key in self._aria) {
           self.aria(key, self._aria[key]);
         }
-        if (self.state.get('visible') === false) {
-          self.getEl().style.display = 'none';
+        if (self.state.get("visible") === false) {
+          self.getEl().style.display = "none";
         }
         self.bindStates();
-        self.state.on('change:visible', function (e) {
+        self.state.on("change:visible", function (e) {
           var state = e.value;
           var parentCtrl;
-          if (self.state.get('rendered')) {
-            self.getEl().style.display = state === false ? 'none' : '';
+          if (self.state.get("rendered")) {
+            self.getEl().style.display = state === false ? "none" : "";
             self.getEl().getBoundingClientRect();
           }
           parentCtrl = self.parent();
           if (parentCtrl) {
             parentCtrl._lastRect = null;
           }
-          self.fire(state ? 'show' : 'hide');
+          self.fire(state ? "show" : "hide");
           ReflowQueue.add(self);
         });
-        self.fire('postrender', {}, false);
+        self.fire("postrender", {}, false);
       },
-      bindStates: function () {
-      },
+      bindStates: function () {},
       scrollIntoView: function (align) {
         function getOffset(elm, rootElm) {
-          var x, y, parent = elm;
+          var x,
+            y,
+            parent = elm;
           x = y = 0;
           while (parent && parent !== rootElm && parent.nodeType) {
             x += parent.offsetLeft || 0;
@@ -2586,10 +2845,11 @@ var modern = (function (domGlobals) {
           }
           return {
             x: x,
-            y: y
+            y: y,
           };
         }
-        var elm = this.getEl(), parentElm = elm.parentNode;
+        var elm = this.getEl(),
+          parentElm = elm.parentNode;
         var x, y, width, height, parentWidth, parentHeight;
         var pos = getOffset(elm, parentElm);
         x = pos.x;
@@ -2598,10 +2858,10 @@ var modern = (function (domGlobals) {
         height = elm.offsetHeight;
         parentWidth = parentElm.clientWidth;
         parentHeight = parentElm.clientHeight;
-        if (align === 'end') {
+        if (align === "end") {
           x -= parentWidth - width;
           y -= parentHeight - height;
-        } else if (align === 'center') {
+        } else if (align === "center") {
           x -= parentWidth / 2 - width / 2;
           y -= parentHeight / 2 - height / 2;
         }
@@ -2610,7 +2870,8 @@ var modern = (function (domGlobals) {
         return this;
       },
       getRoot: function () {
-        var ctrl = this, rootControl;
+        var ctrl = this,
+          rootControl;
         var parents = [];
         while (ctrl) {
           if (ctrl.rootControl) {
@@ -2637,19 +2898,22 @@ var modern = (function (domGlobals) {
           parent.reflow();
         }
         return this;
-      }
+      },
     };
-    global$2.each('text title visible disabled active value'.split(' '), function (name) {
-      proto$1[name] = function (value) {
-        if (arguments.length === 0) {
-          return this.state.get(name);
-        }
-        if (typeof value !== 'undefined') {
-          this.state.set(name, value);
-        }
-        return this;
-      };
-    });
+    global$2.each(
+      "text title visible disabled active value".split(" "),
+      function (name) {
+        proto$1[name] = function (value) {
+          if (arguments.length === 0) {
+            return this.state.get(name);
+          }
+          if (typeof value !== "undefined") {
+            this.state.set(name, value);
+          }
+          return this;
+        };
+      }
+    );
     Control = global$a.extend(proto$1);
     function getEventDispatcher(obj) {
       if (!obj._eventDispatcher) {
@@ -2661,11 +2925,11 @@ var modern = (function (domGlobals) {
                 obj._nativeEvents = {};
               }
               obj._nativeEvents[name] = true;
-              if (obj.state.get('rendered')) {
+              if (obj.state.get("rendered")) {
                 bindPendingEvents(obj);
               }
             }
-          }
+          },
         });
       }
       return obj._eventDispatcher;
@@ -2681,15 +2945,20 @@ var modern = (function (domGlobals) {
       function mouseLeaveHandler() {
         var ctrl = eventRootCtrl._lastHoverCtrl;
         if (ctrl) {
-          ctrl.fire('mouseleave', { target: ctrl.getEl() });
+          ctrl.fire("mouseleave", { target: ctrl.getEl() });
           ctrl.parents().each(function (ctrl) {
-            ctrl.fire('mouseleave', { target: ctrl.getEl() });
+            ctrl.fire("mouseleave", { target: ctrl.getEl() });
           });
           eventRootCtrl._lastHoverCtrl = null;
         }
       }
       function mouseEnterHandler(e) {
-        var ctrl = eventCtrl.getParentCtrl(e.target), lastCtrl = eventRootCtrl._lastHoverCtrl, idx = 0, i, parents, lastParents;
+        var ctrl = eventCtrl.getParentCtrl(e.target),
+          lastCtrl = eventRootCtrl._lastHoverCtrl,
+          idx = 0,
+          i,
+          parents,
+          lastParents;
         if (ctrl !== lastCtrl) {
           eventRootCtrl._lastHoverCtrl = ctrl;
           parents = ctrl.parents().toArray().reverse();
@@ -2704,27 +2973,27 @@ var modern = (function (domGlobals) {
             }
             for (i = lastParents.length - 1; i >= idx; i--) {
               lastCtrl = lastParents[i];
-              lastCtrl.fire('mouseleave', { target: lastCtrl.getEl() });
+              lastCtrl.fire("mouseleave", { target: lastCtrl.getEl() });
             }
           }
           for (i = idx; i < parents.length; i++) {
             ctrl = parents[i];
-            ctrl.fire('mouseenter', { target: ctrl.getEl() });
+            ctrl.fire("mouseenter", { target: ctrl.getEl() });
           }
         }
       }
       function fixWheelEvent(e) {
         e.preventDefault();
-        if (e.type === 'mousewheel') {
-          e.deltaY = -1 / 40 * e.wheelDelta;
+        if (e.type === "mousewheel") {
+          e.deltaY = (-1 / 40) * e.wheelDelta;
           if (e.wheelDeltaX) {
-            e.deltaX = -1 / 40 * e.wheelDeltaX;
+            e.deltaX = (-1 / 40) * e.wheelDeltaX;
           }
         } else {
           e.deltaX = 0;
           e.deltaY = e.detail;
         }
-        e = eventCtrl.fire('wheel', e);
+        e = eventCtrl.fire("wheel", e);
       }
       nativeEvents = eventCtrl._nativeEvents;
       if (nativeEvents) {
@@ -2748,17 +3017,19 @@ var modern = (function (domGlobals) {
           if (!nativeEvents) {
             return false;
           }
-          if (name === 'wheel' && !hasWheelEventSupport) {
+          if (name === "wheel" && !hasWheelEventSupport) {
             if (hasMouseWheelEventSupport) {
-              global$9(eventCtrl.getEl()).on('mousewheel', fixWheelEvent);
+              global$9(eventCtrl.getEl()).on("mousewheel", fixWheelEvent);
             } else {
-              global$9(eventCtrl.getEl()).on('DOMMouseScroll', fixWheelEvent);
+              global$9(eventCtrl.getEl()).on("DOMMouseScroll", fixWheelEvent);
             }
             continue;
           }
-          if (name === 'mouseenter' || name === 'mouseleave') {
+          if (name === "mouseenter" || name === "mouseleave") {
             if (!eventRootCtrl._hasMouseEnter) {
-              global$9(eventRootCtrl.getEl()).on('mouseleave', mouseLeaveHandler).on('mouseover', mouseEnterHandler);
+              global$9(eventRootCtrl.getEl())
+                .on("mouseleave", mouseLeaveHandler)
+                .on("mouseover", mouseEnterHandler);
               eventRootCtrl._hasMouseEnter = 1;
             }
           } else if (!eventRootDelegates[name]) {
@@ -2772,9 +3043,9 @@ var modern = (function (domGlobals) {
     var Control$1 = Control;
 
     var hasTabstopData = function (elm) {
-      return elm.getAttribute('data-mce-tabstop') ? true : false;
+      return elm.getAttribute("data-mce-tabstop") ? true : false;
     };
-    function KeyboardNavigation (settings) {
+    function KeyboardNavigation(settings) {
       var root = settings.root;
       var focusedElement, focusedControl;
       function isElement(node) {
@@ -2789,14 +3060,15 @@ var modern = (function (domGlobals) {
       function getRole(elm) {
         elm = elm || focusedElement;
         if (isElement(elm)) {
-          return elm.getAttribute('role');
+          return elm.getAttribute("role");
         }
         return null;
       }
       function getParentRole(elm) {
-        var role, parent = elm || focusedElement;
-        while (parent = parent.parentNode) {
-          if (role = getRole(parent)) {
+        var role,
+          parent = elm || focusedElement;
+        while ((parent = parent.parentNode)) {
+          if ((role = getRole(parent))) {
             return role;
           }
         }
@@ -2804,12 +3076,14 @@ var modern = (function (domGlobals) {
       function getAriaProp(name) {
         var elm = focusedElement;
         if (isElement(elm)) {
-          return elm.getAttribute('aria-' + name);
+          return elm.getAttribute("aria-" + name);
         }
       }
       function isTextInputElement(elm) {
         var tagName = elm.tagName.toUpperCase();
-        return tagName === 'INPUT' || tagName === 'TEXTAREA' || tagName === 'SELECT';
+        return (
+          tagName === "INPUT" || tagName === "TEXTAREA" || tagName === "SELECT"
+        );
       }
       function canFocus(elm) {
         if (isTextInputElement(elm) && !elm.hidden) {
@@ -2818,7 +3092,11 @@ var modern = (function (domGlobals) {
         if (hasTabstopData(elm)) {
           return true;
         }
-        if (/^(button|menuitem|checkbox|tab|menuitemcheckbox|option|gridcell|slider)$/.test(getRole(elm))) {
+        if (
+          /^(button|menuitem|checkbox|tab|menuitemcheckbox|option|gridcell|slider)$/.test(
+            getRole(elm)
+          )
+        ) {
           return true;
         }
         return false;
@@ -2826,7 +3104,11 @@ var modern = (function (domGlobals) {
       function getFocusElements(elm) {
         var elements = [];
         function collect(elm) {
-          if (elm.nodeType !== 1 || elm.style.display === 'none' || elm.disabled) {
+          if (
+            elm.nodeType !== 1 ||
+            elm.style.display === "none" ||
+            elm.disabled
+          ) {
             return;
           }
           if (canFocus(elm)) {
@@ -2855,7 +3137,10 @@ var modern = (function (domGlobals) {
       function focusFirst(targetControl) {
         var navigationRoot = getNavigationRoot(targetControl);
         var focusElements = getFocusElements(navigationRoot.getEl());
-        if (navigationRoot.settings.ariaRemember && 'lastAriaIndex' in navigationRoot) {
+        if (
+          navigationRoot.settings.ariaRemember &&
+          "lastAriaIndex" in navigationRoot
+        ) {
           moveFocusToIndex(navigationRoot.lastAriaIndex, focusElements);
         } else {
           moveFocusToIndex(0, focusElements);
@@ -2886,7 +3171,7 @@ var modern = (function (domGlobals) {
       }
       function left() {
         var parentRole = getParentRole();
-        if (parentRole === 'tablist') {
+        if (parentRole === "tablist") {
           moveFocus(-1, getFocusElements(focusedElement.parentNode));
         } else if (focusedControl.parent().submenu) {
           cancel();
@@ -2895,10 +3180,15 @@ var modern = (function (domGlobals) {
         }
       }
       function right() {
-        var role = getRole(), parentRole = getParentRole();
-        if (parentRole === 'tablist') {
+        var role = getRole(),
+          parentRole = getParentRole();
+        if (parentRole === "tablist") {
           moveFocus(1, getFocusElements(focusedElement.parentNode));
-        } else if (role === 'menuitem' && parentRole === 'menu' && getAriaProp('haspopup')) {
+        } else if (
+          role === "menuitem" &&
+          parentRole === "menu" &&
+          getAriaProp("haspopup")
+        ) {
           enter();
         } else {
           moveFocus(1);
@@ -2908,19 +3198,20 @@ var modern = (function (domGlobals) {
         moveFocus(-1);
       }
       function down() {
-        var role = getRole(), parentRole = getParentRole();
-        if (role === 'menuitem' && parentRole === 'menubar') {
+        var role = getRole(),
+          parentRole = getParentRole();
+        if (role === "menuitem" && parentRole === "menubar") {
           enter();
-        } else if (role === 'button' && getAriaProp('haspopup')) {
-          enter({ key: 'down' });
+        } else if (role === "button" && getAriaProp("haspopup")) {
+          enter({ key: "down" });
         } else {
           moveFocus(1);
         }
       }
       function tab(e) {
         var parentRole = getParentRole();
-        if (parentRole === 'tablist') {
-          var elm = getFocusElements(focusedControl.getEl('body'))[0];
+        if (parentRole === "tablist") {
+          var elm = getFocusElements(focusedControl.getEl("body"))[0];
           if (elm) {
             elm.focus();
           }
@@ -2929,21 +3220,24 @@ var modern = (function (domGlobals) {
         }
       }
       function cancel() {
-        focusedControl.fire('cancel');
+        focusedControl.fire("cancel");
       }
       function enter(aria) {
         aria = aria || {};
-        focusedControl.fire('click', {
+        focusedControl.fire("click", {
           target: focusedElement,
-          aria: aria
+          aria: aria,
         });
       }
-      root.on('keydown', function (e) {
+      root.on("keydown", function (e) {
         function handleNonTabOrEscEvent(e, handler) {
-          if (isTextInputElement(focusedElement) || hasTabstopData(focusedElement)) {
+          if (
+            isTextInputElement(focusedElement) ||
+            hasTabstopData(focusedElement)
+          ) {
             return;
           }
-          if (getRole(focusedElement) === 'slider') {
+          if (getRole(focusedElement) === "slider") {
             return;
           }
           if (handler(e) !== false) {
@@ -2954,33 +3248,33 @@ var modern = (function (domGlobals) {
           return;
         }
         switch (e.keyCode) {
-        case 37:
-          handleNonTabOrEscEvent(e, left);
-          break;
-        case 39:
-          handleNonTabOrEscEvent(e, right);
-          break;
-        case 38:
-          handleNonTabOrEscEvent(e, up);
-          break;
-        case 40:
-          handleNonTabOrEscEvent(e, down);
-          break;
-        case 27:
-          cancel();
-          break;
-        case 14:
-        case 13:
-        case 32:
-          handleNonTabOrEscEvent(e, enter);
-          break;
-        case 9:
-          tab(e);
-          e.preventDefault();
-          break;
+          case 37:
+            handleNonTabOrEscEvent(e, left);
+            break;
+          case 39:
+            handleNonTabOrEscEvent(e, right);
+            break;
+          case 38:
+            handleNonTabOrEscEvent(e, up);
+            break;
+          case 40:
+            handleNonTabOrEscEvent(e, down);
+            break;
+          case 27:
+            cancel();
+            break;
+          case 14:
+          case 13:
+          case 32:
+            handleNonTabOrEscEvent(e, enter);
+            break;
+          case 9:
+            tab(e);
+            e.preventDefault();
+            break;
         }
       });
-      root.on('focusin', function (e) {
+      root.on("focusin", function (e) {
         focusedElement = e.target;
         focusedControl = e.control;
       });
@@ -2994,24 +3288,24 @@ var modern = (function (domGlobals) {
         self._super(settings);
         settings = self.settings;
         if (settings.fixed) {
-          self.state.set('fixed', true);
+          self.state.set("fixed", true);
         }
         self._items = new Collection$2();
         if (self.isRtl()) {
-          self.classes.add('rtl');
+          self.classes.add("rtl");
         }
         self.bodyClasses = new ClassList(function () {
-          if (self.state.get('rendered')) {
-            self.getEl('body').className = this.toString();
+          if (self.state.get("rendered")) {
+            self.getEl("body").className = this.toString();
           }
         });
         self.bodyClasses.prefix = self.classPrefix;
-        self.classes.add('container');
-        self.bodyClasses.add('container-body');
+        self.classes.add("container");
+        self.bodyClasses.add("container-body");
         if (settings.containerCls) {
           self.classes.add(settings.containerCls);
         }
-        self._layout = global$4.create((settings.layout || '') + 'layout');
+        self._layout = global$4.create((settings.layout || "") + "layout");
         if (self.settings.items) {
           self.add(self.settings.items);
         } else {
@@ -3023,7 +3317,8 @@ var modern = (function (domGlobals) {
         return this._items;
       },
       find: function (selector) {
-        selector = selectorCache[selector] = selectorCache[selector] || new Selector(selector);
+        selector = selectorCache[selector] =
+          selectorCache[selector] || new Selector(selector);
         return selector.find(this);
       },
       add: function (items) {
@@ -3035,13 +3330,14 @@ var modern = (function (domGlobals) {
         var self = this;
         var focusCtrl, keyboardNav, items;
         if (keyboard) {
-          keyboardNav = self.keyboardNav || self.parents().eq(-1)[0].keyboardNav;
+          keyboardNav =
+            self.keyboardNav || self.parents().eq(-1)[0].keyboardNav;
           if (keyboardNav) {
             keyboardNav.focusFirst(self);
             return;
           }
         }
-        items = self.find('*');
+        items = self.find("*");
         if (self.statusbar) {
           items.add(self.statusbar.items());
         }
@@ -3091,11 +3387,15 @@ var modern = (function (domGlobals) {
         global$2.each(items, function (item) {
           if (item) {
             if (!(item instanceof Control$1)) {
-              if (typeof item === 'string') {
+              if (typeof item === "string") {
                 item = { type: item };
               }
               settings = global$2.extend({}, self.settings.defaults, item);
-              item.type = settings.type = settings.type || item.type || self.settings.defaultType || (settings.defaults ? settings.defaults.type : null);
+              item.type = settings.type =
+                settings.type ||
+                item.type ||
+                self.settings.defaultType ||
+                (settings.defaults ? settings.defaults.type : null);
               item = global$4.create(settings);
             }
             ctrlItems.push(item);
@@ -3108,10 +3408,15 @@ var modern = (function (domGlobals) {
         self.items().each(function (ctrl, index) {
           var containerElm;
           ctrl.parent(self);
-          if (!ctrl.state.get('rendered')) {
-            containerElm = self.getEl('body');
-            if (containerElm.hasChildNodes() && index <= containerElm.childNodes.length - 1) {
-              global$9(containerElm.childNodes[index]).before(ctrl.renderHtml());
+          if (!ctrl.state.get("rendered")) {
+            containerElm = self.getEl("body");
+            if (
+              containerElm.hasChildNodes() &&
+              index <= containerElm.childNodes.length - 1
+            ) {
+              global$9(containerElm.childNodes[index]).before(
+                ctrl.renderHtml()
+              );
             } else {
               global$9(containerElm).append(ctrl.renderHtml());
             }
@@ -3119,7 +3424,7 @@ var modern = (function (domGlobals) {
             ReflowQueue.add(ctrl);
           }
         });
-        self._layout.applyClasses(self.items().filter(':visible'));
+        self._layout.applyClasses(self.items().filter(":visible"));
         self._lastRect = null;
         return self;
       },
@@ -3149,43 +3454,64 @@ var modern = (function (domGlobals) {
       fromJSON: function (data) {
         var self = this;
         for (var name in data) {
-          self.find('#' + name).value(data[name]);
+          self.find("#" + name).value(data[name]);
         }
         return self;
       },
       toJSON: function () {
-        var self = this, data = {};
-        self.find('*').each(function (ctrl) {
-          var name = ctrl.name(), value = ctrl.value();
-          if (name && typeof value !== 'undefined') {
+        var self = this,
+          data = {};
+        self.find("*").each(function (ctrl) {
+          var name = ctrl.name(),
+            value = ctrl.value();
+          if (name && typeof value !== "undefined") {
             data[name] = value;
           }
         });
         return data;
       },
       renderHtml: function () {
-        var self = this, layout = self._layout, role = this.settings.role;
+        var self = this,
+          layout = self._layout,
+          role = this.settings.role;
         self.preRender();
         layout.preRender(self);
-        return '<div id="' + self._id + '" class="' + self.classes + '"' + (role ? ' role="' + this.settings.role + '"' : '') + '>' + '<div id="' + self._id + '-body" class="' + self.bodyClasses + '">' + (self.settings.html || '') + layout.renderHtml(self) + '</div>' + '</div>';
+        return (
+          '<div id="' +
+          self._id +
+          '" class="' +
+          self.classes +
+          '"' +
+          (role ? ' role="' + this.settings.role + '"' : "") +
+          ">" +
+          '<div id="' +
+          self._id +
+          '-body" class="' +
+          self.bodyClasses +
+          '">' +
+          (self.settings.html || "") +
+          layout.renderHtml(self) +
+          "</div>" +
+          "</div>"
+        );
       },
       postRender: function () {
         var self = this;
         var box;
-        self.items().exec('postRender');
+        self.items().exec("postRender");
         self._super();
         self._layout.postRender(self);
-        self.state.set('rendered', true);
+        self.state.set("rendered", true);
         if (self.settings.style) {
           self.$el.css(self.settings.style);
         }
         if (self.settings.border) {
           box = self.borderBox;
           self.$el.css({
-            'border-top-width': box.top,
-            'border-right-width': box.right,
-            'border-bottom-width': box.bottom,
-            'border-left-width': box.left
+            "border-top-width": box.top,
+            "border-right-width": box.right,
+            "border-bottom-width": box.bottom,
+            "border-left-width": box.left,
           });
         }
         if (!self.parent()) {
@@ -3194,7 +3520,8 @@ var modern = (function (domGlobals) {
         return self;
       },
       initLayoutRect: function () {
-        var self = this, layoutRect = self._super();
+        var self = this,
+          layoutRect = self._super();
         self._layout.recalc(self);
         return layoutRect;
       },
@@ -3209,7 +3536,7 @@ var modern = (function (domGlobals) {
             x: rect.x,
             y: rect.y,
             w: rect.w,
-            h: rect.h
+            h: rect.h,
           };
           return true;
         }
@@ -3225,13 +3552,16 @@ var modern = (function (domGlobals) {
           while (i--) {
             Control$1.repaintControls[i].repaint();
           }
-          if (this.settings.layout !== 'flow' && this.settings.layout !== 'stack') {
+          if (
+            this.settings.layout !== "flow" &&
+            this.settings.layout !== "stack"
+          ) {
             this.repaint();
           }
           Control$1.repaintControls = [];
         }
         return this;
-      }
+      },
     });
 
     function getDocumentSize(doc) {
@@ -3248,19 +3578,19 @@ var modern = (function (domGlobals) {
       offsetHeight = max(documentElement.offsetHeight, body.offsetHeight);
       return {
         width: scrollWidth < offsetWidth ? clientWidth : scrollWidth,
-        height: scrollHeight < offsetHeight ? clientHeight : scrollHeight
+        height: scrollHeight < offsetHeight ? clientHeight : scrollHeight,
       };
     }
     function updateWithTouchData(e) {
       var keys, i;
       if (e.changedTouches) {
-        keys = 'screenX screenY pageX pageY clientX clientY'.split(' ');
+        keys = "screenX screenY pageX pageY clientX clientY".split(" ");
         for (i = 0; i < keys.length; i++) {
           e[keys[i]] = e.changedTouches[0][keys[i]];
         }
       }
     }
-    function DragHelper (id, settings) {
+    function DragHelper(id, settings) {
       var $eventOverlay;
       var doc = settings.document || domGlobals.document;
       var downButton;
@@ -3277,21 +3607,27 @@ var modern = (function (domGlobals) {
         startX = e.screenX;
         startY = e.screenY;
         if (domGlobals.window.getComputedStyle) {
-          cursor = domGlobals.window.getComputedStyle(handleElm, null).getPropertyValue('cursor');
+          cursor = domGlobals.window
+            .getComputedStyle(handleElm, null)
+            .getPropertyValue("cursor");
         } else {
           cursor = handleElm.runtimeStyle.cursor;
         }
-        $eventOverlay = global$9('<div></div>').css({
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          width: docSize.width,
-          height: docSize.height,
-          zIndex: 2147483647,
-          opacity: 0.0001,
-          cursor: cursor
-        }).appendTo(doc.body);
-        global$9(doc).on('mousemove touchmove', drag).on('mouseup touchend', stop);
+        $eventOverlay = global$9("<div></div>")
+          .css({
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: docSize.width,
+            height: docSize.height,
+            zIndex: 2147483647,
+            opacity: 0.0001,
+            cursor: cursor,
+          })
+          .appendTo(doc.body);
+        global$9(doc)
+          .on("mousemove touchmove", drag)
+          .on("mouseup touchend", stop);
         settings.start(e);
       };
       drag = function (e) {
@@ -3306,7 +3642,9 @@ var modern = (function (domGlobals) {
       };
       stop = function (e) {
         updateWithTouchData(e);
-        global$9(doc).off('mousemove touchmove', drag).off('mouseup touchend', stop);
+        global$9(doc)
+          .off("mousemove touchmove", drag)
+          .off("mouseup touchend", stop);
         $eventOverlay.remove();
         if (settings.stop) {
           settings.stop(e);
@@ -3315,104 +3653,144 @@ var modern = (function (domGlobals) {
       this.destroy = function () {
         global$9(handleElement).off();
       };
-      global$9(handleElement).on('mousedown touchstart', start);
+      global$9(handleElement).on("mousedown touchstart", start);
     }
 
     var Scrollable = {
       init: function () {
         var self = this;
-        self.on('repaint', self.renderScroll);
+        self.on("repaint", self.renderScroll);
       },
       renderScroll: function () {
-        var self = this, margin = 2;
+        var self = this,
+          margin = 2;
         function repaintScroll() {
           var hasScrollH, hasScrollV, bodyElm;
-          function repaintAxis(axisName, posName, sizeName, contentSizeName, hasScroll, ax) {
+          function repaintAxis(
+            axisName,
+            posName,
+            sizeName,
+            contentSizeName,
+            hasScroll,
+            ax
+          ) {
             var containerElm, scrollBarElm, scrollThumbElm;
             var containerSize, scrollSize, ratio, rect;
             var posNameLower, sizeNameLower;
-            scrollBarElm = self.getEl('scroll' + axisName);
+            scrollBarElm = self.getEl("scroll" + axisName);
             if (scrollBarElm) {
               posNameLower = posName.toLowerCase();
               sizeNameLower = sizeName.toLowerCase();
-              global$9(self.getEl('absend')).css(posNameLower, self.layoutRect()[contentSizeName] - 1);
+              global$9(self.getEl("absend")).css(
+                posNameLower,
+                self.layoutRect()[contentSizeName] - 1
+              );
               if (!hasScroll) {
-                global$9(scrollBarElm).css('display', 'none');
+                global$9(scrollBarElm).css("display", "none");
                 return;
               }
-              global$9(scrollBarElm).css('display', 'block');
-              containerElm = self.getEl('body');
-              scrollThumbElm = self.getEl('scroll' + axisName + 't');
-              containerSize = containerElm['client' + sizeName] - margin * 2;
-              containerSize -= hasScrollH && hasScrollV ? scrollBarElm['client' + ax] : 0;
-              scrollSize = containerElm['scroll' + sizeName];
+              global$9(scrollBarElm).css("display", "block");
+              containerElm = self.getEl("body");
+              scrollThumbElm = self.getEl("scroll" + axisName + "t");
+              containerSize = containerElm["client" + sizeName] - margin * 2;
+              containerSize -=
+                hasScrollH && hasScrollV ? scrollBarElm["client" + ax] : 0;
+              scrollSize = containerElm["scroll" + sizeName];
               ratio = containerSize / scrollSize;
               rect = {};
-              rect[posNameLower] = containerElm['offset' + posName] + margin;
+              rect[posNameLower] = containerElm["offset" + posName] + margin;
               rect[sizeNameLower] = containerSize;
               global$9(scrollBarElm).css(rect);
               rect = {};
-              rect[posNameLower] = containerElm['scroll' + posName] * ratio;
+              rect[posNameLower] = containerElm["scroll" + posName] * ratio;
               rect[sizeNameLower] = containerSize * ratio;
               global$9(scrollThumbElm).css(rect);
             }
           }
-          bodyElm = self.getEl('body');
+          bodyElm = self.getEl("body");
           hasScrollH = bodyElm.scrollWidth > bodyElm.clientWidth;
           hasScrollV = bodyElm.scrollHeight > bodyElm.clientHeight;
-          repaintAxis('h', 'Left', 'Width', 'contentW', hasScrollH, 'Height');
-          repaintAxis('v', 'Top', 'Height', 'contentH', hasScrollV, 'Width');
+          repaintAxis("h", "Left", "Width", "contentW", hasScrollH, "Height");
+          repaintAxis("v", "Top", "Height", "contentH", hasScrollV, "Width");
         }
         function addScroll() {
-          function addScrollAxis(axisName, posName, sizeName, deltaPosName, ax) {
+          function addScrollAxis(
+            axisName,
+            posName,
+            sizeName,
+            deltaPosName,
+            ax
+          ) {
             var scrollStart;
-            var axisId = self._id + '-scroll' + axisName, prefix = self.classPrefix;
-            global$9(self.getEl()).append('<div id="' + axisId + '" class="' + prefix + 'scrollbar ' + prefix + 'scrollbar-' + axisName + '">' + '<div id="' + axisId + 't" class="' + prefix + 'scrollbar-thumb"></div>' + '</div>');
-            self.draghelper = new DragHelper(axisId + 't', {
+            var axisId = self._id + "-scroll" + axisName,
+              prefix = self.classPrefix;
+            global$9(self.getEl()).append(
+              '<div id="' +
+                axisId +
+                '" class="' +
+                prefix +
+                "scrollbar " +
+                prefix +
+                "scrollbar-" +
+                axisName +
+                '">' +
+                '<div id="' +
+                axisId +
+                't" class="' +
+                prefix +
+                'scrollbar-thumb"></div>' +
+                "</div>"
+            );
+            self.draghelper = new DragHelper(axisId + "t", {
               start: function () {
-                scrollStart = self.getEl('body')['scroll' + posName];
-                global$9('#' + axisId).addClass(prefix + 'active');
+                scrollStart = self.getEl("body")["scroll" + posName];
+                global$9("#" + axisId).addClass(prefix + "active");
               },
               drag: function (e) {
                 var ratio, hasScrollH, hasScrollV, containerSize;
                 var layoutRect = self.layoutRect();
                 hasScrollH = layoutRect.contentW > layoutRect.innerW;
                 hasScrollV = layoutRect.contentH > layoutRect.innerH;
-                containerSize = self.getEl('body')['client' + sizeName] - margin * 2;
-                containerSize -= hasScrollH && hasScrollV ? self.getEl('scroll' + axisName)['client' + ax] : 0;
-                ratio = containerSize / self.getEl('body')['scroll' + sizeName];
-                self.getEl('body')['scroll' + posName] = scrollStart + e['delta' + deltaPosName] / ratio;
+                containerSize =
+                  self.getEl("body")["client" + sizeName] - margin * 2;
+                containerSize -=
+                  hasScrollH && hasScrollV
+                    ? self.getEl("scroll" + axisName)["client" + ax]
+                    : 0;
+                ratio = containerSize / self.getEl("body")["scroll" + sizeName];
+                self.getEl("body")["scroll" + posName] =
+                  scrollStart + e["delta" + deltaPosName] / ratio;
               },
               stop: function () {
-                global$9('#' + axisId).removeClass(prefix + 'active');
-              }
+                global$9("#" + axisId).removeClass(prefix + "active");
+              },
             });
           }
-          self.classes.add('scroll');
-          addScrollAxis('v', 'Top', 'Height', 'Y', 'Width');
-          addScrollAxis('h', 'Left', 'Width', 'X', 'Height');
+          self.classes.add("scroll");
+          addScrollAxis("v", "Top", "Height", "Y", "Width");
+          addScrollAxis("h", "Left", "Width", "X", "Height");
         }
         if (self.settings.autoScroll) {
           if (!self._hasScroll) {
             self._hasScroll = true;
             addScroll();
-            self.on('wheel', function (e) {
-              var bodyEl = self.getEl('body');
+            self.on("wheel", function (e) {
+              var bodyEl = self.getEl("body");
               bodyEl.scrollLeft += (e.deltaX || 0) * 10;
               bodyEl.scrollTop += e.deltaY * 10;
               repaintScroll();
             });
-            global$9(self.getEl('body')).on('scroll', repaintScroll);
+            global$9(self.getEl("body")).on("scroll", repaintScroll);
           }
           repaintScroll();
         }
-      }
+      },
     };
 
     var Panel = Container.extend({
       Defaults: {
-        layout: 'fit',
-        containerCls: 'panel'
+        layout: "fit",
+        containerCls: "panel",
       },
       Mixins: [Scrollable],
       renderHtml: function () {
@@ -3421,16 +3799,32 @@ var modern = (function (domGlobals) {
         var innerHtml = self.settings.html;
         self.preRender();
         layout.preRender(self);
-        if (typeof innerHtml === 'undefined') {
-          innerHtml = '<div id="' + self._id + '-body" class="' + self.bodyClasses + '">' + layout.renderHtml(self) + '</div>';
+        if (typeof innerHtml === "undefined") {
+          innerHtml =
+            '<div id="' +
+            self._id +
+            '-body" class="' +
+            self.bodyClasses +
+            '">' +
+            layout.renderHtml(self) +
+            "</div>";
         } else {
-          if (typeof innerHtml === 'function') {
+          if (typeof innerHtml === "function") {
             innerHtml = innerHtml.call(self);
           }
           self._hasBody = false;
         }
-        return '<div id="' + self._id + '" class="' + self.classes + '" hidefocus="1" tabindex="-1" role="group">' + (self._preBodyHtml || '') + innerHtml + '</div>';
-      }
+        return (
+          '<div id="' +
+          self._id +
+          '" class="' +
+          self.classes +
+          '" hidefocus="1" tabindex="-1" role="group">' +
+          (self._preBodyHtml || "") +
+          innerHtml +
+          "</div>"
+        );
+      },
     });
 
     var Resizable = {
@@ -3450,13 +3844,14 @@ var modern = (function (domGlobals) {
           minW: w,
           minH: h,
           w: w,
-          h: h
+          h: h,
         }).reflow();
       },
       resizeBy: function (dw, dh) {
-        var self = this, rect = self.layoutRect();
+        var self = this,
+          rect = self.layoutRect();
         return self.resizeTo(rect.w + dw, rect.h + dh);
-      }
+      },
     };
 
     var documentClickHandler, documentScrollHandler, windowResizeHandler;
@@ -3474,14 +3869,15 @@ var modern = (function (domGlobals) {
     function skipOrHidePanels(e) {
       var i = visiblePanels.length;
       while (i--) {
-        var panel = visiblePanels[i], clickCtrl = panel.getParentCtrl(e.target);
+        var panel = visiblePanels[i],
+          clickCtrl = panel.getParentCtrl(e.target);
         if (panel.settings.autohide) {
           if (clickCtrl) {
             if (isChildOf(clickCtrl, panel) || panel.parent() === clickCtrl) {
               continue;
             }
           }
-          e = panel.fire('autohide', { target: e.target });
+          e = panel.fire("autohide", { target: e.target });
           if (!e.isDefaultPrevented()) {
             panel.hide();
           }
@@ -3496,7 +3892,10 @@ var modern = (function (domGlobals) {
           }
           skipOrHidePanels(e);
         };
-        global$9(domGlobals.document).on('click touchstart', documentClickHandler);
+        global$9(domGlobals.document).on(
+          "click touchstart",
+          documentClickHandler
+        );
       }
     }
     function bindDocumentScrollHandler() {
@@ -3508,21 +3907,26 @@ var modern = (function (domGlobals) {
             repositionPanel(visiblePanels[i]);
           }
         };
-        global$9(domGlobals.window).on('scroll', documentScrollHandler);
+        global$9(domGlobals.window).on("scroll", documentScrollHandler);
       }
     }
     function bindWindowResizeHandler() {
       if (!windowResizeHandler) {
         var docElm_1 = domGlobals.document.documentElement;
-        var clientWidth_1 = docElm_1.clientWidth, clientHeight_1 = docElm_1.clientHeight;
+        var clientWidth_1 = docElm_1.clientWidth,
+          clientHeight_1 = docElm_1.clientHeight;
         windowResizeHandler = function () {
-          if (!domGlobals.document.all || clientWidth_1 !== docElm_1.clientWidth || clientHeight_1 !== docElm_1.clientHeight) {
+          if (
+            !domGlobals.document.all ||
+            clientWidth_1 !== docElm_1.clientWidth ||
+            clientHeight_1 !== docElm_1.clientHeight
+          ) {
             clientWidth_1 = docElm_1.clientWidth;
             clientHeight_1 = docElm_1.clientHeight;
             FloatPanel.hideAll();
           }
         };
-        global$9(domGlobals.window).on('resize', windowResizeHandler);
+        global$9(domGlobals.window).on("resize", windowResizeHandler);
       }
     }
     function repositionPanel(panel) {
@@ -3541,7 +3945,7 @@ var modern = (function (domGlobals) {
         }
       }
       if (panel.settings.autofix) {
-        if (!panel.state.get('fixed')) {
+        if (!panel.state.get("fixed")) {
           panel._autoFixY = panel.layoutRect().y;
           if (panel._autoFixY < scrollY) {
             panel.fixed(true).layoutRect({ y: 0 }).repaint();
@@ -3556,7 +3960,9 @@ var modern = (function (domGlobals) {
       }
     }
     function addRemove(add, ctrl) {
-      var i, zIndex = FloatPanel.zIndex || 65535, topModal;
+      var i,
+        zIndex = FloatPanel.zIndex || 65535,
+        topModal;
       if (add) {
         zOrder.push(ctrl);
       } else {
@@ -3578,9 +3984,12 @@ var modern = (function (domGlobals) {
           zIndex++;
         }
       }
-      var modalBlockEl = global$9('#' + ctrl.classPrefix + 'modal-block', ctrl.getContainerElm())[0];
+      var modalBlockEl = global$9(
+        "#" + ctrl.classPrefix + "modal-block",
+        ctrl.getContainerElm()
+      )[0];
       if (topModal) {
-        global$9(modalBlockEl).css('z-index', topModal.zIndex - 1);
+        global$9(modalBlockEl).css("z-index", topModal.zIndex - 1);
       } else if (modalBlockEl) {
         modalBlockEl.parentNode.removeChild(modalBlockEl);
         hasModal = false;
@@ -3588,15 +3997,12 @@ var modern = (function (domGlobals) {
       FloatPanel.currentZIndex = zIndex;
     }
     var FloatPanel = Panel.extend({
-      Mixins: [
-        Movable,
-        Resizable
-      ],
+      Mixins: [Movable, Resizable],
       init: function (settings) {
         var self = this;
         self._super(settings);
         self._eventsRoot = self;
-        self.classes.add('floatpanel');
+        self.classes.add("floatpanel");
         if (settings.autohide) {
           bindDocumentClickHandler();
           bindWindowResizeHandler();
@@ -3604,48 +4010,63 @@ var modern = (function (domGlobals) {
         }
         if (settings.autofix) {
           bindDocumentScrollHandler();
-          self.on('move', function () {
+          self.on("move", function () {
             repositionPanel(this);
           });
         }
-        self.on('postrender show', function (e) {
+        self.on("postrender show", function (e) {
           if (e.control === self) {
             var $modalBlockEl_1;
             var prefix_1 = self.classPrefix;
             if (self.modal && !hasModal) {
-              $modalBlockEl_1 = global$9('#' + prefix_1 + 'modal-block', self.getContainerElm());
+              $modalBlockEl_1 = global$9(
+                "#" + prefix_1 + "modal-block",
+                self.getContainerElm()
+              );
               if (!$modalBlockEl_1[0]) {
-                $modalBlockEl_1 = global$9('<div id="' + prefix_1 + 'modal-block" class="' + prefix_1 + 'reset ' + prefix_1 + 'fade"></div>').appendTo(self.getContainerElm());
+                $modalBlockEl_1 = global$9(
+                  '<div id="' +
+                    prefix_1 +
+                    'modal-block" class="' +
+                    prefix_1 +
+                    "reset " +
+                    prefix_1 +
+                    'fade"></div>'
+                ).appendTo(self.getContainerElm());
               }
               global$7.setTimeout(function () {
-                $modalBlockEl_1.addClass(prefix_1 + 'in');
-                global$9(self.getEl()).addClass(prefix_1 + 'in');
+                $modalBlockEl_1.addClass(prefix_1 + "in");
+                global$9(self.getEl()).addClass(prefix_1 + "in");
               });
               hasModal = true;
             }
             addRemove(true, self);
           }
         });
-        self.on('show', function () {
+        self.on("show", function () {
           self.parents().each(function (ctrl) {
-            if (ctrl.state.get('fixed')) {
+            if (ctrl.state.get("fixed")) {
               self.fixed(true);
               return false;
             }
           });
         });
         if (settings.popover) {
-          self._preBodyHtml = '<div class="' + self.classPrefix + 'arrow"></div>';
-          self.classes.add('popover').add('bottom').add(self.isRtl() ? 'end' : 'start');
+          self._preBodyHtml =
+            '<div class="' + self.classPrefix + 'arrow"></div>';
+          self.classes
+            .add("popover")
+            .add("bottom")
+            .add(self.isRtl() ? "end" : "start");
         }
-        self.aria('label', settings.ariaLabel);
-        self.aria('labelledby', self._id);
-        self.aria('describedby', self.describedBy || self._id + '-none');
+        self.aria("label", settings.ariaLabel);
+        self.aria("labelledby", self._id);
+        self.aria("describedby", self.describedBy || self._id + "-none");
       },
       fixed: function (state) {
         var self = this;
-        if (self.state.get('fixed') !== state) {
-          if (self.state.get('rendered')) {
+        if (self.state.get("fixed") !== state) {
+          if (self.state.get("rendered")) {
             var viewport = funcs.getViewPort();
             if (state) {
               self.layoutRect().y -= viewport.y;
@@ -3653,8 +4074,8 @@ var modern = (function (domGlobals) {
               self.layoutRect().y += viewport.y;
             }
           }
-          self.classes.toggle('fixed', state);
-          self.state.set('fixed', state);
+          self.classes.toggle("fixed", state);
+          self.state.set("fixed", state);
         }
         return self;
       },
@@ -3683,7 +4104,7 @@ var modern = (function (domGlobals) {
       },
       close: function () {
         var self = this;
-        if (!self.fire('close').isDefaultPrevented()) {
+        if (!self.fire("close").isDefaultPrevented()) {
           self.remove();
           addRemove(false, self);
         }
@@ -3696,10 +4117,10 @@ var modern = (function (domGlobals) {
       postRender: function () {
         var self = this;
         if (self.settings.bodyRole) {
-          this.getEl('body').setAttribute('role', self.settings.bodyRole);
+          this.getEl("body").setAttribute("role", self.settings.bodyRole);
         }
         return self._super();
-      }
+      },
     });
     FloatPanel.hideAll = function () {
       var i = visiblePanels.length;
@@ -3739,35 +4160,37 @@ var modern = (function (domGlobals) {
       }
       var reposition = function () {
         if (panel && panel.moveRel && panel.visible() && !panel._fixed) {
-          var scrollContainer = editor.selection.getScrollContainer(), body = editor.getBody();
-          var deltaX = 0, deltaY = 0;
+          var scrollContainer = editor.selection.getScrollContainer(),
+            body = editor.getBody();
+          var deltaX = 0,
+            deltaY = 0;
           if (scrollContainer) {
-            var bodyPos = DOM.getPos(body), scrollContainerPos = DOM.getPos(scrollContainer);
+            var bodyPos = DOM.getPos(body),
+              scrollContainerPos = DOM.getPos(scrollContainer);
             deltaX = Math.max(0, scrollContainerPos.x - bodyPos.x);
             deltaY = Math.max(0, scrollContainerPos.y - bodyPos.y);
           }
-          panel.fixed(false).moveRel(body, editor.rtl ? [
-            'tr-br',
-            'br-tr'
-          ] : [
-            'tl-bl',
-            'bl-tl',
-            'tr-br'
-          ]).moveBy(deltaX, deltaY);
+          panel
+            .fixed(false)
+            .moveRel(
+              body,
+              editor.rtl ? ["tr-br", "br-tr"] : ["tl-bl", "bl-tl", "tr-br"]
+            )
+            .moveBy(deltaX, deltaY);
         }
       };
       var show = function () {
         if (panel) {
           panel.show();
           reposition();
-          DOM.addClass(editor.getBody(), 'mce-edit-focus');
+          DOM.addClass(editor.getBody(), "mce-edit-focus");
         }
       };
       var hide = function () {
         if (panel) {
           panel.hide();
           FloatPanel.hideAll();
-          DOM.removeClass(editor.getBody(), 'mce-edit-focus');
+          DOM.removeClass(editor.getBody(), "mce-edit-focus");
         }
       };
       var render = function () {
@@ -3778,24 +4201,26 @@ var modern = (function (domGlobals) {
           return;
         }
         panel = theme.panel = global$4.create({
-          type: inlineToolbarContainer ? 'panel' : 'floatpanel',
-          role: 'application',
-          classes: 'tinymce tinymce-inline',
-          layout: 'flex',
-          direction: 'column',
-          align: 'stretch',
+          type: inlineToolbarContainer ? "panel" : "floatpanel",
+          role: "application",
+          classes: "tinymce tinymce-inline",
+          layout: "flex",
+          direction: "column",
+          align: "stretch",
           autohide: false,
           autofix: true,
           fixed: isFixed$1(inlineToolbarContainer, editor),
           border: 1,
           items: [
-            hasMenubar(editor) === false ? null : {
-              type: 'menubar',
-              border: '0 0 1 0',
-              items: Menubar.createMenuButtons(editor)
-            },
-            Toolbar.createToolbars(editor, getToolbarSize(editor))
-          ]
+            hasMenubar(editor) === false
+              ? null
+              : {
+                  type: "menubar",
+                  border: "0 0 1 0",
+                  items: Menubar.createMenuButtons(editor),
+                },
+            Toolbar.createToolbars(editor, getToolbarSize(editor)),
+          ],
         });
         UiContainer.setUiContainer(editor, panel);
         Events.fireBeforeRenderUI(editor);
@@ -3807,29 +4232,32 @@ var modern = (function (domGlobals) {
         A11y.addKeys(editor, panel);
         show();
         ContextToolbars.addContextualToolbars(editor);
-        editor.on('nodeChange', reposition);
-        editor.on('ResizeWindow', reposition);
-        editor.on('activate', show);
-        editor.on('deactivate', hide);
+        editor.on("nodeChange", reposition);
+        editor.on("ResizeWindow", reposition);
+        editor.on("activate", show);
+        editor.on("deactivate", hide);
         editor.nodeChanged();
       };
       editor.settings.content_editable = true;
-      editor.on('focus', function () {
+      editor.on("focus", function () {
         if (isSkinDisabled(editor) === false && args.skinUiCss) {
           DOM.styleSheetLoader.load(args.skinUiCss, render, render);
         } else {
           render();
         }
       });
-      editor.on('blur hide', hide);
-      editor.on('remove', function () {
+      editor.on("blur hide", hide);
+      editor.on("remove", function () {
         if (panel) {
           panel.remove();
           panel = null;
         }
       });
       if (isSkinDisabled(editor) === false && args.skinUiCss) {
-        DOM.styleSheetLoader.load(args.skinUiCss, SkinLoaded.fireSkinLoaded(editor));
+        DOM.styleSheetLoader.load(
+          args.skinUiCss,
+          SkinLoaded.fireSkinLoaded(editor)
+        );
       } else {
         SkinLoaded.fireSkinLoaded(editor)();
       }
@@ -3837,7 +4265,7 @@ var modern = (function (domGlobals) {
     };
     var Inline = { render: render$1 };
 
-    function Throbber (elm, inline) {
+    function Throbber(elm, inline) {
       var self = this;
       var state;
       var classPrefix = Control$1.classPrefix;
@@ -3845,7 +4273,13 @@ var modern = (function (domGlobals) {
       self.show = function (time, callback) {
         function render() {
           if (state) {
-            global$9(elm).append('<div class="' + classPrefix + 'throbber' + (inline ? ' ' + classPrefix + 'throbber-inline' : '') + '"></div>');
+            global$9(elm).append(
+              '<div class="' +
+                classPrefix +
+                "throbber" +
+                (inline ? " " + classPrefix + "throbber-inline" : "") +
+                '"></div>'
+            );
             if (callback) {
               callback();
             }
@@ -3863,7 +4297,7 @@ var modern = (function (domGlobals) {
       self.hide = function () {
         var child = elm.lastChild;
         global$7.clearTimeout(timer);
-        if (child && child.className.indexOf('throbber') !== -1) {
+        if (child && child.className.indexOf("throbber") !== -1) {
           child.parentNode.removeChild(child);
         }
         state = false;
@@ -3873,8 +4307,8 @@ var modern = (function (domGlobals) {
 
     var setup = function (editor, theme) {
       var throbber;
-      editor.on('ProgressState', function (e) {
-        throbber = throbber || new Throbber(theme.panel.getEl('body'));
+      editor.on("ProgressState", function (e) {
+        throbber = throbber || new Throbber(theme.panel.getEl("body"));
         if (e.state) {
           throbber.show(e.time);
         } else {
@@ -3887,24 +4321,44 @@ var modern = (function (domGlobals) {
     var renderUI = function (editor, theme, args) {
       var skinUrl = getSkinUrl(editor);
       if (skinUrl) {
-        args.skinUiCss = skinUrl + '/skin.min.css';
-        editor.contentCSS.push(skinUrl + '/content' + (editor.inline ? '.inline' : '') + '.min.css');
+        args.skinUiCss = skinUrl + "/skin.min.css";
+        editor.contentCSS.push(
+          skinUrl + "/content" + (editor.inline ? ".inline" : "") + ".min.css"
+        );
       }
       ProgressState.setup(editor, theme);
-      return isInline(editor) ? Inline.render(editor, theme, args) : Iframe.render(editor, theme, args);
+      return isInline(editor)
+        ? Inline.render(editor, theme, args)
+        : Iframe.render(editor, theme, args);
     };
     var Render = { renderUI: renderUI };
 
     var Tooltip = Control$1.extend({
       Mixins: [Movable],
-      Defaults: { classes: 'widget tooltip tooltip-n' },
+      Defaults: { classes: "widget tooltip tooltip-n" },
       renderHtml: function () {
-        var self = this, prefix = self.classPrefix;
-        return '<div id="' + self._id + '" class="' + self.classes + '" role="presentation">' + '<div class="' + prefix + 'tooltip-arrow"></div>' + '<div class="' + prefix + 'tooltip-inner">' + self.encode(self.state.get('text')) + '</div>' + '</div>';
+        var self = this,
+          prefix = self.classPrefix;
+        return (
+          '<div id="' +
+          self._id +
+          '" class="' +
+          self.classes +
+          '" role="presentation">' +
+          '<div class="' +
+          prefix +
+          'tooltip-arrow"></div>' +
+          '<div class="' +
+          prefix +
+          'tooltip-inner">' +
+          self.encode(self.state.get("text")) +
+          "</div>" +
+          "</div>"
+        );
       },
       bindStates: function () {
         var self = this;
-        self.state.on('change:text', function (e) {
+        self.state.on("change:text", function (e) {
           self.getEl().lastChild.innerHTML = self.encode(e.value);
         });
         return self._super();
@@ -3914,10 +4368,10 @@ var modern = (function (domGlobals) {
         var style, rect;
         style = self.getEl().style;
         rect = self._layoutRect;
-        style.left = rect.x + 'px';
-        style.top = rect.y + 'px';
+        style.left = rect.x + "px";
+        style.top = rect.y + "px";
         style.zIndex = 65535 + 65535;
-      }
+      },
     });
 
     var Widget = Control$1.extend({
@@ -3927,39 +4381,39 @@ var modern = (function (domGlobals) {
         settings = self.settings;
         self.canFocus = true;
         if (settings.tooltip && Widget.tooltips !== false) {
-          self.on('mouseenter', function (e) {
+          self.on("mouseenter", function (e) {
             var tooltip = self.tooltip().moveTo(-65535);
             if (e.control === self) {
-              var rel = tooltip.text(settings.tooltip).show().testMoveRel(self.getEl(), [
-                'bc-tc',
-                'bc-tl',
-                'bc-tr'
-              ]);
-              tooltip.classes.toggle('tooltip-n', rel === 'bc-tc');
-              tooltip.classes.toggle('tooltip-nw', rel === 'bc-tl');
-              tooltip.classes.toggle('tooltip-ne', rel === 'bc-tr');
+              var rel = tooltip
+                .text(settings.tooltip)
+                .show()
+                .testMoveRel(self.getEl(), ["bc-tc", "bc-tl", "bc-tr"]);
+              tooltip.classes.toggle("tooltip-n", rel === "bc-tc");
+              tooltip.classes.toggle("tooltip-nw", rel === "bc-tl");
+              tooltip.classes.toggle("tooltip-ne", rel === "bc-tr");
               tooltip.moveRel(self.getEl(), rel);
             } else {
               tooltip.hide();
             }
           });
-          self.on('mouseleave mousedown click', function () {
+          self.on("mouseleave mousedown click", function () {
             self.tooltip().remove();
             self._tooltip = null;
           });
         }
-        self.aria('label', settings.ariaLabel || settings.tooltip);
+        self.aria("label", settings.ariaLabel || settings.tooltip);
       },
       tooltip: function () {
         if (!this._tooltip) {
-          this._tooltip = new Tooltip({ type: 'tooltip' });
+          this._tooltip = new Tooltip({ type: "tooltip" });
           UiContainer.inheritUiContainer(this, this._tooltip);
           this._tooltip.renderTo();
         }
         return this._tooltip;
       },
       postRender: function () {
-        var self = this, settings = self.settings;
+        var self = this,
+          settings = self.settings;
         self._super();
         if (!self.parent() && (settings.width || settings.height)) {
           self.initLayoutRect();
@@ -3972,23 +4426,23 @@ var modern = (function (domGlobals) {
       bindStates: function () {
         var self = this;
         function disable(state) {
-          self.aria('disabled', state);
-          self.classes.toggle('disabled', state);
+          self.aria("disabled", state);
+          self.classes.toggle("disabled", state);
         }
         function active(state) {
-          self.aria('pressed', state);
-          self.classes.toggle('active', state);
+          self.aria("pressed", state);
+          self.classes.toggle("active", state);
         }
-        self.state.on('change:disabled', function (e) {
+        self.state.on("change:disabled", function (e) {
           disable(e.value);
         });
-        self.state.on('change:active', function (e) {
+        self.state.on("change:active", function (e) {
           active(e.value);
         });
-        if (self.state.get('disabled')) {
+        if (self.state.get("disabled")) {
           disable(true);
         }
-        if (self.state.get('active')) {
+        if (self.state.get("active")) {
           active(true);
         }
         return self._super();
@@ -3999,7 +4453,7 @@ var modern = (function (domGlobals) {
           this._tooltip.remove();
           this._tooltip = null;
         }
-      }
+      },
     });
 
     var Progress = Widget.extend({
@@ -4007,7 +4461,7 @@ var modern = (function (domGlobals) {
       init: function (settings) {
         var self = this;
         self._super(settings);
-        self.classes.add('progress');
+        self.classes.add("progress");
         if (!self.settings.filter) {
           self.settings.filter = function (value) {
             return Math.round(value);
@@ -4015,8 +4469,27 @@ var modern = (function (domGlobals) {
         }
       },
       renderHtml: function () {
-        var self = this, id = self._id, prefix = this.classPrefix;
-        return '<div id="' + id + '" class="' + self.classes + '">' + '<div class="' + prefix + 'bar-container">' + '<div class="' + prefix + 'bar"></div>' + '</div>' + '<div class="' + prefix + 'text">0%</div>' + '</div>';
+        var self = this,
+          id = self._id,
+          prefix = this.classPrefix;
+        return (
+          '<div id="' +
+          id +
+          '" class="' +
+          self.classes +
+          '">' +
+          '<div class="' +
+          prefix +
+          'bar-container">' +
+          '<div class="' +
+          prefix +
+          'bar"></div>' +
+          "</div>" +
+          '<div class="' +
+          prefix +
+          'text">0%</div>' +
+          "</div>"
+        );
       },
       postRender: function () {
         var self = this;
@@ -4028,23 +4501,24 @@ var modern = (function (domGlobals) {
         var self = this;
         function setValue(value) {
           value = self.settings.filter(value);
-          self.getEl().lastChild.innerHTML = value + '%';
-          self.getEl().firstChild.firstChild.style.width = value + '%';
+          self.getEl().lastChild.innerHTML = value + "%";
+          self.getEl().firstChild.firstChild.style.width = value + "%";
         }
-        self.state.on('change:value', function (e) {
+        self.state.on("change:value", function (e) {
           setValue(e.value);
         });
-        setValue(self.state.get('value'));
+        setValue(self.state.get("value"));
         return self._super();
-      }
+      },
     });
 
     var updateLiveRegion = function (ctx, text) {
-      ctx.getEl().lastChild.textContent = text + (ctx.progressBar ? ' ' + ctx.progressBar.value() + '%' : '');
+      ctx.getEl().lastChild.textContent =
+        text + (ctx.progressBar ? " " + ctx.progressBar.value() + "%" : "");
     };
     var Notification = Control$1.extend({
       Mixins: [Movable],
-      Defaults: { classes: 'widget notification' },
+      Defaults: { classes: "widget notification" },
       init: function (settings) {
         var self = this;
         self._super(settings);
@@ -4059,19 +4533,23 @@ var modern = (function (domGlobals) {
           self.color = settings.color;
         }
         if (settings.type) {
-          self.classes.add('notification-' + settings.type);
+          self.classes.add("notification-" + settings.type);
         }
-        if (settings.timeout && (settings.timeout < 0 || settings.timeout > 0) && !settings.closeButton) {
+        if (
+          settings.timeout &&
+          (settings.timeout < 0 || settings.timeout > 0) &&
+          !settings.closeButton
+        ) {
           self.closeButton = false;
         } else {
-          self.classes.add('has-close');
+          self.classes.add("has-close");
           self.closeButton = true;
         }
         if (settings.progressBar) {
           self.progressBar = new Progress();
         }
-        self.on('click', function (e) {
-          if (e.target.className.indexOf(self.classPrefix + 'close') !== -1) {
+        self.on("click", function (e) {
+          if (e.target.className.indexOf(self.classPrefix + "close") !== -1) {
             self.close();
           }
         });
@@ -4079,44 +4557,81 @@ var modern = (function (domGlobals) {
       renderHtml: function () {
         var self = this;
         var prefix = self.classPrefix;
-        var icon = '', closeButton = '', progressBar = '', notificationStyle = '';
+        var icon = "",
+          closeButton = "",
+          progressBar = "",
+          notificationStyle = "";
         if (self.icon) {
-          icon = '<i class="' + prefix + 'ico' + ' ' + prefix + 'i-' + self.icon + '"></i>';
+          icon =
+            '<i class="' +
+            prefix +
+            "ico" +
+            " " +
+            prefix +
+            "i-" +
+            self.icon +
+            '"></i>';
         }
-        notificationStyle = ' style="max-width: ' + self.maxWidth + 'px;' + (self.color ? 'background-color: ' + self.color + ';"' : '"');
+        notificationStyle =
+          ' style="max-width: ' +
+          self.maxWidth +
+          "px;" +
+          (self.color ? "background-color: " + self.color + ';"' : '"');
         if (self.closeButton) {
-          closeButton = '<button type="button" class="' + prefix + 'close" aria-hidden="true">\xD7</button>';
+          closeButton =
+            '<button type="button" class="' +
+            prefix +
+            'close" aria-hidden="true">\xD7</button>';
         }
         if (self.progressBar) {
           progressBar = self.progressBar.renderHtml();
         }
-        return '<div id="' + self._id + '" class="' + self.classes + '"' + notificationStyle + ' role="presentation">' + icon + '<div class="' + prefix + 'notification-inner">' + self.state.get('text') + '</div>' + progressBar + closeButton + '<div style="clip: rect(1px, 1px, 1px, 1px);height: 1px;overflow: hidden;position: absolute;width: 1px;"' + ' aria-live="assertive" aria-relevant="additions" aria-atomic="true"></div>' + '</div>';
+        return (
+          '<div id="' +
+          self._id +
+          '" class="' +
+          self.classes +
+          '"' +
+          notificationStyle +
+          ' role="presentation">' +
+          icon +
+          '<div class="' +
+          prefix +
+          'notification-inner">' +
+          self.state.get("text") +
+          "</div>" +
+          progressBar +
+          closeButton +
+          '<div style="clip: rect(1px, 1px, 1px, 1px);height: 1px;overflow: hidden;position: absolute;width: 1px;"' +
+          ' aria-live="assertive" aria-relevant="additions" aria-atomic="true"></div>' +
+          "</div>"
+        );
       },
       postRender: function () {
         var self = this;
         global$7.setTimeout(function () {
-          self.$el.addClass(self.classPrefix + 'in');
-          updateLiveRegion(self, self.state.get('text'));
+          self.$el.addClass(self.classPrefix + "in");
+          updateLiveRegion(self, self.state.get("text"));
         }, 100);
         return self._super();
       },
       bindStates: function () {
         var self = this;
-        self.state.on('change:text', function (e) {
+        self.state.on("change:text", function (e) {
           self.getEl().firstChild.innerHTML = e.value;
           updateLiveRegion(self, e.value);
         });
         if (self.progressBar) {
           self.progressBar.bindStates();
-          self.progressBar.state.on('change:value', function (e) {
-            updateLiveRegion(self, self.state.get('text'));
+          self.progressBar.state.on("change:value", function (e) {
+            updateLiveRegion(self, self.state.get("text"));
           });
         }
         return self._super();
       },
       close: function () {
         var self = this;
-        if (!self.fire('close').isDefaultPrevented()) {
+        if (!self.fire("close").isDefaultPrevented()) {
           self.remove();
         }
         return self;
@@ -4126,15 +4641,17 @@ var modern = (function (domGlobals) {
         var style, rect;
         style = self.getEl().style;
         rect = self._layoutRect;
-        style.left = rect.x + 'px';
-        style.top = rect.y + 'px';
+        style.left = rect.x + "px";
+        style.top = rect.y + "px";
         style.zIndex = 65535 - 1;
-      }
+      },
     });
 
-    function NotificationManagerImpl (editor) {
+    function NotificationManagerImpl(editor) {
       var getEditorContainer = function (editor) {
-        return editor.inline ? editor.getElement() : editor.getContentAreaContainer();
+        return editor.inline
+          ? editor.getElement()
+          : editor.getContentAreaContainer();
       };
       var getContainerWidth = function () {
         var container = getEditorContainer(editor);
@@ -4149,10 +4666,10 @@ var modern = (function (domGlobals) {
         if (notifications.length > 0) {
           var firstItem = notifications.slice(0, 1)[0];
           var container = getEditorContainer(editor);
-          firstItem.moveRel(container, 'tc-tc');
+          firstItem.moveRel(container, "tc-tc");
           each(notifications, function (notification, index) {
             if (index > 0) {
-              notification.moveRel(notifications[index - 1].getEl(), 'bc-tc');
+              notification.moveRel(notifications[index - 1].getEl(), "bc-tc");
             }
           });
         }
@@ -4162,7 +4679,9 @@ var modern = (function (domGlobals) {
         positionNotifications(notifications);
       };
       var open = function (args, closeCallback) {
-        var extendedArgs = global$2.extend(args, { maxWidth: getContainerWidth() });
+        var extendedArgs = global$2.extend(args, {
+          maxWidth: getContainerWidth(),
+        });
         var notif = new Notification(extendedArgs);
         notif.args = extendedArgs;
         if (extendedArgs.timeout > 0) {
@@ -4171,7 +4690,7 @@ var modern = (function (domGlobals) {
             closeCallback();
           }, extendedArgs.timeout);
         }
-        notif.on('close', function () {
+        notif.on("close", function () {
           closeCallback();
         });
         notif.renderTo();
@@ -4187,35 +4706,39 @@ var modern = (function (domGlobals) {
         open: open,
         close: close,
         reposition: reposition,
-        getArgs: getArgs
+        getArgs: getArgs,
       };
     }
 
     var windows = [];
-    var oldMetaValue = '';
+    var oldMetaValue = "";
     function toggleFullScreenState(state) {
-      var noScaleMetaValue = 'width=device-width,initial-scale=1.0,user-scalable=0,minimum-scale=1.0,maximum-scale=1.0';
-      var viewport = global$9('meta[name=viewport]')[0], contentValue;
+      var noScaleMetaValue =
+        "width=device-width,initial-scale=1.0,user-scalable=0,minimum-scale=1.0,maximum-scale=1.0";
+      var viewport = global$9("meta[name=viewport]")[0],
+        contentValue;
       if (global$8.overrideViewPort === false) {
         return;
       }
       if (!viewport) {
-        viewport = domGlobals.document.createElement('meta');
-        viewport.setAttribute('name', 'viewport');
-        domGlobals.document.getElementsByTagName('head')[0].appendChild(viewport);
+        viewport = domGlobals.document.createElement("meta");
+        viewport.setAttribute("name", "viewport");
+        domGlobals.document
+          .getElementsByTagName("head")[0]
+          .appendChild(viewport);
       }
-      contentValue = viewport.getAttribute('content');
-      if (contentValue && typeof oldMetaValue !== 'undefined') {
+      contentValue = viewport.getAttribute("content");
+      if (contentValue && typeof oldMetaValue !== "undefined") {
         oldMetaValue = contentValue;
       }
-      viewport.setAttribute('content', state ? noScaleMetaValue : oldMetaValue);
+      viewport.setAttribute("content", state ? noScaleMetaValue : oldMetaValue);
     }
     function toggleBodyFullScreenClasses(classPrefix, state) {
       if (checkFullscreenWindows() && state === false) {
         global$9([
           domGlobals.document.documentElement,
-          domGlobals.document.body
-        ]).removeClass(classPrefix + 'fullscreen');
+          domGlobals.document.body,
+        ]).removeClass(classPrefix + "fullscreen");
       }
     }
     function checkFullscreenWindows() {
@@ -4230,16 +4753,17 @@ var modern = (function (domGlobals) {
       if (!global$8.desktop) {
         var lastSize_1 = {
           w: domGlobals.window.innerWidth,
-          h: domGlobals.window.innerHeight
+          h: domGlobals.window.innerHeight,
         };
         global$7.setInterval(function () {
-          var w = domGlobals.window.innerWidth, h = domGlobals.window.innerHeight;
+          var w = domGlobals.window.innerWidth,
+            h = domGlobals.window.innerHeight;
           if (lastSize_1.w !== w || lastSize_1.h !== h) {
             lastSize_1 = {
               w: w,
-              h: h
+              h: h,
             };
-            global$9(domGlobals.window).trigger('resize');
+            global$9(domGlobals.window).trigger("resize");
           }
         }, 100);
       }
@@ -4249,66 +4773,72 @@ var modern = (function (domGlobals) {
         var layoutRect;
         for (i = 0; i < windows.length; i++) {
           layoutRect = windows[i].layoutRect();
-          windows[i].moveTo(windows[i].settings.x || Math.max(0, rect.w / 2 - layoutRect.w / 2), windows[i].settings.y || Math.max(0, rect.h / 2 - layoutRect.h / 2));
+          windows[i].moveTo(
+            windows[i].settings.x || Math.max(0, rect.w / 2 - layoutRect.w / 2),
+            windows[i].settings.y || Math.max(0, rect.h / 2 - layoutRect.h / 2)
+          );
         }
       }
-      global$9(domGlobals.window).on('resize', reposition);
+      global$9(domGlobals.window).on("resize", reposition);
     }
     var Window = FloatPanel.extend({
       modal: true,
       Defaults: {
         border: 1,
-        layout: 'flex',
-        containerCls: 'panel',
-        role: 'dialog',
+        layout: "flex",
+        containerCls: "panel",
+        role: "dialog",
         callbacks: {
           submit: function () {
-            this.fire('submit', { data: this.toJSON() });
+            this.fire("submit", { data: this.toJSON() });
           },
           close: function () {
             this.close();
-          }
-        }
+          },
+        },
       },
       init: function (settings) {
         var self = this;
         self._super(settings);
         if (self.isRtl()) {
-          self.classes.add('rtl');
+          self.classes.add("rtl");
         }
-        self.classes.add('window');
-        self.bodyClasses.add('window-body');
-        self.state.set('fixed', true);
+        self.classes.add("window");
+        self.bodyClasses.add("window-body");
+        self.state.set("fixed", true);
         if (settings.buttons) {
           self.statusbar = new Panel({
-            layout: 'flex',
-            border: '1 0 0 0',
+            layout: "flex",
+            border: "1 0 0 0",
             spacing: 3,
             padding: 10,
-            align: 'center',
-            pack: self.isRtl() ? 'start' : 'end',
-            defaults: { type: 'button' },
-            items: settings.buttons
+            align: "center",
+            pack: self.isRtl() ? "start" : "end",
+            defaults: { type: "button" },
+            items: settings.buttons,
           });
-          self.statusbar.classes.add('foot');
+          self.statusbar.classes.add("foot");
           self.statusbar.parent(self);
         }
-        self.on('click', function (e) {
-          var closeClass = self.classPrefix + 'close';
-          if (funcs.hasClass(e.target, closeClass) || funcs.hasClass(e.target.parentNode, closeClass)) {
+        self.on("click", function (e) {
+          var closeClass = self.classPrefix + "close";
+          if (
+            funcs.hasClass(e.target, closeClass) ||
+            funcs.hasClass(e.target.parentNode, closeClass)
+          ) {
             self.close();
           }
         });
-        self.on('cancel', function () {
+        self.on("cancel", function () {
           self.close();
         });
-        self.on('move', function (e) {
+        self.on("move", function (e) {
           if (e.control === self) {
             FloatPanel.hideAll();
           }
         });
-        self.aria('describedby', self.describedBy || self._id + '-none');
-        self.aria('label', settings.title);
+        self.aria("describedby", self.describedBy || self._id + "-none");
+        self.aria("label", settings.title);
         self._fullscreen = false;
       },
       recalc: function () {
@@ -4327,7 +4857,7 @@ var modern = (function (domGlobals) {
             x = layoutRect.x - Math.max(0, width / 2);
             self.layoutRect({
               w: width,
-              x: x
+              x: x,
             });
             needsRecalc = true;
           }
@@ -4339,7 +4869,7 @@ var modern = (function (domGlobals) {
             x = layoutRect.x - Math.max(0, width - layoutRect.w);
             self.layoutRect({
               w: width,
-              x: x
+              x: x,
             });
             needsRecalc = true;
           }
@@ -4351,9 +4881,10 @@ var modern = (function (domGlobals) {
       initLayoutRect: function () {
         var self = this;
         var layoutRect = self._super();
-        var deltaH = 0, headEl;
+        var deltaH = 0,
+          headEl;
         if (self.settings.title && !self._fullscreen) {
-          headEl = self.getEl('head');
+          headEl = self.getEl("head");
           var size = funcs.getSize(headEl);
           layoutRect.headerW = size.width;
           layoutRect.headerH = size.height;
@@ -4366,29 +4897,79 @@ var modern = (function (domGlobals) {
         layoutRect.minH += deltaH;
         layoutRect.h += deltaH;
         var rect = funcs.getWindowSize();
-        layoutRect.x = self.settings.x || Math.max(0, rect.w / 2 - layoutRect.w / 2);
-        layoutRect.y = self.settings.y || Math.max(0, rect.h / 2 - layoutRect.h / 2);
+        layoutRect.x =
+          self.settings.x || Math.max(0, rect.w / 2 - layoutRect.w / 2);
+        layoutRect.y =
+          self.settings.y || Math.max(0, rect.h / 2 - layoutRect.h / 2);
         return layoutRect;
       },
       renderHtml: function () {
-        var self = this, layout = self._layout, id = self._id, prefix = self.classPrefix;
+        var self = this,
+          layout = self._layout,
+          id = self._id,
+          prefix = self.classPrefix;
         var settings = self.settings;
-        var headerHtml = '', footerHtml = '', html = settings.html;
+        var headerHtml = "",
+          footerHtml = "",
+          html = settings.html;
         self.preRender();
         layout.preRender(self);
         if (settings.title) {
-          headerHtml = '<div id="' + id + '-head" class="' + prefix + 'window-head">' + '<div id="' + id + '-title" class="' + prefix + 'title">' + self.encode(settings.title) + '</div>' + '<div id="' + id + '-dragh" class="' + prefix + 'dragh"></div>' + '<button type="button" class="' + prefix + 'close" aria-hidden="true">' + '<i class="mce-ico mce-i-remove"></i>' + '</button>' + '</div>';
+          headerHtml =
+            '<div id="' +
+            id +
+            '-head" class="' +
+            prefix +
+            'window-head">' +
+            '<div id="' +
+            id +
+            '-title" class="' +
+            prefix +
+            'title">' +
+            self.encode(settings.title) +
+            "</div>" +
+            '<div id="' +
+            id +
+            '-dragh" class="' +
+            prefix +
+            'dragh"></div>' +
+            '<button type="button" class="' +
+            prefix +
+            'close" aria-hidden="true">' +
+            '<i class="mce-ico mce-i-remove"></i>' +
+            "</button>" +
+            "</div>";
         }
         if (settings.url) {
           html = '<iframe src="' + settings.url + '" tabindex="-1"></iframe>';
         }
-        if (typeof html === 'undefined') {
+        if (typeof html === "undefined") {
           html = layout.renderHtml(self);
         }
         if (self.statusbar) {
           footerHtml = self.statusbar.renderHtml();
         }
-        return '<div id="' + id + '" class="' + self.classes + '" hidefocus="1">' + '<div class="' + self.classPrefix + 'reset" role="application">' + headerHtml + '<div id="' + id + '-body" class="' + self.bodyClasses + '">' + html + '</div>' + footerHtml + '</div>' + '</div>';
+        return (
+          '<div id="' +
+          id +
+          '" class="' +
+          self.classes +
+          '" hidefocus="1">' +
+          '<div class="' +
+          self.classPrefix +
+          'reset" role="application">' +
+          headerHtml +
+          '<div id="' +
+          id +
+          '-body" class="' +
+          self.bodyClasses +
+          '">' +
+          html +
+          "</div>" +
+          footerHtml +
+          "</div>" +
+          "</div>"
+        );
       },
       fullscreen: function (state) {
         var self = this;
@@ -4397,7 +4978,7 @@ var modern = (function (domGlobals) {
         var prefix = self.classPrefix;
         var layoutRect;
         if (state !== self._fullscreen) {
-          global$9(domGlobals.window).on('resize', function () {
+          global$9(domGlobals.window).on("resize", function () {
             var time;
             if (self._fullscreen) {
               if (!slowRendering) {
@@ -4422,29 +5003,29 @@ var modern = (function (domGlobals) {
           self._fullscreen = state;
           if (!state) {
             self.borderBox = BoxUtils.parseBox(self.settings.border);
-            self.getEl('head').style.display = '';
+            self.getEl("head").style.display = "";
             layoutRect.deltaH += layoutRect.headerH;
-            global$9([
-              documentElement,
-              domGlobals.document.body
-            ]).removeClass(prefix + 'fullscreen');
-            self.classes.remove('fullscreen');
-            self.moveTo(self._initial.x, self._initial.y).resizeTo(self._initial.w, self._initial.h);
+            global$9([documentElement, domGlobals.document.body]).removeClass(
+              prefix + "fullscreen"
+            );
+            self.classes.remove("fullscreen");
+            self
+              .moveTo(self._initial.x, self._initial.y)
+              .resizeTo(self._initial.w, self._initial.h);
           } else {
             self._initial = {
               x: layoutRect.x,
               y: layoutRect.y,
               w: layoutRect.w,
-              h: layoutRect.h
+              h: layoutRect.h,
             };
-            self.borderBox = BoxUtils.parseBox('0');
-            self.getEl('head').style.display = 'none';
+            self.borderBox = BoxUtils.parseBox("0");
+            self.getEl("head").style.display = "none";
             layoutRect.deltaH -= layoutRect.headerH + 2;
-            global$9([
-              documentElement,
-              domGlobals.document.body
-            ]).addClass(prefix + 'fullscreen');
-            self.classes.add('fullscreen');
+            global$9([documentElement, domGlobals.document.body]).addClass(
+              prefix + "fullscreen"
+            );
+            self.classes.add("fullscreen");
             var rect = funcs.getWindowSize();
             self.moveTo(0, 0).resizeTo(rect.w, rect.h);
           }
@@ -4455,26 +5036,26 @@ var modern = (function (domGlobals) {
         var self = this;
         var startPos;
         setTimeout(function () {
-          self.classes.add('in');
-          self.fire('open');
+          self.classes.add("in");
+          self.fire("open");
         }, 0);
         self._super();
         if (self.statusbar) {
           self.statusbar.postRender();
         }
         self.focus();
-        this.dragHelper = new DragHelper(self._id + '-dragh', {
+        this.dragHelper = new DragHelper(self._id + "-dragh", {
           start: function () {
             startPos = {
               x: self.layoutRect().x,
-              y: self.layoutRect().y
+              y: self.layoutRect().y,
             };
           },
           drag: function (e) {
             self.moveTo(startPos.x + e.deltaX, startPos.y + e.deltaY);
-          }
+          },
         });
-        self.on('submit', function (e) {
+        self.on("submit", function (e) {
           if (!e.isDefaultPrevented()) {
             self.close();
           }
@@ -4483,7 +5064,7 @@ var modern = (function (domGlobals) {
         toggleFullScreenState(true);
       },
       submit: function () {
-        return this.fire('submit', { data: this.toJSON() });
+        return this.fire("submit", { data: this.toJSON() });
       },
       remove: function () {
         var self = this;
@@ -4503,9 +5084,9 @@ var modern = (function (domGlobals) {
         toggleFullScreenState(windows.length > 0);
       },
       getContentWindow: function () {
-        var ifr = this.getEl().getElementsByTagName('iframe')[0];
+        var ifr = this.getEl().getElementsByTagName("iframe")[0];
         return ifr ? ifr.contentWindow : null;
-      }
+      },
     });
     handleWindowResize();
 
@@ -4514,22 +5095,22 @@ var modern = (function (domGlobals) {
         settings = {
           border: 1,
           padding: 20,
-          layout: 'flex',
-          pack: 'center',
-          align: 'center',
-          containerCls: 'panel',
+          layout: "flex",
+          pack: "center",
+          align: "center",
+          containerCls: "panel",
           autoScroll: true,
           buttons: {
-            type: 'button',
-            text: 'Ok',
-            action: 'ok'
+            type: "button",
+            text: "Ok",
+            action: "ok",
           },
           items: {
-            type: 'label',
+            type: "label",
             multiline: true,
             maxWidth: 500,
-            maxHeight: 200
-          }
+            maxHeight: 200,
+          },
         };
         this._super(settings);
       },
@@ -4540,39 +5121,35 @@ var modern = (function (domGlobals) {
         YES_NO_CANCEL: 4,
         msgBox: function (settings) {
           var buttons;
-          var callback = settings.callback || function () {
-          };
+          var callback = settings.callback || function () {};
           function createButton(text, status, primary) {
             return {
-              type: 'button',
+              type: "button",
               text: text,
-              subtype: primary ? 'primary' : '',
+              subtype: primary ? "primary" : "",
               onClick: function (e) {
                 e.control.parents()[1].close();
                 callback(status);
-              }
+              },
             };
           }
           switch (settings.buttons) {
-          case MessageBox.OK_CANCEL:
-            buttons = [
-              createButton('Ok', true, true),
-              createButton('Cancel', false)
-            ];
-            break;
-          case MessageBox.YES_NO:
-          case MessageBox.YES_NO_CANCEL:
-            buttons = [
-              createButton('Yes', 1, true),
-              createButton('No', 0)
-            ];
-            if (settings.buttons === MessageBox.YES_NO_CANCEL) {
-              buttons.push(createButton('Cancel', -1));
-            }
-            break;
-          default:
-            buttons = [createButton('Ok', true, true)];
-            break;
+            case MessageBox.OK_CANCEL:
+              buttons = [
+                createButton("Ok", true, true),
+                createButton("Cancel", false),
+              ];
+              break;
+            case MessageBox.YES_NO:
+            case MessageBox.YES_NO_CANCEL:
+              buttons = [createButton("Yes", 1, true), createButton("No", 0)];
+              if (settings.buttons === MessageBox.YES_NO_CANCEL) {
+                buttons.push(createButton("Cancel", -1));
+              }
+              break;
+            default:
+              buttons = [createButton("Ok", true, true)];
+              break;
           }
           return new Window({
             padding: 20,
@@ -4580,50 +5157,52 @@ var modern = (function (domGlobals) {
             y: settings.y,
             minWidth: 300,
             minHeight: 100,
-            layout: 'flex',
-            pack: 'center',
-            align: 'center',
+            layout: "flex",
+            pack: "center",
+            align: "center",
             buttons: buttons,
             title: settings.title,
-            role: 'alertdialog',
+            role: "alertdialog",
             items: {
-              type: 'label',
+              type: "label",
               multiline: true,
               maxWidth: 500,
               maxHeight: 200,
-              text: settings.text
+              text: settings.text,
             },
             onPostRender: function () {
-              this.aria('describedby', this.items()[0]._id);
+              this.aria("describedby", this.items()[0]._id);
             },
             onClose: settings.onClose,
             onCancel: function () {
               callback(false);
-            }
-          }).renderTo(domGlobals.document.body).reflow();
+            },
+          })
+            .renderTo(domGlobals.document.body)
+            .reflow();
         },
         alert: function (settings, callback) {
-          if (typeof settings === 'string') {
+          if (typeof settings === "string") {
             settings = { text: settings };
           }
           settings.callback = callback;
           return MessageBox.msgBox(settings);
         },
         confirm: function (settings, callback) {
-          if (typeof settings === 'string') {
+          if (typeof settings === "string") {
             settings = { text: settings };
           }
           settings.callback = callback;
           settings.buttons = MessageBox.OK_CANCEL;
           return MessageBox.msgBox(settings);
-        }
-      }
+        },
+      },
     });
 
-    function WindowManagerImpl (editor) {
+    function WindowManagerImpl(editor) {
       var open = function (args, params, closeCallback) {
         var win;
-        args.title = args.title || ' ';
+        args.title = args.title || " ";
         args.url = args.url || args.file;
         if (args.url) {
           args.width = parseInt(args.width || 320, 10);
@@ -4632,36 +5211,36 @@ var modern = (function (domGlobals) {
         if (args.body) {
           args.items = {
             defaults: args.defaults,
-            type: args.bodyType || 'form',
+            type: args.bodyType || "form",
             items: args.body,
             data: args.data,
-            callbacks: args.commands
+            callbacks: args.commands,
           };
         }
         if (!args.url && !args.buttons) {
           args.buttons = [
             {
-              text: 'Ok',
-              subtype: 'primary',
+              text: "Ok",
+              subtype: "primary",
               onclick: function () {
-                win.find('form')[0].submit();
-              }
+                win.find("form")[0].submit();
+              },
             },
             {
-              text: 'Cancel',
+              text: "Cancel",
               onclick: function () {
                 win.close();
-              }
-            }
+              },
+            },
           ];
         }
         win = new Window(args);
-        win.on('close', function () {
+        win.on("close", function () {
           closeCallback(win);
         });
         if (args.data) {
-          win.on('postRender', function () {
-            this.find('*').each(function (ctrl) {
+          win.on("postRender", function () {
+            this.find("*").each(function (ctrl) {
               var name = ctrl.name();
               if (name in args.data) {
                 ctrl.value(args.data[name]);
@@ -4679,7 +5258,7 @@ var modern = (function (domGlobals) {
         win = MessageBox.alert(message, function () {
           choiceCallback();
         });
-        win.on('close', function () {
+        win.on("close", function () {
           closeCallback(win);
         });
         return win;
@@ -4689,7 +5268,7 @@ var modern = (function (domGlobals) {
         win = MessageBox.confirm(message, function (state) {
           choiceCallback(state);
         });
-        win.on('close', function () {
+        win.on("close", function () {
           closeCallback(win);
         });
         return win;
@@ -4709,7 +5288,7 @@ var modern = (function (domGlobals) {
         confirm: confirm,
         close: close,
         getParams: getParams,
-        setParams: setParams
+        setParams: setParams,
       };
     }
 
@@ -4734,15 +5313,15 @@ var modern = (function (domGlobals) {
         resizeTo: resizeTo,
         resizeBy: resizeBy,
         getNotificationManagerImpl: getNotificationManagerImpl,
-        getWindowManagerImpl: getWindowManagerImpl
+        getWindowManagerImpl: getWindowManagerImpl,
       };
     };
     var ThemeApi = { get: get };
 
     var Layout = global$a.extend({
       Defaults: {
-        firstControlClass: 'first',
-        lastControlClass: 'last'
+        firstControlClass: "first",
+        lastControlClass: "last",
       },
       init: function (settings) {
         this.settings = global$2.extend({}, this.Defaults, settings);
@@ -4757,7 +5336,10 @@ var modern = (function (domGlobals) {
         firstClass = settings.firstControlClass;
         lastClass = settings.lastControlClass;
         items.each(function (item) {
-          item.classes.remove(firstClass).remove(lastClass).add(settings.controlClass);
+          item.classes
+            .remove(firstClass)
+            .remove(lastClass)
+            .add(settings.controlClass);
           if (item.visible()) {
             if (!firstItem) {
               firstItem = item;
@@ -4774,50 +5356,58 @@ var modern = (function (domGlobals) {
       },
       renderHtml: function (container) {
         var self = this;
-        var html = '';
+        var html = "";
         self.applyClasses(container.items());
         container.items().each(function (item) {
           html += item.renderHtml();
         });
         return html;
       },
-      recalc: function () {
-      },
-      postRender: function () {
-      },
+      recalc: function () {},
+      postRender: function () {},
       isNative: function () {
         return false;
-      }
+      },
     });
 
     var AbsoluteLayout = Layout.extend({
       Defaults: {
-        containerClass: 'abs-layout',
-        controlClass: 'abs-layout-item'
+        containerClass: "abs-layout",
+        controlClass: "abs-layout-item",
       },
       recalc: function (container) {
-        container.items().filter(':visible').each(function (ctrl) {
-          var settings = ctrl.settings;
-          ctrl.layoutRect({
-            x: settings.x,
-            y: settings.y,
-            w: settings.w,
-            h: settings.h
+        container
+          .items()
+          .filter(":visible")
+          .each(function (ctrl) {
+            var settings = ctrl.settings;
+            ctrl.layoutRect({
+              x: settings.x,
+              y: settings.y,
+              w: settings.w,
+              h: settings.h,
+            });
+            if (ctrl.recalc) {
+              ctrl.recalc();
+            }
           });
-          if (ctrl.recalc) {
-            ctrl.recalc();
-          }
-        });
       },
       renderHtml: function (container) {
-        return '<div id="' + container._id + '-absend" class="' + container.classPrefix + 'abs-end"></div>' + this._super(container);
-      }
+        return (
+          '<div id="' +
+          container._id +
+          '-absend" class="' +
+          container.classPrefix +
+          'abs-end"></div>' +
+          this._super(container)
+        );
+      },
     });
 
     var Button = Widget.extend({
       Defaults: {
-        classes: 'widget btn',
-        role: 'button'
+        classes: "widget btn",
+        role: "button",
       },
       init: function (settings) {
         var self = this;
@@ -4825,18 +5415,18 @@ var modern = (function (domGlobals) {
         self._super(settings);
         settings = self.settings;
         size = self.settings.size;
-        self.on('click mousedown', function (e) {
+        self.on("click mousedown", function (e) {
           e.preventDefault();
         });
-        self.on('touchstart', function (e) {
-          self.fire('click', e);
+        self.on("touchstart", function (e) {
+          self.fire("click", e);
           e.preventDefault();
         });
         if (settings.subtype) {
           self.classes.add(settings.subtype);
         }
         if (size) {
-          self.classes.add('btn-' + size);
+          self.classes.add("btn-" + size);
         }
         if (settings.icon) {
           self.icon(settings.icon);
@@ -4844,9 +5434,9 @@ var modern = (function (domGlobals) {
       },
       icon: function (icon) {
         if (!arguments.length) {
-          return this.state.get('icon');
+          return this.state.get("icon");
         }
-        this.state.set('icon', icon);
+        this.state.set("icon", icon);
         return this;
       },
       repaint: function () {
@@ -4854,98 +5444,129 @@ var modern = (function (domGlobals) {
         var btnStyle;
         if (btnElm) {
           btnStyle = btnElm.style;
-          btnStyle.width = btnStyle.height = '100%';
+          btnStyle.width = btnStyle.height = "100%";
         }
         this._super();
       },
       renderHtml: function () {
-        var self = this, id = self._id, prefix = self.classPrefix;
-        var icon = self.state.get('icon'), image;
-        var text = self.state.get('text');
-        var textHtml = '';
+        var self = this,
+          id = self._id,
+          prefix = self.classPrefix;
+        var icon = self.state.get("icon"),
+          image;
+        var text = self.state.get("text");
+        var textHtml = "";
         var ariaPressed;
         var settings = self.settings;
         image = settings.image;
         if (image) {
-          icon = 'none';
-          if (typeof image !== 'string') {
+          icon = "none";
+          if (typeof image !== "string") {
             image = domGlobals.window.getSelection ? image[0] : image[1];
           }
-          image = ' style="background-image: url(\'' + image + '\')"';
+          image = " style=\"background-image: url('" + image + "')\"";
         } else {
-          image = '';
+          image = "";
         }
         if (text) {
-          self.classes.add('btn-has-text');
-          textHtml = '<span class="' + prefix + 'txt">' + self.encode(text) + '</span>';
+          self.classes.add("btn-has-text");
+          textHtml =
+            '<span class="' + prefix + 'txt">' + self.encode(text) + "</span>";
         }
-        icon = icon ? prefix + 'ico ' + prefix + 'i-' + icon : '';
-        ariaPressed = typeof settings.active === 'boolean' ? ' aria-pressed="' + settings.active + '"' : '';
-        return '<div id="' + id + '" class="' + self.classes + '" tabindex="-1"' + ariaPressed + '>' + '<button id="' + id + '-button" role="presentation" type="button" tabindex="-1">' + (icon ? '<i class="' + icon + '"' + image + '></i>' : '') + textHtml + '</button>' + '</div>';
+        icon = icon ? prefix + "ico " + prefix + "i-" + icon : "";
+        ariaPressed =
+          typeof settings.active === "boolean"
+            ? ' aria-pressed="' + settings.active + '"'
+            : "";
+        return (
+          '<div id="' +
+          id +
+          '" class="' +
+          self.classes +
+          '" tabindex="-1"' +
+          ariaPressed +
+          ">" +
+          '<button id="' +
+          id +
+          '-button" role="presentation" type="button" tabindex="-1">' +
+          (icon ? '<i class="' + icon + '"' + image + "></i>" : "") +
+          textHtml +
+          "</button>" +
+          "</div>"
+        );
       },
       bindStates: function () {
-        var self = this, $ = self.$, textCls = self.classPrefix + 'txt';
+        var self = this,
+          $ = self.$,
+          textCls = self.classPrefix + "txt";
         function setButtonText(text) {
-          var $span = $('span.' + textCls, self.getEl());
+          var $span = $("span." + textCls, self.getEl());
           if (text) {
             if (!$span[0]) {
-              $('button:first', self.getEl()).append('<span class="' + textCls + '"></span>');
-              $span = $('span.' + textCls, self.getEl());
+              $("button:first", self.getEl()).append(
+                '<span class="' + textCls + '"></span>'
+              );
+              $span = $("span." + textCls, self.getEl());
             }
             $span.html(self.encode(text));
           } else {
             $span.remove();
           }
-          self.classes.toggle('btn-has-text', !!text);
+          self.classes.toggle("btn-has-text", !!text);
         }
-        self.state.on('change:text', function (e) {
+        self.state.on("change:text", function (e) {
           setButtonText(e.value);
         });
-        self.state.on('change:icon', function (e) {
+        self.state.on("change:icon", function (e) {
           var icon = e.value;
           var prefix = self.classPrefix;
           self.settings.icon = icon;
-          icon = icon ? prefix + 'ico ' + prefix + 'i-' + self.settings.icon : '';
+          icon = icon
+            ? prefix + "ico " + prefix + "i-" + self.settings.icon
+            : "";
           var btnElm = self.getEl().firstChild;
-          var iconElm = btnElm.getElementsByTagName('i')[0];
+          var iconElm = btnElm.getElementsByTagName("i")[0];
           if (icon) {
             if (!iconElm || iconElm !== btnElm.firstChild) {
-              iconElm = domGlobals.document.createElement('i');
+              iconElm = domGlobals.document.createElement("i");
               btnElm.insertBefore(iconElm, btnElm.firstChild);
             }
             iconElm.className = icon;
           } else if (iconElm) {
             btnElm.removeChild(iconElm);
           }
-          setButtonText(self.state.get('text'));
+          setButtonText(self.state.get("text"));
         });
         return self._super();
-      }
+      },
     });
 
     var BrowseButton = Button.extend({
       init: function (settings) {
         var self = this;
-        settings = global$2.extend({
-          text: 'Browse...',
-          multiple: false,
-          accept: null
-        }, settings);
+        settings = global$2.extend(
+          {
+            text: "Browse...",
+            multiple: false,
+            accept: null,
+          },
+          settings
+        );
         self._super(settings);
-        self.classes.add('browsebutton');
+        self.classes.add("browsebutton");
         if (settings.multiple) {
-          self.classes.add('multiple');
+          self.classes.add("multiple");
         }
       },
       postRender: function () {
         var self = this;
-        var input = funcs.create('input', {
-          type: 'file',
-          id: self._id + '-browse',
-          accept: self.settings.accept
+        var input = funcs.create("input", {
+          type: "file",
+          id: self._id + "-browse",
+          accept: self.settings.accept,
         });
         self._super();
-        global$9(input).on('change', function (e) {
+        global$9(input).on("change", function (e) {
           var files = e.target.files;
           self.value = function () {
             if (!files.length) {
@@ -4958,13 +5579,13 @@ var modern = (function (domGlobals) {
           };
           e.preventDefault();
           if (files.length) {
-            self.fire('change', e);
+            self.fire("change", e);
           }
         });
-        global$9(input).on('click', function (e) {
+        global$9(input).on("click", function (e) {
           e.stopPropagation();
         });
-        global$9(self.getEl('button')).on('click touchstart', function (e) {
+        global$9(self.getEl("button")).on("click touchstart", function (e) {
           e.stopPropagation();
           input.click();
           e.preventDefault();
@@ -4972,39 +5593,53 @@ var modern = (function (domGlobals) {
         self.getEl().appendChild(input);
       },
       remove: function () {
-        global$9(this.getEl('button')).off();
-        global$9(this.getEl('input')).off();
+        global$9(this.getEl("button")).off();
+        global$9(this.getEl("input")).off();
         this._super();
-      }
+      },
     });
 
     var ButtonGroup = Container.extend({
       Defaults: {
-        defaultType: 'button',
-        role: 'group'
+        defaultType: "button",
+        role: "group",
       },
       renderHtml: function () {
-        var self = this, layout = self._layout;
-        self.classes.add('btn-group');
+        var self = this,
+          layout = self._layout;
+        self.classes.add("btn-group");
         self.preRender();
         layout.preRender(self);
-        return '<div id="' + self._id + '" class="' + self.classes + '">' + '<div id="' + self._id + '-body">' + (self.settings.html || '') + layout.renderHtml(self) + '</div>' + '</div>';
-      }
+        return (
+          '<div id="' +
+          self._id +
+          '" class="' +
+          self.classes +
+          '">' +
+          '<div id="' +
+          self._id +
+          '-body">' +
+          (self.settings.html || "") +
+          layout.renderHtml(self) +
+          "</div>" +
+          "</div>"
+        );
+      },
     });
 
     var Checkbox = Widget.extend({
       Defaults: {
-        classes: 'checkbox',
-        role: 'checkbox',
-        checked: false
+        classes: "checkbox",
+        role: "checkbox",
+        checked: false,
       },
       init: function (settings) {
         var self = this;
         self._super(settings);
-        self.on('click mousedown', function (e) {
+        self.on("click mousedown", function (e) {
           e.preventDefault();
         });
-        self.on('click', function (e) {
+        self.on("click", function (e) {
           e.preventDefault();
           if (!self.disabled()) {
             self.checked(!self.checked());
@@ -5014,9 +5649,9 @@ var modern = (function (domGlobals) {
       },
       checked: function (state) {
         if (!arguments.length) {
-          return this.state.get('checked');
+          return this.state.get("checked");
         }
-        this.state.set('checked', state);
+        this.state.set("checked", state);
         return this;
       },
       value: function (state) {
@@ -5026,35 +5661,60 @@ var modern = (function (domGlobals) {
         return this.checked(state);
       },
       renderHtml: function () {
-        var self = this, id = self._id, prefix = self.classPrefix;
-        return '<div id="' + id + '" class="' + self.classes + '" unselectable="on" aria-labelledby="' + id + '-al" tabindex="-1">' + '<i class="' + prefix + 'ico ' + prefix + 'i-checkbox"></i>' + '<span id="' + id + '-al" class="' + prefix + 'label">' + self.encode(self.state.get('text')) + '</span>' + '</div>';
+        var self = this,
+          id = self._id,
+          prefix = self.classPrefix;
+        return (
+          '<div id="' +
+          id +
+          '" class="' +
+          self.classes +
+          '" unselectable="on" aria-labelledby="' +
+          id +
+          '-al" tabindex="-1">' +
+          '<i class="' +
+          prefix +
+          "ico " +
+          prefix +
+          'i-checkbox"></i>' +
+          '<span id="' +
+          id +
+          '-al" class="' +
+          prefix +
+          'label">' +
+          self.encode(self.state.get("text")) +
+          "</span>" +
+          "</div>"
+        );
       },
       bindStates: function () {
         var self = this;
         function checked(state) {
-          self.classes.toggle('checked', state);
-          self.aria('checked', state);
+          self.classes.toggle("checked", state);
+          self.aria("checked", state);
         }
-        self.state.on('change:text', function (e) {
-          self.getEl('al').firstChild.data = self.translate(e.value);
+        self.state.on("change:text", function (e) {
+          self.getEl("al").firstChild.data = self.translate(e.value);
         });
-        self.state.on('change:checked change:value', function (e) {
-          self.fire('change');
+        self.state.on("change:checked change:value", function (e) {
+          self.fire("change");
           checked(e.value);
         });
-        self.state.on('change:icon', function (e) {
+        self.state.on("change:icon", function (e) {
           var icon = e.value;
           var prefix = self.classPrefix;
-          if (typeof icon === 'undefined') {
+          if (typeof icon === "undefined") {
             return self.settings.icon;
           }
           self.settings.icon = icon;
-          icon = icon ? prefix + 'ico ' + prefix + 'i-' + self.settings.icon : '';
+          icon = icon
+            ? prefix + "ico " + prefix + "i-" + self.settings.icon
+            : "";
           var btnElm = self.getEl().firstChild;
-          var iconElm = btnElm.getElementsByTagName('i')[0];
+          var iconElm = btnElm.getElementsByTagName("i")[0];
           if (icon) {
             if (!iconElm || iconElm !== btnElm.firstChild) {
-              iconElm = domGlobals.document.createElement('i');
+              iconElm = domGlobals.document.createElement("i");
               btnElm.insertBefore(iconElm, btnElm.firstChild);
             }
             iconElm.className = icon;
@@ -5062,36 +5722,36 @@ var modern = (function (domGlobals) {
             btnElm.removeChild(iconElm);
           }
         });
-        if (self.state.get('checked')) {
+        if (self.state.get("checked")) {
           checked(true);
         }
         return self._super();
-      }
+      },
     });
 
-    var global$d = tinymce.util.Tools.resolve('tinymce.util.VK');
+    var global$d = tinymce.util.Tools.resolve("tinymce.util.VK");
 
     var ComboBox = Widget.extend({
       init: function (settings) {
         var self = this;
         self._super(settings);
         settings = self.settings;
-        self.classes.add('combobox');
+        self.classes.add("combobox");
         self.subinput = true;
-        self.ariaTarget = 'inp';
+        self.ariaTarget = "inp";
         settings.menu = settings.menu || settings.values;
         if (settings.menu) {
-          settings.icon = 'caret';
+          settings.icon = "caret";
         }
-        self.on('click', function (e) {
+        self.on("click", function (e) {
           var elm = e.target;
           var root = self.getEl();
           if (!global$9.contains(root, elm) && elm !== root) {
             return;
           }
           while (elm && elm !== root) {
-            if (elm.id && elm.id.indexOf('-open') !== -1) {
-              self.fire('action');
+            if (elm.id && elm.id.indexOf("-open") !== -1) {
+              self.fire("action");
               if (settings.menu) {
                 self.showMenu();
                 if (e.aria) {
@@ -5102,56 +5762,61 @@ var modern = (function (domGlobals) {
             elm = elm.parentNode;
           }
         });
-        self.on('keydown', function (e) {
+        self.on("keydown", function (e) {
           var rootControl;
-          if (e.keyCode === 13 && e.target.nodeName === 'INPUT') {
+          if (e.keyCode === 13 && e.target.nodeName === "INPUT") {
             e.preventDefault();
-            self.parents().reverse().each(function (ctrl) {
-              if (ctrl.toJSON) {
-                rootControl = ctrl;
-                return false;
-              }
-            });
-            self.fire('submit', { data: rootControl.toJSON() });
+            self
+              .parents()
+              .reverse()
+              .each(function (ctrl) {
+                if (ctrl.toJSON) {
+                  rootControl = ctrl;
+                  return false;
+                }
+              });
+            self.fire("submit", { data: rootControl.toJSON() });
           }
         });
-        self.on('keyup', function (e) {
-          if (e.target.nodeName === 'INPUT') {
-            var oldValue = self.state.get('value');
+        self.on("keyup", function (e) {
+          if (e.target.nodeName === "INPUT") {
+            var oldValue = self.state.get("value");
             var newValue = e.target.value;
             if (newValue !== oldValue) {
-              self.state.set('value', newValue);
-              self.fire('autocomplete', e);
+              self.state.set("value", newValue);
+              self.fire("autocomplete", e);
             }
           }
         });
-        self.on('mouseover', function (e) {
+        self.on("mouseover", function (e) {
           var tooltip = self.tooltip().moveTo(-65535);
-          if (self.statusLevel() && e.target.className.indexOf(self.classPrefix + 'status') !== -1) {
-            var statusMessage = self.statusMessage() || 'Ok';
-            var rel = tooltip.text(statusMessage).show().testMoveRel(e.target, [
-              'bc-tc',
-              'bc-tl',
-              'bc-tr'
-            ]);
-            tooltip.classes.toggle('tooltip-n', rel === 'bc-tc');
-            tooltip.classes.toggle('tooltip-nw', rel === 'bc-tl');
-            tooltip.classes.toggle('tooltip-ne', rel === 'bc-tr');
+          if (
+            self.statusLevel() &&
+            e.target.className.indexOf(self.classPrefix + "status") !== -1
+          ) {
+            var statusMessage = self.statusMessage() || "Ok";
+            var rel = tooltip
+              .text(statusMessage)
+              .show()
+              .testMoveRel(e.target, ["bc-tc", "bc-tl", "bc-tr"]);
+            tooltip.classes.toggle("tooltip-n", rel === "bc-tc");
+            tooltip.classes.toggle("tooltip-nw", rel === "bc-tl");
+            tooltip.classes.toggle("tooltip-ne", rel === "bc-tr");
             tooltip.moveRel(e.target, rel);
           }
         });
       },
       statusLevel: function (value) {
         if (arguments.length > 0) {
-          this.state.set('statusLevel', value);
+          this.state.set("statusLevel", value);
         }
-        return this.state.get('statusLevel');
+        return this.state.get("statusLevel");
       },
       statusMessage: function (value) {
         if (arguments.length > 0) {
-          this.state.set('statusMessage', value);
+          this.state.set("statusMessage", value);
         }
-        return this.state.get('statusMessage');
+        return this.state.get("statusMessage");
       },
       showMenu: function () {
         var self = this;
@@ -5161,54 +5826,63 @@ var modern = (function (domGlobals) {
           menu = settings.menu || [];
           if (menu.length) {
             menu = {
-              type: 'menu',
-              items: menu
+              type: "menu",
+              items: menu,
             };
           } else {
-            menu.type = menu.type || 'menu';
+            menu.type = menu.type || "menu";
           }
-          self.menu = global$4.create(menu).parent(self).renderTo(self.getContainerElm());
-          self.fire('createmenu');
+          self.menu = global$4
+            .create(menu)
+            .parent(self)
+            .renderTo(self.getContainerElm());
+          self.fire("createmenu");
           self.menu.reflow();
-          self.menu.on('cancel', function (e) {
+          self.menu.on("cancel", function (e) {
             if (e.control === self.menu) {
               self.focus();
             }
           });
-          self.menu.on('show hide', function (e) {
-            e.control.items().each(function (ctrl) {
-              ctrl.active(ctrl.value() === self.value());
-            });
-          }).fire('show');
-          self.menu.on('select', function (e) {
+          self.menu
+            .on("show hide", function (e) {
+              e.control.items().each(function (ctrl) {
+                ctrl.active(ctrl.value() === self.value());
+              });
+            })
+            .fire("show");
+          self.menu.on("select", function (e) {
             self.value(e.control.value());
           });
-          self.on('focusin', function (e) {
-            if (e.target.tagName.toUpperCase() === 'INPUT') {
+          self.on("focusin", function (e) {
+            if (e.target.tagName.toUpperCase() === "INPUT") {
               self.menu.hide();
             }
           });
-          self.aria('expanded', true);
+          self.aria("expanded", true);
         }
         self.menu.show();
         self.menu.layoutRect({ w: self.layoutRect().w });
-        self.menu.moveRel(self.getEl(), self.isRtl() ? [
-          'br-tr',
-          'tr-br'
-        ] : [
-          'bl-tl',
-          'tl-bl'
-        ]);
+        self.menu.moveRel(
+          self.getEl(),
+          self.isRtl() ? ["br-tr", "tr-br"] : ["bl-tl", "tl-bl"]
+        );
       },
       focus: function () {
-        this.getEl('inp').focus();
+        this.getEl("inp").focus();
       },
       repaint: function () {
-        var self = this, elm = self.getEl(), openElm = self.getEl('open'), rect = self.layoutRect();
-        var width, lineHeight, innerPadding = 0;
+        var self = this,
+          elm = self.getEl(),
+          openElm = self.getEl("open"),
+          rect = self.layoutRect();
+        var width,
+          lineHeight,
+          innerPadding = 0;
         var inputElm = elm.firstChild;
-        if (self.statusLevel() && self.statusLevel() !== 'none') {
-          innerPadding = parseInt(funcs.getRuntimeStyle(inputElm, 'padding-right'), 10) - parseInt(funcs.getRuntimeStyle(inputElm, 'padding-left'), 10);
+        if (self.statusLevel() && self.statusLevel() !== "none") {
+          innerPadding =
+            parseInt(funcs.getRuntimeStyle(inputElm, "padding-right"), 10) -
+            parseInt(funcs.getRuntimeStyle(inputElm, "padding-left"), 10);
         }
         if (openElm) {
           width = rect.w - funcs.getSize(openElm).width - 10;
@@ -5217,28 +5891,35 @@ var modern = (function (domGlobals) {
         }
         var doc = domGlobals.document;
         if (doc.all && (!doc.documentMode || doc.documentMode <= 8)) {
-          lineHeight = self.layoutRect().h - 2 + 'px';
+          lineHeight = self.layoutRect().h - 2 + "px";
         }
         global$9(inputElm).css({
           width: width - innerPadding,
-          lineHeight: lineHeight
+          lineHeight: lineHeight,
         });
         self._super();
         return self;
       },
       postRender: function () {
         var self = this;
-        global$9(this.getEl('inp')).on('change', function (e) {
-          self.state.set('value', e.target.value);
-          self.fire('change', e);
+        global$9(this.getEl("inp")).on("change", function (e) {
+          self.state.set("value", e.target.value);
+          self.fire("change", e);
         });
         return self._super();
       },
       renderHtml: function () {
-        var self = this, id = self._id, settings = self.settings, prefix = self.classPrefix;
-        var value = self.state.get('value') || '';
-        var icon, text, openBtnHtml = '', extraAttrs = '', statusHtml = '';
-        if ('spellcheck' in settings) {
+        var self = this,
+          id = self._id,
+          settings = self.settings,
+          prefix = self.classPrefix;
+        var value = self.state.get("value") || "";
+        var icon,
+          text,
+          openBtnHtml = "",
+          extraAttrs = "",
+          statusHtml = "";
+        if ("spellcheck" in settings) {
           extraAttrs += ' spellcheck="' + settings.spellcheck + '"';
         }
         if (settings.maxLength) {
@@ -5250,30 +5931,69 @@ var modern = (function (domGlobals) {
         if (settings.subtype) {
           extraAttrs += ' type="' + settings.subtype + '"';
         }
-        statusHtml = '<i id="' + id + '-status" class="mce-status mce-ico" style="display: none"></i>';
+        statusHtml =
+          '<i id="' +
+          id +
+          '-status" class="mce-status mce-ico" style="display: none"></i>';
         if (self.disabled()) {
           extraAttrs += ' disabled="disabled"';
         }
         icon = settings.icon;
-        if (icon && icon !== 'caret') {
-          icon = prefix + 'ico ' + prefix + 'i-' + settings.icon;
+        if (icon && icon !== "caret") {
+          icon = prefix + "ico " + prefix + "i-" + settings.icon;
         }
-        text = self.state.get('text');
+        text = self.state.get("text");
         if (icon || text) {
-          openBtnHtml = '<div id="' + id + '-open" class="' + prefix + 'btn ' + prefix + 'open" tabIndex="-1" role="button">' + '<button id="' + id + '-action" type="button" hidefocus="1" tabindex="-1">' + (icon !== 'caret' ? '<i class="' + icon + '"></i>' : '<i class="' + prefix + 'caret"></i>') + (text ? (icon ? ' ' : '') + text : '') + '</button>' + '</div>';
-          self.classes.add('has-open');
+          openBtnHtml =
+            '<div id="' +
+            id +
+            '-open" class="' +
+            prefix +
+            "btn " +
+            prefix +
+            'open" tabIndex="-1" role="button">' +
+            '<button id="' +
+            id +
+            '-action" type="button" hidefocus="1" tabindex="-1">' +
+            (icon !== "caret"
+              ? '<i class="' + icon + '"></i>'
+              : '<i class="' + prefix + 'caret"></i>') +
+            (text ? (icon ? " " : "") + text : "") +
+            "</button>" +
+            "</div>";
+          self.classes.add("has-open");
         }
-        return '<div id="' + id + '" class="' + self.classes + '">' + '<input id="' + id + '-inp" class="' + prefix + 'textbox" value="' + self.encode(value, false) + '" hidefocus="1"' + extraAttrs + ' placeholder="' + self.encode(settings.placeholder) + '" />' + statusHtml + openBtnHtml + '</div>';
+        return (
+          '<div id="' +
+          id +
+          '" class="' +
+          self.classes +
+          '">' +
+          '<input id="' +
+          id +
+          '-inp" class="' +
+          prefix +
+          'textbox" value="' +
+          self.encode(value, false) +
+          '" hidefocus="1"' +
+          extraAttrs +
+          ' placeholder="' +
+          self.encode(settings.placeholder) +
+          '" />' +
+          statusHtml +
+          openBtnHtml +
+          "</div>"
+        );
       },
       value: function (value) {
         if (arguments.length) {
-          this.state.set('value', value);
+          this.state.set("value", value);
           return this;
         }
-        if (this.state.get('rendered')) {
-          this.state.set('value', this.getEl('inp').value);
+        if (this.state.get("rendered")) {
+          this.state.set("value", this.getEl("inp").value);
         }
-        return this.state.get('value');
+        return this.state.get("value");
       },
       showAutoComplete: function (items, term) {
         var self = this;
@@ -5283,58 +6003,58 @@ var modern = (function (domGlobals) {
         }
         var insert = function (value, title) {
           return function () {
-            self.fire('selectitem', {
+            self.fire("selectitem", {
               title: title,
-              value: value
+              value: value,
             });
           };
         };
         if (self.menu) {
           self.menu.items().remove();
         } else {
-          self.menu = global$4.create({
-            type: 'menu',
-            classes: 'combobox-menu',
-            layout: 'flow'
-          }).parent(self).renderTo();
+          self.menu = global$4
+            .create({
+              type: "menu",
+              classes: "combobox-menu",
+              layout: "flow",
+            })
+            .parent(self)
+            .renderTo();
         }
         global$2.each(items, function (item) {
           self.menu.add({
             text: item.title,
             url: item.previewUrl,
             match: term,
-            classes: 'menu-item-ellipsis',
-            onclick: insert(item.value, item.title)
+            classes: "menu-item-ellipsis",
+            onclick: insert(item.value, item.title),
           });
         });
         self.menu.renderNew();
         self.hideMenu();
-        self.menu.on('cancel', function (e) {
+        self.menu.on("cancel", function (e) {
           if (e.control.parent() === self.menu) {
             e.stopPropagation();
             self.focus();
             self.hideMenu();
           }
         });
-        self.menu.on('select', function () {
+        self.menu.on("select", function () {
           self.focus();
         });
         var maxW = self.layoutRect().w;
         self.menu.layoutRect({
           w: maxW,
           minW: 0,
-          maxW: maxW
+          maxW: maxW,
         });
         self.menu.repaint();
         self.menu.reflow();
         self.menu.show();
-        self.menu.moveRel(self.getEl(), self.isRtl() ? [
-          'br-tr',
-          'tr-br'
-        ] : [
-          'bl-tl',
-          'tl-bl'
-        ]);
+        self.menu.moveRel(
+          self.getEl(),
+          self.isRtl() ? ["br-tr", "tr-br"] : ["bl-tl", "tl-bl"]
+        );
       },
       hideMenu: function () {
         if (this.menu) {
@@ -5343,28 +6063,41 @@ var modern = (function (domGlobals) {
       },
       bindStates: function () {
         var self = this;
-        self.state.on('change:value', function (e) {
-          if (self.getEl('inp').value !== e.value) {
-            self.getEl('inp').value = e.value;
+        self.state.on("change:value", function (e) {
+          if (self.getEl("inp").value !== e.value) {
+            self.getEl("inp").value = e.value;
           }
         });
-        self.state.on('change:disabled', function (e) {
-          self.getEl('inp').disabled = e.value;
+        self.state.on("change:disabled", function (e) {
+          self.getEl("inp").disabled = e.value;
         });
-        self.state.on('change:statusLevel', function (e) {
-          var statusIconElm = self.getEl('status');
-          var prefix = self.classPrefix, value = e.value;
-          funcs.css(statusIconElm, 'display', value === 'none' ? 'none' : '');
-          funcs.toggleClass(statusIconElm, prefix + 'i-checkmark', value === 'ok');
-          funcs.toggleClass(statusIconElm, prefix + 'i-warning', value === 'warn');
-          funcs.toggleClass(statusIconElm, prefix + 'i-error', value === 'error');
-          self.classes.toggle('has-status', value !== 'none');
+        self.state.on("change:statusLevel", function (e) {
+          var statusIconElm = self.getEl("status");
+          var prefix = self.classPrefix,
+            value = e.value;
+          funcs.css(statusIconElm, "display", value === "none" ? "none" : "");
+          funcs.toggleClass(
+            statusIconElm,
+            prefix + "i-checkmark",
+            value === "ok"
+          );
+          funcs.toggleClass(
+            statusIconElm,
+            prefix + "i-warning",
+            value === "warn"
+          );
+          funcs.toggleClass(
+            statusIconElm,
+            prefix + "i-error",
+            value === "error"
+          );
+          self.classes.toggle("has-status", value !== "none");
           self.repaint();
         });
-        funcs.on(self.getEl('status'), 'mouseleave', function () {
+        funcs.on(self.getEl("status"), "mouseleave", function () {
           self.tooltip().hide();
         });
-        self.on('cancel', function (e) {
+        self.on("cancel", function (e) {
           if (self.menu && self.menu.visible()) {
             e.stopPropagation();
             self.hideMenu();
@@ -5375,12 +6108,12 @@ var modern = (function (domGlobals) {
             menu.items().eq(idx)[0].focus();
           }
         };
-        self.on('keydown', function (e) {
+        self.on("keydown", function (e) {
           var keyCode = e.keyCode;
-          if (e.target.nodeName === 'INPUT') {
+          if (e.target.nodeName === "INPUT") {
             if (keyCode === global$d.DOWN) {
               e.preventDefault();
-              self.fire('autocomplete');
+              self.fire("autocomplete");
               focusIdx(0, self.menu);
             } else if (keyCode === global$d.UP) {
               e.preventDefault();
@@ -5391,12 +6124,12 @@ var modern = (function (domGlobals) {
         return self._super();
       },
       remove: function () {
-        global$9(this.getEl('inp')).off();
+        global$9(this.getEl("inp")).off();
         if (this.menu) {
           this.menu.remove();
         }
         this._super();
-      }
+      },
     });
 
     var ColorBox = ComboBox.extend({
@@ -5404,82 +6137,78 @@ var modern = (function (domGlobals) {
         var self = this;
         settings.spellcheck = false;
         if (settings.onaction) {
-          settings.icon = 'none';
+          settings.icon = "none";
         }
         self._super(settings);
-        self.classes.add('colorbox');
-        self.on('change keyup postrender', function () {
+        self.classes.add("colorbox");
+        self.on("change keyup postrender", function () {
           self.repaintColor(self.value());
         });
       },
       repaintColor: function (value) {
-        var openElm = this.getEl('open');
-        var elm = openElm ? openElm.getElementsByTagName('i')[0] : null;
+        var openElm = this.getEl("open");
+        var elm = openElm ? openElm.getElementsByTagName("i")[0] : null;
         if (elm) {
           try {
             elm.style.background = value;
-          } catch (ex) {
-          }
+          } catch (ex) {}
         }
       },
       bindStates: function () {
         var self = this;
-        self.state.on('change:value', function (e) {
-          if (self.state.get('rendered')) {
+        self.state.on("change:value", function (e) {
+          if (self.state.get("rendered")) {
             self.repaintColor(e.value);
           }
         });
         return self._super();
-      }
+      },
     });
 
     var PanelButton = Button.extend({
       showPanel: function () {
-        var self = this, settings = self.settings;
-        self.classes.add('opened');
+        var self = this,
+          settings = self.settings;
+        self.classes.add("opened");
         if (!self.panel) {
           var panelSettings = settings.panel;
           if (panelSettings.type) {
             panelSettings = {
-              layout: 'grid',
-              items: panelSettings
+              layout: "grid",
+              items: panelSettings,
             };
           }
-          panelSettings.role = panelSettings.role || 'dialog';
+          panelSettings.role = panelSettings.role || "dialog";
           panelSettings.popover = true;
           panelSettings.autohide = true;
           panelSettings.ariaRoot = true;
-          self.panel = new FloatPanel(panelSettings).on('hide', function () {
-            self.classes.remove('opened');
-          }).on('cancel', function (e) {
-            e.stopPropagation();
-            self.focus();
-            self.hidePanel();
-          }).parent(self).renderTo(self.getContainerElm());
-          self.panel.fire('show');
+          self.panel = new FloatPanel(panelSettings)
+            .on("hide", function () {
+              self.classes.remove("opened");
+            })
+            .on("cancel", function (e) {
+              e.stopPropagation();
+              self.focus();
+              self.hidePanel();
+            })
+            .parent(self)
+            .renderTo(self.getContainerElm());
+          self.panel.fire("show");
           self.panel.reflow();
         } else {
           self.panel.show();
         }
-        var rtlRels = [
-          'bc-tc',
-          'bc-tl',
-          'bc-tr'
-        ];
-        var ltrRels = [
-          'bc-tc',
-          'bc-tr',
-          'bc-tl',
-          'tc-bc',
-          'tc-br',
-          'tc-bl'
-        ];
-        var rel = self.panel.testMoveRel(self.getEl(), settings.popoverAlign || (self.isRtl() ? rtlRels : ltrRels));
-        self.panel.classes.toggle('start', rel.substr(-1) === 'l');
-        self.panel.classes.toggle('end', rel.substr(-1) === 'r');
-        var isTop = rel.substr(0, 1) === 't';
-        self.panel.classes.toggle('bottom', !isTop);
-        self.panel.classes.toggle('top', isTop);
+        var rtlRels = ["bc-tc", "bc-tl", "bc-tr"];
+        var ltrRels = ["bc-tc", "bc-tr", "bc-tl", "tc-bc", "tc-br", "tc-bl"];
+        var rel = self.panel.testMoveRel(
+          self.getEl(),
+          settings.popoverAlign || (self.isRtl() ? rtlRels : ltrRels)
+        );
+        self.panel.classes.toggle("start", rel.substr(-1) === "l");
+        self.panel.classes.toggle("end", rel.substr(-1) === "r");
+        var isTop = rel.substr(0, 1) === "t";
+        self.panel.classes.toggle("bottom", !isTop);
+        self.panel.classes.toggle("top", isTop);
         self.panel.moveRel(self.getEl(), rel);
       },
       hidePanel: function () {
@@ -5490,8 +6219,8 @@ var modern = (function (domGlobals) {
       },
       postRender: function () {
         var self = this;
-        self.aria('haspopup', true);
-        self.on('click', function (e) {
+        self.aria("haspopup", true);
+        self.on("click", function (e) {
           if (e.control === self) {
             if (self.panel && self.panel.visible()) {
               self.hidePanel();
@@ -5509,60 +6238,95 @@ var modern = (function (domGlobals) {
           this.panel = null;
         }
         return this._super();
-      }
+      },
     });
 
     var DOM$3 = global$3.DOM;
     var ColorButton = PanelButton.extend({
       init: function (settings) {
         this._super(settings);
-        this.classes.add('splitbtn');
-        this.classes.add('colorbutton');
+        this.classes.add("splitbtn");
+        this.classes.add("colorbutton");
       },
       color: function (color) {
         if (color) {
           this._color = color;
-          this.getEl('preview').style.backgroundColor = color;
+          this.getEl("preview").style.backgroundColor = color;
           return this;
         }
         return this._color;
       },
       resetColor: function () {
         this._color = null;
-        this.getEl('preview').style.backgroundColor = null;
+        this.getEl("preview").style.backgroundColor = null;
         return this;
       },
       renderHtml: function () {
-        var self = this, id = self._id, prefix = self.classPrefix, text = self.state.get('text');
-        var icon = self.settings.icon ? prefix + 'ico ' + prefix + 'i-' + self.settings.icon : '';
-        var image = self.settings.image ? ' style="background-image: url(\'' + self.settings.image + '\')"' : '';
-        var textHtml = '';
+        var self = this,
+          id = self._id,
+          prefix = self.classPrefix,
+          text = self.state.get("text");
+        var icon = self.settings.icon
+          ? prefix + "ico " + prefix + "i-" + self.settings.icon
+          : "";
+        var image = self.settings.image
+          ? " style=\"background-image: url('" + self.settings.image + "')\""
+          : "";
+        var textHtml = "";
         if (text) {
-          self.classes.add('btn-has-text');
-          textHtml = '<span class="' + prefix + 'txt">' + self.encode(text) + '</span>';
+          self.classes.add("btn-has-text");
+          textHtml =
+            '<span class="' + prefix + 'txt">' + self.encode(text) + "</span>";
         }
-        return '<div id="' + id + '" class="' + self.classes + '" role="button" tabindex="-1" aria-haspopup="true">' + '<button role="presentation" hidefocus="1" type="button" tabindex="-1">' + (icon ? '<i class="' + icon + '"' + image + '></i>' : '') + '<span id="' + id + '-preview" class="' + prefix + 'preview"></span>' + textHtml + '</button>' + '<button type="button" class="' + prefix + 'open" hidefocus="1" tabindex="-1">' + ' <i class="' + prefix + 'caret"></i>' + '</button>' + '</div>';
+        return (
+          '<div id="' +
+          id +
+          '" class="' +
+          self.classes +
+          '" role="button" tabindex="-1" aria-haspopup="true">' +
+          '<button role="presentation" hidefocus="1" type="button" tabindex="-1">' +
+          (icon ? '<i class="' + icon + '"' + image + "></i>" : "") +
+          '<span id="' +
+          id +
+          '-preview" class="' +
+          prefix +
+          'preview"></span>' +
+          textHtml +
+          "</button>" +
+          '<button type="button" class="' +
+          prefix +
+          'open" hidefocus="1" tabindex="-1">' +
+          ' <i class="' +
+          prefix +
+          'caret"></i>' +
+          "</button>" +
+          "</div>"
+        );
       },
       postRender: function () {
-        var self = this, onClickHandler = self.settings.onclick;
-        self.on('click', function (e) {
-          if (e.aria && e.aria.key === 'down') {
+        var self = this,
+          onClickHandler = self.settings.onclick;
+        self.on("click", function (e) {
+          if (e.aria && e.aria.key === "down") {
             return;
           }
-          if (e.control === self && !DOM$3.getParent(e.target, '.' + self.classPrefix + 'open')) {
+          if (
+            e.control === self &&
+            !DOM$3.getParent(e.target, "." + self.classPrefix + "open")
+          ) {
             e.stopImmediatePropagation();
             onClickHandler.call(self, e);
           }
         });
         delete self.settings.onclick;
         return self._super();
-      }
+      },
     });
 
-    var global$e = tinymce.util.Tools.resolve('tinymce.util.Color');
+    var global$e = tinymce.util.Tools.resolve("tinymce.util.Color");
 
     var ColorPicker = Widget.extend({
-      Defaults: { classes: 'widget colorpicker' },
+      Defaults: { classes: "widget colorpicker" },
       init: function (settings) {
         this._super(settings);
       },
@@ -5570,10 +6334,10 @@ var modern = (function (domGlobals) {
         var self = this;
         var color = self.color();
         var hsv, hueRootElm, huePointElm, svRootElm, svPointElm;
-        hueRootElm = self.getEl('h');
-        huePointElm = self.getEl('hp');
-        svRootElm = self.getEl('sv');
-        svPointElm = self.getEl('svp');
+        hueRootElm = self.getEl("h");
+        huePointElm = self.getEl("hp");
+        svRootElm = self.getEl("sv");
+        svPointElm = self.getEl("svp");
         function getPos(elm, event) {
           var pos = funcs.getPos(elm);
           var x, y;
@@ -5583,27 +6347,27 @@ var modern = (function (domGlobals) {
           y = Math.max(0, Math.min(y / elm.clientHeight, 1));
           return {
             x: x,
-            y: y
+            y: y,
           };
         }
         function updateColor(hsv, hueUpdate) {
           var hue = (360 - hsv.h) / 360;
-          funcs.css(huePointElm, { top: hue * 100 + '%' });
+          funcs.css(huePointElm, { top: hue * 100 + "%" });
           if (!hueUpdate) {
             funcs.css(svPointElm, {
-              left: hsv.s + '%',
-              top: 100 - hsv.v + '%'
+              left: hsv.s + "%",
+              top: 100 - hsv.v + "%",
             });
           }
           svRootElm.style.background = global$e({
             s: 100,
             v: 100,
-            h: hsv.h
+            h: hsv.h,
           }).toHex();
           self.color().parse({
             s: hsv.s,
             v: hsv.v,
-            h: hsv.h
+            h: hsv.h,
           });
         }
         function updateSaturationAndValue(e) {
@@ -5612,7 +6376,7 @@ var modern = (function (domGlobals) {
           hsv.s = pos.x * 100;
           hsv.v = (1 - pos.y) * 100;
           updateColor(hsv);
-          self.fire('change');
+          self.fire("change");
         }
         function updateHue(e) {
           var pos;
@@ -5620,20 +6384,20 @@ var modern = (function (domGlobals) {
           hsv = color.toHsv();
           hsv.h = (1 - pos.y) * 360;
           updateColor(hsv, true);
-          self.fire('change');
+          self.fire("change");
         }
         self._repaint = function () {
           hsv = color.toHsv();
           updateColor(hsv);
         };
         self._super();
-        self._svdraghelper = new DragHelper(self._id + '-sv', {
+        self._svdraghelper = new DragHelper(self._id + "-sv", {
           start: updateSaturationAndValue,
-          drag: updateSaturationAndValue
+          drag: updateSaturationAndValue,
         });
-        self._hdraghelper = new DragHelper(self._id + '-h', {
+        self._hdraghelper = new DragHelper(self._id + "-h", {
           start: updateHue,
-          drag: updateHue
+          drag: updateHue,
         });
         self._repaint();
       },
@@ -5662,35 +6426,113 @@ var modern = (function (domGlobals) {
         var id = self._id;
         var prefix = self.classPrefix;
         var hueHtml;
-        var stops = '#ff0000,#ff0080,#ff00ff,#8000ff,#0000ff,#0080ff,#00ffff,#00ff80,#00ff00,#80ff00,#ffff00,#ff8000,#ff0000';
+        var stops =
+          "#ff0000,#ff0080,#ff00ff,#8000ff,#0000ff,#0080ff,#00ffff,#00ff80,#00ff00,#80ff00,#ffff00,#ff8000,#ff0000";
         function getOldIeFallbackHtml() {
-          var i, l, html = '', gradientPrefix, stopsList;
-          gradientPrefix = 'filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=';
-          stopsList = stops.split(',');
+          var i,
+            l,
+            html = "",
+            gradientPrefix,
+            stopsList;
+          gradientPrefix =
+            "filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=";
+          stopsList = stops.split(",");
           for (i = 0, l = stopsList.length - 1; i < l; i++) {
-            html += '<div class="' + prefix + 'colorpicker-h-chunk" style="' + 'height:' + 100 / l + '%;' + gradientPrefix + stopsList[i] + ',endColorstr=' + stopsList[i + 1] + ');' + '-ms-' + gradientPrefix + stopsList[i] + ',endColorstr=' + stopsList[i + 1] + ')' + '"></div>';
+            html +=
+              '<div class="' +
+              prefix +
+              'colorpicker-h-chunk" style="' +
+              "height:" +
+              100 / l +
+              "%;" +
+              gradientPrefix +
+              stopsList[i] +
+              ",endColorstr=" +
+              stopsList[i + 1] +
+              ");" +
+              "-ms-" +
+              gradientPrefix +
+              stopsList[i] +
+              ",endColorstr=" +
+              stopsList[i + 1] +
+              ")" +
+              '"></div>';
           }
           return html;
         }
-        var gradientCssText = 'background: -ms-linear-gradient(top,' + stops + ');' + 'background: linear-gradient(to bottom,' + stops + ');';
-        hueHtml = '<div id="' + id + '-h" class="' + prefix + 'colorpicker-h" style="' + gradientCssText + '">' + getOldIeFallbackHtml() + '<div id="' + id + '-hp" class="' + prefix + 'colorpicker-h-marker"></div>' + '</div>';
-        return '<div id="' + id + '" class="' + self.classes + '">' + '<div id="' + id + '-sv" class="' + prefix + 'colorpicker-sv">' + '<div class="' + prefix + 'colorpicker-overlay1">' + '<div class="' + prefix + 'colorpicker-overlay2">' + '<div id="' + id + '-svp" class="' + prefix + 'colorpicker-selector1">' + '<div class="' + prefix + 'colorpicker-selector2"></div>' + '</div>' + '</div>' + '</div>' + '</div>' + hueHtml + '</div>';
-      }
+        var gradientCssText =
+          "background: -ms-linear-gradient(top," +
+          stops +
+          ");" +
+          "background: linear-gradient(to bottom," +
+          stops +
+          ");";
+        hueHtml =
+          '<div id="' +
+          id +
+          '-h" class="' +
+          prefix +
+          'colorpicker-h" style="' +
+          gradientCssText +
+          '">' +
+          getOldIeFallbackHtml() +
+          '<div id="' +
+          id +
+          '-hp" class="' +
+          prefix +
+          'colorpicker-h-marker"></div>' +
+          "</div>";
+        return (
+          '<div id="' +
+          id +
+          '" class="' +
+          self.classes +
+          '">' +
+          '<div id="' +
+          id +
+          '-sv" class="' +
+          prefix +
+          'colorpicker-sv">' +
+          '<div class="' +
+          prefix +
+          'colorpicker-overlay1">' +
+          '<div class="' +
+          prefix +
+          'colorpicker-overlay2">' +
+          '<div id="' +
+          id +
+          '-svp" class="' +
+          prefix +
+          'colorpicker-selector1">' +
+          '<div class="' +
+          prefix +
+          'colorpicker-selector2"></div>' +
+          "</div>" +
+          "</div>" +
+          "</div>" +
+          "</div>" +
+          hueHtml +
+          "</div>"
+        );
+      },
     });
 
     var DropZone = Widget.extend({
       init: function (settings) {
         var self = this;
-        settings = global$2.extend({
-          height: 100,
-          text: 'Drop an image here',
-          multiple: false,
-          accept: null
-        }, settings);
+        settings = global$2.extend(
+          {
+            height: 100,
+            text: "Drop an image here",
+            multiple: false,
+            accept: null,
+          },
+          settings
+        );
         self._super(settings);
-        self.classes.add('dropzone');
+        self.classes.add("dropzone");
         if (settings.multiple) {
-          self.classes.add('multiple');
+          self.classes.add("multiple");
         }
       },
       renderHtml: function () {
@@ -5699,14 +6541,18 @@ var modern = (function (domGlobals) {
         var cfg = self.settings;
         attrs = {
           id: self._id,
-          hidefocus: '1'
+          hidefocus: "1",
         };
-        elm = funcs.create('div', attrs, '<span>' + this.translate(cfg.text) + '</span>');
+        elm = funcs.create(
+          "div",
+          attrs,
+          "<span>" + this.translate(cfg.text) + "</span>"
+        );
         if (cfg.height) {
-          funcs.css(elm, 'height', cfg.height + 'px');
+          funcs.css(elm, "height", cfg.height + "px");
         }
         if (cfg.width) {
-          funcs.css(elm, 'width', cfg.width + 'px');
+          funcs.css(elm, "width", cfg.width + "px");
         }
         elm.className = self.classes;
         return elm.outerHTML;
@@ -5715,28 +6561,31 @@ var modern = (function (domGlobals) {
         var self = this;
         var toggleDragClass = function (e) {
           e.preventDefault();
-          self.classes.toggle('dragenter');
+          self.classes.toggle("dragenter");
           self.getEl().className = self.classes;
         };
         var filter = function (files) {
           var accept = self.settings.accept;
-          if (typeof accept !== 'string') {
+          if (typeof accept !== "string") {
             return files;
           }
-          var re = new RegExp('(' + accept.split(/\s*,\s*/).join('|') + ')$', 'i');
+          var re = new RegExp(
+            "(" + accept.split(/\s*,\s*/).join("|") + ")$",
+            "i"
+          );
           return global$2.grep(files, function (file) {
             return re.test(file.name);
           });
         };
         self._super();
-        self.$el.on('dragover', function (e) {
+        self.$el.on("dragover", function (e) {
           e.preventDefault();
         });
-        self.$el.on('dragenter', toggleDragClass);
-        self.$el.on('dragleave', toggleDragClass);
-        self.$el.on('drop', function (e) {
+        self.$el.on("dragenter", toggleDragClass);
+        self.$el.on("dragleave", toggleDragClass);
+        self.$el.on("drop", function (e) {
           e.preventDefault();
-          if (self.state.get('disabled')) {
+          if (self.state.get("disabled")) {
             return;
           }
           var files = filter(e.dataTransfer.files);
@@ -5750,32 +6599,32 @@ var modern = (function (domGlobals) {
             }
           };
           if (files.length) {
-            self.fire('change', e);
+            self.fire("change", e);
           }
         });
       },
       remove: function () {
         this.$el.off();
         this._super();
-      }
+      },
     });
 
     var Path = Widget.extend({
       init: function (settings) {
         var self = this;
         if (!settings.delimiter) {
-          settings.delimiter = '\xBB';
+          settings.delimiter = "\xBB";
         }
         self._super(settings);
-        self.classes.add('path');
+        self.classes.add("path");
         self.canFocus = true;
-        self.on('click', function (e) {
+        self.on("click", function (e) {
           var index;
           var target = e.target;
-          if (index = target.getAttribute('data-index')) {
-            self.fire('select', {
+          if ((index = target.getAttribute("data-index"))) {
+            self.fire("select", {
               value: self.row()[index],
-              index: index
+              index: index,
             });
           }
         });
@@ -5788,18 +6637,26 @@ var modern = (function (domGlobals) {
       },
       row: function (row) {
         if (!arguments.length) {
-          return this.state.get('row');
+          return this.state.get("row");
         }
-        this.state.set('row', row);
+        this.state.set("row", row);
         return this;
       },
       renderHtml: function () {
         var self = this;
-        return '<div id="' + self._id + '" class="' + self.classes + '">' + self._getDataPathHtml(self.state.get('row')) + '</div>';
+        return (
+          '<div id="' +
+          self._id +
+          '" class="' +
+          self.classes +
+          '">' +
+          self._getDataPathHtml(self.state.get("row")) +
+          "</div>"
+        );
       },
       bindStates: function () {
         var self = this;
-        self.state.on('change:row', function (e) {
+        self.state.on("change:row", function (e) {
           self.innerHtml(self._getDataPathHtml(e.value));
         });
         return self._super();
@@ -5807,52 +6664,77 @@ var modern = (function (domGlobals) {
       _getDataPathHtml: function (data) {
         var self = this;
         var parts = data || [];
-        var i, l, html = '';
+        var i,
+          l,
+          html = "";
         var prefix = self.classPrefix;
         for (i = 0, l = parts.length; i < l; i++) {
-          html += (i > 0 ? '<div class="' + prefix + 'divider" aria-hidden="true"> ' + self.settings.delimiter + ' </div>' : '') + '<div role="button" class="' + prefix + 'path-item' + (i === l - 1 ? ' ' + prefix + 'last' : '') + '" data-index="' + i + '" tabindex="-1" id="' + self._id + '-' + i + '" aria-level="' + (i + 1) + '">' + parts[i].name + '</div>';
+          html +=
+            (i > 0
+              ? '<div class="' +
+                prefix +
+                'divider" aria-hidden="true"> ' +
+                self.settings.delimiter +
+                " </div>"
+              : "") +
+            '<div role="button" class="' +
+            prefix +
+            "path-item" +
+            (i === l - 1 ? " " + prefix + "last" : "") +
+            '" data-index="' +
+            i +
+            '" tabindex="-1" id="' +
+            self._id +
+            "-" +
+            i +
+            '" aria-level="' +
+            (i + 1) +
+            '">' +
+            parts[i].name +
+            "</div>";
         }
         if (!html) {
           html = '<div class="' + prefix + 'path-item">\xA0</div>';
         }
         return html;
-      }
+      },
     });
 
     var ElementPath = Path.extend({
       postRender: function () {
-        var self = this, editor = self.settings.editor;
+        var self = this,
+          editor = self.settings.editor;
         function isHidden(elm) {
           if (elm.nodeType === 1) {
-            if (elm.nodeName === 'BR' || !!elm.getAttribute('data-mce-bogus')) {
+            if (elm.nodeName === "BR" || !!elm.getAttribute("data-mce-bogus")) {
               return true;
             }
-            if (elm.getAttribute('data-mce-type') === 'bookmark') {
+            if (elm.getAttribute("data-mce-type") === "bookmark") {
               return true;
             }
           }
           return false;
         }
         if (editor.settings.elementpath !== false) {
-          self.on('select', function (e) {
+          self.on("select", function (e) {
             editor.focus();
             editor.selection.select(this.row()[e.index].element);
             editor.nodeChanged();
           });
-          editor.on('nodeChange', function (e) {
+          editor.on("nodeChange", function (e) {
             var outParents = [];
             var parents = e.parents;
             var i = parents.length;
             while (i--) {
               if (parents[i].nodeType === 1 && !isHidden(parents[i])) {
-                var args = editor.fire('ResolveName', {
+                var args = editor.fire("ResolveName", {
                   name: parents[i].nodeName.toLowerCase(),
-                  target: parents[i]
+                  target: parents[i],
                 });
                 if (!args.isDefaultPrevented()) {
                   outParents.push({
                     name: args.name,
-                    element: parents[i]
+                    element: parents[i],
                   });
                 }
                 if (args.isPropagationStopped()) {
@@ -5864,29 +6746,55 @@ var modern = (function (domGlobals) {
           });
         }
         return self._super();
-      }
+      },
     });
 
     var FormItem = Container.extend({
       Defaults: {
-        layout: 'flex',
-        align: 'center',
-        defaults: { flex: 1 }
+        layout: "flex",
+        align: "center",
+        defaults: { flex: 1 },
       },
       renderHtml: function () {
-        var self = this, layout = self._layout, prefix = self.classPrefix;
-        self.classes.add('formitem');
+        var self = this,
+          layout = self._layout,
+          prefix = self.classPrefix;
+        self.classes.add("formitem");
         layout.preRender(self);
-        return '<div id="' + self._id + '" class="' + self.classes + '" hidefocus="1" tabindex="-1">' + (self.settings.title ? '<div id="' + self._id + '-title" class="' + prefix + 'title">' + self.settings.title + '</div>' : '') + '<div id="' + self._id + '-body" class="' + self.bodyClasses + '">' + (self.settings.html || '') + layout.renderHtml(self) + '</div>' + '</div>';
-      }
+        return (
+          '<div id="' +
+          self._id +
+          '" class="' +
+          self.classes +
+          '" hidefocus="1" tabindex="-1">' +
+          (self.settings.title
+            ? '<div id="' +
+              self._id +
+              '-title" class="' +
+              prefix +
+              'title">' +
+              self.settings.title +
+              "</div>"
+            : "") +
+          '<div id="' +
+          self._id +
+          '-body" class="' +
+          self.bodyClasses +
+          '">' +
+          (self.settings.html || "") +
+          layout.renderHtml(self) +
+          "</div>" +
+          "</div>"
+        );
+      },
     });
 
     var Form = Container.extend({
       Defaults: {
-        containerCls: 'form',
-        layout: 'flex',
-        direction: 'column',
-        align: 'stretch',
+        containerCls: "form",
+        layout: "flex",
+        direction: "column",
+        align: "stretch",
         flex: 1,
         padding: 15,
         labelGap: 30,
@@ -5894,35 +6802,41 @@ var modern = (function (domGlobals) {
         callbacks: {
           submit: function () {
             this.submit();
-          }
-        }
+          },
+        },
       },
       preRender: function () {
-        var self = this, items = self.items();
+        var self = this,
+          items = self.items();
         if (!self.settings.formItemDefaults) {
           self.settings.formItemDefaults = {
-            layout: 'flex',
-            autoResize: 'overflow',
-            defaults: { flex: 1 }
+            layout: "flex",
+            autoResize: "overflow",
+            defaults: { flex: 1 },
           };
         }
         items.each(function (ctrl) {
           var formItem;
           var label = ctrl.settings.label;
           if (label) {
-            formItem = new FormItem(global$2.extend({
-              items: {
-                type: 'label',
-                id: ctrl._id + '-l',
-                text: label,
-                flex: 0,
-                forId: ctrl._id,
-                disabled: ctrl.disabled()
-              }
-            }, self.settings.formItemDefaults));
-            formItem.type = 'formitem';
-            ctrl.aria('labelledby', ctrl._id + '-l');
-            if (typeof ctrl.settings.flex === 'undefined') {
+            formItem = new FormItem(
+              global$2.extend(
+                {
+                  items: {
+                    type: "label",
+                    id: ctrl._id + "-l",
+                    text: label,
+                    flex: 0,
+                    forId: ctrl._id,
+                    disabled: ctrl.disabled(),
+                  },
+                },
+                self.settings.formItemDefaults
+              )
+            );
+            formItem.type = "formitem";
+            ctrl.aria("labelledby", ctrl._id + "-l");
+            if (typeof ctrl.settings.flex === "undefined") {
               ctrl.settings.flex = 1;
             }
             self.replace(ctrl, formItem);
@@ -5931,7 +6845,7 @@ var modern = (function (domGlobals) {
         });
       },
       submit: function () {
-        return this.fire('submit', { data: this.toJSON() });
+        return this.fire("submit", { data: this.toJSON() });
       },
       postRender: function () {
         var self = this;
@@ -5948,14 +6862,16 @@ var modern = (function (domGlobals) {
           if (self.settings.labelGapCalc === false) {
             return;
           }
-          if (self.settings.labelGapCalc === 'children') {
-            items = self.find('formitem');
+          if (self.settings.labelGapCalc === "children") {
+            items = self.find("formitem");
           } else {
             items = self.items();
           }
-          items.filter('formitem').each(function (item) {
-            var labelCtrl = item.items()[0], labelWidth = labelCtrl.getEl().clientWidth;
-            maxLabelWidth = labelWidth > maxLabelWidth ? labelWidth : maxLabelWidth;
+          items.filter("formitem").each(function (item) {
+            var labelCtrl = item.items()[0],
+              labelWidth = labelCtrl.getEl().clientWidth;
+            maxLabelWidth =
+              labelWidth > maxLabelWidth ? labelWidth : maxLabelWidth;
             labels.push(labelCtrl);
           });
           labelGap = self.settings.labelGap || 0;
@@ -5964,29 +6880,55 @@ var modern = (function (domGlobals) {
             labels[i].settings.minWidth = maxLabelWidth + labelGap;
           }
         }
-        self.on('show', recalcLabels);
+        self.on("show", recalcLabels);
         recalcLabels();
-      }
+      },
     });
 
     var FieldSet = Form.extend({
       Defaults: {
-        containerCls: 'fieldset',
-        layout: 'flex',
-        direction: 'column',
-        align: 'stretch',
+        containerCls: "fieldset",
+        layout: "flex",
+        direction: "column",
+        align: "stretch",
         flex: 1,
-        padding: '25 15 5 15',
+        padding: "25 15 5 15",
         labelGap: 30,
         spacing: 10,
-        border: 1
+        border: 1,
       },
       renderHtml: function () {
-        var self = this, layout = self._layout, prefix = self.classPrefix;
+        var self = this,
+          layout = self._layout,
+          prefix = self.classPrefix;
         self.preRender();
         layout.preRender(self);
-        return '<fieldset id="' + self._id + '" class="' + self.classes + '" hidefocus="1" tabindex="-1">' + (self.settings.title ? '<legend id="' + self._id + '-title" class="' + prefix + 'fieldset-title">' + self.settings.title + '</legend>' : '') + '<div id="' + self._id + '-body" class="' + self.bodyClasses + '">' + (self.settings.html || '') + layout.renderHtml(self) + '</div>' + '</fieldset>';
-      }
+        return (
+          '<fieldset id="' +
+          self._id +
+          '" class="' +
+          self.classes +
+          '" hidefocus="1" tabindex="-1">' +
+          (self.settings.title
+            ? '<legend id="' +
+              self._id +
+              '-title" class="' +
+              prefix +
+              'fieldset-title">' +
+              self.settings.title +
+              "</legend>"
+            : "") +
+          '<div id="' +
+          self._id +
+          '-body" class="' +
+          self.bodyClasses +
+          '">' +
+          (self.settings.html || "") +
+          layout.renderHtml(self) +
+          "</div>" +
+          "</fieldset>"
+        );
+      },
     });
 
     var unique$1 = 0;
@@ -5995,16 +6937,16 @@ var modern = (function (domGlobals) {
       var time = date.getTime();
       var random = Math.floor(Math.random() * 1000000000);
       unique$1++;
-      return prefix + '_' + random + unique$1 + String(time);
+      return prefix + "_" + random + unique$1 + String(time);
     };
 
     var fromHtml = function (html, scope) {
       var doc = scope || domGlobals.document;
-      var div = doc.createElement('div');
+      var div = doc.createElement("div");
       div.innerHTML = html;
       if (!div.hasChildNodes() || div.childNodes.length > 1) {
-        domGlobals.console.error('HTML does not have a single root node', html);
-        throw new Error('HTML must have a single root node');
+        domGlobals.console.error("HTML does not have a single root node", html);
+        throw new Error("HTML must have a single root node");
       }
       return fromDom(div.childNodes[0]);
     };
@@ -6020,7 +6962,7 @@ var modern = (function (domGlobals) {
     };
     var fromDom = function (node) {
       if (node === null || node === undefined) {
-        throw new Error('Node cannot be null or undefined');
+        throw new Error("Node cannot be null or undefined");
       }
       return { dom: constant(node) };
     };
@@ -6033,7 +6975,7 @@ var modern = (function (domGlobals) {
       fromTag: fromTag,
       fromText: fromText,
       fromDom: fromDom,
-      fromPoint: fromPoint
+      fromPoint: fromPoint,
     };
 
     var cached = function (f) {
@@ -6065,7 +7007,10 @@ var modern = (function (domGlobals) {
     var ENTITY = domGlobals.Node.ENTITY_NODE;
     var NOTATION = domGlobals.Node.NOTATION_NODE;
 
-    var Global = typeof domGlobals.window !== 'undefined' ? domGlobals.window : Function('return this;')();
+    var Global =
+      typeof domGlobals.window !== "undefined"
+        ? domGlobals.window
+        : Function("return this;")();
 
     var path = function (parts, scope) {
       var o = scope !== undefined && scope !== null ? scope : Global;
@@ -6075,7 +7020,7 @@ var modern = (function (domGlobals) {
       return o;
     };
     var resolve = function (p, scope) {
-      var parts = p.split('.');
+      var parts = p.split(".");
       return path(parts, scope);
     };
 
@@ -6085,7 +7030,7 @@ var modern = (function (domGlobals) {
     var getOrDie = function (name, scope) {
       var actual = unsafe(name, scope);
       if (actual === undefined || actual === null) {
-        throw new Error(name + ' not available on this browser');
+        throw new Error(name + " not available on this browser");
       }
       return actual;
     };
@@ -6102,7 +7047,13 @@ var modern = (function (domGlobals) {
           values[_i] = arguments[_i];
         }
         if (fields.length !== values.length) {
-          throw new Error('Wrong number of arguments to struct. Expected "[' + fields.length + ']", got ' + values.length + ' arguments');
+          throw new Error(
+            'Wrong number of arguments to struct. Expected "[' +
+              fields.length +
+              ']", got ' +
+              values.length +
+              " arguments"
+          );
         }
         var struct = {};
         each(fields, function (name, i) {
@@ -6113,7 +7064,7 @@ var modern = (function (domGlobals) {
     };
 
     var node = function () {
-      var f = Global$1.getOrDie('Node');
+      var f = Global$1.getOrDie("Node");
       return f;
     };
     var compareDocumentPosition = function (a, b, match) {
@@ -6123,11 +7074,15 @@ var modern = (function (domGlobals) {
       return compareDocumentPosition(a, b, node().DOCUMENT_POSITION_PRECEDING);
     };
     var documentPositionContainedBy = function (a, b) {
-      return compareDocumentPosition(a, b, node().DOCUMENT_POSITION_CONTAINED_BY);
+      return compareDocumentPosition(
+        a,
+        b,
+        node().DOCUMENT_POSITION_CONTAINED_BY
+      );
     };
     var Node = {
       documentPositionPreceding: documentPositionPreceding,
-      documentPositionContainedBy: documentPositionContainedBy
+      documentPositionContainedBy: documentPositionContainedBy,
     };
 
     var firstMatch = function (regexes, s) {
@@ -6144,11 +7099,11 @@ var modern = (function (domGlobals) {
       if (!r) {
         return {
           major: 0,
-          minor: 0
+          minor: 0,
         };
       }
       var group = function (i) {
-        return Number(agent.replace(r, '$' + i));
+        return Number(agent.replace(r, "$" + i));
       };
       return nu(group(1), group(2));
     };
@@ -6165,21 +7120,21 @@ var modern = (function (domGlobals) {
     var nu = function (major, minor) {
       return {
         major: major,
-        minor: minor
+        minor: minor,
       };
     };
     var Version = {
       nu: nu,
       detect: detect,
-      unknown: unknown
+      unknown: unknown,
     };
 
-    var edge = 'Edge';
-    var chrome = 'Chrome';
-    var ie = 'IE';
-    var opera = 'Opera';
-    var firefox = 'Firefox';
-    var safari = 'Safari';
+    var edge = "Edge";
+    var chrome = "Chrome";
+    var ie = "IE";
+    var opera = "Opera";
+    var firefox = "Firefox";
+    var safari = "Safari";
     var isBrowser = function (name, current) {
       return function () {
         return current === name;
@@ -6188,7 +7143,7 @@ var modern = (function (domGlobals) {
     var unknown$1 = function () {
       return nu$1({
         current: undefined,
-        version: Version.unknown()
+        version: Version.unknown(),
       });
     };
     var nu$1 = function (info) {
@@ -6202,7 +7157,7 @@ var modern = (function (domGlobals) {
         isIE: isBrowser(ie, current),
         isOpera: isBrowser(opera, current),
         isFirefox: isBrowser(firefox, current),
-        isSafari: isBrowser(safari, current)
+        isSafari: isBrowser(safari, current),
       };
     };
     var Browser = {
@@ -6213,16 +7168,16 @@ var modern = (function (domGlobals) {
       ie: constant(ie),
       opera: constant(opera),
       firefox: constant(firefox),
-      safari: constant(safari)
+      safari: constant(safari),
     };
 
-    var windows$1 = 'Windows';
-    var ios = 'iOS';
-    var android = 'Android';
-    var linux = 'Linux';
-    var osx = 'OSX';
-    var solaris = 'Solaris';
-    var freebsd = 'FreeBSD';
+    var windows$1 = "Windows";
+    var ios = "iOS";
+    var android = "Android";
+    var linux = "Linux";
+    var osx = "OSX";
+    var solaris = "Solaris";
+    var freebsd = "FreeBSD";
     var isOS = function (name, current) {
       return function () {
         return current === name;
@@ -6231,7 +7186,7 @@ var modern = (function (domGlobals) {
     var unknown$2 = function () {
       return nu$2({
         current: undefined,
-        version: Version.unknown()
+        version: Version.unknown(),
       });
     };
     var nu$2 = function (info) {
@@ -6246,7 +7201,7 @@ var modern = (function (domGlobals) {
         isOSX: isOS(osx, current),
         isLinux: isOS(linux, current),
         isSolaris: isOS(solaris, current),
-        isFreeBSD: isOS(freebsd, current)
+        isFreeBSD: isOS(freebsd, current),
       };
     };
     var OperatingSystem = {
@@ -6258,7 +7213,7 @@ var modern = (function (domGlobals) {
       linux: constant(linux),
       osx: constant(osx),
       solaris: constant(solaris),
-      freebsd: constant(freebsd)
+      freebsd: constant(freebsd),
     };
 
     var DeviceType = function (os, browser, userAgent) {
@@ -6266,10 +7221,14 @@ var modern = (function (domGlobals) {
       var isiPhone = os.isiOS() && !isiPad;
       var isAndroid3 = os.isAndroid() && os.version.major === 3;
       var isAndroid4 = os.isAndroid() && os.version.major === 4;
-      var isTablet = isiPad || isAndroid3 || isAndroid4 && /mobile/i.test(userAgent) === true;
+      var isTablet =
+        isiPad ||
+        isAndroid3 ||
+        (isAndroid4 && /mobile/i.test(userAgent) === true);
       var isTouch = os.isiOS() || os.isAndroid();
       var isPhone = isTouch && !isTablet;
-      var iOSwebview = browser.isSafari() && os.isiOS() && /safari/i.test(userAgent) === false;
+      var iOSwebview =
+        browser.isSafari() && os.isiOS() && /safari/i.test(userAgent) === false;
       return {
         isiPad: constant(isiPad),
         isiPhone: constant(isiPhone),
@@ -6278,7 +7237,7 @@ var modern = (function (domGlobals) {
         isTouch: constant(isTouch),
         isAndroid: os.isAndroid,
         isiOS: os.isiOS,
-        isWebView: constant(iOSwebview)
+        isWebView: constant(iOSwebview),
       };
     };
 
@@ -6293,7 +7252,7 @@ var modern = (function (domGlobals) {
         var version = Version.detect(browser.versionRegexes, userAgent);
         return {
           current: browser.name,
-          version: version
+          version: version,
         };
       });
     };
@@ -6302,13 +7261,13 @@ var modern = (function (domGlobals) {
         var version = Version.detect(os.versionRegexes, userAgent);
         return {
           current: os.name,
-          version: version
+          version: version,
         };
       });
     };
     var UaString = {
       detectBrowser: detectBrowser,
-      detectOs: detectOs
+      detectOs: detectOs,
     };
 
     var contains = function (str, substr) {
@@ -6323,114 +7282,121 @@ var modern = (function (domGlobals) {
     };
     var browsers = [
       {
-        name: 'Edge',
+        name: "Edge",
         versionRegexes: [/.*?edge\/ ?([0-9]+)\.([0-9]+)$/],
         search: function (uastring) {
-          return contains(uastring, 'edge/') && contains(uastring, 'chrome') && contains(uastring, 'safari') && contains(uastring, 'applewebkit');
-        }
+          return (
+            contains(uastring, "edge/") &&
+            contains(uastring, "chrome") &&
+            contains(uastring, "safari") &&
+            contains(uastring, "applewebkit")
+          );
+        },
       },
       {
-        name: 'Chrome',
-        versionRegexes: [
-          /.*?chrome\/([0-9]+)\.([0-9]+).*/,
-          normalVersionRegex
-        ],
+        name: "Chrome",
+        versionRegexes: [/.*?chrome\/([0-9]+)\.([0-9]+).*/, normalVersionRegex],
         search: function (uastring) {
-          return contains(uastring, 'chrome') && !contains(uastring, 'chromeframe');
-        }
+          return (
+            contains(uastring, "chrome") && !contains(uastring, "chromeframe")
+          );
+        },
       },
       {
-        name: 'IE',
+        name: "IE",
         versionRegexes: [
           /.*?msie\ ?([0-9]+)\.([0-9]+).*/,
-          /.*?rv:([0-9]+)\.([0-9]+).*/
+          /.*?rv:([0-9]+)\.([0-9]+).*/,
         ],
         search: function (uastring) {
-          return contains(uastring, 'msie') || contains(uastring, 'trident');
-        }
+          return contains(uastring, "msie") || contains(uastring, "trident");
+        },
       },
       {
-        name: 'Opera',
-        versionRegexes: [
-          normalVersionRegex,
-          /.*?opera\/([0-9]+)\.([0-9]+).*/
-        ],
-        search: checkContains('opera')
+        name: "Opera",
+        versionRegexes: [normalVersionRegex, /.*?opera\/([0-9]+)\.([0-9]+).*/],
+        search: checkContains("opera"),
       },
       {
-        name: 'Firefox',
+        name: "Firefox",
         versionRegexes: [/.*?firefox\/\ ?([0-9]+)\.([0-9]+).*/],
-        search: checkContains('firefox')
+        search: checkContains("firefox"),
       },
       {
-        name: 'Safari',
-        versionRegexes: [
-          normalVersionRegex,
-          /.*?cpu os ([0-9]+)_([0-9]+).*/
-        ],
+        name: "Safari",
+        versionRegexes: [normalVersionRegex, /.*?cpu os ([0-9]+)_([0-9]+).*/],
         search: function (uastring) {
-          return (contains(uastring, 'safari') || contains(uastring, 'mobile/')) && contains(uastring, 'applewebkit');
-        }
-      }
+          return (
+            (contains(uastring, "safari") || contains(uastring, "mobile/")) &&
+            contains(uastring, "applewebkit")
+          );
+        },
+      },
     ];
     var oses = [
       {
-        name: 'Windows',
-        search: checkContains('win'),
-        versionRegexes: [/.*?windows\ nt\ ?([0-9]+)\.([0-9]+).*/]
+        name: "Windows",
+        search: checkContains("win"),
+        versionRegexes: [/.*?windows\ nt\ ?([0-9]+)\.([0-9]+).*/],
       },
       {
-        name: 'iOS',
+        name: "iOS",
         search: function (uastring) {
-          return contains(uastring, 'iphone') || contains(uastring, 'ipad');
+          return contains(uastring, "iphone") || contains(uastring, "ipad");
         },
         versionRegexes: [
           /.*?version\/\ ?([0-9]+)\.([0-9]+).*/,
           /.*cpu os ([0-9]+)_([0-9]+).*/,
-          /.*cpu iphone os ([0-9]+)_([0-9]+).*/
-        ]
+          /.*cpu iphone os ([0-9]+)_([0-9]+).*/,
+        ],
       },
       {
-        name: 'Android',
-        search: checkContains('android'),
-        versionRegexes: [/.*?android\ ?([0-9]+)\.([0-9]+).*/]
+        name: "Android",
+        search: checkContains("android"),
+        versionRegexes: [/.*?android\ ?([0-9]+)\.([0-9]+).*/],
       },
       {
-        name: 'OSX',
-        search: checkContains('os x'),
-        versionRegexes: [/.*?os\ x\ ?([0-9]+)_([0-9]+).*/]
+        name: "OSX",
+        search: checkContains("os x"),
+        versionRegexes: [/.*?os\ x\ ?([0-9]+)_([0-9]+).*/],
       },
       {
-        name: 'Linux',
-        search: checkContains('linux'),
-        versionRegexes: []
+        name: "Linux",
+        search: checkContains("linux"),
+        versionRegexes: [],
       },
       {
-        name: 'Solaris',
-        search: checkContains('sunos'),
-        versionRegexes: []
+        name: "Solaris",
+        search: checkContains("sunos"),
+        versionRegexes: [],
       },
       {
-        name: 'FreeBSD',
-        search: checkContains('freebsd'),
-        versionRegexes: []
-      }
+        name: "FreeBSD",
+        search: checkContains("freebsd"),
+        versionRegexes: [],
+      },
     ];
     var PlatformInfo = {
       browsers: constant(browsers),
-      oses: constant(oses)
+      oses: constant(oses),
     };
 
     var detect$2 = function (userAgent) {
       var browsers = PlatformInfo.browsers();
       var oses = PlatformInfo.oses();
-      var browser = UaString.detectBrowser(browsers, userAgent).fold(Browser.unknown, Browser.nu);
-      var os = UaString.detectOs(oses, userAgent).fold(OperatingSystem.unknown, OperatingSystem.nu);
+      var browser = UaString.detectBrowser(browsers, userAgent).fold(
+        Browser.unknown,
+        Browser.nu
+      );
+      var os = UaString.detectOs(oses, userAgent).fold(
+        OperatingSystem.unknown,
+        OperatingSystem.nu
+      );
       var deviceType = DeviceType(os, browser, userAgent);
       return {
         browser: browser,
         os: os,
-        deviceType: deviceType
+        deviceType: deviceType,
       };
     };
     var PlatformDetection = { detect: detect$2 };
@@ -6444,15 +7410,22 @@ var modern = (function (domGlobals) {
     var ELEMENT$1 = ELEMENT;
     var DOCUMENT$1 = DOCUMENT;
     var bypassSelector = function (dom) {
-      return dom.nodeType !== ELEMENT$1 && dom.nodeType !== DOCUMENT$1 || dom.childElementCount === 0;
+      return (
+        (dom.nodeType !== ELEMENT$1 && dom.nodeType !== DOCUMENT$1) ||
+        dom.childElementCount === 0
+      );
     };
     var all = function (selector, scope) {
       var base = scope === undefined ? domGlobals.document : scope.dom();
-      return bypassSelector(base) ? [] : map(base.querySelectorAll(selector), Element.fromDom);
+      return bypassSelector(base)
+        ? []
+        : map(base.querySelectorAll(selector), Element.fromDom);
     };
     var one = function (selector, scope) {
       var base = scope === undefined ? domGlobals.document : scope.dom();
-      return bypassSelector(base) ? Option.none() : Option.from(base.querySelector(selector)).map(Element.fromDom);
+      return bypassSelector(base)
+        ? Option.none()
+        : Option.from(base.querySelector(selector)).map(Element.fromDom);
     };
 
     var regularContains = function (e1, e2) {
@@ -6466,7 +7439,7 @@ var modern = (function (domGlobals) {
     var browser = PlatformDetection$1.detect().browser;
     var contains$1 = browser.isIE() ? ieContains : regularContains;
 
-    var spot = Immutable('element', 'offset');
+    var spot = Immutable("element", "offset");
 
     var descendants = function (scope, selector) {
       return all(selector, scope);
@@ -6479,46 +7452,49 @@ var modern = (function (domGlobals) {
           if (node.contentEditable === value) {
             return true;
           }
-          if (node.getAttribute('data-mce-contenteditable') === value) {
+          if (node.getAttribute("data-mce-contenteditable") === value) {
             return true;
           }
         }
         return false;
       };
     };
-    var isContentEditableTrue = hasContentEditableState('true');
-    var isContentEditableFalse = hasContentEditableState('false');
+    var isContentEditableTrue = hasContentEditableState("true");
+    var isContentEditableFalse = hasContentEditableState("false");
     var create = function (type, title, url, level, attach) {
       return {
         type: type,
         title: title,
         url: url,
         level: level,
-        attach: attach
+        attach: attach,
       };
     };
     var isChildOfContentEditableTrue = function (node) {
-      while (node = node.parentNode) {
+      while ((node = node.parentNode)) {
         var value = node.contentEditable;
-        if (value && value !== 'inherit') {
+        if (value && value !== "inherit") {
           return isContentEditableTrue(node);
         }
       }
       return false;
     };
     var select = function (selector, root) {
-      return map(descendants(Element.fromDom(root), selector), function (element) {
-        return element.dom();
-      });
+      return map(
+        descendants(Element.fromDom(root), selector),
+        function (element) {
+          return element.dom();
+        }
+      );
     };
     var getElementText = function (elm) {
       return elm.innerText || elm.textContent;
     };
     var getOrGenerateId = function (elm) {
-      return elm.id ? elm.id : generate('h');
+      return elm.id ? elm.id : generate("h");
     };
     var isAnchor = function (elm) {
-      return elm && elm.nodeName === 'A' && (elm.id || elm.name);
+      return elm && elm.nodeName === "A" && (elm.id || elm.name);
     };
     var isValidAnchor = function (elm) {
       return isAnchor(elm) && isEditable(elm);
@@ -6540,12 +7516,24 @@ var modern = (function (domGlobals) {
       var attach = function () {
         elm.id = headerId;
       };
-      return create('header', getElementText(elm), '#' + headerId, getLevel(elm), attach);
+      return create(
+        "header",
+        getElementText(elm),
+        "#" + headerId,
+        getLevel(elm),
+        attach
+      );
     };
     var anchorTarget = function (elm) {
       var anchorId = elm.id || elm.name;
       var anchorText = getElementText(elm);
-      return create('anchor', anchorText ? anchorText : '#' + anchorId, '#' + anchorId, 0, noop);
+      return create(
+        "anchor",
+        anchorText ? anchorText : "#" + anchorId,
+        "#" + anchorId,
+        0,
+        noop
+      );
     };
     var getHeaderTargets = function (elms) {
       return map(filter(elms, isValidHeader), headerTarget);
@@ -6554,7 +7542,7 @@ var modern = (function (domGlobals) {
       return map(filter(elms, isValidAnchor), anchorTarget);
     };
     var getTargetElements = function (elm) {
-      var elms = select('h1,h2,h3,h4,h5,h6,a:not([href])', elm);
+      var elms = select("h1,h2,h3,h4,h5,h6,a:not([href])", elm);
       return elms;
     };
     var hasTitle = function (target) {
@@ -6562,12 +7550,17 @@ var modern = (function (domGlobals) {
     };
     var find$2 = function (elm) {
       var elms = getTargetElements(elm);
-      return filter(getHeaderTargets(elms).concat(getAnchorTargets(elms)), hasTitle);
+      return filter(
+        getHeaderTargets(elms).concat(getAnchorTargets(elms)),
+        hasTitle
+      );
     };
     var LinkTargets = { find: find$2 };
 
     var getActiveEditor = function () {
-      return window.tinymce ? window.tinymce.activeEditor : global$1.activeEditor;
+      return window.tinymce
+        ? window.tinymce.activeEditor
+        : global$1.activeEditor;
     };
     var history = {};
     var HISTORY_LENGTH = 5;
@@ -6580,8 +7573,8 @@ var modern = (function (domGlobals) {
         value: {
           title: { raw: target.title },
           url: target.url,
-          attach: target.attach
-        }
+          attach: target.attach,
+        },
       };
     };
     var toMenuItems = function (targets) {
@@ -6593,8 +7586,8 @@ var modern = (function (domGlobals) {
         value: {
           title: title,
           url: url,
-          attach: noop
-        }
+          attach: noop,
+        },
       };
     };
     var isUniqueUrl = function (url, targets) {
@@ -6608,9 +7601,11 @@ var modern = (function (domGlobals) {
       return value === false ? null : value;
     };
     var createMenuItems = function (term, targets, fileType, editorSettings) {
-      var separator = { title: '-' };
+      var separator = { title: "-" };
       var fromHistoryMenuItems = function (history) {
-        var historyItems = history.hasOwnProperty(fileType) ? history[fileType] : [];
+        var historyItems = history.hasOwnProperty(fileType)
+          ? history[fileType]
+          : [];
         var uniqueHistory = filter(historyItems, function (url) {
           return isUniqueUrl(url, targets);
         });
@@ -6620,8 +7615,8 @@ var modern = (function (domGlobals) {
             value: {
               title: url,
               url: url,
-              attach: noop
-            }
+              attach: noop,
+            },
           };
         });
       };
@@ -6632,31 +7627,41 @@ var modern = (function (domGlobals) {
         return toMenuItems(filteredTargets);
       };
       var anchorMenuItems = function () {
-        var anchorMenuItems = fromMenuItems('anchor');
-        var topAnchor = getSetting(editorSettings, 'anchor_top', '#top');
-        var bottomAchor = getSetting(editorSettings, 'anchor_bottom', '#bottom');
+        var anchorMenuItems = fromMenuItems("anchor");
+        var topAnchor = getSetting(editorSettings, "anchor_top", "#top");
+        var bottomAchor = getSetting(
+          editorSettings,
+          "anchor_bottom",
+          "#bottom"
+        );
         if (topAnchor !== null) {
-          anchorMenuItems.unshift(staticMenuItem('<top>', topAnchor));
+          anchorMenuItems.unshift(staticMenuItem("<top>", topAnchor));
         }
         if (bottomAchor !== null) {
-          anchorMenuItems.push(staticMenuItem('<bottom>', bottomAchor));
+          anchorMenuItems.push(staticMenuItem("<bottom>", bottomAchor));
         }
         return anchorMenuItems;
       };
       var join = function (items) {
-        return foldl(items, function (a, b) {
-          var bothEmpty = a.length === 0 || b.length === 0;
-          return bothEmpty ? a.concat(b) : a.concat(separator, b);
-        }, []);
+        return foldl(
+          items,
+          function (a, b) {
+            var bothEmpty = a.length === 0 || b.length === 0;
+            return bothEmpty ? a.concat(b) : a.concat(separator, b);
+          },
+          []
+        );
       };
       if (editorSettings.typeahead_urls === false) {
         return [];
       }
-      return fileType === 'file' ? join([
-        filterByQuery(term, fromHistoryMenuItems(history)),
-        filterByQuery(term, fromMenuItems('header')),
-        filterByQuery(term, anchorMenuItems())
-      ]) : filterByQuery(term, fromHistoryMenuItems(history));
+      return fileType === "file"
+        ? join([
+            filterByQuery(term, fromHistoryMenuItems(history)),
+            filterByQuery(term, fromMenuItems("header")),
+            filterByQuery(term, anchorMenuItems()),
+          ])
+        : filterByQuery(term, fromHistoryMenuItems(history));
     };
     var addToHistory = function (url, fileType) {
       var items = history[fileType];
@@ -6682,43 +7687,53 @@ var modern = (function (domGlobals) {
       var title = linkDetails.title;
       return title.raw ? title.raw : title;
     };
-    var setupAutoCompleteHandler = function (ctrl, editorSettings, bodyElm, fileType) {
+    var setupAutoCompleteHandler = function (
+      ctrl,
+      editorSettings,
+      bodyElm,
+      fileType
+    ) {
       var autocomplete = function (term) {
         var linkTargets = LinkTargets.find(bodyElm);
-        var menuItems = createMenuItems(term, linkTargets, fileType, editorSettings);
+        var menuItems = createMenuItems(
+          term,
+          linkTargets,
+          fileType,
+          editorSettings
+        );
         ctrl.showAutoComplete(menuItems, term);
       };
-      ctrl.on('autocomplete', function () {
+      ctrl.on("autocomplete", function () {
         autocomplete(ctrl.value());
       });
-      ctrl.on('selectitem', function (e) {
+      ctrl.on("selectitem", function (e) {
         var linkDetails = e.value;
         ctrl.value(linkDetails.url);
         var title = getTitle(linkDetails);
-        if (fileType === 'image') {
-          ctrl.fire('change', {
+        if (fileType === "image") {
+          ctrl.fire("change", {
             meta: {
               alt: title,
-              attach: linkDetails.attach
-            }
+              attach: linkDetails.attach,
+            },
           });
         } else {
-          ctrl.fire('change', {
+          ctrl.fire("change", {
             meta: {
               text: title,
-              attach: linkDetails.attach
-            }
+              attach: linkDetails.attach,
+            },
           });
         }
         ctrl.focus();
       });
-      ctrl.on('click', function (e) {
-        if (ctrl.value().length === 0 && e.target.nodeName === 'INPUT') {
-          autocomplete('');
+      ctrl.on("click", function (e) {
+        if (ctrl.value().length === 0 && e.target.nodeName === "INPUT") {
+          autocomplete("");
         }
       });
-      ctrl.on('PostRender', function () {
-        ctrl.getRoot().on('submit', function (e) {
+      ctrl.on("PostRender", function () {
+        ctrl.getRoot().on("submit", function (e) {
           if (!e.isDefaultPrevented()) {
             addToHistory(ctrl.value(), fileType);
           }
@@ -6726,26 +7741,27 @@ var modern = (function (domGlobals) {
       });
     };
     var statusToUiState = function (result) {
-      var status = result.status, message = result.message;
-      if (status === 'valid') {
+      var status = result.status,
+        message = result.message;
+      if (status === "valid") {
         return {
-          status: 'ok',
-          message: message
+          status: "ok",
+          message: message,
         };
-      } else if (status === 'unknown') {
+      } else if (status === "unknown") {
         return {
-          status: 'warn',
-          message: message
+          status: "warn",
+          message: message,
         };
-      } else if (status === 'invalid') {
+      } else if (status === "invalid") {
         return {
-          status: 'warn',
-          message: message
+          status: "warn",
+          message: message,
         };
       } else {
         return {
-          status: 'none',
-          message: ''
+          status: "none",
+          message: "",
         };
       }
     };
@@ -6754,19 +7770,22 @@ var modern = (function (domGlobals) {
       if (validatorHandler) {
         var validateUrl_1 = function (url) {
           if (url.length === 0) {
-            ctrl.statusLevel('none');
+            ctrl.statusLevel("none");
             return;
           }
-          validatorHandler({
-            url: url,
-            type: fileType
-          }, function (result) {
-            var uiState = statusToUiState(result);
-            ctrl.statusMessage(uiState.message);
-            ctrl.statusLevel(uiState.status);
-          });
+          validatorHandler(
+            {
+              url: url,
+              type: fileType,
+            },
+            function (result) {
+              var uiState = statusToUiState(result);
+              ctrl.statusMessage(uiState.message);
+              ctrl.statusLevel(uiState.status);
+            }
+          );
         };
-        ctrl.state.on('change:value', function (e) {
+        ctrl.state.on("change:value", function (e) {
           validateUrl_1(e.value);
         });
       }
@@ -6774,119 +7793,182 @@ var modern = (function (domGlobals) {
     var FilePicker = ComboBox.extend({
       Statics: { clearHistory: clearHistory },
       init: function (settings) {
-        var self = this, editor = getActiveEditor(), editorSettings = editor.settings;
+        var self = this,
+          editor = getActiveEditor(),
+          editorSettings = editor.settings;
         var actionCallback, fileBrowserCallback, fileBrowserCallbackTypes;
         var fileType = settings.filetype;
         settings.spellcheck = false;
-        fileBrowserCallbackTypes = editorSettings.file_picker_types || editorSettings.file_browser_callback_types;
+        fileBrowserCallbackTypes =
+          editorSettings.file_picker_types ||
+          editorSettings.file_browser_callback_types;
         if (fileBrowserCallbackTypes) {
-          fileBrowserCallbackTypes = global$2.makeMap(fileBrowserCallbackTypes, /[, ]/);
+          fileBrowserCallbackTypes = global$2.makeMap(
+            fileBrowserCallbackTypes,
+            /[, ]/
+          );
         }
         if (!fileBrowserCallbackTypes || fileBrowserCallbackTypes[fileType]) {
           fileBrowserCallback = editorSettings.file_picker_callback;
-          if (fileBrowserCallback && (!fileBrowserCallbackTypes || fileBrowserCallbackTypes[fileType])) {
+          if (
+            fileBrowserCallback &&
+            (!fileBrowserCallbackTypes || fileBrowserCallbackTypes[fileType])
+          ) {
             actionCallback = function () {
-              var meta = self.fire('beforecall').meta;
+              var meta = self.fire("beforecall").meta;
               meta = global$2.extend({ filetype: fileType }, meta);
-              fileBrowserCallback.call(editor, function (value, meta) {
-                self.value(value).fire('change', { meta: meta });
-              }, self.value(), meta);
+              fileBrowserCallback.call(
+                editor,
+                function (value, meta) {
+                  self.value(value).fire("change", { meta: meta });
+                },
+                self.value(),
+                meta
+              );
             };
           } else {
             fileBrowserCallback = editorSettings.file_browser_callback;
-            if (fileBrowserCallback && (!fileBrowserCallbackTypes || fileBrowserCallbackTypes[fileType])) {
+            if (
+              fileBrowserCallback &&
+              (!fileBrowserCallbackTypes || fileBrowserCallbackTypes[fileType])
+            ) {
               actionCallback = function () {
-                fileBrowserCallback(self.getEl('inp').id, self.value(), fileType, window);
+                fileBrowserCallback(
+                  self.getEl("inp").id,
+                  self.value(),
+                  fileType,
+                  window
+                );
               };
             }
           }
         }
         if (actionCallback) {
-          settings.icon = 'browse';
+          settings.icon = "browse";
           settings.onaction = actionCallback;
         }
         self._super(settings);
-        self.classes.add('filepicker');
-        setupAutoCompleteHandler(self, editorSettings, editor.getBody(), fileType);
+        self.classes.add("filepicker");
+        setupAutoCompleteHandler(
+          self,
+          editorSettings,
+          editor.getBody(),
+          fileType
+        );
         setupLinkValidatorHandler(self, editorSettings, fileType);
-      }
+      },
     });
 
     var FitLayout = AbsoluteLayout.extend({
       recalc: function (container) {
-        var contLayoutRect = container.layoutRect(), paddingBox = container.paddingBox;
-        container.items().filter(':visible').each(function (ctrl) {
-          ctrl.layoutRect({
-            x: paddingBox.left,
-            y: paddingBox.top,
-            w: contLayoutRect.innerW - paddingBox.right - paddingBox.left,
-            h: contLayoutRect.innerH - paddingBox.top - paddingBox.bottom
+        var contLayoutRect = container.layoutRect(),
+          paddingBox = container.paddingBox;
+        container
+          .items()
+          .filter(":visible")
+          .each(function (ctrl) {
+            ctrl.layoutRect({
+              x: paddingBox.left,
+              y: paddingBox.top,
+              w: contLayoutRect.innerW - paddingBox.right - paddingBox.left,
+              h: contLayoutRect.innerH - paddingBox.top - paddingBox.bottom,
+            });
+            if (ctrl.recalc) {
+              ctrl.recalc();
+            }
           });
-          if (ctrl.recalc) {
-            ctrl.recalc();
-          }
-        });
-      }
+      },
     });
 
     var FlexLayout = AbsoluteLayout.extend({
       recalc: function (container) {
-        var i, l, items, contLayoutRect, contPaddingBox, contSettings, align, pack, spacing, totalFlex, availableSpace, direction;
+        var i,
+          l,
+          items,
+          contLayoutRect,
+          contPaddingBox,
+          contSettings,
+          align,
+          pack,
+          spacing,
+          totalFlex,
+          availableSpace,
+          direction;
         var ctrl, ctrlLayoutRect, ctrlSettings, flex;
         var maxSizeItems = [];
         var size, maxSize, ratio, rect, pos, maxAlignEndPos;
-        var sizeName, minSizeName, posName, maxSizeName, beforeName, innerSizeName, deltaSizeName, contentSizeName;
-        var alignAxisName, alignInnerSizeName, alignSizeName, alignMinSizeName, alignBeforeName, alignAfterName;
+        var sizeName,
+          minSizeName,
+          posName,
+          maxSizeName,
+          beforeName,
+          innerSizeName,
+          deltaSizeName,
+          contentSizeName;
+        var alignAxisName,
+          alignInnerSizeName,
+          alignSizeName,
+          alignMinSizeName,
+          alignBeforeName,
+          alignAfterName;
         var alignDeltaSizeName, alignContentSizeName;
-        var max = Math.max, min = Math.min;
-        items = container.items().filter(':visible');
+        var max = Math.max,
+          min = Math.min;
+        items = container.items().filter(":visible");
         contLayoutRect = container.layoutRect();
         contPaddingBox = container.paddingBox;
         contSettings = container.settings;
-        direction = container.isRtl() ? contSettings.direction || 'row-reversed' : contSettings.direction;
+        direction = container.isRtl()
+          ? contSettings.direction || "row-reversed"
+          : contSettings.direction;
         align = contSettings.align;
-        pack = container.isRtl() ? contSettings.pack || 'end' : contSettings.pack;
+        pack = container.isRtl()
+          ? contSettings.pack || "end"
+          : contSettings.pack;
         spacing = contSettings.spacing || 0;
-        if (direction === 'row-reversed' || direction === 'column-reverse') {
+        if (direction === "row-reversed" || direction === "column-reverse") {
           items = items.set(items.toArray().reverse());
-          direction = direction.split('-')[0];
+          direction = direction.split("-")[0];
         }
-        if (direction === 'column') {
-          posName = 'y';
-          sizeName = 'h';
-          minSizeName = 'minH';
-          maxSizeName = 'maxH';
-          innerSizeName = 'innerH';
-          beforeName = 'top';
-          deltaSizeName = 'deltaH';
-          contentSizeName = 'contentH';
-          alignBeforeName = 'left';
-          alignSizeName = 'w';
-          alignAxisName = 'x';
-          alignInnerSizeName = 'innerW';
-          alignMinSizeName = 'minW';
-          alignAfterName = 'right';
-          alignDeltaSizeName = 'deltaW';
-          alignContentSizeName = 'contentW';
+        if (direction === "column") {
+          posName = "y";
+          sizeName = "h";
+          minSizeName = "minH";
+          maxSizeName = "maxH";
+          innerSizeName = "innerH";
+          beforeName = "top";
+          deltaSizeName = "deltaH";
+          contentSizeName = "contentH";
+          alignBeforeName = "left";
+          alignSizeName = "w";
+          alignAxisName = "x";
+          alignInnerSizeName = "innerW";
+          alignMinSizeName = "minW";
+          alignAfterName = "right";
+          alignDeltaSizeName = "deltaW";
+          alignContentSizeName = "contentW";
         } else {
-          posName = 'x';
-          sizeName = 'w';
-          minSizeName = 'minW';
-          maxSizeName = 'maxW';
-          innerSizeName = 'innerW';
-          beforeName = 'left';
-          deltaSizeName = 'deltaW';
-          contentSizeName = 'contentW';
-          alignBeforeName = 'top';
-          alignSizeName = 'h';
-          alignAxisName = 'y';
-          alignInnerSizeName = 'innerH';
-          alignMinSizeName = 'minH';
-          alignAfterName = 'bottom';
-          alignDeltaSizeName = 'deltaH';
-          alignContentSizeName = 'contentH';
+          posName = "x";
+          sizeName = "w";
+          minSizeName = "minW";
+          maxSizeName = "maxW";
+          innerSizeName = "innerW";
+          beforeName = "left";
+          deltaSizeName = "deltaW";
+          contentSizeName = "contentW";
+          alignBeforeName = "top";
+          alignSizeName = "h";
+          alignAxisName = "y";
+          alignInnerSizeName = "innerH";
+          alignMinSizeName = "minH";
+          alignAfterName = "bottom";
+          alignDeltaSizeName = "deltaH";
+          alignContentSizeName = "contentH";
         }
-        availableSpace = contLayoutRect[innerSizeName] - contPaddingBox[beforeName] - contPaddingBox[beforeName];
+        availableSpace =
+          contLayoutRect[innerSizeName] -
+          contPaddingBox[beforeName] -
+          contPaddingBox[beforeName];
         maxAlignEndPos = totalFlex = 0;
         for (i = 0, l = items.length; i < l; i++) {
           ctrl = items[i];
@@ -6902,25 +7984,39 @@ var modern = (function (domGlobals) {
             ctrlLayoutRect.flex = flex;
           }
           availableSpace -= ctrlLayoutRect[minSizeName];
-          size = contPaddingBox[alignBeforeName] + ctrlLayoutRect[alignMinSizeName] + contPaddingBox[alignAfterName];
+          size =
+            contPaddingBox[alignBeforeName] +
+            ctrlLayoutRect[alignMinSizeName] +
+            contPaddingBox[alignAfterName];
           if (size > maxAlignEndPos) {
             maxAlignEndPos = size;
           }
         }
         rect = {};
         if (availableSpace < 0) {
-          rect[minSizeName] = contLayoutRect[minSizeName] - availableSpace + contLayoutRect[deltaSizeName];
+          rect[minSizeName] =
+            contLayoutRect[minSizeName] -
+            availableSpace +
+            contLayoutRect[deltaSizeName];
         } else {
-          rect[minSizeName] = contLayoutRect[innerSizeName] - availableSpace + contLayoutRect[deltaSizeName];
+          rect[minSizeName] =
+            contLayoutRect[innerSizeName] -
+            availableSpace +
+            contLayoutRect[deltaSizeName];
         }
-        rect[alignMinSizeName] = maxAlignEndPos + contLayoutRect[alignDeltaSizeName];
+        rect[alignMinSizeName] =
+          maxAlignEndPos + contLayoutRect[alignDeltaSizeName];
         rect[contentSizeName] = contLayoutRect[innerSizeName] - availableSpace;
         rect[alignContentSizeName] = maxAlignEndPos;
         rect.minW = min(rect.minW, contLayoutRect.maxW);
         rect.minH = min(rect.minH, contLayoutRect.maxH);
         rect.minW = max(rect.minW, contLayoutRect.startMinWidth);
         rect.minH = max(rect.minH, contLayoutRect.startMinHeight);
-        if (contLayoutRect.autoResize && (rect.minW !== contLayoutRect.minW || rect.minH !== contLayoutRect.minH)) {
+        if (
+          contLayoutRect.autoResize &&
+          (rect.minW !== contLayoutRect.minW ||
+            rect.minH !== contLayoutRect.minH)
+        ) {
           rect.w = rect.minW;
           rect.h = rect.minH;
           container.layoutRect(rect);
@@ -6941,7 +8037,8 @@ var modern = (function (domGlobals) {
           maxSize = ctrlLayoutRect[maxSizeName];
           size = ctrlLayoutRect[minSizeName] + ctrlLayoutRect.flex * ratio;
           if (size > maxSize) {
-            availableSpace -= ctrlLayoutRect[maxSizeName] - ctrlLayoutRect[minSizeName];
+            availableSpace -=
+              ctrlLayoutRect[maxSizeName] - ctrlLayoutRect[minSizeName];
             totalFlex -= ctrlLayoutRect.flex;
             ctrlLayoutRect.flex = 0;
             ctrlLayoutRect.maxFlexSize = maxSize;
@@ -6953,14 +8050,18 @@ var modern = (function (domGlobals) {
         pos = contPaddingBox[beforeName];
         rect = {};
         if (totalFlex === 0) {
-          if (pack === 'end') {
+          if (pack === "end") {
             pos = availableSpace + contPaddingBox[beforeName];
-          } else if (pack === 'center') {
-            pos = Math.round(contLayoutRect[innerSizeName] / 2 - (contLayoutRect[innerSizeName] - availableSpace) / 2) + contPaddingBox[beforeName];
+          } else if (pack === "center") {
+            pos =
+              Math.round(
+                contLayoutRect[innerSizeName] / 2 -
+                  (contLayoutRect[innerSizeName] - availableSpace) / 2
+              ) + contPaddingBox[beforeName];
             if (pos < 0) {
               pos = contPaddingBox[beforeName];
             }
-          } else if (pack === 'justify') {
+          } else if (pack === "justify") {
             pos = contPaddingBox[beforeName];
             spacing = Math.floor(availableSpace / (items.length - 1));
           }
@@ -6970,13 +8071,24 @@ var modern = (function (domGlobals) {
           ctrl = items[i];
           ctrlLayoutRect = ctrl.layoutRect();
           size = ctrlLayoutRect.maxFlexSize || ctrlLayoutRect[minSizeName];
-          if (align === 'center') {
-            rect[alignAxisName] = Math.round(contLayoutRect[alignInnerSizeName] / 2 - ctrlLayoutRect[alignSizeName] / 2);
-          } else if (align === 'stretch') {
-            rect[alignSizeName] = max(ctrlLayoutRect[alignMinSizeName] || 0, contLayoutRect[alignInnerSizeName] - contPaddingBox[alignBeforeName] - contPaddingBox[alignAfterName]);
+          if (align === "center") {
+            rect[alignAxisName] = Math.round(
+              contLayoutRect[alignInnerSizeName] / 2 -
+                ctrlLayoutRect[alignSizeName] / 2
+            );
+          } else if (align === "stretch") {
+            rect[alignSizeName] = max(
+              ctrlLayoutRect[alignMinSizeName] || 0,
+              contLayoutRect[alignInnerSizeName] -
+                contPaddingBox[alignBeforeName] -
+                contPaddingBox[alignAfterName]
+            );
             rect[alignAxisName] = contPaddingBox[alignBeforeName];
-          } else if (align === 'end') {
-            rect[alignAxisName] = contLayoutRect[alignInnerSizeName] - ctrlLayoutRect[alignSizeName] - contPaddingBox.top;
+          } else if (align === "end") {
+            rect[alignAxisName] =
+              contLayoutRect[alignInnerSizeName] -
+              ctrlLayoutRect[alignSizeName] -
+              contPaddingBox.top;
           }
           if (ctrlLayoutRect.flex > 0) {
             size += ctrlLayoutRect.flex * ratio;
@@ -6989,25 +8101,28 @@ var modern = (function (domGlobals) {
           }
           pos += size + spacing;
         }
-      }
+      },
     });
 
     var FlowLayout = Layout.extend({
       Defaults: {
-        containerClass: 'flow-layout',
-        controlClass: 'flow-layout-item',
-        endClass: 'break'
+        containerClass: "flow-layout",
+        controlClass: "flow-layout-item",
+        endClass: "break",
       },
       recalc: function (container) {
-        container.items().filter(':visible').each(function (ctrl) {
-          if (ctrl.recalc) {
-            ctrl.recalc();
-          }
-        });
+        container
+          .items()
+          .filter(":visible")
+          .each(function (ctrl) {
+            if (ctrl.recalc) {
+              ctrl.recalc();
+            }
+          });
       },
       isNative: function () {
         return true;
-      }
+      },
     });
 
     var descendant = function (scope, selector) {
@@ -7016,22 +8131,22 @@ var modern = (function (domGlobals) {
 
     var toggleFormat = function (editor, fmt) {
       return function () {
-        editor.execCommand('mceToggleFormat', false, fmt);
+        editor.execCommand("mceToggleFormat", false, fmt);
       };
     };
     var addFormatChangedListener = function (editor, name, changed) {
       var handler = function (state) {
         changed(state, name);
       };
-      if (editor.formatter) {
-        editor.formatter.formatChanged(name, handler);
+      if (editor.forNotMatter) {
+        editor.forNotMatter.formatChanged(name, handler);
       } else {
-        editor.on('init', function () {
-          editor.formatter.formatChanged(name, handler);
+        editor.on("init", function () {
+          editor.forNotMatter.formatChanged(name, handler);
         });
       }
     };
-    var postRenderFormatToggle = function (editor, name) {
+    var postRenderForNotMattoggle = function (editor, name) {
       return function (e) {
         addFormatChangedListener(editor, name, function (state) {
           e.control.active(state);
@@ -7041,48 +8156,51 @@ var modern = (function (domGlobals) {
 
     var register = function (editor) {
       var alignFormats = [
-        'alignleft',
-        'aligncenter',
-        'alignright',
-        'alignjustify'
+        "alignleft",
+        "aligncenter",
+        "alignright",
+        "alignjustify",
       ];
-      var defaultAlign = 'alignleft';
+      var defaultAlign = "alignleft";
       var alignMenuItems = [
         {
-          text: 'Left',
-          icon: 'alignleft',
-          onclick: toggleFormat(editor, 'alignleft')
+          text: "Left",
+          icon: "alignleft",
+          onclick: toggleFormat(editor, "alignleft"),
         },
         {
-          text: 'Center',
-          icon: 'aligncenter',
-          onclick: toggleFormat(editor, 'aligncenter')
+          text: "Center",
+          icon: "aligncenter",
+          onclick: toggleFormat(editor, "aligncenter"),
         },
         {
-          text: 'Right',
-          icon: 'alignright',
-          onclick: toggleFormat(editor, 'alignright')
+          text: "Right",
+          icon: "alignright",
+          onclick: toggleFormat(editor, "alignright"),
         },
         {
-          text: 'Justify',
-          icon: 'alignjustify',
-          onclick: toggleFormat(editor, 'alignjustify')
-        }
+          text: "Justify",
+          icon: "alignjustify",
+          onclick: toggleFormat(editor, "alignjustify"),
+        },
       ];
-      editor.addMenuItem('align', {
-        text: 'Align',
-        menu: alignMenuItems
+      editor.addMenuItem("align", {
+        text: "Align",
+        menu: alignMenuItems,
       });
-      editor.addButton('align', {
-        type: 'menubutton',
+      editor.addButton("align", {
+        type: "menubutton",
         icon: defaultAlign,
         menu: alignMenuItems,
         onShowMenu: function (e) {
           var menu = e.control.menu;
           global$2.each(alignFormats, function (formatName, idx) {
-            menu.items().eq(idx).each(function (item) {
-              return item.active(editor.formatter.match(formatName));
-            });
+            menu
+              .items()
+              .eq(idx)
+              .each(function (item) {
+                return item.active(editor.forNotMatter.match(formatName));
+              });
           });
         },
         onPostRender: function (e) {
@@ -7095,45 +8213,33 @@ var modern = (function (domGlobals) {
               }
             });
           });
+        },
+      });
+      global$2.each(
+        {
+          alignleft: ["Align left", "JustifyLeft"],
+          aligncenter: ["Align center", "JustifyCenter"],
+          alignright: ["Align right", "JustifyRight"],
+          alignjustify: ["Justify", "JustifyFull"],
+          alignnone: ["No alignment", "JustifyNone"],
+        },
+        function (item, name) {
+          editor.addButton(name, {
+            active: false,
+            tooltip: item[0],
+            cmd: item[1],
+            onPostRender: postRenderForNotMattoggle(editor, name),
+          });
         }
-      });
-      global$2.each({
-        alignleft: [
-          'Align left',
-          'JustifyLeft'
-        ],
-        aligncenter: [
-          'Align center',
-          'JustifyCenter'
-        ],
-        alignright: [
-          'Align right',
-          'JustifyRight'
-        ],
-        alignjustify: [
-          'Justify',
-          'JustifyFull'
-        ],
-        alignnone: [
-          'No alignment',
-          'JustifyNone'
-        ]
-      }, function (item, name) {
-        editor.addButton(name, {
-          active: false,
-          tooltip: item[0],
-          cmd: item[1],
-          onPostRender: postRenderFormatToggle(editor, name)
-        });
-      });
+      );
     };
     var Align = { register: register };
 
     var getFirstFont = function (fontFamily) {
-      return fontFamily ? fontFamily.split(',')[0] : '';
+      return fontFamily ? fontFamily.split(",")[0] : "";
     };
     var findMatchingValue = function (items, fontFamily) {
-      var font = fontFamily ? fontFamily.toLowerCase() : '';
+      var font = fontFamily ? fontFamily.toLowerCase() : "";
       var value;
       global$2.each(items, function (item) {
         if (item.value.toLowerCase() === font) {
@@ -7141,7 +8247,11 @@ var modern = (function (domGlobals) {
         }
       });
       global$2.each(items, function (item) {
-        if (!value && getFirstFont(item.value).toLowerCase() === getFirstFont(font).toLowerCase()) {
+        if (
+          !value &&
+          getFirstFont(item.value).toLowerCase() ===
+            getFirstFont(font).toLowerCase()
+        ) {
           value = item.value;
         }
       });
@@ -7150,9 +8260,9 @@ var modern = (function (domGlobals) {
     var createFontNameListBoxChangeHandler = function (editor, items) {
       return function () {
         var self = this;
-        self.state.set('value', null);
-        editor.on('init nodeChange', function (e) {
-          var fontFamily = editor.queryCommandValue('FontName');
+        self.state.set("value", null);
+        editor.on("init nodeChange", function (e) {
+          var fontFamily = editor.queryCommandValue("FontName");
           var match = findMatchingValue(items, fontFamily);
           self.value(match ? match : null);
           if (!match && fontFamily) {
@@ -7162,39 +8272,59 @@ var modern = (function (domGlobals) {
       };
     };
     var createFormats = function (formats) {
-      formats = formats.replace(/;$/, '').split(';');
+      formats = formats.replace(/;$/, "").split(";");
       var i = formats.length;
       while (i--) {
-        formats[i] = formats[i].split('=');
+        formats[i] = formats[i].split("=");
       }
       return formats;
     };
     var getFontItems = function (editor) {
-      var defaultFontsFormats = 'Andale Mono=andale mono,monospace;' + 'Arial=arial,helvetica,sans-serif;' + 'Arial Black=arial black,sans-serif;' + 'Book Antiqua=book antiqua,palatino,serif;' + 'Comic Sans MS=comic sans ms,sans-serif;' + 'Courier New=courier new,courier,monospace;' + 'Georgia=georgia,palatino,serif;' + 'Helvetica=helvetica,arial,sans-serif;' + 'Impact=impact,sans-serif;' + 'Symbol=symbol;' + 'Tahoma=tahoma,arial,helvetica,sans-serif;' + 'Terminal=terminal,monaco,monospace;' + 'Times New Roman=times new roman,times,serif;' + 'Trebuchet MS=trebuchet ms,geneva,sans-serif;' + 'Verdana=verdana,geneva,sans-serif;' + 'Webdings=webdings;' + 'Wingdings=wingdings,zapf dingbats';
-      var fonts = createFormats(editor.settings.font_formats || defaultFontsFormats);
+      var defaultFontsFormats =
+        "Andale Mono=andale mono,monospace;" +
+        "Arial=arial,helvetica,sans-serif;" +
+        "Arial Black=arial black,sans-serif;" +
+        "Book Antiqua=book antiqua,palatino,serif;" +
+        "Comic Sans MS=comic sans ms,sans-serif;" +
+        "Courier New=courier new,courier,monospace;" +
+        "Georgia=georgia,palatino,serif;" +
+        "Helvetica=helvetica,arial,sans-serif;" +
+        "Impact=impact,sans-serif;" +
+        "Symbol=symbol;" +
+        "Tahoma=tahoma,arial,helvetica,sans-serif;" +
+        "Terminal=terminal,monaco,monospace;" +
+        "Times New Roman=times new roman,times,serif;" +
+        "Trebuchet MS=trebuchet ms,geneva,sans-serif;" +
+        "Verdana=verdana,geneva,sans-serif;" +
+        "Webdings=webdings;" +
+        "Wingdings=wingdings,zapf dingbats";
+      var fonts = createFormats(
+        editor.settings.font_formats || defaultFontsFormats
+      );
       return global$2.map(fonts, function (font) {
         return {
           text: { raw: font[0] },
           value: font[1],
-          textStyle: font[1].indexOf('dings') === -1 ? 'font-family:' + font[1] : ''
+          textStyle:
+            font[1].indexOf("dings") === -1 ? "font-family:" + font[1] : "",
         };
       });
     };
     var registerButtons = function (editor) {
-      editor.addButton('fontselect', function () {
+      editor.addButton("fontselect", function () {
         var items = getFontItems(editor);
         return {
-          type: 'listbox',
-          text: 'Font Family',
-          tooltip: 'Font Family',
+          type: "listbox",
+          text: "Font Family",
+          tooltip: "Font Family",
           values: items,
           fixedWidth: true,
           onPostRender: createFontNameListBoxChangeHandler(editor, items),
           onselect: function (e) {
             if (e.control.settings.value) {
-              editor.execCommand('FontName', false, e.control.settings.value);
+              editor.execCommand("FontName", false, e.control.settings.value);
             }
-          }
+          },
         };
       });
     };
@@ -7209,7 +8339,7 @@ var modern = (function (domGlobals) {
     };
     var toPt = function (fontSize, precision) {
       if (/[0-9.]+px$/.test(fontSize)) {
-        return round(parseInt(fontSize, 10) * 72 / 96, precision || 0) + 'pt';
+        return round((parseInt(fontSize, 10) * 72) / 96, precision || 0) + "pt";
       }
       return fontSize;
     };
@@ -7227,9 +8357,9 @@ var modern = (function (domGlobals) {
     var createFontSizeListBoxChangeHandler = function (editor, items) {
       return function () {
         var self = this;
-        editor.on('init nodeChange', function (e) {
+        editor.on("init nodeChange", function (e) {
           var px, pt, precision, match;
-          px = editor.queryCommandValue('FontSize');
+          px = editor.queryCommandValue("FontSize");
           if (px) {
             for (precision = 3; !match && precision >= 0; precision--) {
               pt = toPt(px, precision);
@@ -7244,36 +8374,38 @@ var modern = (function (domGlobals) {
       };
     };
     var getFontSizeItems = function (editor) {
-      var defaultFontsizeFormats = '8pt 10pt 12pt 14pt 18pt 24pt 36pt';
-      var fontsizeFormats = editor.settings.fontsize_formats || defaultFontsizeFormats;
-      return global$2.map(fontsizeFormats.split(' '), function (item) {
-        var text = item, value = item;
-        var values = item.split('=');
+      var defaultFontsizeFormats = "8pt 10pt 12pt 14pt 18pt 24pt 36pt";
+      var fontsizeFormats =
+        editor.settings.fontsize_formats || defaultFontsizeFormats;
+      return global$2.map(fontsizeFormats.split(" "), function (item) {
+        var text = item,
+          value = item;
+        var values = item.split("=");
         if (values.length > 1) {
           text = values[0];
           value = values[1];
         }
         return {
           text: text,
-          value: value
+          value: value,
         };
       });
     };
     var registerButtons$1 = function (editor) {
-      editor.addButton('fontsizeselect', function () {
+      editor.addButton("fontsizeselect", function () {
         var items = getFontSizeItems(editor);
         return {
-          type: 'listbox',
-          text: 'Font Sizes',
-          tooltip: 'Font Sizes',
+          type: "listbox",
+          text: "Font Sizes",
+          tooltip: "Font Sizes",
           values: items,
           fixedWidth: true,
           onPostRender: createFontSizeListBoxChangeHandler(editor, items),
           onclick: function (e) {
             if (e.control.settings.value) {
-              editor.execCommand('FontSize', false, e.control.settings.value);
+              editor.execCommand("FontSize", false, e.control.settings.value);
             }
-          }
+          },
         };
       });
     };
@@ -7290,7 +8422,7 @@ var modern = (function (domGlobals) {
         }
         var formatName = item.format;
         if (formatName) {
-          item.hidden = !editor.formatter.canApply(formatName);
+          item.hidden = !editor.forNotMatter.canApply(formatName);
         }
         if (item.hidden) {
           count--;
@@ -7309,7 +8441,7 @@ var modern = (function (domGlobals) {
         }
         var formatName = item.settings.format;
         if (formatName) {
-          item.visible(editor.formatter.canApply(formatName));
+          item.visible(editor.forNotMatter.canApply(formatName));
         }
         if (!item.visible()) {
           count--;
@@ -7322,120 +8454,120 @@ var modern = (function (domGlobals) {
       var newFormats = [];
       var defaultStyleFormats = [
         {
-          title: 'Headings',
+          title: "Headings",
           items: [
             {
-              title: 'Heading 1',
-              format: 'h1'
+              title: "Heading 1",
+              format: "h1",
             },
             {
-              title: 'Heading 2',
-              format: 'h2'
+              title: "Heading 2",
+              format: "h2",
             },
             {
-              title: 'Heading 3',
-              format: 'h3'
+              title: "Heading 3",
+              format: "h3",
             },
             {
-              title: 'Heading 4',
-              format: 'h4'
+              title: "Heading 4",
+              format: "h4",
             },
             {
-              title: 'Heading 5',
-              format: 'h5'
+              title: "Heading 5",
+              format: "h5",
             },
             {
-              title: 'Heading 6',
-              format: 'h6'
-            }
-          ]
+              title: "Heading 6",
+              format: "h6",
+            },
+          ],
         },
         {
-          title: 'Inline',
+          title: "Inline",
           items: [
             {
-              title: 'Bold',
-              icon: 'bold',
-              format: 'bold'
+              title: "Bold",
+              icon: "bold",
+              format: "bold",
             },
             {
-              title: 'Italic',
-              icon: 'italic',
-              format: 'italic'
+              title: "Italic",
+              icon: "italic",
+              format: "italic",
             },
             {
-              title: 'Underline',
-              icon: 'underline',
-              format: 'underline'
+              title: "Underline",
+              icon: "underline",
+              format: "underline",
             },
             {
-              title: 'Strikethrough',
-              icon: 'strikethrough',
-              format: 'strikethrough'
+              title: "Strikethrough",
+              icon: "strikethrough",
+              format: "strikethrough",
             },
             {
-              title: 'Superscript',
-              icon: 'superscript',
-              format: 'superscript'
+              title: "Superscript",
+              icon: "superscript",
+              format: "superscript",
             },
             {
-              title: 'Subscript',
-              icon: 'subscript',
-              format: 'subscript'
+              title: "Subscript",
+              icon: "subscript",
+              format: "subscript",
             },
             {
-              title: 'Code',
-              icon: 'code',
-              format: 'code'
-            }
-          ]
+              title: "Code",
+              icon: "code",
+              format: "code",
+            },
+          ],
         },
         {
-          title: 'Blocks',
+          title: "Blocks",
           items: [
             {
-              title: 'Paragraph',
-              format: 'p'
+              title: "Paragraph",
+              format: "p",
             },
             {
-              title: 'Blockquote',
-              format: 'blockquote'
+              title: "Blockquote",
+              format: "blockquote",
             },
             {
-              title: 'Div',
-              format: 'div'
+              title: "Div",
+              format: "div",
             },
             {
-              title: 'Pre',
-              format: 'pre'
-            }
-          ]
+              title: "Pre",
+              format: "pre",
+            },
+          ],
         },
         {
-          title: 'Alignment',
+          title: "Alignment",
           items: [
             {
-              title: 'Left',
-              icon: 'alignleft',
-              format: 'alignleft'
+              title: "Left",
+              icon: "alignleft",
+              format: "alignleft",
             },
             {
-              title: 'Center',
-              icon: 'aligncenter',
-              format: 'aligncenter'
+              title: "Center",
+              icon: "aligncenter",
+              format: "aligncenter",
             },
             {
-              title: 'Right',
-              icon: 'alignright',
-              format: 'alignright'
+              title: "Right",
+              icon: "alignright",
+              format: "alignright",
             },
             {
-              title: 'Justify',
-              icon: 'alignjustify',
-              format: 'alignjustify'
-            }
-          ]
-        }
+              title: "Justify",
+              icon: "alignjustify",
+              format: "alignjustify",
+            },
+          ],
+        },
       ];
       var createMenu = function (formats) {
         var menu = [];
@@ -7445,12 +8577,12 @@ var modern = (function (domGlobals) {
         global$2.each(formats, function (format) {
           var menuItem = {
             text: format.title,
-            icon: format.icon
+            icon: format.icon,
           };
           if (format.items) {
             menuItem.menu = createMenu(format.items);
           } else {
-            var formatName = format.format || 'custom' + count++;
+            var formatName = format.format || "custom" + count++;
             if (!format.format) {
               format.name = formatName;
               newFormats.push(format);
@@ -7466,41 +8598,45 @@ var modern = (function (domGlobals) {
         var menu;
         if (editor.settings.style_formats_merge) {
           if (editor.settings.style_formats) {
-            menu = createMenu(defaultStyleFormats.concat(editor.settings.style_formats));
+            menu = createMenu(
+              defaultStyleFormats.concat(editor.settings.style_formats)
+            );
           } else {
             menu = createMenu(defaultStyleFormats);
           }
         } else {
-          menu = createMenu(editor.settings.style_formats || defaultStyleFormats);
+          menu = createMenu(
+            editor.settings.style_formats || defaultStyleFormats
+          );
         }
         return menu;
       };
-      editor.on('init', function () {
+      editor.on("init", function () {
         global$2.each(newFormats, function (format) {
-          editor.formatter.register(format.name, format);
+          editor.forNotMatter.register(format.name, format);
         });
       });
       return {
-        type: 'menu',
+        type: "menu",
         items: createStylesMenu(),
         onPostRender: function (e) {
-          editor.fire('renderFormatsMenu', { control: e.control });
+          editor.fire("renderFormatsMenu", { control: e.control });
         },
         itemDefaults: {
           preview: true,
           textStyle: function () {
             if (this.settings.format) {
-              return editor.formatter.getCssText(this.settings.format);
+              return editor.forNotMatter.getCssText(this.settings.format);
             }
           },
           onPostRender: function () {
             var self = this;
-            self.parent().on('show', function () {
+            self.parent().on("show", function () {
               var formatName, command;
               formatName = self.settings.format;
               if (formatName) {
-                self.disabled(!editor.formatter.canApply(formatName));
-                self.active(editor.formatter.match(formatName));
+                self.disabled(!editor.forNotMatter.canApply(formatName));
+                self.active(editor.forNotMatter.match(formatName));
               }
               command = self.settings.cmd;
               if (command) {
@@ -7515,26 +8651,26 @@ var modern = (function (domGlobals) {
             if (this.settings.cmd) {
               editor.execCommand(this.settings.cmd);
             }
-          }
-        }
+          },
+        },
       };
     };
     var registerMenuItems = function (editor, formatMenu) {
-      editor.addMenuItem('formats', {
-        text: 'Formats',
-        menu: formatMenu
+      editor.addMenuItem("formats", {
+        text: "Formats",
+        menu: formatMenu,
       });
     };
     var registerButtons$2 = function (editor, formatMenu) {
-      editor.addButton('styleselect', {
-        type: 'menubutton',
-        text: 'Formats',
+      editor.addButton("styleselect", {
+        type: "menubutton",
+        text: "Formats",
         menu: formatMenu,
         onShowMenu: function () {
           if (editor.settings.style_formats_autohide) {
             hideFormatMenuItems(editor, this.menu);
           }
-        }
+        },
       });
     };
     var register$3 = function (editor) {
@@ -7544,29 +8680,41 @@ var modern = (function (domGlobals) {
     };
     var Formats = { register: register$3 };
 
-    var defaultBlocks = 'Paragraph=p;' + 'Heading 1=h1;' + 'Heading 2=h2;' + 'Heading 3=h3;' + 'Heading 4=h4;' + 'Heading 5=h5;' + 'Heading 6=h6;' + 'Preformatted=pre';
+    var defaultBlocks =
+      "Paragraph=p;" +
+      "Heading 1=h1;" +
+      "Heading 2=h2;" +
+      "Heading 3=h3;" +
+      "Heading 4=h4;" +
+      "Heading 5=h5;" +
+      "Heading 6=h6;" +
+      "PreforNotMatted=pre";
     var createFormats$1 = function (formats) {
-      formats = formats.replace(/;$/, '').split(';');
+      formats = formats.replace(/;$/, "").split(";");
       var i = formats.length;
       while (i--) {
-        formats[i] = formats[i].split('=');
+        formats[i] = formats[i].split("=");
       }
       return formats;
     };
     var createListBoxChangeHandler = function (editor, items, formatName) {
       return function () {
         var self = this;
-        editor.on('nodeChange', function (e) {
-          var formatter = editor.formatter;
+        editor.on("nodeChange", function (e) {
+          var forNotMatter = editor.forNotMatter;
           var value = null;
           global$2.each(e.parents, function (node) {
             global$2.each(items, function (item) {
               if (formatName) {
-                if (formatter.matchNode(node, formatName, { value: item.value })) {
+                if (
+                  forNotMatter.matchNode(node, formatName, {
+                    value: item.value,
+                  })
+                ) {
                   value = item.value;
                 }
               } else {
-                if (formatter.matchNode(node, item.value)) {
+                if (forNotMatter.matchNode(node, item.value)) {
                   value = item.value;
                 }
               }
@@ -7590,12 +8738,12 @@ var modern = (function (domGlobals) {
             text: block[0],
             value: block[1],
             textStyle: function () {
-              return editor.formatter.getCssText(block[1]);
-            }
+              return editor.forNotMatter.getCssText(block[1]);
+            },
           });
         });
         return {
-          type: 'listbox',
+          type: "listbox",
           text: blocks[0][0],
           values: items,
           fixedWidth: true,
@@ -7605,7 +8753,7 @@ var modern = (function (domGlobals) {
               toggleFormat(editor, fmt)();
             }
           },
-          onPostRender: createListBoxChangeHandler(editor, items)
+          onPostRender: createListBoxChangeHandler(editor, items),
         };
       };
     };
@@ -7615,64 +8763,71 @@ var modern = (function (domGlobals) {
           text: block[0],
           onclick: toggleFormat(editor, block[1]),
           textStyle: function () {
-            return editor.formatter.getCssText(block[1]);
-          }
+            return editor.forNotMatter.getCssText(block[1]);
+          },
         };
       });
     };
     var register$4 = function (editor) {
-      var blocks = createFormats$1(editor.settings.block_formats || defaultBlocks);
-      editor.addMenuItem('blockformats', {
-        text: 'Blocks',
-        menu: buildMenuItems(editor, blocks)
+      var blocks = createFormats$1(
+        editor.settings.block_formats || defaultBlocks
+      );
+      editor.addMenuItem("blockformats", {
+        text: "Blocks",
+        menu: buildMenuItems(editor, blocks),
       });
-      editor.addButton('formatselect', lazyFormatSelectBoxItems(editor, blocks));
+      editor.addButton(
+        "formatselect",
+        lazyFormatSelectBoxItems(editor, blocks)
+      );
     };
     var FormatSelect = { register: register$4 };
 
     var createCustomMenuItems = function (editor, names) {
       var items, nameList;
-      if (typeof names === 'string') {
-        nameList = names.split(' ');
+      if (typeof names === "string") {
+        nameList = names.split(" ");
       } else if (global$2.isArray(names)) {
-        return flatten(global$2.map(names, function (names) {
-          return createCustomMenuItems(editor, names);
-        }));
+        return flatten(
+          global$2.map(names, function (names) {
+            return createCustomMenuItems(editor, names);
+          })
+        );
       }
       items = global$2.grep(nameList, function (name) {
-        return name === '|' || name in editor.menuItems;
+        return name === "|" || name in editor.menuItems;
       });
       return global$2.map(items, function (name) {
-        return name === '|' ? { text: '-' } : editor.menuItems[name];
+        return name === "|" ? { text: "-" } : editor.menuItems[name];
       });
     };
     var isSeparator$1 = function (menuItem) {
-      return menuItem && menuItem.text === '-';
+      return menuItem && menuItem.text === "-";
     };
     var trimMenuItems = function (menuItems) {
       var menuItems2 = filter(menuItems, function (menuItem, i) {
         return !isSeparator$1(menuItem) || !isSeparator$1(menuItems[i - 1]);
       });
       return filter(menuItems2, function (menuItem, i) {
-        return !isSeparator$1(menuItem) || i > 0 && i < menuItems2.length - 1;
+        return !isSeparator$1(menuItem) || (i > 0 && i < menuItems2.length - 1);
       });
     };
     var createContextMenuItems = function (editor, context) {
-      var outputMenuItems = [{ text: '-' }];
+      var outputMenuItems = [{ text: "-" }];
       var menuItems = global$2.grep(editor.menuItems, function (menuItem) {
         return menuItem.context === context;
       });
       global$2.each(menuItems, function (menuItem) {
-        if (menuItem.separator === 'before') {
-          outputMenuItems.push({ text: '|' });
+        if (menuItem.separator === "before") {
+          outputMenuItems.push({ text: "|" });
         }
         if (menuItem.prependToContext) {
           outputMenuItems.unshift(menuItem);
         } else {
           outputMenuItems.push(menuItem);
         }
-        if (menuItem.separator === 'after') {
-          outputMenuItems.push({ text: '|' });
+        if (menuItem.separator === "after") {
+          outputMenuItems.push({ text: "|" });
         }
       });
       return outputMenuItems;
@@ -7682,18 +8837,18 @@ var modern = (function (domGlobals) {
       if (insertButtonItems) {
         return trimMenuItems(createCustomMenuItems(editor, insertButtonItems));
       } else {
-        return trimMenuItems(createContextMenuItems(editor, 'insert'));
+        return trimMenuItems(createContextMenuItems(editor, "insert"));
       }
     };
     var registerButtons$3 = function (editor) {
-      editor.addButton('insert', {
-        type: 'menubutton',
-        icon: 'insert',
+      editor.addButton("insert", {
+        type: "menubutton",
+        icon: "insert",
         menu: [],
         oncreatemenu: function () {
           this.menu.add(createInsertMenu(editor));
           this.menu.renderNew();
-        }
+        },
       });
     };
     var register$5 = function (editor) {
@@ -7702,97 +8857,64 @@ var modern = (function (domGlobals) {
     var InsertButton = { register: register$5 };
 
     var registerFormatButtons = function (editor) {
-      global$2.each({
-        bold: 'Bold',
-        italic: 'Italic',
-        underline: 'Underline',
-        strikethrough: 'Strikethrough',
-        subscript: 'Subscript',
-        superscript: 'Superscript'
-      }, function (text, name) {
-        editor.addButton(name, {
-          active: false,
-          tooltip: text,
-          onPostRender: postRenderFormatToggle(editor, name),
-          onclick: toggleFormat(editor, name)
-        });
-      });
+      global$2.each(
+        {
+          bold: "Bold",
+          italic: "Italic",
+          underline: "Underline",
+          strikethrough: "Strikethrough",
+          subscript: "Subscript",
+          superscript: "Superscript",
+        },
+        function (text, name) {
+          editor.addButton(name, {
+            active: false,
+            tooltip: text,
+            onPostRender: postRenderForNotMattoggle(editor, name),
+            onclick: toggleFormat(editor, name),
+          });
+        }
+      );
     };
     var registerCommandButtons = function (editor) {
-      global$2.each({
-        outdent: [
-          'Decrease indent',
-          'Outdent'
-        ],
-        indent: [
-          'Increase indent',
-          'Indent'
-        ],
-        cut: [
-          'Cut',
-          'Cut'
-        ],
-        copy: [
-          'Copy',
-          'Copy'
-        ],
-        paste: [
-          'Paste',
-          'Paste'
-        ],
-        help: [
-          'Help',
-          'mceHelp'
-        ],
-        selectall: [
-          'Select all',
-          'SelectAll'
-        ],
-        visualaid: [
-          'Visual aids',
-          'mceToggleVisualAid'
-        ],
-        newdocument: [
-          'New document',
-          'mceNewDocument'
-        ],
-        removeformat: [
-          'Clear formatting',
-          'RemoveFormat'
-        ],
-        remove: [
-          'Remove',
-          'Delete'
-        ]
-      }, function (item, name) {
-        editor.addButton(name, {
-          tooltip: item[0],
-          cmd: item[1]
-        });
-      });
+      global$2.each(
+        {
+          outdent: ["Decrease indent", "Outdent"],
+          indent: ["Increase indent", "Indent"],
+          cut: ["Cut", "Cut"],
+          copy: ["Copy", "Copy"],
+          paste: ["Paste", "Paste"],
+          help: ["Help", "mceHelp"],
+          selectall: ["Select all", "SelectAll"],
+          visualaid: ["Visual aids", "mceToggleVisualAid"],
+          newdocument: ["New document", "mceNewDocument"],
+          removeformat: ["Clear forNotMatting", "RemoveFormat"],
+          remove: ["Remove", "Delete"],
+        },
+        function (item, name) {
+          editor.addButton(name, {
+            tooltip: item[0],
+            cmd: item[1],
+          });
+        }
+      );
     };
     var registerCommandToggleButtons = function (editor) {
-      global$2.each({
-        blockquote: [
-          'Blockquote',
-          'mceBlockQuote'
-        ],
-        subscript: [
-          'Subscript',
-          'Subscript'
-        ],
-        superscript: [
-          'Superscript',
-          'Superscript'
-        ]
-      }, function (item, name) {
-        editor.addButton(name, {
-          active: false,
-          tooltip: item[0],
-          cmd: item[1],
-          onPostRender: postRenderFormatToggle(editor, name)
-        });
-      });
+      global$2.each(
+        {
+          blockquote: ["Blockquote", "mceBlockQuote"],
+          subscript: ["Subscript", "Subscript"],
+          superscript: ["Superscript", "Superscript"],
+        },
+        function (item, name) {
+          editor.addButton(name, {
+            active: false,
+            tooltip: item[0],
+            cmd: item[1],
+            onPostRender: postRenderForNotMattoggle(editor, name),
+          });
+        }
+      );
     };
     var registerButtons$4 = function (editor) {
       registerFormatButtons(editor);
@@ -7800,74 +8922,34 @@ var modern = (function (domGlobals) {
       registerCommandToggleButtons(editor);
     };
     var registerMenuItems$1 = function (editor) {
-      global$2.each({
-        bold: [
-          'Bold',
-          'Bold',
-          'Meta+B'
-        ],
-        italic: [
-          'Italic',
-          'Italic',
-          'Meta+I'
-        ],
-        underline: [
-          'Underline',
-          'Underline',
-          'Meta+U'
-        ],
-        strikethrough: [
-          'Strikethrough',
-          'Strikethrough'
-        ],
-        subscript: [
-          'Subscript',
-          'Subscript'
-        ],
-        superscript: [
-          'Superscript',
-          'Superscript'
-        ],
-        removeformat: [
-          'Clear formatting',
-          'RemoveFormat'
-        ],
-        newdocument: [
-          'New document',
-          'mceNewDocument'
-        ],
-        cut: [
-          'Cut',
-          'Cut',
-          'Meta+X'
-        ],
-        copy: [
-          'Copy',
-          'Copy',
-          'Meta+C'
-        ],
-        paste: [
-          'Paste',
-          'Paste',
-          'Meta+V'
-        ],
-        selectall: [
-          'Select all',
-          'SelectAll',
-          'Meta+A'
-        ]
-      }, function (item, name) {
-        editor.addMenuItem(name, {
-          text: item[0],
-          icon: name,
-          shortcut: item[2],
-          cmd: item[1]
-        });
-      });
-      editor.addMenuItem('codeformat', {
-        text: 'Code',
-        icon: 'code',
-        onclick: toggleFormat(editor, 'code')
+      global$2.each(
+        {
+          bold: ["Bold", "Bold", "Meta+B"],
+          italic: ["Italic", "Italic", "Meta+I"],
+          underline: ["Underline", "Underline", "Meta+U"],
+          strikethrough: ["Strikethrough", "Strikethrough"],
+          subscript: ["Subscript", "Subscript"],
+          superscript: ["Superscript", "Superscript"],
+          removeformat: ["Clear forNotMatting", "RemoveFormat"],
+          newdocument: ["New document", "mceNewDocument"],
+          cut: ["Cut", "Cut", "Meta+X"],
+          copy: ["Copy", "Copy", "Meta+C"],
+          paste: ["Paste", "Paste", "Meta+V"],
+          selectall: ["Select all", "SelectAll", "Meta+A"],
+        },
+        function (item, name) {
+          editor.addMenuItem(name, {
+            text: item[0],
+            icon: name,
+            shortcut: item[2],
+            cmd: item[1],
+          });
+        }
+      );
+      editor.addMenuItem("codeformat", {
+        text: "Code",
+        icon: "code",
+        onclick: toggleFormat(editor, "code"),
       });
     };
     var register$6 = function (editor) {
@@ -7880,41 +8962,44 @@ var modern = (function (domGlobals) {
       return function () {
         var self = this;
         var checkState = function () {
-          var typeFn = type === 'redo' ? 'hasRedo' : 'hasUndo';
+          var typeFn = type === "redo" ? "hasRedo" : "hasUndo";
           return editor.undoManager ? editor.undoManager[typeFn]() : false;
         };
         self.disabled(!checkState());
-        editor.on('Undo Redo AddUndo TypingUndo ClearUndos SwitchMode', function () {
-          self.disabled(editor.readonly || !checkState());
-        });
+        editor.on(
+          "Undo Redo AddUndo TypingUndo ClearUndos SwitchMode",
+          function () {
+            self.disabled(editor.readonly || !checkState());
+          }
+        );
       };
     };
     var registerMenuItems$2 = function (editor) {
-      editor.addMenuItem('undo', {
-        text: 'Undo',
-        icon: 'undo',
-        shortcut: 'Meta+Z',
-        onPostRender: toggleUndoRedoState(editor, 'undo'),
-        cmd: 'undo'
+      editor.addMenuItem("undo", {
+        text: "Undo",
+        icon: "undo",
+        shortcut: "Meta+Z",
+        onPostRender: toggleUndoRedoState(editor, "undo"),
+        cmd: "undo",
       });
-      editor.addMenuItem('redo', {
-        text: 'Redo',
-        icon: 'redo',
-        shortcut: 'Meta+Y',
-        onPostRender: toggleUndoRedoState(editor, 'redo'),
-        cmd: 'redo'
+      editor.addMenuItem("redo", {
+        text: "Redo",
+        icon: "redo",
+        shortcut: "Meta+Y",
+        onPostRender: toggleUndoRedoState(editor, "redo"),
+        cmd: "redo",
       });
     };
     var registerButtons$5 = function (editor) {
-      editor.addButton('undo', {
-        tooltip: 'Undo',
-        onPostRender: toggleUndoRedoState(editor, 'undo'),
-        cmd: 'undo'
+      editor.addButton("undo", {
+        tooltip: "Undo",
+        onPostRender: toggleUndoRedoState(editor, "undo"),
+        cmd: "undo",
       });
-      editor.addButton('redo', {
-        tooltip: 'Redo',
-        onPostRender: toggleUndoRedoState(editor, 'redo'),
-        cmd: 'redo'
+      editor.addButton("redo", {
+        tooltip: "Redo",
+        onPostRender: toggleUndoRedoState(editor, "redo"),
+        cmd: "redo",
       });
     };
     var register$7 = function (editor) {
@@ -7926,18 +9011,18 @@ var modern = (function (domGlobals) {
     var toggleVisualAidState = function (editor) {
       return function () {
         var self = this;
-        editor.on('VisualAid', function (e) {
+        editor.on("VisualAid", function (e) {
           self.active(e.hasVisual);
         });
         self.active(editor.hasVisual);
       };
     };
     var registerMenuItems$3 = function (editor) {
-      editor.addMenuItem('visualaid', {
-        text: 'Visual aids',
+      editor.addMenuItem("visualaid", {
+        text: "Visual aids",
         selectable: true,
         onPostRender: toggleVisualAidState(editor),
-        cmd: 'mceToggleVisualAid'
+        cmd: "mceToggleVisualAid",
       });
     };
     var register$8 = function (editor) {
@@ -7953,7 +9038,10 @@ var modern = (function (domGlobals) {
     };
     var setupUiContainer = function (editor) {
       if (editor.settings.ui_container) {
-        global$8.container = descendant(Element.fromDom(domGlobals.document.body), editor.settings.ui_container).fold(constant(null), function (elm) {
+        global$8.container = descendant(
+          Element.fromDom(domGlobals.document.body),
+          editor.settings.ui_container
+        ).fold(constant(null), function (elm) {
           return elm.dom();
         });
       }
@@ -7964,7 +9052,7 @@ var modern = (function (domGlobals) {
       }
     };
     var setupHideFloatPanels = function (editor) {
-      editor.on('mousedown progressstate', function () {
+      editor.on("mousedown progressstate", function () {
         FloatPanel.hideAll();
       });
     };
@@ -7987,12 +9075,39 @@ var modern = (function (domGlobals) {
 
     var GridLayout = AbsoluteLayout.extend({
       recalc: function (container) {
-        var settings, rows, cols, items, contLayoutRect, width, height, rect, ctrlLayoutRect, ctrl, x, y, posX, posY, ctrlSettings, contPaddingBox, align, spacingH, spacingV, alignH, alignV, maxX, maxY;
+        var settings,
+          rows,
+          cols,
+          items,
+          contLayoutRect,
+          width,
+          height,
+          rect,
+          ctrlLayoutRect,
+          ctrl,
+          x,
+          y,
+          posX,
+          posY,
+          ctrlSettings,
+          contPaddingBox,
+          align,
+          spacingH,
+          spacingV,
+          alignH,
+          alignV,
+          maxX,
+          maxY;
         var colWidths = [];
         var rowHeights = [];
-        var ctrlMinWidth, ctrlMinHeight, availableWidth, availableHeight, reverseRows, idx;
+        var ctrlMinWidth,
+          ctrlMinHeight,
+          availableWidth,
+          availableHeight,
+          reverseRows,
+          idx;
         settings = container.settings;
-        items = container.items().filter(':visible');
+        items = container.items().filter(":visible");
         contLayoutRect = container.layoutRect();
         cols = settings.columns || Math.ceil(Math.sqrt(items.length));
         rows = Math.ceil(items.length / cols);
@@ -8001,11 +9116,12 @@ var modern = (function (domGlobals) {
         alignH = settings.alignH || settings.align;
         alignV = settings.alignV || settings.align;
         contPaddingBox = container.paddingBox;
-        reverseRows = 'reverseRows' in settings ? settings.reverseRows : container.isRtl();
-        if (alignH && typeof alignH === 'string') {
+        reverseRows =
+          "reverseRows" in settings ? settings.reverseRows : container.isRtl();
+        if (alignH && typeof alignH === "string") {
           alignH = [alignH];
         }
-        if (alignV && typeof alignV === 'string') {
+        if (alignV && typeof alignV === "string") {
           alignV = [alignV];
         }
         for (x = 0; x < cols; x++) {
@@ -8023,16 +9139,20 @@ var modern = (function (domGlobals) {
             ctrlLayoutRect = ctrl.layoutRect();
             ctrlMinWidth = ctrlLayoutRect.minW;
             ctrlMinHeight = ctrlLayoutRect.minH;
-            colWidths[x] = ctrlMinWidth > colWidths[x] ? ctrlMinWidth : colWidths[x];
-            rowHeights[y] = ctrlMinHeight > rowHeights[y] ? ctrlMinHeight : rowHeights[y];
+            colWidths[x] =
+              ctrlMinWidth > colWidths[x] ? ctrlMinWidth : colWidths[x];
+            rowHeights[y] =
+              ctrlMinHeight > rowHeights[y] ? ctrlMinHeight : rowHeights[y];
           }
         }
-        availableWidth = contLayoutRect.innerW - contPaddingBox.left - contPaddingBox.right;
+        availableWidth =
+          contLayoutRect.innerW - contPaddingBox.left - contPaddingBox.right;
         for (maxX = 0, x = 0; x < cols; x++) {
           maxX += colWidths[x] + (x > 0 ? spacingH : 0);
           availableWidth -= (x > 0 ? spacingH : 0) + colWidths[x];
         }
-        availableHeight = contLayoutRect.innerH - contPaddingBox.top - contPaddingBox.bottom;
+        availableHeight =
+          contLayoutRect.innerH - contPaddingBox.top - contPaddingBox.bottom;
         for (maxY = 0, y = 0; y < rows; y++) {
           maxY += rowHeights[y] + (y > 0 ? spacingV : 0);
           availableHeight -= (y > 0 ? spacingV : 0) + rowHeights[y];
@@ -8048,7 +9168,11 @@ var modern = (function (domGlobals) {
         rect.minH = Math.min(rect.minH, contLayoutRect.maxH);
         rect.minW = Math.max(rect.minW, contLayoutRect.startMinWidth);
         rect.minH = Math.max(rect.minH, contLayoutRect.startMinHeight);
-        if (contLayoutRect.autoResize && (rect.minW !== contLayoutRect.minW || rect.minH !== contLayoutRect.minH)) {
+        if (
+          contLayoutRect.autoResize &&
+          (rect.minW !== contLayoutRect.minW ||
+            rect.minH !== contLayoutRect.minH)
+        ) {
           rect.w = rect.minW;
           rect.h = rect.minH;
           container.layoutRect(rect);
@@ -8068,7 +9192,7 @@ var modern = (function (domGlobals) {
           rect.contentH = rect.minH - contLayoutRect.deltaH;
         }
         var flexV;
-        if (settings.packV === 'start') {
+        if (settings.packV === "start") {
           flexV = 0;
         } else {
           flexV = availableHeight > 0 ? Math.floor(availableHeight / rows) : 0;
@@ -8105,20 +9229,22 @@ var modern = (function (domGlobals) {
             width = Math.max(colWidths[x], ctrlLayoutRect.startMinWidth);
             ctrlLayoutRect.x = posX;
             ctrlLayoutRect.y = posY;
-            align = ctrlSettings.alignH || (alignH ? alignH[x] || alignH[0] : null);
-            if (align === 'center') {
+            align =
+              ctrlSettings.alignH || (alignH ? alignH[x] || alignH[0] : null);
+            if (align === "center") {
               ctrlLayoutRect.x = posX + width / 2 - ctrlLayoutRect.w / 2;
-            } else if (align === 'right') {
+            } else if (align === "right") {
               ctrlLayoutRect.x = posX + width - ctrlLayoutRect.w;
-            } else if (align === 'stretch') {
+            } else if (align === "stretch") {
               ctrlLayoutRect.w = width;
             }
-            align = ctrlSettings.alignV || (alignV ? alignV[x] || alignV[0] : null);
-            if (align === 'center') {
+            align =
+              ctrlSettings.alignV || (alignV ? alignV[x] || alignV[0] : null);
+            if (align === "center") {
               ctrlLayoutRect.y = posY + height / 2 - ctrlLayoutRect.h / 2;
-            } else if (align === 'bottom') {
+            } else if (align === "bottom") {
               ctrlLayoutRect.y = posY + height - ctrlLayoutRect.h;
-            } else if (align === 'stretch') {
+            } else if (align === "stretch") {
               ctrlLayoutRect.h = height;
             }
             ctrl.layoutRect(ctrlLayoutRect);
@@ -8129,21 +9255,30 @@ var modern = (function (domGlobals) {
           }
           posY += height + spacingV;
         }
-      }
+      },
     });
 
     var Iframe$1 = Widget.extend({
       renderHtml: function () {
         var self = this;
-        self.classes.add('iframe');
+        self.classes.add("iframe");
         self.canFocus = false;
-        return '<iframe id="' + self._id + '" class="' + self.classes + '" tabindex="-1" src="' + (self.settings.url || 'javascript:\'\'') + '" frameborder="0"></iframe>';
+        return (
+          '<iframe id="' +
+          self._id +
+          '" class="' +
+          self.classes +
+          '" tabindex="-1" src="' +
+          (self.settings.url || "javascript:''") +
+          '" frameborder="0"></iframe>'
+        );
       },
       src: function (src) {
         this.getEl().src = src;
       },
       html: function (html, callback) {
-        var self = this, body = this.getEl().contentWindow.document.body;
+        var self = this,
+          body = this.getEl().contentWindow.document.body;
         if (!body) {
           global$7.setTimeout(function () {
             self.html(html);
@@ -8155,139 +9290,185 @@ var modern = (function (domGlobals) {
           }
         }
         return this;
-      }
+      },
     });
 
     var InfoBox = Widget.extend({
       init: function (settings) {
         var self = this;
         self._super(settings);
-        self.classes.add('widget').add('infobox');
+        self.classes.add("widget").add("infobox");
         self.canFocus = false;
       },
       severity: function (level) {
-        this.classes.remove('error');
-        this.classes.remove('warning');
-        this.classes.remove('success');
+        this.classes.remove("error");
+        this.classes.remove("warning");
+        this.classes.remove("success");
         this.classes.add(level);
       },
       help: function (state) {
-        this.state.set('help', state);
+        this.state.set("help", state);
       },
       renderHtml: function () {
-        var self = this, prefix = self.classPrefix;
-        return '<div id="' + self._id + '" class="' + self.classes + '">' + '<div id="' + self._id + '-body">' + self.encode(self.state.get('text')) + '<button role="button" tabindex="-1">' + '<i class="' + prefix + 'ico ' + prefix + 'i-help"></i>' + '</button>' + '</div>' + '</div>';
+        var self = this,
+          prefix = self.classPrefix;
+        return (
+          '<div id="' +
+          self._id +
+          '" class="' +
+          self.classes +
+          '">' +
+          '<div id="' +
+          self._id +
+          '-body">' +
+          self.encode(self.state.get("text")) +
+          '<button role="button" tabindex="-1">' +
+          '<i class="' +
+          prefix +
+          "ico " +
+          prefix +
+          'i-help"></i>' +
+          "</button>" +
+          "</div>" +
+          "</div>"
+        );
       },
       bindStates: function () {
         var self = this;
-        self.state.on('change:text', function (e) {
-          self.getEl('body').firstChild.data = self.encode(e.value);
-          if (self.state.get('rendered')) {
+        self.state.on("change:text", function (e) {
+          self.getEl("body").firstChild.data = self.encode(e.value);
+          if (self.state.get("rendered")) {
             self.updateLayoutRect();
           }
         });
-        self.state.on('change:help', function (e) {
-          self.classes.toggle('has-help', e.value);
-          if (self.state.get('rendered')) {
+        self.state.on("change:help", function (e) {
+          self.classes.toggle("has-help", e.value);
+          if (self.state.get("rendered")) {
             self.updateLayoutRect();
           }
         });
         return self._super();
-      }
+      },
     });
 
     var Label = Widget.extend({
       init: function (settings) {
         var self = this;
         self._super(settings);
-        self.classes.add('widget').add('label');
+        self.classes.add("widget").add("label");
         self.canFocus = false;
         if (settings.multiline) {
-          self.classes.add('autoscroll');
+          self.classes.add("autoscroll");
         }
         if (settings.strong) {
-          self.classes.add('strong');
+          self.classes.add("strong");
         }
       },
       initLayoutRect: function () {
-        var self = this, layoutRect = self._super();
+        var self = this,
+          layoutRect = self._super();
         if (self.settings.multiline) {
           var size = funcs.getSize(self.getEl());
           if (size.width > layoutRect.maxW) {
             layoutRect.minW = layoutRect.maxW;
-            self.classes.add('multiline');
+            self.classes.add("multiline");
           }
-          self.getEl().style.width = layoutRect.minW + 'px';
-          layoutRect.startMinH = layoutRect.h = layoutRect.minH = Math.min(layoutRect.maxH, funcs.getSize(self.getEl()).height);
+          self.getEl().style.width = layoutRect.minW + "px";
+          layoutRect.startMinH =
+            layoutRect.h =
+            layoutRect.minH =
+              Math.min(layoutRect.maxH, funcs.getSize(self.getEl()).height);
         }
         return layoutRect;
       },
       repaint: function () {
         var self = this;
         if (!self.settings.multiline) {
-          self.getEl().style.lineHeight = self.layoutRect().h + 'px';
+          self.getEl().style.lineHeight = self.layoutRect().h + "px";
         }
         return self._super();
       },
       severity: function (level) {
-        this.classes.remove('error');
-        this.classes.remove('warning');
-        this.classes.remove('success');
+        this.classes.remove("error");
+        this.classes.remove("warning");
+        this.classes.remove("success");
         this.classes.add(level);
       },
       renderHtml: function () {
         var self = this;
-        var targetCtrl, forName, forId = self.settings.forId;
-        var text = self.settings.html ? self.settings.html : self.encode(self.state.get('text'));
+        var targetCtrl,
+          forName,
+          forId = self.settings.forId;
+        var text = self.settings.html
+          ? self.settings.html
+          : self.encode(self.state.get("text"));
         if (!forId && (forName = self.settings.forName)) {
-          targetCtrl = self.getRoot().find('#' + forName)[0];
+          targetCtrl = self.getRoot().find("#" + forName)[0];
           if (targetCtrl) {
             forId = targetCtrl._id;
           }
         }
         if (forId) {
-          return '<label id="' + self._id + '" class="' + self.classes + '"' + (forId ? ' for="' + forId + '"' : '') + '>' + text + '</label>';
+          return (
+            '<label id="' +
+            self._id +
+            '" class="' +
+            self.classes +
+            '"' +
+            (forId ? ' for="' + forId + '"' : "") +
+            ">" +
+            text +
+            "</label>"
+          );
         }
-        return '<span id="' + self._id + '" class="' + self.classes + '">' + text + '</span>';
+        return (
+          '<span id="' +
+          self._id +
+          '" class="' +
+          self.classes +
+          '">' +
+          text +
+          "</span>"
+        );
       },
       bindStates: function () {
         var self = this;
-        self.state.on('change:text', function (e) {
+        self.state.on("change:text", function (e) {
           self.innerHtml(self.encode(e.value));
-          if (self.state.get('rendered')) {
+          if (self.state.get("rendered")) {
             self.updateLayoutRect();
           }
         });
         return self._super();
-      }
+      },
     });
 
     var Toolbar$1 = Container.extend({
       Defaults: {
-        role: 'toolbar',
-        layout: 'flow'
+        role: "toolbar",
+        layout: "flow",
       },
       init: function (settings) {
         var self = this;
         self._super(settings);
-        self.classes.add('toolbar');
+        self.classes.add("toolbar");
       },
       postRender: function () {
         var self = this;
         self.items().each(function (ctrl) {
-          ctrl.classes.add('toolbar-item');
+          ctrl.classes.add("toolbar-item");
         });
         return self._super();
-      }
+      },
     });
 
     var MenuBar = Toolbar$1.extend({
       Defaults: {
-        role: 'menubar',
-        containerCls: 'menubar',
+        role: "menubar",
+        containerCls: "menubar",
         ariaRoot: true,
-        defaults: { type: 'menubutton' }
-      }
+        defaults: { type: "menubutton" },
+      },
     });
 
     function isChildOf$1(node, parent) {
@@ -8305,12 +9486,12 @@ var modern = (function (domGlobals) {
         self._renderOpen = true;
         self._super(settings);
         settings = self.settings;
-        self.classes.add('menubtn');
+        self.classes.add("menubtn");
         if (settings.fixedWidth) {
-          self.classes.add('fixed-width');
+          self.classes.add("fixed-width");
         }
-        self.aria('haspopup', true);
-        self.state.set('menu', settings.menu || self.render());
+        self.aria("haspopup", true);
+        self.state.set("menu", settings.menu || self.render());
       },
       showMenu: function (toggle) {
         var self = this;
@@ -8319,16 +9500,16 @@ var modern = (function (domGlobals) {
           return self.hideMenu();
         }
         if (!self.menu) {
-          menu = self.state.get('menu') || [];
-          self.classes.add('opened');
+          menu = self.state.get("menu") || [];
+          self.classes.add("opened");
           if (menu.length) {
             menu = {
-              type: 'menu',
+              type: "menu",
               animate: true,
-              items: menu
+              items: menu,
             };
           } else {
-            menu.type = menu.type || 'menu';
+            menu.type = menu.type || "menu";
             menu.animate = true;
           }
           if (!menu.renderTo) {
@@ -8336,45 +9517,47 @@ var modern = (function (domGlobals) {
           } else {
             self.menu = menu.parent(self).show().renderTo();
           }
-          self.fire('createmenu');
+          self.fire("createmenu");
           self.menu.reflow();
-          self.menu.on('cancel', function (e) {
+          self.menu.on("cancel", function (e) {
             if (e.control.parent() === self.menu) {
               e.stopPropagation();
               self.focus();
               self.hideMenu();
             }
           });
-          self.menu.on('select', function () {
+          self.menu.on("select", function () {
             self.focus();
           });
-          self.menu.on('show hide', function (e) {
-            if (e.type === 'hide' && e.control.parent() === self) {
-              self.classes.remove('opened-under');
-            }
-            if (e.control === self.menu) {
-              self.activeMenu(e.type === 'show');
-              self.classes.toggle('opened', e.type === 'show');
-            }
-            self.aria('expanded', e.type === 'show');
-          }).fire('show');
+          self.menu
+            .on("show hide", function (e) {
+              if (e.type === "hide" && e.control.parent() === self) {
+                self.classes.remove("opened-under");
+              }
+              if (e.control === self.menu) {
+                self.activeMenu(e.type === "show");
+                self.classes.toggle("opened", e.type === "show");
+              }
+              self.aria("expanded", e.type === "show");
+            })
+            .fire("show");
         }
         self.menu.show();
         self.menu.layoutRect({ w: self.layoutRect().w });
         self.menu.repaint();
-        self.menu.moveRel(self.getEl(), self.isRtl() ? [
-          'br-tr',
-          'tr-br'
-        ] : [
-          'bl-tl',
-          'tl-bl'
-        ]);
+        self.menu.moveRel(
+          self.getEl(),
+          self.isRtl() ? ["br-tr", "tr-br"] : ["bl-tl", "tl-bl"]
+        );
         var menuLayoutRect = self.menu.layoutRect();
         var selfBottom = self.$el.offset().top + self.layoutRect().h;
-        if (selfBottom > menuLayoutRect.y && selfBottom < menuLayoutRect.y + menuLayoutRect.h) {
-          self.classes.add('opened-under');
+        if (
+          selfBottom > menuLayoutRect.y &&
+          selfBottom < menuLayoutRect.y + menuLayoutRect.h
+        ) {
+          self.classes.add("opened-under");
         }
-        self.fire('showmenu');
+        self.fire("showmenu");
       },
       hideMenu: function () {
         var self = this;
@@ -8388,55 +9571,88 @@ var modern = (function (domGlobals) {
         }
       },
       activeMenu: function (state) {
-        this.classes.toggle('active', state);
+        this.classes.toggle("active", state);
       },
       renderHtml: function () {
-        var self = this, id = self._id, prefix = self.classPrefix;
-        var icon = self.settings.icon, image;
-        var text = self.state.get('text');
-        var textHtml = '';
+        var self = this,
+          id = self._id,
+          prefix = self.classPrefix;
+        var icon = self.settings.icon,
+          image;
+        var text = self.state.get("text");
+        var textHtml = "";
         image = self.settings.image;
         if (image) {
-          icon = 'none';
-          if (typeof image !== 'string') {
+          icon = "none";
+          if (typeof image !== "string") {
             image = domGlobals.window.getSelection ? image[0] : image[1];
           }
-          image = ' style="background-image: url(\'' + image + '\')"';
+          image = " style=\"background-image: url('" + image + "')\"";
         } else {
-          image = '';
+          image = "";
         }
         if (text) {
-          self.classes.add('btn-has-text');
-          textHtml = '<span class="' + prefix + 'txt">' + self.encode(text) + '</span>';
+          self.classes.add("btn-has-text");
+          textHtml =
+            '<span class="' + prefix + 'txt">' + self.encode(text) + "</span>";
         }
-        icon = self.settings.icon ? prefix + 'ico ' + prefix + 'i-' + icon : '';
-        self.aria('role', self.parent() instanceof MenuBar ? 'menuitem' : 'button');
-        return '<div id="' + id + '" class="' + self.classes + '" tabindex="-1" aria-labelledby="' + id + '">' + '<button id="' + id + '-open" role="presentation" type="button" tabindex="-1">' + (icon ? '<i class="' + icon + '"' + image + '></i>' : '') + textHtml + ' <i class="' + prefix + 'caret"></i>' + '</button>' + '</div>';
+        icon = self.settings.icon ? prefix + "ico " + prefix + "i-" + icon : "";
+        self.aria(
+          "role",
+          self.parent() instanceof MenuBar ? "menuitem" : "button"
+        );
+        return (
+          '<div id="' +
+          id +
+          '" class="' +
+          self.classes +
+          '" tabindex="-1" aria-labelledby="' +
+          id +
+          '">' +
+          '<button id="' +
+          id +
+          '-open" role="presentation" type="button" tabindex="-1">' +
+          (icon ? '<i class="' + icon + '"' + image + "></i>" : "") +
+          textHtml +
+          ' <i class="' +
+          prefix +
+          'caret"></i>' +
+          "</button>" +
+          "</div>"
+        );
       },
       postRender: function () {
         var self = this;
-        self.on('click', function (e) {
+        self.on("click", function (e) {
           if (e.control === self && isChildOf$1(e.target, self.getEl())) {
             self.focus();
             self.showMenu(!e.aria);
             if (e.aria) {
-              self.menu.items().filter(':visible')[0].focus();
+              self.menu.items().filter(":visible")[0].focus();
             }
           }
         });
-        self.on('mouseenter', function (e) {
+        self.on("mouseenter", function (e) {
           var overCtrl = e.control;
           var parent = self.parent();
           var hasVisibleSiblingMenu;
-          if (overCtrl && parent && overCtrl instanceof MenuButton && overCtrl.parent() === parent) {
-            parent.items().filter('MenuButton').each(function (ctrl) {
-              if (ctrl.hideMenu && ctrl !== overCtrl) {
-                if (ctrl.menu && ctrl.menu.visible()) {
-                  hasVisibleSiblingMenu = true;
+          if (
+            overCtrl &&
+            parent &&
+            overCtrl instanceof MenuButton &&
+            overCtrl.parent() === parent
+          ) {
+            parent
+              .items()
+              .filter("MenuButton")
+              .each(function (ctrl) {
+                if (ctrl.hideMenu && ctrl !== overCtrl) {
+                  if (ctrl.menu && ctrl.menu.visible()) {
+                    hasVisibleSiblingMenu = true;
+                  }
+                  ctrl.hideMenu();
                 }
-                ctrl.hideMenu();
-              }
-            });
+              });
             if (hasVisibleSiblingMenu) {
               overCtrl.focus();
               overCtrl.showMenu();
@@ -8447,7 +9663,7 @@ var modern = (function (domGlobals) {
       },
       bindStates: function () {
         var self = this;
-        self.state.on('change:menu', function () {
+        self.state.on("change:menu", function () {
           if (self.menu) {
             self.menu.remove();
           }
@@ -8460,23 +9676,23 @@ var modern = (function (domGlobals) {
         if (this.menu) {
           this.menu.remove();
         }
-      }
+      },
     });
 
     var Menu = FloatPanel.extend({
       Defaults: {
-        defaultType: 'menuitem',
+        defaultType: "menuitem",
         border: 1,
-        layout: 'stack',
-        role: 'application',
-        bodyRole: 'menu',
-        ariaRoot: true
+        layout: "stack",
+        role: "application",
+        bodyRole: "menu",
+        ariaRoot: true,
       },
       init: function (settings) {
         var self = this;
         settings.autohide = true;
         settings.constrainToViewport = true;
-        if (typeof settings.items === 'function') {
+        if (typeof settings.items === "function") {
           settings.itemsFactory = settings.items;
           settings.items = [];
         }
@@ -8488,22 +9704,22 @@ var modern = (function (domGlobals) {
           }
         }
         self._super(settings);
-        self.classes.add('menu');
+        self.classes.add("menu");
         if (settings.animate && global$8.ie !== 11) {
-          self.classes.add('animate');
+          self.classes.add("animate");
         }
       },
       repaint: function () {
-        this.classes.toggle('menu-align', true);
+        this.classes.toggle("menu-align", true);
         this._super();
-        this.getEl().style.height = '';
-        this.getEl('body').style.height = '';
+        this.getEl().style.height = "";
+        this.getEl("body").style.height = "";
         return this;
       },
       cancel: function () {
         var self = this;
         self.hideAll();
-        self.fire('select');
+        self.fire("select");
       },
       load: function () {
         var self = this;
@@ -8519,17 +9735,17 @@ var modern = (function (domGlobals) {
           return;
         }
         if (!self.throbber) {
-          self.throbber = new Throbber(self.getEl('body'), true);
+          self.throbber = new Throbber(self.getEl("body"), true);
           if (self.items().length === 0) {
             self.throbber.show();
-            self.fire('loading');
+            self.fire("loading");
           } else {
             self.throbber.show(100, function () {
               self.items().remove();
-              self.fire('loading');
+              self.fire("loading");
             });
           }
-          self.on('hide close', hideThrobber);
+          self.on("hide close", hideThrobber);
         }
         self.requestTime = time = new Date().getTime();
         self.settings.itemsFactory(function (items) {
@@ -8540,19 +9756,19 @@ var modern = (function (domGlobals) {
           if (self.requestTime !== time) {
             return;
           }
-          self.getEl().style.width = '';
-          self.getEl('body').style.width = '';
+          self.getEl().style.width = "";
+          self.getEl("body").style.width = "";
           hideThrobber();
           self.items().remove();
-          self.getEl('body').innerHTML = '';
+          self.getEl("body").innerHTML = "";
           self.add(items);
           self.renderNew();
-          self.fire('loaded');
+          self.fire("loaded");
         });
       },
       hideAll: function () {
         var self = this;
-        this.find('menuitem').exec('hideMenu');
+        this.find("menuitem").exec("hideMenu");
         return self._super();
       },
       preRender: function () {
@@ -8565,25 +9781,25 @@ var modern = (function (domGlobals) {
           }
         });
         if (self.settings.itemsFactory) {
-          self.on('postrender', function () {
+          self.on("postrender", function () {
             if (self.settings.itemsFactory) {
               self.load();
             }
           });
         }
-        self.on('show hide', function (e) {
+        self.on("show hide", function (e) {
           if (e.control === self) {
-            if (e.type === 'show') {
+            if (e.type === "show") {
               global$7.setTimeout(function () {
-                self.classes.add('in');
+                self.classes.add("in");
               }, 0);
             } else {
-              self.classes.remove('in');
+              self.classes.remove("in");
             }
           }
         });
         return self._super();
-      }
+      },
     });
 
     var ListBox = MenuButton.extend({
@@ -8592,10 +9808,11 @@ var modern = (function (domGlobals) {
         var values, selected, selectedText, lastItemCtrl;
         function setSelected(menuValues) {
           for (var i = 0; i < menuValues.length; i++) {
-            selected = menuValues[i].selected || settings.value === menuValues[i].value;
+            selected =
+              menuValues[i].selected || settings.value === menuValues[i].value;
             if (selected) {
               selectedText = selectedText || menuValues[i].text;
-              self.state.set('value', menuValues[i].value);
+              self.state.set("value", menuValues[i].value);
               return true;
             }
             if (menuValues[i].menu) {
@@ -8609,18 +9826,18 @@ var modern = (function (domGlobals) {
         settings = self.settings;
         self._values = values = settings.values;
         if (values) {
-          if (typeof settings.value !== 'undefined') {
+          if (typeof settings.value !== "undefined") {
             setSelected(values);
           }
           if (!selected && values.length > 0) {
             selectedText = values[0].text;
-            self.state.set('value', values[0].value);
+            self.state.set("value", values[0].value);
           }
-          self.state.set('menu', values);
+          self.state.set("menu", values);
         }
-        self.state.set('text', settings.text || selectedText);
-        self.classes.add('listbox');
-        self.on('select', function (e) {
+        self.state.set("text", settings.text || selectedText);
+        self.classes.add("listbox");
+        self.on("select", function (e) {
           var ctrl = e.control;
           if (lastItemCtrl) {
             e.lastControl = lastItemCtrl;
@@ -8635,9 +9852,9 @@ var modern = (function (domGlobals) {
       },
       value: function (value) {
         if (arguments.length === 0) {
-          return this.state.get('value');
+          return this.state.get("value");
         }
-        if (typeof value === 'undefined') {
+        if (typeof value === "undefined") {
           return this;
         }
         function valueExists(values) {
@@ -8647,12 +9864,12 @@ var modern = (function (domGlobals) {
         }
         if (this.settings.values) {
           if (valueExists(this.settings.values)) {
-            this.state.set('value', value);
+            this.state.set("value", value);
           } else if (value === null) {
-            this.state.set('value', null);
+            this.state.set("value", null);
           }
         } else {
-          this.state.set('value', value);
+          this.state.set("value", value);
         }
         return this;
       },
@@ -8684,11 +9901,11 @@ var modern = (function (domGlobals) {
             }
           }
         }
-        self.on('show', function (e) {
+        self.on("show", function (e) {
           activateMenuItemsByValue(e.control, self.value());
         });
-        self.state.on('change:value', function (e) {
-          var selectedItem = getSelectedItem(self.state.get('menu'), e.value);
+        self.state.on("change:value", function (e) {
+          var selectedItem = getSelectedItem(self.state.get("menu"), e.value);
           if (selectedItem) {
             self.text(selectedItem.text);
           } else {
@@ -8696,56 +9913,56 @@ var modern = (function (domGlobals) {
           }
         });
         return self._super();
-      }
+      },
     });
 
     var toggleTextStyle = function (ctrl, state) {
       var textStyle = ctrl._textStyle;
       if (textStyle) {
-        var textElm = ctrl.getEl('text');
-        textElm.setAttribute('style', textStyle);
+        var textElm = ctrl.getEl("text");
+        textElm.setAttribute("style", textStyle);
         if (state) {
-          textElm.style.color = '';
-          textElm.style.backgroundColor = '';
+          textElm.style.color = "";
+          textElm.style.backgroundColor = "";
         }
       }
     };
     var MenuItem = Widget.extend({
       Defaults: {
         border: 0,
-        role: 'menuitem'
+        role: "menuitem",
       },
       init: function (settings) {
         var self = this;
         var text;
         self._super(settings);
         settings = self.settings;
-        self.classes.add('menu-item');
+        self.classes.add("menu-item");
         if (settings.menu) {
-          self.classes.add('menu-item-expand');
+          self.classes.add("menu-item-expand");
         }
         if (settings.preview) {
-          self.classes.add('menu-item-preview');
+          self.classes.add("menu-item-preview");
         }
-        text = self.state.get('text');
-        if (text === '-' || text === '|') {
-          self.classes.add('menu-item-sep');
-          self.aria('role', 'separator');
-          self.state.set('text', '-');
+        text = self.state.get("text");
+        if (text === "-" || text === "|") {
+          self.classes.add("menu-item-sep");
+          self.aria("role", "separator");
+          self.state.set("text", "-");
         }
         if (settings.selectable) {
-          self.aria('role', 'menuitemcheckbox');
-          self.classes.add('menu-item-checkbox');
-          settings.icon = 'selected';
+          self.aria("role", "menuitemcheckbox");
+          self.classes.add("menu-item-checkbox");
+          settings.icon = "selected";
         }
         if (!settings.preview && !settings.selectable) {
-          self.classes.add('menu-item-normal');
+          self.classes.add("menu-item-normal");
         }
-        self.on('mousedown', function (e) {
+        self.on("mousedown", function (e) {
           e.preventDefault();
         });
         if (settings.menu && !settings.ariaHideMenu) {
-          self.aria('haspopup', true);
+          self.aria("haspopup", true);
         }
       },
       hasMenus: function () {
@@ -8767,32 +9984,34 @@ var modern = (function (domGlobals) {
             menu = settings.menu;
             if (menu.length) {
               menu = {
-                type: 'menu',
-                items: menu
+                type: "menu",
+                items: menu,
               };
             } else {
-              menu.type = menu.type || 'menu';
+              menu.type = menu.type || "menu";
             }
             if (parent.settings.itemDefaults) {
               menu.itemDefaults = parent.settings.itemDefaults;
             }
             menu = self.menu = global$4.create(menu).parent(self).renderTo();
             menu.reflow();
-            menu.on('cancel', function (e) {
+            menu.on("cancel", function (e) {
               e.stopPropagation();
               self.focus();
               menu.hide();
             });
-            menu.on('show hide', function (e) {
-              if (e.control.items) {
-                e.control.items().each(function (ctrl) {
-                  ctrl.active(ctrl.settings.selected);
-                });
-              }
-            }).fire('show');
-            menu.on('hide', function (e) {
+            menu
+              .on("show hide", function (e) {
+                if (e.control.items) {
+                  e.control.items().each(function (ctrl) {
+                    ctrl.active(ctrl.settings.selected);
+                  });
+                }
+              })
+              .fire("show");
+            menu.on("hide", function (e) {
               if (e.control === menu) {
-                self.classes.remove('selected');
+                self.classes.remove("selected");
               }
             });
             menu.submenu = true;
@@ -8800,25 +10019,20 @@ var modern = (function (domGlobals) {
             menu.show();
           }
           menu._parentMenu = parent;
-          menu.classes.add('menu-sub');
-          var rel = menu.testMoveRel(self.getEl(), self.isRtl() ? [
-            'tl-tr',
-            'bl-br',
-            'tr-tl',
-            'br-bl'
-          ] : [
-            'tr-tl',
-            'br-bl',
-            'tl-tr',
-            'bl-br'
-          ]);
+          menu.classes.add("menu-sub");
+          var rel = menu.testMoveRel(
+            self.getEl(),
+            self.isRtl()
+              ? ["tl-tr", "bl-br", "tr-tl", "br-bl"]
+              : ["tr-tl", "br-bl", "tl-tr", "bl-br"]
+          );
           menu.moveRel(self.getEl(), rel);
           menu.rel = rel;
-          rel = 'menu-sub-' + rel;
+          rel = "menu-sub-" + rel;
           menu.classes.remove(menu._lastRel).add(rel);
           menu._lastRel = rel;
-          self.classes.add('selected');
-          self.aria('expanded', true);
+          self.classes.add("selected");
+          self.aria("expanded", true);
         }
       },
       hideMenu: function () {
@@ -8830,7 +10044,7 @@ var modern = (function (domGlobals) {
             }
           });
           self.menu.hide();
-          self.aria('expanded', false);
+          self.aria("expanded", false);
         }
         return self;
       },
@@ -8839,74 +10053,118 @@ var modern = (function (domGlobals) {
         var id = self._id;
         var settings = self.settings;
         var prefix = self.classPrefix;
-        var text = self.state.get('text');
-        var icon = self.settings.icon, image = '', shortcut = settings.shortcut;
-        var url = self.encode(settings.url), iconHtml = '';
+        var text = self.state.get("text");
+        var icon = self.settings.icon,
+          image = "",
+          shortcut = settings.shortcut;
+        var url = self.encode(settings.url),
+          iconHtml = "";
         function convertShortcut(shortcut) {
-          var i, value, replace = {};
+          var i,
+            value,
+            replace = {};
           if (global$8.mac) {
             replace = {
-              alt: '&#x2325;',
-              ctrl: '&#x2318;',
-              shift: '&#x21E7;',
-              meta: '&#x2318;'
+              alt: "&#x2325;",
+              ctrl: "&#x2318;",
+              shift: "&#x21E7;",
+              meta: "&#x2318;",
             };
           } else {
-            replace = { meta: 'Ctrl' };
+            replace = { meta: "Ctrl" };
           }
-          shortcut = shortcut.split('+');
+          shortcut = shortcut.split("+");
           for (i = 0; i < shortcut.length; i++) {
             value = replace[shortcut[i].toLowerCase()];
             if (value) {
               shortcut[i] = value;
             }
           }
-          return shortcut.join('+');
+          return shortcut.join("+");
         }
         function escapeRegExp(str) {
-          return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+          return str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
         }
         function markMatches(text) {
-          var match = settings.match || '';
-          return match ? text.replace(new RegExp(escapeRegExp(match), 'gi'), function (match) {
-            return '!mce~match[' + match + ']mce~match!';
-          }) : text;
+          var match = settings.match || "";
+          return match
+            ? text.replace(
+                new RegExp(escapeRegExp(match), "gi"),
+                function (match) {
+                  return "!mce~match[" + match + "]mce~match!";
+                }
+              )
+            : text;
         }
         function boldMatches(text) {
-          return text.replace(new RegExp(escapeRegExp('!mce~match['), 'g'), '<b>').replace(new RegExp(escapeRegExp(']mce~match!'), 'g'), '</b>');
+          return text
+            .replace(new RegExp(escapeRegExp("!mce~match["), "g"), "<b>")
+            .replace(new RegExp(escapeRegExp("]mce~match!"), "g"), "</b>");
         }
         if (icon) {
-          self.parent().classes.add('menu-has-icons');
+          self.parent().classes.add("menu-has-icons");
         }
         if (settings.image) {
-          image = ' style="background-image: url(\'' + settings.image + '\')"';
+          image = " style=\"background-image: url('" + settings.image + "')\"";
         }
         if (shortcut) {
           shortcut = convertShortcut(shortcut);
         }
-        icon = prefix + 'ico ' + prefix + 'i-' + (self.settings.icon || 'none');
-        iconHtml = text !== '-' ? '<i class="' + icon + '"' + image + '></i>\xA0' : '';
+        icon = prefix + "ico " + prefix + "i-" + (self.settings.icon || "none");
+        iconHtml =
+          text !== "-" ? '<i class="' + icon + '"' + image + "></i>\xA0" : "";
         text = boldMatches(self.encode(markMatches(text)));
         url = boldMatches(self.encode(markMatches(url)));
-        return '<div id="' + id + '" class="' + self.classes + '" tabindex="-1">' + iconHtml + (text !== '-' ? '<span id="' + id + '-text" class="' + prefix + 'text">' + text + '</span>' : '') + (shortcut ? '<div id="' + id + '-shortcut" class="' + prefix + 'menu-shortcut">' + shortcut + '</div>' : '') + (settings.menu ? '<div class="' + prefix + 'caret"></div>' : '') + (url ? '<div class="' + prefix + 'menu-item-link">' + url + '</div>' : '') + '</div>';
+        return (
+          '<div id="' +
+          id +
+          '" class="' +
+          self.classes +
+          '" tabindex="-1">' +
+          iconHtml +
+          (text !== "-"
+            ? '<span id="' +
+              id +
+              '-text" class="' +
+              prefix +
+              'text">' +
+              text +
+              "</span>"
+            : "") +
+          (shortcut
+            ? '<div id="' +
+              id +
+              '-shortcut" class="' +
+              prefix +
+              'menu-shortcut">' +
+              shortcut +
+              "</div>"
+            : "") +
+          (settings.menu ? '<div class="' + prefix + 'caret"></div>' : "") +
+          (url
+            ? '<div class="' + prefix + 'menu-item-link">' + url + "</div>"
+            : "") +
+          "</div>"
+        );
       },
       postRender: function () {
-        var self = this, settings = self.settings;
+        var self = this,
+          settings = self.settings;
         var textStyle = settings.textStyle;
-        if (typeof textStyle === 'function') {
+        if (typeof textStyle === "function") {
           textStyle = textStyle.call(this);
         }
         if (textStyle) {
-          var textElm = self.getEl('text');
+          var textElm = self.getEl("text");
           if (textElm) {
-            textElm.setAttribute('style', textStyle);
+            textElm.setAttribute("style", textStyle);
             self._textStyle = textStyle;
           }
         }
-        self.on('mouseenter click', function (e) {
+        self.on("mouseenter click", function (e) {
           if (e.control === self) {
-            if (!settings.menu && e.type === 'click') {
-              self.fire('select');
+            if (!settings.menu && e.type === "click") {
+              self.fire("select");
               global$7.requestAnimationFrame(function () {
                 self.parent().hideAll();
               });
@@ -8923,16 +10181,19 @@ var modern = (function (domGlobals) {
       },
       hover: function () {
         var self = this;
-        self.parent().items().each(function (ctrl) {
-          ctrl.classes.remove('selected');
-        });
-        self.classes.toggle('selected', true);
+        self
+          .parent()
+          .items()
+          .each(function (ctrl) {
+            ctrl.classes.remove("selected");
+          });
+        self.classes.toggle("selected", true);
         return self;
       },
       active: function (state) {
         toggleTextStyle(this, state);
-        if (typeof state !== 'undefined') {
-          this.aria('checked', state);
+        if (typeof state !== "undefined") {
+          this.aria("checked", state);
         }
         return this._super(state);
       },
@@ -8941,42 +10202,55 @@ var modern = (function (domGlobals) {
         if (this.menu) {
           this.menu.remove();
         }
-      }
+      },
     });
 
     var Radio = Checkbox.extend({
       Defaults: {
-        classes: 'radio',
-        role: 'radio'
-      }
+        classes: "radio",
+        role: "radio",
+      },
     });
 
     var ResizeHandle = Widget.extend({
       renderHtml: function () {
-        var self = this, prefix = self.classPrefix;
-        self.classes.add('resizehandle');
-        if (self.settings.direction === 'both') {
-          self.classes.add('resizehandle-both');
+        var self = this,
+          prefix = self.classPrefix;
+        self.classes.add("resizehandle");
+        if (self.settings.direction === "both") {
+          self.classes.add("resizehandle-both");
         }
         self.canFocus = false;
-        return '<div id="' + self._id + '" class="' + self.classes + '">' + '<i class="' + prefix + 'ico ' + prefix + 'i-resize"></i>' + '</div>';
+        return (
+          '<div id="' +
+          self._id +
+          '" class="' +
+          self.classes +
+          '">' +
+          '<i class="' +
+          prefix +
+          "ico " +
+          prefix +
+          'i-resize"></i>' +
+          "</div>"
+        );
       },
       postRender: function () {
         var self = this;
         self._super();
         self.resizeDragHelper = new DragHelper(this._id, {
           start: function () {
-            self.fire('ResizeStart');
+            self.fire("ResizeStart");
           },
           drag: function (e) {
-            if (self.settings.direction !== 'both') {
+            if (self.settings.direction !== "both") {
               e.deltaX = 0;
             }
-            self.fire('Resize', e);
+            self.fire("Resize", e);
           },
           stop: function () {
-            self.fire('ResizeEnd');
-          }
+            self.fire("ResizeEnd");
+          },
         });
       },
       remove: function () {
@@ -8984,23 +10258,24 @@ var modern = (function (domGlobals) {
           this.resizeDragHelper.destroy();
         }
         return this._super();
-      }
+      },
     });
 
     function createOptions(options) {
-      var strOptions = '';
+      var strOptions = "";
       if (options) {
         for (var i = 0; i < options.length; i++) {
-          strOptions += '<option value="' + options[i] + '">' + options[i] + '</option>';
+          strOptions +=
+            '<option value="' + options[i] + '">' + options[i] + "</option>";
         }
       }
       return strOptions;
     }
     var SelectBox = Widget.extend({
       Defaults: {
-        classes: 'selectbox',
-        role: 'selectbox',
-        options: []
+        classes: "selectbox",
+        role: "selectbox",
+        options: [],
       },
       init: function (settings) {
         var self = this;
@@ -9011,43 +10286,57 @@ var modern = (function (domGlobals) {
         if (self.settings.options) {
           self._options = self.settings.options;
         }
-        self.on('keydown', function (e) {
+        self.on("keydown", function (e) {
           var rootControl;
           if (e.keyCode === 13) {
             e.preventDefault();
-            self.parents().reverse().each(function (ctrl) {
-              if (ctrl.toJSON) {
-                rootControl = ctrl;
-                return false;
-              }
-            });
-            self.fire('submit', { data: rootControl.toJSON() });
+            self
+              .parents()
+              .reverse()
+              .each(function (ctrl) {
+                if (ctrl.toJSON) {
+                  rootControl = ctrl;
+                  return false;
+                }
+              });
+            self.fire("submit", { data: rootControl.toJSON() });
           }
         });
       },
       options: function (state) {
         if (!arguments.length) {
-          return this.state.get('options');
+          return this.state.get("options");
         }
-        this.state.set('options', state);
+        this.state.set("options", state);
         return this;
       },
       renderHtml: function () {
         var self = this;
-        var options, size = '';
+        var options,
+          size = "";
         options = createOptions(self._options);
         if (self.size) {
           size = ' size = "' + self.size + '"';
         }
-        return '<select id="' + self._id + '" class="' + self.classes + '"' + size + '>' + options + '</select>';
+        return (
+          '<select id="' +
+          self._id +
+          '" class="' +
+          self.classes +
+          '"' +
+          size +
+          ">" +
+          options +
+          "</select>"
+        );
       },
       bindStates: function () {
         var self = this;
-        self.state.on('change:options', function (e) {
+        self.state.on("change:options", function (e) {
           self.getEl().innerHTML = createOptions(e.value);
         });
         return self._super();
-      }
+      },
     });
 
     function constrain(value, minVal, maxVal) {
@@ -9060,28 +10349,42 @@ var modern = (function (domGlobals) {
       return value;
     }
     function setAriaProp(el, name, value) {
-      el.setAttribute('aria-' + name, value);
+      el.setAttribute("aria-" + name, value);
     }
     function updateSliderHandle(ctrl, value) {
-      var maxHandlePos, shortSizeName, sizeName, stylePosName, styleValue, handleEl;
-      if (ctrl.settings.orientation === 'v') {
-        stylePosName = 'top';
-        sizeName = 'height';
-        shortSizeName = 'h';
+      var maxHandlePos,
+        shortSizeName,
+        sizeName,
+        stylePosName,
+        styleValue,
+        handleEl;
+      if (ctrl.settings.orientation === "v") {
+        stylePosName = "top";
+        sizeName = "height";
+        shortSizeName = "h";
       } else {
-        stylePosName = 'left';
-        sizeName = 'width';
-        shortSizeName = 'w';
+        stylePosName = "left";
+        sizeName = "width";
+        shortSizeName = "w";
       }
-      handleEl = ctrl.getEl('handle');
-      maxHandlePos = (ctrl.layoutRect()[shortSizeName] || 100) - funcs.getSize(handleEl)[sizeName];
-      styleValue = maxHandlePos * ((value - ctrl._minValue) / (ctrl._maxValue - ctrl._minValue)) + 'px';
+      handleEl = ctrl.getEl("handle");
+      maxHandlePos =
+        (ctrl.layoutRect()[shortSizeName] || 100) -
+        funcs.getSize(handleEl)[sizeName];
+      styleValue =
+        maxHandlePos *
+          ((value - ctrl._minValue) / (ctrl._maxValue - ctrl._minValue)) +
+        "px";
       handleEl.style[stylePosName] = styleValue;
-      handleEl.style.height = ctrl.layoutRect().h + 'px';
-      setAriaProp(handleEl, 'valuenow', value);
-      setAriaProp(handleEl, 'valuetext', '' + ctrl.settings.previewFilter(value));
-      setAriaProp(handleEl, 'valuemin', ctrl._minValue);
-      setAriaProp(handleEl, 'valuemax', ctrl._maxValue);
+      handleEl.style.height = ctrl.layoutRect().h + "px";
+      setAriaProp(handleEl, "valuenow", value);
+      setAriaProp(
+        handleEl,
+        "valuetext",
+        "" + ctrl.settings.previewFilter(value)
+      );
+      setAriaProp(handleEl, "valuemin", ctrl._minValue);
+      setAriaProp(handleEl, "valuemax", ctrl._maxValue);
     }
     var Slider = Widget.extend({
       init: function (settings) {
@@ -9092,24 +10395,43 @@ var modern = (function (domGlobals) {
           };
         }
         self._super(settings);
-        self.classes.add('slider');
-        if (settings.orientation === 'v') {
-          self.classes.add('vertical');
+        self.classes.add("slider");
+        if (settings.orientation === "v") {
+          self.classes.add("vertical");
         }
         self._minValue = isNumber(settings.minValue) ? settings.minValue : 0;
         self._maxValue = isNumber(settings.maxValue) ? settings.maxValue : 100;
-        self._initValue = self.state.get('value');
+        self._initValue = self.state.get("value");
       },
       renderHtml: function () {
-        var self = this, id = self._id, prefix = self.classPrefix;
-        return '<div id="' + id + '" class="' + self.classes + '">' + '<div id="' + id + '-handle" class="' + prefix + 'slider-handle" role="slider" tabindex="-1"></div>' + '</div>';
+        var self = this,
+          id = self._id,
+          prefix = self.classPrefix;
+        return (
+          '<div id="' +
+          id +
+          '" class="' +
+          self.classes +
+          '">' +
+          '<div id="' +
+          id +
+          '-handle" class="' +
+          prefix +
+          'slider-handle" role="slider" tabindex="-1"></div>' +
+          "</div>"
+        );
       },
       reset: function () {
         this.value(this._initValue).repaint();
       },
       postRender: function () {
         var self = this;
-        var minValue, maxValue, screenCordName, stylePosName, sizeName, shortSizeName;
+        var minValue,
+          maxValue,
+          screenCordName,
+          stylePosName,
+          sizeName,
+          shortSizeName;
         function toFraction(min, max, val) {
           return (val + min) / (max - min);
         }
@@ -9120,67 +10442,81 @@ var modern = (function (domGlobals) {
           function alter(delta) {
             var value;
             value = self.value();
-            value = fromFraction(minValue, maxValue, toFraction(minValue, maxValue, value) + delta * 0.05);
+            value = fromFraction(
+              minValue,
+              maxValue,
+              toFraction(minValue, maxValue, value) + delta * 0.05
+            );
             value = constrain(value, minValue, maxValue);
             self.value(value);
-            self.fire('dragstart', { value: value });
-            self.fire('drag', { value: value });
-            self.fire('dragend', { value: value });
+            self.fire("dragstart", { value: value });
+            self.fire("drag", { value: value });
+            self.fire("dragend", { value: value });
           }
-          self.on('keydown', function (e) {
+          self.on("keydown", function (e) {
             switch (e.keyCode) {
-            case 37:
-            case 38:
-              alter(-1);
-              break;
-            case 39:
-            case 40:
-              alter(1);
-              break;
+              case 37:
+              case 38:
+                alter(-1);
+                break;
+              case 39:
+              case 40:
+                alter(1);
+                break;
             }
           });
         }
         function handleDrag(minValue, maxValue, handleEl) {
           var startPos, startHandlePos, maxHandlePos, handlePos, value;
           self._dragHelper = new DragHelper(self._id, {
-            handle: self._id + '-handle',
+            handle: self._id + "-handle",
             start: function (e) {
               startPos = e[screenCordName];
-              startHandlePos = parseInt(self.getEl('handle').style[stylePosName], 10);
-              maxHandlePos = (self.layoutRect()[shortSizeName] || 100) - funcs.getSize(handleEl)[sizeName];
-              self.fire('dragstart', { value: value });
+              startHandlePos = parseInt(
+                self.getEl("handle").style[stylePosName],
+                10
+              );
+              maxHandlePos =
+                (self.layoutRect()[shortSizeName] || 100) -
+                funcs.getSize(handleEl)[sizeName];
+              self.fire("dragstart", { value: value });
             },
             drag: function (e) {
               var delta = e[screenCordName] - startPos;
               handlePos = constrain(startHandlePos + delta, 0, maxHandlePos);
-              handleEl.style[stylePosName] = handlePos + 'px';
-              value = minValue + handlePos / maxHandlePos * (maxValue - minValue);
+              handleEl.style[stylePosName] = handlePos + "px";
+              value =
+                minValue + (handlePos / maxHandlePos) * (maxValue - minValue);
               self.value(value);
-              self.tooltip().text('' + self.settings.previewFilter(value)).show().moveRel(handleEl, 'bc tc');
-              self.fire('drag', { value: value });
+              self
+                .tooltip()
+                .text("" + self.settings.previewFilter(value))
+                .show()
+                .moveRel(handleEl, "bc tc");
+              self.fire("drag", { value: value });
             },
             stop: function () {
               self.tooltip().hide();
-              self.fire('dragend', { value: value });
-            }
+              self.fire("dragend", { value: value });
+            },
           });
         }
         minValue = self._minValue;
         maxValue = self._maxValue;
-        if (self.settings.orientation === 'v') {
-          screenCordName = 'screenY';
-          stylePosName = 'top';
-          sizeName = 'height';
-          shortSizeName = 'h';
+        if (self.settings.orientation === "v") {
+          screenCordName = "screenY";
+          stylePosName = "top";
+          sizeName = "height";
+          shortSizeName = "h";
         } else {
-          screenCordName = 'screenX';
-          stylePosName = 'left';
-          sizeName = 'width';
-          shortSizeName = 'w';
+          screenCordName = "screenX";
+          stylePosName = "left";
+          sizeName = "width";
+          shortSizeName = "w";
         }
         self._super();
         handleKeyboard(minValue, maxValue);
-        handleDrag(minValue, maxValue, self.getEl('handle'));
+        handleDrag(minValue, maxValue, self.getEl("handle"));
       },
       repaint: function () {
         this._super();
@@ -9188,26 +10524,26 @@ var modern = (function (domGlobals) {
       },
       bindStates: function () {
         var self = this;
-        self.state.on('change:value', function (e) {
+        self.state.on("change:value", function (e) {
           updateSliderHandle(self, e.value);
         });
         return self._super();
-      }
+      },
     });
 
     var Spacer = Widget.extend({
       renderHtml: function () {
         var self = this;
-        self.classes.add('spacer');
+        self.classes.add("spacer");
         self.canFocus = false;
         return '<div id="' + self._id + '" class="' + self.classes + '"></div>';
-      }
+      },
     });
 
     var SplitButton = MenuButton.extend({
       Defaults: {
-        classes: 'widget btn splitbtn',
-        role: 'button'
+        classes: "widget btn splitbtn",
+        role: "button",
       },
       repaint: function () {
         var self = this;
@@ -9219,49 +10555,83 @@ var modern = (function (domGlobals) {
         menuButtonElm = elm.lastChild;
         global$9(mainButtonElm).css({
           width: rect.w - funcs.getSize(menuButtonElm).width,
-          height: rect.h - 2
+          height: rect.h - 2,
         });
         global$9(menuButtonElm).css({ height: rect.h - 2 });
         return self;
       },
       activeMenu: function (state) {
         var self = this;
-        global$9(self.getEl().lastChild).toggleClass(self.classPrefix + 'active', state);
+        global$9(self.getEl().lastChild).toggleClass(
+          self.classPrefix + "active",
+          state
+        );
       },
       renderHtml: function () {
         var self = this;
         var id = self._id;
         var prefix = self.classPrefix;
         var image;
-        var icon = self.state.get('icon');
-        var text = self.state.get('text');
+        var icon = self.state.get("icon");
+        var text = self.state.get("text");
         var settings = self.settings;
-        var textHtml = '', ariaPressed;
+        var textHtml = "",
+          ariaPressed;
         image = settings.image;
         if (image) {
-          icon = 'none';
-          if (typeof image !== 'string') {
+          icon = "none";
+          if (typeof image !== "string") {
             image = domGlobals.window.getSelection ? image[0] : image[1];
           }
-          image = ' style="background-image: url(\'' + image + '\')"';
+          image = " style=\"background-image: url('" + image + "')\"";
         } else {
-          image = '';
+          image = "";
         }
-        icon = settings.icon ? prefix + 'ico ' + prefix + 'i-' + icon : '';
+        icon = settings.icon ? prefix + "ico " + prefix + "i-" + icon : "";
         if (text) {
-          self.classes.add('btn-has-text');
-          textHtml = '<span class="' + prefix + 'txt">' + self.encode(text) + '</span>';
+          self.classes.add("btn-has-text");
+          textHtml =
+            '<span class="' + prefix + 'txt">' + self.encode(text) + "</span>";
         }
-        ariaPressed = typeof settings.active === 'boolean' ? ' aria-pressed="' + settings.active + '"' : '';
-        return '<div id="' + id + '" class="' + self.classes + '" role="button"' + ariaPressed + ' tabindex="-1">' + '<button type="button" hidefocus="1" tabindex="-1">' + (icon ? '<i class="' + icon + '"' + image + '></i>' : '') + textHtml + '</button>' + '<button type="button" class="' + prefix + 'open" hidefocus="1" tabindex="-1">' + (self._menuBtnText ? (icon ? '\xA0' : '') + self._menuBtnText : '') + ' <i class="' + prefix + 'caret"></i>' + '</button>' + '</div>';
+        ariaPressed =
+          typeof settings.active === "boolean"
+            ? ' aria-pressed="' + settings.active + '"'
+            : "";
+        return (
+          '<div id="' +
+          id +
+          '" class="' +
+          self.classes +
+          '" role="button"' +
+          ariaPressed +
+          ' tabindex="-1">' +
+          '<button type="button" hidefocus="1" tabindex="-1">' +
+          (icon ? '<i class="' + icon + '"' + image + "></i>" : "") +
+          textHtml +
+          "</button>" +
+          '<button type="button" class="' +
+          prefix +
+          'open" hidefocus="1" tabindex="-1">' +
+          (self._menuBtnText ? (icon ? "\xA0" : "") + self._menuBtnText : "") +
+          ' <i class="' +
+          prefix +
+          'caret"></i>' +
+          "</button>" +
+          "</div>"
+        );
       },
       postRender: function () {
-        var self = this, onClickHandler = self.settings.onclick;
-        self.on('click', function (e) {
+        var self = this,
+          onClickHandler = self.settings.onclick;
+        self.on("click", function (e) {
           var node = e.target;
           if (e.control === this) {
             while (node) {
-              if (e.aria && e.aria.key !== 'down' || node.nodeName === 'BUTTON' && node.className.indexOf('open') === -1) {
+              if (
+                (e.aria && e.aria.key !== "down") ||
+                (node.nodeName === "BUTTON" &&
+                  node.className.indexOf("open") === -1)
+              ) {
                 e.stopImmediatePropagation();
                 if (onClickHandler) {
                   onClickHandler.call(this, e);
@@ -9274,37 +10644,37 @@ var modern = (function (domGlobals) {
         });
         delete self.settings.onclick;
         return self._super();
-      }
+      },
     });
 
     var StackLayout = FlowLayout.extend({
       Defaults: {
-        containerClass: 'stack-layout',
-        controlClass: 'stack-layout-item',
-        endClass: 'break'
+        containerClass: "stack-layout",
+        controlClass: "stack-layout-item",
+        endClass: "break",
       },
       isNative: function () {
         return true;
-      }
+      },
     });
 
     var TabPanel = Panel.extend({
       Defaults: {
-        layout: 'absolute',
-        defaults: { type: 'panel' }
+        layout: "absolute",
+        defaults: { type: "panel" },
       },
       activateTab: function (idx) {
         var activeTabElm;
         if (this.activeTabId) {
           activeTabElm = this.getEl(this.activeTabId);
-          global$9(activeTabElm).removeClass(this.classPrefix + 'active');
-          activeTabElm.setAttribute('aria-selected', 'false');
+          global$9(activeTabElm).removeClass(this.classPrefix + "active");
+          activeTabElm.setAttribute("aria-selected", "false");
         }
-        this.activeTabId = 't' + idx;
-        activeTabElm = this.getEl('t' + idx);
-        activeTabElm.setAttribute('aria-selected', 'true');
-        global$9(activeTabElm).addClass(this.classPrefix + 'active');
-        this.items()[idx].show().fire('showtab');
+        this.activeTabId = "t" + idx;
+        activeTabElm = this.getEl("t" + idx);
+        activeTabElm.setAttribute("aria-selected", "true");
+        global$9(activeTabElm).addClass(this.classPrefix + "active");
+        this.items()[idx].show().fire("showtab");
         this.reflow();
         this.items().each(function (item, i) {
           if (idx !== i) {
@@ -9315,26 +10685,57 @@ var modern = (function (domGlobals) {
       renderHtml: function () {
         var self = this;
         var layout = self._layout;
-        var tabsHtml = '';
+        var tabsHtml = "";
         var prefix = self.classPrefix;
         self.preRender();
         layout.preRender(self);
         self.items().each(function (ctrl, i) {
-          var id = self._id + '-t' + i;
-          ctrl.aria('role', 'tabpanel');
-          ctrl.aria('labelledby', id);
-          tabsHtml += '<div id="' + id + '" class="' + prefix + 'tab" ' + 'unselectable="on" role="tab" aria-controls="' + ctrl._id + '" aria-selected="false" tabIndex="-1">' + self.encode(ctrl.settings.title) + '</div>';
+          var id = self._id + "-t" + i;
+          ctrl.aria("role", "tabpanel");
+          ctrl.aria("labelledby", id);
+          tabsHtml +=
+            '<div id="' +
+            id +
+            '" class="' +
+            prefix +
+            'tab" ' +
+            'unselectable="on" role="tab" aria-controls="' +
+            ctrl._id +
+            '" aria-selected="false" tabIndex="-1">' +
+            self.encode(ctrl.settings.title) +
+            "</div>";
         });
-        return '<div id="' + self._id + '" class="' + self.classes + '" hidefocus="1" tabindex="-1">' + '<div id="' + self._id + '-head" class="' + prefix + 'tabs" role="tablist">' + tabsHtml + '</div>' + '<div id="' + self._id + '-body" class="' + self.bodyClasses + '">' + layout.renderHtml(self) + '</div>' + '</div>';
+        return (
+          '<div id="' +
+          self._id +
+          '" class="' +
+          self.classes +
+          '" hidefocus="1" tabindex="-1">' +
+          '<div id="' +
+          self._id +
+          '-head" class="' +
+          prefix +
+          'tabs" role="tablist">' +
+          tabsHtml +
+          "</div>" +
+          '<div id="' +
+          self._id +
+          '-body" class="' +
+          self.bodyClasses +
+          '">' +
+          layout.renderHtml(self) +
+          "</div>" +
+          "</div>"
+        );
       },
       postRender: function () {
         var self = this;
         self._super();
         self.settings.activeTab = self.settings.activeTab || 0;
         self.activateTab(self.settings.activeTab);
-        this.on('click', function (e) {
+        this.on("click", function (e) {
           var targetParent = e.target.parentNode;
-          if (targetParent && targetParent.id === self._id + '-head') {
+          if (targetParent && targetParent.id === self._id + "-head") {
             var i = targetParent.childNodes.length;
             while (i--) {
               if (targetParent.childNodes[i] === e.target) {
@@ -9347,7 +10748,7 @@ var modern = (function (domGlobals) {
       initLayoutRect: function () {
         var self = this;
         var rect, minW, minH;
-        minW = funcs.getSize(self.getEl('head')).width;
+        minW = funcs.getSize(self.getEl("head")).width;
         minW = minW < 0 ? 0 : minW;
         minH = 0;
         self.items().each(function (item) {
@@ -9363,76 +10764,89 @@ var modern = (function (domGlobals) {
             x: 0,
             y: 0,
             w: minW,
-            h: minH
+            h: minH,
           });
         });
-        var headH = funcs.getSize(self.getEl('head')).height;
+        var headH = funcs.getSize(self.getEl("head")).height;
         self.settings.minWidth = minW;
         self.settings.minHeight = minH + headH;
         rect = self._super();
         rect.deltaH += headH;
         rect.innerH = rect.h - rect.deltaH;
         return rect;
-      }
+      },
     });
 
     var TextBox = Widget.extend({
       init: function (settings) {
         var self = this;
         self._super(settings);
-        self.classes.add('textbox');
+        self.classes.add("textbox");
         if (settings.multiline) {
-          self.classes.add('multiline');
+          self.classes.add("multiline");
         } else {
-          self.on('keydown', function (e) {
+          self.on("keydown", function (e) {
             var rootControl;
             if (e.keyCode === 13) {
               e.preventDefault();
-              self.parents().reverse().each(function (ctrl) {
-                if (ctrl.toJSON) {
-                  rootControl = ctrl;
-                  return false;
-                }
-              });
-              self.fire('submit', { data: rootControl.toJSON() });
+              self
+                .parents()
+                .reverse()
+                .each(function (ctrl) {
+                  if (ctrl.toJSON) {
+                    rootControl = ctrl;
+                    return false;
+                  }
+                });
+              self.fire("submit", { data: rootControl.toJSON() });
             }
           });
-          self.on('keyup', function (e) {
-            self.state.set('value', e.target.value);
+          self.on("keyup", function (e) {
+            self.state.set("value", e.target.value);
           });
         }
       },
       repaint: function () {
         var self = this;
-        var style, rect, borderBox, borderW, borderH = 0, lastRepaintRect;
+        var style,
+          rect,
+          borderBox,
+          borderW,
+          borderH = 0,
+          lastRepaintRect;
         style = self.getEl().style;
         rect = self._layoutRect;
         lastRepaintRect = self._lastRepaintRect || {};
         var doc = domGlobals.document;
-        if (!self.settings.multiline && doc.all && (!doc.documentMode || doc.documentMode <= 8)) {
-          style.lineHeight = rect.h - borderH + 'px';
+        if (
+          !self.settings.multiline &&
+          doc.all &&
+          (!doc.documentMode || doc.documentMode <= 8)
+        ) {
+          style.lineHeight = rect.h - borderH + "px";
         }
         borderBox = self.borderBox;
         borderW = borderBox.left + borderBox.right + 8;
-        borderH = borderBox.top + borderBox.bottom + (self.settings.multiline ? 8 : 0);
+        borderH =
+          borderBox.top + borderBox.bottom + (self.settings.multiline ? 8 : 0);
         if (rect.x !== lastRepaintRect.x) {
-          style.left = rect.x + 'px';
+          style.left = rect.x + "px";
           lastRepaintRect.x = rect.x;
         }
         if (rect.y !== lastRepaintRect.y) {
-          style.top = rect.y + 'px';
+          style.top = rect.y + "px";
           lastRepaintRect.y = rect.y;
         }
         if (rect.w !== lastRepaintRect.w) {
-          style.width = rect.w - borderW + 'px';
+          style.width = rect.w - borderW + "px";
           lastRepaintRect.w = rect.w;
         }
         if (rect.h !== lastRepaintRect.h) {
-          style.height = rect.h - borderH + 'px';
+          style.height = rect.h - borderH + "px";
           lastRepaintRect.h = rect.h;
         }
         self._lastRepaintRect = lastRepaintRect;
-        self.fire('repaint', {}, false);
+        self.fire("repaint", {}, false);
         return self;
       },
       renderHtml: function () {
@@ -9441,63 +10855,66 @@ var modern = (function (domGlobals) {
         var attrs, elm;
         attrs = {
           id: self._id,
-          hidefocus: '1'
+          hidefocus: "1",
         };
-        global$2.each([
-          'rows',
-          'spellcheck',
-          'maxLength',
-          'size',
-          'readonly',
-          'min',
-          'max',
-          'step',
-          'list',
-          'pattern',
-          'placeholder',
-          'required',
-          'multiple'
-        ], function (name) {
-          attrs[name] = settings[name];
-        });
+        global$2.each(
+          [
+            "rows",
+            "spellcheck",
+            "maxLength",
+            "size",
+            "readonly",
+            "min",
+            "max",
+            "step",
+            "list",
+            "pattern",
+            "placeholder",
+            "required",
+            "multiple",
+          ],
+          function (name) {
+            attrs[name] = settings[name];
+          }
+        );
         if (self.disabled()) {
-          attrs.disabled = 'disabled';
+          attrs.disabled = "disabled";
         }
         if (settings.subtype) {
           attrs.type = settings.subtype;
         }
-        elm = funcs.create(settings.multiline ? 'textarea' : 'input', attrs);
-        elm.value = self.state.get('value');
+        elm = funcs.create(settings.multiline ? "textarea" : "input", attrs);
+        elm.value = self.state.get("value");
         elm.className = self.classes.toString();
         return elm.outerHTML;
       },
       value: function (value) {
         if (arguments.length) {
-          this.state.set('value', value);
+          this.state.set("value", value);
           return this;
         }
-        if (this.state.get('rendered')) {
-          this.state.set('value', this.getEl().value);
+        if (this.state.get("rendered")) {
+          this.state.set("value", this.getEl().value);
         }
-        return this.state.get('value');
+        return this.state.get("value");
       },
       postRender: function () {
         var self = this;
-        self.getEl().value = self.state.get('value');
+        self.getEl().value = self.state.get("value");
         self._super();
-        self.$el.on('change', function (e) {
-          self.state.set('value', e.target.value);
-          self.fire('change', e);
+        self.$el.on("change", function (e) {
+          self.state.set("value", e.target.value);
+          self.fire("change", e);
         });
       },
       bindStates: function () {
         var self = this;
-        self.state.on('change:value', function (e) {
+        self.state.on("change:value", function (e) {
           if (self.getEl().value !== e.value) {
             self.getEl().value = e.value;
           }
         });
-        self.state.on('change:disabled', function (e) {
+        self.state.on("change:disabled", function (e) {
           self.getEl().disabled = e.value;
         });
         return self._super();
@@ -9505,7 +10922,7 @@ var modern = (function (domGlobals) {
       remove: function () {
         this.$el.off();
         this._super();
-      }
+      },
     });
 
     var getApi = function () {
@@ -9570,7 +10987,7 @@ var modern = (function (domGlobals) {
         TabPanel: TabPanel,
         TextBox: TextBox,
         DropZone: DropZone,
-        BrowseButton: BrowseButton
+        BrowseButton: BrowseButton,
       };
     };
     var appendTo = function (target) {
@@ -9589,19 +11006,17 @@ var modern = (function (domGlobals) {
     };
     var Api = {
       appendTo: appendTo,
-      registerToFactory: registerToFactory
+      registerToFactory: registerToFactory,
     };
 
     Api.registerToFactory();
     Api.appendTo(window.tinymce ? window.tinymce : {});
-    global.add('modern', function (editor) {
+    global.add("modern", function (editor) {
       FormatControls.setup(editor);
       return ThemeApi.get(editor);
     });
-    function Theme () {
-    }
+    function Theme() {}
 
     return Theme;
-
-}(window));
+  })(window);
 })();

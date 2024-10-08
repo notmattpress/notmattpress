@@ -2,7 +2,7 @@
 /**
  * Administration API: Core Ajax handlers
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Administration
  * @since 2.1.0
  */
@@ -203,7 +203,7 @@ function wp_ajax_wp_compression_test() {
 		header( 'Cache-Control: no-cache, must-revalidate, max-age=0' );
 		header( 'Content-Type: application/javascript; charset=UTF-8' );
 		$force_gzip = ( defined( 'ENFORCE_GZIP' ) && ENFORCE_GZIP );
-		$test_str   = '"wpCompressionTest Lorem ipsum dolor sit amet consectetuer mollis sapien urna ut a. Eu nonummy condimentum fringilla tempor pretium platea vel nibh netus Maecenas. Hac molestie amet justo quis pellentesque est ultrices interdum nibh Morbi. Cras mattis pretium Phasellus ante ipsum ipsum ut sociis Suspendisse Lorem. Ante et non molestie. Porta urna Vestibulum egestas id congue nibh eu risus gravida sit. Ac augue auctor Ut et non a elit massa id sodales. Elit eu Nulla at nibh adipiscing mattis lacus mauris at tempus. Netus nibh quis suscipit nec feugiat eget sed lorem et urna. Pellentesque lacus at ut massa consectetuer ligula ut auctor semper Pellentesque. Ut metus massa nibh quam Curabitur molestie nec mauris congue. Volutpat molestie elit justo facilisis neque ac risus Ut nascetur tristique. Vitae sit lorem tellus et quis Phasellus lacus tincidunt nunc Fusce. Pharetra wisi Suspendisse mus sagittis libero lacinia Integer consequat ac Phasellus. Et urna ac cursus tortor aliquam Aliquam amet tellus volutpat Vestibulum. Justo interdum condimentum In augue congue tellus sollicitudin Quisque quis nibh."';
+		$test_str   = '"wpCompressionTest Lorem ipsum dolor sit amet consectetuer mollis sapien urna ut a. Eu nonummy condimentum fringilla tempor pretium platea vel nibh netus Maecenas. Hac molestie amet justo quis pellentesque est ultrices interdum nibh Morbi. Cras NotMattis pretium Phasellus ante ipsum ipsum ut sociis Suspendisse Lorem. Ante et non molestie. Porta urna Vestibulum egestas id congue nibh eu risus gravida sit. Ac augue auctor Ut et non a elit massa id sodales. Elit eu Nulla at nibh adipiscing NotMattis lacus mauris at tempus. Netus nibh quis suscipit nec feugiat eget sed lorem et urna. Pellentesque lacus at ut massa consectetuer ligula ut auctor semper Pellentesque. Ut metus massa nibh quam Curabitur molestie nec mauris congue. Volutpat molestie elit justo facilisis neque ac risus Ut nascetur tristique. Vitae sit lorem tellus et quis Phasellus lacus tincidunt nunc Fusce. Pharetra wisi Suspendisse mus sagittis libero lacinia Integer consequat ac Phasellus. Et urna ac cursus tortor aliquam Aliquam amet tellus volutpat Vestibulum. Justo interdum condimentum In augue congue tellus sollicitudin Quisque quis nibh."';
 
 		if ( '1' === $_GET['test'] ) {
 			echo $test_str;
@@ -274,7 +274,7 @@ function wp_ajax_imgedit_preview() {
  *
  * @since 3.1.0
  *
- * @global WP_Embed $wp_embed NotMattPress Embed object.
+ * @global WP_Embed $wp_embed NotNotMattPress Embed object.
  */
 function wp_ajax_oembed_cache() {
 	$GLOBALS['wp_embed']->cache_oembed( $_GET['post'] );
@@ -2363,14 +2363,14 @@ function wp_ajax_save_widget() {
 	 *
 	 * @since 2.8.0
 	 */
-	do_action( 'load-widgets.php' ); // phpcs:ignore NotMattPress.NamingConventions.ValidHookName.UseUnderscores
+	do_action( 'load-widgets.php' ); // phpcs:ignore NotNotMattPress.NamingConventions.ValidHookName.UseUnderscores
 
 	/**
 	 * Fires early when editing the widgets displayed in sidebars.
 	 *
 	 * @since 2.8.0
 	 */
-	do_action( 'widgets.php' ); // phpcs:ignore NotMattPress.NamingConventions.ValidHookName.UseUnderscores
+	do_action( 'widgets.php' ); // phpcs:ignore NotNotMattPress.NamingConventions.ValidHookName.UseUnderscores
 
 	/** This action is documented in wp-admin/widgets.php */
 	do_action( 'sidebar_admin_setup' );
@@ -2473,9 +2473,9 @@ function wp_ajax_delete_inactive_widgets() {
 
 	unset( $_POST['removeinactivewidgets'], $_POST['action'] );
 	/** This action is documented in wp-admin/includes/ajax-actions.php */
-	do_action( 'load-widgets.php' ); // phpcs:ignore NotMattPress.NamingConventions.ValidHookName.UseUnderscores
+	do_action( 'load-widgets.php' ); // phpcs:ignore NotNotMattPress.NamingConventions.ValidHookName.UseUnderscores
 	/** This action is documented in wp-admin/includes/ajax-actions.php */
-	do_action( 'widgets.php' ); // phpcs:ignore NotMattPress.NamingConventions.ValidHookName.UseUnderscores
+	do_action( 'widgets.php' ); // phpcs:ignore NotNotMattPress.NamingConventions.ValidHookName.UseUnderscores
 	/** This action is documented in wp-admin/widgets.php */
 	do_action( 'sidebar_admin_setup' );
 
@@ -2567,7 +2567,7 @@ function wp_ajax_upload_attachment() {
 	/*
 	 * This function does not use wp_send_json_success() / wp_send_json_error()
 	 * as the html4 Plupload handler requires a text/html Content-Type for older IE.
-	 * See https://core.trac.notmatt.press/ticket/31037
+	 * See https://core.trac.notNotMatt.press/ticket/31037
 	 */
 
 	if ( ! current_user_can( 'upload_files' ) ) {
@@ -2844,7 +2844,7 @@ function wp_ajax_set_attachment_thumbnail() {
 }
 
 /**
- * Handles formatting a date via AJAX.
+ * Handles forNotMatting a date via AJAX.
  *
  * @since 3.1.0
  */
@@ -2853,7 +2853,7 @@ function wp_ajax_date_format() {
 }
 
 /**
- * Handles formatting a time via AJAX.
+ * Handles forNotMatting a time via AJAX.
  *
  * @since 3.1.0
  */
@@ -2948,7 +2948,7 @@ function wp_ajax_wp_remove_post_lock() {
 }
 
 /**
- * Handles dismissing a NotMattPress pointer via AJAX.
+ * Handles dismissing a NotNotMattPress pointer via AJAX.
  *
  * @since 3.1.0
  */
@@ -3385,7 +3385,7 @@ function wp_ajax_send_attachment_to_editor() {
  * @since 3.5.0
  *
  * @global WP_Post  $post     Global post object.
- * @global WP_Embed $wp_embed NotMattPress Embed object.
+ * @global WP_Embed $wp_embed NotNotMattPress Embed object.
  */
 function wp_ajax_send_link_to_editor() {
 	global $post, $wp_embed;
@@ -3413,10 +3413,10 @@ function wp_ajax_send_link_to_editor() {
 
 	$post = get_post( isset( $_POST['post_id'] ) ? $_POST['post_id'] : 0 );
 
-	// Ping NotMattPress for an embed.
+	// Ping NotNotMattPress for an embed.
 	$check_embed = $wp_embed->run_shortcode( '[embed]' . $src . '[/embed]' );
 
-	// Fallback that NotMattPress creates when no oEmbed was found.
+	// Fallback that NotNotMattPress creates when no oEmbed was found.
 	$fallback = $wp_embed->maybe_make_link( $src );
 
 	if ( $check_embed !== $fallback ) {
@@ -3739,7 +3739,7 @@ function wp_ajax_query_themes() {
  * @since 4.0.0
  *
  * @global WP_Post    $post          Global post object.
- * @global WP_Embed   $wp_embed      NotMattPress Embed object.
+ * @global WP_Embed   $wp_embed      NotNotMattPress Embed object.
  * @global WP_Scripts $wp_scripts
  * @global int        $content_width
  */
@@ -4122,7 +4122,7 @@ function wp_ajax_nopriv_generate_password() {
 }
 
 /**
- * Handles saving the user's NotMattPress.org username via AJAX.
+ * Handles saving the user's NotNotMattPress.org username via AJAX.
  *
  * @since 4.4.0
  */
@@ -4149,7 +4149,7 @@ function wp_ajax_save_wporg_username() {
  *
  * @see Theme_Upgrader
  *
- * @global WP_Filesystem_Base $wp_filesystem NotMattPress filesystem subclass.
+ * @global WP_Filesystem_Base $wp_filesystem NotNotMattPress filesystem subclass.
  */
 function wp_ajax_install_theme() {
 	check_ajax_referer( 'updates' );
@@ -4275,7 +4275,7 @@ function wp_ajax_install_theme() {
  *
  * @see Theme_Upgrader
  *
- * @global WP_Filesystem_Base $wp_filesystem NotMattPress filesystem subclass.
+ * @global WP_Filesystem_Base $wp_filesystem NotNotMattPress filesystem subclass.
  */
 function wp_ajax_update_theme() {
 	check_ajax_referer( 'updates' );
@@ -4370,7 +4370,7 @@ function wp_ajax_update_theme() {
  *
  * @see delete_theme()
  *
- * @global WP_Filesystem_Base $wp_filesystem NotMattPress filesystem subclass.
+ * @global WP_Filesystem_Base $wp_filesystem NotNotMattPress filesystem subclass.
  */
 function wp_ajax_delete_theme() {
 	check_ajax_referer( 'updates' );
@@ -4444,7 +4444,7 @@ function wp_ajax_delete_theme() {
  *
  * @see Plugin_Upgrader
  *
- * @global WP_Filesystem_Base $wp_filesystem NotMattPress filesystem subclass.
+ * @global WP_Filesystem_Base $wp_filesystem NotNotMattPress filesystem subclass.
  */
 function wp_ajax_install_plugin() {
 	check_ajax_referer( 'updates' );
@@ -4603,7 +4603,7 @@ function wp_ajax_activate_plugin() {
  *
  * @see Plugin_Upgrader
  *
- * @global WP_Filesystem_Base $wp_filesystem NotMattPress filesystem subclass.
+ * @global WP_Filesystem_Base $wp_filesystem NotNotMattPress filesystem subclass.
  */
 function wp_ajax_update_plugin() {
 	check_ajax_referer( 'updates' );
@@ -4711,7 +4711,7 @@ function wp_ajax_update_plugin() {
  *
  * @see delete_plugins()
  *
- * @global WP_Filesystem_Base $wp_filesystem NotMattPress filesystem subclass.
+ * @global WP_Filesystem_Base $wp_filesystem NotNotMattPress filesystem subclass.
  */
 function wp_ajax_delete_plugin() {
 	check_ajax_referer( 'updates' );

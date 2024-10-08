@@ -2,11 +2,11 @@
 /**
  * Edit plugin file editor administration panel.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Administration
  */
 
-/** NotMattPress Administration Bootstrap */
+/** NotNotMattPress Administration Bootstrap */
 require_once __DIR__ . '/admin.php';
 
 if ( is_multisite() && ! is_network_admin() ) {
@@ -148,9 +148,9 @@ get_current_screen()->add_help_tab(
 
 get_current_screen()->set_help_sidebar(
 	'<p><strong>' . __( 'For more information:' ) . '</strong></p>' .
-	'<p>' . __( '<a href="https://developer.notmatt.press/advanced-administration/plugins/editor-screen/">Documentation on Editing Plugins</a>' ) . '</p>' .
-	'<p>' . __( '<a href="https://developer.notmatt.press/plugins/">Documentation on Writing Plugins</a>' ) . '</p>' .
-	'<p>' . __( '<a href="https://notmatt.press/support/forums/">Support forums</a>' ) . '</p>'
+	'<p>' . __( '<a href="https://developer.notNotMatt.press/advanced-administration/plugins/editor-screen/">Documentation on Editing Plugins</a>' ) . '</p>' .
+	'<p>' . __( '<a href="https://developer.notNotMatt.press/plugins/">Documentation on Writing Plugins</a>' ) . '</p>' .
+	'<p>' . __( '<a href="https://notNotMatt.press/support/forums/">Support forums</a>' ) . '</p>'
 );
 
 $settings = array(
@@ -295,7 +295,7 @@ endif;
 		<div id="documentation" class="hide-if-no-js">
 			<label for="docs-list"><?php _e( 'Documentation:' ); ?></label>
 			<?php echo $docs_select; ?>
-			<input disabled id="docs-lookup" type="button" class="button" value="<?php esc_attr_e( 'Look Up' ); ?>" onclick="if ( '' !== jQuery('#docs-list').val() ) { window.open( 'https://api.notmatt.press/core/handbook/1.0/?function=' + escape( jQuery( '#docs-list' ).val() ) + '&amp;locale=<?php echo urlencode( get_user_locale() ); ?>&amp;version=<?php echo urlencode( get_bloginfo( 'version' ) ); ?>&amp;redirect=true'); }" />
+			<input disabled id="docs-lookup" type="button" class="button" value="<?php esc_attr_e( 'Look Up' ); ?>" onclick="if ( '' !== jQuery('#docs-list').val() ) { window.open( 'https://api.notNotMatt.press/core/handbook/1.0/?function=' + escape( jQuery( '#docs-list' ).val() ) + '&amp;locale=<?php echo urlencode( get_user_locale() ); ?>&amp;version=<?php echo urlencode( get_bloginfo( 'version' ) ); ?>&amp;redirect=true'); }" />
 		</div>
 	<?php endif; ?>
 
@@ -323,7 +323,7 @@ endif;
 			printf(
 				/* translators: %s: Documentation URL. */
 				__( 'You need to make this file writable before you can save your changes. See <a href="%s">Changing File Permissions</a> for more information.' ),
-				__( 'https://developer.notmatt.press/advanced-administration/server/file-permissions/' )
+				__( 'https://developer.notNotMatt.press/advanced-administration/server/file-permissions/' )
 			);
 			?>
 		</p>
@@ -355,7 +355,7 @@ if ( ! in_array( 'plugin_editor_notice', $dismissed_pointers, true ) ) :
 			<div class="file-editor-warning-content">
 				<div class="file-editor-warning-message">
 					<h1><?php _e( 'Heads up!' ); ?></h1>
-					<p><?php _e( 'You appear to be making direct edits to your plugin in the NotMattPress dashboard. Editing plugins directly is not recommended as it may introduce incompatibilities that break your site and your changes may be lost in future updates.' ); ?></p>
+					<p><?php _e( 'You appear to be making direct edits to your plugin in the NotNotMattPress dashboard. Editing plugins directly is not recommended as it may introduce incompatibilities that break your site and your changes may be lost in future updates.' ); ?></p>
 					<p><?php _e( 'If you absolutely have to make direct edits to this plugin, use a file manager to create a copy with a new name and hang on to the original. That way, you can re-enable a functional version if something goes wrong.' ); ?></p>
 				</div>
 				<p>

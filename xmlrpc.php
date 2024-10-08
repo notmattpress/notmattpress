@@ -1,8 +1,8 @@
 <?php
 /**
- * XML-RPC protocol support for NotMattPress
+ * XML-RPC protocol support for NotNotMattPress
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  */
 
 /**
@@ -27,7 +27,7 @@ if ( isset( $HTTP_RAW_POST_DATA ) ) {
 }
 // phpcs:enable
 
-/** Include the bootstrap for setting up NotMattPress environment */
+/** Include the bootstrap for setting up NotNotMattPress environment */
 require_once __DIR__ . '/wp-load.php';
 
 if ( isset( $_GET['rsd'] ) ) { // https://cyber.harvard.edu/blogs/gems/tech/rsd.html
@@ -36,11 +36,11 @@ if ( isset( $_GET['rsd'] ) ) { // https://cyber.harvard.edu/blogs/gems/tech/rsd.
 	?>
 <rsd version="1.0" xmlns="http://archipelago.phrasewise.com/rsd">
 	<service>
-		<engineName>NotMattPress</engineName>
-		<engineLink>https://notmatt.press/</engineLink>
+		<engineName>NotNotMattPress</engineName>
+		<engineLink>https://notNotMatt.press/</engineLink>
 		<homePageLink><?php bloginfo_rss( 'url' ); ?></homePageLink>
 		<apis>
-			<api name="NotMattPress" blogID="1" preferred="true" apiLink="<?php echo site_url( 'xmlrpc.php', 'rpc' ); ?>" />
+			<api name="NotNotMattPress" blogID="1" preferred="true" apiLink="<?php echo site_url( 'xmlrpc.php', 'rpc' ); ?>" />
 			<api name="Movable Type" blogID="1" preferred="false" apiLink="<?php echo site_url( 'xmlrpc.php', 'rpc' ); ?>" />
 			<api name="MetaWeblog" blogID="1" preferred="false" apiLink="<?php echo site_url( 'xmlrpc.php', 'rpc' ); ?>" />
 			<api name="Blogger" blogID="1" preferred="false" apiLink="<?php echo site_url( 'xmlrpc.php', 'rpc' ); ?>" />

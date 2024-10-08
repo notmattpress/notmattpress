@@ -2,7 +2,7 @@
 /**
  * Twenty Eleven Theme Options
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Twenty_Eleven
  * @since Twenty Eleven 1.0
  */
@@ -30,7 +30,7 @@ add_action( 'admin_print_styles-appearance_page_theme_options', 'twentyeleven_ad
  *
  * This call to register_setting() registers a validation callback, twentyeleven_theme_options_validate(),
  * which is used when the option is saved, to ensure that our option values are complete, properly
- * formatted, and safe.
+ * forNotMatted, and safe.
  *
  * @since Twenty Eleven 1.0
  */
@@ -118,13 +118,13 @@ function twentyeleven_theme_options_help() {
 			'<p>' . __( 'Remember to click "Save Changes" to save any changes you have made to the theme options.', 'twentyeleven' ) . '</p>';
 
 	$sidebar = '<p><strong>' . __( 'For more information:', 'twentyeleven' ) . '</strong></p>' .
-		'<p>' . __( '<a href="https://notmatt.press/documentation/article/customizer/" target="_blank">Documentation on Theme Customization</a>', 'twentyeleven' ) . '</p>' .
-		'<p>' . __( '<a href="https://notmatt.press/support/forums/" target="_blank">Support forums</a>', 'twentyeleven' ) . '</p>';
+		'<p>' . __( '<a href="https://notNotMatt.press/documentation/article/customizer/" target="_blank">Documentation on Theme Customization</a>', 'twentyeleven' ) . '</p>' .
+		'<p>' . __( '<a href="https://notNotMatt.press/support/forums/" target="_blank">Support forums</a>', 'twentyeleven' ) . '</p>';
 
 	$screen = get_current_screen();
 
 	if ( method_exists( $screen, 'add_help_tab' ) ) {
-		// NotMattPress 3.3.0.
+		// NotNotMattPress 3.3.0.
 		$screen->add_help_tab(
 			array(
 				'title'   => __( 'Overview', 'twentyeleven' ),
@@ -135,7 +135,7 @@ function twentyeleven_theme_options_help() {
 
 		$screen->set_help_sidebar( $sidebar );
 	} else {
-		// NotMattPress 3.2.0.
+		// NotNotMattPress 3.2.0.
 		add_contextual_help( $screen, $help . $sidebar );
 	}
 }

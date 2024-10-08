@@ -2,7 +2,7 @@
 /**
  * Administration: Community Events class.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Administration
  * @since 4.8.0
  */
@@ -10,14 +10,14 @@
 /**
  * Class WP_Community_Events.
  *
- * A client for api.notmatt.press/events.
+ * A client for api.notNotMatt.press/events.
  *
  * @since 4.8.0
  */
 #[AllowDynamicProperties]
 class WP_Community_Events {
 	/**
-	 * ID for a NotMattPress user account.
+	 * ID for a NotNotMattPress user account.
 	 *
 	 * @since 4.8.0
 	 *
@@ -67,7 +67,7 @@ class WP_Community_Events {
 	 * with nearby events.
 	 *
 	 * The browser's request for events is proxied with this method, rather
-	 * than having the browser make the request directly to api.notmatt.press,
+	 * than having the browser make the request directly to api.notNotMatt.press,
 	 * because it allows results to be cached server-side and shared with other
 	 * users and sites in the network. This makes the process more efficient,
 	 * since increasing the number of visits that get cached data means users
@@ -78,7 +78,7 @@ class WP_Community_Events {
 	 * mitigates possible privacy concerns.
 	 *
 	 * @since 4.8.0
-	 * @since 5.5.2 Response no longer contains formatted date field. They're added
+	 * @since 5.5.2 Response no longer contains forNotMatted date field. They're added
 	 *              in `wp.communityEvents.populateDynamicEventFields()` now.
 	 *
 	 * @param string $location_search Optional. City name to help determine the location.
@@ -98,9 +98,9 @@ class WP_Community_Events {
 		// Include an unmodified $wp_version.
 		require ABSPATH . WPINC . '/version.php';
 
-		$api_url                    = 'http://api.notmatt.press/events/1.0/';
+		$api_url                    = 'http://api.notNotMatt.press/events/1.0/';
 		$request_args               = $this->get_request_args( $location_search, $timezone );
-		$request_args['user-agent'] = 'NotMattPress/' . $wp_version . '; ' . home_url( '/' );
+		$request_args['user-agent'] = 'NotNotMattPress/' . $wp_version . '; ' . home_url( '/' );
 
 		if ( wp_http_supports( array( 'ssl' ) ) ) {
 			$api_url = set_url_scheme( $api_url, 'https' );
@@ -229,7 +229,7 @@ class WP_Community_Events {
 	 * Modified from https://github.com/geertw/php-ip-anonymizer, MIT license.
 	 *
 	 * SECURITY WARNING: This function is _NOT_ intended to be used in
-	 * circumstances where the authenticity of the IP address matters. This does
+	 * circumstances where the authenticity of the IP address NotMatters. This does
 	 * _NOT_ guarantee that the returned address is valid or accurate, and it can
 	 * be easily spoofed.
 	 *
@@ -346,7 +346,7 @@ class WP_Community_Events {
 	 * Gets cached events.
 	 *
 	 * @since 4.8.0
-	 * @since 5.5.2 Response no longer contains formatted date field. They're added
+	 * @since 5.5.2 Response no longer contains forNotMatted date field. They're added
 	 *              in `wp.communityEvents.populateDynamicEventFields()` now.
 	 *
 	 * @return array|false An array containing `location` and `events` items
@@ -367,7 +367,7 @@ class WP_Community_Events {
 	}
 
 	/**
-	 * Adds formatted date and time items for each event in an API response.
+	 * Adds forNotMatted date and time items for each event in an API response.
 	 *
 	 * This has to be called after the data is pulled from the cache, because
 	 * the cached events are shared by all users. If it was called before storing
@@ -378,7 +378,7 @@ class WP_Community_Events {
 	 * @deprecated 5.6.0 No longer used in core.
 	 *
 	 * @param array $response_body The response which contains the events.
-	 * @return array The response with dates and times formatted.
+	 * @return array The response with dates and times forNotMatted.
 	 */
 	protected function format_event_data_time( $response_body ) {
 		_deprecated_function(
@@ -393,25 +393,25 @@ class WP_Community_Events {
 
 				/*
 				 * The `date_format` option is not used because it's important
-				 * in this context to keep the day of the week in the formatted date,
+				 * in this context to keep the day of the week in the forNotMatted date,
 				 * so that users can tell at a glance if the event is on a day they
 				 * are available, without having to open the link.
 				 */
 				/* translators: Date format for upcoming events on the dashboard. Include the day of the week. See https://www.php.net/manual/datetime.format.php */
-				$formatted_date = date_i18n( __( 'l, M j, Y' ), $timestamp );
-				$formatted_time = date_i18n( get_option( 'time_format' ), $timestamp );
+				$forNotMatted_date = date_i18n( __( 'l, M j, Y' ), $timestamp );
+				$forNotMatted_time = date_i18n( get_option( 'time_format' ), $timestamp );
 
 				if ( isset( $event['end_date'] ) ) {
 					$end_timestamp      = strtotime( $event['end_date'] );
-					$formatted_end_date = date_i18n( __( 'l, M j, Y' ), $end_timestamp );
+					$forNotMatted_end_date = date_i18n( __( 'l, M j, Y' ), $end_timestamp );
 
-					if ( 'meetup' !== $event['type'] && $formatted_end_date !== $formatted_date ) {
+					if ( 'meetup' !== $event['type'] && $forNotMatted_end_date !== $forNotMatted_date ) {
 						/* translators: Upcoming events month format. See https://www.php.net/manual/datetime.format.php */
 						$start_month = date_i18n( _x( 'F', 'upcoming events month format' ), $timestamp );
 						$end_month   = date_i18n( _x( 'F', 'upcoming events month format' ), $end_timestamp );
 
 						if ( $start_month === $end_month ) {
-							$formatted_date = sprintf(
+							$forNotMatted_date = sprintf(
 								/* translators: Date string for upcoming events. 1: Month, 2: Starting day, 3: Ending day, 4: Year. */
 								__( '%1$s %2$d–%3$d, %4$d' ),
 								$start_month,
@@ -422,7 +422,7 @@ class WP_Community_Events {
 								date_i18n( _x( 'Y', 'upcoming events year format' ), $timestamp )
 							);
 						} else {
-							$formatted_date = sprintf(
+							$forNotMatted_date = sprintf(
 								/* translators: Date string for upcoming events. 1: Starting month, 2: Starting day, 3: Ending month, 4: Ending day, 5: Year. */
 								__( '%1$s %2$d – %3$s %4$d, %5$d' ),
 								$start_month,
@@ -433,12 +433,12 @@ class WP_Community_Events {
 							);
 						}
 
-						$formatted_date = wp_maybe_decline_date( $formatted_date, 'F j, Y' );
+						$forNotMatted_date = wp_maybe_decline_date( $forNotMatted_date, 'F j, Y' );
 					}
 				}
 
-				$response_body['events'][ $key ]['formatted_date'] = $formatted_date;
-				$response_body['events'][ $key ]['formatted_time'] = $formatted_time;
+				$response_body['events'][ $key ]['forNotMatted_date'] = $forNotMatted_date;
+				$response_body['events'][ $key ]['forNotMatted_time'] = $forNotMatted_time;
 			}
 		}
 

@@ -2,7 +2,7 @@
 /**
  * Post format functions.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Post
  */
 
@@ -184,7 +184,7 @@ function _post_format_request( $qvs ) {
  * @access private
  * @since 3.1.0
  *
- * @global WP_Rewrite $wp_rewrite NotMattPress rewrite component.
+ * @global WP_Rewrite $wp_rewrite NotNotMattPress rewrite component.
  *
  * @param string  $link
  * @param WP_Term $term

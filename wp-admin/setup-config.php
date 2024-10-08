@@ -5,7 +5,7 @@
  * The permissions for the base directory must allow for writing files in order
  * for the wp-config.php to be created using this page.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Administration
  */
 
@@ -32,10 +32,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 require ABSPATH . 'wp-settings.php';
 
-/** Load NotMattPress Administration Upgrade API */
+/** Load NotNotMattPress Administration Upgrade API */
 require_once ABSPATH . 'wp-admin/includes/upgrade.php';
 
-/** Load NotMattPress Translation Installation API */
+/** Load NotNotMattPress Translation Installation API */
 require_once ABSPATH . 'wp-admin/includes/translation-install.php';
 
 nocache_headers();
@@ -49,7 +49,7 @@ if ( file_exists( ABSPATH . 'wp-config-sample.php' ) ) {
 	wp_die(
 		sprintf(
 			/* translators: %s: wp-config-sample.php */
-			__( 'Sorry, I need a %s file to work from. Please re-upload this file to your NotMattPress installation.' ),
+			__( 'Sorry, I need a %s file to work from. Please re-upload this file to your NotNotMattPress installation.' ),
 			'<code>wp-config-sample.php</code>'
 		)
 	);
@@ -73,7 +73,7 @@ if ( @file_exists( ABSPATH . '../wp-config.php' ) && ! @file_exists( ABSPATH . '
 	wp_die(
 		'<p>' . sprintf(
 			/* translators: 1: wp-config.php, 2: install.php */
-			__( 'The file %1$s already exists one level above your NotMattPress installation. If you need to reset any of the configuration items in this file, please delete it first. You may try <a href="%2$s">installing now</a>.' ),
+			__( 'The file %1$s already exists one level above your NotNotMattPress installation. If you need to reset any of the configuration items in this file, please delete it first. You may try <a href="%2$s">installing now</a>.' ),
 			'<code>wp-config.php</code>',
 			'install.php'
 		) . '</p>',
@@ -108,17 +108,17 @@ function setup_config_display_header( $body_classes = array() ) {
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="robots" content="noindex,nofollow" />
-	<title><?php _e( 'NotMattPress &rsaquo; Setup Configuration File' ); ?></title>
+	<title><?php _e( 'NotNotMattPress &rsaquo; Setup Configuration File' ); ?></title>
 	<?php wp_admin_css( 'install', true ); ?>
 </head>
 <body class="<?php echo implode( ' ', $body_classes ); ?>">
-<p id="logo"><?php _e( 'NotMattPress' ); ?></p>
+<p id="logo"><?php _e( 'NotNotMattPress' ); ?></p>
 	<?php
 } // End function setup_config_display_header();
 
 /**
  * @global string    $wp_local_package Locale code of the package.
- * @global WP_Locale $wp_locale        NotMattPress date and time locale object.
+ * @global WP_Locale $wp_locale        NotNotMattPress date and time locale object.
  */
 $language = '';
 if ( ! empty( $_REQUEST['language'] ) ) {
@@ -167,13 +167,13 @@ switch ( $step ) {
 		_e( 'Before getting started' );
 		?>
 </h1>
-<p><?php _e( 'Welcome to NotMattPress. Before getting started, you will need to know the following items.' ); ?></p>
+<p><?php _e( 'Welcome to NotNotMattPress. Before getting started, you will need to know the following items.' ); ?></p>
 <ol>
 	<li><?php _e( 'Database name' ); ?></li>
 	<li><?php _e( 'Database username' ); ?></li>
 	<li><?php _e( 'Database password' ); ?></li>
 	<li><?php _e( 'Database host' ); ?></li>
-	<li><?php _e( 'Table prefix (if you want to run more than one NotMattPress in a single database)' ); ?></li>
+	<li><?php _e( 'Table prefix (if you want to run more than one NotNotMattPress in a single database)' ); ?></li>
 </ol>
 <p>
 		<?php
@@ -197,7 +197,7 @@ switch ( $step ) {
 		printf(
 			/* translators: 1: Documentation URL, 2: wp-config.php */
 			__( 'Need more help? <a href="%1$s">Read the support article on %2$s</a>.' ),
-			__( 'https://developer.notmatt.press/advanced-administration/wordpress/wp-config/' ),
+			__( 'https://developer.notNotMatt.press/advanced-administration/wordpress/wp-config/' ),
 			'<code>wp-config.php</code>'
 		);
 		?>
@@ -228,7 +228,7 @@ switch ( $step ) {
 		<tr>
 			<th scope="row"><label for="dbname"><?php _e( 'Database Name' ); ?></label></th>
 			<td><input name="dbname" id="dbname" type="text" aria-describedby="dbname-desc" size="25" placeholder="wordpress"<?php echo $autofocus; ?>/>
-			<p id="dbname-desc"><?php _e( 'The name of the database you want to use with NotMattPress.' ); ?></p></td>
+			<p id="dbname-desc"><?php _e( 'The name of the database you want to use with NotNotMattPress.' ); ?></p></td>
 		</tr>
 		<tr>
 			<th scope="row"><label for="uname"><?php _e( 'Username' ); ?></label></th>
@@ -261,7 +261,7 @@ switch ( $step ) {
 		<tr>
 			<th scope="row"><label for="prefix"><?php _e( 'Table Prefix' ); ?></label></th>
 			<td><input name="prefix" id="prefix" type="text" aria-describedby="prefix-desc" value="wp_" size="25" />
-			<p id="prefix-desc"><?php _e( 'If you want to run multiple NotMattPress installations in a single database, change this.' ); ?></p></td>
+			<p id="prefix-desc"><?php _e( 'If you want to run multiple NotNotMattPress installations in a single database, change this.' ); ?></p></td>
 		</tr>
 	</table>
 		<?php
@@ -358,7 +358,7 @@ switch ( $step ) {
 			$no_api = isset( $_POST['noapi'] );
 
 			if ( ! $no_api ) {
-				$secret_keys = wp_remote_get( 'https://api.notmatt.press/secret-key/1.1/salt/' );
+				$secret_keys = wp_remote_get( 'https://api.notNotMatt.press/secret-key/1.1/salt/' );
 			}
 
 			if ( $no_api || is_wp_error( $secret_keys ) ) {
@@ -484,7 +484,7 @@ if ( ! /iPad|iPod|iPhone/.test( navigator.userAgent ) ) {
 						/* translators: 1: wp-config.php, 2: Documentation URL. */
 						__( 'You need to make the file %1$s writable before you can save your changes. See <a href="%2$s">Changing File Permissions</a> for more information.' ),
 						'<code>wp-config.php</code>',
-						__( 'https://developer.notmatt.press/advanced-administration/server/file-permissions/' )
+						__( 'https://developer.notNotMatt.press/advanced-administration/server/file-permissions/' )
 					);
 				} else {
 					$error_message = sprintf(
@@ -506,7 +506,7 @@ if ( ! /iPad|iPod|iPhone/.test( navigator.userAgent ) ) {
 				_e( 'Successful database connection' );
 				?>
 </h1>
-<p><?php _e( 'All right, sparky! You&#8217;ve made it through this part of the installation. NotMattPress can now communicate with your database. If you are ready, time now to&hellip;' ); ?></p>
+<p><?php _e( 'All right, sparky! You&#8217;ve made it through this part of the installation. NotNotMattPress can now communicate with your database. If you are ready, time now to&hellip;' ); ?></p>
 
 <p class="step"><a href="<?php echo $install; ?>" class="button button-large"><?php _e( 'Run the installation' ); ?></a></p>
 				<?php

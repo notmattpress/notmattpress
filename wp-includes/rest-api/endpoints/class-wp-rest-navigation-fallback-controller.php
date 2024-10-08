@@ -4,7 +4,7 @@
  *
  * REST Controller to create/fetch a fallback Navigation Menu.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage REST_API
  * @since 6.3.0
  */

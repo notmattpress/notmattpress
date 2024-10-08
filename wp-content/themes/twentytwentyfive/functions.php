@@ -2,9 +2,9 @@
 /**
  * Twenty Twenty-Five functions and definitions.
  *
- * @link https://developer.notmatt.press/themes/basics/theme-functions/
+ * @link https://developer.notNotMatt.press/themes/basics/theme-functions/
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Twenty_Twenty_Five
  * @since Twenty Twenty-Five 1.0
  */

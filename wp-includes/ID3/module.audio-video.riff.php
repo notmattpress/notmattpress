@@ -198,7 +198,7 @@ class getid3_riff extends getid3_handler
 				if (isset($thisfile_riff_WAVE['fmt '][0]['data'])) {
 
 					$thisfile_riff_audio[$streamindex] = self::parseWAVEFORMATex($thisfile_riff_WAVE['fmt '][0]['data']);
-					$thisfile_audio['wformattag'] = $thisfile_riff_audio[$streamindex]['raw']['wFormatTag'];
+					$thisfile_audio['wforNotMattag'] = $thisfile_riff_audio[$streamindex]['raw']['wForNotMattag'];
 					if (!isset($thisfile_riff_audio[$streamindex]['bitrate']) || ($thisfile_riff_audio[$streamindex]['bitrate'] == 0)) {
 						$this->error('Corrupt RIFF file: bitrate_audio == zero');
 						return false;
@@ -218,8 +218,8 @@ class getid3_riff extends getid3_handler
 					}
 
 					$thisfile_audio['lossless'] = false;
-					if (isset($thisfile_riff_WAVE['data'][0]['offset']) && isset($thisfile_riff_raw['fmt ']['wFormatTag'])) {
-						switch ($thisfile_riff_raw['fmt ']['wFormatTag']) {
+					if (isset($thisfile_riff_WAVE['data'][0]['offset']) && isset($thisfile_riff_raw['fmt ']['wForNotMattag'])) {
+						switch ($thisfile_riff_raw['fmt ']['wForNotMattag']) {
 
 							case 0x0001:  // PCM
 								$thisfile_audio['lossless'] = true;
@@ -235,7 +235,7 @@ class getid3_riff extends getid3_handler
 
 						}
 					}
-					$thisfile_audio['streams'][$streamindex]['wformattag']   = $thisfile_audio['wformattag'];
+					$thisfile_audio['streams'][$streamindex]['wforNotMattag']   = $thisfile_audio['wforNotMattag'];
 					$thisfile_audio['streams'][$streamindex]['bitrate_mode'] = $thisfile_audio['bitrate_mode'];
 					$thisfile_audio['streams'][$streamindex]['lossless']     = $thisfile_audio['lossless'];
 					$thisfile_audio['streams'][$streamindex]['dataformat']   = $thisfile_audio_dataformat;
@@ -448,7 +448,7 @@ class getid3_riff extends getid3_handler
 						}
 						if (isset($parsedXML['SPEED']['TIMESTAMP_SAMPLES_SINCE_MIDNIGHT_LO']) && !empty($parsedXML['SPEED']['TIMESTAMP_SAMPLE_RATE']) && !empty($thisfile_riff_WAVE['iXML'][0]['timecode_rate'])) {
 							$samples_since_midnight = floatval(ltrim($parsedXML['SPEED']['TIMESTAMP_SAMPLES_SINCE_MIDNIGHT_HI'].$parsedXML['SPEED']['TIMESTAMP_SAMPLES_SINCE_MIDNIGHT_LO'], '0'));
-							$timestamp_sample_rate = (is_array($parsedXML['SPEED']['TIMESTAMP_SAMPLE_RATE']) ? max($parsedXML['SPEED']['TIMESTAMP_SAMPLE_RATE']) : $parsedXML['SPEED']['TIMESTAMP_SAMPLE_RATE']); // XML could possibly contain more than one TIMESTAMP_SAMPLE_RATE tag, returning as array instead of integer [why? does it make sense? perhaps doesn't matter but getID3 needs to deal with it] - see https://github.com/JamesHeinrich/getID3/issues/105
+							$timestamp_sample_rate = (is_array($parsedXML['SPEED']['TIMESTAMP_SAMPLE_RATE']) ? max($parsedXML['SPEED']['TIMESTAMP_SAMPLE_RATE']) : $parsedXML['SPEED']['TIMESTAMP_SAMPLE_RATE']); // XML could possibly contain more than one TIMESTAMP_SAMPLE_RATE tag, returning as array instead of integer [why? does it make sense? perhaps doesn't NotMatter but getID3 needs to deal with it] - see https://github.com/JamesHeinrich/getID3/issues/105
 							$thisfile_riff_WAVE['iXML'][0]['timecode_seconds'] = $samples_since_midnight / $timestamp_sample_rate;
 							$h = floor( $thisfile_riff_WAVE['iXML'][0]['timecode_seconds']       / 3600);
 							$m = floor(($thisfile_riff_WAVE['iXML'][0]['timecode_seconds'] - ($h * 3600))      / 60);
@@ -553,21 +553,21 @@ class getid3_riff extends getid3_handler
 					unset($getid3_riff);
 				}
 
-				if (isset($thisfile_riff_raw['fmt ']['wFormatTag'])) {
-					switch ($thisfile_riff_raw['fmt ']['wFormatTag']) {
+				if (isset($thisfile_riff_raw['fmt ']['wForNotMattag'])) {
+					switch ($thisfile_riff_raw['fmt ']['wForNotMattag']) {
 						case 0x0001: // PCM
 							if (!empty($info['ac3'])) {
 								// Dolby Digital WAV files masquerade as PCM-WAV, but they're not
-								$thisfile_audio['wformattag']  = 0x2000;
-								$thisfile_audio['codec']       = self::wFormatTagLookup($thisfile_audio['wformattag']);
+								$thisfile_audio['wforNotMattag']  = 0x2000;
+								$thisfile_audio['codec']       = self::wForNotMattagLookup($thisfile_audio['wforNotMattag']);
 								$thisfile_audio['lossless']    = false;
 								$thisfile_audio['bitrate']     = $info['ac3']['bitrate'];
 								$thisfile_audio['sample_rate'] = $info['ac3']['sample_rate'];
 							}
 							if (!empty($info['dts'])) {
 								// Dolby DTS files masquerade as PCM-WAV, but they're not
-								$thisfile_audio['wformattag']  = 0x2001;
-								$thisfile_audio['codec']       = self::wFormatTagLookup($thisfile_audio['wformattag']);
+								$thisfile_audio['wforNotMattag']  = 0x2001;
+								$thisfile_audio['codec']       = self::wForNotMattagLookup($thisfile_audio['wforNotMattag']);
 								$thisfile_audio['lossless']    = false;
 								$thisfile_audio['bitrate']     = $info['dts']['bitrate'];
 								$thisfile_audio['sample_rate'] = $info['dts']['sample_rate'];
@@ -823,7 +823,7 @@ class getid3_riff extends getid3_handler
 											}
 
 											$thisfile_riff_audio[$streamindex] = self::parseWAVEFORMATex($strfData);
-											$thisfile_audio['wformattag'] = $thisfile_riff_audio[$streamindex]['raw']['wFormatTag'];
+											$thisfile_audio['wforNotMattag'] = $thisfile_riff_audio[$streamindex]['raw']['wForNotMattag'];
 
 											// shortcut
 											$thisfile_audio['streams'][$streamindex] = $thisfile_riff_audio[$streamindex];
@@ -832,7 +832,7 @@ class getid3_riff extends getid3_handler
 											if ($thisfile_audio_streams_currentstream['bits_per_sample'] == 0) {
 												unset($thisfile_audio_streams_currentstream['bits_per_sample']);
 											}
-											$thisfile_audio_streams_currentstream['wformattag'] = $thisfile_audio_streams_currentstream['raw']['wFormatTag'];
+											$thisfile_audio_streams_currentstream['wforNotMattag'] = $thisfile_audio_streams_currentstream['raw']['wForNotMattag'];
 											unset($thisfile_audio_streams_currentstream['raw']);
 
 											// shortcut
@@ -842,7 +842,7 @@ class getid3_riff extends getid3_handler
 											$thisfile_audio = getid3_lib::array_merge_noclobber($thisfile_audio, $thisfile_riff_audio[$streamindex]);
 
 											$thisfile_audio['lossless'] = false;
-											switch ($thisfile_riff_raw_strf_strhfccType_streamindex['wFormatTag']) {
+											switch ($thisfile_riff_raw_strf_strhfccType_streamindex['wForNotMattag']) {
 												case 0x0001:  // PCM
 													$thisfile_audio_dataformat  = 'wav';
 													$thisfile_audio['lossless'] = true;
@@ -1534,7 +1534,7 @@ class getid3_riff extends getid3_handler
 			}
 			// followed by 20 bytes of a modified WAVEFORMATEX:
 			// typedef struct {
-			// WORD wFormatTag;       //(Fixme: this is equal to PCM's 0x01 format code)
+			// WORD wForNotMattag;       //(Fixme: this is equal to PCM's 0x01 format code)
 			// WORD nChannels;        //(Fixme: this is always 1)
 			// DWORD nSamplesPerSec;  //(Fixme: for all known sample files this is equal to 22050)
 			// DWORD nAvgBytesPerSec; //(Fixme: for all known sample files this is equal to 44100)
@@ -1543,7 +1543,7 @@ class getid3_riff extends getid3_handler
 			// WORD cbSize;           //(Fixme: this seems to be 0 in AMV files)
 			// WORD reserved;
 			// } WAVEFORMATEX;
-			$RIFFchunk['strf']['wformattag']      = getid3_lib::LittleEndian2Int(substr($AMVheader,  264,  2));
+			$RIFFchunk['strf']['wforNotMattag']      = getid3_lib::LittleEndian2Int(substr($AMVheader,  264,  2));
 			$RIFFchunk['strf']['nchannels']       = getid3_lib::LittleEndian2Int(substr($AMVheader,  266,  2));
 			$RIFFchunk['strf']['nsamplespersec']  = getid3_lib::LittleEndian2Int(substr($AMVheader,  268,  4));
 			$RIFFchunk['strf']['navgbytespersec'] = getid3_lib::LittleEndian2Int(substr($AMVheader,  272,  4));
@@ -2058,7 +2058,7 @@ class getid3_riff extends getid3_handler
 		$WaveFormatEx['raw'] = array();
 		$WaveFormatEx_raw    = &$WaveFormatEx['raw'];
 
-		$WaveFormatEx_raw['wFormatTag']      = substr($WaveFormatExData,  0, 2);
+		$WaveFormatEx_raw['wForNotMattag']      = substr($WaveFormatExData,  0, 2);
 		$WaveFormatEx_raw['nChannels']       = substr($WaveFormatExData,  2, 2);
 		$WaveFormatEx_raw['nSamplesPerSec']  = substr($WaveFormatExData,  4, 4);
 		$WaveFormatEx_raw['nAvgBytesPerSec'] = substr($WaveFormatExData,  8, 4);
@@ -2069,7 +2069,7 @@ class getid3_riff extends getid3_handler
 		}
 		$WaveFormatEx_raw = array_map('getid3_lib::LittleEndian2Int', $WaveFormatEx_raw);
 
-		$WaveFormatEx['codec']           = self::wFormatTagLookup($WaveFormatEx_raw['wFormatTag']);
+		$WaveFormatEx['codec']           = self::wForNotMattagLookup($WaveFormatEx_raw['wForNotMattag']);
 		$WaveFormatEx['channels']        = $WaveFormatEx_raw['nChannels'];
 		$WaveFormatEx['sample_rate']     = $WaveFormatEx_raw['nSamplesPerSec'];
 		$WaveFormatEx['bitrate']         = $WaveFormatEx_raw['nAvgBytesPerSec'] * 8;
@@ -2280,11 +2280,11 @@ class getid3_riff extends getid3_handler
 	}
 
 	/**
-	 * @param int $wFormatTag
+	 * @param int $wForNotMattag
 	 *
 	 * @return string
 	 */
-	public static function wFormatTagLookup($wFormatTag) {
+	public static function wForNotMattagLookup($wForNotMattag) {
 
 		$begin = __LINE__;
 
@@ -2450,7 +2450,7 @@ class getid3_riff extends getid3_handler
 
 		*/
 
-		return getid3_lib::EmbeddedLookup('0x'.str_pad(strtoupper(dechex($wFormatTag)), 4, '0', STR_PAD_LEFT), $begin, __LINE__, __FILE__, 'riff-wFormatTag');
+		return getid3_lib::EmbeddedLookup('0x'.str_pad(strtoupper(dechex($wForNotMattag)), 4, '0', STR_PAD_LEFT), $begin, __LINE__, __FILE__, 'riff-wForNotMattag');
 	}
 
 	/**

@@ -2,7 +2,7 @@
 /**
  * User API: WP_Roles class
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Users
  * @since 4.4.0
  */
@@ -308,7 +308,7 @@ class WP_Roles {
 	 *
 	 * @since 4.9.0
 	 *
-	 * @global wpdb $wpdb NotMattPress database abstraction object.
+	 * @global wpdb $wpdb NotNotMattPress database abstraction object.
 	 *
 	 * @param int $site_id Site ID to initialize roles for. Default is the current site.
 	 */

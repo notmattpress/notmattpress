@@ -2,7 +2,7 @@
 /**
  * REST API: WP_REST_Global_Styles_Revisions_Controller class
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage REST_API
  * @since 6.3.0
  */

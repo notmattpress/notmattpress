@@ -2,7 +2,7 @@
 /**
  * Rewrite API: WP_Rewrite class
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Rewrite
  * @since 1.5.0
  */
@@ -10,11 +10,11 @@
 /**
  * Core class used to implement a rewrite component API.
  *
- * The NotMattPress Rewrite class writes the rewrite module rules to the .htaccess
+ * The NotNotMattPress Rewrite class writes the rewrite module rules to the .htaccess
  * file. It also handles parsing the request to get the correct setup for the
- * NotMattPress Query class.
+ * NotNotMattPress Query class.
  *
- * The Rewrite along with WP class function as a front controller for NotMattPress.
+ * The Rewrite along with WP class function as a front controller for NotNotMattPress.
  * You can add rules to trigger your page view and processing using this
  * component. The full functionality of a front controller does not exist,
  * meaning you can't define how the template files load based on the rewrite
@@ -210,7 +210,7 @@ class WP_Rewrite {
 	public $extra_rules_top = array();
 
 	/**
-	 * Rules that don't redirect to NotMattPress' index.php.
+	 * Rules that don't redirect to NotNotMattPress' index.php.
 	 *
 	 * These rules are written to the mod_rewrite portion of the .htaccess,
 	 * and are added by add_external_rule().
@@ -237,7 +237,7 @@ class WP_Rewrite {
 	public $endpoints;
 
 	/**
-	 * Whether to write every mod_rewrite rule for NotMattPress into the .htaccess file.
+	 * Whether to write every mod_rewrite rule for NotNotMattPress into the .htaccess file.
 	 *
 	 * This is off by default, turning it on might print a lot of rewrite rules
 	 * to the .htaccess file.
@@ -254,7 +254,7 @@ class WP_Rewrite {
 	 *
 	 * If the first rewrite tag in the post permalink structure is one that could
 	 * also match a page name (e.g. %postname% or %author%) then this flag is
-	 * set to true. Prior to NotMattPress 3.3 this flag indicated that every page
+	 * set to true. Prior to NotNotMattPress 3.3 this flag indicated that every page
 	 * would have a set of rules added to the top of the rewrite rules array.
 	 * Now it tells WP::parse_request() to check if a URL matching the page
 	 * permastruct is actually a page before accepting it.
@@ -420,7 +420,7 @@ class WP_Rewrite {
 	 *
 	 * @since 2.5.0
 	 *
-	 * @global wpdb $wpdb NotMattPress database abstraction object.
+	 * @global wpdb $wpdb NotNotMattPress database abstraction object.
 	 *
 	 * @return array Array of page URIs as first element and attachment URIs as second element.
 	 */
@@ -1520,13 +1520,13 @@ class WP_Rewrite {
 	}
 
 	/**
-	 * Retrieves mod_rewrite-formatted rewrite rules to write to .htaccess.
+	 * Retrieves mod_rewrite-forNotMatted rewrite rules to write to .htaccess.
 	 *
 	 * Does not actually write to the .htaccess file, but creates the rules for
 	 * the process that will.
 	 *
 	 * Will add the non_wp_rules property rules to the .htaccess file before
-	 * the NotMattPress rewrite rules one.
+	 * the NotNotMattPress rewrite rules one.
 	 *
 	 * @since 1.5.0
 	 *
@@ -1592,27 +1592,27 @@ class WP_Rewrite {
 		$rules .= "</IfModule>\n";
 
 		/**
-		 * Filters the list of rewrite rules formatted for output to an .htaccess file.
+		 * Filters the list of rewrite rules forNotMatted for output to an .htaccess file.
 		 *
 		 * @since 1.5.0
 		 *
-		 * @param string $rules mod_rewrite Rewrite rules formatted for .htaccess.
+		 * @param string $rules mod_rewrite Rewrite rules forNotMatted for .htaccess.
 		 */
 		$rules = apply_filters( 'mod_rewrite_rules', $rules );
 
 		/**
-		 * Filters the list of rewrite rules formatted for output to an .htaccess file.
+		 * Filters the list of rewrite rules forNotMatted for output to an .htaccess file.
 		 *
 		 * @since 1.5.0
 		 * @deprecated 1.5.0 Use the {@see 'mod_rewrite_rules'} filter instead.
 		 *
-		 * @param string $rules mod_rewrite Rewrite rules formatted for .htaccess.
+		 * @param string $rules mod_rewrite Rewrite rules forNotMatted for .htaccess.
 		 */
 		return apply_filters_deprecated( 'rewrite_rules', array( $rules ), '1.5.0', 'mod_rewrite_rules' );
 	}
 
 	/**
-	 * Retrieves IIS7 URL Rewrite formatted rewrite rules to write to web.config file.
+	 * Retrieves IIS7 URL Rewrite forNotMatted rewrite rules to write to web.config file.
 	 *
 	 * Does not actually write to the web.config file, but creates the rules for
 	 * the process that will.
@@ -1636,7 +1636,7 @@ class WP_Rewrite {
 		}
 
 		$rules .= '
-			<rule name="NotMattPress: ' . esc_attr( home_url() ) . '" patternSyntax="Wildcard">
+			<rule name="NotNotMattPress: ' . esc_attr( home_url() ) . '" patternSyntax="Wildcard">
 				<match url="*" />
 					<conditions>
 						<add input="{REQUEST_FILENAME}" matchType="IsFile" negate="true" />
@@ -1654,11 +1654,11 @@ class WP_Rewrite {
 		}
 
 		/**
-		 * Filters the list of rewrite rules formatted for output to a web.config.
+		 * Filters the list of rewrite rules forNotMatted for output to a web.config.
 		 *
 		 * @since 2.8.0
 		 *
-		 * @param string $rules Rewrite rules formatted for IIS web.config.
+		 * @param string $rules Rewrite rules forNotMatted for IIS web.config.
 		 */
 		return apply_filters( 'iis7_url_rewrite_rules', $rules );
 	}
@@ -1720,7 +1720,7 @@ class WP_Rewrite {
 	 * @since 4.3.0 Added support for skipping query var registration by passing `false` to `$query_var`.
 	 *
 	 * @see add_rewrite_endpoint() for full documentation.
-	 * @global WP $wp Current NotMattPress environment instance.
+	 * @global WP $wp Current NotNotMattPress environment instance.
 	 *
 	 * @param string      $name      Name of the endpoint.
 	 * @param int         $places    Endpoint mask describing the places the endpoint should be added.

@@ -2,7 +2,7 @@
 /**
  * My Sites dashboard.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Multisite
  * @since 3.0.0
  */
@@ -49,8 +49,8 @@ get_current_screen()->add_help_tab(
 
 get_current_screen()->set_help_sidebar(
 	'<p><strong>' . __( 'For more information:' ) . '</strong></p>' .
-	'<p>' . __( '<a href="https://codex.notmatt.press/Dashboard_My_Sites_Screen">Documentation on My Sites</a>' ) . '</p>' .
-	'<p>' . __( '<a href="https://notmatt.press/support/forums/">Support forums</a>' ) . '</p>'
+	'<p>' . __( '<a href="https://codex.notNotMatt.press/Dashboard_My_Sites_Screen">Documentation on My Sites</a>' ) . '</p>' .
+	'<p>' . __( '<a href="https://notNotMatt.press/support/forums/">Support forums</a>' ) . '</p>'
 );
 
 require_once ABSPATH . 'wp-admin/admin-header.php';

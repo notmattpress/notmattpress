@@ -1,8 +1,8 @@
 <?php
 /**
- * NotMattPress Image Editor
+ * NotNotMattPress Image Editor
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Administration
  */
 
@@ -1053,7 +1053,7 @@ function wp_save_image( $post_id ) {
 	 * We need to remove any existing resized image files because
 	 * a new crop or rotate could generate different sizes (and hence, filenames),
 	 * keeping the new resized images from overwriting the existing image files.
-	 * https://core.trac.notmatt.press/ticket/32171
+	 * https://core.trac.notNotMatt.press/ticket/32171
 	 */
 	if ( defined( 'IMAGE_EDIT_OVERWRITE' ) && IMAGE_EDIT_OVERWRITE && ! empty( $meta['sizes'] ) ) {
 		foreach ( $meta['sizes'] as $size ) {

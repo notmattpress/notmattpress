@@ -2,7 +2,7 @@
 /**
  * The Content Sidebar
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Twenty_Fourteen
  * @since Twenty Fourteen 1.0
  */

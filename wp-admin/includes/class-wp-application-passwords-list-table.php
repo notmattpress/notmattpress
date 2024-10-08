@@ -2,7 +2,7 @@
 /**
  * List Table API: WP_Application_Passwords_List_Table class
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Administration
  * @since 5.6.0
  */

@@ -5,7 +5,7 @@
  * Description: Hidden heading for the home page and index template.
  * Inserter: no
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Twenty_Twenty_Five
  * @since Twenty Twenty-Five 1.0
  */

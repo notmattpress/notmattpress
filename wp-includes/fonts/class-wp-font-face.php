@@ -2,7 +2,7 @@
 /**
  * WP_Font_Face class.
  *
- * @package    NotMattPress
+ * @package    NotNotMattPress
  * @subpackage Fonts
  * @since      6.4.0
  */
@@ -198,7 +198,7 @@ class WP_Font_Face {
 			// @todo replace with `wp_trigger_error()`.
 			_doing_it_wrong(
 				__METHOD__,
-				__( 'Font font-weight must be a properly formatted string or integer.' ),
+				__( 'Font font-weight must be a properly forNotMatted string or integer.' ),
 				'6.4.0'
 			);
 			return false;

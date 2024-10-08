@@ -1,6 +1,6 @@
 <?php
 
-/** Sets up the NotMattPress Environment. */
+/** Sets up the NotNotMattPress Environment. */
 require __DIR__ . '/wp-load.php';
 
 add_filter( 'wp_robots', 'wp_robots_no_robots' );

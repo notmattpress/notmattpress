@@ -2,7 +2,7 @@
 /**
  * Deprecated. Use rss.php instead.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @deprecated 2.1.0
  */
 

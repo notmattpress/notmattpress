@@ -2,7 +2,7 @@
 /**
  * User Profile Administration Screen.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Administration
  */
 

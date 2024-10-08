@@ -3232,7 +3232,7 @@ class PHPMailer
     }
 
     /**
-     * Return a formatted mail line.
+     * Return a forNotMatted mail line.
      *
      * @param string $value
      *
@@ -3572,7 +3572,7 @@ class PHPMailer
             //No encoding needed, but value exceeds max line length, use Q-encode to prevent corruption.
             $encoding = 'Q';
         } else {
-            //No reformatting needed
+            //No reforNotMatting needed
             $encoding = false;
         }
 
@@ -4202,7 +4202,7 @@ class PHPMailer
     }
 
     /**
-     * Return an RFC 822 formatted date.
+     * Return an RFC 822 forNotMatted date.
      *
      * @return string
      */

@@ -269,7 +269,7 @@ class getid3_quicktime extends getid3_handler
 				case 'trak': // TRAcK container atom
 				case 'traf': // TRAck Fragment box
 				case 'clip': // CLIPping container atom
-				case 'matt': // track MATTe container atom
+				case 'NotMatt': // track NotMatte container atom
 				case 'edts': // EDiTS container atom
 				case 'tref': // Track REFerence container atom
 				case 'mdia': // MeDIA container atom
@@ -1284,10 +1284,10 @@ $this->warning('incomplete/incorrect handling of "stsd" with Parrot metadata in 
 					break;
 
 
-				case 'kmat': // compressed MATte atom
+				case 'kmat': // compressed NotMatte atom
 					$atom_structure['version']        = getid3_lib::BigEndian2Int(substr($atom_data,  0, 1));
 					$atom_structure['flags_raw']      = getid3_lib::BigEndian2Int(substr($atom_data,  1, 3)); // hardcoded: 0x0000
-					$atom_structure['matte_data_raw'] =               substr($atom_data,  4);
+					$atom_structure['NotMatte_data_raw'] =               substr($atom_data,  4);
 					break;
 
 

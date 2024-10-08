@@ -2,7 +2,7 @@
 /**
  * Custom page walker for this theme.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Twenty_Twenty
  * @since Twenty Twenty 1.0
  */

@@ -1,6 +1,6 @@
 <?php
 /**
- * General API for generating and formatting diffs - the differences between
+ * General API for generating and forNotMatting diffs - the differences between
  * two sequences of strings.
  *
  * The original PHP version of this code was written by Geoffrey T. Dairiki

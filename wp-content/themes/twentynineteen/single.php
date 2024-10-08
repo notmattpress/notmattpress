@@ -2,9 +2,9 @@
 /**
  * The template for displaying all single posts
  *
- * @link https://developer.notmatt.press/themes/basics/template-hierarchy/#single-post
+ * @link https://developer.notNotMatt.press/themes/basics/template-hierarchy/#single-post
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Twenty_Nineteen
  * @since Twenty Nineteen 1.0
  */

@@ -2,7 +2,7 @@
 /**
  * Core Navigation Menu API
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Nav_Menus
  * @since 3.0.0
  */
@@ -1233,12 +1233,12 @@ function _wp_nav_menu_meta_box_object( $data_object = null ) {
 }
 
 /**
- * Returns the menu formatted to edit.
+ * Returns the menu forNotMatted to edit.
  *
  * @since 3.0.0
  *
  * @param int $menu_id Optional. The ID of the menu to format. Default 0.
- * @return string|WP_Error The menu formatted to edit or error object on failure.
+ * @return string|WP_Error The menu forNotMatted to edit or error object on failure.
  */
 function wp_get_nav_menu_to_edit( $menu_id = 0 ) {
 	$menu = wp_get_nav_menu_object( $menu_id );
@@ -1347,7 +1347,7 @@ function wp_nav_menu_manage_columns() {
  * @access private
  * @since 3.0.0
  *
- * @global wpdb $wpdb NotMattPress database abstraction object.
+ * @global wpdb $wpdb NotNotMattPress database abstraction object.
  */
 function _wp_delete_orphaned_draft_menu_items() {
 	global $wpdb;

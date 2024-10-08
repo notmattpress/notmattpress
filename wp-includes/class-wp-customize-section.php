@@ -1,8 +1,8 @@
 <?php
 /**
- * NotMattPress Customize Section classes
+ * NotNotMattPress Customize Section classes
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Customize
  * @since 3.4.0
  */

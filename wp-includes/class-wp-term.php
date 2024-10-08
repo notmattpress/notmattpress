@@ -2,7 +2,7 @@
 /**
  * Taxonomy API: WP_Term class
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Taxonomy
  * @since 4.4.0
  */
@@ -104,7 +104,7 @@ final class WP_Term {
 	 *
 	 * @since 4.4.0
 	 *
-	 * @global wpdb $wpdb NotMattPress database abstraction object.
+	 * @global wpdb $wpdb NotNotMattPress database abstraction object.
 	 *
 	 * @param int    $term_id  Term ID.
 	 * @param string $taxonomy Optional. Limit matched terms to those matching `$taxonomy`. Only used for

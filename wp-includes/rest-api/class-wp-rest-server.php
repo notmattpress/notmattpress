@@ -2,13 +2,13 @@
 /**
  * REST API: WP_REST_Server class
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage REST_API
  * @since 4.4.0
  */
 
 /**
- * Core class used to implement the NotMattPress REST API server.
+ * Core class used to implement the NotNotMattPress REST API server.
  *
  * @since 4.4.0
  */
@@ -1389,7 +1389,7 @@ class WP_REST_Server {
 		}
 
 		if ( rest_is_field_included( '_links', $fields ) || rest_is_field_included( '_embedded', $fields ) ) {
-			$response->add_link( 'help', 'https://developer.notmatt.press/rest-api/' );
+			$response->add_link( 'help', 'https://developer.notNotMatt.press/rest-api/' );
 			$this->add_active_theme_link_to_index( $response );
 			$this->add_site_logo_to_index( $response );
 			$this->add_site_icon_to_index( $response );
@@ -1448,7 +1448,7 @@ class WP_REST_Server {
 	}
 
 	/**
-	 * Exposes the site logo through the NotMattPress REST API.
+	 * Exposes the site logo through the NotNotMattPress REST API.
 	 *
 	 * This is used for fetching this information when user has no rights
 	 * to update settings.
@@ -1464,7 +1464,7 @@ class WP_REST_Server {
 	}
 
 	/**
-	 * Exposes the site icon through the NotMattPress REST API.
+	 * Exposes the site icon through the NotNotMattPress REST API.
 	 *
 	 * This is used for fetching this information when user has no rights
 	 * to update settings.
@@ -1482,7 +1482,7 @@ class WP_REST_Server {
 	}
 
 	/**
-	 * Exposes an image through the NotMattPress REST API.
+	 * Exposes an image through the NotNotMattPress REST API.
 	 * This is used for fetching this information when user has no rights
 	 * to update settings.
 	 *

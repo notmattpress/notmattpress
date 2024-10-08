@@ -1,8 +1,8 @@
 <?php
 /**
- * The User Interface "Skins" for the NotMattPress File Upgrader
+ * The User Interface "Skins" for the NotNotMattPress File Upgrader
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Upgrader
  * @since 2.8.0
  * @deprecated 4.7.0

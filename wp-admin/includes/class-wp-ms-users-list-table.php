@@ -2,7 +2,7 @@
 /**
  * List Table API: WP_MS_Users_List_Table class
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Administration
  * @since 3.1.0
  */

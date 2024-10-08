@@ -2,7 +2,7 @@
 /**
  * HTTP API: WP_Http_Curl class
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage HTTP
  * @since 4.4.0
  */

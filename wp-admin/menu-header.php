@@ -2,7 +2,7 @@
 /**
  * Displays Administration Menu.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Administration
  */
 

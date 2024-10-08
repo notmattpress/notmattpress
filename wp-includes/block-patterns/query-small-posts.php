@@ -2,7 +2,7 @@
 /**
  * Query: Small image and title.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  */
 
 return array(

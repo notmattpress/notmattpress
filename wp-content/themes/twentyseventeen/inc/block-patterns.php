@@ -2,7 +2,7 @@
 /**
  * Twenty Seventeen Theme: Block Patterns
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Twenty_Seventeen
  * @since Twenty Seventeen 2.5
  */

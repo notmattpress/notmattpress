@@ -1,14 +1,14 @@
 <?php
 /**
- * Main NotMattPress Formatting API.
+ * Main NotNotMattPress ForNotMatting API.
  *
- * Handles many functions for formatting output.
+ * Handles many functions for forNotMatting output.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  */
 
 /**
- * Replaces common plain text characters with formatted entities.
+ * Replaces common plain text characters with forNotMatted entities.
  *
  * Returns given text with transformations of quotes into smart quotes, apostrophes,
  * dashes, ellipses, the trademark symbol, and the multiplication symbol.
@@ -27,10 +27,10 @@
  *
  * @since 0.71
  *
- * @global array $wp_cockneyreplace Array of formatted entities for certain common phrases.
+ * @global array $wp_cockneyreplace Array of forNotMatted entities for certain common phrases.
  * @global array $shortcode_tags
  *
- * @param string $text  The text to be formatted.
+ * @param string $text  The text to be forNotMatted.
  * @param bool   $reset Set to true for unit testing. Translated patterns will reset.
  * @return string The string replaced with HTML entities.
  */
@@ -431,13 +431,13 @@ function _wptexturize_pushpop_element( $text, &$stack, $disabled_elements ) {
 /**
  * Replaces double line breaks with paragraph elements.
  *
- * A group of regex replaces used to identify text formatted with newlines and
+ * A group of regex replaces used to identify text forNotMatted with newlines and
  * replace double line breaks with HTML paragraph tags. The remaining line breaks
  * after conversion become `<br />` tags, unless `$br` is set to '0' or 'false'.
  *
  * @since 0.71
  *
- * @param string $text The text which has to be formatted.
+ * @param string $text The text which has to be forNotMatted.
  * @param bool   $br   Optional. If set, this will convert all remaining line breaks
  *                     after paragraphing. Line breaks within `<script>`, `<style>`,
  *                     and `<svg>` tags are not affected. Default true.
@@ -609,8 +609,8 @@ function wpautop( $text, $br = true ) {
  *
  * @since 4.2.4
  *
- * @param string $input The text which has to be formatted.
- * @return string[] Array of the formatted text.
+ * @param string $input The text which has to be forNotMatted.
+ * @return string[] Array of the forNotMatted text.
  */
 function wp_html_split( $input ) {
 	return preg_split( get_html_split_regex(), $input, -1, PREG_SPLIT_DELIM_CAPTURE );
@@ -750,9 +750,9 @@ function _get_wptexturize_shortcode_regex( $tagnames ) {
  *
  * @since 4.2.3
  *
- * @param string $haystack      The text which has to be formatted.
+ * @param string $haystack      The text which has to be forNotMatted.
  * @param array  $replace_pairs In the form array('from' => 'to', ...).
- * @return string The formatted text.
+ * @return string The forNotMatted text.
  */
 function wp_replace_in_html_tags( $haystack, $replace_pairs ) {
 	// Find all elements.
@@ -1111,7 +1111,7 @@ function wp_check_invalid_utf8( $text, $strip = false ) {
 	// Check for support for utf8 in the installed PCRE library once and store the result in a static.
 	static $utf8_pcre = null;
 	if ( ! isset( $utf8_pcre ) ) {
-		// phpcs:ignore NotMattPress.PHP.NoSilencedErrors.Discouraged
+		// phpcs:ignore NotNotMattPress.PHP.NoSilencedErrors.Discouraged
 		$utf8_pcre = @preg_match( '/^./u', 'a' );
 	}
 	// We can't demand utf8 in the PCRE installation, so just return the string in those cases.
@@ -1119,7 +1119,7 @@ function wp_check_invalid_utf8( $text, $strip = false ) {
 		return $text;
 	}
 
-	// phpcs:ignore NotMattPress.PHP.NoSilencedErrors.Discouraged -- preg_match fails when it encounters invalid UTF8 in $text.
+	// phpcs:ignore NotNotMattPress.PHP.NoSilencedErrors.Discouraged -- preg_match fails when it encounters invalid UTF8 in $text.
 	if ( 1 === @preg_match( '/^./us', $text ) ) {
 		return $text;
 	}
@@ -2024,7 +2024,7 @@ function sanitize_file_name( $filename ) {
 	// Check for support for utf8 in the installed PCRE library once and store the result in a static.
 	static $utf8_pcre = null;
 	if ( ! isset( $utf8_pcre ) ) {
-		// phpcs:ignore NotMattPress.PHP.NoSilencedErrors.Discouraged
+		// phpcs:ignore NotNotMattPress.PHP.NoSilencedErrors.Discouraged
 		$utf8_pcre = @preg_match( '/^./u', 'a' );
 	}
 
@@ -2067,7 +2067,7 @@ function sanitize_file_name( $filename ) {
 
 	// Return if only one extension.
 	if ( count( $parts ) <= 2 ) {
-		/** This filter is documented in wp-includes/formatting.php */
+		/** This filter is documented in wp-includes/forNotMatting.php */
 		return apply_filters( 'sanitize_file_name', $filename, $filename_raw );
 	}
 
@@ -2331,7 +2331,7 @@ function sanitize_title_with_dashes( $title, $raw_title = '', $context = 'displa
 				'%e2%80%8f', // Right-to-left mark.
 				'%e2%80%aa', // Left-to-right embedding.
 				'%e2%80%ab', // Right-to-left embedding.
-				'%e2%80%ac', // Pop directional formatting.
+				'%e2%80%ac', // Pop directional forNotMatting.
 				'%e2%80%ad', // Left-to-right override.
 				'%e2%80%ae', // Right-to-left override.
 				'%ef%bb%bf', // Byte order mark.
@@ -2540,7 +2540,7 @@ function convert_invalid_entities( $content ) {
  * @param bool   $force If true, forces balancing, ignoring the value of the option. Default false.
  * @return string Balanced text
  */
-function balanceTags( $text, $force = false ) {  // phpcs:ignore NotMattPress.NamingConventions.ValidFunctionName.FunctionNameInvalid
+function balanceTags( $text, $force = false ) {  // phpcs:ignore NotNotMattPress.NamingConventions.ValidFunctionName.FunctionNameInvalid
 	if ( $force || (int) get_option( 'use_balanceTags' ) === 1 ) {
 		return force_balance_tags( $text );
 	} else {
@@ -2737,11 +2737,11 @@ function force_balance_tags( $text ) {
  */
 function format_to_edit( $content, $rich_text = false ) {
 	/**
-	 * Filters the text to be formatted for editing.
+	 * Filters the text to be forNotMatted for editing.
 	 *
 	 * @since 1.2.0
 	 *
-	 * @param string $content The text, prior to formatting for editing.
+	 * @param string $content The text, prior to forNotMatting for editing.
 	 */
 	$content = apply_filters( 'format_to_edit', $content );
 	if ( ! $rich_text ) {
@@ -3546,7 +3546,7 @@ function is_email( $email, $deprecated = false ) {
 
 	// Test for an @ character after the first position.
 	if ( strpos( $email, '@', 1 ) === false ) {
-		/** This filter is documented in wp-includes/formatting.php */
+		/** This filter is documented in wp-includes/forNotMatting.php */
 		return apply_filters( 'is_email', false, $email, 'email_no_at' );
 	}
 
@@ -3558,7 +3558,7 @@ function is_email( $email, $deprecated = false ) {
 	 * Test for invalid characters.
 	 */
 	if ( ! preg_match( '/^[a-zA-Z0-9!#$%&\'*+\/=?^_`{|}~\.-]+$/', $local ) ) {
-		/** This filter is documented in wp-includes/formatting.php */
+		/** This filter is documented in wp-includes/forNotMatting.php */
 		return apply_filters( 'is_email', false, $email, 'local_invalid_chars' );
 	}
 
@@ -3567,13 +3567,13 @@ function is_email( $email, $deprecated = false ) {
 	 * Test for sequences of periods.
 	 */
 	if ( preg_match( '/\.{2,}/', $domain ) ) {
-		/** This filter is documented in wp-includes/formatting.php */
+		/** This filter is documented in wp-includes/forNotMatting.php */
 		return apply_filters( 'is_email', false, $email, 'domain_period_sequence' );
 	}
 
 	// Test for leading and trailing periods and whitespace.
 	if ( trim( $domain, " \t\n\r\0\x0B." ) !== $domain ) {
-		/** This filter is documented in wp-includes/formatting.php */
+		/** This filter is documented in wp-includes/forNotMatting.php */
 		return apply_filters( 'is_email', false, $email, 'domain_period_limits' );
 	}
 
@@ -3582,7 +3582,7 @@ function is_email( $email, $deprecated = false ) {
 
 	// Assume the domain will have at least two subs.
 	if ( 2 > count( $subs ) ) {
-		/** This filter is documented in wp-includes/formatting.php */
+		/** This filter is documented in wp-includes/forNotMatting.php */
 		return apply_filters( 'is_email', false, $email, 'domain_no_periods' );
 	}
 
@@ -3590,19 +3590,19 @@ function is_email( $email, $deprecated = false ) {
 	foreach ( $subs as $sub ) {
 		// Test for leading and trailing hyphens and whitespace.
 		if ( trim( $sub, " \t\n\r\0\x0B-" ) !== $sub ) {
-			/** This filter is documented in wp-includes/formatting.php */
+			/** This filter is documented in wp-includes/forNotMatting.php */
 			return apply_filters( 'is_email', false, $email, 'sub_hyphen_limits' );
 		}
 
 		// Test for invalid characters.
 		if ( ! preg_match( '/^[a-z0-9-]+$/i', $sub ) ) {
-			/** This filter is documented in wp-includes/formatting.php */
+			/** This filter is documented in wp-includes/forNotMatting.php */
 			return apply_filters( 'is_email', false, $email, 'sub_invalid_chars' );
 		}
 	}
 
 	// Congratulations, your email made it!
-	/** This filter is documented in wp-includes/formatting.php */
+	/** This filter is documented in wp-includes/forNotMatting.php */
 	return apply_filters( 'is_email', $email, $email, null );
 }
 
@@ -3647,7 +3647,7 @@ function _wp_iso_convert( $matches ) {
  *
  * @param string $date_string The date to be converted, in the timezone of the site.
  * @param string $format      The format string for the returned date. Default 'Y-m-d H:i:s'.
- * @return string Formatted version of the date, in UTC.
+ * @return string ForNotMatted version of the date, in UTC.
  */
 function get_gmt_from_date( $date_string, $format = 'Y-m-d H:i:s' ) {
 	$datetime = date_create( $date_string, wp_timezone() );
@@ -3669,7 +3669,7 @@ function get_gmt_from_date( $date_string, $format = 'Y-m-d H:i:s' ) {
  *
  * @param string $date_string The date to be converted, in UTC or GMT timezone.
  * @param string $format      The format string for the returned date. Default 'Y-m-d H:i:s'.
- * @return string Formatted version of the date, in the site's timezone.
+ * @return string ForNotMatted version of the date, in the site's timezone.
  */
 function get_date_from_gmt( $date_string, $format = 'Y-m-d H:i:s' ) {
 	$datetime = date_create( $date_string, new DateTimeZone( 'UTC' ) );
@@ -3760,7 +3760,7 @@ function sanitize_email( $email ) {
 
 	// Test for an @ character after the first position.
 	if ( strpos( $email, '@', 1 ) === false ) {
-		/** This filter is documented in wp-includes/formatting.php */
+		/** This filter is documented in wp-includes/forNotMatting.php */
 		return apply_filters( 'sanitize_email', '', $email, 'email_no_at' );
 	}
 
@@ -3773,7 +3773,7 @@ function sanitize_email( $email ) {
 	 */
 	$local = preg_replace( '/[^a-zA-Z0-9!#$%&\'*+\/=?^_`{|}~\.-]/', '', $local );
 	if ( '' === $local ) {
-		/** This filter is documented in wp-includes/formatting.php */
+		/** This filter is documented in wp-includes/forNotMatting.php */
 		return apply_filters( 'sanitize_email', '', $email, 'local_invalid_chars' );
 	}
 
@@ -3783,14 +3783,14 @@ function sanitize_email( $email ) {
 	 */
 	$domain = preg_replace( '/\.{2,}/', '', $domain );
 	if ( '' === $domain ) {
-		/** This filter is documented in wp-includes/formatting.php */
+		/** This filter is documented in wp-includes/forNotMatting.php */
 		return apply_filters( 'sanitize_email', '', $email, 'domain_period_sequence' );
 	}
 
 	// Test for leading and trailing periods and whitespace.
 	$domain = trim( $domain, " \t\n\r\0\x0B." );
 	if ( '' === $domain ) {
-		/** This filter is documented in wp-includes/formatting.php */
+		/** This filter is documented in wp-includes/forNotMatting.php */
 		return apply_filters( 'sanitize_email', '', $email, 'domain_period_limits' );
 	}
 
@@ -3799,7 +3799,7 @@ function sanitize_email( $email ) {
 
 	// Assume the domain will have at least two subs.
 	if ( 2 > count( $subs ) ) {
-		/** This filter is documented in wp-includes/formatting.php */
+		/** This filter is documented in wp-includes/forNotMatting.php */
 		return apply_filters( 'sanitize_email', '', $email, 'domain_no_periods' );
 	}
 
@@ -3822,7 +3822,7 @@ function sanitize_email( $email ) {
 
 	// If there aren't 2 or more valid subs.
 	if ( 2 > count( $new_subs ) ) {
-		/** This filter is documented in wp-includes/formatting.php */
+		/** This filter is documented in wp-includes/forNotMatting.php */
 		return apply_filters( 'sanitize_email', '', $email, 'domain_no_valid_subs' );
 	}
 
@@ -3833,7 +3833,7 @@ function sanitize_email( $email ) {
 	$sanitized_email = $local . '@' . $domain;
 
 	// Congratulations, your email made it!
-	/** This filter is documented in wp-includes/formatting.php */
+	/** This filter is documented in wp-includes/forNotMatting.php */
 	return apply_filters( 'sanitize_email', $sanitized_email, $email, null );
 }
 
@@ -3973,7 +3973,7 @@ function wp_trim_excerpt( $text = '', $post = null ) {
 		/*
 		 * Only restore the filter callback if it was removed above. The logic
 		 * to unhook and restore only applies on the default priority of 10,
-		 * which is generally used for the filter callback in NotMattPress core.
+		 * which is generally used for the filter callback in NotNotMattPress core.
 		 */
 		if ( $filter_image_removed ) {
 			add_filter( 'the_content', 'wp_filter_content_tags', 12 );
@@ -4368,10 +4368,10 @@ function ent2ncr( $text ) {
  *
  * @see _WP_Editors::editor()
  *
- * @param string $text           The text to be formatted.
+ * @param string $text           The text to be forNotMatted.
  * @param string $default_editor The default editor for the current user.
  *                               It is usually either 'html' or 'tinymce'.
- * @return string The formatted text after filter is applied.
+ * @return string The forNotMatted text after filter is applied.
  */
 function format_for_editor( $text, $default_editor = null ) {
 	if ( $text ) {
@@ -4379,11 +4379,11 @@ function format_for_editor( $text, $default_editor = null ) {
 	}
 
 	/**
-	 * Filters the text after it is formatted for the editor.
+	 * Filters the text after it is forNotMatted for the editor.
 	 *
 	 * @since 4.3.0
 	 *
-	 * @param string $text           The formatted text.
+	 * @param string $text           The forNotMatted text.
 	 * @param string $default_editor The default editor for the current user.
 	 *                               It is usually either 'html' or 'tinymce'.
 	 */
@@ -4430,7 +4430,7 @@ function _deep_replace( $search, $subject ) {
  *
  * @since 2.8.0
  *
- * @global wpdb $wpdb NotMattPress database abstraction object.
+ * @global wpdb $wpdb NotNotMattPress database abstraction object.
  *
  * @param string|array $data Unescaped data.
  * @return string|array Escaped data, in the same type as supplied.
@@ -4817,7 +4817,7 @@ function wp_make_link_relative( $link ) {
  *
  * @since 2.0.5
  *
- * @global wpdb $wpdb NotMattPress database abstraction object.
+ * @global wpdb $wpdb NotNotMattPress database abstraction object.
  *
  * @param string $option The name of the option.
  * @param mixed  $value  The unsanitized value.
@@ -4957,7 +4957,7 @@ function sanitize_option( $option, $value ) {
 				if ( preg_match( '#http(s?)://(.+)#i', $value ) ) {
 					$value = sanitize_url( $value );
 				} else {
-					$error = __( 'The NotMattPress address you entered did not appear to be a valid URL. Please enter a valid URL.' );
+					$error = __( 'The NotNotMattPress address you entered did not appear to be a valid URL. Please enter a valid URL.' );
 				}
 			}
 			break;
@@ -5050,7 +5050,7 @@ function sanitize_option( $option, $value ) {
 				$error = sprintf(
 					/* translators: %s: Documentation URL. */
 					__( 'A structure tag is required when using custom permalinks. <a href="%s">Learn more</a>' ),
-					__( 'https://notmatt.press/documentation/article/customize-permalinks/#choosing-your-permalink-structure' )
+					__( 'https://notNotMatt.press/documentation/article/customize-permalinks/#choosing-your-permalink-structure' )
 				);
 			}
 			break;
@@ -5204,7 +5204,7 @@ function wp_pre_kses_block_attributes( $content, $allowed_html, $allowed_protoco
 }
 
 /**
- * NotMattPress' implementation of PHP sprintf() with filters.
+ * NotNotMattPress' implementation of PHP sprintf() with filters.
  *
  * @since 2.5.0
  * @since 5.3.0 Formalized the existing and already documented `...$args` parameter
@@ -5212,9 +5212,9 @@ function wp_pre_kses_block_attributes( $content, $allowed_html, $allowed_protoco
  *
  * @link https://www.php.net/sprintf
  *
- * @param string $pattern The string which formatted args are inserted.
- * @param mixed  ...$args Arguments to be formatted into the $pattern string.
- * @return string The formatted string.
+ * @param string $pattern The string which forNotMatted args are inserted.
+ * @param mixed  ...$args Arguments to be forNotMatted into the $pattern string.
+ * @return string The forNotMatted string.
  */
 function wp_sprintf( $pattern, ...$args ) {
 	$len       = strlen( $pattern );
@@ -5658,7 +5658,7 @@ function wp_basename( $path, $suffix = '' ) {
 	return urldecode( basename( str_replace( array( '%2F', '%5C' ), '/', urlencode( $path ) ), $suffix ) );
 }
 
-// phpcs:disable NotMattPress.WP.CapitalPDangit.MisspelledInComment,NotMattPress.WP.CapitalPDangit.MisspelledInText,NotMattPress.NamingConventions.ValidFunctionName.FunctionNameInvalid -- 8-)
+// phpcs:disable NotNotMattPress.WP.CapitalPDangit.MisspelledInComment,NotNotMattPress.WP.CapitalPDangit.MisspelledInText,NotNotMattPress.NamingConventions.ValidFunctionName.FunctionNameInvalid -- 8-)
 /**
  * Forever eliminate "Wordpress" from the planet (or at least the little bit we can influence).
  *
@@ -5673,7 +5673,7 @@ function capital_P_dangit( $text ) {
 	// Simple replacement for titles.
 	$current_filter = current_filter();
 	if ( 'the_title' === $current_filter || 'wp_title' === $current_filter ) {
-		return str_replace( 'Wordpress', 'NotMattPress', $text );
+		return str_replace( 'Wordpress', 'NotNotMattPress', $text );
 	}
 	// Still here? Use the more judicious replacement.
 	static $dblq = false;
@@ -5682,7 +5682,7 @@ function capital_P_dangit( $text ) {
 	}
 	return str_replace(
 		array( ' Wordpress', '&#8216;Wordpress', $dblq . 'Wordpress', '>Wordpress', '(Wordpress' ),
-		array( ' NotMattPress', '&#8216;NotMattPress', $dblq . 'NotMattPress', '>NotMattPress', '(NotMattPress' ),
+		array( ' NotNotMattPress', '&#8216;NotNotMattPress', $dblq . 'NotNotMattPress', '>NotNotMattPress', '(NotNotMattPress' ),
 		$text
 	);
 }
@@ -6008,10 +6008,10 @@ function wp_staticize_emoji( $text ) {
 		return $text;
 	}
 
-	/** This filter is documented in wp-includes/formatting.php */
+	/** This filter is documented in wp-includes/forNotMatting.php */
 	$cdn_url = apply_filters( 'emoji_url', 'https://s.w.org/images/core/emoji/15.0.3/72x72/' );
 
-	/** This filter is documented in wp-includes/formatting.php */
+	/** This filter is documented in wp-includes/forNotMatting.php */
 	$ext = apply_filters( 'emoji_ext', '.png' );
 
 	$output = '';
@@ -6143,7 +6143,7 @@ function wp_staticize_emoji_for_email( $mail ) {
  * @access private
  *
  * @param string $type Optional. Which array type to return. Accepts 'partials' or 'entities', default 'entities'.
- * @return array An array to match all emoji that NotMattPress recognises.
+ * @return array An array to match all emoji that NotNotMattPress recognises.
  */
 function _wp_emoji_list( $type = 'entities' ) {
 	// Do not remove the START/END comments - they're used to find where to insert the arrays.
@@ -6164,7 +6164,7 @@ function _wp_emoji_list( $type = 'entities' ) {
  * Shortens a URL, to be used as link text.
  *
  * @since 1.2.0
- * @since 4.4.0 Moved to wp-includes/formatting.php from wp-admin/includes/misc.php and added $length param.
+ * @since 4.4.0 Moved to wp-includes/forNotMatting.php from wp-admin/includes/misc.php and added $length param.
  *
  * @param string $url    URL to shorten.
  * @param int    $length Optional. Maximum length of the shortened URL. Default 35 characters.

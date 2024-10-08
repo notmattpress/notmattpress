@@ -2,7 +2,7 @@
 /**
  * Shadow block support flag.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @since 6.3.0
  */
 

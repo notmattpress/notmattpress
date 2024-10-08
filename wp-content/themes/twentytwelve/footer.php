@@ -4,7 +4,7 @@
  *
  * Contains footer content and the closing of the #main and #page div elements.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Twenty_Twelve
  * @since Twenty Twelve 1.0
  */
@@ -18,10 +18,10 @@
 				the_privacy_policy_link( '', '<span role="separator" aria-hidden="true"></span>' );
 			}
 			?>
-			<a href="<?php echo esc_url( __( 'https://notmatt.press/', 'twentytwelve' ) ); ?>" class="imprint" title="<?php esc_attr_e( 'Semantic Personal Publishing Platform', 'twentytwelve' ); ?>">
+			<a href="<?php echo esc_url( __( 'https://notNotMatt.press/', 'twentytwelve' ) ); ?>" class="imprint" title="<?php esc_attr_e( 'Semantic Personal Publishing Platform', 'twentytwelve' ); ?>">
 				<?php
-				/* translators: %s: NotMattPress */
-				printf( __( 'Proudly powered by %s', 'twentytwelve' ), 'NotMattPress' );
+				/* translators: %s: NotNotMattPress */
+				printf( __( 'Proudly powered by %s', 'twentytwelve' ), 'NotNotMattPress' );
 				?>
 			</a>
 		</div><!-- .site-info -->

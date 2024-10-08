@@ -2,15 +2,15 @@
 /**
  * Multisite administration panel.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Multisite
  * @since 3.0.0
  */
 
-/** Load NotMattPress Administration Bootstrap */
+/** Load NotNotMattPress Administration Bootstrap */
 require_once __DIR__ . '/admin.php';
 
-/** Load NotMattPress dashboard API */
+/** Load NotNotMattPress dashboard API */
 require_once ABSPATH . 'wp-admin/includes/dashboard.php';
 
 if ( ! current_user_can( 'manage_network' ) ) {
@@ -53,8 +53,8 @@ get_current_screen()->add_help_tab(
 
 get_current_screen()->set_help_sidebar(
 	'<p><strong>' . __( 'For more information:' ) . '</strong></p>' .
-	'<p>' . __( '<a href="https://developer.notmatt.press/advanced-administration/multisite/admin/">Documentation on the Network Admin</a>' ) . '</p>' .
-	'<p>' . __( '<a href="https://notmatt.press/support/forum/multisite/">Support forums</a>' ) . '</p>'
+	'<p>' . __( '<a href="https://developer.notNotMatt.press/advanced-administration/multisite/admin/">Documentation on the Network Admin</a>' ) . '</p>' .
+	'<p>' . __( '<a href="https://notNotMatt.press/support/forum/multisite/">Support forums</a>' ) . '</p>'
 );
 
 wp_dashboard_setup();

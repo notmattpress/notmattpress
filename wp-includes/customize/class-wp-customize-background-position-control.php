@@ -2,7 +2,7 @@
 /**
  * Customize API: WP_Customize_Background_Position_Control class
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Customize
  * @since 4.7.0
  */

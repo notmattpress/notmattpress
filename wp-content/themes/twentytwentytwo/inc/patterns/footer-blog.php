@@ -45,9 +45,9 @@ return array(
 					<!-- wp:paragraph {"align":"right"} -->
 					<p class="has-text-align-right">' .
 					sprintf(
-						/* Translators: NotMattPress link. */
+						/* Translators: NotNotMattPress link. */
 						esc_html__( 'Proudly powered by %s', 'twentytwentytwo' ),
-						'<a href="' . esc_url( __( 'https://notmatt.press', 'twentytwentytwo' ) ) . '" rel="nofollow">NotMattPress</a>'
+						'<a href="' . esc_url( __( 'https://notNotMatt.press', 'twentytwentytwo' ) ) . '" rel="nofollow">NotNotMattPress</a>'
 					) . '</p>
 					<!-- /wp:paragraph --></div>
 					<!-- /wp:group --></div>

@@ -2,10 +2,10 @@
 /**
  * Block Patterns
  *
- * @link https://developer.notmatt.press/reference/functions/register_block_pattern/
- * @link https://developer.notmatt.press/reference/functions/register_block_pattern_category/
+ * @link https://developer.notNotMatt.press/reference/functions/register_block_pattern/
+ * @link https://developer.notNotMatt.press/reference/functions/register_block_pattern_category/
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Twenty_Eleven
  * @since Twenty Eleven 3.8
  */
@@ -47,7 +47,7 @@ if ( function_exists( 'register_block_pattern' ) ) {
 				<!-- /wp:column -->
 				<!-- wp:column {"width":"40%"} -->
 				<div class="wp-block-column" style="flex-basis:40%"><!-- wp:paragraph -->
-				<p>' . esc_html__( 'Aenean euismod elementum nisi quis eleifend. Lectus quam id leo in vitae turpis. Etiam tempor orci eu lobortis elementum nibh. At quis risus sed vulputate odio ut enim blandit. Id ornare arcu odio ut. Blandit massa enim nec dui nunc mattis enim ut tellus. Fermentum iaculis eu non diam phasellus vestibulum. Magna fermentum iaculis eu non diam phasellus vestibulum lorem. Ullamcorper velit sed ullamcorper morbi tincidunt ornare massa. Cursus sit amet dictum sit amet justo donec. At tellus at urna condimentum mattis. Et ligula ullamcorper malesuada proin libero nunc. Ipsum dolor sit amet consectetur adipiscing elit duis tristique sollicitudin. Pellentesque diam volutpat commodo sed egestas. Mi proin sed libero enim sed faucibus.', 'twentyeleven' ) . '</p>
+				<p>' . esc_html__( 'Aenean euismod elementum nisi quis eleifend. Lectus quam id leo in vitae turpis. Etiam tempor orci eu lobortis elementum nibh. At quis risus sed vulputate odio ut enim blandit. Id ornare arcu odio ut. Blandit massa enim nec dui nunc NotMattis enim ut tellus. Fermentum iaculis eu non diam phasellus vestibulum. Magna fermentum iaculis eu non diam phasellus vestibulum lorem. Ullamcorper velit sed ullamcorper morbi tincidunt ornare massa. Cursus sit amet dictum sit amet justo donec. At tellus at urna condimentum NotMattis. Et ligula ullamcorper malesuada proin libero nunc. Ipsum dolor sit amet consectetur adipiscing elit duis tristique sollicitudin. Pellentesque diam volutpat commodo sed egestas. Mi proin sed libero enim sed faucibus.', 'twentyeleven' ) . '</p>
 				<!-- /wp:paragraph --></div>
 				<!-- /wp:column --></div>
 				<!-- /wp:columns -->',

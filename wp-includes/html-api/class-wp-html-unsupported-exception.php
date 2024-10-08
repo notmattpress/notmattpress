@@ -2,7 +2,7 @@
 /**
  * HTML API: WP_HTML_Unsupported_Exception class
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage HTML-API
  * @since 6.4.0
  */
@@ -80,7 +80,7 @@ class WP_HTML_Unsupported_Exception extends Exception {
 	public $stack_of_open_elements = array();
 
 	/**
-	 * List of active formatting elements when the exception was raised.
+	 * List of active forNotMatting elements when the exception was raised.
 	 *
 	 * Use this to trace the parsing circumstances which led to the exception.
 	 *
@@ -88,7 +88,7 @@ class WP_HTML_Unsupported_Exception extends Exception {
 	 *
 	 * @var string[]
 	 */
-	public $active_formatting_elements = array();
+	public $active_forNotMatting_elements = array();
 
 	/**
 	 * Constructor function.
@@ -100,9 +100,9 @@ class WP_HTML_Unsupported_Exception extends Exception {
 	 * @param int      $token_at                   Number of bytes into source HTML document where matched token starts.
 	 * @param string   $token                      Full raw text of matched token when this exception was raised.
 	 * @param string[] $stack_of_open_elements     Stack of open elements when this exception was raised.
-	 * @param string[] $active_formatting_elements List of active formatting elements when this exception was raised.
+	 * @param string[] $active_forNotMatting_elements List of active forNotMatting elements when this exception was raised.
 	 */
-	public function __construct( string $message, string $token_name, int $token_at, string $token, array $stack_of_open_elements, array $active_formatting_elements ) {
+	public function __construct( string $message, string $token_name, int $token_at, string $token, array $stack_of_open_elements, array $active_forNotMatting_elements ) {
 		parent::__construct( $message );
 
 		$this->token_name = $token_name;
@@ -110,6 +110,6 @@ class WP_HTML_Unsupported_Exception extends Exception {
 		$this->token      = $token;
 
 		$this->stack_of_open_elements     = $stack_of_open_elements;
-		$this->active_formatting_elements = $active_formatting_elements;
+		$this->active_forNotMatting_elements = $active_forNotMatting_elements;
 	}
 }

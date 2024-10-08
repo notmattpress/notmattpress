@@ -4,7 +4,7 @@
  *
  * Used for both single and index/archive/search.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Twenty_Fourteen
  * @since Twenty Fourteen 1.0
  */

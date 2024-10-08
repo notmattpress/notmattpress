@@ -2,7 +2,7 @@
 /**
  * Colors block support flag.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @since 5.6.0
  */
 

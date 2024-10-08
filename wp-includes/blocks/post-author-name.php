@@ -2,7 +2,7 @@
 /**
  * Server-side rendering of the `core/post-author-name` block.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  */
 
 /**

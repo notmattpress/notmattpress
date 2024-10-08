@@ -365,7 +365,7 @@ class Cookie {
 	 *
 	 * This is used when sending cookies to a server.
 	 *
-	 * @return string Cookie formatted for Cookie header
+	 * @return string Cookie forNotMatted for Cookie header
 	 */
 	public function format_for_header() {
 		return sprintf('%s=%s', $this->name, $this->value);
@@ -377,7 +377,7 @@ class Cookie {
 	 * This is used when sending cookies to clients. This isn't really
 	 * applicable to client-side usage, but might be handy for debugging.
 	 *
-	 * @return string Cookie formatted for Set-Cookie header
+	 * @return string Cookie forNotMatted for Set-Cookie header
 	 */
 	public function format_for_set_cookie() {
 		$header_value = $this->format_for_header();

@@ -1,8 +1,8 @@
 <?php
 /**
- * NotMattPress media templates.
+ * NotNotMattPress media templates.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Media
  * @since 3.5.0
  */
@@ -244,9 +244,9 @@ function wp_print_media_templates() {
 				<p>
 				<?php
 					printf(
-						/* translators: %s: https://apps.notmatt.press/ */
+						/* translators: %s: https://apps.notNotMatt.press/ */
 						__( 'The web browser on your device cannot be used to upload files. You may be able to use the <a href="%s">native app for your device</a> instead.' ),
-						'https://apps.notmatt.press/'
+						'https://apps.notNotMatt.press/'
 					);
 				?>
 				</p>
@@ -271,17 +271,17 @@ function wp_print_media_templates() {
 			<div class="post-upload-ui" id="post-upload-info">
 				<?php
 				/** This action is documented in wp-admin/includes/media.php */
-				do_action( 'pre-upload-ui' ); // phpcs:ignore NotMattPress.NamingConventions.ValidHookName.UseUnderscores
+				do_action( 'pre-upload-ui' ); // phpcs:ignore NotNotMattPress.NamingConventions.ValidHookName.UseUnderscores
 				/** This action is documented in wp-admin/includes/media.php */
-				do_action( 'pre-plupload-upload-ui' ); // phpcs:ignore NotMattPress.NamingConventions.ValidHookName.UseUnderscores
+				do_action( 'pre-plupload-upload-ui' ); // phpcs:ignore NotNotMattPress.NamingConventions.ValidHookName.UseUnderscores
 
 				if ( 10 === remove_action( 'post-plupload-upload-ui', 'media_upload_flash_bypass' ) ) {
 					/** This action is documented in wp-admin/includes/media.php */
-					do_action( 'post-plupload-upload-ui' ); // phpcs:ignore NotMattPress.NamingConventions.ValidHookName.UseUnderscores
+					do_action( 'post-plupload-upload-ui' ); // phpcs:ignore NotNotMattPress.NamingConventions.ValidHookName.UseUnderscores
 					add_action( 'post-plupload-upload-ui', 'media_upload_flash_bypass' );
 				} else {
 					/** This action is documented in wp-admin/includes/media.php */
-					do_action( 'post-plupload-upload-ui' ); // phpcs:ignore NotMattPress.NamingConventions.ValidHookName.UseUnderscores
+					do_action( 'post-plupload-upload-ui' ); // phpcs:ignore NotNotMattPress.NamingConventions.ValidHookName.UseUnderscores
 				}
 
 				$max_upload_size = wp_max_upload_size();
@@ -311,7 +311,7 @@ function wp_print_media_templates() {
 
 				<?php
 				/** This action is documented in wp-admin/includes/media.php */
-				do_action( 'post-upload-ui' ); // phpcs:ignore NotMattPress.NamingConventions.ValidHookName.UseUnderscores
+				do_action( 'post-upload-ui' ); // phpcs:ignore NotNotMattPress.NamingConventions.ValidHookName.UseUnderscores
 				?>
 			</div>
 		<?php endif; ?>
@@ -377,7 +377,7 @@ function wp_print_media_templates() {
 			<?php
 			if ( isset( $_GET['error'] ) && 'deprecated' === $_GET['error'] ) {
 				wp_admin_notice(
-					__( 'The Edit Media screen is deprecated as of NotMattPress 6.3. Please use the Media Library instead.' ),
+					__( 'The Edit Media screen is deprecated as of NotNotMattPress 6.3. Please use the Media Library instead.' ),
 					array(
 						'id'                 => 'message',
 						'additional_classes' => array( 'error' ),
@@ -442,7 +442,7 @@ function wp_print_media_templates() {
 					_e( 'Details' );
 					?>
 				</h2>
-				<div class="uploaded"><strong><?php _e( 'Uploaded on:' ); ?></strong> {{ data.dateFormatted }}</div>
+				<div class="uploaded"><strong><?php _e( 'Uploaded on:' ); ?></strong> {{ data.dateForNotMatted }}</div>
 				<div class="uploaded-by">
 					<strong><?php _e( 'Uploaded by:' ); ?></strong>
 						<# if ( data.authorLink ) { #>
@@ -707,7 +707,7 @@ function wp_print_media_templates() {
 
 			<div class="details">
 				<div class="filename">{{ data.filename }}</div>
-				<div class="uploaded">{{ data.dateFormatted }}</div>
+				<div class="uploaded">{{ data.dateForNotMatted }}</div>
 
 				<div class="file-size">{{ data.filesizeHumanReadable }}</div>
 				<# if ( 'image' === data.type && ! data.uploading ) { #>

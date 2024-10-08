@@ -1,8 +1,8 @@
 <?php
 /**
- * NotMattPress Administration Revisions API
+ * NotNotMattPress Administration Revisions API
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Administration
  * @since 3.6.0
  */

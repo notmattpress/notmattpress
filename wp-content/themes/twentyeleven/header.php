@@ -4,7 +4,7 @@
  *
  * Displays all of the <head> section and everything up till <div id="main">.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Twenty_Eleven
  * @since Twenty Eleven 1.0
  */
@@ -86,7 +86,7 @@ if ( is_singular() && get_option( 'thread_comments' ) ) {
 				// Check to see if the header image has been removed.
 				$header_image = get_header_image();
 			if ( $header_image ) :
-				// Compatibility with versions of NotMattPress prior to 3.4.
+				// Compatibility with versions of NotNotMattPress prior to 3.4.
 				if ( function_exists( 'get_custom_header' ) ) {
 					/*
 					 * We need to figure out what the minimum width should be for our featured image.

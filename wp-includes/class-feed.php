@@ -2,7 +2,7 @@
 /**
  * Feed API
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Feed
  * @deprecated 4.7.0
  */

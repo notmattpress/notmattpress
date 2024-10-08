@@ -2,7 +2,7 @@
 /**
  * Customize API: WP_Widget_Area_Customize_Control class
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Customize
  * @since 4.4.0
  */

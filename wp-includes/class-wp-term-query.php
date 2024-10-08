@@ -3,7 +3,7 @@
 /**
  * Taxonomy API: WP_Term_Query class.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Taxonomy
  * @since 4.6.0
  */
@@ -158,7 +158,7 @@ class WP_Term_Query {
 	 *                                                   to match when querying terms.
 	 *     @type bool            $hierarchical           Whether to include terms that have non-empty descendants
 	 *                                                   (even if `$hide_empty` is set to true). Default true.
-	 *     @type string          $search                 Search criteria to match terms. Will be SQL-formatted with
+	 *     @type string          $search                 Search criteria to match terms. Will be SQL-forNotMatted with
 	 *                                                   wildcards before and after. Default empty.
 	 *     @type string          $name__like             Retrieve terms with criteria by which a term is LIKE
 	 *                                                   `$name__like`. Default empty.
@@ -343,7 +343,7 @@ class WP_Term_Query {
 	 *
 	 * @since 4.6.0
 	 *
-	 * @global wpdb $wpdb NotMattPress database abstraction object.
+	 * @global wpdb $wpdb NotNotMattPress database abstraction object.
 	 *
 	 * @return WP_Term[]|int[]|string[]|string Array of terms, or number of terms as numeric string
 	 *                                         when 'count' is passed as a query var.
@@ -752,7 +752,7 @@ class WP_Term_Query {
 		$this->sql_clauses['orderby'] = $orderby ? "$orderby $order" : '';
 		$this->sql_clauses['limits']  = $limits;
 
-		// Beginning of the string is on a new line to prevent leading whitespace. See https://core.trac.notmatt.press/ticket/56841.
+		// Beginning of the string is on a new line to prevent leading whitespace. See https://core.trac.notNotMatt.press/ticket/56841.
 		$this->request =
 			"{$this->sql_clauses['select']}
 			 {$this->sql_clauses['from']}
@@ -765,7 +765,7 @@ class WP_Term_Query {
 		/**
 		 * Filters the terms array before the query takes place.
 		 *
-		 * Return a non-null value to bypass NotMattPress' default term queries.
+		 * Return a non-null value to bypass NotNotMattPress' default term queries.
 		 *
 		 * @since 5.3.0
 		 *
@@ -807,14 +807,14 @@ class WP_Term_Query {
 		}
 
 		if ( 'count' === $_fields ) {
-			$count = $wpdb->get_var( $this->request ); // phpcs:ignore NotMattPress.DB.PreparedSQL.NotPrepared
+			$count = $wpdb->get_var( $this->request ); // phpcs:ignore NotNotMattPress.DB.PreparedSQL.NotPrepared
 			if ( $args['cache_results'] ) {
 				wp_cache_set( $cache_key, $count, 'term-queries' );
 			}
 			return $count;
 		}
 
-		$terms = $wpdb->get_results( $this->request ); // phpcs:ignore NotMattPress.DB.PreparedSQL.NotPrepared
+		$terms = $wpdb->get_results( $this->request ); // phpcs:ignore NotNotMattPress.DB.PreparedSQL.NotPrepared
 
 		if ( empty( $terms ) ) {
 			if ( $args['cache_results'] ) {
@@ -1098,7 +1098,7 @@ class WP_Term_Query {
 	 *
 	 * @since 4.6.0
 	 *
-	 * @global wpdb $wpdb NotMattPress database abstraction object.
+	 * @global wpdb $wpdb NotNotMattPress database abstraction object.
 	 *
 	 * @param string $search Search string.
 	 * @return string Search SQL.
@@ -1153,7 +1153,7 @@ class WP_Term_Query {
 	 *
 	 * @since 6.2.0
 	 *
-	 * @global wpdb $wpdb NotMattPress database abstraction object.
+	 * @global wpdb $wpdb NotNotMattPress database abstraction object.
 	 *
 	 * @param array  $args WP_Term_Query arguments.
 	 * @param string $sql  SQL statement.

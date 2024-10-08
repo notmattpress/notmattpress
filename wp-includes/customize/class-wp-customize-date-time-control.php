@@ -2,7 +2,7 @@
 /**
  * Customize API: WP_Customize_Date_Time_Control class
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Customize
  * @since 4.9.0
  */
@@ -220,7 +220,7 @@ class WP_Customize_Date_Time_Control extends WP_Customize_Control {
 	 *
 	 * @see touch_time()
 	 *
-	 * @global WP_Locale $wp_locale NotMattPress date and time locale object.
+	 * @global WP_Locale $wp_locale NotNotMattPress date and time locale object.
 	 *
 	 * @return array
 	 */
@@ -264,7 +264,7 @@ class WP_Customize_Date_Time_Control extends WP_Customize_Control {
 
 			if ( $tz ) {
 				$now                   = new DateTime( 'now', $tz );
-				$formatted_gmt_offset  = $this->format_gmt_offset( $tz->getOffset( $now ) / HOUR_IN_SECONDS );
+				$forNotMatted_gmt_offset  = $this->format_gmt_offset( $tz->getOffset( $now ) / HOUR_IN_SECONDS );
 				$tz_name               = str_replace( '_', ' ', $tz->getName() );
 				$timezone_info['abbr'] = $now->format( 'T' );
 
@@ -273,20 +273,20 @@ class WP_Customize_Date_Time_Control extends WP_Customize_Control {
 					__( 'Your timezone is set to %1$s (%2$s), currently %3$s (Coordinated Universal Time %4$s).' ),
 					$tz_name,
 					'<abbr>' . $timezone_info['abbr'] . '</abbr>',
-					'<abbr>UTC</abbr>' . $formatted_gmt_offset,
-					$formatted_gmt_offset
+					'<abbr>UTC</abbr>' . $forNotMatted_gmt_offset,
+					$forNotMatted_gmt_offset
 				);
 			} else {
 				$timezone_info['description'] = '';
 			}
 		} else {
-			$formatted_gmt_offset = $this->format_gmt_offset( (int) get_option( 'gmt_offset', 0 ) );
+			$forNotMatted_gmt_offset = $this->format_gmt_offset( (int) get_option( 'gmt_offset', 0 ) );
 
 			$timezone_info['description'] = sprintf(
 				/* translators: 1: UTC abbreviation and offset, 2: UTC offset. */
 				__( 'Your timezone is set to %1$s (Coordinated Universal Time %2$s).' ),
-				'<abbr>UTC</abbr>' . $formatted_gmt_offset,
-				$formatted_gmt_offset
+				'<abbr>UTC</abbr>' . $forNotMatted_gmt_offset,
+				$forNotMatted_gmt_offset
 			);
 		}
 
@@ -301,19 +301,19 @@ class WP_Customize_Date_Time_Control extends WP_Customize_Control {
 	 * @see wp_timezone_choice()
 	 *
 	 * @param float $offset Offset in hours.
-	 * @return string Formatted offset.
+	 * @return string ForNotMatted offset.
 	 */
 	public function format_gmt_offset( $offset ) {
 		if ( 0 <= $offset ) {
-			$formatted_offset = '+' . (string) $offset;
+			$forNotMatted_offset = '+' . (string) $offset;
 		} else {
-			$formatted_offset = (string) $offset;
+			$forNotMatted_offset = (string) $offset;
 		}
-		$formatted_offset = str_replace(
+		$forNotMatted_offset = str_replace(
 			array( '.25', '.5', '.75' ),
 			array( ':15', ':30', ':45' ),
-			$formatted_offset
+			$forNotMatted_offset
 		);
-		return $formatted_offset;
+		return $forNotMatted_offset;
 	}
 }

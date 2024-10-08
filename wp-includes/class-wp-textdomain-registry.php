@@ -3,9 +3,9 @@
  * Locale API: WP_Textdomain_Registry class.
  *
  * This file uses rtrim() instead of untrailingslashit() and trailingslashit()
- * to avoid formatting.php dependency.
+ * to avoid forNotMatting.php dependency.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage i18n
  * @since 6.1.0
  */

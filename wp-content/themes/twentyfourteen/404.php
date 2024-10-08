@@ -2,7 +2,7 @@
 /**
  * The template for displaying 404 pages (Not Found)
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Twenty_Fourteen
  * @since Twenty Fourteen 1.0
  */

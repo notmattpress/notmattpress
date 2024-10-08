@@ -2,7 +2,7 @@
 /**
  * Feed API: WP_SimplePie_File class
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Feed
  * @since 4.7.0
  */

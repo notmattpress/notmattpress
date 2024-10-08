@@ -4,7 +4,7 @@
  * references the original PSR-0 Requests class.
  *
  * @deprecated 6.2.0
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Requests
  * @since 6.2.0
  */

@@ -2,7 +2,7 @@
 /**
  * Taxonomy API: Walker_Category class
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Template
  * @since 4.4.0
  */

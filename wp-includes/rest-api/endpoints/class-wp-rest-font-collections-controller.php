@@ -4,7 +4,7 @@
  *
  * This file contains the class for the REST API Font Collections Controller.
  *
- * @package    NotMattPress
+ * @package    NotNotMattPress
  * @subpackage REST_API
  * @since      6.5.0
  */
@@ -294,7 +294,7 @@ class WP_REST_Font_Collections_Controller extends WP_REST_Controller {
 		 *
 		 * @since 6.5.0
 		 *
-		 * @param array $query_params JSON Schema-formatted collection parameters.
+		 * @param array $query_params JSON Schema-forNotMatted collection parameters.
 		 */
 		return apply_filters( 'rest_font_collections_collection_params', $query_params );
 	}

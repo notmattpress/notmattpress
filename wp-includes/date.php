@@ -5,7 +5,7 @@
  * This file is deprecated, use 'wp-includes/class-wp-date-query.php' instead.
  *
  * @deprecated 5.3.0
- * @package NotMattPress
+ * @package NotNotMattPress
  */
 
 _deprecated_file( basename( __FILE__ ), '5.3.0', WPINC . '/class-wp-date-query.php' );

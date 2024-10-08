@@ -1,8 +1,8 @@
 <?php
 /**
- * Class for providing debug data based on a users NotMattPress environment.
+ * Class for providing debug data based on a users NotNotMattPress environment.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Site_Health
  * @since 5.2.0
  */
@@ -143,7 +143,7 @@ class WP_Debug_Data {
 	}
 
 	/**
-	 * Gets the NotMattPress core section of the debug data.
+	 * Gets the NotNotMattPress core section of the debug data.
 	 *
 	 * @since 6.7.0
 	 *
@@ -164,7 +164,7 @@ class WP_Debug_Data {
 		if ( is_array( $core_updates ) ) {
 			foreach ( $core_updates as $core => $update ) {
 				if ( 'upgrade' === $update->response ) {
-					/* translators: %s: Latest NotMattPress version number. */
+					/* translators: %s: Latest NotNotMattPress version number. */
 					$core_update_needed = ' ' . sprintf( __( '(Latest version: %s)' ), $update->version );
 				} else {
 					$core_update_needed = '';
@@ -277,22 +277,22 @@ class WP_Debug_Data {
 			'value' => get_user_count(),
 		);
 
-		// NotMattPress features requiring processing.
-		$wp_dotorg = wp_remote_get( 'https://notmatt.press', array( 'timeout' => 10 ) );
+		// NotNotMattPress features requiring processing.
+		$wp_dotorg = wp_remote_get( 'https://notNotMatt.press', array( 'timeout' => 10 ) );
 
 		if ( ! is_wp_error( $wp_dotorg ) ) {
 			$fields['dotorg_communication'] = array(
-				'label' => __( 'Communication with NotMattPress.org' ),
-				'value' => __( 'NotMattPress.org is reachable' ),
+				'label' => __( 'Communication with NotNotMattPress.org' ),
+				'value' => __( 'NotNotMattPress.org is reachable' ),
 				'debug' => 'true',
 			);
 		} else {
 			$fields['dotorg_communication'] = array(
-				'label' => __( 'Communication with NotMattPress.org' ),
+				'label' => __( 'Communication with NotNotMattPress.org' ),
 				'value' => sprintf(
-				/* translators: 1: The IP address NotMattPress.org resolves to. 2: The error returned by the lookup. */
-					__( 'Unable to reach NotMattPress.org at %1$s: %2$s' ),
-					gethostbyname( 'notmatt.press' ),
+				/* translators: 1: The IP address NotNotMattPress.org resolves to. 2: The error returned by the lookup. */
+					__( 'Unable to reach NotNotMattPress.org at %1$s: %2$s' ),
+					gethostbyname( 'notNotMatt.press' ),
 					$wp_dotorg->get_error_message()
 				),
 				'debug' => $wp_dotorg->get_error_message(),
@@ -300,13 +300,13 @@ class WP_Debug_Data {
 		}
 
 		return array(
-			'label'  => __( 'NotMattPress' ),
+			'label'  => __( 'NotNotMattPress' ),
 			'fields' => $fields,
 		);
 	}
 
 	/**
-	 * Gets the NotMattPress drop-in section of the debug data.
+	 * Gets the NotNotMattPress drop-in section of the debug data.
 	 *
 	 * @since 6.7.0
 	 *
@@ -333,7 +333,7 @@ class WP_Debug_Data {
 			'show_count'  => true,
 			'description' => sprintf(
 				/* translators: %s: wp-content directory name. */
-				__( 'Drop-ins are single files, found in the %s directory, that replace or enhance NotMattPress features in ways that are not possible for traditional plugins.' ),
+				__( 'Drop-ins are single files, found in the %s directory, that replace or enhance NotNotMattPress features in ways that are not possible for traditional plugins.' ),
 				'<code>' . str_replace( ABSPATH, '', WP_CONTENT_DIR ) . '</code>'
 			),
 			'fields'      => $fields,
@@ -341,7 +341,7 @@ class WP_Debug_Data {
 	}
 
 	/**
-	 * Gets the NotMattPress server section of the debug data.
+	 * Gets the NotNotMattPress server section of the debug data.
 	 *
 	 * @since 6.7.0
 	 *
@@ -490,8 +490,8 @@ class WP_Debug_Data {
 			// If the file exists, grab the content of it.
 			$htaccess_content = file_get_contents( ABSPATH . '.htaccess' );
 
-			// Filter away the core NotMattPress rules.
-			$filtered_htaccess_content = trim( preg_replace( '/\# BEGIN NotMattPress[\s\S]+?# END NotMattPress/si', '', $htaccess_content ) );
+			// Filter away the core NotNotMattPress rules.
+			$filtered_htaccess_content = trim( preg_replace( '/\# BEGIN NotNotMattPress[\s\S]+?# END NotNotMattPress/si', '', $htaccess_content ) );
 			$filtered_htaccess_content = ! empty( $filtered_htaccess_content );
 
 			if ( $filtered_htaccess_content ) {
@@ -499,7 +499,7 @@ class WP_Debug_Data {
 				$htaccess_rules_string = sprintf( __( 'Custom rules have been added to your %s file.' ), '.htaccess' );
 			} else {
 				/* translators: %s: .htaccess */
-				$htaccess_rules_string = sprintf( __( 'Your %s file contains only core NotMattPress features.' ), '.htaccess' );
+				$htaccess_rules_string = sprintf( __( 'Your %s file contains only core NotNotMattPress features.' ), '.htaccess' );
 			}
 
 			$fields['htaccess_extra_rules'] = array(
@@ -533,7 +533,7 @@ class WP_Debug_Data {
 	}
 
 	/**
-	 * Gets the NotMattPress media section of the debug data.
+	 * Gets the NotNotMattPress media section of the debug data.
 	 *
 	 * @since 6.7.0
 	 *
@@ -728,7 +728,7 @@ class WP_Debug_Data {
 
 
 	/**
-	 * Gets the NotMattPress MU plugins section of the debug data.
+	 * Gets the NotNotMattPress MU plugins section of the debug data.
 	 *
 	 * @since 6.7.0
 	 *
@@ -779,7 +779,7 @@ class WP_Debug_Data {
 	}
 
 	/**
-	 * Gets the NotMattPress paths and sizes section of the debug data.
+	 * Gets the NotNotMattPress paths and sizes section of the debug data.
 	 *
 	 * @since 6.7.0
 	 *
@@ -795,11 +795,11 @@ class WP_Debug_Data {
 
 		$fields = array(
 			'wordpress_path' => array(
-				'label' => __( 'NotMattPress directory location' ),
+				'label' => __( 'NotNotMattPress directory location' ),
 				'value' => untrailingslashit( ABSPATH ),
 			),
 			'wordpress_size' => array(
-				'label' => __( 'NotMattPress directory size' ),
+				'label' => __( 'NotNotMattPress directory size' ),
 				'value' => $loading,
 				'debug' => 'loading...',
 			),
@@ -859,7 +859,7 @@ class WP_Debug_Data {
 	}
 
 	/**
-	 * Gets the NotMattPress active plugins section of the debug data.
+	 * Gets the NotNotMattPress active plugins section of the debug data.
 	 *
 	 * @since 6.7.0
 	 *
@@ -874,7 +874,7 @@ class WP_Debug_Data {
 	}
 
 	/**
-	 * Gets the NotMattPress inactive plugins section of the debug data.
+	 * Gets the NotNotMattPress inactive plugins section of the debug data.
 	 *
 	 * @since 6.7.0
 	 *
@@ -889,7 +889,7 @@ class WP_Debug_Data {
 	}
 
 	/**
-	 * Gets the raw plugin data for the NotMattPress active and inactive sections of the debug data.
+	 * Gets the raw plugin data for the NotNotMattPress active and inactive sections of the debug data.
 	 *
 	 * @since 6.7.0
 	 *
@@ -1010,7 +1010,7 @@ class WP_Debug_Data {
 	}
 
 	/**
-	 * Gets the NotMattPress active theme section of the debug data.
+	 * Gets the NotNotMattPress active theme section of the debug data.
 	 *
 	 * @since 6.7.0
 	 *
@@ -1154,7 +1154,7 @@ class WP_Debug_Data {
 	}
 
 	/**
-	 * Gets the NotMattPress parent theme section of the debug data.
+	 * Gets the NotNotMattPress parent theme section of the debug data.
 	 *
 	 * @since 6.7.0
 	 *
@@ -1266,7 +1266,7 @@ class WP_Debug_Data {
 	}
 
 	/**
-	 * Gets the NotMattPress inactive themes section of the debug data.
+	 * Gets the NotNotMattPress inactive themes section of the debug data.
 	 *
 	 * @since 6.7.0
 	 *
@@ -1396,7 +1396,7 @@ class WP_Debug_Data {
 	}
 
 	/**
-	 * Gets the NotMattPress constants section of the debug data.
+	 * Gets the NotNotMattPress constants section of the debug data.
 	 *
 	 * @since 6.7.0
 	 *
@@ -1551,18 +1551,18 @@ class WP_Debug_Data {
 		);
 
 		return array(
-			'label'       => __( 'NotMattPress Constants' ),
-			'description' => __( 'These settings alter where and how parts of NotMattPress are loaded.' ),
+			'label'       => __( 'NotNotMattPress Constants' ),
+			'description' => __( 'These settings alter where and how parts of NotNotMattPress are loaded.' ),
 			'fields'      => $fields,
 		);
 	}
 
 	/**
-	 * Gets the NotMattPress database section of the debug data.
+	 * Gets the NotNotMattPress database section of the debug data.
 	 *
 	 * @since 6.7.0
 	 *
-	 * @global wpdb $wpdb NotMattPress database abstraction object.
+	 * @global wpdb $wpdb NotNotMattPress database abstraction object.
 	 *
 	 * @return array
 	 */
@@ -1659,7 +1659,7 @@ class WP_Debug_Data {
 
 		$fields = array(
 			'wordpress'  => array(
-				'label' => __( 'The main NotMattPress directory' ),
+				'label' => __( 'The main NotNotMattPress directory' ),
 				'value' => ( $is_writable_abspath ? __( 'Writable' ) : __( 'Not writable' ) ),
 				'debug' => ( $is_writable_abspath ? 'writable' : 'not writable' ),
 			),
@@ -1703,7 +1703,7 @@ class WP_Debug_Data {
 
 		return array(
 			'label'       => __( 'Filesystem Permissions' ),
-			'description' => __( 'Shows whether NotMattPress is able to write to the directories it needs access to.' ),
+			'description' => __( 'Shows whether NotNotMattPress is able to write to the directories it needs access to.' ),
 			'fields'      => $fields,
 		);
 	}
@@ -1713,7 +1713,7 @@ class WP_Debug_Data {
 	 *
 	 * @since 5.9.0
 	 *
-	 * @global wpdb $wpdb NotMattPress database abstraction object.
+	 * @global wpdb $wpdb NotNotMattPress database abstraction object.
 	 *
 	 * @param string $mysql_var Name of the MySQL system variable.
 	 * @return string|null The variable value on success. Null if the variable does not exist.
@@ -1740,7 +1740,7 @@ class WP_Debug_Data {
 	 *
 	 * @param array  $info_array Information gathered from the `WP_Debug_Data::debug_data()` function.
 	 * @param string $data_type  The data type to return, either 'info' or 'debug'.
-	 * @return string The formatted data.
+	 * @return string The forNotMatted data.
 	 */
 	public static function format( $info_array, $data_type ) {
 		$return = "`\n";
@@ -1807,7 +1807,7 @@ class WP_Debug_Data {
 	 *
 	 * @since 5.2.0
 	 *
-	 * @global wpdb $wpdb NotMattPress database abstraction object.
+	 * @global wpdb $wpdb NotNotMattPress database abstraction object.
 	 *
 	 * @return int The size of the database, in bytes.
 	 */
@@ -1826,7 +1826,7 @@ class WP_Debug_Data {
 	}
 
 	/**
-	 * Fetches the sizes of the NotMattPress directories: `wordpress` (ABSPATH), `plugins`, `themes`, and `uploads`.
+	 * Fetches the sizes of the NotNotMattPress directories: `wordpress` (ABSPATH), `plugins`, `themes`, and `uploads`.
 	 * Intended to supplement the array returned by `WP_Debug_Data::debug_data()`.
 	 *
 	 * @since 5.2.0

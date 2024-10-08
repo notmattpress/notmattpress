@@ -2,7 +2,7 @@
 /**
  * Atom Feed Template for displaying Atom Comments feed.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  */
 
 header( 'Content-Type: ' . feed_content_type( 'atom' ) . '; charset=' . get_option( 'blog_charset' ), true );

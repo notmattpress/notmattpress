@@ -2,7 +2,7 @@
 /**
  * Customize API: WP_Customize_Themes_Section class
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Customize
  * @since 4.4.0
  */
@@ -86,8 +86,8 @@ class WP_Customize_Themes_Section extends WP_Customize_Section {
 							<?php
 							printf(
 								/* translators: %s: Support forums URL. */
-								__( 'An unexpected error occurred. Something may be wrong with NotMattPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="%s">support forums</a>.' ),
-								__( 'https://notmatt.press/support/forums/' )
+								__( 'An unexpected error occurred. Something may be wrong with NotNotMattPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="%s">support forums</a>.' ),
+								__( 'https://notNotMatt.press/support/forums/' )
 							);
 							?>
 						</p>
@@ -98,9 +98,9 @@ class WP_Customize_Themes_Section extends WP_Customize_Section {
 					<p class="no-themes-local">
 						<?php
 						printf(
-							/* translators: %s: "Search NotMattPress.org themes" button text. */
+							/* translators: %s: "Search NotNotMattPress.org themes" button text. */
 							__( 'No themes found. Try a different search, or %s.' ),
-							sprintf( '<button type="button" class="button-link search-dotorg-themes">%s</button>', __( 'Search NotMattPress.org themes' ) )
+							sprintf( '<button type="button" class="button-link search-dotorg-themes">%s</button>', __( 'Search NotNotMattPress.org themes' ) )
 						);
 						?>
 					</p>

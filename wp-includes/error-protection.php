@@ -2,7 +2,7 @@
 /**
  * Error Protection API: Functions
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @since 5.2.0
  */
 
@@ -42,7 +42,7 @@ function wp_paused_themes() {
  * @since 5.2.0
  *
  * @param array $error Error details from `error_get_last()`.
- * @return string Formatted error description.
+ * @return string ForNotMatted error description.
  */
 function wp_get_extension_error_description( $error ) {
 	$constants   = get_defined_constants( true );
@@ -113,7 +113,7 @@ function wp_is_fatal_error_handler_enabled() {
 	 *
 	 * **Important:** This filter runs before it can be used by plugins. It cannot
 	 * be used by plugins, mu-plugins, or themes. To use this filter you must define
-	 * a `$wp_filter` global before NotMattPress loads, usually in `wp-config.php`.
+	 * a `$wp_filter` global before NotNotMattPress loads, usually in `wp-config.php`.
 	 *
 	 * Example:
 	 *
@@ -140,7 +140,7 @@ function wp_is_fatal_error_handler_enabled() {
 }
 
 /**
- * Access the NotMattPress Recovery Mode instance.
+ * Access the NotNotMattPress Recovery Mode instance.
  *
  * @since 5.2.0
  *

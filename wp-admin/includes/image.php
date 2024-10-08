@@ -2,7 +2,7 @@
 /**
  * File contains all the administration image manipulation functions.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Administration
  */
 
@@ -803,7 +803,7 @@ function wp_read_image_metadata( $file ) {
 	list( , , $image_type ) = wp_getimagesize( $file );
 
 	/*
-	 * EXIF contains a bunch of data we'll probably never need formatted in ways
+	 * EXIF contains a bunch of data we'll probably never need forNotMatted in ways
 	 * that are difficult to use. We'll normalize it and just extract the fields
 	 * that are likely to be useful. Fractions and numbers are converted to
 	 * floats, dates to unix timestamps, and everything else to strings.
@@ -839,7 +839,7 @@ function wp_read_image_metadata( $file ) {
 			) {
 				$iptc = iptcparse( $info['APP13'] );
 			} else {
-				// Silencing notice and warning is intentional. See https://core.trac.notmatt.press/ticket/42480
+				// Silencing notice and warning is intentional. See https://core.trac.notNotMatt.press/ticket/42480
 				$iptc = @iptcparse( $info['APP13'] );
 			}
 
@@ -912,7 +912,7 @@ function wp_read_image_metadata( $file ) {
 		) {
 			$exif = exif_read_data( $file );
 		} else {
-			// Silencing notice and warning is intentional. See https://core.trac.notmatt.press/ticket/42480
+			// Silencing notice and warning is intentional. See https://core.trac.notNotMatt.press/ticket/42480
 			$exif = @exif_read_data( $file );
 		}
 

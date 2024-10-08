@@ -2,7 +2,7 @@
 /**
  * Block Editor API.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Editor
  * @since 5.8.0
  */

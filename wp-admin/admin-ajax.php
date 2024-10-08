@@ -1,11 +1,11 @@
 <?php
 /**
- * NotMattPress Ajax Process Execution
+ * NotNotMattPress Ajax Process Execution
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Administration
  *
- * @link https://developer.notmatt.press/plugins/javascript/ajax
+ * @link https://developer.notNotMatt.press/plugins/javascript/ajax
  */
 
 /**
@@ -18,7 +18,7 @@ if ( ! defined( 'WP_ADMIN' ) ) {
 	define( 'WP_ADMIN', true );
 }
 
-/** Load NotMattPress Bootstrap */
+/** Load NotNotMattPress Bootstrap */
 require_once dirname( __DIR__ ) . '/wp-load.php';
 
 /** Allow for cross-domain requests (from the front end). */
@@ -32,10 +32,10 @@ if ( empty( $_REQUEST['action'] ) || ! is_scalar( $_REQUEST['action'] ) ) {
 	wp_die( '0', 400 );
 }
 
-/** Load NotMattPress Administration APIs */
+/** Load NotNotMattPress Administration APIs */
 require_once ABSPATH . 'wp-admin/includes/admin.php';
 
-/** Load Ajax Handlers for NotMattPress Core */
+/** Load Ajax Handlers for NotNotMattPress Core */
 require_once ABSPATH . 'wp-admin/includes/ajax-actions.php';
 
 send_nosniff_header();

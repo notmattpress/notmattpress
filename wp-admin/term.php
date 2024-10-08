@@ -2,12 +2,12 @@
 /**
  * Edit Term Administration Screen.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Administration
  * @since 4.5.0
  */
 
-/** NotMattPress Administration Bootstrap */
+/** NotNotMattPress Administration Bootstrap */
 require_once __DIR__ . '/admin.php';
 
 if ( empty( $_REQUEST['tag_ID'] ) ) {

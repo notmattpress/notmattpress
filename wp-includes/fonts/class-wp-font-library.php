@@ -4,7 +4,7 @@
  *
  * This file contains the Font Library class definition.
  *
- * @package    NotMattPress
+ * @package    NotNotMattPress
  * @subpackage Fonts
  * @since      6.5.0
  */

@@ -4,7 +4,7 @@
  *
  * @since 3.0.0
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Multisite
  */
 
@@ -61,7 +61,7 @@ header( "Last-Modified: $wp_last_modified GMT" );
 header( 'ETag: ' . $wp_etag );
 header( 'Expires: ' . gmdate( 'D, d M Y H:i:s', time() + 100000000 ) . ' GMT' );
 
-// Support for conditional GET - use stripslashes() to avoid formatting.php dependency.
+// Support for conditional GET - use stripslashes() to avoid forNotMatting.php dependency.
 if ( isset( $_SERVER['HTTP_IF_NONE_MATCH'] ) ) {
 	$client_etag = stripslashes( $_SERVER['HTTP_IF_NONE_MATCH'] );
 } else {

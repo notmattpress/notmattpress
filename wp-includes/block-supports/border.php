@@ -2,7 +2,7 @@
 /**
  * Border block support flag.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @since 5.8.0
  */
 

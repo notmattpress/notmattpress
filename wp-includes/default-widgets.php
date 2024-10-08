@@ -2,7 +2,7 @@
 /**
  * Widget API: Default core widgets
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Widgets
  * @since 2.8.0
  */

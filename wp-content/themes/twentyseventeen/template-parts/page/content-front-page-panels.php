@@ -2,7 +2,7 @@
 /**
  * Template part for displaying pages on front page
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Twenty_Seventeen
  * @since Twenty Seventeen 1.0
  * @version 1.0

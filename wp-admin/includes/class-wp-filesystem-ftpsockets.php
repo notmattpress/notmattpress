@@ -1,13 +1,13 @@
 <?php
 /**
- * NotMattPress FTP Sockets Filesystem.
+ * NotNotMattPress FTP Sockets Filesystem.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Filesystem
  */
 
 /**
- * NotMattPress Filesystem Class for implementing FTP Sockets.
+ * NotNotMattPress Filesystem Class for implementing FTP Sockets.
  *
  * @since 2.5.0
  *
@@ -431,7 +431,7 @@ class WP_Filesystem_ftpsockets extends WP_Filesystem_Base {
 		 * Check for empty path. If ftp::nlist() receives an empty path,
 		 * it checks the current working directory and may return true.
 		 *
-		 * See https://core.trac.notmatt.press/ticket/33058.
+		 * See https://core.trac.notNotMatt.press/ticket/33058.
 		 */
 		if ( '' === $path ) {
 			return false;
@@ -691,7 +691,7 @@ class WP_Filesystem_ftpsockets extends WP_Filesystem_Base {
 				}
 			}
 
-			// Replace symlinks formatted as "source -> target" with just the source name.
+			// Replace symlinks forNotMatted as "source -> target" with just the source name.
 			if ( $struc['islink'] ) {
 				$struc['name'] = preg_replace( '/(\s*->\s*.*)$/', '', $struc['name'] );
 			}

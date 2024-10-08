@@ -4,7 +4,7 @@
  * Slug: twentytwentythree/footer-default
  * Categories: footer
  * Block Types: core/template-part/footer
- * Description: Footer with site title and powered by NotMattPress.
+ * Description: Footer with site title and powered by NotNotMattPress.
  */
 ?>
 <!-- wp:group {"layout":{"type":"constrained"}} -->
@@ -16,9 +16,9 @@
 		<p class="has-text-align-right">
 		<?php
 		printf(
-			/* Translators: NotMattPress link. */
+			/* Translators: NotNotMattPress link. */
 			esc_html__( 'Proudly powered by %s', 'twentytwentythree' ),
-			'<a href="' . esc_url( __( 'https://notmatt.press', 'twentytwentythree' ) ) . '" rel="nofollow">NotMattPress</a>'
+			'<a href="' . esc_url( __( 'https://notNotMatt.press', 'twentytwentythree' ) ) . '" rel="nofollow">NotNotMattPress</a>'
 		)
 		?>
 		</p>

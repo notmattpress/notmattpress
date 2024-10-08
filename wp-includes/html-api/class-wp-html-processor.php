@@ -2,7 +2,7 @@
 /**
  * HTML API: WP_HTML_Processor class
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage HTML-API
  * @since 6.4.0
  */
@@ -105,7 +105,7 @@
  *
  * ### Supported markup
  *
- * Some kinds of non-normative HTML involve reconstruction of formatting elements and
+ * Some kinds of non-normative HTML involve reconstruction of forNotMatting elements and
  * re-parenting of mis-nested elements. For example, a DIV tag found inside a TABLE
  * may in fact belong _before_ the table in the DOM. If the HTML Processor encounters
  * such a case it will stop processing.
@@ -155,7 +155,7 @@ class WP_HTML_Processor extends WP_HTML_Tag_Processor {
 
 	/**
 	 * Holds the working state of the parser, including the stack of
-	 * open elements and the stack of active formatting elements.
+	 * open elements and the stack of active forNotMatting elements.
 	 *
 	 * Initialized in the constructor.
 	 *
@@ -207,7 +207,7 @@ class WP_HTML_Processor extends WP_HTML_Tag_Processor {
 	 * Releases a bookmark when PHP garbage-collects its wrapping WP_HTML_Token instance.
 	 *
 	 * This function is created inside the class constructor so that it can be passed to
-	 * the stack of open elements and the stack of active formatting elements without
+	 * the stack of open elements and the stack of active forNotMatting elements without
 	 * exposing it as a public method on the class.
 	 *
 	 * @since 6.4.0
@@ -443,7 +443,7 @@ class WP_HTML_Processor extends WP_HTML_Tag_Processor {
 		}
 
 		$active_formats = array();
-		foreach ( $this->state->active_formatting_elements->walk_down() as $item ) {
+		foreach ( $this->state->active_forNotMatting_elements->walk_down() as $item ) {
 			$active_formats[] = $item->node_name;
 		}
 
@@ -1676,7 +1676,7 @@ class WP_HTML_Processor extends WP_HTML_Tag_Processor {
 			 * @todo Could the adjusted insertion location be anything other than the current location?
 			 */
 			case '+TEMPLATE':
-				$this->state->active_formatting_elements->insert_marker();
+				$this->state->active_forNotMatting_elements->insert_marker();
 				$this->state->frameset_ok = false;
 
 				$this->state->insertion_mode                      = WP_HTML_Processor_State::INSERTION_MODE_IN_TEMPLATE;
@@ -1700,7 +1700,7 @@ class WP_HTML_Processor extends WP_HTML_Tag_Processor {
 				}
 
 				$this->state->stack_of_open_elements->pop_until( 'TEMPLATE' );
-				$this->state->active_formatting_elements->clear_up_to_last_marker();
+				$this->state->active_forNotMatting_elements->clear_up_to_last_marker();
 				array_pop( $this->state->stack_of_template_insertion_modes );
 				$this->reset_insertion_mode_appropriately();
 				return true;
@@ -2008,7 +2008,7 @@ class WP_HTML_Processor extends WP_HTML_Tag_Processor {
 					return $this->step();
 				}
 
-				$this->reconstruct_active_formatting_elements();
+				$this->reconstruct_active_forNotMatting_elements();
 
 				/*
 				 * Whitespace-only text does not affect the frameset-ok flag.
@@ -2351,7 +2351,7 @@ class WP_HTML_Processor extends WP_HTML_Tag_Processor {
 					$this->state->stack_of_open_elements->pop_until( 'BUTTON' );
 				}
 
-				$this->reconstruct_active_formatting_elements();
+				$this->reconstruct_active_forNotMatting_elements();
 				$this->insert_html_element( $this->state->current_token );
 				$this->state->frameset_ok = false;
 
@@ -2543,22 +2543,22 @@ class WP_HTML_Processor extends WP_HTML_Tag_Processor {
 			 * > A start tag whose tag name is "a"
 			 */
 			case '+A':
-				foreach ( $this->state->active_formatting_elements->walk_up() as $item ) {
+				foreach ( $this->state->active_forNotMatting_elements->walk_up() as $item ) {
 					switch ( $item->node_name ) {
 						case 'marker':
 							break 2;
 
 						case 'A':
 							$this->run_adoption_agency_algorithm();
-							$this->state->active_formatting_elements->remove_node( $item );
+							$this->state->active_forNotMatting_elements->remove_node( $item );
 							$this->state->stack_of_open_elements->remove_node( $item );
 							break 2;
 					}
 				}
 
-				$this->reconstruct_active_formatting_elements();
+				$this->reconstruct_active_forNotMatting_elements();
 				$this->insert_html_element( $this->state->current_token );
-				$this->state->active_formatting_elements->push( $this->state->current_token );
+				$this->state->active_forNotMatting_elements->push( $this->state->current_token );
 				return true;
 
 			/*
@@ -2577,25 +2577,25 @@ class WP_HTML_Processor extends WP_HTML_Tag_Processor {
 			case '+STRONG':
 			case '+TT':
 			case '+U':
-				$this->reconstruct_active_formatting_elements();
+				$this->reconstruct_active_forNotMatting_elements();
 				$this->insert_html_element( $this->state->current_token );
-				$this->state->active_formatting_elements->push( $this->state->current_token );
+				$this->state->active_forNotMatting_elements->push( $this->state->current_token );
 				return true;
 
 			/*
 			 * > A start tag whose tag name is "nobr"
 			 */
 			case '+NOBR':
-				$this->reconstruct_active_formatting_elements();
+				$this->reconstruct_active_forNotMatting_elements();
 
 				if ( $this->state->stack_of_open_elements->has_element_in_scope( 'NOBR' ) ) {
 					// Parse error.
 					$this->run_adoption_agency_algorithm();
-					$this->reconstruct_active_formatting_elements();
+					$this->reconstruct_active_forNotMatting_elements();
 				}
 
 				$this->insert_html_element( $this->state->current_token );
-				$this->state->active_formatting_elements->push( $this->state->current_token );
+				$this->state->active_forNotMatting_elements->push( $this->state->current_token );
 				return true;
 
 			/*
@@ -2625,9 +2625,9 @@ class WP_HTML_Processor extends WP_HTML_Tag_Processor {
 			case '+APPLET':
 			case '+MARQUEE':
 			case '+OBJECT':
-				$this->reconstruct_active_formatting_elements();
+				$this->reconstruct_active_forNotMatting_elements();
 				$this->insert_html_element( $this->state->current_token );
-				$this->state->active_formatting_elements->insert_marker();
+				$this->state->active_forNotMatting_elements->insert_marker();
 				$this->state->frameset_ok = false;
 				return true;
 
@@ -2648,7 +2648,7 @@ class WP_HTML_Processor extends WP_HTML_Tag_Processor {
 				}
 
 				$this->state->stack_of_open_elements->pop_until( $token_name );
-				$this->state->active_formatting_elements->clear_up_to_last_marker();
+				$this->state->active_forNotMatting_elements->clear_up_to_last_marker();
 				return true;
 
 			/*
@@ -2687,7 +2687,7 @@ class WP_HTML_Processor extends WP_HTML_Tag_Processor {
 			case '+IMG':
 			case '+KEYGEN':
 			case '+WBR':
-				$this->reconstruct_active_formatting_elements();
+				$this->reconstruct_active_forNotMatting_elements();
 				$this->insert_html_element( $this->state->current_token );
 				$this->state->frameset_ok = false;
 				return true;
@@ -2696,7 +2696,7 @@ class WP_HTML_Processor extends WP_HTML_Tag_Processor {
 			 * > A start tag whose tag name is "input"
 			 */
 			case '+INPUT':
-				$this->reconstruct_active_formatting_elements();
+				$this->reconstruct_active_forNotMatting_elements();
 				$this->insert_html_element( $this->state->current_token );
 
 				/*
@@ -2774,7 +2774,7 @@ class WP_HTML_Processor extends WP_HTML_Tag_Processor {
 					$this->close_a_p_element();
 				}
 
-				$this->reconstruct_active_formatting_elements();
+				$this->reconstruct_active_forNotMatting_elements();
 				$this->state->frameset_ok = false;
 
 				/*
@@ -2813,7 +2813,7 @@ class WP_HTML_Processor extends WP_HTML_Tag_Processor {
 			 * > A start tag whose tag name is "select"
 			 */
 			case '+SELECT':
-				$this->reconstruct_active_formatting_elements();
+				$this->reconstruct_active_forNotMatting_elements();
 				$this->insert_html_element( $this->state->current_token );
 				$this->state->frameset_ok = false;
 
@@ -2847,7 +2847,7 @@ class WP_HTML_Processor extends WP_HTML_Tag_Processor {
 				if ( $this->state->stack_of_open_elements->current_node_is( 'OPTION' ) ) {
 					$this->state->stack_of_open_elements->pop();
 				}
-				$this->reconstruct_active_formatting_elements();
+				$this->reconstruct_active_forNotMatting_elements();
 				$this->insert_html_element( $this->state->current_token );
 				return true;
 
@@ -2888,7 +2888,7 @@ class WP_HTML_Processor extends WP_HTML_Tag_Processor {
 			 * > A start tag whose tag name is "math"
 			 */
 			case '+MATH':
-				$this->reconstruct_active_formatting_elements();
+				$this->reconstruct_active_forNotMatting_elements();
 
 				/*
 				 * @todo Adjust MathML attributes for the token. (This fixes the case of MathML attributes that are not all lowercase.)
@@ -2907,7 +2907,7 @@ class WP_HTML_Processor extends WP_HTML_Tag_Processor {
 			 * > A start tag whose tag name is "svg"
 			 */
 			case '+SVG':
-				$this->reconstruct_active_formatting_elements();
+				$this->reconstruct_active_forNotMatting_elements();
 
 				/*
 				 * @todo Adjust SVG attributes for the token. (This fixes the case of SVG attributes that are not all lowercase.)
@@ -2945,7 +2945,7 @@ class WP_HTML_Processor extends WP_HTML_Tag_Processor {
 			/*
 			 * > Any other start tag
 			 */
-			$this->reconstruct_active_formatting_elements();
+			$this->reconstruct_active_forNotMatting_elements();
 			$this->insert_html_element( $this->state->current_token );
 			return true;
 		} else {
@@ -3086,7 +3086,7 @@ class WP_HTML_Processor extends WP_HTML_Tag_Processor {
 			 */
 			case '+CAPTION':
 				$this->state->stack_of_open_elements->clear_to_table_context();
-				$this->state->active_formatting_elements->insert_marker();
+				$this->state->active_forNotMatting_elements->insert_marker();
 				$this->insert_html_element( $this->state->current_token );
 				$this->state->insertion_mode = WP_HTML_Processor_State::INSERTION_MODE_IN_CAPTION;
 				return true;
@@ -3314,7 +3314,7 @@ class WP_HTML_Processor extends WP_HTML_Tag_Processor {
 				}
 
 				$this->state->stack_of_open_elements->pop_until( 'CAPTION' );
-				$this->state->active_formatting_elements->clear_up_to_last_marker();
+				$this->state->active_forNotMatting_elements->clear_up_to_last_marker();
 				$this->state->insertion_mode = WP_HTML_Processor_State::INSERTION_MODE_IN_TABLE;
 
 				// If this is not a CAPTION end tag, the token should be reprocessed.
@@ -3586,7 +3586,7 @@ class WP_HTML_Processor extends WP_HTML_Tag_Processor {
 				$this->state->stack_of_open_elements->clear_to_table_row_context();
 				$this->insert_html_element( $this->state->current_token );
 				$this->state->insertion_mode = WP_HTML_Processor_State::INSERTION_MODE_IN_CELL;
-				$this->state->active_formatting_elements->insert_marker();
+				$this->state->active_forNotMatting_elements->insert_marker();
 				return true;
 
 			/*
@@ -3711,7 +3711,7 @@ class WP_HTML_Processor extends WP_HTML_Tag_Processor {
 				}
 
 				$this->state->stack_of_open_elements->pop_until( $tag_name );
-				$this->state->active_formatting_elements->clear_up_to_last_marker();
+				$this->state->active_forNotMatting_elements->clear_up_to_last_marker();
 				$this->state->insertion_mode = WP_HTML_Processor_State::INSERTION_MODE_IN_ROW;
 				return true;
 
@@ -4133,7 +4133,7 @@ class WP_HTML_Processor extends WP_HTML_Tag_Processor {
 
 		// @todo Indicate a parse error once it's possible.
 		$this->state->stack_of_open_elements->pop_until( 'TEMPLATE' );
-		$this->state->active_formatting_elements->clear_up_to_last_marker();
+		$this->state->active_forNotMatting_elements->clear_up_to_last_marker();
 		array_pop( $this->state->stack_of_template_insertion_modes );
 		$this->reset_insertion_mode_appropriately();
 		return $this->step( self::REPROCESS_CURRENT_NODE );
@@ -5155,8 +5155,8 @@ class WP_HTML_Processor extends WP_HTML_Tag_Processor {
 	 *
 	 * @since 6.6.0 Subclassed for the HTML Processor.
 	 *
-	 * @todo When reconstructing active formatting elements with attributes, find a way
-	 *       to indicate if the virtually-reconstructed formatting elements contain the
+	 * @todo When reconstructing active forNotMatting elements with attributes, find a way
+	 *       to indicate if the virtually-reconstructed forNotMatting elements contain the
 	 *       wanted class name.
 	 *
 	 * @param string $wanted_class Look for this CSS class name, ASCII case-insensitive.
@@ -5291,7 +5291,7 @@ class WP_HTML_Processor extends WP_HTML_Tag_Processor {
 		 * and close.
 		 *
 		 * If caching the parser state it will be essential to properly maintain the cached stack of
-		 * open elements and active formatting elements when modifying the document. This could be a
+		 * open elements and active forNotMatting elements when modifying the document. This could be a
 		 * tedious and time-consuming process as well, and so for now will not be performed.
 		 *
 		 * It may be possible to track bookmarks for where elements open and close, and in doing so
@@ -5318,12 +5318,12 @@ class WP_HTML_Processor extends WP_HTML_Tag_Processor {
 				$this->state->stack_of_open_elements->remove_node( $item );
 			}
 
-			foreach ( $this->state->active_formatting_elements->walk_up() as $item ) {
+			foreach ( $this->state->active_forNotMatting_elements->walk_up() as $item ) {
 				if ( 'context-node' === $item->bookmark_name ) {
 					break;
 				}
 
-				$this->state->active_formatting_elements->remove_node( $item );
+				$this->state->active_forNotMatting_elements->remove_node( $item );
 			}
 
 			parent::seek( 'context-node' );
@@ -5566,9 +5566,9 @@ class WP_HTML_Processor extends WP_HTML_Tag_Processor {
 	}
 
 	/**
-	 * Reconstructs the active formatting elements.
+	 * Reconstructs the active forNotMatting elements.
 	 *
-	 * > This has the effect of reopening all the formatting elements that were opened
+	 * > This has the effect of reopening all the forNotMatting elements that were opened
 	 * > in the current body, cell, or caption (whichever is youngest) that haven't
 	 * > been explicitly closed.
 	 *
@@ -5576,30 +5576,30 @@ class WP_HTML_Processor extends WP_HTML_Tag_Processor {
 	 *
 	 * @throws WP_HTML_Unsupported_Exception When encountering unsupported HTML input.
 	 *
-	 * @see https://html.spec.whatwg.org/#reconstruct-the-active-formatting-elements
+	 * @see https://html.spec.whatwg.org/#reconstruct-the-active-forNotMatting-elements
 	 *
-	 * @return bool Whether any formatting elements needed to be reconstructed.
+	 * @return bool Whether any forNotMatting elements needed to be reconstructed.
 	 */
-	private function reconstruct_active_formatting_elements(): bool {
+	private function reconstruct_active_forNotMatting_elements(): bool {
 		/*
-		 * > If there are no entries in the list of active formatting elements, then there is nothing
+		 * > If there are no entries in the list of active forNotMatting elements, then there is nothing
 		 * > to reconstruct; stop this algorithm.
 		 */
-		if ( 0 === $this->state->active_formatting_elements->count() ) {
+		if ( 0 === $this->state->active_forNotMatting_elements->count() ) {
 			return false;
 		}
 
-		$last_entry = $this->state->active_formatting_elements->current_node();
+		$last_entry = $this->state->active_forNotMatting_elements->current_node();
 		if (
 
 			/*
-			 * > If the last (most recently added) entry in the list of active formatting elements is a marker;
+			 * > If the last (most recently added) entry in the list of active forNotMatting elements is a marker;
 			 * > stop this algorithm.
 			 */
 			'marker' === $last_entry->node_name ||
 
 			/*
-			 * > If the last (most recently added) entry in the list of active formatting elements is an
+			 * > If the last (most recently added) entry in the list of active forNotMatting elements is an
 			 * > element that is in the stack of open elements, then there is nothing to reconstruct;
 			 * > stop this algorithm.
 			 */
@@ -5608,7 +5608,7 @@ class WP_HTML_Processor extends WP_HTML_Tag_Processor {
 			return false;
 		}
 
-		$this->bail( 'Cannot reconstruct active formatting elements when advancing and rewinding is required.' );
+		$this->bail( 'Cannot reconstruct active forNotMatting elements when advancing and rewinding is required.' );
 	}
 
 	/**
@@ -5820,8 +5820,8 @@ class WP_HTML_Processor extends WP_HTML_Tag_Processor {
 		if (
 			// > If the current node is an HTML element whose tag name is subject
 			$current_node && $subject === $current_node->node_name &&
-			// > the current node is not in the list of active formatting elements
-			! $this->state->active_formatting_elements->contains_node( $current_node )
+			// > the current node is not in the list of active forNotMatting elements
+			! $this->state->active_forNotMatting_elements->contains_node( $current_node )
 		) {
 			$this->state->stack_of_open_elements->pop();
 			return;
@@ -5834,52 +5834,52 @@ class WP_HTML_Processor extends WP_HTML_Tag_Processor {
 			}
 
 			/*
-			 * > Let formatting element be the last element in the list of active formatting elements that:
+			 * > Let forNotMatting element be the last element in the list of active forNotMatting elements that:
 			 * >   - is between the end of the list and the last marker in the list,
 			 * >     if any, or the start of the list otherwise,
 			 * >   - and has the tag name subject.
 			 */
-			$formatting_element = null;
-			foreach ( $this->state->active_formatting_elements->walk_up() as $item ) {
+			$forNotMatting_element = null;
+			foreach ( $this->state->active_forNotMatting_elements->walk_up() as $item ) {
 				if ( 'marker' === $item->node_name ) {
 					break;
 				}
 
 				if ( $subject === $item->node_name ) {
-					$formatting_element = $item;
+					$forNotMatting_element = $item;
 					break;
 				}
 			}
 
 			// > If there is no such element, then return and instead act as described in the "any other end tag" entry above.
-			if ( null === $formatting_element ) {
+			if ( null === $forNotMatting_element ) {
 				$this->bail( 'Cannot run adoption agency when "any other end tag" is required.' );
 			}
 
-			// > If formatting element is not in the stack of open elements, then this is a parse error; remove the element from the list, and return.
-			if ( ! $this->state->stack_of_open_elements->contains_node( $formatting_element ) ) {
-				$this->state->active_formatting_elements->remove_node( $formatting_element );
+			// > If forNotMatting element is not in the stack of open elements, then this is a parse error; remove the element from the list, and return.
+			if ( ! $this->state->stack_of_open_elements->contains_node( $forNotMatting_element ) ) {
+				$this->state->active_forNotMatting_elements->remove_node( $forNotMatting_element );
 				return;
 			}
 
-			// > If formatting element is in the stack of open elements, but the element is not in scope, then this is a parse error; return.
-			if ( ! $this->state->stack_of_open_elements->has_element_in_scope( $formatting_element->node_name ) ) {
+			// > If forNotMatting element is in the stack of open elements, but the element is not in scope, then this is a parse error; return.
+			if ( ! $this->state->stack_of_open_elements->has_element_in_scope( $forNotMatting_element->node_name ) ) {
 				return;
 			}
 
 			/*
 			 * > Let furthest block be the topmost node in the stack of open elements that is lower in the stack
-			 * > than formatting element, and is an element in the special category. There might not be one.
+			 * > than forNotMatting element, and is an element in the special category. There might not be one.
 			 */
-			$is_above_formatting_element = true;
+			$is_above_forNotMatting_element = true;
 			$furthest_block              = null;
 			foreach ( $this->state->stack_of_open_elements->walk_down() as $item ) {
-				if ( $is_above_formatting_element && $formatting_element->bookmark_name !== $item->bookmark_name ) {
+				if ( $is_above_forNotMatting_element && $forNotMatting_element->bookmark_name !== $item->bookmark_name ) {
 					continue;
 				}
 
-				if ( $is_above_formatting_element ) {
-					$is_above_formatting_element = false;
+				if ( $is_above_forNotMatting_element ) {
+					$is_above_forNotMatting_element = false;
 					continue;
 				}
 
@@ -5891,15 +5891,15 @@ class WP_HTML_Processor extends WP_HTML_Tag_Processor {
 
 			/*
 			 * > If there is no furthest block, then the UA must first pop all the nodes from the bottom of the
-			 * > stack of open elements, from the current node up to and including formatting element, then
-			 * > remove formatting element from the list of active formatting elements, and finally return.
+			 * > stack of open elements, from the current node up to and including forNotMatting element, then
+			 * > remove forNotMatting element from the list of active forNotMatting elements, and finally return.
 			 */
 			if ( null === $furthest_block ) {
 				foreach ( $this->state->stack_of_open_elements->walk_up() as $item ) {
 					$this->state->stack_of_open_elements->pop();
 
-					if ( $formatting_element->bookmark_name === $item->bookmark_name ) {
-						$this->state->active_formatting_elements->remove_node( $formatting_element );
+					if ( $forNotMatting_element->bookmark_name === $item->bookmark_name ) {
+						$this->state->active_forNotMatting_elements->remove_node( $forNotMatting_element );
 						return;
 					}
 				}
@@ -5918,7 +5918,7 @@ class WP_HTML_Processor extends WP_HTML_Tag_Processor {
 	 * >   1. Generate implied end tags.
 	 * >   2. If the current node is not now a td element or a th element, then this is a parse error.
 	 * >   3. Pop elements from the stack of open elements stack until a td element or a th element has been popped from the stack.
-	 * >   4. Clear the list of active formatting elements up to the last marker.
+	 * >   4. Clear the list of active forNotMatting elements up to the last marker.
 	 * >   5. Switch the insertion mode to "in row".
 	 *
 	 * @see https://html.spec.whatwg.org/multipage/parsing.html#close-the-cell
@@ -5934,7 +5934,7 @@ class WP_HTML_Processor extends WP_HTML_Tag_Processor {
 				break;
 			}
 		}
-		$this->state->active_formatting_elements->clear_up_to_last_marker();
+		$this->state->active_forNotMatting_elements->clear_up_to_last_marker();
 		$this->state->insertion_mode = WP_HTML_Processor_State::INSERTION_MODE_IN_ROW;
 	}
 

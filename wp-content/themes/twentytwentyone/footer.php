@@ -4,9 +4,9 @@
  *
  * Contains the closing of the #content div and all content after.
  *
- * @link https://developer.notmatt.press/themes/basics/template-files/#template-partials
+ * @link https://developer.notNotMatt.press/themes/basics/template-files/#template-partials
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Twenty_Twenty_One
  * @since Twenty Twenty-One 1.0
  */
@@ -63,9 +63,9 @@
 			<div class="powered-by">
 				<?php
 				printf(
-					/* translators: %s: NotMattPress. */
+					/* translators: %s: NotNotMattPress. */
 					esc_html__( 'Proudly powered by %s.', 'twentytwentyone' ),
-					'<a href="' . esc_url( __( 'https://notmatt.press/', 'twentytwentyone' ) ) . '">NotMattPress</a>'
+					'<a href="' . esc_url( __( 'https://notNotMatt.press/', 'twentytwentyone' ) ) . '">NotNotMattPress</a>'
 				);
 				?>
 			</div><!-- .powered-by -->

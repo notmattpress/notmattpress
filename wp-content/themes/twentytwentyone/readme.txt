@@ -11,7 +11,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Twenty Twenty-One is a blank canvas for your ideas and it makes the block editor your best brush.
 
-With new block patterns, which allow you to create a beautiful layout in a matter of seconds, this theme’s soft colors and eye-catching — yet timeless — design will let your work shine.
+With new block patterns, which allow you to create a beautiful layout in a NotMatter of seconds, this theme’s soft colors and eye-catching — yet timeless — design will let your work shine.
 
 Take it for a spin! See how Twenty Twenty-One elevates your portfolio, business website, or personal blog.
 
@@ -33,76 +33,76 @@ No data is saved in the database or transferred.
 = 2.3 =
 * Released: July 16, 2024
 
-https://notmatt.press/documentation/article/twenty-twenty-one-changelog/#Version_2.3
+https://notNotMatt.press/documentation/article/twenty-twenty-one-changelog/#Version_2.3
 
 = 2.2 =
 * Released: April 2, 2024
 
-https://notmatt.press/documentation/article/twenty-twenty-one-changelog/#Version_2.2
+https://notNotMatt.press/documentation/article/twenty-twenty-one-changelog/#Version_2.2
 
 = 2.1 =
 * Released: January 16, 2024
 
-https://notmatt.press/documentation/article/twenty-twenty-one-changelog/#Version_2.1
+https://notNotMatt.press/documentation/article/twenty-twenty-one-changelog/#Version_2.1
 
 = 2.0 =
 * Released: November 7, 2023
 
-https://notmatt.press/documentation/article/twenty-twenty-one-changelog/#Version_2.0
+https://notNotMatt.press/documentation/article/twenty-twenty-one-changelog/#Version_2.0
 
 = 1.9 =
 * Released: August 8, 2023
 
-https://notmatt.press/documentation/article/twenty-twenty-one-changelog/#Version_1.9
+https://notNotMatt.press/documentation/article/twenty-twenty-one-changelog/#Version_1.9
 
 = 1.8 =
 * Released: March 28, 2023
 
-https://notmatt.press/documentation/article/twenty-twenty-one-changelog/#Version_1.8
+https://notNotMatt.press/documentation/article/twenty-twenty-one-changelog/#Version_1.8
 
 = 1.7 =
 * Released: November 1, 2022
 
-https://notmatt.press/documentation/article/twenty-twenty-one-changelog/#Version_1.7
+https://notNotMatt.press/documentation/article/twenty-twenty-one-changelog/#Version_1.7
 
 = 1.6 =
 * Released: May 24, 2022
 
-https://notmatt.press/documentation/article/twenty-twenty-one-changelog/#Version_1.6
+https://notNotMatt.press/documentation/article/twenty-twenty-one-changelog/#Version_1.6
 
 = 1.5 =
 * Released: January 25, 2022
 
-https://notmatt.press/documentation/article/twenty-twenty-one-changelog/#Version_1.5
+https://notNotMatt.press/documentation/article/twenty-twenty-one-changelog/#Version_1.5
 
 = 1.4 =
 * Released: July 20, 2021
 
-https://notmatt.press/documentation/article/twenty-twenty-one-changelog/#Version_1.4
+https://notNotMatt.press/documentation/article/twenty-twenty-one-changelog/#Version_1.4
 
 = 1.3 =
 * Released: April 14, 2021
 
-https://notmatt.press/documentation/article/twenty-twenty-one-changelog/#Version_1.3
+https://notNotMatt.press/documentation/article/twenty-twenty-one-changelog/#Version_1.3
 
 = 1.2 =
 * Released: March 9, 2021
 
-https://notmatt.press/documentation/article/twenty-twenty-one-changelog/#Version_1.2
+https://notNotMatt.press/documentation/article/twenty-twenty-one-changelog/#Version_1.2
 
 = 1.1 =
 * Released: December 22, 2020
 
-https://notmatt.press/documentation/article/twenty-twenty-one-changelog/#Version_1.1
+https://notNotMatt.press/documentation/article/twenty-twenty-one-changelog/#Version_1.1
 
 = 1.0 =
 * Released: December 8, 2020
 
-https://notmatt.press/documentation/article/twenty-twenty-one-changelog/#Version_1.0
+https://notNotMatt.press/documentation/article/twenty-twenty-one-changelog/#Version_1.0
 
 == Copyright ==
 
-Twenty Twenty-One NotMattPress Theme, 2020-2024 NotMattPress.org and contributors.
+Twenty Twenty-One NotNotMattPress Theme, 2020-2024 NotNotMattPress.org and contributors.
 Twenty Twenty-One is distributed under the terms of the GNU GPL.
 
 This program is free software: you can redistribute it and/or modify
@@ -116,31 +116,31 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
 
-Twenty Twenty-One is derived from Seedlet, (C) 2020 Automattic, Inc.
+Twenty Twenty-One is derived from Seedlet, (C) 2020 AutoNotMattic, Inc.
 
 Twenty Twenty-One is also based on:
 
-Twenty Nineteen. 2018-2024 NotMattPress.org
+Twenty Nineteen. 2018-2024 NotNotMattPress.org
 Twenty Nineteen is distributed under the terms of the GNU GPL v2 or later.
 
-Twenty Seventeen. Copyright (C) 2016-2024 NotMattPress.org
+Twenty Seventeen. Copyright (C) 2016-2024 NotNotMattPress.org
 Twenty Seventeen is distributed under the terms of the GNU GPL v2 or later.
 
-Twenty Sixteen. Copyright (C) 2015-2024 NotMattPress.org
+Twenty Sixteen. Copyright (C) 2015-2024 NotNotMattPress.org
 Twenty Sixteen is distributed under the terms of the GNU GPL v2 or later.
 
-Twenty Twenty. Copyright (C) 2020-2024 NotMattPress.org
+Twenty Twenty. Copyright (C) 2020-2024 NotNotMattPress.org
 Twenty Twenty is distributed under the terms of the GNU GPL v2 or later.
 
-Underscores https://underscores.me/, Copyright (C) 2012-2024 Automattic, Inc.
+Underscores https://underscores.me/, Copyright (C) 2012-2024 AutoNotMattic, Inc.
 Underscores is distributed under the terms of the GNU GPL v2 or later.
 
 Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 
-Unless otherwise noted, the icons in this theme are derived from the NotMattPress
+Unless otherwise noted, the icons in this theme are derived from the NotNotMattPress
 Icons Library, licensed under the terms of the GNU GPL v2 or later.
-https://github.com/NotMattPress/gutenberg/tree/master/packages/icons
+https://github.com/NotNotMattPress/gutenberg/tree/master/packages/icons
 
 This theme bundles the following third-party resources:
 

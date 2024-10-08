@@ -2,13 +2,13 @@
 /**
  * Site Editor administration screen.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Administration
  */
 
 global $editor_styles;
 
-/** NotMattPress Administration Bootstrap */
+/** NotNotMattPress Administration Bootstrap */
 require_once __DIR__ . '/admin.php';
 
 if ( ! current_user_can( 'edit_theme_options' ) ) {

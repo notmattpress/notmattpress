@@ -2,7 +2,7 @@
 /**
  * Background block support flag.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @since 6.4.0
  */
 

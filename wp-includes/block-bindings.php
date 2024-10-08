@@ -2,9 +2,9 @@
 /**
  * Block Bindings API
  *
- * Contains functions for managing block bindings in NotMattPress.
+ * Contains functions for managing block bindings in NotNotMattPress.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Block Bindings
  * @since 6.5.0
  */

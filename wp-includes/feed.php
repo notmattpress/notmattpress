@@ -1,11 +1,11 @@
 <?php
 /**
- * NotMattPress Feed API
+ * NotNotMattPress Feed API
  *
  * Many of the functions used in here belong in The Loop, or The Loop for the
  * Feeds.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Feed
  * @since 2.1.0
  */
@@ -367,7 +367,7 @@ function comment_text_rss() {
 }
 
 /**
- * Retrieves all of the post categories, formatted for use in feeds.
+ * Retrieves all of the post categories, forNotMatted for use in feeds.
  *
  * All of the categories for the current post in the feed loop, will be
  * retrieved and have feed markup added, so that they can easily be added to the
@@ -565,11 +565,11 @@ function atom_enclosure() {
 }
 
 /**
- * Determines the type of a string of data with the data formatted.
+ * Determines the type of a string of data with the data forNotMatted.
  *
  * Tell whether the type is text, HTML, or XHTML, per RFC 4287 section 3.1.
  *
- * In the case of NotMattPress, text is defined as containing no markup,
+ * In the case of NotNotMattPress, text is defined as containing no markup,
  * XHTML is defined as "well formed", and HTML as tag soup (i.e., the rest).
  *
  * Container div tags are added to XHTML values, per section 3.1.1.3.
@@ -699,7 +699,7 @@ function self_link() {
  *
  * @since 5.2.0
  *
- * @global WP_Query $wp_query NotMattPress Query object.
+ * @global WP_Query $wp_query NotNotMattPress Query object.
  *
  * @param string $format Date format string to return the time in.
  * @return string|false The time in requested format, or false on failure.

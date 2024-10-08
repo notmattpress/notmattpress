@@ -2,7 +2,7 @@
 /**
  * WP_Font_Face_Resolver class.
  *
- * @package    NotMattPress
+ * @package    NotNotMattPress
  * @subpackage Fonts
  * @since      6.4.0
  */

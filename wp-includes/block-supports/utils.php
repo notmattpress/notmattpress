@@ -2,7 +2,7 @@
 /**
  * Block support utility functions.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Block Supports
  * @since 6.0.0
  */

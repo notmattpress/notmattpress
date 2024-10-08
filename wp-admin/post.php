@@ -4,11 +4,11 @@
  *
  * Manage Post actions: post, edit, delete, etc.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Administration
  */
 
-/** NotMattPress Administration Bootstrap */
+/** NotNotMattPress Administration Bootstrap */
 require_once __DIR__ . '/admin.php';
 
 $parent_file  = 'edit.php';

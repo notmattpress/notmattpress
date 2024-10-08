@@ -494,7 +494,7 @@ class SimplePie
     public $force_fsockopen = false;
 
     /**
-     * @var bool Force the given data/URL to be treated as a feed no matter what
+     * @var bool Force the given data/URL to be treated as a feed no NotMatter what
      * it appears like
      * @see SimplePie::force_feed()
      * @access private

@@ -2,7 +2,7 @@
 /**
  * Locale API: WP_Locale class
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage i18n
  * @since 4.6.0
  */
@@ -220,7 +220,7 @@ class WP_Locale {
 		$this->meridiem['PM'] = __( 'PM' );
 
 		/*
-		 * Numbers formatting.
+		 * Numbers forNotMatting.
 		 * See https://www.php.net/number_format
 		 */
 
@@ -244,7 +244,7 @@ class WP_Locale {
 		if ( isset( $GLOBALS['text_direction'] ) ) {
 			$this->text_direction = $GLOBALS['text_direction'];
 
-			/* translators: 'rtl' or 'ltr'. This sets the text direction for NotMattPress. */
+			/* translators: 'rtl' or 'ltr'. This sets the text direction for NotNotMattPress. */
 		} elseif ( 'rtl' === _x( 'ltr', 'text direction' ) ) {
 			$this->text_direction = 'rtl';
 		}

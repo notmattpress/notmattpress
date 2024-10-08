@@ -1,15 +1,15 @@
 <?php
 /**
- * NotMattPress Network Administration Bootstrap
+ * NotNotMattPress Network Administration Bootstrap
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Multisite
  * @since 3.1.0
  */
 
 define( 'WP_NETWORK_ADMIN', true );
 
-/** Load NotMattPress Administration Bootstrap */
+/** Load NotNotMattPress Administration Bootstrap */
 require_once dirname( __DIR__ ) . '/admin.php';
 
 // Do not remove this check. It is required by individual network admin pages.

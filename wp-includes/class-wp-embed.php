@@ -2,7 +2,7 @@
 /**
  * API for easily embedding rich media such as videos and images into content.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Embed
  * @since 2.9.0
  */
@@ -214,7 +214,7 @@ class WP_Embed {
 
 		/*
 		 * KSES converts & into &amp; and we need to undo this.
-		 * See https://core.trac.notmatt.press/ticket/11311
+		 * See https://core.trac.notNotMatt.press/ticket/11311
 		 */
 		$url = str_replace( '&amp;', '&', $url );
 

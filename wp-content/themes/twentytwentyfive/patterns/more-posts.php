@@ -6,7 +6,7 @@
  * Categories: query
  * Block Types: core/query
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Twenty_Twenty_Five
  * @since Twenty Twenty-Five 1.0
  */

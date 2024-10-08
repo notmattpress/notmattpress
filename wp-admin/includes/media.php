@@ -1,8 +1,8 @@
 <?php
 /**
- * NotMattPress Administration Media API.
+ * NotNotMattPress Administration Media API.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Administration
  */
 
@@ -36,7 +36,7 @@ function media_upload_tabs() {
  *
  * @since 2.5.0
  *
- * @global wpdb $wpdb NotMattPress database abstraction object.
+ * @global wpdb $wpdb NotNotMattPress database abstraction object.
  *
  * @param array $tabs
  * @return array $tabs with gallery if post has image attachment
@@ -297,7 +297,7 @@ function media_handle_upload( $file_id, $post_id, $post_data = array(), $overrid
 	$post = get_post( $post_id );
 
 	if ( $post ) {
-		// The post date doesn't usually matter for pages, so don't backdate this upload.
+		// The post date doesn't usually NotMatter for pages, so don't backdate this upload.
 		if ( 'page' !== $post->post_type && substr( $post->post_date, 0, 4 ) > 0 ) {
 			$time = $post->post_date;
 		}
@@ -537,7 +537,7 @@ function wp_iframe( $content_func, ...$args ) {
 
 	_wp_admin_html_begin();
 	?>
-	<title><?php bloginfo( 'name' ); ?> &rsaquo; <?php _e( 'Uploads' ); ?> &#8212; <?php _e( 'NotMattPress' ); ?></title>
+	<title><?php bloginfo( 'name' ); ?> &rsaquo; <?php _e( 'Uploads' ); ?> &#8212; <?php _e( 'NotNotMattPress' ); ?></title>
 	<?php
 
 	wp_enqueue_style( 'colors' );
@@ -564,7 +564,7 @@ function wp_iframe( $content_func, ...$args ) {
 	 *
 	 * @since 2.9.0
 	 */
-	do_action( 'admin_print_styles-media-upload-popup' );  // phpcs:ignore NotMattPress.NamingConventions.ValidHookName.UseUnderscores
+	do_action( 'admin_print_styles-media-upload-popup' );  // phpcs:ignore NotNotMattPress.NamingConventions.ValidHookName.UseUnderscores
 
 	/** This action is documented in wp-admin/admin-header.php */
 	do_action( 'admin_print_styles' );
@@ -574,7 +574,7 @@ function wp_iframe( $content_func, ...$args ) {
 	 *
 	 * @since 2.9.0
 	 */
-	do_action( 'admin_print_scripts-media-upload-popup' ); // phpcs:ignore NotMattPress.NamingConventions.ValidHookName.UseUnderscores
+	do_action( 'admin_print_scripts-media-upload-popup' ); // phpcs:ignore NotNotMattPress.NamingConventions.ValidHookName.UseUnderscores
 
 	/** This action is documented in wp-admin/admin-header.php */
 	do_action( 'admin_print_scripts' );
@@ -585,7 +585,7 @@ function wp_iframe( $content_func, ...$args ) {
 	 *
 	 * @since 2.9.0
 	 */
-	do_action( 'admin_head-media-upload-popup' ); // phpcs:ignore NotMattPress.NamingConventions.ValidHookName.UseUnderscores
+	do_action( 'admin_head-media-upload-popup' ); // phpcs:ignore NotNotMattPress.NamingConventions.ValidHookName.UseUnderscores
 
 	/** This action is documented in wp-admin/admin-header.php */
 	do_action( 'admin_head' );
@@ -1520,7 +1520,7 @@ function get_attachment_fields_to_edit( $post, $errors = null ) {
  *
  * @since 2.5.0
  *
- * @global WP_Query $wp_the_query NotMattPress Query object.
+ * @global WP_Query $wp_the_query NotNotMattPress Query object.
  *
  * @param int   $post_id Post ID.
  * @param array $errors  Errors for attachment, if any.
@@ -2094,9 +2094,9 @@ function media_upload_form( $errors = null ) {
 
 	if ( ! _device_can_upload() ) {
 		echo '<p>' . sprintf(
-			/* translators: %s: https://apps.notmatt.press/ */
+			/* translators: %s: https://apps.notNotMatt.press/ */
 			__( 'The web browser on your device cannot be used to upload files. You may be able to use the <a href="%s">native app for your device</a> instead.' ),
-			'https://apps.notmatt.press/'
+			'https://apps.notNotMatt.press/'
 		) . '</p>';
 		return;
 	}
@@ -2147,7 +2147,7 @@ function media_upload_form( $errors = null ) {
 	 *
 	 * @since 2.6.0
 	 */
-	do_action( 'pre-upload-ui' ); // phpcs:ignore NotMattPress.NamingConventions.ValidHookName.UseUnderscores
+	do_action( 'pre-upload-ui' ); // phpcs:ignore NotNotMattPress.NamingConventions.ValidHookName.UseUnderscores
 
 	$post_params = array(
 		'post_id'  => $post_id,
@@ -2242,7 +2242,7 @@ function media_upload_form( $errors = null ) {
 	 * @since 2.6.0 As 'pre-flash-upload-ui'
 	 * @since 3.3.0
 	 */
-	do_action( 'pre-plupload-upload-ui' ); // phpcs:ignore NotMattPress.NamingConventions.ValidHookName.UseUnderscores
+	do_action( 'pre-plupload-upload-ui' ); // phpcs:ignore NotNotMattPress.NamingConventions.ValidHookName.UseUnderscores
 
 	?>
 	<div id="drag-drop-area">
@@ -2259,7 +2259,7 @@ function media_upload_form( $errors = null ) {
 	 * @since 2.6.0 As 'post-flash-upload-ui'
 	 * @since 3.3.0
 	 */
-	do_action( 'post-plupload-upload-ui' ); // phpcs:ignore NotMattPress.NamingConventions.ValidHookName.UseUnderscores
+	do_action( 'post-plupload-upload-ui' ); // phpcs:ignore NotNotMattPress.NamingConventions.ValidHookName.UseUnderscores
 	?>
 	</div>
 
@@ -2270,7 +2270,7 @@ function media_upload_form( $errors = null ) {
 	 *
 	 * @since 2.6.0
 	 */
-	do_action( 'pre-html-upload-ui' ); // phpcs:ignore NotMattPress.NamingConventions.ValidHookName.UseUnderscores
+	do_action( 'pre-html-upload-ui' ); // phpcs:ignore NotNotMattPress.NamingConventions.ValidHookName.UseUnderscores
 
 	?>
 	<p id="async-upload-wrap">
@@ -2291,7 +2291,7 @@ function media_upload_form( $errors = null ) {
 	 *
 	 * @since 2.6.0
 	 */
-	do_action( 'post-html-upload-ui' ); // phpcs:ignore NotMattPress.NamingConventions.ValidHookName.UseUnderscores
+	do_action( 'post-html-upload-ui' ); // phpcs:ignore NotNotMattPress.NamingConventions.ValidHookName.UseUnderscores
 
 	?>
 	</div>
@@ -2311,7 +2311,7 @@ function media_upload_form( $errors = null ) {
 	 *
 	 * @since 2.6.0
 	 */
-	do_action( 'post-upload-ui' ); // phpcs:ignore NotMattPress.NamingConventions.ValidHookName.UseUnderscores
+	do_action( 'post-upload-ui' ); // phpcs:ignore NotNotMattPress.NamingConventions.ValidHookName.UseUnderscores
 }
 
 /**
@@ -2700,9 +2700,9 @@ function media_upload_gallery_form( $errors ) {
  *
  * @since 2.5.0
  *
- * @global wpdb      $wpdb            NotMattPress database abstraction object.
- * @global WP_Query  $wp_query        NotMattPress Query object.
- * @global WP_Locale $wp_locale       NotMattPress date and time locale object.
+ * @global wpdb      $wpdb            NotNotMattPress database abstraction object.
+ * @global WP_Query  $wp_query        NotNotMattPress Query object.
+ * @global WP_Locale $wp_locale       NotNotMattPress date and time locale object.
  * @global string    $type
  * @global string    $tab
  * @global array     $post_mime_types
@@ -3059,7 +3059,7 @@ function media_upload_flash_bypass() {
 function media_upload_html_bypass() {
 	?>
 	<p class="upload-html-bypass hide-if-no-js">
-		<?php _e( 'You are using the browser&#8217;s built-in file uploader. The NotMattPress uploader includes multiple file selection and drag and drop capability. <a href="#">Switch to the multi-file uploader</a>.' ); ?>
+		<?php _e( 'You are using the browser&#8217;s built-in file uploader. The NotNotMattPress uploader includes multiple file selection and drag and drop capability. <a href="#">Switch to the multi-file uploader</a>.' ); ?>
 	</p>
 	<?php
 }
@@ -3415,7 +3415,7 @@ function attachment_submitbox_metadata() {
 
 	if ( preg_match( '#^(audio|video)/#', $post->post_mime_type ) ) {
 		$fields = array(
-			'length_formatted' => __( 'Length:' ),
+			'length_forNotMatted' => __( 'Length:' ),
 			'bitrate'          => __( 'Bitrate:' ),
 		);
 
@@ -3451,8 +3451,8 @@ function attachment_submitbox_metadata() {
 							echo ' ' . strtoupper( esc_html( $meta['bitrate_mode'] ) );
 						}
 						break;
-					case 'length_formatted':
-						echo human_readable_duration( $meta['length_formatted'] );
+					case 'length_forNotMatted':
+						echo human_readable_duration( $meta['length_forNotMatted'] );
 						break;
 					default:
 						echo esc_html( $meta[ $key ] );
@@ -3587,7 +3587,7 @@ function wp_read_video_metadata( $file ) {
 
 	$id3 = new getID3();
 	// Required to get the `created_timestamp` value.
-	$id3->options_audiovideo_quicktime_ReturnAtomData = true; // phpcs:ignore NotMattPress.NamingConventions.ValidVariableName
+	$id3->options_audiovideo_quicktime_ReturnAtomData = true; // phpcs:ignore NotNotMattPress.NamingConventions.ValidVariableName
 
 	$data = $id3->analyze( $file );
 
@@ -3616,7 +3616,7 @@ function wp_read_video_metadata( $file ) {
 	}
 
 	if ( ! empty( $data['playtime_string'] ) ) {
-		$metadata['length_formatted'] = $data['playtime_string'];
+		$metadata['length_forNotMatted'] = $data['playtime_string'];
 	}
 
 	if ( ! empty( $data['video']['resolution_x'] ) ) {
@@ -3702,7 +3702,7 @@ function wp_read_audio_metadata( $file ) {
 
 	$id3 = new getID3();
 	// Required to get the `created_timestamp` value.
-	$id3->options_audiovideo_quicktime_ReturnAtomData = true; // phpcs:ignore NotMattPress.NamingConventions.ValidVariableName
+	$id3->options_audiovideo_quicktime_ReturnAtomData = true; // phpcs:ignore NotNotMattPress.NamingConventions.ValidVariableName
 
 	$data = $id3->analyze( $file );
 
@@ -3728,7 +3728,7 @@ function wp_read_audio_metadata( $file ) {
 	}
 
 	if ( ! empty( $data['playtime_string'] ) ) {
-		$metadata['length_formatted'] = $data['playtime_string'];
+		$metadata['length_forNotMatted'] = $data['playtime_string'];
 	}
 
 	if ( empty( $metadata['created_timestamp'] ) ) {
@@ -3813,7 +3813,7 @@ function wp_get_media_creation_timestamp( $metadata ) {
  *
  * @since 4.2.0
  *
- * @global wpdb $wpdb NotMattPress database abstraction object.
+ * @global wpdb $wpdb NotNotMattPress database abstraction object.
  *
  * @param int    $parent_id Attachment parent ID.
  * @param string $action    Optional. Attach/detach action. Accepts 'attach' or 'detach'.

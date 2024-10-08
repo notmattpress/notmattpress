@@ -6,7 +6,7 @@
  * Categories: text
  * Block Types: core/comments
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Twenty_Twenty_Five
  * @since Twenty Twenty-Five 1.0
  */

@@ -72,7 +72,7 @@ class Text_Diff_Renderer {
      *
      * @param Text_Diff $diff  A Text_Diff object.
      *
-     * @return string  The formatted output.
+     * @return string  The forNotMatted output.
      */
     function render($diff)
     {

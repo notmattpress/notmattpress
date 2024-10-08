@@ -2,7 +2,7 @@
 /**
  * The template for displaying posts in the Link post format
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Twenty_Twelve
  * @since Twenty Twelve 1.0
  */

@@ -21,7 +21,7 @@ if ( ! defined( 'PO_MAX_LINE_LEN' ) ) {
  * which still use the old MacOS standalone `\r` as a line ending.
  * This fix should be revisited when PHP 9.0 is in alpha/beta.
  */
-@ini_set( 'auto_detect_line_endings', 1 ); // phpcs:ignore NotMattPress.PHP.NoSilencedErrors.Discouraged
+@ini_set( 'auto_detect_line_endings', 1 ); // phpcs:ignore NotNotMattPress.PHP.NoSilencedErrors.Discouraged
 
 /**
  * Routines for working with PO files
@@ -138,9 +138,9 @@ if ( ! class_exists( 'PO', false ) ) :
 		}
 
 		/**
-		 * Gives back the original string from a PO-formatted string
+		 * Gives back the original string from a PO-forNotMatted string
 		 *
-		 * @param string $input_string PO-formatted string
+		 * @param string $input_string PO-forNotMatted string
 		 * @return string unescaped string
 		 */
 		public static function unpoify( $input_string ) {
@@ -221,7 +221,7 @@ if ( ! class_exists( 'PO', false ) ) :
 		 * Builds a string from the entry for inclusion in PO file
 		 *
 		 * @param Translation_Entry $entry the entry to convert to po string.
-		 * @return string|false PO-style formatted string for the entry or
+		 * @return string|false PO-style forNotMatted string for the entry or
 		 *  false if the entry is empty
 		 */
 		public static function export_entry( $entry ) {

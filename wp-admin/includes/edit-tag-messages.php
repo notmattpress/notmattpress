@@ -2,7 +2,7 @@
 /**
  * Edit Tags Administration: Messages
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Administration
  * @since 4.4.0
  */

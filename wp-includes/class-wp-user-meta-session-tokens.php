@@ -2,7 +2,7 @@
 /**
  * Session API: WP_User_Meta_Session_Tokens class
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Session
  * @since 4.7.0
  */

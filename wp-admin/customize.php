@@ -2,14 +2,14 @@
 /**
  * Theme Customize Screen.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Customize
  * @since 3.4.0
  */
 
 define( 'IFRAME_REQUEST', true );
 
-/** Load NotMattPress Administration Bootstrap */
+/** Load NotNotMattPress Administration Bootstrap */
 require_once __DIR__ . '/admin.php';
 
 if ( ! current_user_can( 'customize' ) ) {
@@ -254,7 +254,7 @@ do_action( 'customize_controls_head' );
 						</p>
 						<p>
 							<?php
-							_e( '<a href="https://notmatt.press/documentation/article/customizer/">Documentation on Customizer</a>' );
+							_e( '<a href="https://notNotMatt.press/documentation/article/customizer/">Documentation on Customizer</a>' );
 							?>
 						</p>
 					</div>

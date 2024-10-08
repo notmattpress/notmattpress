@@ -4,7 +4,7 @@
  *
  * Displays all of the head element and everything up until the "site-content" div.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Twenty_Sixteen
  * @since Twenty Sixteen 1.0
  */

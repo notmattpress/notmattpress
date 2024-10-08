@@ -2,7 +2,7 @@
 /**
  * Loads the correct template based on the visitor's url
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  */
 if ( wp_using_themes() ) {
 	/**

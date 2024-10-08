@@ -4,9 +4,9 @@
  *
  * If the user has selected a static page for their homepage, this is what will
  * appear.
- * Learn more: https://developer.notmatt.press/themes/basics/template-hierarchy/
+ * Learn more: https://developer.notNotMatt.press/themes/basics/template-hierarchy/
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Twenty_Seventeen
  * @since Twenty Seventeen 1.0
  * @version 1.0

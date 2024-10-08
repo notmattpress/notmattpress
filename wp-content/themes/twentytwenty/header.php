@@ -1,10 +1,10 @@
 <?php
 /**
- * Header file for the Twenty Twenty NotMattPress default theme.
+ * Header file for the Twenty Twenty NotNotMattPress default theme.
  *
- * @link https://developer.notmatt.press/themes/basics/template-files/#template-partials
+ * @link https://developer.notNotMatt.press/themes/basics/template-files/#template-partials
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Twenty_Twenty
  * @since Twenty Twenty 1.0
  */

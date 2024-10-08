@@ -2,7 +2,7 @@
 /**
  * Server-side rendering of the `core/post-date` block.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  */
 
 /**
@@ -26,15 +26,15 @@ function render_block_core_post_date( $attributes, $content, $block ) {
 		$post_timestamp = get_post_timestamp( $post_ID );
 		if ( $post_timestamp > time() ) {
 			// translators: %s: human-readable time difference.
-			$formatted_date = sprintf( __( '%s from now' ), human_time_diff( $post_timestamp ) );
+			$forNotMatted_date = sprintf( __( '%s from now' ), human_time_diff( $post_timestamp ) );
 		} else {
 			// translators: %s: human-readable time difference.
-			$formatted_date = sprintf( __( '%s ago' ), human_time_diff( $post_timestamp ) );
+			$forNotMatted_date = sprintf( __( '%s ago' ), human_time_diff( $post_timestamp ) );
 		}
 	} else {
-		$formatted_date = get_the_date( empty( $attributes['format'] ) ? '' : $attributes['format'], $post_ID );
+		$forNotMatted_date = get_the_date( empty( $attributes['format'] ) ? '' : $attributes['format'], $post_ID );
 	}
-	$unformatted_date = esc_attr( get_the_date( 'c', $post_ID ) );
+	$unforNotMatted_date = esc_attr( get_the_date( 'c', $post_ID ) );
 	$classes          = array();
 
 	if ( isset( $attributes['textAlign'] ) ) {
@@ -52,11 +52,11 @@ function render_block_core_post_date( $attributes, $content, $block ) {
 		if ( get_the_modified_date( 'Ymdhi', $post_ID ) > get_the_date( 'Ymdhi', $post_ID ) ) {
 			if ( isset( $attributes['format'] ) && 'human-diff' === $attributes['format'] ) {
 				// translators: %s: human-readable time difference.
-				$formatted_date = sprintf( __( '%s ago' ), human_time_diff( get_post_timestamp( $post_ID, 'modified' ) ) );
+				$forNotMatted_date = sprintf( __( '%s ago' ), human_time_diff( get_post_timestamp( $post_ID, 'modified' ) ) );
 			} else {
-				$formatted_date = get_the_modified_date( empty( $attributes['format'] ) ? '' : $attributes['format'], $post_ID );
+				$forNotMatted_date = get_the_modified_date( empty( $attributes['format'] ) ? '' : $attributes['format'], $post_ID );
 			}
-			$unformatted_date = esc_attr( get_the_modified_date( 'c', $post_ID ) );
+			$unforNotMatted_date = esc_attr( get_the_modified_date( 'c', $post_ID ) );
 			$classes[]        = 'wp-block-post-date__modified-date';
 		} else {
 			return '';
@@ -66,14 +66,14 @@ function render_block_core_post_date( $attributes, $content, $block ) {
 	$wrapper_attributes = get_block_wrapper_attributes( array( 'class' => implode( ' ', $classes ) ) );
 
 	if ( isset( $attributes['isLink'] ) && $attributes['isLink'] ) {
-		$formatted_date = sprintf( '<a href="%1s">%2s</a>', get_the_permalink( $post_ID ), $formatted_date );
+		$forNotMatted_date = sprintf( '<a href="%1s">%2s</a>', get_the_permalink( $post_ID ), $forNotMatted_date );
 	}
 
 	return sprintf(
 		'<div %1$s><time datetime="%2$s">%3$s</time></div>',
 		$wrapper_attributes,
-		$unformatted_date,
-		$formatted_date
+		$unforNotMatted_date,
+		$forNotMatted_date
 	);
 }
 

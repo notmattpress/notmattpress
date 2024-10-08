@@ -2,7 +2,7 @@
 /**
  * WP_MatchesMapRegex helper class
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @since 4.7.0
  */
 

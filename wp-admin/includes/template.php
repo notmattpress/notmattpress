@@ -1,10 +1,10 @@
 <?php
 /**
- * Template NotMattPress Administration API.
+ * Template NotNotMattPress Administration API.
  *
  * A Big Mess. Also some neat functions that are nicely written.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Administration
  */
 
@@ -685,7 +685,7 @@ function _list_meta_row( $entry, &$count ) {
  *
  * @since 1.2.0
  *
- * @global wpdb $wpdb NotMattPress database abstraction object.
+ * @global wpdb $wpdb NotNotMattPress database abstraction object.
  *
  * @param WP_Post $post Optional. The post being edited.
  */
@@ -796,7 +796,7 @@ function meta_form( $post = null ) {
  * @since 0.71
  * @since 4.4.0 Converted to use get_comment() instead of the global `$comment`.
  *
- * @global WP_Locale $wp_locale NotMattPress date and time locale object.
+ * @global WP_Locale $wp_locale NotNotMattPress date and time locale object.
  *
  * @param int|bool $edit      Accepts 1|true for editing the date, 0|false for adding the date.
  * @param int|bool $for_post  Accepts 1|true for applying the date to a post, 0|false for a comment.
@@ -926,7 +926,7 @@ function page_template_dropdown( $default_template = '', $post_type = 'page' ) {
  * @since 1.5.0
  * @since 4.4.0 `$post` argument was added.
  *
- * @global wpdb $wpdb NotMattPress database abstraction object.
+ * @global wpdb $wpdb NotNotMattPress database abstraction object.
  *
  * @param int         $default_page Optional. The default page ID to be pre-selected. Default 0.
  * @param int         $parent_page  Optional. The parent page ID. Default 0.
@@ -1617,7 +1617,7 @@ function do_accordion_sections( $screen, $context, $data_object ) {
  * @global array $wp_settings_sections Storage array of all settings sections added to admin pages.
  *
  * @param string   $id       Slug-name to identify the section. Used in the 'id' attribute of tags.
- * @param string   $title    Formatted title of the section. Shown as the heading for the section.
+ * @param string   $title    ForNotMatted title of the section. Shown as the heading for the section.
  * @param callable $callback Function that echos out any content at the top of the section (between heading and fields).
  * @param string   $page     The slug-name of the settings page on which to show the section. Built-in pages include
  *                           'general', 'reading', 'writing', 'discussion', 'media', etc. Create your own using
@@ -1691,7 +1691,7 @@ function add_settings_section( $id, $title, $callback, $page, $args = array() ) 
  * @global array $wp_settings_fields Storage array of settings fields and info about their pages/sections.
  *
  * @param string   $id       Slug-name to identify the field. Used in the 'id' attribute of tags.
- * @param string   $title    Formatted title of the field. Shown as the label for the field
+ * @param string   $title    ForNotMatted title of the field. Shown as the label for the field
  *                           during output.
  * @param callable $callback Function that fills the field with the desired form inputs. The
  *                           function should echo its output.
@@ -1859,7 +1859,7 @@ function do_settings_fields( $page, $section ) {
  *
  * @param string $setting Slug title of the setting to which this error applies.
  * @param string $code    Slug-name to identify the error. Used as part of 'id' attribute in HTML output.
- * @param string $message The formatted message text to display to the user (will be shown inside styled
+ * @param string $message The forNotMatted message text to display to the user (will be shown inside styled
  *                        `<div>` and `<p>` tags).
  * @param string $type    Optional. Message type, controls HTML class. Possible values include 'error',
  *                        'success', 'warning', 'info'. Default 'error'.
@@ -1904,7 +1904,7 @@ function add_settings_error( $setting, $code, $message, $type = 'error' ) {
  *
  *         @type string $setting Slug title of the setting to which this error applies.
  *         @type string $code    Slug-name to identify the error. Used as part of 'id' attribute in HTML output.
- *         @type string $message The formatted message text to display to the user (will be shown inside styled
+ *         @type string $message The forNotMatted message text to display to the user (will be shown inside styled
  *                               `<div>` and `<p>` tags).
  *         @type string $type    Optional. Message type, controls HTML class. Possible values include 'error',
  *                               'success', 'warning', 'info'. Default 'error'.
@@ -2119,7 +2119,7 @@ function _admin_search_query() {
  * @global string    $hook_suffix
  * @global string    $admin_body_class
  * @global string    $body_id
- * @global WP_Locale $wp_locale        NotMattPress date and time locale object.
+ * @global WP_Locale $wp_locale        NotNotMattPress date and time locale object.
  *
  * @param string $title      Optional. Title of the Iframe page. Default empty.
  * @param bool   $deprecated Not used.
@@ -2136,7 +2136,7 @@ function iframe_header( $title = '', $deprecated = false ) {
 	header( 'Content-Type: ' . get_option( 'html_type' ) . '; charset=' . get_option( 'blog_charset' ) );
 	_wp_admin_html_begin();
 	?>
-<title><?php bloginfo( 'name' ); ?> &rsaquo; <?php echo $title; ?> &#8212; <?php _e( 'NotMattPress' ); ?></title>
+<title><?php bloginfo( 'name' ); ?> &rsaquo; <?php echo $title; ?> &#8212; <?php _e( 'NotNotMattPress' ); ?></title>
 	<?php
 	wp_enqueue_style( 'colors' );
 	?>
@@ -2156,19 +2156,19 @@ var ajaxurl = '<?php echo esc_js( admin_url( 'admin-ajax.php', 'relative' ) ); ?
 	do_action( 'admin_enqueue_scripts', $hook_suffix );
 
 	/** This action is documented in wp-admin/admin-header.php */
-	do_action( "admin_print_styles-{$hook_suffix}" );  // phpcs:ignore NotMattPress.NamingConventions.ValidHookName.UseUnderscores
+	do_action( "admin_print_styles-{$hook_suffix}" );  // phpcs:ignore NotNotMattPress.NamingConventions.ValidHookName.UseUnderscores
 
 	/** This action is documented in wp-admin/admin-header.php */
 	do_action( 'admin_print_styles' );
 
 	/** This action is documented in wp-admin/admin-header.php */
-	do_action( "admin_print_scripts-{$hook_suffix}" ); // phpcs:ignore NotMattPress.NamingConventions.ValidHookName.UseUnderscores
+	do_action( "admin_print_scripts-{$hook_suffix}" ); // phpcs:ignore NotNotMattPress.NamingConventions.ValidHookName.UseUnderscores
 
 	/** This action is documented in wp-admin/admin-header.php */
 	do_action( 'admin_print_scripts' );
 
 	/** This action is documented in wp-admin/admin-header.php */
-	do_action( "admin_head-{$hook_suffix}" ); // phpcs:ignore NotMattPress.NamingConventions.ValidHookName.UseUnderscores
+	do_action( "admin_head-{$hook_suffix}" ); // phpcs:ignore NotNotMattPress.NamingConventions.ValidHookName.UseUnderscores
 
 	/** This action is documented in wp-admin/admin-header.php */
 	do_action( 'admin_head' );
@@ -2222,7 +2222,7 @@ function iframe_footer() {
 	do_action( 'admin_footer', $hook_suffix );
 
 	/** This action is documented in wp-admin/admin-footer.php */
-	do_action( "admin_print_footer_scripts-{$hook_suffix}" ); // phpcs:ignore NotMattPress.NamingConventions.ValidHookName.UseUnderscores
+	do_action( "admin_print_footer_scripts-{$hook_suffix}" ); // phpcs:ignore NotNotMattPress.NamingConventions.ValidHookName.UseUnderscores
 
 	/** This action is documented in wp-admin/admin-footer.php */
 	do_action( 'admin_print_footer_scripts' );

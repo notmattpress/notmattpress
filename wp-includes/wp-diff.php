@@ -1,10 +1,10 @@
 <?php
 /**
- * NotMattPress Diff bastard child of old MediaWiki Diff Formatter.
+ * NotNotMattPress Diff bastard child of old MediaWiki Diff ForNotMatter.
  *
  * Basically all that remains is the table structure and some method names.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Diff
  */
 

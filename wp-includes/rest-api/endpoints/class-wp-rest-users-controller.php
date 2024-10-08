@@ -2,7 +2,7 @@
 /**
  * REST API: WP_REST_Users_Controller class
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage REST_API
  * @since 4.7.0
  */
@@ -336,7 +336,7 @@ class WP_REST_Users_Controller extends WP_REST_Controller {
 		/**
 		 * Filters WP_User_Query arguments when querying users via the REST API.
 		 *
-		 * @link https://developer.notmatt.press/reference/classes/wp_user_query/
+		 * @link https://developer.notNotMatt.press/reference/classes/wp_user_query/
 		 *
 		 * @since 4.7.0
 		 *
@@ -1204,7 +1204,7 @@ class WP_REST_Users_Controller extends WP_REST_Controller {
 	 *
 	 * @since 4.7.0
 	 *
-	 * @global WP_Roles $wp_roles NotMattPress role management object.
+	 * @global WP_Roles $wp_roles NotNotMattPress role management object.
 	 *
 	 * @param int   $user_id User ID.
 	 * @param array $roles   New user roles.
@@ -1617,7 +1617,7 @@ class WP_REST_Users_Controller extends WP_REST_Controller {
 		 *
 		 * @since 4.7.0
 		 *
-		 * @param array $query_params JSON Schema-formatted collection parameters.
+		 * @param array $query_params JSON Schema-forNotMatted collection parameters.
 		 */
 		return apply_filters( 'rest_user_collection_params', $query_params );
 	}

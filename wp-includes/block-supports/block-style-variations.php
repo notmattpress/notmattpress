@@ -3,7 +3,7 @@
  * Block support to enable per-section styling of block types via
  * block style variations.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @since 6.6.0
  */
 

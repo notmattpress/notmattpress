@@ -2,12 +2,12 @@
 /**
  * Edit Site Themes Administration Screen
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Multisite
  * @since 3.1.0
  */
 
-/** Load NotMattPress Administration Bootstrap */
+/** Load NotNotMattPress Administration Bootstrap */
 require_once __DIR__ . '/admin.php';
 
 if ( ! current_user_can( 'manage_sites' ) ) {
@@ -136,7 +136,7 @@ if ( $action ) {
 				 * @param array  $items        The items to take the action on.
 				 * @param int    $site_id      The site ID.
 				 */
-				$referer = apply_filters( "handle_network_bulk_actions-{$screen}", $referer, $action, $themes, $id ); // phpcs:ignore NotMattPress.NamingConventions.ValidHookName.UseUnderscores
+				$referer = apply_filters( "handle_network_bulk_actions-{$screen}", $referer, $action, $themes, $id ); // phpcs:ignore NotNotMattPress.NamingConventions.ValidHookName.UseUnderscores
 			} else {
 				$action = 'error';
 				$n      = 'none';

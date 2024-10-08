@@ -489,7 +489,7 @@ class getid3_mp3 extends getid3_handler
 
 		static $MPEGaudioHeaderValidCache = array();
 		if (!isset($MPEGaudioHeaderValidCache[$head4_key])) { // Not in cache
-			//$MPEGaudioHeaderValidCache[$head4_key] = self::MPEGaudioHeaderValid($MPEGheaderRawArray, false, true);  // allow badly-formatted freeformat (from LAME 3.90 - 3.93.1)
+			//$MPEGaudioHeaderValidCache[$head4_key] = self::MPEGaudioHeaderValid($MPEGheaderRawArray, false, true);  // allow badly-forNotMatted freeformat (from LAME 3.90 - 3.93.1)
 			$MPEGaudioHeaderValidCache[$head4_key] = self::MPEGaudioHeaderValid($MPEGheaderRawArray, false, false);
 		}
 

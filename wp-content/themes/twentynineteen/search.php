@@ -2,9 +2,9 @@
 /**
  * The template for displaying search results pages
  *
- * @link https://developer.notmatt.press/themes/basics/template-hierarchy/#search-result
+ * @link https://developer.notNotMatt.press/themes/basics/template-hierarchy/#search-result
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Twenty_Nineteen
  * @since Twenty Nineteen 1.0
  */

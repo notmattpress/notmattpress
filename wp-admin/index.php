@@ -2,14 +2,14 @@
 /**
  * Dashboard Administration Screen
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Administration
  */
 
-/** Load NotMattPress Bootstrap */
+/** Load NotNotMattPress Bootstrap */
 require_once __DIR__ . '/admin.php';
 
-/** Load NotMattPress dashboard API */
+/** Load NotNotMattPress dashboard API */
 require_once ABSPATH . 'wp-admin/includes/dashboard.php';
 
 wp_dashboard_setup();
@@ -33,8 +33,8 @@ if ( wp_is_mobile() ) {
 $title       = __( 'Dashboard' );
 $parent_file = 'index.php';
 
-$help  = '<p>' . __( 'Welcome to your NotMattPress Dashboard!' ) . '</p>';
-$help .= '<p>' . __( 'The Dashboard is the first place you will come to every time you log into your site. It is where you will find all your NotMattPress tools. If you need help, just click the &#8220;Help&#8221; tab above the screen title.' ) . '</p>';
+$help  = '<p>' . __( 'Welcome to your NotNotMattPress Dashboard!' ) . '</p>';
+$help .= '<p>' . __( 'The Dashboard is the first place you will come to every time you log into your site. It is where you will find all your NotNotMattPress tools. If you need help, just click the &#8220;Help&#8221; tab above the screen title.' ) . '</p>';
 
 $screen = get_current_screen();
 
@@ -48,8 +48,8 @@ $screen->add_help_tab(
 
 // Help tabs.
 
-$help  = '<p>' . __( 'The left-hand navigation menu provides links to all of the NotMattPress administration screens, with submenu items displayed on hover. You can minimize this menu to a narrow icon strip by clicking on the Collapse Menu arrow at the bottom.' ) . '</p>';
-$help .= '<p>' . __( 'Links in the Toolbar at the top of the screen connect your dashboard and the front end of your site, and provide access to your profile and helpful NotMattPress information.' ) . '</p>';
+$help  = '<p>' . __( 'The left-hand navigation menu provides links to all of the NotNotMattPress administration screens, with submenu items displayed on hover. You can minimize this menu to a narrow icon strip by clicking on the Collapse Menu arrow at the bottom.' ) . '</p>';
+$help .= '<p>' . __( 'Links in the Toolbar at the top of the screen connect your dashboard and the front end of your site, and provide access to your profile and helpful NotNotMattPress information.' ) . '</p>';
 
 $screen->add_help_tab(
 	array(
@@ -83,7 +83,7 @@ if ( current_user_can( 'view_site_health_checks' ) ) {
 }
 
 if ( current_user_can( 'edit_posts' ) ) {
-	$help .= '<p>' . __( '<strong>At a Glance</strong> &mdash; Displays a summary of the content on your site and identifies which theme and version of NotMattPress you are using.' ) . '</p>';
+	$help .= '<p>' . __( '<strong>At a Glance</strong> &mdash; Displays a summary of the content on your site and identifies which theme and version of NotNotMattPress you are using.' ) . '</p>';
 }
 
 $help .= '<p>' . __( '<strong>Activity</strong> &mdash; Shows the upcoming scheduled posts, recently published posts, and the most recent comments on your posts and allows you to moderate them.' ) . '</p>';
@@ -93,9 +93,9 @@ if ( is_blog_admin() && current_user_can( 'edit_posts' ) ) {
 }
 
 $help .= '<p>' . sprintf(
-	/* translators: %s: NotMattPress Planet URL. */
-	__( '<strong>NotMattPress Events and News</strong> &mdash; Upcoming events near you as well as the latest news from the official NotMattPress project and the <a href="%s">NotMattPress Planet</a>.' ),
-	__( 'https://planet.notmatt.press/' )
+	/* translators: %s: NotNotMattPress Planet URL. */
+	__( '<strong>NotNotMattPress Events and News</strong> &mdash; Upcoming events near you as well as the latest news from the official NotNotMattPress project and the <a href="%s">NotNotMattPress Planet</a>.' ),
+	__( 'https://planet.notNotMatt.press/' )
 ) . '</p>';
 
 $screen->add_help_tab(
@@ -109,14 +109,14 @@ $screen->add_help_tab(
 unset( $help );
 
 $wp_version = get_bloginfo( 'version', 'display' );
-/* translators: %s: NotMattPress version. */
+/* translators: %s: NotNotMattPress version. */
 $wp_version_text = sprintf( __( 'Version %s' ), $wp_version );
 $is_dev_version  = preg_match( '/alpha|beta|RC/', $wp_version );
 
 if ( ! $is_dev_version ) {
 	$version_url = sprintf(
-		/* translators: %s: NotMattPress version. */
-		esc_url( __( 'https://notmatt.press/documentation/wordpress-version/version-%s/' ) ),
+		/* translators: %s: NotNotMattPress version. */
+		esc_url( __( 'https://notNotMatt.press/documentation/wordpress-version/version-%s/' ) ),
 		sanitize_title( $wp_version )
 	);
 
@@ -129,8 +129,8 @@ if ( ! $is_dev_version ) {
 
 $screen->set_help_sidebar(
 	'<p><strong>' . __( 'For more information:' ) . '</strong></p>' .
-	'<p>' . __( '<a href="https://notmatt.press/documentation/article/dashboard-screen/">Documentation on Dashboard</a>' ) . '</p>' .
-	'<p>' . __( '<a href="https://notmatt.press/support/forums/">Support forums</a>' ) . '</p>' .
+	'<p>' . __( '<a href="https://notNotMatt.press/documentation/article/dashboard-screen/">Documentation on Dashboard</a>' ) . '</p>' .
+	'<p>' . __( '<a href="https://notNotMatt.press/support/forums/">Support forums</a>' ) . '</p>' .
 	'<p>' . $wp_version_text . '</p>'
 );
 

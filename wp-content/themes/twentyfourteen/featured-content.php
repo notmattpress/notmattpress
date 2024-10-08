@@ -2,7 +2,7 @@
 /**
  * The template for displaying featured content
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Twenty_Fourteen
  * @since Twenty Fourteen 1.0
  */

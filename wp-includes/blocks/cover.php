@@ -2,7 +2,7 @@
 /**
  * Server-side rendering of the `core/cover` block.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  */
 
 /**

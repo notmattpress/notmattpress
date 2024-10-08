@@ -2,7 +2,7 @@
 /**
  * Template for displaying all single posts
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Twenty_Ten
  * @since Twenty Ten 1.0
  */

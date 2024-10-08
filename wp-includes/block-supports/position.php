@@ -2,7 +2,7 @@
 /**
  * Position block support flag.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @since 6.2.0
  */
 

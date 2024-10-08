@@ -1,10 +1,10 @@
 <?php
 /**
- * NotMattPress Options Header.
+ * NotNotMattPress Options Header.
  *
  * Displays updated message, if updated variable is part of the URL query.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Administration
  */
 

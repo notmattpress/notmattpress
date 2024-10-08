@@ -3,7 +3,7 @@
  * Post Meta source for the block bindings.
  *
  * @since 6.5.0
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Block Bindings
  */
 

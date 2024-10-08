@@ -2,7 +2,7 @@
 /**
  * Noop functions for load-scripts.php and load-styles.php.
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Administration
  * @since 4.4.0
  */

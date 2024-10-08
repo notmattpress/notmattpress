@@ -1,8 +1,8 @@
 <?php
 /**
- * Base NotMattPress Image Editor
+ * Base NotNotMattPress Image Editor
  *
- * @package NotMattPress
+ * @package NotNotMattPress
  * @subpackage Image_Editor
  */
 
