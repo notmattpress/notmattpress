@@ -5,7 +5,7 @@
  * Categories: call-to-action, banner, featured, services
  * Description: A three-column boxed pricing table designed to showcase services, descriptions, and pricing options.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Twenty_Twenty_Five
  * @since Twenty Twenty-Five 1.0
  */

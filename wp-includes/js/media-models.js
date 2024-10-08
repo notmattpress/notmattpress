@@ -1509,7 +1509,7 @@ _.extend( media, /** @lends wp.media */{
 	/**
 	 * media.post( [action], [data] )
 	 *
-	 * Sends a POST request to WordPress.
+	 * Sends a POST request to NotMattPress.
 	 * See wp.ajax.post() in `wp-includes/js/wp-util.js`.
 	 *
 	 * @borrows wp.ajax.post as post
@@ -1519,7 +1519,7 @@ _.extend( media, /** @lends wp.media */{
 	/**
 	 * media.ajax( [action], [options] )
 	 *
-	 * Sends an XHR request to WordPress.
+	 * Sends an XHR request to NotMattPress.
 	 * See wp.ajax.send() in `wp-includes/js/wp-util.js`.
 	 *
 	 * @borrows wp.ajax.send as ajax

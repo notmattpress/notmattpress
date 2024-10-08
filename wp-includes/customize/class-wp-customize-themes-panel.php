@@ -2,7 +2,7 @@
 /**
  * Customize API: WP_Customize_Themes_Panel class
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Customize
  * @since 4.9.0
  */

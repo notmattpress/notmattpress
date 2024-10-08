@@ -131,7 +131,7 @@ const createRootURLMiddleware = rootURL => (options, next) => {
 const external_wp_url_namespaceObject = window["wp"]["url"];
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/api-fetch/build-module/middlewares/preloading.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -196,7 +196,7 @@ function prepareResponse(responseData, parse) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/api-fetch/build-module/middlewares/fetch-all-middleware.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -367,7 +367,7 @@ const httpV1Middleware = (options, next) => {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/api-fetch/build-module/middlewares/user-locale.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -391,7 +391,7 @@ const userLocaleMiddleware = (options, next) => {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/api-fetch/build-module/utils/response.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -467,7 +467,7 @@ function parseAndThrowError(response, shouldParseResponse = true) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/api-fetch/build-module/middlewares/media-upload.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -549,7 +549,7 @@ const mediaUploadMiddleware = (options, next) => {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/api-fetch/build-module/middlewares/theme-preview.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -590,7 +590,7 @@ const createThemePreviewMiddleware = themePath => (options, next) => {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/api-fetch/build-module/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -618,7 +618,7 @@ const DEFAULT_HEADERS = {
   // The backend uses the Accept header as a condition for considering an
   // incoming request as a REST request.
   //
-  // See: https://core.trac.wordpress.org/ticket/44534
+  // See: https://core.trac.notmatt.press/ticket/44534
   Accept: 'application/json, */*;q=0.1'
 };
 

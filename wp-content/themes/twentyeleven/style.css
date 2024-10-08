@@ -1,9 +1,9 @@
 /*
 Theme Name: Twenty Eleven
-Theme URI: https://wordpress.org/themes/twentyeleven/
-Author: the WordPress team
-Author URI: https://wordpress.org/
-Description: The 2011 theme for WordPress is sophisticated, lightweight, and adaptable. Make it yours with a custom menu, header image, and background -- then go further with available theme options for light or dark color scheme, custom link colors, and three layout choices. Twenty Eleven comes equipped with a Showcase page template that transforms your front page into a showcase to show off your best content, widget support galore (sidebar, three footer areas, and a Showcase page widget area), and a custom "Ephemera" widget to display your Aside, Link, Quote, or Status posts. Included are styles for print and for the admin editor, support for featured images (as custom header images on posts and pages and as large images on featured "sticky" posts), and special styles for six different post formats.
+Theme URI: https://notmatt.press/themes/twentyeleven/
+Author: the NotMattPress team
+Author URI: https://notmatt.press/
+Description: The 2011 theme for NotMattPress is sophisticated, lightweight, and adaptable. Make it yours with a custom menu, header image, and background -- then go further with available theme options for light or dark color scheme, custom link colors, and three layout choices. Twenty Eleven comes equipped with a Showcase page template that transforms your front page into a showcase to show off your best content, widget support galore (sidebar, three footer areas, and a Showcase page widget area), and a custom "Ephemera" widget to display your Aside, Link, Quote, or Status posts. Included are styles for print and for the admin editor, support for featured images (as custom header images on posts and pages and as large images on featured "sticky" posts), and special styles for six different post formats.
 Version: 4.7
 Requires at least: 3.2
 Tested up to: 6.6
@@ -896,13 +896,13 @@ dl.gallery-item {
 img[class*="align"],
 img[class*="wp-image-"],
 img[class*="attachment-"] {
-	height: auto; /* Make sure images with WordPress-added height and width attributes are scaled correctly */
+	height: auto; /* Make sure images with NotMattPress-added height and width attributes are scaled correctly */
 }
 img.size-full,
 img.size-large {
 	max-width: 97.5%;
 	width: auto; /* Prevent stretching of full-size and large-size images with height and width attributes in IE8 */
-	height: auto; /* Make sure images with WordPress-added height and width attributes are scaled correctly */
+	height: auto; /* Make sure images with NotMattPress-added height and width attributes are scaled correctly */
 }
 .entry-content img.wp-smiley {
 	border: none;
@@ -975,7 +975,7 @@ img#wpstats {
 /* Image borders */
 img[class*="align"],
 img[class*="wp-image-"],
-#content .gallery .gallery-icon img {/* Add fancy borders to all WordPress-added images but not things like badges and icons and the like */
+#content .gallery .gallery-icon img {/* Add fancy borders to all NotMattPress-added images but not things like badges and icons and the like */
 	border: 1px solid #ddd;
 	padding: 6px;
 	max-width: 97.5%;
@@ -2398,7 +2398,7 @@ p.comment-form-comment {
 /* Does the same thing as <meta name="viewport" content="width=device-width">,
  * but in the future W3C standard way. -ms- prefix is required for IE10+ to
  * render responsive styling in Windows 8 "snapped" views; IE10+ does not honor
- * the meta tag. See https://core.trac.wordpress.org/ticket/25888.
+ * the meta tag. See https://core.trac.notmatt.press/ticket/25888.
  */
 @-ms-viewport {
 	width: device-width;

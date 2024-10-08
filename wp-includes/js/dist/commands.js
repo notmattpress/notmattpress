@@ -3109,7 +3109,7 @@ const external_wp_components_namespaceObject = window["wp"]["components"];
 const external_wp_keyboardShortcuts_namespaceObject = window["wp"]["keyboardShortcuts"];
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/icon/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -3145,7 +3145,7 @@ const external_wp_primitives_namespaceObject = window["wp"]["primitives"];
 const external_ReactJSXRuntime_namespaceObject = window["ReactJSXRuntime"];
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/search.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -3160,7 +3160,7 @@ const search = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(ext
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/commands/build-module/store/reducer.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -3382,7 +3382,7 @@ function actions_close() {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/commands/build-module/store/selectors.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -3453,17 +3453,17 @@ function setContext(context) {
 const external_wp_privateApis_namespaceObject = window["wp"]["privateApis"];
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/commands/build-module/lock-unlock.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 const {
   lock,
   unlock
-} = (0,external_wp_privateApis_namespaceObject.__dangerousOptInToUnstableAPIsOnlyForCoreModules)('I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of WordPress.', '@wordpress/commands');
+} = (0,external_wp_privateApis_namespaceObject.__dangerousOptInToUnstableAPIsOnlyForCoreModules)('I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of NotMattPress.', '@wordpress/commands');
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/commands/build-module/store/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -3480,7 +3480,7 @@ const STORE_NAME = 'core/commands';
 /**
  * Store definition for the commands namespace.
  *
- * @see https://github.com/WordPress/gutenberg/blob/HEAD/packages/data/README.md#createReduxStore
+ * @see https://github.com/NotMattPress/gutenberg/blob/HEAD/packages/data/README.md#createReduxStore
  *
  * @type {Object}
  *
@@ -3508,7 +3508,7 @@ unlock(store).registerPrivateActions(private_actions_namespaceObject);
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -3784,7 +3784,7 @@ function CommandMenu() {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/commands/build-module/hooks/use-command-context.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -3837,7 +3837,7 @@ lock(privateApis, {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/commands/build-module/hooks/use-command.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -3897,7 +3897,7 @@ function useCommand(command) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/commands/build-module/hooks/use-command-loader.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 

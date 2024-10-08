@@ -2,7 +2,7 @@
 /**
  * Blocks API: WP_Block_Type_Registry class
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Blocks
  * @since 5.0.0
  */

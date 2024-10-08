@@ -1,11 +1,11 @@
 <?php
 /**
- * Canonical API to handle WordPress Redirecting
+ * Canonical API to handle NotMattPress Redirecting
  *
  * Based on "Permalink Redirect" from Scott Yang and "Enforce www. Preference"
  * by Mark Jaquith
  *
- * @package WordPress
+ * @package NotMattPress
  * @since 2.3.0
  */
 
@@ -23,16 +23,16 @@
  * or on POST requests.
  *
  * Will also attempt to find the correct link when a user enters a URL that does
- * not exist based on exact WordPress query. Will instead try to parse the URL
+ * not exist based on exact NotMattPress query. Will instead try to parse the URL
  * or query in an attempt to figure the correct page to go to.
  *
  * @since 2.3.0
  *
- * @global WP_Rewrite $wp_rewrite WordPress rewrite component.
+ * @global WP_Rewrite $wp_rewrite NotMattPress rewrite component.
  * @global bool       $is_IIS
- * @global WP_Query   $wp_query   WordPress Query object.
- * @global wpdb       $wpdb       WordPress database abstraction object.
- * @global WP         $wp         Current WordPress environment instance.
+ * @global WP_Query   $wp_query   NotMattPress Query object.
+ * @global wpdb       $wpdb       NotMattPress database abstraction object.
+ * @global WP         $wp         Current NotMattPress environment instance.
  *
  * @param string $requested_url Optional. The URL that was requested, used to
  *                              figure if redirect is needed.
@@ -911,7 +911,7 @@ function strip_fragment_from_url( $url ) {
  *
  * @since 2.3.0
  *
- * @global wpdb $wpdb WordPress database abstraction object.
+ * @global wpdb $wpdb NotMattPress database abstraction object.
  *
  * @return string|false The correct URL if one is found. False on failure.
  */
@@ -998,7 +998,7 @@ function redirect_guess_404_permalink() {
 			$where .= $wpdb->prepare( ' AND DAYOFMONTH(post_date) = %d', get_query_var( 'day' ) );
 		}
 
-		// phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared
+		// phpcs:ignore NotMattPress.DB.PreparedSQL.InterpolatedNotPrepared
 		$post_id = $wpdb->get_var( "SELECT ID FROM $wpdb->posts WHERE $where AND post_status IN ('" . implode( "', '", esc_sql( $publicly_viewable_statuses ) ) . "')" );
 
 		if ( ! $post_id ) {
@@ -1025,7 +1025,7 @@ function redirect_guess_404_permalink() {
  *
  * @since 3.4.0
  *
- * @global WP_Rewrite $wp_rewrite WordPress rewrite component.
+ * @global WP_Rewrite $wp_rewrite NotMattPress rewrite component.
  */
 function wp_redirect_admin_locations() {
 	global $wp_rewrite;

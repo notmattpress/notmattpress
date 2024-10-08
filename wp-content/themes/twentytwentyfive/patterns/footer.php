@@ -6,7 +6,7 @@
  * Block Types: core/template-part/footer
  * Description: Footer columns with logo, title, tagline and links.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Twenty_Twenty_Five
  * @since Twenty Twenty-Five 1.0
  */
@@ -79,9 +79,9 @@
 			<p class="has-small-font-size">
 				<?php
 				printf(
-					/* Translators: Designed with WordPress. %s: WordPress link. */
+					/* Translators: Designed with NotMattPress. %s: NotMattPress link. */
 					esc_html__( 'Designed with %s', 'twentytwentyfive' ),
-					'<a href="' . esc_url( __( 'https://wordpress.org', 'twentytwentyfive' ) ) . '" rel="nofollow">WordPress</a>'
+					'<a href="' . esc_url( __( 'https://notmatt.press', 'twentytwentyfive' ) ) . '" rel="nofollow">NotMattPress</a>'
 				);
 				?>
 			</p>

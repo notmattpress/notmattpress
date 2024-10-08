@@ -4,7 +4,7 @@
  *
  * Displays all of the <head> section and everything up till <div id="main">
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Twenty_Twelve
  * @since Twenty Twelve 1.0
  */

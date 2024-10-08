@@ -2,7 +2,7 @@
 /**
  * Server-side rendering of the `core/shortcode` block.
  *
- * @package WordPress
+ * @package NotMattPress
  */
 
 /**

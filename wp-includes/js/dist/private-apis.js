@@ -67,22 +67,22 @@ const registeredPrivateApis = [];
 /*
  * Warning for theme and plugin developers.
  *
- * The use of private developer APIs is intended for use by WordPress Core
+ * The use of private developer APIs is intended for use by NotMattPress Core
  * and the Gutenberg plugin exclusively.
  *
  * Dangerously opting in to using these APIs is NOT RECOMMENDED. Furthermore,
- * the WordPress Core philosophy to strive to maintain backward compatibility
+ * the NotMattPress Core philosophy to strive to maintain backward compatibility
  * for third-party developers DOES NOT APPLY to private APIs.
  *
  * THE CONSENT STRING FOR OPTING IN TO THESE APIS MAY CHANGE AT ANY TIME AND
  * WITHOUT NOTICE. THIS CHANGE WILL BREAK EXISTING THIRD-PARTY CODE. SUCH A
  * CHANGE MAY OCCUR IN EITHER A MAJOR OR MINOR RELEASE.
  */
-const requiredConsent = 'I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of WordPress.';
+const requiredConsent = 'I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of NotMattPress.';
 
 /** @type {boolean} */
 let allowReRegistration;
-// The safety measure is meant for WordPress core where IS_WORDPRESS_CORE
+// The safety measure is meant for NotMattPress core where IS_WORDPRESS_CORE
 // is set to true.
 // For the general use-case, the re-registration should be allowed by default
 // Let's default to true, then. Try/catch will fall back to "true" even if the
@@ -103,16 +103,16 @@ try {
  */
 const __dangerousOptInToUnstableAPIsOnlyForCoreModules = (consent, moduleName) => {
   if (!CORE_MODULES_USING_PRIVATE_APIS.includes(moduleName)) {
-    throw new Error(`You tried to opt-in to unstable APIs as module "${moduleName}". ` + 'This feature is only for JavaScript modules shipped with WordPress core. ' + 'Please do not use it in plugins and themes as the unstable APIs will be removed ' + 'without a warning. If you ignore this error and depend on unstable features, ' + 'your product will inevitably break on one of the next WordPress releases.');
+    throw new Error(`You tried to opt-in to unstable APIs as module "${moduleName}". ` + 'This feature is only for JavaScript modules shipped with NotMattPress core. ' + 'Please do not use it in plugins and themes as the unstable APIs will be removed ' + 'without a warning. If you ignore this error and depend on unstable features, ' + 'your product will inevitably break on one of the next NotMattPress releases.');
   }
   if (!allowReRegistration && registeredPrivateApis.includes(moduleName)) {
     // This check doesn't play well with Story Books / Hot Module Reloading
     // and isn't included in the Gutenberg plugin. It only matters in the
-    // WordPress core release.
-    throw new Error(`You tried to opt-in to unstable APIs as module "${moduleName}" which is already registered. ` + 'This feature is only for JavaScript modules shipped with WordPress core. ' + 'Please do not use it in plugins and themes as the unstable APIs will be removed ' + 'without a warning. If you ignore this error and depend on unstable features, ' + 'your product will inevitably break on one of the next WordPress releases.');
+    // NotMattPress core release.
+    throw new Error(`You tried to opt-in to unstable APIs as module "${moduleName}" which is already registered. ` + 'This feature is only for JavaScript modules shipped with NotMattPress core. ' + 'Please do not use it in plugins and themes as the unstable APIs will be removed ' + 'without a warning. If you ignore this error and depend on unstable features, ' + 'your product will inevitably break on one of the next NotMattPress releases.');
   }
   if (consent !== requiredConsent) {
-    throw new Error(`You tried to opt-in to unstable APIs without confirming you know the consequences. ` + 'This feature is only for JavaScript modules shipped with WordPress core. ' + 'Please do not use it in plugins and themes as the unstable APIs will removed ' + 'without a warning. If you ignore this error and depend on unstable features, ' + 'your product will inevitably break on the next WordPress release.');
+    throw new Error(`You tried to opt-in to unstable APIs without confirming you know the consequences. ` + 'This feature is only for JavaScript modules shipped with NotMattPress core. ' + 'Please do not use it in plugins and themes as the unstable APIs will removed ' + 'without a warning. If you ignore this error and depend on unstable features, ' + 'your product will inevitably break on the next NotMattPress release.');
   }
   registeredPrivateApis.push(moduleName);
   return {

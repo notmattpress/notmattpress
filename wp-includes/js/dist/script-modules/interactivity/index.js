@@ -331,7 +331,7 @@ function utils_useSignalEffect(callback) {
  * available inside hook callbacks.
  *
  * Asyncronous functions should use generators that yield promises instead of awaiting them.
- * See the documentation for details: https://developer.wordpress.org/block-editor/reference-guides/packages/packages-interactivity/packages-interactivity-api-reference/#the-store
+ * See the documentation for details: https://developer.notmatt.press/block-editor/reference-guides/packages/packages-interactivity/packages-interactivity-api-reference/#the-store
  *
  * @param func The passed function.
  * @return The wrapped function.
@@ -1424,7 +1424,7 @@ const context = (0,preact_module/* createContext */.q6)({
   server: {}
 });
 
-// WordPress Directives.
+// NotMattPress Directives.
 const directiveCallbacks = {};
 const directivePriorities = {};
 
@@ -2431,7 +2431,7 @@ const init = async () => {
 
 
 
-const requiredConsent = 'I acknowledge that using private APIs means my theme or plugin will inevitably break in the next version of WordPress.';
+const requiredConsent = 'I acknowledge that using private APIs means my theme or plugin will inevitably break in the next version of NotMattPress.';
 const privateApis = lock => {
   if (lock === requiredConsent) {
     return {

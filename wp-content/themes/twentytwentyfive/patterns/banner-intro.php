@@ -5,7 +5,7 @@
  * Categories: banner, featured
  * Description: A large left-aligned heading with a brand name emphasized in bold.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Twenty_Twenty_Five
  * @since Twenty Twenty-Five 1.0
  */

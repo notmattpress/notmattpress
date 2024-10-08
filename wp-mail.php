@@ -1,13 +1,13 @@
 <?php
 /**
  * Gets the email message from the user's mailbox to add as
- * a WordPress post. Mailbox connection information must be
+ * a NotMattPress post. Mailbox connection information must be
  * configured under Settings > Writing
  *
- * @package WordPress
+ * @package NotMattPress
  */
 
-/** Make sure that the WordPress bootstrap has run before continuing. */
+/** Make sure that the NotMattPress bootstrap has run before continuing. */
 require __DIR__ . '/wp-load.php';
 
 /** This filter is documented in wp-admin/options.php */
@@ -26,7 +26,7 @@ if ( 'mail.example.com' === $mailserver_url || empty( $mailserver_url ) ) {
  *
  * @since 2.9.0
  */
-do_action( 'wp-mail.php' ); // phpcs:ignore WordPress.NamingConventions.ValidHookName.UseUnderscores
+do_action( 'wp-mail.php' ); // phpcs:ignore NotMattPress.NamingConventions.ValidHookName.UseUnderscores
 
 /** Get the POP3 class with which to access the mailbox. */
 require_once ABSPATH . WPINC . '/class-pop3.php';

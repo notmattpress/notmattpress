@@ -7,7 +7,7 @@
  * handled by a callback to twentytwelve_comment() which is
  * located in the functions.php file.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Twenty_Twelve
  * @since Twenty Twelve 1.0
  */

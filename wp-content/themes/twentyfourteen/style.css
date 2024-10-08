@@ -1,9 +1,9 @@
 /*
 Theme Name: Twenty Fourteen
-Theme URI: https://wordpress.org/themes/twentyfourteen/
-Author: the WordPress team
-Author URI: https://wordpress.org/
-Description: In 2014, our default theme lets you create a responsive magazine website with a sleek, modern design. Feature your favorite homepage content in either a grid or a slider. Use the three widget areas to customize your website, and change your content's layout with a full-width page template and a contributor page to show off your authors. Creating a magazine website with WordPress has never been easier.
+Theme URI: https://notmatt.press/themes/twentyfourteen/
+Author: the NotMattPress team
+Author URI: https://notmatt.press/
+Description: In 2014, our default theme lets you create a responsive magazine website with a sleek, modern design. Feature your favorite homepage content in either a grid or a slider. Use the three widget areas to customize your website, and change your content's layout with a full-width page template and a contributor page to show off your authors. Creating a magazine website with NotMattPress has never been easier.
 Version: 4.0
 Requires at least: 3.6
 Tested up to: 6.6
@@ -13,7 +13,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: blog, news, two-columns, three-columns, left-sidebar, right-sidebar, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, footer-widgets, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready, accessibility-ready, block-patterns
 Text Domain: twentyfourteen
 
-This theme, like WordPress, is licensed under the GPL.
+This theme, like NotMattPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 */
 
@@ -461,7 +461,7 @@ hr {
 }
 
 /* Support a widely-adopted but non-standard selector for text selection styles
- * to achieve a better experience. See https://core.trac.wordpress.org/ticket/25898.
+ * to achieve a better experience. See https://core.trac.notmatt.press/ticket/25898.
  */
 ::selection {
 	background: #24890d;
@@ -580,7 +580,7 @@ input[type="submit"]:active {
 }
 
 /**
- * Make sure images with WordPress-added height and width attributes are
+ * Make sure images with NotMattPress-added height and width attributes are
  * scaled correctly.
  */
 
@@ -881,7 +881,7 @@ span + .edit-link:before,
  */
 
 /* Ensure that there is no gap between the header and
-	 the admin bar for WordPress versions before 3.8. */
+	 the admin bar for NotMattPress versions before 3.8. */
 #wpadminbar {
 	min-height: 32px;
 }
@@ -3225,7 +3225,7 @@ a.post-thumbnail:hover {
 /* Does the same thing as <meta name="viewport" content="width=device-width">,
  * but in the future W3C standard way. -ms- prefix is required for IE10+ to
  * render responsive styling in Windows 8 "snapped" views; IE10+ does not honor
- * the meta tag. See https://core.trac.wordpress.org/ticket/25888.
+ * the meta tag. See https://core.trac.notmatt.press/ticket/25888.
  */
 @-ms-viewport {
 	width: device-width;
