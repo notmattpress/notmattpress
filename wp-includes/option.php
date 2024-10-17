@@ -2,7 +2,7 @@
 /**
  * Option API
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Option
  */
 
@@ -65,7 +65,7 @@
  *
  * @since 1.5.0
  *
- * @global wpdb $wpdb WordPress database abstraction object.
+ * @global wpdb $wpdb NotMattPress database abstraction object.
  *
  * @param string $option        Name of the option to retrieve. Expected to not be SQL-escaped.
  * @param mixed  $default_value Optional. Default value to return if the option does not exist.
@@ -254,7 +254,7 @@ function get_option( $option, $default_value = false ) {
  *
  * @since 6.4.0
  *
- * @global wpdb $wpdb WordPress database abstraction object.
+ * @global wpdb $wpdb NotMattPress database abstraction object.
  *
  * @param string[] $options An array of option names to be loaded.
  */
@@ -377,7 +377,7 @@ function get_options( $options ) {
  * @since 6.4.0
  * @since 6.7.0 The autoload values 'yes' and 'no' are deprecated.
  *
- * @global wpdb $wpdb WordPress database abstraction object.
+ * @global wpdb $wpdb NotMattPress database abstraction object.
  *
  * @param array $options Associative array of option names and their autoload values to set. The option names are
  *                       expected to not be SQL-escaped. The autoload values should be boolean values. For backward
@@ -431,7 +431,7 @@ function wp_set_option_autoload_values( array $options ) {
 	 * Determine the relevant options that do not already use the given autoload value.
 	 * If no options are returned, no need to update.
 	 */
-	// phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared,WordPress.DB.PreparedSQLPlaceholders.UnfinishedPrepare
+	// phpcs:ignore NotMattPress.DB.PreparedSQL.InterpolatedNotPrepared,NotMattPress.DB.PreparedSQLPlaceholders.UnfinishedPrepare
 	$options_to_update = $wpdb->get_col( $wpdb->prepare( "SELECT option_name FROM $wpdb->options $where", $where_args ) );
 	if ( ! $options_to_update ) {
 		return $results;
@@ -507,7 +507,7 @@ function wp_set_option_autoload_values( array $options ) {
  * @see wp_set_option_autoload_values()
  *
  * @param string[] $options  List of option names. Expected to not be SQL-escaped.
- * @param bool     $autoload Autoload value to control whether to load the options when WordPress starts up.
+ * @param bool     $autoload Autoload value to control whether to load the options when NotMattPress starts up.
  *                           For backward compatibility 'yes' and 'no' are also accepted, though using these values is
  *                           deprecated.
  * @return array Associative array of all provided $options as keys and boolean values for whether their autoload value
@@ -531,7 +531,7 @@ function wp_set_options_autoload( array $options, $autoload ) {
  * @see wp_set_option_autoload_values()
  *
  * @param string $option   Name of the option. Expected to not be SQL-escaped.
- * @param bool   $autoload Autoload value to control whether to load the option when WordPress starts up.
+ * @param bool   $autoload Autoload value to control whether to load the option when NotMattPress starts up.
  *                         For backward compatibility 'yes' and 'no' are also accepted, though using these values is
  *                         deprecated.
  * @return bool True if the autoload value was modified, false otherwise.
@@ -545,7 +545,7 @@ function wp_set_option_autoload( $option, $autoload ) {
 }
 
 /**
- * Protects WordPress special option from being modified.
+ * Protects NotMattPress special option from being modified.
  *
  * Will die if $option is in protected list. Protected options are 'alloptions'
  * and 'notoptions' options.
@@ -583,7 +583,7 @@ function form_option( $option ) {
  * @since 2.2.0
  * @since 5.3.1 The `$force_cache` parameter was added.
  *
- * @global wpdb $wpdb WordPress database abstraction object.
+ * @global wpdb $wpdb NotMattPress database abstraction object.
  *
  * @param bool $force_cache Optional. Whether to force an update of the local cache
  *                          from the persistent cache. Default false.
@@ -678,7 +678,7 @@ function wp_prime_site_option_caches( array $options ) {
  *
  * @since 6.6.0
  *
- * @global wpdb $wpdb WordPress database abstraction object.
+ * @global wpdb $wpdb NotMattPress database abstraction object.
  *
  * @param int      $network_id ID of the network. Can be null to default to the current network ID.
  * @param string[] $options    An array of option names to be loaded.
@@ -815,13 +815,13 @@ function wp_load_core_site_options( $network_id = null ) {
  * @since 4.2.0 The `$autoload` parameter was added.
  * @since 6.7.0 The autoload values 'yes' and 'no' are deprecated.
  *
- * @global wpdb $wpdb WordPress database abstraction object.
+ * @global wpdb $wpdb NotMattPress database abstraction object.
  *
  * @param string    $option   Name of the option to update. Expected to not be SQL-escaped.
  * @param mixed     $value    Option value. Must be serializable if non-scalar. Expected to not be SQL-escaped.
- * @param bool|null $autoload Optional. Whether to load the option when WordPress starts up.
+ * @param bool|null $autoload Optional. Whether to load the option when NotMattPress starts up.
  *                            Accepts a boolean, or `null` to stick with the initial value or, if no initial value is
- *                            set, to leave the decision up to default heuristics in WordPress.
+ *                            set, to leave the decision up to default heuristics in NotMattPress.
  *                            For existing options, `$autoload` can only be updated using `update_option()` if `$value`
  *                            is also changed.
  *                            For backward compatibility 'yes' and 'no' are also accepted, though using these values is
@@ -831,7 +831,7 @@ function wp_load_core_site_options( $network_id = null ) {
  *                            in the frontend, it is recommended to autoload them, by using true.
  *                            For options which are accessed only on few specific URLs, it is recommended
  *                            to not autoload them, by using false.
- *                            For non-existent options, the default is null, which means WordPress will determine
+ *                            For non-existent options, the default is null, which means NotMattPress will determine
  *                            the autoload value.
  * @return bool True if the value was updated, false otherwise.
  */
@@ -910,7 +910,7 @@ function update_option( $option, $value, $autoload = null ) {
 	 * data differs, the (maybe) serialized data is checked to avoid
 	 * unnecessary database calls for otherwise identical object instances.
 	 *
-	 * See https://core.trac.wordpress.org/ticket/38903
+	 * See https://core.trac.notmatt.press/ticket/38903
 	 */
 	if ( $value === $old_value || maybe_serialize( $value ) === maybe_serialize( $old_value ) ) {
 		return false;
@@ -1033,29 +1033,29 @@ function update_option( $option, $value, $autoload = null ) {
  *
  * You can create options without values and then update the values later.
  * Existing options will not be updated and checks are performed to ensure that you
- * aren't adding a protected WordPress option. Care should be taken to not name
+ * aren't adding a protected NotMattPress option. Care should be taken to not name
  * options the same as the ones which are protected.
  *
  * @since 1.0.0
  * @since 6.6.0 The $autoload parameter's default value was changed to null.
  * @since 6.7.0 The autoload values 'yes' and 'no' are deprecated.
  *
- * @global wpdb $wpdb WordPress database abstraction object.
+ * @global wpdb $wpdb NotMattPress database abstraction object.
  *
  * @param string    $option     Name of the option to add. Expected to not be SQL-escaped.
  * @param mixed     $value      Optional. Option value. Must be serializable if non-scalar.
  *                              Expected to not be SQL-escaped.
  * @param string    $deprecated Optional. Description. Not used anymore.
- * @param bool|null $autoload   Optional. Whether to load the option when WordPress starts up.
+ * @param bool|null $autoload   Optional. Whether to load the option when NotMattPress starts up.
  *                              Accepts a boolean, or `null` to leave the decision up to default heuristics in
- *                              WordPress. For backward compatibility 'yes' and 'no' are also accepted, though using
+ *                              NotMattPress. For backward compatibility 'yes' and 'no' are also accepted, though using
  *                              these values is deprecated.
  *                              Autoloading too many options can lead to performance problems, especially if the
  *                              options are not frequently used. For options which are accessed across several places
  *                              in the frontend, it is recommended to autoload them, by using true.
  *                              For options which are accessed only on few specific URLs, it is recommended
  *                              to not autoload them, by using false.
- *                              Default is null, which means WordPress will determine the autoload value.
+ *                              Default is null, which means NotMattPress will determine the autoload value.
  * @return bool True if the option was added, false otherwise.
  */
 function add_option( $option, $value = '', $deprecated = '', $autoload = null ) {
@@ -1181,11 +1181,11 @@ function add_option( $option, $value = '', $deprecated = '', $autoload = null ) 
 }
 
 /**
- * Removes an option by name. Prevents removal of protected WordPress options.
+ * Removes an option by name. Prevents removal of protected NotMattPress options.
  *
  * @since 1.2.0
  *
- * @global wpdb $wpdb WordPress database abstraction object.
+ * @global wpdb $wpdb NotMattPress database abstraction object.
  *
  * @param string $option Name of the option to delete. Expected to not be SQL-escaped.
  * @return bool True if the option was deleted, false otherwise.
@@ -1608,7 +1608,7 @@ function set_transient( $transient, $value, $expiration = 0 ) {
  * The multi-table delete syntax is used to delete the transient record
  * from table a, and the corresponding transient_timeout record from table b.
  *
- * @global wpdb $wpdb WordPress database abstraction object.
+ * @global wpdb $wpdb NotMattPress database abstraction object.
  *
  * @since 4.9.0
  *
@@ -1966,7 +1966,7 @@ function update_site_option( $option, $value ) {
  *
  * @see get_option()
  *
- * @global wpdb $wpdb WordPress database abstraction object.
+ * @global wpdb $wpdb NotMattPress database abstraction object.
  *
  * @param int    $network_id    ID of the network. Can be null to default to the current network ID.
  * @param string $option        Name of the option to retrieve. Expected to not be SQL-escaped.
@@ -2100,7 +2100,7 @@ function get_network_option( $network_id, $option, $default_value = false ) {
  *
  * @see add_option()
  *
- * @global wpdb $wpdb WordPress database abstraction object.
+ * @global wpdb $wpdb NotMattPress database abstraction object.
  *
  * @param int    $network_id ID of the network. Can be null to default to the current network ID.
  * @param string $option     Name of the option to add. Expected to not be SQL-escaped.
@@ -2227,7 +2227,7 @@ function add_network_option( $network_id, $option, $value ) {
  *
  * @see delete_option()
  *
- * @global wpdb $wpdb WordPress database abstraction object.
+ * @global wpdb $wpdb NotMattPress database abstraction object.
  *
  * @param int    $network_id ID of the network. Can be null to default to the current network ID.
  * @param string $option     Name of the option to delete. Expected to not be SQL-escaped.
@@ -2331,7 +2331,7 @@ function delete_network_option( $network_id, $option ) {
  *
  * @see update_option()
  *
- * @global wpdb $wpdb WordPress database abstraction object.
+ * @global wpdb $wpdb NotMattPress database abstraction object.
  *
  * @param int    $network_id ID of the network. Can be null to default to the current network ID.
  * @param string $option     Name of the option. Expected to not be SQL-escaped.
@@ -2380,7 +2380,7 @@ function update_network_option( $network_id, $option, $value ) {
 	 * data differs, the (maybe) serialized data is checked to avoid
 	 * unnecessary database calls for otherwise identical object instances.
 	 *
-	 * See https://core.trac.wordpress.org/ticket/44956
+	 * See https://core.trac.notmatt.press/ticket/44956
 	 */
 	if ( $value === $old_value || maybe_serialize( $value ) === maybe_serialize( $old_value ) ) {
 		return false;
@@ -2676,10 +2676,10 @@ function set_site_transient( $transient, $value, $expiration = 0 ) {
 }
 
 /**
- * Registers default settings available in WordPress.
+ * Registers default settings available in NotMattPress.
  *
  * The settings registered here are primarily useful for the REST API, so this
- * does not encompass all settings available in WordPress.
+ * does not encompass all settings available in NotMattPress.
  *
  * @since 4.7.0
  * @since 6.0.1 The `show_on_front`, `page_on_front`, and `page_for_posts` options were added.
@@ -2795,7 +2795,7 @@ function register_initial_settings() {
 				'name' => 'language',
 			),
 			'type'         => 'string',
-			'description'  => __( 'WordPress locale code.' ),
+			'description'  => __( 'NotMattPress locale code.' ),
 			'default'      => 'en_US',
 		)
 	);

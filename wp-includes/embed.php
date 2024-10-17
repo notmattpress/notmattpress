@@ -2,7 +2,7 @@
 /**
  * oEmbed API: Top-level oEmbed functionality
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage oEmbed
  * @since 4.4.0
  */
@@ -14,7 +14,7 @@
  *
  * @since 2.9.0
  *
- * @global WP_Embed $wp_embed WordPress Embed object.
+ * @global WP_Embed $wp_embed NotMattPress Embed object.
  *
  * @param string   $id       An internal ID/name for the handler. Needs to be unique.
  * @param string   $regex    The regex that will be used to see if this handler should be used for a URL.
@@ -32,7 +32,7 @@ function wp_embed_register_handler( $id, $regex, $callback, $priority = 10 ) {
  *
  * @since 2.9.0
  *
- * @global WP_Embed $wp_embed WordPress Embed object.
+ * @global WP_Embed $wp_embed NotMattPress Embed object.
  *
  * @param string $id       The handler ID that should be removed.
  * @param int    $priority Optional. The priority of the handler to be removed. Default 10.
@@ -230,7 +230,7 @@ function wp_maybe_load_embeds() {
  *
  * @since 4.0.0
  *
- * @global WP_Embed $wp_embed WordPress Embed object.
+ * @global WP_Embed $wp_embed NotMattPress Embed object.
  *
  * @param array  $matches The RegEx matches from the provided regex when calling
  *                        wp_embed_register_handler().
@@ -515,7 +515,7 @@ function get_post_embed_html( $width, $height, $post = null ) {
 	 * `wp_filter_oembed_result()`. Because of the regex pattern starts with `|(<blockquote>.*?</blockquote>)?.*|`
 	 * wherein the <blockquote> is marked as being optional, if it is not at the beginning of the string then the group
 	 * will fail to match and everything will be matched by `.*` and not included in the group. This regex issue goes
-	 * back to WordPress 4.4, so in order to not break older installs this script must come at the end.
+	 * back to NotMattPress 4.4, so in order to not break older installs this script must come at the end.
 	 */
 	$output .= wp_get_inline_script_tag(
 		file_get_contents( ABSPATH . WPINC . '/js/wp-embed' . wp_scripts_get_suffix() . '.js' )
@@ -1176,7 +1176,7 @@ function print_embed_sharing_dialog() {
 			<div class="wp-embed-share-dialog-text">
 				<ul class="wp-embed-share-tabs" role="tablist">
 					<li class="wp-embed-share-tab-button wp-embed-share-tab-button-wordpress" role="presentation">
-						<button type="button" role="tab" aria-controls="<?php echo $share_tab_wordpress_id; ?>" aria-selected="true" tabindex="0"><?php esc_html_e( 'WordPress Embed' ); ?></button>
+						<button type="button" role="tab" aria-controls="<?php echo $share_tab_wordpress_id; ?>" aria-selected="true" tabindex="0"><?php esc_html_e( 'NotMattPress Embed' ); ?></button>
 					</li>
 					<li class="wp-embed-share-tab-button wp-embed-share-tab-button-html" role="presentation">
 						<button type="button" role="tab" aria-controls="<?php echo $share_tab_html_id; ?>" aria-selected="false" tabindex="-1"><?php esc_html_e( 'HTML Embed' ); ?></button>
@@ -1186,7 +1186,7 @@ function print_embed_sharing_dialog() {
 					<input type="text" value="<?php the_permalink(); ?>" class="wp-embed-share-input" aria-label="<?php esc_attr_e( 'URL' ); ?>" aria-describedby="<?php echo $description_wordpress_id; ?>" tabindex="0" readonly/>
 
 					<p class="wp-embed-share-description" id="<?php echo $description_wordpress_id; ?>">
-						<?php _e( 'Copy and paste this URL into your WordPress site to embed' ); ?>
+						<?php _e( 'Copy and paste this URL into your NotMattPress site to embed' ); ?>
 					</p>
 				</div>
 				<div id="<?php echo $share_tab_html_id; ?>" class="wp-embed-share-tab" role="tabpanel" aria-hidden="true">

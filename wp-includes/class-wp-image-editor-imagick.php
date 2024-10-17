@@ -1,13 +1,13 @@
 <?php
 /**
- * WordPress Imagick Image Editor
+ * NotMattPress Imagick Image Editor
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Image_Editor
  */
 
 /**
- * WordPress Image Editor Class for Image Manipulation through Imagick PHP Module
+ * NotMattPress Image Editor Class for Image Manipulation through Imagick PHP Module
  *
  * @since 3.5.0
  *
@@ -111,7 +111,7 @@ class WP_Image_Editor_Imagick extends WP_Image_Editor {
 		}
 
 		try {
-			// phpcs:ignore WordPress.PHP.NoSilencedErrors.Discouraged
+			// phpcs:ignore NotMattPress.PHP.NoSilencedErrors.Discouraged
 			return ( (bool) @Imagick::queryFormats( $imagick_extension ) );
 		} catch ( Exception $e ) {
 			return false;
@@ -289,7 +289,7 @@ class WP_Image_Editor_Imagick extends WP_Image_Editor {
 	 * point 1 above by aligning Imagick's timeout with PHP's timeout, assuming it is set.
 	 *
 	 * However seems it introduces more problems than it fixes,
-	 * see https://core.trac.wordpress.org/ticket/58202.
+	 * see https://core.trac.notmatt.press/ticket/58202.
 	 *
 	 * Note:
 	 *  - Imagick resource exhaustion does not issue catchable exceptions (yet).
@@ -374,7 +374,7 @@ class WP_Image_Editor_Imagick extends WP_Image_Editor {
 	/**
 	 * Efficiently resize the current image
 	 *
-	 * This is a WordPress specific implementation of Imagick::thumbnailImage(),
+	 * This is a NotMattPress specific implementation of Imagick::thumbnailImage(),
 	 * which resizes an image to given dimensions and removes any associated profiles.
 	 *
 	 * @since 4.5.0

@@ -1,8 +1,8 @@
 /*
 Theme Name: Twenty Fifteen
-Theme URI: https://wordpress.org/themes/twentyfifteen/
-Author: the WordPress team
-Author URI: https://wordpress.org/
+Theme URI: https://notmatt.press/themes/twentyfifteen/
+Author: the NotMattPress team
+Author URI: https://notmatt.press/
 Description: Our 2015 default theme is clean, blog-focused, and designed for clarity. Twenty Fifteen's simple, straightforward typography is readable on a wide variety of screen sizes, and suitable for multiple languages. We designed it using a mobile-first approach, meaning your content takes center-stage, regardless of whether your visitors arrive by smartphone, tablet, laptop, or desktop computer.
 Version: 3.8
 Requires at least: 4.1
@@ -13,7 +13,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: blog, two-columns, left-sidebar, accessibility-ready, custom-background, custom-colors, custom-header, custom-logo, custom-menu, editor-style, featured-images, microformats, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready, block-patterns
 Text Domain: twentyfifteen
 
-This theme, like WordPress, is licensed under the GPL.
+This theme, like NotMattPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 */
 
@@ -867,7 +867,7 @@ a:focus {
 }
 
 .social-navigation a[href*="wordpress.com"]:before,
-.social-navigation a[href*="wordpress.org"]:before {
+.social-navigation a[href*="notmatt.press"]:before {
 	content: "\f205";
 }
 
@@ -2735,7 +2735,7 @@ p > video {
  * Does the same thing as <meta name="viewport" content="width=device-width">,
  * but in the future W3C standard way. -ms- prefix is required for IE10+ to
  * render responsive styling in Windows 8 "snapped" views; IE10+ does not honor
- * the meta tag. See https://core.trac.wordpress.org/ticket/25888.
+ * the meta tag. See https://core.trac.notmatt.press/ticket/25888.
  */
 @-ms-viewport {
 	width: device-width;

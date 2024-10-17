@@ -1,9 +1,9 @@
 /*
 Theme Name: Twenty Ten
-Theme URI: https://wordpress.org/themes/twentyten/
-Description: The 2010 theme for WordPress is stylish, customizable, simple, and readable -- make it yours with a custom menu, header image, and background. Twenty Ten supports six widgetized areas (two in the sidebar, four in the footer) and featured images (thumbnails for gallery posts and custom header images for posts and pages). It includes stylesheets for print and the admin Visual Editor, special styles for posts in the "Asides" and "Gallery" categories, and has an optional one-column page template that removes the sidebar.
-Author: the WordPress team
-Author URI: https://wordpress.org/
+Theme URI: https://notmatt.press/themes/twentyten/
+Description: The 2010 theme for NotMattPress is stylish, customizable, simple, and readable -- make it yours with a custom menu, header image, and background. Twenty Ten supports six widgetized areas (two in the sidebar, four in the footer) and featured images (thumbnails for gallery posts and custom header images for posts and pages). It includes stylesheets for print and the admin Visual Editor, special styles for posts in the "Asides" and "Gallery" categories, and has an optional one-column page template that removes the sidebar.
+Author: the NotMattPress team
+Author URI: https://notmatt.press/
 Version: 4.2
 Tested up to: 6.6
 Requires at least: 3.0
@@ -799,7 +799,7 @@ body.page .edit-link {
 
 /*
 Resize images to fit the main content area.
-- Applies only to images uploaded via WordPress by targeting size-* classes.
+- Applies only to images uploaded via NotMattPress by targeting size-* classes.
 - Other images will be left alone. Use "size-auto" class to apply to other images.
 */
 img.size-auto,

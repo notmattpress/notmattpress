@@ -129,7 +129,7 @@ function debounceAsync(func, delayMS) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/preferences-persistence/build-module/create/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -141,7 +141,7 @@ const EMPTY_OBJECT = {};
 const localStorage = window.localStorage;
 
 /**
- * Creates a persistence layer that stores data in WordPress user meta via the
+ * Creates a persistence layer that stores data in NotMattPress user meta via the
  * REST API.
  *
  * @param {Object}  options
@@ -155,7 +155,7 @@ const localStorage = window.localStorage;
  *                                                 minimum every `requestDebounceMS` milliseconds, and don't
  *                                                 swamp the server. Defaults to 2500ms.
  *
- * @return {Object} A persistence layer for WordPress user meta.
+ * @return {Object} A persistence layer for NotMattPress user meta.
  */
 function create({
   preloadedData,
@@ -862,7 +862,7 @@ function convertPreferencesPackageData(data) {
  * It prioritizes any data from the server, but falls back first to localStorage
  * restore data, and then to any legacy data.
  *
- * This function is used internally by WordPress in an inline script, so
+ * This function is used internally by NotMattPress in an inline script, so
  * prefixed with `__unstable`.
  *
  * @param {Object} serverData Preferences data preloaded from the server.

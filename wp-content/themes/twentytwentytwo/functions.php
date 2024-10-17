@@ -2,9 +2,9 @@
 /**
  * Twenty Twenty-Two functions and definitions
  *
- * @link https://developer.wordpress.org/themes/basics/theme-functions/
+ * @link https://developer.notmatt.press/themes/basics/theme-functions/
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Twenty_Twenty_Two
  * @since Twenty Twenty-Two 1.0
  */
@@ -13,7 +13,7 @@
 if ( ! function_exists( 'twentytwentytwo_support' ) ) :
 
 	/**
-	 * Sets up theme defaults and registers support for various WordPress features.
+	 * Sets up theme defaults and registers support for various NotMattPress features.
 	 *
 	 * @since Twenty Twenty-Two 1.0
 	 *

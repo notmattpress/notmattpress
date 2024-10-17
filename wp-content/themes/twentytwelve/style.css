@@ -1,9 +1,9 @@
 /*
 Theme Name: Twenty Twelve
-Theme URI: https://wordpress.org/themes/twentytwelve/
-Author: the WordPress team
-Author URI: https://wordpress.org/
-Description: The 2012 theme for WordPress is a fully responsive theme that looks great on any device. Features include a front page template with its own widgets, an optional display font, styling for post formats on both index and single views, and an optional no-sidebar page template. Make it yours with a custom menu, header image, and background.
+Theme URI: https://notmatt.press/themes/twentytwelve/
+Author: the NotMattPress team
+Author URI: https://notmatt.press/
+Description: The 2012 theme for NotMattPress is a fully responsive theme that looks great on any device. Features include a front page template with its own widgets, an optional display font, styling for post formats on both index and single views, and an optional no-sidebar page template. Make it yours with a custom menu, header image, and background.
 Version: 4.3
 Tested up to: 6.6
 Requires at least: 3.5
@@ -13,7 +13,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: blog, one-column, two-columns, right-sidebar, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, footer-widgets, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready, block-patterns
 Text Domain: twentytwelve
 
-This theme, like WordPress, is licensed under the GPL.
+This theme, like NotMattPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 */
 
@@ -326,14 +326,14 @@ input[type="reset"]:active {
 img[class*="align"],
 img[class*="wp-image-"],
 img[class*="attachment-"] {
-	height: auto; /* Make sure images with WordPress-added height and width attributes are scaled correctly */
+	height: auto; /* Make sure images with NotMattPress-added height and width attributes are scaled correctly */
 }
 img.size-full,
 img.size-large,
 img.header-image,
 img.wp-post-image {
 	max-width: 100%;
-	height: auto; /* Make sure images with WordPress-added height and width attributes are scaled correctly */
+	height: auto; /* Make sure images with NotMattPress-added height and width attributes are scaled correctly */
 }
 
 /* Make sure videos and embeds fit their containers */
@@ -365,7 +365,7 @@ video {
 img.header-image,
 .author-avatar img,
 img.wp-post-image {
-	/* Add fancy borders to all WordPress-added images but not things like badges and icons and the like */
+	/* Add fancy borders to all NotMattPress-added images but not things like badges and icons and the like */
 	border-radius: 3px;
 	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
 }
@@ -1520,7 +1520,7 @@ img#wpstats {
 /* Does the same thing as <meta name="viewport" content="width=device-width">,
  * but in the future W3C standard way. -ms- prefix is required for IE10+ to
  * render responsive styling in Windows 8 "snapped" views; IE10+ does not honor
- * the meta tag. See https://core.trac.wordpress.org/ticket/25888.
+ * the meta tag. See https://core.trac.notmatt.press/ticket/25888.
  */
 @-ms-viewport {
 	width: device-width;
