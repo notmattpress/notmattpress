@@ -29,7 +29,7 @@ do_action( 'load_feed_engine' );
 /** RSS feed constant. */
 define('RSS', 'RSS');
 define('ATOM', 'Atom');
-define('MAGPIE_USER_AGENT', 'WordPress/' . $GLOBALS['wp_version']);
+define('MAGPIE_USER_AGENT', 'NotMattPress/' . $GLOBALS['wp_version']);
 
 class MagpieRSS {
 	var $parser;
@@ -632,7 +632,7 @@ function _response_to_rss ($resp) {
  *
  * @since 1.5.0
  * 
- * @global string $wp_version The WordPress version string.
+ * @global string $wp_version The NotMattPress version string.
  * 
  * @package External
  * @subpackage MagpieRSS
@@ -666,7 +666,7 @@ function init () {
 	}
 
 	if ( !defined('MAGPIE_USER_AGENT') ) {
-		$ua = 'WordPress/' . $GLOBALS['wp_version'];
+		$ua = 'NotMattPress/' . $GLOBALS['wp_version'];
 
 		if ( MAGPIE_CACHE_ON ) {
 			$ua = $ua . ')';

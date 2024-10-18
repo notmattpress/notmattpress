@@ -2,11 +2,11 @@
 /**
  * Themes administration panel.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Administration
  */
 
-/** WordPress Administration Bootstrap */
+/** NotMattPress Administration Bootstrap */
 require_once __DIR__ . '/admin.php';
 
 if ( ! current_user_can( 'switch_themes' ) && ! current_user_can( 'edit_theme_options' ) ) {
@@ -129,7 +129,7 @@ $parent_file = 'themes.php';
 
 // Help tab: Overview.
 if ( current_user_can( 'switch_themes' ) ) {
-	$help_overview = '<p>' . __( 'This screen is used for managing your installed themes. Aside from the default theme(s) included with your WordPress installation, themes are designed and developed by third parties.' ) . '</p>' .
+	$help_overview = '<p>' . __( 'This screen is used for managing your installed themes. Aside from the default theme(s) included with your NotMattPress installation, themes are designed and developed by third parties.' ) . '</p>' .
 		'<p>' . __( 'From this screen you can:' ) . '</p>' .
 		'<ul><li>' . __( 'Hover or tap to see Activate and Live Preview buttons' ) . '</li>' .
 		'<li>' . __( 'Click on the theme to see the theme name, version, author, description, tags, and the Delete link' ) . '</li>' .
@@ -152,9 +152,9 @@ if ( current_user_can( 'install_themes' ) ) {
 		$help_install = '<p>' . __( 'Installing themes on Multisite can only be done from the Network Admin section.' ) . '</p>';
 	} else {
 		$help_install = '<p>' . sprintf(
-			/* translators: %s: https://wordpress.org/themes/ */
-			__( 'If you would like to see more themes to choose from, click on the &#8220;Add New Theme&#8221; button and you will be able to browse or search for additional themes from the <a href="%s">WordPress Theme Directory</a>. Themes in the WordPress Theme Directory are designed and developed by third parties, and are compatible with the license WordPress uses. Oh, and they are free!' ),
-			__( 'https://wordpress.org/themes/' )
+			/* translators: %s: https://notmatt.press/themes/ */
+			__( 'If you would like to see more themes to choose from, click on the &#8220;Add New Theme&#8221; button and you will be able to browse or search for additional themes from the <a href="%s">NotMattPress Theme Directory</a>. Themes in the NotMattPress Theme Directory are designed and developed by third parties, and are compatible with the license NotMattPress uses. Oh, and they are free!' ),
+			__( 'https://notmatt.press/themes/' )
 		) . '</p>';
 	}
 
@@ -189,7 +189,7 @@ $help_sidebar_autoupdates = '';
 if ( current_user_can( 'update_themes' ) && wp_is_auto_update_enabled_for_type( 'theme' ) ) {
 	$help_tab_autoupdates =
 		'<p>' . __( 'Auto-updates can be enabled or disabled for each individual theme. Themes with auto-updates enabled will display the estimated date of the next auto-update. Auto-updates depends on the WP-Cron task scheduling system.' ) . '</p>' .
-		'<p>' . __( 'Please note: Third-party themes and plugins, or custom code, may override WordPress scheduling.' ) . '</p>';
+		'<p>' . __( 'Please note: Third-party themes and plugins, or custom code, may override NotMattPress scheduling.' ) . '</p>';
 
 	get_current_screen()->add_help_tab(
 		array(
@@ -199,15 +199,15 @@ if ( current_user_can( 'update_themes' ) && wp_is_auto_update_enabled_for_type( 
 		)
 	);
 
-	$help_sidebar_autoupdates = '<p>' . __( '<a href="https://wordpress.org/documentation/article/plugins-themes-auto-updates/">Documentation on Auto-updates</a>' ) . '</p>';
+	$help_sidebar_autoupdates = '<p>' . __( '<a href="https://notmatt.press/documentation/article/plugins-themes-auto-updates/">Documentation on Auto-updates</a>' ) . '</p>';
 } // End if 'update_themes' && 'wp_is_auto_update_enabled_for_type'.
 
 get_current_screen()->set_help_sidebar(
 	'<p><strong>' . __( 'For more information:' ) . '</strong></p>' .
-	'<p>' . __( '<a href="https://wordpress.org/documentation/article/work-with-themes/">Documentation on Using Themes</a>' ) . '</p>' .
-	'<p>' . __( '<a href="https://wordpress.org/documentation/article/appearance-themes-screen/">Documentation on Managing Themes</a>' ) . '</p>' .
+	'<p>' . __( '<a href="https://notmatt.press/documentation/article/work-with-themes/">Documentation on Using Themes</a>' ) . '</p>' .
+	'<p>' . __( '<a href="https://notmatt.press/documentation/article/appearance-themes-screen/">Documentation on Managing Themes</a>' ) . '</p>' .
 	$help_sidebar_autoupdates .
-	'<p>' . __( '<a href="https://wordpress.org/support/forums/">Support forums</a>' ) . '</p>'
+	'<p>' . __( '<a href="https://notmatt.press/support/forums/">Support forums</a>' ) . '</p>'
 );
 
 if ( current_user_can( 'switch_themes' ) ) {
@@ -461,21 +461,21 @@ foreach ( $themes as $theme ) :
 			if ( ! $theme['updateResponse']['compatibleWP'] && ! $theme['updateResponse']['compatiblePHP'] ) {
 				$theme_update_error .= sprintf(
 					/* translators: %s: Theme name. */
-					__( 'There is a new version of %s available, but it does not work with your versions of WordPress and PHP.' ),
+					__( 'There is a new version of %s available, but it does not work with your versions of NotMattPress and PHP.' ),
 					$theme['name']
 				);
 				if ( current_user_can( 'update_core' ) && current_user_can( 'update_php' ) ) {
 					$theme_update_error .= sprintf(
-						/* translators: 1: URL to WordPress Updates screen, 2: URL to Update PHP page. */
-						' ' . __( '<a href="%1$s">Please update WordPress</a>, and then <a href="%2$s">learn more about updating PHP</a>.' ),
+						/* translators: 1: URL to NotMattPress Updates screen, 2: URL to Update PHP page. */
+						' ' . __( '<a href="%1$s">Please update NotMattPress</a>, and then <a href="%2$s">learn more about updating PHP</a>.' ),
 						self_admin_url( 'update-core.php' ),
 						esc_url( wp_get_update_php_url() )
 					);
 					wp_update_php_annotation( '</p><p><em>', '</em>', false );
 				} elseif ( current_user_can( 'update_core' ) ) {
 					$theme_update_error .= sprintf(
-						/* translators: %s: URL to WordPress Updates screen. */
-						' ' . __( '<a href="%s">Please update WordPress</a>.' ),
+						/* translators: %s: URL to NotMattPress Updates screen. */
+						' ' . __( '<a href="%s">Please update NotMattPress</a>.' ),
 						self_admin_url( 'update-core.php' )
 					);
 				} elseif ( current_user_can( 'update_php' ) ) {
@@ -489,13 +489,13 @@ foreach ( $themes as $theme ) :
 			} elseif ( ! $theme['updateResponse']['compatibleWP'] ) {
 				$theme_update_error .= sprintf(
 					/* translators: %s: Theme name. */
-					__( 'There is a new version of %s available, but it does not work with your version of WordPress.' ),
+					__( 'There is a new version of %s available, but it does not work with your version of NotMattPress.' ),
 					$theme['name']
 				);
 				if ( current_user_can( 'update_core' ) ) {
 					$theme_update_error .= sprintf(
-						/* translators: %s: URL to WordPress Updates screen. */
-						' ' . __( '<a href="%s">Please update WordPress</a>.' ),
+						/* translators: %s: URL to NotMattPress Updates screen. */
+						' ' . __( '<a href="%s">Please update NotMattPress</a>.' ),
 						self_admin_url( 'update-core.php' )
 					);
 				}
@@ -527,19 +527,19 @@ foreach ( $themes as $theme ) :
 	if ( ! $theme['compatibleWP'] || ! $theme['compatiblePHP'] ) {
 		$message = '';
 		if ( ! $theme['compatibleWP'] && ! $theme['compatiblePHP'] ) {
-			$message = __( 'This theme does not work with your versions of WordPress and PHP.' );
+			$message = __( 'This theme does not work with your versions of NotMattPress and PHP.' );
 			if ( current_user_can( 'update_core' ) && current_user_can( 'update_php' ) ) {
 				$message .= sprintf(
-					/* translators: 1: URL to WordPress Updates screen, 2: URL to Update PHP page. */
-					' ' . __( '<a href="%1$s">Please update WordPress</a>, and then <a href="%2$s">learn more about updating PHP</a>.' ),
+					/* translators: 1: URL to NotMattPress Updates screen, 2: URL to Update PHP page. */
+					' ' . __( '<a href="%1$s">Please update NotMattPress</a>, and then <a href="%2$s">learn more about updating PHP</a>.' ),
 					self_admin_url( 'update-core.php' ),
 					esc_url( wp_get_update_php_url() )
 				);
 				$message .= wp_update_php_annotation( '</p><p><em>', '</em>', false );
 			} elseif ( current_user_can( 'update_core' ) ) {
 				$message .= sprintf(
-					/* translators: %s: URL to WordPress Updates screen. */
-					' ' . __( '<a href="%s">Please update WordPress</a>.' ),
+					/* translators: %s: URL to NotMattPress Updates screen. */
+					' ' . __( '<a href="%s">Please update NotMattPress</a>.' ),
 					self_admin_url( 'update-core.php' )
 				);
 			} elseif ( current_user_can( 'update_php' ) ) {
@@ -551,11 +551,11 @@ foreach ( $themes as $theme ) :
 				$message .= wp_update_php_annotation( '</p><p><em>', '</em>', false );
 			}
 		} elseif ( ! $theme['compatibleWP'] ) {
-			$message .= __( 'This theme does not work with your version of WordPress.' );
+			$message .= __( 'This theme does not work with your version of NotMattPress.' );
 			if ( current_user_can( 'update_core' ) ) {
 				$message .= sprintf(
-					/* translators: %s: URL to WordPress Updates screen. */
-					' ' . __( '<a href="%s">Please update WordPress</a>.' ),
+					/* translators: %s: URL to NotMattPress Updates screen. */
+					' ' . __( '<a href="%s">Please update NotMattPress</a>.' ),
 					self_admin_url( 'update-core.php' )
 				);
 			}
@@ -833,21 +833,21 @@ function wp_theme_auto_update_setting_template() {
 					<?php
 					printf(
 						/* translators: %s: Theme name. */
-						__( 'There is a new version of %s available, but it does not work with your versions of WordPress and PHP.' ),
+						__( 'There is a new version of %s available, but it does not work with your versions of NotMattPress and PHP.' ),
 						'{{{ data.name }}}'
 					);
 					if ( current_user_can( 'update_core' ) && current_user_can( 'update_php' ) ) {
 						printf(
-							/* translators: 1: URL to WordPress Updates screen, 2: URL to Update PHP page. */
-							' ' . __( '<a href="%1$s">Please update WordPress</a>, and then <a href="%2$s">learn more about updating PHP</a>.' ),
+							/* translators: 1: URL to NotMattPress Updates screen, 2: URL to Update PHP page. */
+							' ' . __( '<a href="%1$s">Please update NotMattPress</a>, and then <a href="%2$s">learn more about updating PHP</a>.' ),
 							self_admin_url( 'update-core.php' ),
 							esc_url( wp_get_update_php_url() )
 						);
 						wp_update_php_annotation( '</p><p><em>', '</em>' );
 					} elseif ( current_user_can( 'update_core' ) ) {
 						printf(
-							/* translators: %s: URL to WordPress Updates screen. */
-							' ' . __( '<a href="%s">Please update WordPress</a>.' ),
+							/* translators: %s: URL to NotMattPress Updates screen. */
+							' ' . __( '<a href="%s">Please update NotMattPress</a>.' ),
 							self_admin_url( 'update-core.php' )
 						);
 					} elseif ( current_user_can( 'update_php' ) ) {
@@ -863,13 +863,13 @@ function wp_theme_auto_update_setting_template() {
 					<?php
 					printf(
 						/* translators: %s: Theme name. */
-						__( 'There is a new version of %s available, but it does not work with your version of WordPress.' ),
+						__( 'There is a new version of %s available, but it does not work with your version of NotMattPress.' ),
 						'{{{ data.name }}}'
 					);
 					if ( current_user_can( 'update_core' ) ) {
 						printf(
-							/* translators: %s: URL to WordPress Updates screen. */
-							' ' . __( '<a href="%s">Please update WordPress</a>.' ),
+							/* translators: %s: URL to NotMattPress Updates screen. */
+							' ' . __( '<a href="%s">Please update NotMattPress</a>.' ),
 							self_admin_url( 'update-core.php' )
 						);
 					}
@@ -899,19 +899,19 @@ function wp_theme_auto_update_setting_template() {
 		<div class="notice notice-error notice-alt"><p>
 			<# if ( ! data.compatibleWP && ! data.compatiblePHP ) { #>
 				<?php
-				_e( 'This theme does not work with your versions of WordPress and PHP.' );
+				_e( 'This theme does not work with your versions of NotMattPress and PHP.' );
 				if ( current_user_can( 'update_core' ) && current_user_can( 'update_php' ) ) {
 					printf(
-						/* translators: 1: URL to WordPress Updates screen, 2: URL to Update PHP page. */
-						' ' . __( '<a href="%1$s">Please update WordPress</a>, and then <a href="%2$s">learn more about updating PHP</a>.' ),
+						/* translators: 1: URL to NotMattPress Updates screen, 2: URL to Update PHP page. */
+						' ' . __( '<a href="%1$s">Please update NotMattPress</a>, and then <a href="%2$s">learn more about updating PHP</a>.' ),
 						self_admin_url( 'update-core.php' ),
 						esc_url( wp_get_update_php_url() )
 					);
 					wp_update_php_annotation( '</p><p><em>', '</em>' );
 				} elseif ( current_user_can( 'update_core' ) ) {
 					printf(
-						/* translators: %s: URL to WordPress Updates screen. */
-						' ' . __( '<a href="%s">Please update WordPress</a>.' ),
+						/* translators: %s: URL to NotMattPress Updates screen. */
+						' ' . __( '<a href="%s">Please update NotMattPress</a>.' ),
 						self_admin_url( 'update-core.php' )
 					);
 				} elseif ( current_user_can( 'update_php' ) ) {
@@ -925,11 +925,11 @@ function wp_theme_auto_update_setting_template() {
 				?>
 			<# } else if ( ! data.compatibleWP ) { #>
 				<?php
-				_e( 'This theme does not work with your version of WordPress.' );
+				_e( 'This theme does not work with your version of NotMattPress.' );
 				if ( current_user_can( 'update_core' ) ) {
 					printf(
-						/* translators: %s: URL to WordPress Updates screen. */
-						' ' . __( '<a href="%s">Please update WordPress</a>.' ),
+						/* translators: %s: URL to NotMattPress Updates screen. */
+						' ' . __( '<a href="%s">Please update NotMattPress</a>.' ),
 						self_admin_url( 'update-core.php' )
 					);
 				}
@@ -1060,19 +1060,19 @@ function wp_theme_auto_update_setting_template() {
 					<div class="notice notice-error notice-alt notice-large"><p>
 						<# if ( ! data.compatibleWP && ! data.compatiblePHP ) { #>
 							<?php
-							_e( 'This theme does not work with your versions of WordPress and PHP.' );
+							_e( 'This theme does not work with your versions of NotMattPress and PHP.' );
 							if ( current_user_can( 'update_core' ) && current_user_can( 'update_php' ) ) {
 								printf(
-									/* translators: 1: URL to WordPress Updates screen, 2: URL to Update PHP page. */
-									' ' . __( '<a href="%1$s">Please update WordPress</a>, and then <a href="%2$s">learn more about updating PHP</a>.' ),
+									/* translators: 1: URL to NotMattPress Updates screen, 2: URL to Update PHP page. */
+									' ' . __( '<a href="%1$s">Please update NotMattPress</a>, and then <a href="%2$s">learn more about updating PHP</a>.' ),
 									self_admin_url( 'update-core.php' ),
 									esc_url( wp_get_update_php_url() )
 								);
 								wp_update_php_annotation( '</p><p><em>', '</em>' );
 							} elseif ( current_user_can( 'update_core' ) ) {
 								printf(
-									/* translators: %s: URL to WordPress Updates screen. */
-									' ' . __( '<a href="%s">Please update WordPress</a>.' ),
+									/* translators: %s: URL to NotMattPress Updates screen. */
+									' ' . __( '<a href="%s">Please update NotMattPress</a>.' ),
 									self_admin_url( 'update-core.php' )
 								);
 							} elseif ( current_user_can( 'update_php' ) ) {
@@ -1086,11 +1086,11 @@ function wp_theme_auto_update_setting_template() {
 							?>
 						<# } else if ( ! data.compatibleWP ) { #>
 							<?php
-							_e( 'This theme does not work with your version of WordPress.' );
+							_e( 'This theme does not work with your version of NotMattPress.' );
 							if ( current_user_can( 'update_core' ) ) {
 								printf(
-									/* translators: %s: URL to WordPress Updates screen. */
-									' ' . __( '<a href="%s">Please update WordPress</a>.' ),
+									/* translators: %s: URL to NotMattPress Updates screen. */
+									' ' . __( '<a href="%s">Please update NotMattPress</a>.' ),
 									self_admin_url( 'update-core.php' )
 								);
 							}
@@ -1125,21 +1125,21 @@ function wp_theme_auto_update_setting_template() {
 									<?php
 									printf(
 										/* translators: %s: Theme name. */
-										__( 'There is a new version of %s available, but it does not work with your versions of WordPress and PHP.' ),
+										__( 'There is a new version of %s available, but it does not work with your versions of NotMattPress and PHP.' ),
 										'{{{ data.name }}}'
 									);
 									if ( current_user_can( 'update_core' ) && current_user_can( 'update_php' ) ) {
 										printf(
-											/* translators: 1: URL to WordPress Updates screen, 2: URL to Update PHP page. */
-											' ' . __( '<a href="%1$s">Please update WordPress</a>, and then <a href="%2$s">learn more about updating PHP</a>.' ),
+											/* translators: 1: URL to NotMattPress Updates screen, 2: URL to Update PHP page. */
+											' ' . __( '<a href="%1$s">Please update NotMattPress</a>, and then <a href="%2$s">learn more about updating PHP</a>.' ),
 											self_admin_url( 'update-core.php' ),
 											esc_url( wp_get_update_php_url() )
 										);
 										wp_update_php_annotation( '</p><p><em>', '</em>' );
 									} elseif ( current_user_can( 'update_core' ) ) {
 										printf(
-											/* translators: %s: URL to WordPress Updates screen. */
-											' ' . __( '<a href="%s">Please update WordPress</a>.' ),
+											/* translators: %s: URL to NotMattPress Updates screen. */
+											' ' . __( '<a href="%s">Please update NotMattPress</a>.' ),
 											self_admin_url( 'update-core.php' )
 										);
 									} elseif ( current_user_can( 'update_php' ) ) {
@@ -1155,13 +1155,13 @@ function wp_theme_auto_update_setting_template() {
 									<?php
 									printf(
 										/* translators: %s: Theme name. */
-										__( 'There is a new version of %s available, but it does not work with your version of WordPress.' ),
+										__( 'There is a new version of %s available, but it does not work with your version of NotMattPress.' ),
 										'{{{ data.name }}}'
 									);
 									if ( current_user_can( 'update_core' ) ) {
 										printf(
-											/* translators: %s: URL to WordPress Updates screen. */
-											' ' . __( '<a href="%s">Please update WordPress</a>.' ),
+											/* translators: %s: URL to NotMattPress Updates screen. */
+											' ' . __( '<a href="%s">Please update NotMattPress</a>.' ),
 											self_admin_url( 'update-core.php' )
 										);
 									}

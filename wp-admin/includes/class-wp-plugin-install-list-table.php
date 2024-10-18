@@ -2,7 +2,7 @@
 /**
  * List Table API: WP_Plugin_Install_List_Table class
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Administration
  * @since 3.1.0
  */
@@ -605,19 +605,19 @@ class WP_Plugin_Install_List_Table extends WP_List_Table {
 			if ( ! $compatible_php || ! $compatible_wp ) {
 				$incompatible_notice_message = '';
 				if ( ! $compatible_php && ! $compatible_wp ) {
-					$incompatible_notice_message .= __( 'This plugin does not work with your versions of WordPress and PHP.' );
+					$incompatible_notice_message .= __( 'This plugin does not work with your versions of NotMattPress and PHP.' );
 					if ( current_user_can( 'update_core' ) && current_user_can( 'update_php' ) ) {
 						$incompatible_notice_message .= sprintf(
-							/* translators: 1: URL to WordPress Updates screen, 2: URL to Update PHP page. */
-							' ' . __( '<a href="%1$s">Please update WordPress</a>, and then <a href="%2$s">learn more about updating PHP</a>.' ),
+							/* translators: 1: URL to NotMattPress Updates screen, 2: URL to Update PHP page. */
+							' ' . __( '<a href="%1$s">Please update NotMattPress</a>, and then <a href="%2$s">learn more about updating PHP</a>.' ),
 							self_admin_url( 'update-core.php' ),
 							esc_url( wp_get_update_php_url() )
 						);
 						$incompatible_notice_message .= wp_update_php_annotation( '</p><p><em>', '</em>', false );
 					} elseif ( current_user_can( 'update_core' ) ) {
 						$incompatible_notice_message .= sprintf(
-							/* translators: %s: URL to WordPress Updates screen. */
-							' ' . __( '<a href="%s">Please update WordPress</a>.' ),
+							/* translators: %s: URL to NotMattPress Updates screen. */
+							' ' . __( '<a href="%s">Please update NotMattPress</a>.' ),
 							self_admin_url( 'update-core.php' )
 						);
 					} elseif ( current_user_can( 'update_php' ) ) {
@@ -629,11 +629,11 @@ class WP_Plugin_Install_List_Table extends WP_List_Table {
 						$incompatible_notice_message .= wp_update_php_annotation( '</p><p><em>', '</em>', false );
 					}
 				} elseif ( ! $compatible_wp ) {
-					$incompatible_notice_message .= __( 'This plugin does not work with your version of WordPress.' );
+					$incompatible_notice_message .= __( 'This plugin does not work with your version of NotMattPress.' );
 					if ( current_user_can( 'update_core' ) ) {
 						$incompatible_notice_message .= sprintf(
-							/* translators: %s: URL to WordPress Updates screen. */
-							' ' . __( '<a href="%s">Please update WordPress</a>.' ),
+							/* translators: %s: URL to NotMattPress Updates screen. */
+							' ' . __( '<a href="%s">Please update NotMattPress</a>.' ),
 							self_admin_url( 'update-core.php' )
 						);
 					}
@@ -726,11 +726,11 @@ class WP_Plugin_Install_List_Table extends WP_List_Table {
 				<div class="column-compatibility">
 					<?php
 					if ( ! $tested_wp ) {
-						echo '<span class="compatibility-untested">' . __( 'Untested with your version of WordPress' ) . '</span>';
+						echo '<span class="compatibility-untested">' . __( 'Untested with your version of NotMattPress' ) . '</span>';
 					} elseif ( ! $compatible_wp ) {
-						echo '<span class="compatibility-incompatible">' . __( '<strong>Incompatible</strong> with your version of WordPress' ) . '</span>';
+						echo '<span class="compatibility-incompatible">' . __( '<strong>Incompatible</strong> with your version of NotMattPress' ) . '</span>';
 					} else {
-						echo '<span class="compatibility-compatible">' . __( '<strong>Compatible</strong> with your version of WordPress' ) . '</span>';
+						echo '<span class="compatibility-compatible">' . __( '<strong>Compatible</strong> with your version of NotMattPress' ) . '</span>';
 					}
 					?>
 				</div>

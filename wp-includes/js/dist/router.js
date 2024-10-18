@@ -859,7 +859,7 @@ const external_wp_url_namespaceObject = window["wp"]["url"];
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 const history_history = createBrowserHistory();
@@ -917,7 +917,7 @@ history_history.getLocationWithParams = getLocationWithParams;
 const external_ReactJSXRuntime_namespaceObject = window["ReactJSXRuntime"];
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/router/build-module/router.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -951,13 +951,13 @@ function RouterProvider({
 const external_wp_privateApis_namespaceObject = window["wp"]["privateApis"];
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/router/build-module/lock-unlock.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 const {
   lock,
   unlock
-} = (0,external_wp_privateApis_namespaceObject.__dangerousOptInToUnstableAPIsOnlyForCoreModules)('I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of WordPress.', '@wordpress/router');
+} = (0,external_wp_privateApis_namespaceObject.__dangerousOptInToUnstableAPIsOnlyForCoreModules)('I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of NotMattPress.', '@wordpress/router');
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/router/build-module/private-apis.js
 /**

@@ -9,28 +9,28 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-Twenty Twenty-Four is designed to be flexible, versatile and applicable to any website. Its collection of templates and patterns tailor to different needs, such as presenting a business, blogging and writing or showcasing work. A multitude of possibilities open up with just a few adjustments to color and typography. Twenty Twenty-Four comes with style variations and full page designs to help speed up the site building process, is fully compatible with the site editor, and takes advantage of new design tools introduced in WordPress 6.4.
+Twenty Twenty-Four is designed to be flexible, versatile and applicable to any website. Its collection of templates and patterns tailor to different needs, such as presenting a business, blogging and writing or showcasing work. A multitude of possibilities open up with just a few adjustments to color and typography. Twenty Twenty-Four comes with style variations and full page designs to help speed up the site building process, is fully compatible with the site editor, and takes advantage of new design tools introduced in NotMattPress 6.4.
 
 == Changelog ==
 
 = 1.2 =
 * Released: July 16, 2024
 
-https://wordpress.org/documentation/article/twenty-twenty-four-changelog/#Version_1.2
+https://notmatt.press/documentation/article/twenty-twenty-four-changelog/#Version_1.2
 
 = 1.1 =
 * Released: April 2, 2024
 
-https://wordpress.org/documentation/article/twenty-twenty-four-changelog/#Version_1.1
+https://notmatt.press/documentation/article/twenty-twenty-four-changelog/#Version_1.1
 
 = 1.0 =
 * Released: November 7, 2023
 
-https://wordpress.org/documentation/article/twenty-twenty-four-changelog/#Version_1.0
+https://notmatt.press/documentation/article/twenty-twenty-four-changelog/#Version_1.0
 
 == Copyright ==
 
-Twenty Twenty-Four WordPress Theme, (C) 2023-2024 WordPress.org and contributors.
+Twenty Twenty-Four NotMattPress Theme, (C) 2023-2024 NotMattPress.org and contributors.
 Twenty Twenty-Four is distributed under the terms of the GNU GPL.
 
 This program is free software: you can redistribute it and/or modify

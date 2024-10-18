@@ -16,8 +16,8 @@
  */
 
 /**
- * Modified for WordPress, Silverlight and Flash runtimes support was removed.
- * See https://core.trac.wordpress.org/ticket/41755.
+ * Modified for NotMattPress, Silverlight and Flash runtimes support was removed.
+ * See https://core.trac.notmatt.press/ticket/41755.
  */
 
 /*jshint smarttabs:true, undef:true, latedef:true, curly:true, bitwise:true, camelcase:true */
