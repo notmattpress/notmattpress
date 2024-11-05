@@ -39,12 +39,12 @@ class Featured_Content {
 	}
 
 	/**
-	 * Conditionally hook into WordPress.
+	 * Conditionally hook into NotMattPress.
 	 *
 	 * Theme must declare that they support this module by adding
 	 * add_theme_support( 'featured-content' ); during after_setup_theme.
 	 *
-	 * If no theme support is found there is no need to hook into WordPress.
+	 * If no theme support is found there is no need to hook into NotMattPress.
 	 * We'll just return early instead.
 	 *
 	 * @since Twenty Fourteen 1.0

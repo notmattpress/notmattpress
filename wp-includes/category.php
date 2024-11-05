@@ -2,7 +2,7 @@
 /**
  * Taxonomy API: Core category-specific functionality
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Taxonomy
  */
 
@@ -203,7 +203,7 @@ function get_category_by_slug( $slug ) {
  * @param string $cat_name Category name.
  * @return int Category ID on success, 0 if the category doesn't exist.
  */
-function get_cat_ID( $cat_name ) { // phpcs:ignore WordPress.NamingConventions.ValidFunctionName.FunctionNameInvalid
+function get_cat_ID( $cat_name ) { // phpcs:ignore NotMattPress.NamingConventions.ValidFunctionName.FunctionNameInvalid
 	$cat = get_term_by( 'name', $cat_name, 'category' );
 
 	if ( $cat ) {

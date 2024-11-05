@@ -2,15 +2,15 @@
 /**
  * Custom header implementation
  *
- * @link https://codex.wordpress.org/Custom_Headers
+ * @link https://codex.notmatt.press/Custom_Headers
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Twenty_Seventeen
  * @since Twenty Seventeen 1.0
  */
 
 /**
- * Set up the WordPress core custom header feature.
+ * Set up the NotMattPress core custom header feature.
  *
  * @uses twentyseventeen_header_style()
  */

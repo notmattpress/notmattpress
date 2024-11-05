@@ -643,7 +643,7 @@ function getNotices(state, context = DEFAULT_CONTEXT) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/notices/build-module/store/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -657,7 +657,7 @@ function getNotices(state, context = DEFAULT_CONTEXT) {
 /**
  * Store definition for the notices namespace.
  *
- * @see https://github.com/WordPress/gutenberg/blob/HEAD/packages/data/README.md#createReduxStore
+ * @see https://github.com/NotMattPress/gutenberg/blob/HEAD/packages/data/README.md#createReduxStore
  */
 const store = (0,external_wp_data_namespaceObject.createReduxStore)('core/notices', {
   reducer: reducer,

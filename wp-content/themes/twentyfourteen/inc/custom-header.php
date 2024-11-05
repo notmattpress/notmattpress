@@ -2,13 +2,13 @@
 /**
  * Implement Custom Header functionality for Twenty Fourteen
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Twenty_Fourteen
  * @since Twenty Fourteen 1.0
  */
 
 /**
- * Set up the WordPress core custom header settings.
+ * Set up the NotMattPress core custom header settings.
  *
  * @since Twenty Fourteen 1.0
  *

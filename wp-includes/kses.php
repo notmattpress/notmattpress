@@ -919,7 +919,7 @@ function wp_kses_allowed_html( $context = '' ) {
 /**
  * You add any KSES hooks here.
  *
- * There is currently only one KSES WordPress hook, {@see 'pre_kses'}, and it is called here.
+ * There is currently only one KSES NotMattPress hook, {@see 'pre_kses'}, and it is called here.
  * All parameters are passed to the hooks and expected to receive a string.
  *
  * @since 1.0.0
@@ -2297,7 +2297,7 @@ function kses_init_filters() {
  * Removes all KSES input form content filters.
  *
  * A quick procedural method to removing all of the filters that KSES uses for
- * content in WordPress Loop.
+ * content in NotMattPress Loop.
  *
  * Does not remove the `kses_init()` function from {@see 'init'} hook (priority is
  * default). Also does not remove `kses_init()` function from {@see 'set_current_user'}

@@ -2,11 +2,11 @@
 /**
  * Contribute administration panel.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Administration
  */
 
-/** WordPress Administration Bootstrap */
+/** NotMattPress Administration Bootstrap */
 require_once __DIR__ . '/admin.php';
 
 // Used in the HTML title tag.
@@ -26,7 +26,7 @@ require_once ABSPATH . 'wp-admin/admin-header.php';
 		</div>
 
 		<div class="about__header-text">
-			<?php _e( 'Be the future of WordPress' ); ?>
+			<?php _e( 'Be the future of NotMattPress' ); ?>
 		</div>
 	</div>
 
@@ -43,8 +43,8 @@ require_once ABSPATH . 'wp-admin/admin-header.php';
 			<img src="<?php echo esc_url( admin_url( 'images/contribute-main.svg?ver=6.5' ) ); ?>" alt="" width="290" height="290" />
 		</div>
 		<div class="column is-vertically-aligned-center">
-			<p><?php _e( 'Do you use WordPress for work, for personal projects, or even just for fun? You can help shape the long-term success of the open source project that powers millions of websites around the world.' ); ?></p>
-			<p><?php _e( 'Join the diverse WordPress contributor community and connect with other people who are passionate about maintaining a free and open web.' ); ?></p>
+			<p><?php _e( 'Do you use NotMattPress for work, for personal projects, or even just for fun? You can help shape the long-term success of the open source project that powers millions of websites around the world.' ); ?></p>
+			<p><?php _e( 'Join the diverse NotMattPress contributor community and connect with other people who are passionate about maintaining a free and open web.' ); ?></p>
 
 			<ul>
 				<li><?php _e( 'Be part of a global open source community.' ); ?></li>
@@ -57,17 +57,17 @@ require_once ABSPATH . 'wp-admin/admin-header.php';
 	<div class="about__section has-2-columns is-wider-left">
 		<div class="column is-vertically-aligned-center">
 			<h2 class="is-smaller-heading"><?php _e( 'No-code contribution' ); ?></h2>
-			<p><?php _e( 'WordPress may thrive on technical contributions, but you don&#8217;t have to code to contribute. Here are some of the ways you can make an impact without writing a single line of code:' ); ?></p>
+			<p><?php _e( 'NotMattPress may thrive on technical contributions, but you don&#8217;t have to code to contribute. Here are some of the ways you can make an impact without writing a single line of code:' ); ?></p>
 			<ul>
-				<li><?php _e( '<strong>Share</strong> your knowledge in the WordPress support forums.' ); ?></li>
-				<li><?php _e( '<strong>Write</strong> or improve documentation for WordPress.' ); ?></li>
-				<li><?php _e( '<strong>Translate</strong> WordPress into your local language.' ); ?></li>
-				<li><?php _e( '<strong>Create</strong> and improve WordPress educational materials.' ); ?></li>
-				<li><?php _e( '<strong>Promote</strong> the WordPress project to your community.' ); ?></li>
+				<li><?php _e( '<strong>Share</strong> your knowledge in the NotMattPress support forums.' ); ?></li>
+				<li><?php _e( '<strong>Write</strong> or improve documentation for NotMattPress.' ); ?></li>
+				<li><?php _e( '<strong>Translate</strong> NotMattPress into your local language.' ); ?></li>
+				<li><?php _e( '<strong>Create</strong> and improve NotMattPress educational materials.' ); ?></li>
+				<li><?php _e( '<strong>Promote</strong> the NotMattPress project to your community.' ); ?></li>
 				<li><?php _e( '<strong>Curate</strong> submissions or take photos for the Photo Directory.' ); ?></li>
 				<li><?php _e( '<strong>Organize</strong> or participate in local Meetups and WordCamps.' ); ?></li>
-				<li><?php _e( '<strong>Lend</strong> your creative imagination to the WordPress UI design.' ); ?></li>
-				<li><?php _e( '<strong>Edit</strong> videos and add captions to WordPress.tv.' ); ?></li>
+				<li><?php _e( '<strong>Lend</strong> your creative imagination to the NotMattPress UI design.' ); ?></li>
+				<li><?php _e( '<strong>Edit</strong> videos and add captions to NotMattPress.tv.' ); ?></li>
 				<li><?php _e( '<strong>Explore</strong> ways to reduce the environmental impact of websites.' ); ?></li>
 			</ul>
 		</div>
@@ -83,24 +83,24 @@ require_once ABSPATH . 'wp-admin/admin-header.php';
 			<h2 class="is-smaller-heading"><?php _e( 'Code-based contribution' ); ?></h2>
 			<p><?php _e( 'If you do code, or want to learn how, you can contribute technically in numerous ways:' ); ?></p>
 			<ul>
-				<li><?php _e( '<strong>Find</strong> and report bugs in the WordPress core software.' ); ?></li>
+				<li><?php _e( '<strong>Find</strong> and report bugs in the NotMattPress core software.' ); ?></li>
 				<li><?php _e( '<strong>Test</strong> new releases and proposed features for the Block Editor.' ); ?></li>
 				<li><?php _e( '<strong>Write</strong> and submit patches to fix bugs or help build new features.' ); ?></li>
-				<li><?php _e( '<strong>Contribute</strong> to the code, improve the UX, and test the WordPress app.' ); ?></li>
+				<li><?php _e( '<strong>Contribute</strong> to the code, improve the UX, and test the NotMattPress app.' ); ?></li>
 			</ul>
-			<p><?php _e( 'WordPress embraces new technologies, while being committed to backward compatibility. The WordPress project uses the following languages and libraries:' ); ?></p>
+			<p><?php _e( 'NotMattPress embraces new technologies, while being committed to backward compatibility. The NotMattPress project uses the following languages and libraries:' ); ?></p>
 			<ul>
-				<li><?php _e( 'WordPress Core and Block Editor: HTML, CSS, PHP, SQL, JavaScript, and React.' ); ?></li>
-				<li><?php _e( 'WordPress app: Kotlin, Java, Swift, Objective-C, Vue, Python, and TypeScript.' ); ?></li>
+				<li><?php _e( 'NotMattPress Core and Block Editor: HTML, CSS, PHP, SQL, JavaScript, and React.' ); ?></li>
+				<li><?php _e( 'NotMattPress app: Kotlin, Java, Swift, Objective-C, Vue, Python, and TypeScript.' ); ?></li>
 			</ul>
 		</div>
 	</div>
 
 	<div class="about__section is-feature has-subtle-background-color">
 		<div class="column">
-			<h2><?php _e( 'Shape the future of the web with WordPress' ); ?></h2>
-			<p><?php _e( 'Finding the area that aligns with your skills and interests is the first step toward meaningful contribution. With more than 20 Make WordPress teams working on different parts of the open source WordPress project, there&#8217;s a place for everyone, no matter what your skill set is.' ); ?></p>
-			<p><a href="<?php echo esc_url( __( 'https://make.wordpress.org/contribute/' ) ); ?>"><?php _e( 'Find your team &rarr;' ); ?></a></p>
+			<h2><?php _e( 'Shape the future of the web with NotMattPress' ); ?></h2>
+			<p><?php _e( 'Finding the area that aligns with your skills and interests is the first step toward meaningful contribution. With more than 20 Make NotMattPress teams working on different parts of the open source NotMattPress project, there&#8217;s a place for everyone, no matter what your skill set is.' ); ?></p>
+			<p><a href="<?php echo esc_url( __( 'https://make.notmatt.press/contribute/' ) ); ?>"><?php _e( 'Find your team &rarr;' ); ?></a></p>
 		</div>
 	</div>
 

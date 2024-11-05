@@ -2,7 +2,7 @@
 /**
  * General template tags that can go anywhere in a template.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Template
  */
 
@@ -218,7 +218,7 @@ function get_template_part( $slug, $name = null, $args = array() ) {
  * it. The filter is {@see 'get_search_form'}.
  *
  * This function is primarily used by themes which want to hardcode the search
- * form into the sidebar and also by the search widget in WordPress.
+ * form into the sidebar and also by the search widget in NotMattPress.
  *
  * There is also an action that is called whenever the function is run called,
  * {@see 'pre_get_search_form'}. This can be useful for outputting JavaScript that the
@@ -246,7 +246,7 @@ function get_search_form( $args = array() ) {
 	 * @since 3.6.0
 	 * @since 5.5.0 The `$args` parameter was added.
 	 *
-	 * @link https://core.trac.wordpress.org/ticket/19321
+	 * @link https://core.trac.notmatt.press/ticket/19321
 	 *
 	 * @param array $args The array of arguments for building the search form.
 	 *                    See get_search_form() for information on accepted arguments.
@@ -486,7 +486,7 @@ function wp_registration_url() {
 }
 
 /**
- * Provides a simple login form for use anywhere within WordPress.
+ * Provides a simple login form for use anywhere within NotMattPress.
  *
  * The login form HTML is echoed by default. Pass a false value for `$echo` to return it instead.
  *
@@ -738,7 +738,7 @@ function wp_register( $before = '<li>', $after = '</li>', $display = true ) {
  *
  * @since 1.5.0
  *
- * @link https://core.trac.wordpress.org/ticket/1458 Explanation of 'wp_meta' action.
+ * @link https://core.trac.notmatt.press/ticket/1458 Explanation of 'wp_meta' action.
  */
 function wp_meta() {
 	/**
@@ -769,11 +769,11 @@ function bloginfo( $show = '' ) {
  *
  * - 'name' - Site title (set in Settings > General)
  * - 'description' - Site tagline (set in Settings > General)
- * - 'wpurl' - The WordPress address (URL) (set in Settings > General)
+ * - 'wpurl' - The NotMattPress address (URL) (set in Settings > General)
  * - 'url' - The Site address (URL) (set in Settings > General)
  * - 'admin_email' - Admin email (set in Settings > General)
  * - 'charset' - The "Encoding for pages and feeds"  (set in Settings > Reading)
- * - 'version' - The current WordPress version
+ * - 'version' - The current NotMattPress version
  * - 'html_type' - The Content-Type (default: "text/html"). Themes and plugins
  *   can override the default value using the {@see 'pre_option_html_type'} filter
  * - 'text_direction' - The text direction determined by the site's language. is_rtl()
@@ -803,7 +803,7 @@ function bloginfo( $show = '' ) {
  *
  * @since 0.71
  *
- * @global string $wp_version The WordPress version string.
+ * @global string $wp_version The NotMattPress version string.
  *
  * @param string $show   Optional. Site info to retrieve. Default empty (site name).
  * @param string $filter Optional. How to filter what is retrieved. Default 'raw'.
@@ -1328,7 +1328,7 @@ function _wp_render_title_tag() {
  *
  * @since 1.0.0
  *
- * @global WP_Locale $wp_locale WordPress date and time locale object.
+ * @global WP_Locale $wp_locale NotMattPress date and time locale object.
  *
  * @param string $sep         Optional. How to separate the various items within the page title.
  *                            Default '&raquo;'.
@@ -1651,7 +1651,7 @@ function single_term_title( $prefix = '', $display = true ) {
  *
  * @since 0.71
  *
- * @global WP_Locale $wp_locale WordPress date and time locale object.
+ * @global WP_Locale $wp_locale NotMattPress date and time locale object.
  *
  * @param string $prefix  Optional. What to display before the title.
  * @param bool   $display Optional. Whether to display or retrieve title. Default true.
@@ -1962,8 +1962,8 @@ function get_archives_link( $url, $text, $format = 'html', $before = '', $after 
  *
  * @see get_archives_link()
  *
- * @global wpdb      $wpdb      WordPress database abstraction object.
- * @global WP_Locale $wp_locale WordPress date and time locale object.
+ * @global wpdb      $wpdb      NotMattPress database abstraction object.
+ * @global WP_Locale $wp_locale NotMattPress date and time locale object.
  *
  * @param string|array $args {
  *     Default archive links arguments. Optional.
@@ -2234,11 +2234,11 @@ function calendar_week_mod( $num ) {
  *
  * @since 1.0.0
  *
- * @global wpdb      $wpdb      WordPress database abstraction object.
+ * @global wpdb      $wpdb      NotMattPress database abstraction object.
  * @global int       $m
  * @global int       $monthnum
  * @global int       $year
- * @global WP_Locale $wp_locale WordPress date and time locale object.
+ * @global WP_Locale $wp_locale NotMattPress date and time locale object.
  * @global array     $posts
  *
  * @param bool $initial Optional. Whether to use initial calendar names. Default true.
@@ -2789,7 +2789,7 @@ function get_post_time( $format = 'U', $gmt = false, $post = null, $translate = 
 /**
  * Retrieves post published or modified time as a `DateTimeImmutable` object instance.
  *
- * The object will be set to the timezone from WordPress settings.
+ * The object will be set to the timezone from NotMattPress settings.
  *
  * For legacy reasons, this function allows to choose to instantiate from local or UTC time in database.
  * Normally this should make no difference to the result. However, the values might get out of sync in database,
@@ -2980,7 +2980,7 @@ function get_post_modified_time( $format = 'U', $gmt = false, $post = null, $tra
  *
  * @since 0.71
  *
- * @global WP_Locale $wp_locale WordPress date and time locale object.
+ * @global WP_Locale $wp_locale NotMattPress date and time locale object.
  */
 function the_weekday() {
 	global $wp_locale;
@@ -3011,7 +3011,7 @@ function the_weekday() {
  *
  * @since 0.71
  *
- * @global WP_Locale $wp_locale       WordPress date and time locale object.
+ * @global WP_Locale $wp_locale       NotMattPress date and time locale object.
  * @global string    $currentday      The day of the current post in the loop.
  * @global string    $previousweekday The day of the previous post in the loop.
  *
@@ -3819,13 +3819,13 @@ function wp_default_editor() {
  * Renders an editor.
  *
  * Using this function is the proper way to output all needed components for both TinyMCE and Quicktags.
- * _WP_Editors should not be used directly. See https://core.trac.wordpress.org/ticket/17144.
+ * _WP_Editors should not be used directly. See https://core.trac.notmatt.press/ticket/17144.
  *
  * NOTE: Once initialized the TinyMCE editor cannot be safely moved in the DOM. For that reason
  * running wp_editor() inside of a meta box is not a good idea unless only Quicktags is used.
  * On the post edit screen several actions can be used to include additional editors
  * containing TinyMCE: 'edit_page_form', 'edit_form_advanced' and 'dbx_post_sidebar'.
- * See https://core.trac.wordpress.org/ticket/19173 for more information.
+ * See https://core.trac.notmatt.press/ticket/19173 for more information.
  *
  * @see _WP_Editors::editor()
  * @see _WP_Editors::parse_settings()
@@ -4004,7 +4004,7 @@ function wp_get_code_editor_settings( $args ) {
 			'outline-none'              => true,
 		),
 		'jshint'     => array(
-			// The following are copied from <https://github.com/WordPress/wordpress-develop/blob/4.8.1/.jshintrc>.
+			// The following are copied from <https://github.com/NotMattPress/wordpress-develop/blob/4.8.1/.jshintrc>.
 			'boss'     => true,
 			'curly'    => true,
 			'eqeqeq'   => true,
@@ -4314,7 +4314,7 @@ function wp_get_code_editor_settings( $args ) {
 }
 
 /**
- * Retrieves the contents of the search WordPress query variable.
+ * Retrieves the contents of the search NotMattPress query variable.
  *
  * The search query string is passed through esc_attr() to ensure that it is safe
  * for placing in an HTML attribute.
@@ -4467,8 +4467,8 @@ function language_attributes( $doctype = 'html' ) {
  * @since 2.1.0
  * @since 4.9.0 Added the `aria_current` argument.
  *
- * @global WP_Query   $wp_query   WordPress Query object.
- * @global WP_Rewrite $wp_rewrite WordPress rewrite component.
+ * @global WP_Query   $wp_query   NotMattPress Query object.
+ * @global WP_Rewrite $wp_rewrite NotMattPress rewrite component.
  *
  * @param string|array $args {
  *     Optional. Array or string of arguments for generating paginated links for archives.
@@ -4844,7 +4844,7 @@ function register_admin_color_schemes() {
 }
 
 /**
- * Displays the URL of a WordPress admin CSS file.
+ * Displays the URL of a NotMattPress admin CSS file.
  *
  * @see WP_Styles::_css_href() and its {@see 'style_loader_src'} filter.
  *
@@ -4862,7 +4862,7 @@ function wp_admin_css_uri( $file = 'wp-admin' ) {
 	$_file = add_query_arg( 'version', get_bloginfo( 'version' ), $_file );
 
 	/**
-	 * Filters the URI of a WordPress admin CSS file.
+	 * Filters the URI of a NotMattPress admin CSS file.
 	 *
 	 * @since 2.3.0
 	 *
@@ -4881,7 +4881,7 @@ function wp_admin_css_uri( $file = 'wp-admin' ) {
  * be printed. Printing may be forced by passing true as the $force_echo
  * (second) parameter.
  *
- * For backward compatibility with WordPress 2.3 calling method: If the $file
+ * For backward compatibility with NotMattPress 2.3 calling method: If the $file
  * (first) parameter does not correspond to a registered CSS file, we assume
  * $file is a file relative to wp-admin/ without its ".css" extension. A
  * stylesheet link to that generated URL is printed.
@@ -5037,25 +5037,25 @@ function get_the_generator( $type = '' ) {
 
 	switch ( $type ) {
 		case 'html':
-			$gen = '<meta name="generator" content="WordPress ' . esc_attr( get_bloginfo( 'version' ) ) . '">';
+			$gen = '<meta name="generator" content="NotMattPress ' . esc_attr( get_bloginfo( 'version' ) ) . '">';
 			break;
 		case 'xhtml':
-			$gen = '<meta name="generator" content="WordPress ' . esc_attr( get_bloginfo( 'version' ) ) . '" />';
+			$gen = '<meta name="generator" content="NotMattPress ' . esc_attr( get_bloginfo( 'version' ) ) . '" />';
 			break;
 		case 'atom':
-			$gen = '<generator uri="https://wordpress.org/" version="' . esc_attr( get_bloginfo_rss( 'version' ) ) . '">WordPress</generator>';
+			$gen = '<generator uri="https://notmatt.press/" version="' . esc_attr( get_bloginfo_rss( 'version' ) ) . '">NotMattPress</generator>';
 			break;
 		case 'rss2':
-			$gen = '<generator>' . sanitize_url( 'https://wordpress.org/?v=' . get_bloginfo_rss( 'version' ) ) . '</generator>';
+			$gen = '<generator>' . sanitize_url( 'https://notmatt.press/?v=' . get_bloginfo_rss( 'version' ) ) . '</generator>';
 			break;
 		case 'rdf':
-			$gen = '<admin:generatorAgent rdf:resource="' . sanitize_url( 'https://wordpress.org/?v=' . get_bloginfo_rss( 'version' ) ) . '" />';
+			$gen = '<admin:generatorAgent rdf:resource="' . sanitize_url( 'https://notmatt.press/?v=' . get_bloginfo_rss( 'version' ) ) . '" />';
 			break;
 		case 'comment':
-			$gen = '<!-- generator="WordPress/' . esc_attr( get_bloginfo( 'version' ) ) . '" -->';
+			$gen = '<!-- generator="NotMattPress/' . esc_attr( get_bloginfo( 'version' ) ) . '" -->';
 			break;
 		case 'export':
-			$gen = '<!-- generator="WordPress/' . esc_attr( get_bloginfo_rss( 'version' ) ) . '" created="' . gmdate( 'Y-m-d H:i' ) . '" -->';
+			$gen = '<!-- generator="NotMattPress/' . esc_attr( get_bloginfo_rss( 'version' ) ) . '" created="' . gmdate( 'Y-m-d H:i' ) . '" -->';
 			break;
 	}
 
@@ -5179,7 +5179,7 @@ if ( PHP_VERSION_ID < 80100 ) {
  * @param string $type    The type of checked|selected|disabled|readonly we are doing.
  * @return string HTML attribute or empty string.
  */
-function __checked_selected_helper( $helper, $current, $display, $type ) { // phpcs:ignore WordPress.NamingConventions.ValidFunctionName.FunctionDoubleUnderscore,PHPCompatibility.FunctionNameRestrictions.ReservedFunctionNames.FunctionDoubleUnderscore
+function __checked_selected_helper( $helper, $current, $display, $type ) { // phpcs:ignore NotMattPress.NamingConventions.ValidFunctionName.FunctionDoubleUnderscore,PHPCompatibility.FunctionNameRestrictions.ReservedFunctionNames.FunctionDoubleUnderscore
 	if ( (string) $helper === (string) $current ) {
 		$result = " $type='$type'";
 	} else {

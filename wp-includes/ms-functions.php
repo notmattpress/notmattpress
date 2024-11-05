@@ -1,8 +1,8 @@
 <?php
 /**
- * Multisite WordPress API
+ * Multisite NotMattPress API
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Multisite
  * @since 3.0.0
  */
@@ -220,7 +220,7 @@ function add_user_to_blog( $blog_id, $user_id, $role ) {
  *
  * @since MU (3.0.0)
  *
- * @global wpdb $wpdb WordPress database abstraction object.
+ * @global wpdb $wpdb NotMattPress database abstraction object.
  *
  * @param int $user_id  ID of the user being removed.
  * @param int $blog_id  Optional. ID of the blog the user is being removed from. Default 0.
@@ -330,7 +330,7 @@ function get_blog_permalink( $blog_id, $post_id ) {
  *
  * @since MU (3.0.0)
  *
- * @global wpdb $wpdb WordPress database abstraction object.
+ * @global wpdb $wpdb NotMattPress database abstraction object.
  *
  * @param string $domain Website domain.
  * @param string $path   Optional. Not required for subdomain installations. Default '/'.
@@ -441,7 +441,7 @@ function is_email_address_unsafe( $user_email ) {
  *
  * @since MU (3.0.0)
  *
- * @global wpdb $wpdb WordPress database abstraction object.
+ * @global wpdb $wpdb NotMattPress database abstraction object.
  *
  * @param string $user_name  The login name provided by the user.
  * @param string $user_email The email provided by the user.
@@ -492,7 +492,7 @@ function wpmu_validate_user_signup( $user_name, $user_email ) {
 	if ( ! is_email( $user_email ) ) {
 		$errors->add( 'user_email', __( 'Please enter a valid email address.' ) );
 	} elseif ( is_email_address_unsafe( $user_email ) ) {
-		$errors->add( 'user_email', __( 'You cannot use that email address to signup. There are problems with them blocking some emails from WordPress. Please use another email provider.' ) );
+		$errors->add( 'user_email', __( 'You cannot use that email address to signup. There are problems with them blocking some emails from NotMattPress. Please use another email provider.' ) );
 	}
 
 	if ( strlen( $user_name ) < 4 ) {
@@ -598,11 +598,11 @@ function wpmu_validate_user_signup( $user_name, $user_email ) {
  * effectively an override of this limitation.
  *
  * Filter {@see 'wpmu_validate_blog_signup'} if you want to modify
- * the way that WordPress validates new site signups.
+ * the way that NotMattPress validates new site signups.
  *
  * @since MU (3.0.0)
  *
- * @global wpdb   $wpdb   WordPress database abstraction object.
+ * @global wpdb   $wpdb   NotMattPress database abstraction object.
  * @global string $domain
  *
  * @param string         $blogname   The site name provided by the user. Must be unique.
@@ -773,7 +773,7 @@ function wpmu_validate_blog_signup( $blogname, $blog_title, $user = '' ) {
  *
  * @since MU (3.0.0)
  *
- * @global wpdb $wpdb WordPress database abstraction object.
+ * @global wpdb $wpdb NotMattPress database abstraction object.
  *
  * @param string $domain     The requested domain.
  * @param string $path       The requested path.
@@ -842,7 +842,7 @@ function wpmu_signup_blog( $domain, $path, $title, $user, $user_email, $meta = a
  *
  * @since MU (3.0.0)
  *
- * @global wpdb $wpdb WordPress database abstraction object.
+ * @global wpdb $wpdb NotMattPress database abstraction object.
  *
  * @param string $user       The user's requested login name.
  * @param string $user_email The user's email address.
@@ -955,7 +955,7 @@ function wpmu_signup_blog_notification( $domain, $path, $title, $user_login, $us
 		$admin_email = 'support@' . wp_parse_url( network_home_url(), PHP_URL_HOST );
 	}
 
-	$from_name       = ( '' !== get_site_option( 'site_name' ) ) ? esc_html( get_site_option( 'site_name' ) ) : 'WordPress';
+	$from_name       = ( '' !== get_site_option( 'site_name' ) ) ? esc_html( get_site_option( 'site_name' ) ) : 'NotMattPress';
 	$message_headers = "From: \"{$from_name}\" <{$admin_email}>\n" . 'Content-Type: text/plain; charset="' . get_option( 'blog_charset' ) . "\"\n";
 
 	$user            = get_user_by( 'login', $user_login );
@@ -1082,7 +1082,7 @@ function wpmu_signup_user_notification( $user_login, $user_email, $key, $meta = 
 		$admin_email = 'support@' . wp_parse_url( network_home_url(), PHP_URL_HOST );
 	}
 
-	$from_name       = ( '' !== get_site_option( 'site_name' ) ) ? esc_html( get_site_option( 'site_name' ) ) : 'WordPress';
+	$from_name       = ( '' !== get_site_option( 'site_name' ) ) ? esc_html( get_site_option( 'site_name' ) ) : 'NotMattPress';
 	$message_headers = "From: \"{$from_name}\" <{$admin_email}>\n" . 'Content-Type: text/plain; charset="' . get_option( 'blog_charset' ) . "\"\n";
 	$message         = sprintf(
 		/**
@@ -1154,7 +1154,7 @@ function wpmu_signup_user_notification( $user_login, $user_email, $key, $meta = 
  *
  * @since MU (3.0.0)
  *
- * @global wpdb $wpdb WordPress database abstraction object.
+ * @global wpdb $wpdb NotMattPress database abstraction object.
  *
  * @param string $key The activation key provided to the user.
  * @return array|WP_Error An array containing information about the activated user and/or blog.
@@ -1284,7 +1284,7 @@ function wpmu_activate_signup( $key ) {
  *
  * @since 5.5.0
  *
- * @global wpdb $wpdb WordPress database abstraction object.
+ * @global wpdb $wpdb NotMattPress database abstraction object.
  *
  * @param int      $id       ID of the user to delete.
  * @param int|null $reassign ID of the user to reassign posts and links to.
@@ -1670,12 +1670,12 @@ We hope you enjoy your new site. Thanks!
 		$admin_email = 'support@' . wp_parse_url( network_home_url(), PHP_URL_HOST );
 	}
 
-	$from_name       = ( '' !== get_site_option( 'site_name' ) ) ? esc_html( get_site_option( 'site_name' ) ) : 'WordPress';
+	$from_name       = ( '' !== get_site_option( 'site_name' ) ) ? esc_html( get_site_option( 'site_name' ) ) : 'NotMattPress';
 	$message_headers = "From: \"{$from_name}\" <{$admin_email}>\n" . 'Content-Type: text/plain; charset="' . get_option( 'blog_charset' ) . "\"\n";
 	$message         = $welcome_email;
 
 	if ( empty( $current_network->site_name ) ) {
-		$current_network->site_name = 'WordPress';
+		$current_network->site_name = 'NotMattPress';
 	}
 
 	/* translators: New site notification email subject. 1: Network title, 2: New site title. */
@@ -1876,12 +1876,12 @@ function wpmu_welcome_user_notification( $user_id, $password, $meta = array() ) 
 		$admin_email = 'support@' . wp_parse_url( network_home_url(), PHP_URL_HOST );
 	}
 
-	$from_name       = ( '' !== get_site_option( 'site_name' ) ) ? esc_html( get_site_option( 'site_name' ) ) : 'WordPress';
+	$from_name       = ( '' !== get_site_option( 'site_name' ) ) ? esc_html( get_site_option( 'site_name' ) ) : 'NotMattPress';
 	$message_headers = "From: \"{$from_name}\" <{$admin_email}>\n" . 'Content-Type: text/plain; charset="' . get_option( 'blog_charset' ) . "\"\n";
 	$message         = $welcome_email;
 
 	if ( empty( $current_network->site_name ) ) {
-		$current_network->site_name = 'WordPress';
+		$current_network->site_name = 'NotMattPress';
 	}
 
 	/* translators: New user notification email subject. 1: Network title, 2: New user login. */
@@ -1932,7 +1932,7 @@ function get_current_site() {
  *
  * @since MU (3.0.0)
  *
- * @global wpdb $wpdb WordPress database abstraction object.
+ * @global wpdb $wpdb NotMattPress database abstraction object.
  *
  * @param int $user_id User ID.
  * @return array Contains the blog_id, post_id, post_date_gmt, and post_gmt_ts.
@@ -1981,7 +1981,7 @@ function get_most_recent_post_of_user( $user_id ) {
 /**
  * Checks an array of MIME types against a list of allowed types.
  *
- * WordPress ships with a set of allowed upload filetypes,
+ * NotMattPress ships with a set of allowed upload filetypes,
  * which is defined in wp-includes/functions.php in
  * get_allowed_mime_types(). This function is used to filter
  * that list against the filetypes allowed provided by Multisite
@@ -2008,14 +2008,14 @@ function check_upload_mimes( $mimes ) {
 /**
  * Updates a blog's post count.
  *
- * WordPress MS stores a blog's post count as an option so as
+ * NotMattPress MS stores a blog's post count as an option so as
  * to avoid extraneous COUNTs when a blog's details are fetched
  * with get_site(). This function is called when posts are published
  * or unpublished to make sure the count stays current.
  *
  * @since MU (3.0.0)
  *
- * @global wpdb $wpdb WordPress database abstraction object.
+ * @global wpdb $wpdb NotMattPress database abstraction object.
  *
  * @param string $deprecated Not used.
  */
@@ -2030,7 +2030,7 @@ function update_posts_count( $deprecated = '' ) {
  * @since MU (3.0.0)
  * @since 5.1.0 Parameters now support input from the {@see 'wp_initialize_site'} action.
  *
- * @global wpdb $wpdb WordPress database abstraction object.
+ * @global wpdb $wpdb NotMattPress database abstraction object.
  *
  * @param WP_Site|int $blog_id The new site's object or ID.
  * @param int|array   $user_id User ID, or array of arguments including 'user_id'.
@@ -2201,7 +2201,7 @@ function maybe_add_existing_user_to_blog() {
 			home_url(),
 			admin_url()
 		),
-		__( 'WordPress &rsaquo; Success' ),
+		__( 'NotMattPress &rsaquo; Success' ),
 		array( 'response' => 200 )
 	);
 }
@@ -2388,7 +2388,7 @@ function force_ssl_content( $force = '' ) {
  * @param string $url URL.
  * @return string URL with https as the scheme.
  */
-function filter_SSL( $url ) {  // phpcs:ignore WordPress.NamingConventions.ValidFunctionName.FunctionNameInvalid
+function filter_SSL( $url ) {  // phpcs:ignore NotMattPress.NamingConventions.ValidFunctionName.FunctionNameInvalid
 	if ( ! is_string( $url ) ) {
 		return get_bloginfo( 'url' ); // Return home site URL with proper scheme.
 	}

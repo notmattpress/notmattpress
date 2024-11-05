@@ -85,7 +85,7 @@ const external_wp_primitives_namespaceObject = window["wp"]["primitives"];
 const external_ReactJSXRuntime_namespaceObject = window["ReactJSXRuntime"];
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/widget.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -106,7 +106,7 @@ const external_wp_blockEditor_namespaceObject = window["wp"]["blockEditor"];
 const external_wp_components_namespaceObject = window["wp"]["components"];
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/brush.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -129,7 +129,7 @@ const external_wp_data_namespaceObject = window["wp"]["data"];
 const external_wp_coreData_namespaceObject = window["wp"]["coreData"];
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/widgets/build-module/blocks/legacy-widget/edit/widget-type-selector.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -210,7 +210,7 @@ var external_wp_apiFetch_default = /*#__PURE__*/__webpack_require__.n(external_w
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/widgets/build-module/blocks/legacy-widget/edit/control.js
 /* wp:polyfill */
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -624,7 +624,7 @@ function serializeForm(form) {
  */
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -731,7 +731,7 @@ function Form({
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -845,7 +845,7 @@ function Preview({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/widgets/build-module/blocks/legacy-widget/edit/no-preview.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -865,7 +865,7 @@ function NoPreview({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/widgets/build-module/blocks/legacy-widget/edit/convert-to-blocks-button.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -905,7 +905,7 @@ function ConvertToBlocksButton({
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -1069,7 +1069,7 @@ function NotEmpty({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/widgets/build-module/blocks/legacy-widget/transforms.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 const legacyWidgetTransforms = [{
@@ -1281,7 +1281,7 @@ const transforms = {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/widgets/build-module/blocks/legacy-widget/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -1331,7 +1331,7 @@ const settings = {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/group.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -1346,7 +1346,7 @@ const group = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(exte
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/widgets/build-module/blocks/widget-group/edit.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -1414,7 +1414,7 @@ function PreviewContent({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/widgets/build-module/blocks/widget-group/save.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -1437,7 +1437,7 @@ function save({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/widgets/build-module/blocks/widget-group/deprecated.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -1471,7 +1471,7 @@ const v1 = {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/widgets/build-module/blocks/widget-group/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -1551,7 +1551,7 @@ const widget_group_settings = {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/move-to.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -1566,7 +1566,7 @@ const moveTo = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(ext
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/widgets/build-module/components/move-to-widget-area/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -1645,7 +1645,7 @@ function addWidgetIdToBlock(block, widgetId) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/widgets/build-module/register-legacy-widget-variations.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -1676,7 +1676,7 @@ function registerLegacyWidgetVariations(settings) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/widgets/build-module/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -1695,7 +1695,7 @@ function registerLegacyWidgetVariations(settings) {
  * be loaded into the page.
  *
  * @param {Object} supports Block support settings.
- * @see https://developer.wordpress.org/block-editor/how-to-guides/widgets/legacy-widget-block/
+ * @see https://developer.notmatt.press/block-editor/how-to-guides/widgets/legacy-widget-block/
  */
 function registerLegacyWidgetBlock(supports = {}) {
   const {

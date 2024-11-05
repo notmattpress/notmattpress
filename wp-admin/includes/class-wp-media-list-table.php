@@ -2,7 +2,7 @@
 /**
  * List Table API: WP_Media_List_Table class
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Administration
  * @since 3.1.0
  */
@@ -61,7 +61,7 @@ class WP_Media_List_Table extends WP_List_Table {
 
 	/**
 	 * @global string   $mode                  List table view mode.
-	 * @global WP_Query $wp_query              WordPress Query object.
+	 * @global WP_Query $wp_query              NotMattPress Query object.
 	 * @global array    $post_mime_types
 	 * @global array    $avail_post_mime_types
 	 */
@@ -713,7 +713,7 @@ class WP_Media_List_Table extends WP_List_Table {
 	 * @since 3.1.0
 	 *
 	 * @global WP_Post  $post     Global post object.
-	 * @global WP_Query $wp_query WordPress Query object.
+	 * @global WP_Query $wp_query NotMattPress Query object.
 	 */
 	public function display_rows() {
 		global $post, $wp_query;

@@ -65,7 +65,7 @@ const external_wp_element_namespaceObject = window["wp"]["element"];
 const external_wp_i18n_namespaceObject = window["wp"]["i18n"];
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/media-utils/build-module/components/media-upload/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -556,7 +556,7 @@ function transformAttachment(attachment) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/media-utils/build-module/utils/upload-to-server.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -606,7 +606,7 @@ class UploadError extends Error {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/media-utils/build-module/utils/validate-mime-type.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -670,7 +670,7 @@ function getMimeTypesArray(wpMimeTypesObject) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/media-utils/build-module/utils/validate-mime-type-for-user.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -706,7 +706,7 @@ function validateMimeTypeForUser(file, wpAllowedMimeTypes) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/media-utils/build-module/utils/validate-file-size.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -745,7 +745,7 @@ function validateFileSize(file, maxUploadFileSize) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/media-utils/build-module/utils/upload-media.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 

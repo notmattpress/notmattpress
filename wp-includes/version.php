@@ -1,17 +1,17 @@
 <?php
 /**
- * WordPress Version
+ * NotMattPress Version
  *
- * Contains version information for the current WordPress release.
+ * Contains version information for the current NotMattPress release.
  *
- * @package WordPress
+ * @package NotMattPress
  * @since 1.2.0
  */
 
 /**
- * The WordPress version string.
+ * The NotMattPress version string.
  *
- * Holds the current version number for WordPress core. Used to bust caches
+ * Holds the current version number for NotMattPress core. Used to bust caches
  * and to enable development mode for scripts when running from the /src directory.
  *
  * @global string $wp_version
@@ -19,7 +19,7 @@
 $wp_version = '6.8-alpha-59346';
 
 /**
- * Holds the WordPress DB revision, increments when changes are made to the WordPress DB schema.
+ * Holds the NotMattPress DB revision, increments when changes are made to the NotMattPress DB schema.
  *
  * @global int $wp_db_version
  */

@@ -11,7 +11,7 @@
 /* harmony import */ var _wordpress_is_shallow_equal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(923);
 /* harmony import */ var _wordpress_is_shallow_equal__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_is_shallow_equal__WEBPACK_IMPORTED_MODULE_0__);
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -1669,7 +1669,7 @@ function receiveQueriedItems(items, query = {}, edits, meta) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/core-data/build-module/batch/default-processor.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -1753,7 +1753,7 @@ async function defaultProcessor(requests) {
 
 /**
  * Creates a batch, which can be used to combine multiple API requests into one
- * API request using the WordPress batch processing API (/v1/batch).
+ * API request using the NotMattPress batch processing API (/v1/batch).
  *
  * ```
  * const batch = createBatch();
@@ -1927,7 +1927,7 @@ const STORE_NAME = 'core';
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -2120,7 +2120,7 @@ function receiveThemeSupports() {
  * Returns an action object used in signalling that the theme global styles CPT post revisions have been received.
  * Ignored from documentation as it's internal to the data store.
  *
- * @deprecated since WordPress 6.5.0. Callers should use `dispatch( 'core' ).receiveRevision` instead.
+ * @deprecated since NotMattPress 6.5.0. Callers should use `dispatch( 'core' ).receiveRevision` instead.
  *
  * @ignore
  *
@@ -2765,7 +2765,7 @@ const receiveRevisions = (kind, name, recordKey, records, query, invalidateCache
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -3321,7 +3321,7 @@ function withWeakMapCache(fn) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/core-data/build-module/queried-data/get-query-parts.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -3425,7 +3425,7 @@ function getQueryParts(query) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/core-data/build-module/queried-data/reducer.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -3666,7 +3666,7 @@ const queries = (state = {}, action) => {
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -4270,7 +4270,7 @@ var equivalent_key_map_default = /*#__PURE__*/__webpack_require__.n(equivalent_k
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -4448,7 +4448,7 @@ function getUserPermissionCacheKey(action, resource, id) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/core-data/build-module/selectors.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -4465,7 +4465,7 @@ function getUserPermissionCacheKey(action, resource, id) {
 // This is an incomplete, high-level approximation of the State type.
 // It makes the selectors slightly more safe, but is intended to evolve
 // into a more detailed representation over time.
-// See https://github.com/WordPress/gutenberg/pull/40025#discussion_r865410589 for more context.
+// See https://github.com/NotMattPress/gutenberg/pull/40025#discussion_r865410589 for more context.
 
 /**
  * HTTP Query parameters sent with the API request to fetch the entity records.
@@ -4504,7 +4504,7 @@ const isRequestingEmbedPreview = (0,external_wp_data_namespaceObject.createRegis
  *
  * @param      state Data state.
  * @param      query Optional object of query parameters to
- *                   include with request. For valid query parameters see the [Users page](https://developer.wordpress.org/rest-api/reference/users/) in the REST API Handbook and see the arguments for [List Users](https://developer.wordpress.org/rest-api/reference/users/#list-users) and [Retrieve a User](https://developer.wordpress.org/rest-api/reference/users/#retrieve-a-user).
+ *                   include with request. For valid query parameters see the [Users page](https://developer.notmatt.press/rest-api/reference/users/) in the REST API Handbook and see the arguments for [List Users](https://developer.notmatt.press/rest-api/reference/users/#list-users) and [Retrieve a User](https://developer.notmatt.press/rest-api/reference/users/#retrieve-a-user).
  * @return Authors list.
  */
 function getAuthors(state, query) {
@@ -4544,7 +4544,7 @@ const getUserQueryResults = (0,external_wp_data_namespaceObject.createSelector)(
 /**
  * Returns the loaded entities for the given kind.
  *
- * @deprecated since WordPress 6.0. Use getEntitiesConfig instead
+ * @deprecated since NotMattPress 6.0. Use getEntitiesConfig instead
  * @param      state Data state.
  * @param      kind  Entity kind.
  *
@@ -4572,7 +4572,7 @@ const getEntitiesConfig = (0,external_wp_data_namespaceObject.createSelector)((s
 /**
  * Returns the entity config given its kind and name.
  *
- * @deprecated since WordPress 6.0. Use getEntityConfig instead
+ * @deprecated since NotMattPress 6.0. Use getEntityConfig instead
  * @param      state Data state.
  * @param      kind  Entity kind.
  * @param      name  Entity name.
@@ -4622,7 +4622,7 @@ function getEntityConfig(state, kind, name) {
  * The signature without the state parameter shipped as CurriedSignature
  * is used in the return value of `select( coreStore )`.
  *
- * See https://github.com/WordPress/gutenberg/pull/41578 for more details.
+ * See https://github.com/NotMattPress/gutenberg/pull/41578 for more details.
  */
 
 /**
@@ -4635,7 +4635,7 @@ function getEntityConfig(state, kind, name) {
  * @param name  Entity name.
  * @param key   Record's key
  * @param query Optional query. If requesting specific
- *              fields, fields must always include the ID. For valid query parameters see the [Reference](https://developer.wordpress.org/rest-api/reference/) in the REST API Handbook and select the entity kind. Then see the arguments available "Retrieve a [Entity kind]".
+ *              fields, fields must always include the ID. For valid query parameters see the [Reference](https://developer.notmatt.press/rest-api/reference/) in the REST API Handbook and select the entity kind. Then see the arguments available "Retrieve a [Entity kind]".
  *
  * @return Record.
  */
@@ -4742,7 +4742,7 @@ const getRawEntityRecord = (0,external_wp_data_namespaceObject.createSelector)((
  * @param state State tree
  * @param kind  Entity kind.
  * @param name  Entity name.
- * @param query Optional terms query. For valid query parameters see the [Reference](https://developer.wordpress.org/rest-api/reference/) in the REST API Handbook and select the entity kind. Then see the arguments available for "List [Entity kind]s".
+ * @param query Optional terms query. For valid query parameters see the [Reference](https://developer.notmatt.press/rest-api/reference/) in the REST API Handbook and select the entity kind. Then see the arguments available for "List [Entity kind]s".
  *
  * @return  Whether entity records have been received.
  */
@@ -4756,7 +4756,7 @@ function hasEntityRecords(state, kind, name, query) {
  * allow currying generic functions.
  *
  * @see GetEntityRecord
- * @see https://github.com/WordPress/gutenberg/pull/41578
+ * @see https://github.com/NotMattPress/gutenberg/pull/41578
  */
 
 /**
@@ -4766,7 +4766,7 @@ function hasEntityRecords(state, kind, name, query) {
  * @param kind  Entity kind.
  * @param name  Entity name.
  * @param query Optional terms query. If requesting specific
- *              fields, fields must always include the ID. For valid query parameters see the [Reference](https://developer.wordpress.org/rest-api/reference/) in the REST API Handbook and select the entity kind. Then see the arguments available for "List [Entity kind]s".
+ *              fields, fields must always include the ID. For valid query parameters see the [Reference](https://developer.notmatt.press/rest-api/reference/) in the REST API Handbook and select the entity kind. Then see the arguments available for "List [Entity kind]s".
  *
  * @return Records.
  */
@@ -4787,7 +4787,7 @@ const getEntityRecords = (state, kind, name, query) => {
  * @param kind  Entity kind.
  * @param name  Entity name.
  * @param query Optional terms query. If requesting specific
- *              fields, fields must always include the ID. For valid query parameters see the [Reference](https://developer.wordpress.org/rest-api/reference/) in the REST API Handbook and select the entity kind. Then see the arguments available for "List [Entity kind]s".
+ *              fields, fields must always include the ID. For valid query parameters see the [Reference](https://developer.notmatt.press/rest-api/reference/) in the REST API Handbook and select the entity kind. Then see the arguments available for "List [Entity kind]s".
  *
  * @return number | null.
  */
@@ -4808,7 +4808,7 @@ const getEntityRecordsTotalItems = (state, kind, name, query) => {
  * @param kind  Entity kind.
  * @param name  Entity name.
  * @param query Optional terms query. If requesting specific
- *              fields, fields must always include the ID. For valid query parameters see the [Reference](https://developer.wordpress.org/rest-api/reference/) in the REST API Handbook and select the entity kind. Then see the arguments available for "List [Entity kind]s".
+ *              fields, fields must always include the ID. For valid query parameters see the [Reference](https://developer.notmatt.press/rest-api/reference/) in the REST API Handbook and select the entity kind. Then see the arguments available for "List [Entity kind]s".
  *
  * @return number | null.
  */
@@ -5188,7 +5188,7 @@ function getEmbedPreview(state, url) {
 /**
  * Determines if the returned preview is an oEmbed link fallback.
  *
- * WordPress can be configured to return a simple link to a URL if it is not embeddable.
+ * NotMattPress can be configured to return a simple link to a URL if it is not embeddable.
  * We need to be able to determine if a URL is embeddable or not, based on what we
  * get back from the oEmbed preview API.
  *
@@ -5213,7 +5213,7 @@ function isPreviewEmbedFallback(state, url) {
  * Calling this may trigger an OPTIONS request to the REST API via the
  * `canUser()` resolver.
  *
- * https://developer.wordpress.org/rest-api/reference/
+ * https://developer.notmatt.press/rest-api/reference/
  *
  * @param state    Data state.
  * @param action   Action to check. One of: 'create', 'read', 'update', 'delete'.
@@ -5239,7 +5239,7 @@ function canUser(state, action, resource, id) {
  * Calling this may trigger an OPTIONS request to the REST API via the
  * `canUser()` resolver.
  *
- * https://developer.wordpress.org/rest-api/reference/
+ * https://developer.notmatt.press/rest-api/reference/
  *
  * @param state    Data state.
  * @param kind     Entity kind.
@@ -5414,7 +5414,7 @@ function getUserPatternCategories(state) {
 /**
  * Returns the revisions of the current global styles theme.
  *
- * @deprecated since WordPress 6.5.0. Callers should use `select( 'core' ).getRevisions( 'root', 'globalStyles', ${ recordKey } )` instead, where `recordKey` is the id of the global styles parent post.
+ * @deprecated since NotMattPress 6.5.0. Callers should use `select( 'core' ).getRevisions( 'root', 'globalStyles', ${ recordKey } )` instead, where `recordKey` is the id of the global styles parent post.
  *
  * @param      state Data state.
  *
@@ -5452,7 +5452,7 @@ function getDefaultTemplateId(state, query) {
  * @param name      Entity name.
  * @param recordKey The key of the entity record whose revisions you want to fetch.
  * @param query     Optional query. If requesting specific
- *                  fields, fields must always include the ID. For valid query parameters see revisions schema in [the REST API Handbook](https://developer.wordpress.org/rest-api/reference/). Then see the arguments available "Retrieve a [Entity kind]".
+ *                  fields, fields must always include the ID. For valid query parameters see revisions schema in [the REST API Handbook](https://developer.notmatt.press/rest-api/reference/). Then see the arguments available "Retrieve a [Entity kind]".
  *
  * @return Record.
  */
@@ -5473,7 +5473,7 @@ const getRevisions = (state, kind, name, recordKey, query) => {
  * @param recordKey   The key of the entity record whose revisions you want to fetch.
  * @param revisionKey The revision's key.
  * @param query       Optional query. If requesting specific
- *                    fields, fields must always include the ID. For valid query parameters see revisions schema in [the REST API Handbook](https://developer.wordpress.org/rest-api/reference/). Then see the arguments available "Retrieve a [entity kind]".
+ *                    fields, fields must always include the ID. For valid query parameters see revisions schema in [the REST API Handbook](https://developer.notmatt.press/rest-api/reference/). Then see the arguments available "Retrieve a [entity kind]".
  *
  * @return Record.
  */
@@ -5515,7 +5515,7 @@ const getRevision = (0,external_wp_data_namespaceObject.createSelector)((state, 
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/core-data/build-module/private-selectors.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -5650,16 +5650,16 @@ const forwardResolver = resolverName => (...args) => async ({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/core-data/build-module/fetch/__experimental-fetch-link-suggestions.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
 
 
 /**
- * Fetches link suggestions from the WordPress API.
+ * Fetches link suggestions from the NotMattPress API.
  *
- * WordPress does not support searching multiple tables at once, e.g. posts and terms, so we
+ * NotMattPress does not support searching multiple tables at once, e.g. posts and terms, so we
  * perform multiple queries at the same time and then merge the results together.
  *
  * @param search
@@ -5833,7 +5833,7 @@ function tokenize(text) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/core-data/build-module/fetch/__experimental-fetch-url-data.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -5907,7 +5907,7 @@ const fetchUrlData = async (url, options = {}) => {
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -5929,7 +5929,7 @@ async function fetchBlockPatterns() {
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -6150,8 +6150,8 @@ const resolvers_getEntityRecords = (kind, name, query = {}) => async ({
 
       // When requesting all fields, the list of results can be used to resolve
       // the `getEntityRecord` and `canUser` selectors in addition to `getEntityRecords`.
-      // See https://github.com/WordPress/gutenberg/pull/26575
-      // See https://github.com/WordPress/gutenberg/pull/64504
+      // See https://github.com/NotMattPress/gutenberg/pull/26575
+      // See https://github.com/NotMattPress/gutenberg/pull/64504
       if (!query?._fields && !query.context) {
         const key = entityConfig.key || DEFAULT_ENTITY_KEY;
         const resolutionsArgs = records.filter(record => record?.[key]).map(record => [kind, name, record[key]]);
@@ -6948,19 +6948,19 @@ function createLocksActions() {
 const external_wp_privateApis_namespaceObject = window["wp"]["privateApis"];
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/core-data/build-module/lock-unlock.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 const {
   lock,
   unlock
-} = (0,external_wp_privateApis_namespaceObject.__dangerousOptInToUnstableAPIsOnlyForCoreModules)('I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of WordPress.', '@wordpress/core-data');
+} = (0,external_wp_privateApis_namespaceObject.__dangerousOptInToUnstableAPIsOnlyForCoreModules)('I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of NotMattPress.', '@wordpress/core-data');
 
 ;// CONCATENATED MODULE: external ["wp","element"]
 const external_wp_element_namespaceObject = window["wp"]["element"];
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/core-data/build-module/entity-context.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 const EntityContext = (0,external_wp_element_namespaceObject.createContext)({});
@@ -6969,7 +6969,7 @@ const EntityContext = (0,external_wp_element_namespaceObject.createContext)({});
 const external_ReactJSXRuntime_namespaceObject = window["ReactJSXRuntime"];
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/core-data/build-module/entity-provider.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -7194,7 +7194,7 @@ let Status = /*#__PURE__*/function (Status) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/core-data/build-module/hooks/use-query-select.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -7208,7 +7208,7 @@ const META_SELECTORS = ['getIsResolving', 'hasStartedResolution', 'hasFinishedRe
  * Like useSelect, but the selectors return objects containing
  * both the original data AND the resolution info.
  *
- * @since 6.1.0 Introduced in WordPress core.
+ * @since 6.1.0 Introduced in NotMattPress core.
  * @private
  *
  * @param {Function} mapQuerySelect see useSelect
@@ -7300,7 +7300,7 @@ const enrichSelectors = memoize(selectors => {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/core-data/build-module/hooks/use-entity-record.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -7316,7 +7316,7 @@ const use_entity_record_EMPTY_OBJECT = {};
 /**
  * Resolves the specified entity record.
  *
- * @since 6.1.0 Introduced in WordPress core.
+ * @since 6.1.0 Introduced in NotMattPress core.
  *
  * @param    kind     Kind of the entity, e.g. `root` or a `postType`. See rootEntitiesConfig in ../entities.ts for a list of available kinds.
  * @param    name     Name of the entity, e.g. `plugin` or a `post`. See rootEntitiesConfig in ../entities.ts for a list of available names.
@@ -7463,7 +7463,7 @@ function __experimentalUseEntityRecord(kind, name, recordId, options) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/core-data/build-module/hooks/use-entity-records.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -7481,7 +7481,7 @@ const EMPTY_ARRAY = [];
 /**
  * Resolves the specified entity records.
  *
- * @since 6.1.0 Introduced in WordPress core.
+ * @since 6.1.0 Introduced in NotMattPress core.
  *
  * @param    kind      Kind of the entity, e.g. `root` or a `postType`. See rootEntitiesConfig in ../entities.ts for a list of available kinds.
  * @param    name      Name of the entity, e.g. `plugin` or a `post`. See rootEntitiesConfig in ../entities.ts for a list of available names.
@@ -7609,7 +7609,7 @@ const external_wp_warning_namespaceObject = window["wp"]["warning"];
 var external_wp_warning_default = /*#__PURE__*/__webpack_require__.n(external_wp_warning_namespaceObject);
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/core-data/build-module/hooks/use-resource-permissions.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -7628,7 +7628,7 @@ var external_wp_warning_default = /*#__PURE__*/__webpack_require__.n(external_wp
 /**
  * Resolves resource permissions.
  *
- * @since 6.1.0 Introduced in WordPress core.
+ * @since 6.1.0 Introduced in NotMattPress core.
  *
  * @param    resource Entity resource to check. Accepts entity object `{ kind: 'root', name: 'media', id: 1 }`
  *                    or REST base as a string - `media`.
@@ -7767,7 +7767,7 @@ function __experimentalUseResourcePermissions(resource, id) {
 const external_wp_blocks_namespaceObject = window["wp"]["blocks"];
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/core-data/build-module/hooks/use-entity-id.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -7792,7 +7792,7 @@ function useEntityId(kind, name) {
 const external_wp_blockEditor_namespaceObject = window["wp"]["blockEditor"];
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/core-data/build-module/footnotes/get-rich-text-values-cached.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -7810,7 +7810,7 @@ const external_wp_blockEditor_namespaceObject = window["wp"]["blockEditor"];
 // `block-editor`. What follows is a workaround that defers the `unlock` call
 // to prevent native code from failing.
 //
-// Fix once https://github.com/WordPress/gutenberg/issues/52692 is closed.
+// Fix once https://github.com/NotMattPress/gutenberg/issues/52692 is closed.
 let unlockedApis;
 const cache = new WeakMap();
 function getRichTextValuesCached(block) {
@@ -7862,7 +7862,7 @@ function getFootnotesOrder(blocks) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/core-data/build-module/footnotes/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -7974,7 +7974,7 @@ function updateFootnotesFromMeta(blocks, meta) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/core-data/build-module/hooks/use-entity-block-editor.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -8107,7 +8107,7 @@ function useEntityBlockEditor(kind, name, {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/core-data/build-module/hooks/use-entity-prop.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -8185,7 +8185,7 @@ lock(privateApis, {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/core-data/build-module/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -8263,7 +8263,7 @@ const storeConfig = () => ({
 /**
  * Store definition for the code data namespace.
  *
- * @see https://github.com/WordPress/gutenberg/blob/HEAD/packages/data/README.md#createReduxStore
+ * @see https://github.com/NotMattPress/gutenberg/blob/HEAD/packages/data/README.md#createReduxStore
  */
 const store = (0,external_wp_data_namespaceObject.createReduxStore)(STORE_NAME, storeConfig());
 unlock(store).registerPrivateSelectors(private_selectors_namespaceObject);

@@ -165,7 +165,7 @@ final class Fsockopen implements Transport {
 
 		$remote_socket .= ':' . $url_parts['port'];
 
-		// phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_set_error_handler
+		// phpcs:ignore NotMattPress.PHP.DevelopmentFunctions.error_log_set_error_handler
 		set_error_handler([$this, 'connect_error_handler'], E_WARNING | E_NOTICE);
 
 		$options['hooks']->dispatch('fsockopen.remote_socket', [&$remote_socket]);
@@ -288,7 +288,7 @@ final class Fsockopen implements Transport {
 		$doingbody  = false;
 		$download   = false;
 		if ($options['filename']) {
-			// phpcs:ignore WordPress.PHP.NoSilencedErrors -- Silenced the PHP native warning in favour of throwing an exception.
+			// phpcs:ignore NotMattPress.PHP.NoSilencedErrors -- Silenced the PHP native warning in favour of throwing an exception.
 			$download = @fopen($options['filename'], 'wb');
 			if ($download === false) {
 				$error = error_get_last();

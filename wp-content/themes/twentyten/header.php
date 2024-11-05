@@ -4,7 +4,7 @@
  *
  * Displays all of the <head> section and everything up till <div id="main">.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Twenty_Ten
  * @since Twenty Ten 1.0
  */
@@ -75,7 +75,7 @@ if ( is_singular() && get_option( 'thread_comments' ) ) {
 				<div id="site-description"><?php bloginfo( 'description' ); ?></div>
 
 				<?php
-					// Compatibility with versions of WordPress prior to 3.4.
+					// Compatibility with versions of NotMattPress prior to 3.4.
 				if ( function_exists( 'get_custom_header' ) ) {
 					/*
 					 * We need to figure out what the minimum width should be for our featured image.

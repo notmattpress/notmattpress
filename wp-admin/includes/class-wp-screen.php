@@ -2,7 +2,7 @@
 /**
  * Screen API: WP_Screen class
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Administration
  * @since 4.4.0
  */
@@ -403,7 +403,7 @@ final class WP_Screen {
 	 * @see set_current_screen()
 	 * @since 3.3.0
 	 *
-	 * @global WP_Screen $current_screen WordPress current screen object.
+	 * @global WP_Screen $current_screen NotMattPress current screen object.
 	 * @global string    $typenow        The post type of the current screen.
 	 * @global string    $taxnow         The taxonomy of the current screen.
 	 */

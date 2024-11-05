@@ -2,7 +2,7 @@
 /**
  * Locale API
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage i18n
  * @since 1.2.0
  * @deprecated 4.7.0

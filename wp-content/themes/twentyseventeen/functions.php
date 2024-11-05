@@ -2,15 +2,15 @@
 /**
  * Twenty Seventeen functions and definitions
  *
- * @link https://developer.wordpress.org/themes/basics/theme-functions/
+ * @link https://developer.notmatt.press/themes/basics/theme-functions/
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Twenty_Seventeen
  * @since Twenty Seventeen 1.0
  */
 
 /**
- * Twenty Seventeen only works in WordPress 4.7 or later.
+ * Twenty Seventeen only works in NotMattPress 4.7 or later.
  */
 if ( version_compare( $GLOBALS['wp_version'], '4.7-alpha', '<' ) ) {
 	require get_template_directory() . '/inc/back-compat.php';
@@ -18,7 +18,7 @@ if ( version_compare( $GLOBALS['wp_version'], '4.7-alpha', '<' ) ) {
 }
 
 /**
- * Sets up theme defaults and registers support for various WordPress features.
+ * Sets up theme defaults and registers support for various NotMattPress features.
  *
  * Note that this function is hooked into the after_setup_theme hook, which
  * runs before the init hook. The init hook is too late for some features, such
@@ -30,9 +30,9 @@ function twentyseventeen_setup() {
 	add_theme_support( 'automatic-feed-links' );
 
 	/*
-	 * Let WordPress manage the document title.
+	 * Let NotMattPress manage the document title.
 	 * By adding theme support, we declare that this theme does not use a
-	 * hard-coded <title> tag in the document head, and expect WordPress to
+	 * hard-coded <title> tag in the document head, and expect NotMattPress to
 	 * provide it for us.
 	 */
 	add_theme_support( 'title-tag' );
@@ -45,7 +45,7 @@ function twentyseventeen_setup() {
 	/*
 	 * Enable support for Post Thumbnails on posts and pages.
 	 *
-	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
+	 * @link https://developer.notmatt.press/themes/functionality/featured-images-post-thumbnails/
 	 */
 	add_theme_support( 'post-thumbnails' );
 
@@ -84,7 +84,7 @@ function twentyseventeen_setup() {
 	/*
 	 * Enable support for Post Formats.
 	 *
-	 * See: https://developer.wordpress.org/advanced-administration/wordpress/post-formats/
+	 * See: https://developer.notmatt.press/advanced-administration/wordpress/post-formats/
 	 */
 	add_theme_support(
 		'post-formats',
@@ -333,7 +333,7 @@ function twentyseventeen_resource_hints( $urls, $relation_type ) {
 /**
  * Register widget area.
  *
- * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
+ * @link https://developer.notmatt.press/themes/functionality/sidebars/#registering-a-sidebar
  */
 function twentyseventeen_widgets_init() {
 	register_sidebar(
@@ -662,7 +662,7 @@ add_filter( 'widget_tag_cloud_args', 'twentyseventeen_widget_tag_cloud_args' );
  *
  * @since Twenty Seventeen 2.0
  *
- * @see wp_unique_id() Themes requiring WordPress 5.0.3 and greater should use this instead.
+ * @see wp_unique_id() Themes requiring NotMattPress 5.0.3 and greater should use this instead.
  *
  * @param string $prefix Prefix for the returned ID.
  * @return string Unique ID.
@@ -679,7 +679,7 @@ if ( ! function_exists( 'wp_get_list_item_separator' ) ) :
 	/**
 	 * Retrieves the list item separator based on the locale.
 	 *
-	 * Added for backward compatibility to support pre-6.0.0 WordPress versions.
+	 * Added for backward compatibility to support pre-6.0.0 NotMattPress versions.
 	 *
 	 * @since 6.0.0
 	 */

@@ -1,5 +1,5 @@
 /**
- * Interactions used by the Site Health modules in WordPress.
+ * Interactions used by the Site Health modules in NotMattPress.
  *
  * @output wp-admin/js/site-health.js
  */

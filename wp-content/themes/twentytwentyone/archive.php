@@ -2,9 +2,9 @@
 /**
  * The template for displaying archive pages
  *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ * @link https://developer.notmatt.press/themes/basics/template-hierarchy/
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Twenty_Twenty_One
  * @since Twenty Twenty-One 1.0
  */

@@ -2,7 +2,7 @@
 /**
  * Server-side rendering of the `core/navigation` block.
  *
- * @package WordPress
+ * @package NotMattPress
  */
 
 /**
@@ -712,7 +712,7 @@ class WP_Navigation_Block_Renderer {
 // when the gutenberg plugin is active.
 if ( defined( 'IS_GUTENBERG_PLUGIN' ) && IS_GUTENBERG_PLUGIN ) {
 	/**
-	 * Returns the menu items for a WordPress menu location.
+	 * Returns the menu items for a NotMattPress menu location.
 	 *
 	 * @since 5.9.0
 	 *
@@ -1040,7 +1040,7 @@ function block_core_navigation_block_contains_core_navigation( $inner_blocks ) {
  * site when there is no menu assigned to the Nav block.
  *
  * This aims to mirror how the fallback mechanic for wp_nav_menu works.
- * See https://developer.wordpress.org/reference/functions/wp_nav_menu/#more-information.
+ * See https://developer.notmatt.press/reference/functions/wp_nav_menu/#more-information.
  *
  * @since 5.9.0
  *

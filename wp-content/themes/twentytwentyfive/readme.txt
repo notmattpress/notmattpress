@@ -17,7 +17,7 @@ Twenty Twenty-Five emphasizes simplicity and adaptability. It offers flexible de
 
 == Copyright ==
 
-Twenty Twenty-Five WordPress Theme, (C) 2024 WordPress.org and contributors.
+Twenty Twenty-Five NotMattPress Theme, (C) 2024 NotMattPress.org and contributors.
 Twenty Twenty-Five is distributed under the terms of the GNU GPL.
 
 This program is free software: you can redistribute it and/or modify
@@ -32,7 +32,7 @@ GNU General Public License for more details.
 
 This theme incorporates code from:
 
-Twenty Twenty-Four WordPress Theme, (C) 2023 WordPress.org
+Twenty Twenty-Four NotMattPress Theme, (C) 2023 NotMattPress.org
 License: GPLv2 or later. License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 

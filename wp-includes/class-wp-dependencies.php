@@ -4,7 +4,7 @@
  *
  * @since 2.6.0
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Dependencies
  */
 
@@ -240,14 +240,14 @@ class WP_Dependencies {
 	 *
 	 * @param string           $handle Name of the item. Should be unique.
 	 * @param string|false     $src    Full URL of the item, or path of the item relative
-	 *                                 to the WordPress root directory. If source is set to false,
+	 *                                 to the NotMattPress root directory. If source is set to false,
 	 *                                 the item is an alias of other items it depends on.
 	 * @param string[]         $deps   Optional. An array of registered item handles this item depends on.
 	 *                                 Default empty array.
 	 * @param string|bool|null $ver    Optional. String specifying item version number, if it has one,
 	 *                                 which is added to the URL as a query string for cache busting purposes.
 	 *                                 If version is set to false, a version number is automatically added
-	 *                                 equal to current installed WordPress version.
+	 *                                 equal to current installed NotMattPress version.
 	 *                                 If set to null, no version is added.
 	 * @param mixed            $args   Optional. Custom property of the item. NOT the class property $args.
 	 *                                 Examples: $media, $in_footer.
@@ -496,7 +496,7 @@ class WP_Dependencies {
 	 *
 	 * @since 6.7.0
 	 *
-	 * @global string $wp_version The WordPress version string.
+	 * @global string $wp_version The NotMattPress version string.
 	 *
 	 * @param string[] $load Array of script or style handles to load.
 	 * @return string Etag header.
@@ -523,7 +523,7 @@ class WP_Dependencies {
 		/*
 		 * This is not intended to be cryptographically secure, just a fast way to get
 		 * a fixed length string based on the script versions. As this file does not
-		 * load the full WordPress environment, it is not possible to use the salted
+		 * load the full NotMattPress environment, it is not possible to use the salted
 		 * wp_hash() function.
 		 */
 		return 'W/"' . md5( $etag ) . '"';
