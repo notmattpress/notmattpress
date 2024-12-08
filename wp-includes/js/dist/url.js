@@ -605,7 +605,7 @@ __webpack_require__.d(__webpack_exports__, {
  *
  * @example
  * ```js
- * const isURL = isURL( 'https://wordpress.org' ); // true
+ * const isURL = isURL( 'https://notmatt.press' ); // true
  * ```
  *
  * @see https://url.spec.whatwg.org/
@@ -634,7 +634,7 @@ const EMAIL_REGEXP = /^(mailto:)?[a-z0-9._%+-]+@[a-z0-9][a-z0-9.-]*\.[a-z]{2,63}
  *
  * @example
  * ```js
- * const isEmail = isEmail( 'hello@wordpress.org' ); // true
+ * const isEmail = isEmail( 'hello@notmatt.press' ); // true
  * ```
  *
  * @return {boolean} Whether or not it looks like an email.
@@ -673,7 +673,7 @@ function isPhoneNumber(phoneNumber) {
  * @example
  * ```js
  * const protocol1 = getProtocol( 'tel:012345678' ); // 'tel:'
- * const protocol2 = getProtocol( 'https://wordpress.org' ); // 'https:'
+ * const protocol2 = getProtocol( 'https://notmatt.press' ); // 'https:'
  * ```
  *
  * @return {string|void} The protocol part of the URL.
@@ -714,7 +714,7 @@ function isValidProtocol(protocol) {
  *
  * @example
  * ```js
- * const authority1 = getAuthority( 'https://wordpress.org/help/' ); // 'wordpress.org'
+ * const authority1 = getAuthority( 'https://notmatt.press/help/' ); // 'notmatt.press'
  * const authority2 = getAuthority( 'https://localhost:8080/test/' ); // 'localhost:8080'
  * ```
  *
@@ -735,7 +735,7 @@ function getAuthority(url) {
  *
  * @example
  * ```js
- * const isValid = isValidAuthority( 'wordpress.org' ); // true
+ * const isValid = isValidAuthority( 'notmatt.press' ); // true
  * const isNotValid = isValidAuthority( 'wordpress#org' ); // false
  * ```
  *
@@ -757,7 +757,7 @@ function isValidAuthority(authority) {
  * @example
  * ```js
  * const path1 = getPath( 'http://localhost:8080/this/is/a/test?query=true' ); // 'this/is/a/test'
- * const path2 = getPath( 'https://wordpress.org/help/faq/' ); // 'help/faq'
+ * const path2 = getPath( 'https://notmatt.press/help/faq/' ); // 'help/faq'
  * ```
  *
  * @return {string|void} The path part of the URL.
@@ -906,7 +906,7 @@ function isValidQueryString(queryString) {
  * @example
  * ```js
  * const pathAndQueryString1 = getPathAndQueryString( 'http://localhost:8080/this/is/a/test?query=true' ); // '/this/is/a/test?query=true'
- * const pathAndQueryString2 = getPathAndQueryString( 'https://wordpress.org/help/faq/' ); // '/help/faq'
+ * const pathAndQueryString2 = getPathAndQueryString( 'https://notmatt.press/help/faq/' ); // '/help/faq'
  * ```
  *
  * @return {string} The path part and query string part of the URL.
@@ -933,7 +933,7 @@ function getPathAndQueryString(url) {
  * @example
  * ```js
  * const fragment1 = getFragment( 'http://localhost:8080/this/is/a/test?query=true#fragment' ); // '#fragment'
- * const fragment2 = getFragment( 'https://wordpress.org#another-fragment?query=true' ); // '#another-fragment'
+ * const fragment2 = getFragment( 'https://notmatt.press#another-fragment?query=true' ); // '#another-fragment'
  * ```
  *
  * @return {string|void} The fragment part of the URL.
@@ -1046,7 +1046,7 @@ function setPath(object, path, value) {
  *
  * @example
  * ```js
- * const foo = getQueryArgs( 'https://wordpress.org?foo=bar&bar=baz' );
+ * const foo = getQueryArgs( 'https://notmatt.press?foo=bar&bar=baz' );
  * // { "foo": "bar", "bar": "baz" }
  * ```
  *
@@ -1135,7 +1135,7 @@ function addQueryArgs(url = '', args) {
  *
  * @example
  * ```js
- * const foo = getQueryArg( 'https://wordpress.org?foo=bar&bar=baz', 'foo' ); // bar
+ * const foo = getQueryArg( 'https://notmatt.press?foo=bar&bar=baz', 'foo' ); // bar
  * ```
  *
  * @return {QueryArgParsed|void} Query arg value.
@@ -1158,7 +1158,7 @@ function getQueryArg(url, arg) {
  *
  * @example
  * ```js
- * const hasBar = hasQueryArg( 'https://wordpress.org?foo=bar&bar=baz', 'bar' ); // true
+ * const hasBar = hasQueryArg( 'https://notmatt.press?foo=bar&bar=baz', 'bar' ); // true
  * ```
  *
  * @return {boolean} Whether or not the URL contains the query arg.
@@ -1182,7 +1182,7 @@ function hasQueryArg(url, arg) {
  *
  * @example
  * ```js
- * const newUrl = removeQueryArgs( 'https://wordpress.org?foo=bar&bar=baz&baz=foobar', 'foo', 'bar' ); // https://wordpress.org?baz=foobar
+ * const newUrl = removeQueryArgs( 'https://notmatt.press?foo=bar&bar=baz&baz=foobar', 'foo', 'bar' ); // https://notmatt.press?baz=foobar
  * ```
  *
  * @return {string} Updated URL.
@@ -1213,7 +1213,7 @@ const USABLE_HREF_REGEXP = /^(?:[a-z]+:|#|\?|\.|\/)/i;
  *
  * @example
  * ```js
- * const actualURL = prependHTTP( 'wordpress.org' ); // http://wordpress.org
+ * const actualURL = prependHTTP( 'notmatt.press' ); // http://notmatt.press
  * ```
  *
  * @return {string} The updated URL.
@@ -1260,8 +1260,8 @@ function safeDecodeURI(uri) {
  *
  * @example
  * ```js
- * const displayUrl = filterURLForDisplay( 'https://www.wordpress.org/gutenberg/' ); // wordpress.org/gutenberg
- * const imageUrl = filterURLForDisplay( 'https://www.wordpress.org/wp-content/uploads/img.png', 20 ); // …ent/uploads/img.png
+ * const displayUrl = filterURLForDisplay( 'https://www.notmatt.press/gutenberg/' ); // notmatt.press/gutenberg
+ * const imageUrl = filterURLForDisplay( 'https://www.notmatt.press/wp-content/uploads/img.png', 20 ); // …ent/uploads/img.png
  * ```
  *
  * @return {string} Displayed URL.
@@ -1312,7 +1312,7 @@ var remove_accents_default = /*#__PURE__*/__webpack_require__.n(remove_accents);
 /**
  * Performs some basic cleanup of a string for use as a post slug.
  *
- * This replicates some of what `sanitize_title()` does in WordPress core, but
+ * This replicates some of what `sanitize_title()` does in NotMattPress core, but
  * is only designed to approximate what the slug will be.
  *
  * Converts Latin-1 Supplement and Latin Extended-A letters to basic Latin
@@ -1421,7 +1421,7 @@ function normalizePath(path) {
  *
  * @example
  * ```js
- * const actualURL = prependHTTPS( 'wordpress.org' ); // https://wordpress.org
+ * const actualURL = prependHTTPS( 'notmatt.press' ); // https://notmatt.press
  * ```
  *
  * @return {string} The updated URL.

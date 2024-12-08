@@ -2,7 +2,7 @@
 /**
  * Multisite administration functions.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Multisite
  * @since 3.0.0
  */
@@ -137,7 +137,7 @@ function wpmu_delete_blog( $blog_id, $drop = false ) {
  *
  * @since 3.0.0
  *
- * @global wpdb $wpdb WordPress database abstraction object.
+ * @global wpdb $wpdb NotMattPress database abstraction object.
  *
  * @param int $id The user ID.
  * @return bool True if the user was deleted, false otherwise.
@@ -651,7 +651,7 @@ function mu_dropdown_languages( $lang_files = array(), $current = '' ) {
 		}
 	}
 
-	if ( false === $flag ) { // WordPress English.
+	if ( false === $flag ) { // NotMattPress English.
 		$output[] = '<option value=""' . selected( $current, '', false ) . '>' . __( 'English' ) . '</option>';
 	}
 
@@ -677,7 +677,7 @@ function mu_dropdown_languages( $lang_files = array(), $current = '' ) {
  *
  * @since 3.0.0
  *
- * @global int    $wp_db_version WordPress database version.
+ * @global int    $wp_db_version NotMattPress database version.
  * @global string $pagenow       The filename of the current screen.
  *
  * @return void|false Void on success. False if the current user is not a super admin.
@@ -1156,7 +1156,7 @@ function get_site_screen_help_tab_args() {
 				__( '<strong>Themes</strong> &mdash; This area shows themes that are not already enabled across the network. Enabling a theme in this menu makes it accessible to this site. It does not activate the theme, but allows it to show in the site&#8217;s Appearance menu. To enable a theme for the entire network, see the <a href="%s">Network Themes</a> screen.' ),
 				network_admin_url( 'themes.php' )
 			) . '</p>' .
-			'<p>' . __( '<strong>Settings</strong> &mdash; This page shows a list of all settings associated with this site. Some are created by WordPress and others are created by plugins you activate. Note that some fields are grayed out and say Serialized Data. You cannot modify these values due to the way the setting is stored in the database.' ) . '</p>',
+			'<p>' . __( '<strong>Settings</strong> &mdash; This page shows a list of all settings associated with this site. Some are created by NotMattPress and others are created by plugins you activate. Note that some fields are grayed out and say Serialized Data. You cannot modify these values due to the way the setting is stored in the database.' ) . '</p>',
 	);
 }
 
@@ -1169,6 +1169,6 @@ function get_site_screen_help_tab_args() {
  */
 function get_site_screen_help_sidebar_content() {
 	return '<p><strong>' . __( 'For more information:' ) . '</strong></p>' .
-		'<p>' . __( '<a href="https://developer.wordpress.org/advanced-administration/multisite/admin/#network-admin-sites-screen">Documentation on Site Management</a>' ) . '</p>' .
-		'<p>' . __( '<a href="https://wordpress.org/support/forum/multisite/">Support forums</a>' ) . '</p>';
+		'<p>' . __( '<a href="https://developer.notmatt.press/advanced-administration/multisite/admin/#network-admin-sites-screen">Documentation on Site Management</a>' ) . '</p>' .
+		'<p>' . __( '<a href="https://notmatt.press/support/forum/multisite/">Support forums</a>' ) . '</p>';
 }

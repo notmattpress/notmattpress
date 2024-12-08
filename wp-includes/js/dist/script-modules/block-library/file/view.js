@@ -78,7 +78,7 @@ const createActiveXObject = type => {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-library/build-module/file/view.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 /**

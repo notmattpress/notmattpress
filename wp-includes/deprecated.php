@@ -1,10 +1,10 @@
 <?php
 /**
- * Deprecated functions from past WordPress versions. You shouldn't use these
+ * Deprecated functions from past NotMattPress versions. You shouldn't use these
  * functions and look for the alternatives instead. The functions will be
  * removed in a later version.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Deprecated
  */
 
@@ -49,21 +49,21 @@ function get_postdata($postid) {
 }
 
 /**
- * Sets up the WordPress Loop.
+ * Sets up the NotMattPress Loop.
  *
  * Use The Loop instead.
  *
- * @link https://developer.wordpress.org/themes/basics/the-loop/
+ * @link https://developer.notmatt.press/themes/basics/the-loop/
  *
  * @since 1.0.1
  * @deprecated 1.5.0
  *
- * @global WP_Query $wp_query WordPress Query object.
+ * @global WP_Query $wp_query NotMattPress Query object.
  */
 function start_wp() {
 	global $wp_query;
 
-	_deprecated_function( __FUNCTION__, '1.5.0', __('new WordPress Loop') );
+	_deprecated_function( __FUNCTION__, '1.5.0', __('new NotMattPress Loop') );
 
 	// Since the old style loop is being used, advance the query iterator here.
 	$wp_query->next_post();
@@ -1303,7 +1303,7 @@ function get_category_children( $id, $before = '/', $after = '', $visited = arra
  * @deprecated 4.0.0 Use get_terms()
  * @see get_terms()
  *
- * @link https://developer.wordpress.org/reference/functions/get_all_category_ids/
+ * @link https://developer.notmatt.press/reference/functions/get_all_category_ids/
  *
  * @return int[] List of all of the category IDs.
  */
@@ -2219,7 +2219,7 @@ function unregister_widget_control($id) {
  * @deprecated 3.0.0 Use delete_user_meta()
  * @see delete_user_meta()
  *
- * @global wpdb $wpdb WordPress database abstraction object.
+ * @global wpdb $wpdb NotMattPress database abstraction object.
  *
  * @param int $user_id User ID.
  * @param string $meta_key Metadata key.
@@ -2268,7 +2268,7 @@ function delete_usermeta( $user_id, $meta_key, $meta_value = '' ) {
  * @deprecated 3.0.0 Use get_user_meta()
  * @see get_user_meta()
  *
- * @global wpdb $wpdb WordPress database abstraction object.
+ * @global wpdb $wpdb NotMattPress database abstraction object.
  *
  * @param int $user_id User ID
  * @param string $meta_key Optional. Metadata key. Default empty.
@@ -2322,7 +2322,7 @@ function get_usermeta( $user_id, $meta_key = '' ) {
  * @deprecated 3.0.0 Use update_user_meta()
  * @see update_user_meta()
  *
- * @global wpdb $wpdb WordPress database abstraction object.
+ * @global wpdb $wpdb NotMattPress database abstraction object.
  *
  * @param int $user_id User ID
  * @param string $meta_key Metadata key.
@@ -2378,7 +2378,7 @@ function update_usermeta( $user_id, $meta_key, $meta_value ) {
  * @deprecated 3.1.0 Use get_users()
  * @see get_users()
  *
- * @global wpdb $wpdb WordPress database abstraction object.
+ * @global wpdb $wpdb NotMattPress database abstraction object.
  *
  * @param int $id Site ID.
  * @return array List of users that are part of that site ID
@@ -2527,7 +2527,7 @@ function is_term( $term, $taxonomy = '', $parent = 0 ) {
  * Use global $plugin_page and/or get_plugin_page_hookname() hooks.
  *
  * For more information on this and similar theme functions, check out
- * the {@link https://developer.wordpress.org/themes/basics/conditional-tags/
+ * the {@link https://developer.notmatt.press/themes/basics/conditional-tags/
  * Conditional Tags} article in the Theme Developer Handbook.
  *
  * @since 1.5.0
@@ -3229,7 +3229,7 @@ function wp_load_image( $file ) {
  * be PNG. The only supported image types are PNG, GIF, and JPEG.
  *
  * Some functionality requires API to exist, so some PHP version may lose out
- * support. This is not the fault of WordPress (where functionality is
+ * support. This is not the fault of NotMattPress (where functionality is
  * downgraded, not actual defects), but of your PHP version.
  *
  * @since 2.5.0
@@ -3403,7 +3403,7 @@ function _search_terms_tidy( $t ) {
  * Determine if TinyMCE is available.
  *
  * Checks to see if the user has deleted the tinymce files to slim down
- * their WordPress installation.
+ * their NotMattPress installation.
  *
  * @since 2.1.0
  * @deprecated 3.9.0
@@ -3468,7 +3468,7 @@ function like_escape($text) {
 /**
  * Determines if the URL can be accessed over SSL.
  *
- * Determines if the URL can be accessed over SSL by using the WordPress HTTP API to access
+ * Determines if the URL can be accessed over SSL by using the NotMattPress HTTP API to access
  * the URL using https as the scheme.
  *
  * @since 2.5.0
@@ -3750,7 +3750,7 @@ function get_comments_popup_template() {
  * Determines whether the current URL is within the comments popup window.
  *
  * For more information on this and similar theme functions, check out
- * the {@link https://developer.wordpress.org/themes/basics/conditional-tags/
+ * the {@link https://developer.notmatt.press/themes/basics/conditional-tags/
  * Conditional Tags} article in the Theme Developer Handbook.
  *
  * @since 1.5.0
@@ -4562,7 +4562,7 @@ function _filter_query_attachment_filenames( $clauses ) {
  * @since 3.0.0 The `$post_type` parameter was added.
  * @deprecated 6.2.0 Use WP_Query.
  *
- * @global wpdb $wpdb WordPress database abstraction object.
+ * @global wpdb $wpdb NotMattPress database abstraction object.
  *
  * @param string       $page_title Page title.
  * @param string       $output     Optional. The required return type. One of OBJECT, ARRAY_A, or ARRAY_N, which
@@ -4695,7 +4695,7 @@ function wp_queue_comments_for_comment_meta_lazyload( $comments ) {
  * @deprecated 6.3.0 Use wp_get_loading_optimization_attributes() instead.
  * @see wp_get_loading_optimization_attributes()
  *
- * @global WP_Query $wp_query WordPress Query object.
+ * @global WP_Query $wp_query NotMattPress Query object.
  *
  * @param string $context Context for the element for which the `loading` attribute value is requested.
  * @return string|bool The default `loading` attribute value. Either 'lazy', 'eager', or a boolean `false`, to indicate
@@ -5408,7 +5408,7 @@ function block_core_navigation_submenu_build_css_colors( $context, $attributes, 
  *       the Webfonts API is introduced in Core.
  *    b. To make `fontFace` declarations in `theme.json` work.
  *
- * @link  https://github.com/WordPress/gutenberg/issues/40472
+ * @link  https://github.com/NotMattPress/gutenberg/issues/40472
  *
  * @since 6.0.0
  * @deprecated 6.4.0 Use wp_print_font_faces() instead.
@@ -6019,7 +6019,7 @@ function wp_update_https_detection_errors() {
  * browser can decode the image off the main thread (`async`), on the
  * main thread (`sync`) or as determined by the browser (`auto`).
  *
- * By default WordPress adds `decoding="async"` to images but developers
+ * By default NotMattPress adds `decoding="async"` to images but developers
  * can use the {@see 'wp_img_tag_add_decoding_attr'} filter to modify this
  * to remove the attribute or set it to another accepted value.
  *
@@ -6340,12 +6340,12 @@ function wp_get_global_styles_custom_css() {
 	 * that can use dynamic data (modify the stylesheet depending on some option,
 	 * settings depending on user permissions, etc.).
 	 * See some of the existing hooks to modify theme.json behavior:
-	 * @see https://make.wordpress.org/core/2022/10/10/filters-for-theme-json-data/
+	 * @see https://make.notmatt.press/core/2022/10/10/filters-for-theme-json-data/
 	 *
 	 * A different alternative considered was to invalidate the cache upon certain
 	 * events such as options add/update/delete, user meta, etc.
 	 * It was judged not enough, hence this approach.
-	 * @see https://github.com/WordPress/gutenberg/pull/45372
+	 * @see https://github.com/NotMattPress/gutenberg/pull/45372
 	 */
 	$cache_key   = 'wp_get_global_styles_custom_css';
 	$cache_group = 'theme_json';
