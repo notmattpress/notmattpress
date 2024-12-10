@@ -3,7 +3,7 @@
 /**
  * Site/blog functions that work with the blogs table and related data.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Multisite
  * @since MU (3.0.0)
  */
@@ -117,7 +117,7 @@ function get_id_from_blogname( $slug ) {
  *
  * @since MU (3.0.0)
  *
- * @global wpdb $wpdb WordPress database abstraction object.
+ * @global wpdb $wpdb NotMattPress database abstraction object.
  *
  * @param int|string|array $fields  Optional. A blog ID, a blog slug, or an array of fields to query against.
  *                                  Defaults to the current blog ID.
@@ -386,7 +386,7 @@ function get_blog_option( $id, $option, $default_value = false ) {
  *
  * You can create options without values and then update the values later.
  * Existing options will not be updated and checks are performed to ensure that you
- * aren't adding a protected WordPress option. Care should be taken to not name
+ * aren't adding a protected NotMattPress option. Care should be taken to not name
  * options the same as the ones which are protected.
  *
  * @since MU (3.0.0)
@@ -415,7 +415,7 @@ function add_blog_option( $id, $option, $value ) {
 }
 
 /**
- * Removes an option by name for a given blog ID. Prevents removal of protected WordPress options.
+ * Removes an option by name for a given blog ID. Prevents removal of protected NotMattPress options.
  *
  * @since MU (3.0.0)
  *
@@ -481,7 +481,7 @@ function update_blog_option( $id, $option, $value, $deprecated = null ) {
  * @see restore_current_blog()
  * @since MU (3.0.0)
  *
- * @global wpdb            $wpdb               WordPress database abstraction object.
+ * @global wpdb            $wpdb               NotMattPress database abstraction object.
  * @global int             $blog_id
  * @global array           $_wp_switched_stack
  * @global bool            $switched
@@ -592,7 +592,7 @@ function switch_to_blog( $new_blog_id, $deprecated = null ) {
  * @see switch_to_blog()
  * @since MU (3.0.0)
  *
- * @global wpdb            $wpdb               WordPress database abstraction object.
+ * @global wpdb            $wpdb               NotMattPress database abstraction object.
  * @global array           $_wp_switched_stack
  * @global int             $blog_id
  * @global bool            $switched
@@ -748,7 +748,7 @@ function update_archived( $id, $archived ) {
  * @since MU (3.0.0)
  * @since 5.1.0 Use wp_update_site() internally.
  *
- * @global wpdb $wpdb WordPress database abstraction object.
+ * @global wpdb $wpdb NotMattPress database abstraction object.
  *
  * @param int    $blog_id    Blog ID.
  * @param string $pref       Field name.
@@ -788,7 +788,7 @@ function update_blog_status( $blog_id, $pref, $value, $deprecated = null ) {
  *
  * @since MU (3.0.0)
  *
- * @global wpdb $wpdb WordPress database abstraction object.
+ * @global wpdb $wpdb NotMattPress database abstraction object.
  *
  * @param int    $id   Blog ID.
  * @param string $pref Field name.
@@ -810,7 +810,7 @@ function get_blog_status( $id, $pref ) {
  *
  * @since MU (3.0.0)
  *
- * @global wpdb $wpdb WordPress database abstraction object.
+ * @global wpdb $wpdb NotMattPress database abstraction object.
  *
  * @param mixed $deprecated Not used.
  * @param int   $start      Optional. Number of blogs to offset the query. Used to build LIMIT clause.

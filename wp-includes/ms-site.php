@@ -2,7 +2,7 @@
 /**
  * Site API
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Multisite
  * @since 5.1.0
  */
@@ -12,7 +12,7 @@
  *
  * @since 5.1.0
  *
- * @global wpdb $wpdb WordPress database abstraction object.
+ * @global wpdb $wpdb NotMattPress database abstraction object.
  *
  * @param array $data {
  *     Data for the new site that should be inserted.
@@ -150,7 +150,7 @@ function wp_insert_site( array $data ) {
  *
  * @since 5.1.0
  *
- * @global wpdb $wpdb WordPress database abstraction object.
+ * @global wpdb $wpdb NotMattPress database abstraction object.
  *
  * @param int   $site_id ID of the site that should be updated.
  * @param array $data    Site data to update. See {@see wp_insert_site()} for the list of supported keys.
@@ -204,7 +204,7 @@ function wp_update_site( $site_id, array $data ) {
  *
  * @since 5.1.0
  *
- * @global wpdb $wpdb WordPress database abstraction object.
+ * @global wpdb $wpdb NotMattPress database abstraction object.
  *
  * @param int $site_id ID of the site that should be deleted.
  * @return WP_Site|WP_Error The deleted site object on success, or error object on failure.
@@ -345,7 +345,7 @@ function get_site( $site = null ) {
  * @since 6.3.0 Use wp_lazyload_site_meta() for lazy-loading of site meta.
  *
  * @see update_site_cache()
- * @global wpdb $wpdb WordPress database abstraction object.
+ * @global wpdb $wpdb NotMattPress database abstraction object.
  *
  * @param array $ids               ID list.
  * @param bool  $update_meta_cache Optional. Whether to update the meta cache. Default true.
@@ -355,7 +355,7 @@ function _prime_site_caches( $ids, $update_meta_cache = true ) {
 
 	$non_cached_ids = _get_non_cached_ids( $ids, 'sites' );
 	if ( ! empty( $non_cached_ids ) ) {
-		$fresh_sites = $wpdb->get_results( sprintf( "SELECT * FROM $wpdb->blogs WHERE blog_id IN (%s)", implode( ',', array_map( 'intval', $non_cached_ids ) ) ) ); // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared
+		$fresh_sites = $wpdb->get_results( sprintf( "SELECT * FROM $wpdb->blogs WHERE blog_id IN (%s)", implode( ',', array_map( 'intval', $non_cached_ids ) ) ) ); // phpcs:ignore NotMattPress.DB.PreparedSQL.NotPrepared
 
 		update_site_cache( $fresh_sites, false );
 	}
@@ -633,8 +633,8 @@ function wp_validate_site_data( $errors, $data, $old_site = null ) {
  *
  * @since 5.1.0
  *
- * @global wpdb     $wpdb     WordPress database abstraction object.
- * @global WP_Roles $wp_roles WordPress role management object.
+ * @global wpdb     $wpdb     NotMattPress database abstraction object.
+ * @global WP_Roles $wp_roles NotMattPress role management object.
  *
  * @param int|WP_Site $site_id Site ID or object.
  * @param array       $args    {
@@ -776,7 +776,7 @@ function wp_initialize_site( $site_id, array $args = array() ) {
  *
  * @since 5.1.0
  *
- * @global wpdb $wpdb WordPress database abstraction object.
+ * @global wpdb $wpdb NotMattPress database abstraction object.
  *
  * @param int|WP_Site $site_id Site ID or object.
  * @return true|WP_Error True on success, or error object on failure.
@@ -832,7 +832,7 @@ function wp_uninitialize_site( $site_id ) {
 	$drop_tables = apply_filters( 'wpmu_drop_tables', $tables, $site->id );
 
 	foreach ( (array) $drop_tables as $table ) {
-		$wpdb->query( "DROP TABLE IF EXISTS `$table`" ); // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared
+		$wpdb->query( "DROP TABLE IF EXISTS `$table`" ); // phpcs:ignore NotMattPress.DB.PreparedSQL.NotPrepared
 	}
 
 	/**
@@ -853,7 +853,7 @@ function wp_uninitialize_site( $site_id ) {
 		// Get indexed directory from stack.
 		$dir = $stack[ $index ];
 
-		// phpcs:disable WordPress.PHP.NoSilencedErrors.Discouraged
+		// phpcs:disable NotMattPress.PHP.NoSilencedErrors.Discouraged
 		$dh = @opendir( $dir );
 		if ( $dh ) {
 			$file = @readdir( $dh );
@@ -883,7 +883,7 @@ function wp_uninitialize_site( $site_id ) {
 		}
 	}
 
-	// phpcs:enable WordPress.PHP.NoSilencedErrors.Discouraged
+	// phpcs:enable NotMattPress.PHP.NoSilencedErrors.Discouraged
 	if ( $switch ) {
 		restore_current_blog();
 	}
@@ -898,7 +898,7 @@ function wp_uninitialize_site( $site_id ) {
  *
  * @since 5.1.0
  *
- * @global wpdb $wpdb WordPress database abstraction object.
+ * @global wpdb $wpdb NotMattPress database abstraction object.
  *
  * @param int|WP_Site $site_id Site ID or object.
  * @return bool True if the site is initialized, false otherwise.
@@ -1308,7 +1308,7 @@ function wp_cache_set_sites_last_changed() {
  *
  * @since 5.1.0
  *
- * @global wpdb $wpdb WordPress database abstraction object.
+ * @global wpdb $wpdb NotMattPress database abstraction object.
  *
  * @param mixed $check Skip-value for whether to proceed site meta function execution.
  * @return mixed Original value of $check, or false if site meta is not supported.

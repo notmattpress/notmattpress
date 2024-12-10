@@ -69,7 +69,7 @@ const external_wp_deprecated_namespaceObject = window["wp"]["deprecated"];
 var external_wp_deprecated_default = /*#__PURE__*/__webpack_require__.n(external_wp_deprecated_namespaceObject);
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/data-controls/build-module/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -180,7 +180,7 @@ const __unstableAwaitPromise = function (promise) {
  *
  * @example
  * ```js
- * // WordPress dependencies
+ * // NotMattPress dependencies
  * import { controls } from '@wordpress/data-controls';
  * import { registerStore } from '@wordpress/data';
  *

@@ -1,8 +1,8 @@
 <?php
 /**
- * Misc WordPress Administration API.
+ * Misc NotMattPress Administration API.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Administration
  */
 
@@ -141,7 +141,7 @@ function insert_with_markers( $filename, $marker, $insertion ) {
 		/* translators: 1: Marker. */
 		__(
 			'The directives (lines) between "BEGIN %1$s" and "END %1$s" are
-dynamically generated, and should only be modified via WordPress filters.
+dynamically generated, and should only be modified via NotMattPress filters.
 Any changes to the directives between these markers will be overwritten.'
 		),
 		$marker
@@ -255,7 +255,7 @@ Any changes to the directives between these markers will be overwritten.'
  *
  * @since 1.5.0
  *
- * @global WP_Rewrite $wp_rewrite WordPress rewrite component.
+ * @global WP_Rewrite $wp_rewrite NotMattPress rewrite component.
  *
  * @return bool|null True on write success, false on failure. Null in multisite.
  */
@@ -282,7 +282,7 @@ function save_mod_rewrite_rules() {
 		if ( got_mod_rewrite() ) {
 			$rules = explode( "\n", $wp_rewrite->mod_rewrite_rules() );
 
-			return insert_with_markers( $htaccess_file, 'WordPress', $rules );
+			return insert_with_markers( $htaccess_file, 'NotMattPress', $rules );
 		}
 	}
 
@@ -295,7 +295,7 @@ function save_mod_rewrite_rules() {
  *
  * @since 2.8.0
  *
- * @global WP_Rewrite $wp_rewrite WordPress rewrite component.
+ * @global WP_Rewrite $wp_rewrite NotMattPress rewrite component.
  *
  * @return bool|null True on write success, false on failure. Null in multisite.
  */
@@ -770,7 +770,7 @@ function set_screen_options() {
 				 * @param string $option        The option name.
 				 * @param int    $value         The option value.
 				 */
-				$screen_option = apply_filters( 'set-screen-option', $screen_option, $option, $value ); // phpcs:ignore WordPress.NamingConventions.ValidHookName.UseUnderscores
+				$screen_option = apply_filters( 'set-screen-option', $screen_option, $option, $value ); // phpcs:ignore NotMattPress.NamingConventions.ValidHookName.UseUnderscores
 			}
 
 			/**
@@ -811,7 +811,7 @@ function set_screen_options() {
 }
 
 /**
- * Checks if rewrite rule for WordPress already exists in the IIS 7+ configuration file.
+ * Checks if rewrite rule for NotMattPress already exists in the IIS 7+ configuration file.
  *
  * @since 2.8.0
  *
@@ -834,7 +834,7 @@ function iis7_rewrite_rule_exists( $filename ) {
 	}
 
 	$xpath = new DOMXPath( $doc );
-	$rules = $xpath->query( '/configuration/system.webServer/rewrite/rules/rule[starts-with(@name,\'wordpress\')] | /configuration/system.webServer/rewrite/rules/rule[starts-with(@name,\'WordPress\')]' );
+	$rules = $xpath->query( '/configuration/system.webServer/rewrite/rules/rule[starts-with(@name,\'wordpress\')] | /configuration/system.webServer/rewrite/rules/rule[starts-with(@name,\'NotMattPress\')]' );
 
 	if ( 0 === $rules->length ) {
 		return false;
@@ -844,7 +844,7 @@ function iis7_rewrite_rule_exists( $filename ) {
 }
 
 /**
- * Deletes WordPress rewrite rule from web.config file if it exists there.
+ * Deletes NotMattPress rewrite rule from web.config file if it exists there.
  *
  * @since 2.8.0
  *
@@ -869,7 +869,7 @@ function iis7_delete_rewrite_rule( $filename ) {
 	}
 
 	$xpath = new DOMXPath( $doc );
-	$rules = $xpath->query( '/configuration/system.webServer/rewrite/rules/rule[starts-with(@name,\'wordpress\')] | /configuration/system.webServer/rewrite/rules/rule[starts-with(@name,\'WordPress\')]' );
+	$rules = $xpath->query( '/configuration/system.webServer/rewrite/rules/rule[starts-with(@name,\'wordpress\')] | /configuration/system.webServer/rewrite/rules/rule[starts-with(@name,\'NotMattPress\')]' );
 
 	if ( $rules->length > 0 ) {
 		$child  = $rules->item( 0 );
@@ -883,7 +883,7 @@ function iis7_delete_rewrite_rule( $filename ) {
 }
 
 /**
- * Adds WordPress rewrite rule to the IIS 7+ configuration file.
+ * Adds NotMattPress rewrite rule to the IIS 7+ configuration file.
  *
  * @since 2.8.0
  *
@@ -913,7 +913,7 @@ function iis7_add_rewrite_rule( $filename, $rewrite_rule ) {
 	$xpath = new DOMXPath( $doc );
 
 	// First check if the rule already exists as in that case there is no need to re-add it.
-	$wordpress_rules = $xpath->query( '/configuration/system.webServer/rewrite/rules/rule[starts-with(@name,\'wordpress\')] | /configuration/system.webServer/rewrite/rules/rule[starts-with(@name,\'WordPress\')]' );
+	$wordpress_rules = $xpath->query( '/configuration/system.webServer/rewrite/rules/rule[starts-with(@name,\'wordpress\')] | /configuration/system.webServer/rewrite/rules/rule[starts-with(@name,\'NotMattPress\')]' );
 
 	if ( $wordpress_rules->length > 0 ) {
 		return true;
@@ -978,7 +978,7 @@ function iis7_add_rewrite_rule( $filename, $rewrite_rule ) {
  * @param DOMDocument $doc
  * @param string      $filename
  */
-function saveDomDocument( $doc, $filename ) { // phpcs:ignore WordPress.NamingConventions.ValidFunctionName.FunctionNameInvalid
+function saveDomDocument( $doc, $filename ) { // phpcs:ignore NotMattPress.NamingConventions.ValidFunctionName.FunctionNameInvalid
 	$config = $doc->saveXML();
 	$config = preg_replace( "/([^\r])\n/", "$1\r\n", $config );
 
@@ -1589,7 +1589,7 @@ function _wp_privacy_settings_filter_draft_page_titles( $title, $page ) {
  * @return array|false {
  *     Array of PHP version data. False on failure.
  *
- *     @type string $recommended_version The PHP version recommended by WordPress.
+ *     @type string $recommended_version The PHP version recommended by NotMattPress.
  *     @type string $minimum_version     The minimum required PHP version.
  *     @type bool   $is_supported        Whether the PHP version is actively supported.
  *     @type bool   $is_secure           Whether the PHP version receives security updates.
@@ -1604,7 +1604,7 @@ function wp_check_php_version() {
 	$response = get_site_transient( 'php_check_' . $key );
 
 	if ( false === $response ) {
-		$url = 'http://api.wordpress.org/core/serve-happy/1.0/';
+		$url = 'http://api.notmatt.press/core/serve-happy/1.0/';
 
 		if ( wp_http_supports( array( 'ssl' ) ) ) {
 			$url = set_url_scheme( $url, 'https' );
@@ -1629,11 +1629,11 @@ function wp_check_php_version() {
 
 	if ( isset( $response['is_acceptable'] ) && $response['is_acceptable'] ) {
 		/**
-		 * Filters whether the active PHP version is considered acceptable by WordPress.
+		 * Filters whether the active PHP version is considered acceptable by NotMattPress.
 		 *
 		 * Returning false will trigger a PHP version warning to show up in the admin dashboard to administrators.
 		 *
-		 * This filter is only run if the wordpress.org Serve Happy API considers the PHP version acceptable, ensuring
+		 * This filter is only run if the notmatt.press Serve Happy API considers the PHP version acceptable, ensuring
 		 * that this filter can only make this check stricter, but not loosen it.
 		 *
 		 * @since 5.1.1

@@ -2,11 +2,11 @@
 /**
  * Privacy administration panel.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Administration
  */
 
-/** WordPress Administration Bootstrap */
+/** NotMattPress Administration Bootstrap */
 require_once __DIR__ . '/admin.php';
 
 // Used in the HTML title tag.
@@ -43,14 +43,14 @@ require_once ABSPATH . 'wp-admin/admin-header.php';
 			<img class="privacy-image" src="<?php echo esc_url( admin_url( 'images/privacy.svg?ver=6.5' ) ); ?>" alt="" />
 		</div>
 		<div class="column is-vertically-aligned-center">
-			<p><?php _e( 'From time to time, your WordPress site may send data to WordPress.org &#8212; including, but not limited to &#8212; the version you are using, and a list of installed plugins and themes.' ); ?></p>
+			<p><?php _e( 'From time to time, your NotMattPress site may send data to NotMattPress.org &#8212; including, but not limited to &#8212; the version you are using, and a list of installed plugins and themes.' ); ?></p>
 
 			<p>
 				<?php
 				printf(
-					/* translators: %s: https://wordpress.org/about/stats/ */
-					__( 'This data is used to provide general enhancements to WordPress, which includes helping to protect your site by finding and automatically installing new updates. It is also used to calculate statistics, such as those shown on the <a href="%s">WordPress.org stats page</a>.' ),
-					__( 'https://wordpress.org/about/stats/' )
+					/* translators: %s: https://notmatt.press/about/stats/ */
+					__( 'This data is used to provide general enhancements to NotMattPress, which includes helping to protect your site by finding and automatically installing new updates. It is also used to calculate statistics, such as those shown on the <a href="%s">NotMattPress.org stats page</a>.' ),
+					__( 'https://notmatt.press/about/stats/' )
 				);
 				?>
 			</p>
@@ -58,9 +58,9 @@ require_once ABSPATH . 'wp-admin/admin-header.php';
 			<p>
 				<?php
 				printf(
-					/* translators: %s: https://wordpress.org/about/privacy/ */
+					/* translators: %s: https://notmatt.press/about/privacy/ */
 					__( 'We take privacy and transparency very seriously. To learn more about what data we collect, and how we use it, please visit <a href="%s">our Privacy Policy</a>.' ),
-					__( 'https://wordpress.org/about/privacy/' )
+					__( 'https://notmatt.press/about/privacy/' )
 				);
 				?>
 			</p>
