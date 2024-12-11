@@ -1,8 +1,8 @@
 <?php
 /**
- * WordPress environment setup class.
+ * NotMattPress environment setup class.
  *
- * @package WordPress
+ * @package NotMattPress
  * @since 2.0.0
  */
 #[AllowDynamicProperties]
@@ -36,7 +36,7 @@ class WP {
 	public $extra_query_vars = array();
 
 	/**
-	 * Query variables for setting up the WordPress Query Loop.
+	 * Query variables for setting up the NotMattPress Query Loop.
 	 *
 	 * @since 2.0.0
 	 * @var array
@@ -120,7 +120,7 @@ class WP {
 	}
 
 	/**
-	 * Parses the request to find the correct WordPress query.
+	 * Parses the request to find the correct NotMattPress query.
 	 *
 	 * Sets up the query variables based on the request. There are also many
 	 * filters and actions that can be used to further manipulate the result.
@@ -128,7 +128,7 @@ class WP {
 	 * @since 2.0.0
 	 * @since 6.0.0 A return value was added.
 	 *
-	 * @global WP_Rewrite $wp_rewrite WordPress rewrite component.
+	 * @global WP_Rewrite $wp_rewrite NotMattPress rewrite component.
 	 *
 	 * @param array|string $extra_query_vars Set the extra query variables.
 	 * @return bool Whether the request was parsed.
@@ -142,7 +142,7 @@ class WP {
 		 * @since 3.5.0
 		 *
 		 * @param bool         $bool             Whether or not to parse the request. Default true.
-		 * @param WP           $wp               Current WordPress environment instance.
+		 * @param WP           $wp               Current NotMattPress environment instance.
 		 * @param array|string $extra_query_vars Extra passed query variables.
 		 */
 		if ( ! apply_filters( 'do_parse_request', true, $this, $extra_query_vars ) ) {
@@ -413,7 +413,7 @@ class WP {
 		 *
 		 * @since 2.1.0
 		 *
-		 * @param WP $wp Current WordPress environment instance (passed by reference).
+		 * @param WP $wp Current NotMattPress environment instance (passed by reference).
 		 */
 		do_action_ref_array( 'parse_request', array( &$this ) );
 
@@ -430,7 +430,7 @@ class WP {
 	 * @since 4.4.0 `X-Pingback` header is added conditionally for single posts that allow pings.
 	 * @since 6.1.0 Runs after posts have been queried.
 	 *
-	 * @global WP_Query $wp_query WordPress Query object.
+	 * @global WP_Query $wp_query NotMattPress Query object.
 	 */
 	public function send_headers() {
 		global $wp_query;
@@ -553,7 +553,7 @@ class WP {
 		 * @since 2.8.0
 		 *
 		 * @param string[] $headers Associative array of headers to be sent.
-		 * @param WP       $wp      Current WordPress environment instance.
+		 * @param WP       $wp      Current NotMattPress environment instance.
 		 */
 		$headers = apply_filters( 'wp_headers', $headers, $this );
 
@@ -585,7 +585,7 @@ class WP {
 		 *
 		 * @since 2.1.0
 		 *
-		 * @param WP $wp Current WordPress environment instance (passed by reference).
+		 * @param WP $wp Current NotMattPress environment instance (passed by reference).
 		 */
 		do_action_ref_array( 'send_headers', array( &$this ) );
 	}
@@ -634,15 +634,15 @@ class WP {
 	}
 
 	/**
-	 * Set up the WordPress Globals.
+	 * Set up the NotMattPress Globals.
 	 *
 	 * The query_vars property will be extracted to the GLOBALS. So care should
 	 * be taken when naming global variables that might interfere with the
-	 * WordPress environment.
+	 * NotMattPress environment.
 	 *
 	 * @since 2.0.0
 	 *
-	 * @global WP_Query     $wp_query     WordPress Query object.
+	 * @global WP_Query     $wp_query     NotMattPress Query object.
 	 * @global string       $query_string Query string for the loop.
 	 * @global array        $posts        The found posts.
 	 * @global WP_Post|null $post         The current post, if available.
@@ -688,7 +688,7 @@ class WP {
 	 *
 	 * @since 2.0.0
 	 *
-	 * @global WP_Query $wp_the_query WordPress Query object.
+	 * @global WP_Query $wp_the_query NotMattPress Query object.
 	 */
 	public function query_posts() {
 		global $wp_the_query;
@@ -711,7 +711,7 @@ class WP {
 	 *
 	 * @since 2.0.0
 	 *
-	 * @global WP_Query $wp_query WordPress Query object.
+	 * @global WP_Query $wp_query NotMattPress Query object.
 	 */
 	public function handle_404() {
 		global $wp_query;
@@ -725,7 +725,7 @@ class WP {
 		 * @since 4.5.0
 		 *
 		 * @param bool     $preempt  Whether to short-circuit default header status handling. Default false.
-		 * @param WP_Query $wp_query WordPress Query object.
+		 * @param WP_Query $wp_query NotMattPress Query object.
 		 */
 		if ( false !== apply_filters( 'pre_handle_404', false, $wp_query ) ) {
 			return;
@@ -797,7 +797,7 @@ class WP {
 	}
 
 	/**
-	 * Sets up all of the variables required by the WordPress environment.
+	 * Sets up all of the variables required by the NotMattPress environment.
 	 *
 	 * The action {@see 'wp'} has one parameter that references the WP object. It
 	 * allows for accessing the properties and methods to further manipulate the
@@ -821,11 +821,11 @@ class WP {
 		$this->send_headers();
 
 		/**
-		 * Fires once the WordPress environment has been set up.
+		 * Fires once the NotMattPress environment has been set up.
 		 *
 		 * @since 2.1.0
 		 *
-		 * @param WP $wp Current WordPress environment instance (passed by reference).
+		 * @param WP $wp Current NotMattPress environment instance (passed by reference).
 		 */
 		do_action_ref_array( 'wp', array( &$this ) );
 	}

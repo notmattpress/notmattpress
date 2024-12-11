@@ -81,7 +81,7 @@ var external_wp_deprecated_default = /*#__PURE__*/__webpack_require__.n(external
 const external_wp_data_namespaceObject = window["wp"]["data"];
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/nux/build-module/store/reducer.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -206,7 +206,7 @@ function enableTips() {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/nux/build-module/store/selectors.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -280,7 +280,7 @@ function selectors_areTipsEnabled(state) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/nux/build-module/store/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -295,7 +295,7 @@ const STORE_NAME = 'core/nux';
 /**
  * Store definition for the nux namespace.
  *
- * @see https://github.com/WordPress/gutenberg/blob/HEAD/packages/data/README.md#createReduxStore
+ * @see https://github.com/NotMattPress/gutenberg/blob/HEAD/packages/data/README.md#createReduxStore
  *
  * @type {Object}
  */
@@ -329,7 +329,7 @@ const external_wp_primitives_namespaceObject = window["wp"]["primitives"];
 const external_ReactJSXRuntime_namespaceObject = window["ReactJSXRuntime"];
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/close.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -344,7 +344,7 @@ const close_close = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/nux/build-module/components/dot-tip/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -442,7 +442,7 @@ function DotTip({
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/nux/build-module/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 

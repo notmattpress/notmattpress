@@ -4,7 +4,7 @@
  *
  * This class is a base class for other sitemap providers to extend and contains shared functionality.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Sitemaps
  * @since 5.5.0
  */
@@ -139,7 +139,7 @@ abstract class WP_Sitemaps_Provider {
 	 *
 	 * @since 5.5.0
 	 *
-	 * @global WP_Rewrite $wp_rewrite WordPress rewrite component.
+	 * @global WP_Rewrite $wp_rewrite NotMattPress rewrite component.
 	 *
 	 * @param string $name The name of the sitemap.
 	 * @param int    $page The page of the sitemap.

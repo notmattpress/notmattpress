@@ -176,7 +176,7 @@ const external_ReactJSXRuntime_namespaceObject = window["ReactJSXRuntime"];
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -387,7 +387,7 @@ function ServerSideRender(props) {
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/server-side-render/build-module/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
