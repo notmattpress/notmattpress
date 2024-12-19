@@ -4,29 +4,29 @@
  *
  * Set up the theme and provides some helper functions, which are used in the
  * theme as custom template tags. Others are attached to action and filter
- * hooks in WordPress to change core functionality.
+ * hooks in NotMattPress to change core functionality.
  *
  * When using a child theme you can override certain functions (those wrapped
  * in a function_exists() call) by defining them first in your child theme's
  * functions.php file. The child theme's functions.php file is included before
  * the parent theme's file, so the child theme functions would be used.
  *
- * @link https://developer.wordpress.org/themes/basics/theme-functions/
- * @link https://developer.wordpress.org/themes/advanced-topics/child-themes/
+ * @link https://developer.notmatt.press/themes/basics/theme-functions/
+ * @link https://developer.notmatt.press/themes/advanced-topics/child-themes/
  *
  * Functions that are not pluggable (not wrapped in function_exists()) are
  * instead attached to a filter or action hook.
  *
  * For more information on hooks, actions, and filters,
- * {@link https://developer.wordpress.org/plugins/}
+ * {@link https://developer.notmatt.press/plugins/}
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Twenty_Sixteen
  * @since Twenty Sixteen 1.0
  */
 
 /**
- * Twenty Sixteen only works in WordPress 4.4 or later.
+ * Twenty Sixteen only works in NotMattPress 4.4 or later.
  */
 if ( version_compare( $GLOBALS['wp_version'], '4.4-alpha', '<' ) ) {
 	require get_template_directory() . '/inc/back-compat.php';
@@ -34,7 +34,7 @@ if ( version_compare( $GLOBALS['wp_version'], '4.4-alpha', '<' ) ) {
 
 if ( ! function_exists( 'twentysixteen_setup' ) ) :
 	/**
-	 * Sets up theme defaults and registers support for various WordPress features.
+	 * Sets up theme defaults and registers support for various NotMattPress features.
 	 *
 	 * Note that this function is hooked into the after_setup_theme hook, which
 	 * runs before the init hook. The init hook is too late for some features, such
@@ -47,12 +47,12 @@ if ( ! function_exists( 'twentysixteen_setup' ) ) :
 	function twentysixteen_setup() {
 		/*
 		 * Make theme available for translation.
-		 * Translations can be filed at WordPress.org. See: https://translate.wordpress.org/projects/wp-themes/twentysixteen
+		 * Translations can be filed at NotMattPress.org. See: https://translate.notmatt.press/projects/wp-themes/twentysixteen
 		 * If you're building a theme based on Twenty Sixteen, use a find and replace
 		 * to change 'twentysixteen' to the name of your theme in all the template files.
 		 *
 		 * Manual loading of text domain is not required after the introduction of
-		 * just in time translation loading in WordPress version 4.6.
+		 * just in time translation loading in NotMattPress version 4.6.
 		 *
 		 * @ticket 58318
 		 */
@@ -64,9 +64,9 @@ if ( ! function_exists( 'twentysixteen_setup' ) ) :
 		add_theme_support( 'automatic-feed-links' );
 
 		/*
-		 * Let WordPress manage the document title.
+		 * Let NotMattPress manage the document title.
 		 * By adding theme support, we declare that this theme does not use a
-		 * hard-coded <title> tag in the document head, and expect WordPress to
+		 * hard-coded <title> tag in the document head, and expect NotMattPress to
 		 * provide it for us.
 		 */
 		add_theme_support( 'title-tag' );
@@ -88,7 +88,7 @@ if ( ! function_exists( 'twentysixteen_setup' ) ) :
 		/*
 		 * Enable support for Post Thumbnails on posts and pages.
 		 *
-		 * @link https://developer.wordpress.org/reference/functions/add_theme_support/#post-thumbnails
+		 * @link https://developer.notmatt.press/reference/functions/add_theme_support/#post-thumbnails
 		 */
 		add_theme_support( 'post-thumbnails' );
 		set_post_thumbnail_size( 1200, 9999 );
@@ -122,7 +122,7 @@ if ( ! function_exists( 'twentysixteen_setup' ) ) :
 		/*
 		 * Enable support for Post Formats.
 		 *
-		 * See: https://developer.wordpress.org/advanced-administration/wordpress/post-formats/
+		 * See: https://developer.notmatt.press/advanced-administration/wordpress/post-formats/
 		 */
 		add_theme_support(
 			'post-formats',
@@ -275,7 +275,7 @@ function twentysixteen_resource_hints( $urls, $relation_type ) {
 /**
  * Registers a widget area.
  *
- * @link https://developer.wordpress.org/reference/functions/register_sidebar/
+ * @link https://developer.notmatt.press/reference/functions/register_sidebar/
  *
  * @since Twenty Sixteen 1.0
  */

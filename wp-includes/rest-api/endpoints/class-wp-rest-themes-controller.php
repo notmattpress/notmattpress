@@ -2,7 +2,7 @@
 /**
  * REST API: WP_REST_Themes_Controller class
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage REST_API
  * @since 5.0.0
  */
@@ -245,7 +245,7 @@ class WP_REST_Themes_Controller extends WP_REST_Controller {
 			/**
 			 * Use the get_template() method, not the 'Template' header, for finding the template.
 			 * The 'Template' header is only good for what was written in the style.css, while
-			 * get_template() takes into account where WordPress actually located the theme and
+			 * get_template() takes into account where NotMattPress actually located the theme and
 			 * whether it is actually valid.
 			 */
 			$data['template'] = $theme->get_template();
@@ -554,7 +554,7 @@ class WP_REST_Themes_Controller extends WP_REST_Controller {
 					'readonly'    => true,
 				),
 				'requires_wp'    => array(
-					'description' => __( 'The minimum WordPress version required for the theme to work.' ),
+					'description' => __( 'The minimum NotMattPress version required for the theme to work.' ),
 					'type'        => 'string',
 					'readonly'    => true,
 				),

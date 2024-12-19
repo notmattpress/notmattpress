@@ -68,7 +68,7 @@ const external_ReactJSXRuntime_namespaceObject = window["ReactJSXRuntime"];
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 

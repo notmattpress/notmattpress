@@ -2,7 +2,7 @@
 /**
  * HTTP API: WP_Http_Streams class
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage HTTP
  * @since 4.4.0
  */
@@ -153,7 +153,7 @@ class WP_Http_Streams {
 			}
 
 			if ( $proxy->is_enabled() && $proxy->send_through_proxy( $url ) ) {
-				// phpcs:ignore WordPress.PHP.NoSilencedErrors.Discouraged
+				// phpcs:ignore NotMattPress.PHP.NoSilencedErrors.Discouraged
 				$handle = @stream_socket_client(
 					'tcp://' . $proxy->host() . ':' . $proxy->port(),
 					$connection_error,
@@ -163,7 +163,7 @@ class WP_Http_Streams {
 					$context
 				);
 			} else {
-				// phpcs:ignore WordPress.PHP.NoSilencedErrors.Discouraged
+				// phpcs:ignore NotMattPress.PHP.NoSilencedErrors.Discouraged
 				$handle = @stream_socket_client(
 					$connect_host . ':' . $parsed_url['port'],
 					$connection_error,

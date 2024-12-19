@@ -2,7 +2,7 @@
 /**
  * Server-side rendering of the `core/latest-comments` block.
  *
- * @package WordPress
+ * @package NotMattPress
  */
 
 /**
