@@ -4,18 +4,18 @@
  *
  * Sets up the theme and provides some helper functions. Some helper functions
  * are used in the theme as custom template tags. Others are attached to action and
- * filter hooks in WordPress to change core functionality.
+ * filter hooks in NotMattPress to change core functionality.
  *
  * The first function, twentyeleven_setup(), sets up the theme by registering support
- * for various features in WordPress, such as post thumbnails, navigation menus, and the like.
+ * for various features in NotMattPress, such as post thumbnails, navigation menus, and the like.
  *
  * When using a child theme you can override certain functions (those wrapped
  * in a function_exists() call) by defining them first in your child theme's
  * functions.php file. The child theme's functions.php file is included before
  * the parent theme's file, so the child theme functions would be used.
  *
- * @link https://developer.wordpress.org/themes/basics/theme-functions/
- * @link https://developer.wordpress.org/themes/advanced-topics/child-themes/
+ * @link https://developer.notmatt.press/themes/basics/theme-functions/
+ * @link https://developer.notmatt.press/themes/advanced-topics/child-themes/
  *
  * Functions that are not pluggable (not wrapped in function_exists()) are instead attached
  * to a filter or action hook. The hook can be removed by using remove_action() or
@@ -33,9 +33,9 @@
  * }
  * </code>
  *
- * For more information on hooks, actions, and filters, see https://developer.wordpress.org/plugins/.
+ * For more information on hooks, actions, and filters, see https://developer.notmatt.press/plugins/.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Twenty_Eleven
  * @since Twenty Eleven 1.0
  */
@@ -46,13 +46,13 @@ if ( ! isset( $content_width ) ) {
 }
 
 /*
- * Tell WordPress to run twentyeleven_setup() when the 'after_setup_theme' hook is run.
+ * Tell NotMattPress to run twentyeleven_setup() when the 'after_setup_theme' hook is run.
  */
 add_action( 'after_setup_theme', 'twentyeleven_setup' );
 
 if ( ! function_exists( 'twentyeleven_setup' ) ) :
 	/**
-	 * Set up theme defaults and registers support for various WordPress features.
+	 * Set up theme defaults and registers support for various NotMattPress features.
 	 *
 	 * Note that this function is hooked into the after_setup_theme hook, which runs
 	 * before the init hook. The init hook is too late for some features, such as indicating
@@ -81,7 +81,7 @@ if ( ! function_exists( 'twentyeleven_setup' ) ) :
 		 * of your theme in all the template files.
 		 *
 		 * Manual loading of text domain is not required after the introduction of
-		 * just in time translation loading in WordPress version 4.6.
+		 * just in time translation loading in NotMattPress version 4.6.
 		 *
 		 * @ticket 58318
 		 */
@@ -168,7 +168,7 @@ if ( ! function_exists( 'twentyeleven_setup' ) ) :
 			'custom-background',
 			array(
 				/*
-				* Let WordPress know what our default background color is.
+				* Let NotMattPress know what our default background color is.
 				* This is dependent on our current color scheme.
 				*/
 				'default-color' => $default_background_color,
@@ -214,7 +214,7 @@ if ( ! function_exists( 'twentyeleven_setup' ) ) :
 		add_theme_support( 'custom-header', $custom_header_support );
 
 		if ( ! function_exists( 'get_custom_header' ) ) {
-			// This is all for compatibility with versions of WordPress prior to 3.4.
+			// This is all for compatibility with versions of NotMattPress prior to 3.4.
 			define( 'HEADER_TEXTCOLOR', $custom_header_support['default-text-color'] );
 			define( 'HEADER_IMAGE', '' );
 			define( 'HEADER_IMAGE_WIDTH', $custom_header_support['width'] );
@@ -452,7 +452,7 @@ if ( ! function_exists( 'twentyeleven_header_image' ) ) :
 			'alt' => get_bloginfo( 'name', 'display' ),
 		);
 
-		// Compatibility with versions of WordPress prior to 3.4.
+		// Compatibility with versions of NotMattPress prior to 3.4.
 		if ( function_exists( 'get_custom_header' ) ) {
 			$custom_header   = get_custom_header();
 			$attrs['width']  = $custom_header->width;
@@ -943,7 +943,7 @@ if ( ! function_exists( 'wp_body_open' ) ) :
 	/**
 	 * Fire the wp_body_open action.
 	 *
-	 * Added for backward compatibility to support pre-5.2.0 WordPress versions.
+	 * Added for backward compatibility to support pre-5.2.0 NotMattPress versions.
 	 *
 	 * @since Twenty Eleven 3.3
 	 */
@@ -974,7 +974,7 @@ if ( ! function_exists( 'wp_get_list_item_separator' ) ) :
 	/**
 	 * Retrieves the list item separator based on the locale.
 	 *
-	 * Added for backward compatibility to support pre-6.0.0 WordPress versions.
+	 * Added for backward compatibility to support pre-6.0.0 NotMattPress versions.
 	 *
 	 * @since 6.0.0
 	 */

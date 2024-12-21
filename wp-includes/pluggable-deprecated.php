@@ -1,12 +1,12 @@
 <?php
 /**
- * Deprecated pluggable functions from past WordPress versions. You shouldn't use these
+ * Deprecated pluggable functions from past NotMattPress versions. You shouldn't use these
  * functions and look for the alternatives instead. The functions will be removed in a
  * later version.
  *
  * Deprecated warnings are also thrown if one of these functions is being defined by a plugin.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Deprecated
  * @see pluggable.php
  */
@@ -131,7 +131,7 @@ if ( !function_exists('wp_get_cookie_login') ):
  * Gets the user cookie login. This function is deprecated.
  *
  * This function is deprecated and should no longer be extended as it won't be
- * used anywhere in WordPress. Also, plugins shouldn't use it either.
+ * used anywhere in NotMattPress. Also, plugins shouldn't use it either.
  *
  * @since 2.0.3
  * @deprecated 2.5.0
@@ -185,7 +185,7 @@ else :
 endif;
 
 /**
- * WordPress AtomPub API implementation.
+ * NotMattPress AtomPub API implementation.
  *
  * Originally stored in wp-app.php, and later wp-includes/class-wp-atom-server.php.
  * It is kept here in case a plugin directly referred to the class.
@@ -193,7 +193,7 @@ endif;
  * @since 2.2.0
  * @deprecated 3.5.0
  *
- * @link https://wordpress.org/plugins/atom-publishing-protocol/
+ * @link https://notmatt.press/plugins/atom-publishing-protocol/
  */
 if ( ! class_exists( 'wp_atom_server', false ) ) {
 	class wp_atom_server {

@@ -5,7 +5,7 @@
  * There are many filters in here for media. Plugins can extend functionality
  * by hooking into the filters.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Administration
  */
 
@@ -13,7 +13,7 @@ if ( ! isset( $_GET['inline'] ) ) {
 	define( 'IFRAME_REQUEST', true );
 }
 
-/** Load WordPress Administration Bootstrap */
+/** Load NotMattPress Administration Bootstrap */
 require_once __DIR__ . '/admin.php';
 
 if ( ! current_user_can( 'upload_files' ) ) {
@@ -29,11 +29,11 @@ wp_enqueue_script( 'media-gallery' );
 header( 'Content-Type: ' . get_option( 'html_type' ) . '; charset=' . get_option( 'blog_charset' ) );
 
 // IDs should be integers.
-$ID      = isset( $ID ) ? (int) $ID : 0; // phpcs:ignore WordPress.NamingConventions.ValidVariableName
+$ID      = isset( $ID ) ? (int) $ID : 0; // phpcs:ignore NotMattPress.NamingConventions.ValidVariableName
 $post_id = isset( $post_id ) ? (int) $post_id : 0;
 
 // Require an ID for the edit screen.
-if ( isset( $action ) && 'edit' === $action && ! $ID ) { // phpcs:ignore WordPress.NamingConventions.ValidVariableName
+if ( isset( $action ) && 'edit' === $action && ! $ID ) { // phpcs:ignore NotMattPress.NamingConventions.ValidVariableName
 	wp_die(
 		'<h1>' . __( 'Something went wrong.' ) . '</h1>' .
 		'<p>' . __( 'Invalid item ID.' ) . '</p>',
