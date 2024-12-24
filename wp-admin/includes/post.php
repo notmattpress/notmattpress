@@ -1,8 +1,8 @@
 <?php
 /**
- * WordPress Post Administration API.
+ * NotMattPress Post Administration API.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Administration
  */
 
@@ -250,7 +250,7 @@ function _wp_get_allowed_postdata( $post_data = null ) {
  *
  * @since 1.5.0
  *
- * @global wpdb $wpdb WordPress database abstraction object.
+ * @global wpdb $wpdb NotMattPress database abstraction object.
  *
  * @param array|null $post_data Optional. The array of post data to process.
  *                              Defaults to the `$_POST` superglobal.
@@ -489,7 +489,7 @@ function edit_post( $post_data = null ) {
  *
  * @since 2.7.0
  *
- * @global wpdb $wpdb WordPress database abstraction object.
+ * @global wpdb $wpdb NotMattPress database abstraction object.
  *
  * @param array|null $post_data Optional. The array of post data to process.
  *                              Defaults to the `$_POST` superglobal.
@@ -837,7 +837,7 @@ function get_default_post_to_edit( $post_type = 'post', $create_in_db = false ) 
  * @since 5.2.0 Added the `$type` parameter.
  * @since 5.8.0 Added the `$status` parameter.
  *
- * @global wpdb $wpdb WordPress database abstraction object.
+ * @global wpdb $wpdb NotMattPress database abstraction object.
  *
  * @param string $title   Post title.
  * @param string $content Optional. Post content.
@@ -1048,7 +1048,7 @@ function delete_meta( $mid ) {
  *
  * @since 1.2.0
  *
- * @global wpdb $wpdb WordPress database abstraction object.
+ * @global wpdb $wpdb NotMattPress database abstraction object.
  *
  * @return string[] Array of meta key names.
  */
@@ -1082,7 +1082,7 @@ function get_post_meta_by_id( $mid ) {
  *
  * @since 1.2.0
  *
- * @global wpdb $wpdb WordPress database abstraction object.
+ * @global wpdb $wpdb NotMattPress database abstraction object.
  *
  * @param int $post_id A post ID.
  * @return array[] {
@@ -2342,7 +2342,7 @@ function get_block_editor_server_block_settings() {
  * @since 5.0.0
  *
  * @global WP_Post   $post           Global post object.
- * @global WP_Screen $current_screen WordPress current screen object.
+ * @global WP_Screen $current_screen NotMattPress current screen object.
  * @global array     $wp_meta_boxes  Global meta box state.
  */
 function the_block_editor_meta_boxes() {

@@ -734,7 +734,7 @@ form#tags-filter {
 	padding-right: 0;
 }
 
-/* Better position for the WordPress admin notices. */
+/* Better position for the NotMattPress admin notices. */
 .privacy-settings .notice,
 .site-health .notice {
 	margin: 25px 22px 15px 20px;

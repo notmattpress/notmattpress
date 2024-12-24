@@ -6,8 +6,8 @@
  *   http://www.gnu.org/licenses/gpl.html
  */
 /**
- * Modified for WordPress: replaced deprecated jQuery methods.
- * See https://core.trac.wordpress.org/ticket/57946.
+ * Modified for NotMattPress: replaced deprecated jQuery methods.
+ * See https://core.trac.notmatt.press/ticket/57946.
  */
 
 (function($) {

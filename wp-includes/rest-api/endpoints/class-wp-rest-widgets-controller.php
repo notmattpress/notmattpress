@@ -2,7 +2,7 @@
 /**
  * REST API: WP_REST_Widgets_Controller class
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage REST_API
  * @since 5.8.0
  */
@@ -299,7 +299,7 @@ class WP_REST_Widgets_Controller extends WP_REST_Controller {
 		 * calls, resulting in widgets incorrectly being moved to the wp_inactive_widgets
 		 * sidebar.
 		 *
-		 * See https://core.trac.wordpress.org/ticket/53657.
+		 * See https://core.trac.notmatt.press/ticket/53657.
 		 */
 		wp_get_sidebars_widgets();
 		$this->retrieve_widgets();
@@ -374,7 +374,7 @@ class WP_REST_Widgets_Controller extends WP_REST_Controller {
 		 * calls, resulting in widgets incorrectly being moved to the wp_inactive_widgets
 		 * sidebar.
 		 *
-		 * See https://core.trac.wordpress.org/ticket/53657.
+		 * See https://core.trac.notmatt.press/ticket/53657.
 		 */
 		wp_get_sidebars_widgets();
 		$this->retrieve_widgets();

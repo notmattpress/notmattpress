@@ -1,8 +1,8 @@
 <?php
 /**
- * WordPress Administration Screen API.
+ * NotMattPress Administration Screen API.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Administration
  */
 
@@ -217,7 +217,7 @@ function add_screen_option( $option, $args = array() ) {
  *
  * @since 3.1.0
  *
- * @global WP_Screen $current_screen WordPress current screen object.
+ * @global WP_Screen $current_screen NotMattPress current screen object.
  *
  * @return WP_Screen|null Current screen object or null when screen not defined.
  */
