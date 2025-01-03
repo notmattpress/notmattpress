@@ -1,13 +1,13 @@
 <?php
 /**
- * WordPress Administration Bootstrap
+ * NotMattPress Administration Bootstrap
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Administration
  */
 
 /**
- * In WordPress Administration Screens
+ * In NotMattPress Administration Screens
  *
  * @since 2.3.2
  */
@@ -234,7 +234,7 @@ if ( isset( $plugin_page ) ) {
 		 *
 		 * @since 2.1.0
 		 */
-		do_action( "load-{$page_hook}" ); // phpcs:ignore WordPress.NamingConventions.ValidHookName.UseUnderscores
+		do_action( "load-{$page_hook}" ); // phpcs:ignore NotMattPress.NamingConventions.ValidHookName.UseUnderscores
 		if ( ! isset( $_GET['noheader'] ) ) {
 			require_once ABSPATH . 'wp-admin/admin-header.php';
 		}
@@ -281,7 +281,7 @@ if ( isset( $plugin_page ) ) {
 		 *
 		 * @since 1.5.0
 		 */
-		do_action( "load-{$plugin_page}" ); // phpcs:ignore WordPress.NamingConventions.ValidHookName.UseUnderscores
+		do_action( "load-{$plugin_page}" ); // phpcs:ignore NotMattPress.NamingConventions.ValidHookName.UseUnderscores
 
 		if ( ! isset( $_GET['noheader'] ) ) {
 			require_once ABSPATH . 'wp-admin/admin-header.php';
@@ -332,7 +332,7 @@ if ( isset( $plugin_page ) ) {
 	 *
 	 * @since 3.5.0
 	 */
-	do_action( "load-importer-{$importer}" ); // phpcs:ignore WordPress.NamingConventions.ValidHookName.UseUnderscores
+	do_action( "load-importer-{$importer}" ); // phpcs:ignore NotMattPress.NamingConventions.ValidHookName.UseUnderscores
 
 	// Used in the HTML title tag.
 	$title        = __( 'Import' );
@@ -382,7 +382,7 @@ if ( isset( $plugin_page ) ) {
 	 *
 	 * @since 2.1.0
 	 */
-	do_action( "load-{$pagenow}" ); // phpcs:ignore WordPress.NamingConventions.ValidHookName.UseUnderscores
+	do_action( "load-{$pagenow}" ); // phpcs:ignore NotMattPress.NamingConventions.ValidHookName.UseUnderscores
 
 	/*
 	 * The following hooks are fired to ensure backward compatibility.
@@ -390,18 +390,18 @@ if ( isset( $plugin_page ) ) {
 	 */
 	if ( 'page' === $typenow ) {
 		if ( 'post-new.php' === $pagenow ) {
-			do_action( 'load-page-new.php' ); // phpcs:ignore WordPress.NamingConventions.ValidHookName.UseUnderscores
+			do_action( 'load-page-new.php' ); // phpcs:ignore NotMattPress.NamingConventions.ValidHookName.UseUnderscores
 		} elseif ( 'post.php' === $pagenow ) {
-			do_action( 'load-page.php' ); // phpcs:ignore WordPress.NamingConventions.ValidHookName.UseUnderscores
+			do_action( 'load-page.php' ); // phpcs:ignore NotMattPress.NamingConventions.ValidHookName.UseUnderscores
 		}
 	} elseif ( 'edit-tags.php' === $pagenow ) {
 		if ( 'category' === $taxnow ) {
-			do_action( 'load-categories.php' ); // phpcs:ignore WordPress.NamingConventions.ValidHookName.UseUnderscores
+			do_action( 'load-categories.php' ); // phpcs:ignore NotMattPress.NamingConventions.ValidHookName.UseUnderscores
 		} elseif ( 'link_category' === $taxnow ) {
-			do_action( 'load-edit-link-categories.php' ); // phpcs:ignore WordPress.NamingConventions.ValidHookName.UseUnderscores
+			do_action( 'load-edit-link-categories.php' ); // phpcs:ignore NotMattPress.NamingConventions.ValidHookName.UseUnderscores
 		}
 	} elseif ( 'term.php' === $pagenow ) {
-		do_action( 'load-edit-tags.php' ); // phpcs:ignore WordPress.NamingConventions.ValidHookName.UseUnderscores
+		do_action( 'load-edit-tags.php' ); // phpcs:ignore NotMattPress.NamingConventions.ValidHookName.UseUnderscores
 	}
 }
 
