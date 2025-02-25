@@ -2,7 +2,7 @@
 /**
  * Appending the wp-block-heading to before rendering the stored `core/heading` block contents.
  *
- * @package WordPress
+ * @package NotMattPress
  */
 
 /**

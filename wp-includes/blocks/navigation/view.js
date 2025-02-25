@@ -32,7 +32,7 @@ const interactivity_namespaceObject = x({ ["getContext"]: () => (__WEBPACK_EXTER
 ;// ./node_modules/@wordpress/block-library/build-module/navigation/view.js
 /* wp:polyfill */
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 const focusableSelectors = ['a[href]', 'input:not([disabled]):not([type="hidden"]):not([aria-hidden])', 'select:not([disabled]):not([aria-hidden])', 'textarea:not([disabled]):not([aria-hidden])', 'button:not([disabled]):not([aria-hidden])', '[contenteditable]', '[tabindex]:not([tabindex^="-"])'];

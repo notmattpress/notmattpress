@@ -105,7 +105,7 @@ const external_wp_data_namespaceObject = window["wp"]["data"];
 ;// ./node_modules/@wordpress/rich-text/build-module/store/reducer.js
 /* wp:polyfill */
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -140,7 +140,7 @@ function formatTypes(state = {}, action) {
 ;// ./node_modules/@wordpress/rich-text/build-module/store/selectors.js
 /* wp:polyfill */
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -339,7 +339,7 @@ function removeFormatTypes(names) {
 
 ;// ./node_modules/@wordpress/rich-text/build-module/store/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -354,7 +354,7 @@ const STORE_NAME = 'core/rich-text';
 /**
  * Store definition for the rich-text namespace.
  *
- * @see https://github.com/WordPress/gutenberg/blob/HEAD/packages/data/README.md#createReduxStore
+ * @see https://github.com/NotMattPress/gutenberg/blob/HEAD/packages/data/README.md#createReduxStore
  *
  * @type {Object}
  */
@@ -674,7 +674,7 @@ function getActiveFormats(value, EMPTY_ACTIVE_FORMATS = []) {
 
 ;// ./node_modules/@wordpress/rich-text/build-module/get-format-type.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 /**
@@ -989,7 +989,7 @@ function toTree({
 ;// ./node_modules/@wordpress/rich-text/build-module/to-html-string.js
 /* wp:polyfill */
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -1133,7 +1133,7 @@ function getTextContent({
 ;// ./node_modules/@wordpress/rich-text/build-module/create.js
 /* wp:polyfill */
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -1924,7 +1924,7 @@ function join(values, separator = '') {
 
 ;// ./node_modules/@wordpress/rich-text/build-module/register-format-type.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 /**
@@ -2669,7 +2669,7 @@ const external_wp_a11y_namespaceObject = window["wp"]["a11y"];
 const external_wp_i18n_namespaceObject = window["wp"]["i18n"];
 ;// ./node_modules/@wordpress/rich-text/build-module/toggle-format.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -2713,7 +2713,7 @@ function toggleFormat(value, format) {
 
 ;// ./node_modules/@wordpress/rich-text/build-module/unregister-format-type.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -2750,7 +2750,7 @@ const external_wp_deprecated_namespaceObject = window["wp"]["deprecated"];
 var external_wp_deprecated_default = /*#__PURE__*/__webpack_require__.n(external_wp_deprecated_namespaceObject);
 ;// ./node_modules/@wordpress/rich-text/build-module/component/use-anchor-ref.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -2828,7 +2828,7 @@ function useAnchorRef({
 const external_wp_compose_namespaceObject = window["wp"]["compose"];
 ;// ./node_modules/@wordpress/rich-text/build-module/component/use-anchor.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -3013,7 +3013,7 @@ function useAnchor({
 
 ;// ./node_modules/@wordpress/rich-text/build-module/component/use-default-style.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -3056,7 +3056,7 @@ function useDefaultStyle() {
 
 ;// ./node_modules/@wordpress/rich-text/build-module/component/use-boundary-style.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -3205,7 +3205,7 @@ const external_wp_keycodes_namespaceObject = window["wp"]["keycodes"];
 ;// ./node_modules/@wordpress/rich-text/build-module/component/event-listeners/format-boundaries.js
 /* wp:polyfill */
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -3307,7 +3307,7 @@ const EMPTY_ACTIVE_FORMATS = [];
 
 ;// ./node_modules/@wordpress/rich-text/build-module/component/event-listeners/delete.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -3698,8 +3698,8 @@ function fixPlaceholderSelection(defaultView) {
 /**
  * Prevents focus from being captured by the element when clicking _outside_
  * around the element. This may happen when the parent element is flex.
- * @see https://github.com/WordPress/gutenberg/pull/65857
- * @see https://github.com/WordPress/gutenberg/pull/66402
+ * @see https://github.com/NotMattPress/gutenberg/pull/65857
+ * @see https://github.com/NotMattPress/gutenberg/pull/66402
  */
 function preventFocusCapture() {
   return element => {
@@ -3743,7 +3743,7 @@ function preventFocusCapture() {
 ;// ./node_modules/@wordpress/rich-text/build-module/component/event-listeners/index.js
 /* wp:polyfill */
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -3775,7 +3775,7 @@ function useEventListeners(props) {
 
 ;// ./node_modules/@wordpress/rich-text/build-module/component/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 

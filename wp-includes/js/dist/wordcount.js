@@ -59,7 +59,7 @@ __webpack_require__.d(__webpack_exports__, {
  * @property {RegExp}              wordsRegExp                       Regular expression that matches words
  * @property {RegExp}              characters_excluding_spacesRegExp Regular expression that matches characters excluding spaces
  * @property {RegExp}              characters_including_spacesRegExp Regular expression that matches characters including spaces
- * @property {RegExp}              shortcodesRegExp                  Regular expression that matches WordPress shortcodes
+ * @property {RegExp}              shortcodesRegExp                  Regular expression that matches NotMattPress shortcodes
  * @property {string[]}            shortcodes                        List of all shortcodes
  * @property {WPWordCountStrategy} type                              Describes what and how are we counting
  * @property {WPWordCountL10n}     l10n                              Object with human translations

@@ -14,7 +14,7 @@ const external_wp_primitives_namespaceObject = window["wp"]["primitives"];
 const external_ReactJSXRuntime_namespaceObject = window["ReactJSXRuntime"];
 ;// ./node_modules/@wordpress/icons/build-module/library/format-bold.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -29,7 +29,7 @@ const formatBold = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)
 
 ;// ./node_modules/@wordpress/format-library/build-module/bold/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -84,7 +84,7 @@ const bold = {
 
 ;// ./node_modules/@wordpress/icons/build-module/library/code.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -99,7 +99,7 @@ const code = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(exter
 
 ;// ./node_modules/@wordpress/format-library/build-module/code/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -179,7 +179,7 @@ const external_wp_components_namespaceObject = window["wp"]["components"];
 const external_wp_element_namespaceObject = window["wp"]["element"];
 ;// ./node_modules/@wordpress/format-library/build-module/image/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -339,7 +339,7 @@ function Edit({
 
 ;// ./node_modules/@wordpress/icons/build-module/library/format-italic.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -354,7 +354,7 @@ const formatItalic = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.js
 
 ;// ./node_modules/@wordpress/format-library/build-module/italic/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -413,7 +413,7 @@ const external_wp_url_namespaceObject = window["wp"]["url"];
 const external_wp_htmlEntities_namespaceObject = window["wp"]["htmlEntities"];
 ;// ./node_modules/@wordpress/icons/build-module/library/link.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -432,7 +432,7 @@ const external_wp_a11y_namespaceObject = window["wp"]["a11y"];
 const external_wp_data_namespaceObject = window["wp"]["data"];
 ;// ./node_modules/@wordpress/format-library/build-module/link/utils.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -637,7 +637,7 @@ const walkToEnd = partialRight(walkToBoundary, 'forwards');
 
 ;// ./node_modules/@wordpress/format-library/build-module/link/inline.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -776,10 +776,10 @@ function InlineLinkUI({
       // run only against the second half of the value which was
       // split at the active format's boundary. This avoids a bug
       // with incorrectly targeted replacements.
-      // See: https://github.com/WordPress/gutenberg/issues/41771.
+      // See: https://github.com/NotMattPress/gutenberg/issues/41771.
       // Note original formats will be lost when applying this change.
       // That is expected behaviour.
-      // See: https://github.com/WordPress/gutenberg/pull/33849#issuecomment-936134179.
+      // See: https://github.com/NotMattPress/gutenberg/pull/33849#issuecomment-936134179.
       const newValAfter = (0,external_wp_richText_namespaceObject.replace)(valAfter, richTextText, newValue);
       newValue = (0,external_wp_richText_namespaceObject.concat)(valBefore, newValAfter);
     }
@@ -884,7 +884,7 @@ function getRichTextValueFromSelection(value, isActive) {
 
 ;// ./node_modules/@wordpress/format-library/build-module/link/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -1109,7 +1109,7 @@ const build_module_link_link = {
 
 ;// ./node_modules/@wordpress/icons/build-module/library/format-strikethrough.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -1124,7 +1124,7 @@ const formatStrikethrough = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceOb
 
 ;// ./node_modules/@wordpress/format-library/build-module/strikethrough/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -1169,7 +1169,7 @@ const strikethrough = {
 
 ;// ./node_modules/@wordpress/format-library/build-module/underline/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -1213,7 +1213,7 @@ const underline = {
 
 ;// ./node_modules/@wordpress/icons/build-module/icon/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -1245,7 +1245,7 @@ function Icon({
 
 ;// ./node_modules/@wordpress/icons/build-module/library/text-color.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -1260,7 +1260,7 @@ const textColor = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(
 
 ;// ./node_modules/@wordpress/icons/build-module/library/color.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -1277,18 +1277,18 @@ const color = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(exte
 const external_wp_privateApis_namespaceObject = window["wp"]["privateApis"];
 ;// ./node_modules/@wordpress/format-library/build-module/lock-unlock.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 const {
   lock,
   unlock
-} = (0,external_wp_privateApis_namespaceObject.__dangerousOptInToUnstableAPIsOnlyForCoreModules)('I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of WordPress.', '@wordpress/format-library');
+} = (0,external_wp_privateApis_namespaceObject.__dangerousOptInToUnstableAPIsOnlyForCoreModules)('I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of NotMattPress.', '@wordpress/format-library');
 
 ;// ./node_modules/@wordpress/format-library/build-module/text-color/inline.js
 /* wp:polyfill */
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -1451,7 +1451,7 @@ function InlineColorUI({
 
 ;// ./node_modules/@wordpress/format-library/build-module/text-color/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -1546,7 +1546,7 @@ const text_color_textColor = {
 
 ;// ./node_modules/@wordpress/icons/build-module/library/subscript.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -1561,7 +1561,7 @@ const subscript = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(
 
 ;// ./node_modules/@wordpress/format-library/build-module/subscript/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -1603,7 +1603,7 @@ const subscript_subscript = {
 
 ;// ./node_modules/@wordpress/icons/build-module/library/superscript.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -1618,7 +1618,7 @@ const superscript = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx
 
 ;// ./node_modules/@wordpress/format-library/build-module/superscript/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -1660,7 +1660,7 @@ const superscript_superscript = {
 
 ;// ./node_modules/@wordpress/icons/build-module/library/button.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -1675,7 +1675,7 @@ const button_button = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.j
 
 ;// ./node_modules/@wordpress/format-library/build-module/keyboard/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -1717,7 +1717,7 @@ const keyboard = {
 
 ;// ./node_modules/@wordpress/icons/build-module/library/help.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -1733,7 +1733,7 @@ const help = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(exter
 ;// ./node_modules/@wordpress/format-library/build-module/unknown/index.js
 /* wp:polyfill */
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -1781,7 +1781,7 @@ const unknown = {
 
 ;// ./node_modules/@wordpress/icons/build-module/library/language.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -1796,12 +1796,12 @@ const language = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(e
 
 ;// ./node_modules/@wordpress/format-library/build-module/language/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -1916,7 +1916,7 @@ function InlineLanguageUI({
 
 ;// ./node_modules/@wordpress/format-library/build-module/non-breaking-space/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -1967,7 +1967,7 @@ const nonBreakingSpace = {
 ;// ./node_modules/@wordpress/format-library/build-module/index.js
 /* wp:polyfill */
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 

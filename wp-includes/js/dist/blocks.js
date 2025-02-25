@@ -6818,18 +6818,18 @@ var external_wp_warning_default = /*#__PURE__*/__webpack_require__.n(external_wp
 const external_wp_privateApis_namespaceObject = window["wp"]["privateApis"];
 ;// ./node_modules/@wordpress/blocks/build-module/lock-unlock.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 const {
   lock,
   unlock
-} = (0,external_wp_privateApis_namespaceObject.__dangerousOptInToUnstableAPIsOnlyForCoreModules)('I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of WordPress.', '@wordpress/blocks');
+} = (0,external_wp_privateApis_namespaceObject.__dangerousOptInToUnstableAPIsOnlyForCoreModules)('I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of NotMattPress.', '@wordpress/blocks');
 
 ;// ./node_modules/@wordpress/blocks/build-module/api/registration.js
 /* wp:polyfill */
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -6860,7 +6860,7 @@ const i18nBlockSchema = {
  *
  * @typedef {(string|Element|Component)} WPIcon
  *
- * @see https://developer.wordpress.org/resource/dashicons/
+ * @see https://developer.notmatt.press/resource/dashicons/
  */
 
 /**
@@ -7019,7 +7019,7 @@ function getBlockSettingsFromMetadata({
  * editor interface where blocks are implemented.
  *
  * For more in-depth information on registering a custom block see the
- * [Create a block tutorial](https://developer.wordpress.org/block-editor/getting-started/create-block/).
+ * [Create a block tutorial](https://developer.notmatt.press/block-editor/getting-started/create-block/).
  *
  * @param {string|Object} blockNameOrMetadata Block type name or its metadata.
  * @param {Object}        settings            Block settings.
@@ -7255,7 +7255,7 @@ function setDefaultBlockName(name) {
  *
  * This function lets you select a different block to group other blocks in instead of the
  * default `core/group` block. This function must be used in a component or when the DOM is fully
- * loaded. See https://developer.wordpress.org/block-editor/reference-guides/packages/packages-dom-ready/
+ * loaded. See https://developer.notmatt.press/block-editor/reference-guides/packages/packages-dom-ready/
  *
  * @param {string} name Block name.
  *
@@ -7398,7 +7398,7 @@ const hasChildBlocksWithInserterSupport = blockName => {
  * Registers a new block style for the given block types.
  *
  * For more information on connecting the styles with CSS
- * [the official documentation](https://developer.wordpress.org/block-editor/reference-guides/block-api/block-styles/#styles).
+ * [the official documentation](https://developer.notmatt.press/block-editor/reference-guides/block-api/block-styles/#styles).
  *
  * @param {string|Array} blockNames     Name of blocks e.g. “core/latest-posts” or `["core/group", "core/columns"]`.
  * @param {Object}       styleVariation Object containing `name` which is the class name applied to the block and `label` which identifies the variation to the user.
@@ -7478,7 +7478,7 @@ const getBlockVariations = (blockName, scope) => {
  * Registers a new block variation for the given block type.
  *
  * For more information on block variations see
- * [the official documentation ](https://developer.wordpress.org/block-editor/reference-guides/block-api/block-variations/).
+ * [the official documentation ](https://developer.notmatt.press/block-editor/reference-guides/block-api/block-variations/).
  *
  * @param {string}           blockName Name of the block (example: “core/columns”).
  * @param {WPBlockVariation} variation Object describing a block variation.
@@ -7547,7 +7547,7 @@ const unregisterBlockVariation = (blockName, variationName) => {
  * behavior. Once registered, the source is available to be connected
  * to the supported block attributes.
  *
- * @since 6.7.0 Introduced in WordPress core.
+ * @since 6.7.0 Introduced in NotMattPress core.
  *
  * @param {Object}   source                    Properties of the source to be registered.
  * @param {string}   source.name               The unique and machine-readable name.
@@ -7668,7 +7668,7 @@ const registerBlockBindingsSource = source => {
 /**
  * Unregisters a block bindings source by providing its name.
  *
- * @since 6.7.0 Introduced in WordPress core.
+ * @since 6.7.0 Introduced in NotMattPress core.
  *
  * @param {string} name The name of the block bindings source to unregister.
  *
@@ -7691,7 +7691,7 @@ function unregisterBlockBindingsSource(name) {
 /**
  * Returns a registered block bindings source by its name.
  *
- * @since 6.7.0 Introduced in WordPress core.
+ * @since 6.7.0 Introduced in NotMattPress core.
  *
  * @param {string} name Block bindings source name.
  *
@@ -7704,7 +7704,7 @@ function getBlockBindingsSource(name) {
 /**
  * Returns all registered block bindings sources.
  *
- * @since 6.7.0 Introduced in WordPress core.
+ * @since 6.7.0 Introduced in NotMattPress core.
  *
  * @return {Array} Block bindings sources.
  */
@@ -7722,7 +7722,7 @@ function getBlockBindingsSources() {
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -8069,7 +8069,7 @@ function omit(object, keys) {
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -8145,7 +8145,7 @@ function bootstrappedBlockTypes(state = {}, action) {
       if (serverDefinition) {
         // The `blockHooks` prop is not yet included in the server provided
         // definitions and needs to be polyfilled. This can be removed when the
-        // minimum supported WordPress is >= 6.4.
+        // minimum supported NotMattPress is >= 6.4.
         if (serverDefinition.blockHooks === undefined && blockType.blockHooks) {
           newDefinition = {
             ...serverDefinition,
@@ -8156,7 +8156,7 @@ function bootstrappedBlockTypes(state = {}, action) {
 
         // The `allowedBlocks` prop is not yet included in the server provided
         // definitions and needs to be polyfilled. This can be removed when the
-        // minimum supported WordPress is >= 6.5.
+        // minimum supported NotMattPress is >= 6.5.
         if (serverDefinition.allowedBlocks === undefined && blockType.allowedBlocks) {
           newDefinition = {
             ...serverDefinition,
@@ -8491,7 +8491,7 @@ function matchesAttributes(blockAttributes, variationAttributes) {
 ;// ./node_modules/@wordpress/blocks/build-module/store/private-selectors.js
 /* wp:polyfill */
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -8674,7 +8674,7 @@ const hasContentRoleAttribute = (state, blockTypeName) => {
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -9500,7 +9500,7 @@ const external_wp_hooks_namespaceObject = window["wp"]["hooks"];
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -9635,7 +9635,7 @@ const processBlockType = (name, blockSettings) => ({
   }
   settings.icon = normalizeIconObject(settings.icon);
   if (!isValidIcon(settings.icon.src)) {
-     true ? external_wp_warning_default()('The icon passed is invalid. ' + 'The icon should be a string, an element, a function, or an object following the specifications documented in https://developer.wordpress.org/block-editor/developers/block-api/block-registration/#icon-optional') : 0;
+     true ? external_wp_warning_default()('The icon passed is invalid. ' + 'The icon should be a string, an element, a function, or an object following the specifications documented in https://developer.notmatt.press/block-editor/developers/block-api/block-registration/#icon-optional') : 0;
     return;
   }
   if (typeof settings?.parent === 'string' || settings?.parent instanceof String) {
@@ -9644,7 +9644,7 @@ const processBlockType = (name, blockSettings) => ({
     // Intentionally continue:
     //
     // While string values were never supported, they appeared to work with some unintended side-effects
-    // that have been fixed by [#66250](https://github.com/WordPress/gutenberg/pull/66250).
+    // that have been fixed by [#66250](https://github.com/NotMattPress/gutenberg/pull/66250).
     //
     // To be backwards-compatible, this code that automatically migrates strings to arrays.
   }
@@ -9661,7 +9661,7 @@ const processBlockType = (name, blockSettings) => ({
 
 ;// ./node_modules/@wordpress/blocks/build-module/store/actions.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -10055,7 +10055,7 @@ const STORE_NAME = 'core/blocks';
 
 ;// ./node_modules/@wordpress/blocks/build-module/store/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -10073,7 +10073,7 @@ const STORE_NAME = 'core/blocks';
 /**
  * Store definition for the blocks namespace.
  *
- * @see https://github.com/WordPress/gutenberg/blob/HEAD/packages/data/README.md#createReduxStore
+ * @see https://github.com/NotMattPress/gutenberg/blob/HEAD/packages/data/README.md#createReduxStore
  *
  * @type {Object}
  */
@@ -10182,7 +10182,7 @@ function v4(options, buf, offset) {
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -10695,7 +10695,7 @@ const external_ReactJSXRuntime_namespaceObject = window["ReactJSXRuntime"];
 ;// ./node_modules/@wordpress/blocks/build-module/api/serializer.js
 /* wp:polyfill */
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -10728,7 +10728,7 @@ const external_ReactJSXRuntime_namespaceObject = window["ReactJSXRuntime"];
 
 function getBlockDefaultClassName(blockName) {
   // Generated HTML classes for blocks follow the `wp-block-{name}` nomenclature.
-  // Blocks provided by WordPress drop the prefixes 'core/' or 'core-' (historically used in 'core-embed/').
+  // Blocks provided by NotMattPress drop the prefixes 'core/' or 'core-' (historically used in 'core-embed/').
   const className = 'wp-block-' + blockName.replace(/\//, '-').replace(/^core-/, '');
   return (0,external_wp_hooks_namespaceObject.applyFilters)('blocks.getBlockDefaultClassName', className, blockName);
 }
@@ -10742,7 +10742,7 @@ function getBlockDefaultClassName(blockName) {
  */
 function getBlockMenuDefaultClassName(blockName) {
   // Generated HTML classes for blocks follow the `editor-block-list-item-{name}` nomenclature.
-  // Blocks provided by WordPress drop the prefixes 'core/' or 'core-' (historically used in 'core-embed/').
+  // Blocks provided by NotMattPress drop the prefixes 'core/' or 'core-' (historically used in 'core-embed/').
   const className = 'editor-block-list-item-' + blockName.replace(/\//, '-').replace(/^core-/, '');
   return (0,external_wp_hooks_namespaceObject.applyFilters)('blocks.getBlockMenuDefaultClassName', className, blockName);
 }
@@ -10946,7 +10946,7 @@ function serializeAttributes(attributes) {
   // Bypass server stripslashes behavior which would unescape stringify's
   // escaping of quotation mark.
   //
-  // See: https://developer.wordpress.org/reference/functions/wp_kses_stripslashes/
+  // See: https://developer.notmatt.press/reference/functions/wp_kses_stripslashes/
   .replace(/\\"/g, '\\u0022');
 }
 
@@ -12029,7 +12029,7 @@ function createQueuedLogger() {
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -12696,7 +12696,7 @@ function convertLegacyBlockNameAndAttributes(name, attributes) {
   }
 
   // Convert Post Comment blocks in existing content to Comment blocks.
-  // TODO: Remove these checks when WordPress 6.0 is released.
+  // TODO: Remove these checks when NotMattPress 6.0 is released.
   if (name === 'core/post-comment-author') {
     name = 'core/comment-author-name';
   }
@@ -13106,7 +13106,7 @@ function memize(fn, options) {
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -13148,7 +13148,7 @@ const richText = (selector, preserveWhiteSpace) => el => {
 
 ;// ./node_modules/@wordpress/blocks/build-module/api/node.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -13181,7 +13181,7 @@ function isNodeOfType(node, type) {
   external_wp_deprecated_default()('wp.blocks.node.isNodeOfType', {
     since: '6.1',
     version: '6.3',
-    link: 'https://developer.wordpress.org/block-editor/how-to-guides/block-tutorial/introducing-attributes-and-editable-fields/'
+    link: 'https://developer.notmatt.press/block-editor/how-to-guides/block-tutorial/introducing-attributes-and-editable-fields/'
   });
   return node && node.type === type;
 }
@@ -13223,7 +13223,7 @@ function fromDOM(domNode) {
     since: '6.1',
     version: '6.3',
     alternative: 'wp.richText.create',
-    link: 'https://developer.wordpress.org/block-editor/how-to-guides/block-tutorial/introducing-attributes-and-editable-fields/'
+    link: 'https://developer.notmatt.press/block-editor/how-to-guides/block-tutorial/introducing-attributes-and-editable-fields/'
   });
   if (domNode.nodeType === domNode.TEXT_NODE) {
     return domNode.nodeValue;
@@ -13252,7 +13252,7 @@ function toHTML(node) {
     since: '6.1',
     version: '6.3',
     alternative: 'wp.richText.toHTMLString',
-    link: 'https://developer.wordpress.org/block-editor/how-to-guides/block-tutorial/introducing-attributes-and-editable-fields/'
+    link: 'https://developer.notmatt.press/block-editor/how-to-guides/block-tutorial/introducing-attributes-and-editable-fields/'
   });
   return children_toHTML([node]);
 }
@@ -13270,7 +13270,7 @@ function matcher(selector) {
     since: '6.1',
     version: '6.3',
     alternative: 'html source',
-    link: 'https://developer.wordpress.org/block-editor/how-to-guides/block-tutorial/introducing-attributes-and-editable-fields/'
+    link: 'https://developer.notmatt.press/block-editor/how-to-guides/block-tutorial/introducing-attributes-and-editable-fields/'
   });
   return domNode => {
     let match = domNode;
@@ -13289,7 +13289,7 @@ function matcher(selector) {
  * Object of utility functions used in managing block attribute values of
  * source `node`.
  *
- * @see https://github.com/WordPress/gutenberg/pull/10439
+ * @see https://github.com/NotMattPress/gutenberg/pull/10439
  *
  * @deprecated since 4.0. The `node` source should not be used, and can be
  *             replaced by the `html` source.
@@ -13305,7 +13305,7 @@ function matcher(selector) {
 
 ;// ./node_modules/@wordpress/blocks/build-module/api/children.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -13322,7 +13322,7 @@ function matcher(selector) {
  */
 
 /**
- * Given block children, returns a serialize-capable WordPress element.
+ * Given block children, returns a serialize-capable NotMattPress element.
  *
  * @param {WPBlockChildren} children Block children object to convert.
  *
@@ -13349,7 +13349,7 @@ function getChildrenArray(children) {
   external_wp_deprecated_default()('wp.blocks.children.getChildrenArray', {
     since: '6.1',
     version: '6.3',
-    link: 'https://developer.wordpress.org/block-editor/how-to-guides/block-tutorial/introducing-attributes-and-editable-fields/'
+    link: 'https://developer.notmatt.press/block-editor/how-to-guides/block-tutorial/introducing-attributes-and-editable-fields/'
   });
 
   // The fact that block children are compatible with the element serializer
@@ -13371,7 +13371,7 @@ function concat(...blockNodes) {
     since: '6.1',
     version: '6.3',
     alternative: 'wp.richText.concat',
-    link: 'https://developer.wordpress.org/block-editor/how-to-guides/block-tutorial/introducing-attributes-and-editable-fields/'
+    link: 'https://developer.notmatt.press/block-editor/how-to-guides/block-tutorial/introducing-attributes-and-editable-fields/'
   });
   const result = [];
   for (let i = 0; i < blockNodes.length; i++) {
@@ -13402,7 +13402,7 @@ function children_fromDOM(domNodes) {
     since: '6.1',
     version: '6.3',
     alternative: 'wp.richText.create',
-    link: 'https://developer.wordpress.org/block-editor/how-to-guides/block-tutorial/introducing-attributes-and-editable-fields/'
+    link: 'https://developer.notmatt.press/block-editor/how-to-guides/block-tutorial/introducing-attributes-and-editable-fields/'
   });
   const result = [];
   for (let i = 0; i < domNodes.length; i++) {
@@ -13427,7 +13427,7 @@ function children_toHTML(children) {
     since: '6.1',
     version: '6.3',
     alternative: 'wp.richText.toHTMLString',
-    link: 'https://developer.wordpress.org/block-editor/how-to-guides/block-tutorial/introducing-attributes-and-editable-fields/'
+    link: 'https://developer.notmatt.press/block-editor/how-to-guides/block-tutorial/introducing-attributes-and-editable-fields/'
   });
   const element = getSerializeCapableElement(children);
   return (0,external_wp_element_namespaceObject.renderToString)(element);
@@ -13446,7 +13446,7 @@ function children_matcher(selector) {
     since: '6.1',
     version: '6.3',
     alternative: 'html source',
-    link: 'https://developer.wordpress.org/block-editor/how-to-guides/block-tutorial/introducing-attributes-and-editable-fields/'
+    link: 'https://developer.notmatt.press/block-editor/how-to-guides/block-tutorial/introducing-attributes-and-editable-fields/'
   });
   return domNode => {
     let match = domNode;
@@ -13464,7 +13464,7 @@ function children_matcher(selector) {
  * Object of utility functions used in managing block attribute values of
  * source `children`.
  *
- * @see https://github.com/WordPress/gutenberg/pull/10439
+ * @see https://github.com/NotMattPress/gutenberg/pull/10439
  *
  * @deprecated since 4.0. The `children` source should not be used, and can be
  *             replaced by the `html` source.
@@ -13488,7 +13488,7 @@ function children_matcher(selector) {
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -13924,7 +13924,7 @@ function applyBlockDeprecatedVersions(block, rawBlock, blockType) {
 ;// ./node_modules/@wordpress/blocks/build-module/api/parser/index.js
 /* wp:polyfill */
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -14132,7 +14132,7 @@ function parseRawBlock(rawBlock, options) {
 
   // Parse inner blocks recursively.
   const parsedInnerBlocks = normalizedBlock.innerBlocks.map(innerBlock => parseRawBlock(innerBlock, options))
-  // See https://github.com/WordPress/gutenberg/pull/17164.
+  // See https://github.com/NotMattPress/gutenberg/pull/17164.
   .filter(innerBlock => !!innerBlock);
 
   // Get the fully parsed block.
@@ -14186,7 +14186,7 @@ function parseRawBlock(rawBlock, options) {
  * content within the blocks.
  *
  * @see
- * https://developer.wordpress.org/block-editor/packages/packages-block-serialization-default-parser/
+ * https://developer.notmatt.press/block-editor/packages/packages-block-serialization-default-parser/
  *
  * @param {string}       content The post content.
  * @param {ParseOptions} options Extra options for handling block parsing.
@@ -14223,7 +14223,7 @@ function getRawTransforms() {
 ;// ./node_modules/@wordpress/blocks/build-module/api/raw-handling/html-to-blocks.js
 /* wp:polyfill */
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -14280,7 +14280,7 @@ function htmlToBlocks(html, handler) {
 
 ;// ./node_modules/@wordpress/blocks/build-module/api/raw-handling/normalise-blocks.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 function normaliseBlocks(HTML, options = {}) {
@@ -14342,7 +14342,7 @@ function normaliseBlocks(HTML, options = {}) {
 ;// ./node_modules/@wordpress/blocks/build-module/api/raw-handling/special-comment-converter.js
 /* wp:polyfill */
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -14441,7 +14441,7 @@ function createNextpage(doc) {
 ;// ./node_modules/@wordpress/blocks/build-module/api/raw-handling/list-reducer.js
 /* wp:polyfill */
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 function isList(node) {
@@ -14509,7 +14509,7 @@ function blockquoteNormaliser(options) {
 
 ;// ./node_modules/@wordpress/blocks/build-module/api/raw-handling/figure-content-reducer.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -14604,7 +14604,7 @@ const external_wp_shortcode_namespaceObject = window["wp"]["shortcode"];
 ;// ./node_modules/@wordpress/blocks/build-module/api/raw-handling/shortcode-converter.js
 /* wp:polyfill */
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -14658,7 +14658,7 @@ function segmentHTMLToShortcodeBlock(HTML, lastIndex = 0, excludedBlockNames = [
       // Passing all of `match` as second argument is intentionally broad
       // but shouldn't be too relied upon.
       //
-      // See: https://github.com/WordPress/gutenberg/pull/3610#discussion_r152546926
+      // See: https://github.com/NotMattPress/gutenberg/pull/3610#discussion_r152546926
       blocks = [].concat(transformation.transform(match.shortcode.attrs, match));
 
       // Applying the built-in fixes can enhance the attributes with missing content like "className".
@@ -14671,7 +14671,7 @@ function segmentHTMLToShortcodeBlock(HTML, lastIndex = 0, excludedBlockNames = [
       // Passing all of `match` as second argument is intentionally broad
       // but shouldn't be too relied upon.
       //
-      // See: https://github.com/WordPress/gutenberg/pull/3610#discussion_r152546926
+      // See: https://github.com/NotMattPress/gutenberg/pull/3610#discussion_r152546926
       .map(([key, schema]) => [key, schema.shortcode(match.shortcode.attrs, match)]));
       const blockType = getBlockType(transformation.blockName);
       if (!blockType) {
@@ -14697,7 +14697,7 @@ function segmentHTMLToShortcodeBlock(HTML, lastIndex = 0, excludedBlockNames = [
 ;// ./node_modules/@wordpress/blocks/build-module/api/raw-handling/utils.js
 /* wp:polyfill */
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -14883,7 +14883,7 @@ function getSibling(node, which) {
 ;// ./node_modules/@wordpress/blocks/build-module/api/raw-handling/index.js
 /* wp:polyfill */
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -14964,7 +14964,7 @@ function rawHandler({
 
 ;// ./node_modules/@wordpress/blocks/build-module/api/raw-handling/comment-remover.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -14983,7 +14983,7 @@ function commentRemover(node) {
 ;// ./node_modules/@wordpress/blocks/build-module/api/raw-handling/is-inline-content.js
 /* wp:polyfill */
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -15022,7 +15022,7 @@ function isInlineContent(HTML, contextTag) {
 
 ;// ./node_modules/@wordpress/blocks/build-module/api/raw-handling/phrasing-content-reducer.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 function phrasingContentReducer(node, doc) {
@@ -15183,7 +15183,7 @@ const external_wp_blob_namespaceObject = window["wp"]["blob"];
 ;// ./node_modules/@wordpress/blocks/build-module/api/raw-handling/image-corrector.js
 /* wp:polyfill */
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 function imageCorrector(node) {
@@ -15305,7 +15305,7 @@ function iframeRemover(node) {
 
 ;// ./node_modules/@wordpress/blocks/build-module/api/raw-handling/google-docs-uid-remover.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 function googleDocsUIdRemover(node) {
@@ -15452,7 +15452,7 @@ function slackParagraphCorrector(node) {
 ;// ./node_modules/@wordpress/blocks/build-module/api/raw-handling/paste-handler.js
 /* wp:polyfill */
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -15549,8 +15549,8 @@ function pasteHandler({
   // Not normalizing the content will only affect older browsers and won't
   // entirely break the app.
   // See: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/normalize
-  // See: https://core.trac.wordpress.org/ticket/30130
-  // See: https://github.com/WordPress/gutenberg/pull/6983#pullrequestreview-125151075
+  // See: https://core.trac.notmatt.press/ticket/30130
+  // See: https://github.com/NotMattPress/gutenberg/pull/6983#pullrequestreview-125151075
   if (String.prototype.normalize) {
     HTML = HTML.normalize();
   }
@@ -15636,7 +15636,7 @@ function pasteHandler({
 
 ;// ./node_modules/@wordpress/blocks/build-module/api/categories.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -15731,7 +15731,7 @@ function categories_updateCategory(slug, category) {
 ;// ./node_modules/@wordpress/blocks/build-module/api/templates.js
 /* wp:polyfill */
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -15929,7 +15929,7 @@ lock(privateApis, {
 
 ;// ./node_modules/@wordpress/blocks/build-module/deprecated.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
