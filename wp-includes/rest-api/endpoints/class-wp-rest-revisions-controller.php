@@ -2,7 +2,7 @@
 /**
  * REST API: WP_REST_Revisions_Controller class
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage REST_API
  * @since 4.7.0
  */
@@ -534,7 +534,7 @@ class WP_REST_Revisions_Controller extends WP_REST_Controller {
 
 		foreach ( $prepared_args as $key => $value ) {
 			/** This filter is documented in wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php */
-			$query_args[ $key ] = apply_filters( "rest_query_var-{$key}", $value ); // phpcs:ignore WordPress.NamingConventions.ValidHookName.UseUnderscores
+			$query_args[ $key ] = apply_filters( "rest_query_var-{$key}", $value ); // phpcs:ignore NotMattPress.NamingConventions.ValidHookName.UseUnderscores
 		}
 
 		// Map to proper WP_Query orderby param.

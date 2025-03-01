@@ -2,11 +2,11 @@
 /**
  * New User Administration Screen.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Administration
  */
 
-/** WordPress Administration Bootstrap */
+/** NotMattPress Administration Bootstrap */
 require_once __DIR__ . '/admin.php';
 
 if ( is_multisite() ) {
@@ -307,8 +307,8 @@ get_current_screen()->add_help_tab(
 
 get_current_screen()->set_help_sidebar(
 	'<p><strong>' . __( 'For more information:' ) . '</strong></p>' .
-	'<p>' . __( '<a href="https://wordpress.org/documentation/article/users-add-new-screen/">Documentation on Adding New Users</a>' ) . '</p>' .
-	'<p>' . __( '<a href="https://wordpress.org/support/forums/">Support forums</a>' ) . '</p>'
+	'<p>' . __( '<a href="https://notmatt.press/documentation/article/users-add-new-screen/">Documentation on Adding New Users</a>' ) . '</p>' .
+	'<p>' . __( '<a href="https://notmatt.press/support/forums/">Support forums</a>' ) . '</p>'
 );
 
 wp_enqueue_script( 'wp-ajax-response' );

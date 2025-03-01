@@ -105,7 +105,7 @@ function isAppleOS(_window = null) {
  */
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 

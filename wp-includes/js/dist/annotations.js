@@ -77,7 +77,7 @@ const STORE_NAME = 'core/annotations';
 ;// ./node_modules/@wordpress/annotations/build-module/format/annotation.js
 /* wp:polyfill */
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -251,7 +251,7 @@ const annotation = {
 
 ;// ./node_modules/@wordpress/annotations/build-module/format/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -272,7 +272,7 @@ const external_wp_data_namespaceObject = window["wp"]["data"];
 ;// ./node_modules/@wordpress/annotations/build-module/block/index.js
 /* wp:polyfill */
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -408,7 +408,7 @@ function annotations(state = {}, action) {
 ;// ./node_modules/@wordpress/annotations/build-module/store/selectors.js
 /* wp:polyfill */
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -677,7 +677,7 @@ function __experimentalRemoveAnnotationsBySource(source) {
 
 ;// ./node_modules/@wordpress/annotations/build-module/store/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -696,7 +696,7 @@ function __experimentalRemoveAnnotationsBySource(source) {
 /**
  * Store definition for the annotations namespace.
  *
- * @see https://github.com/WordPress/gutenberg/blob/HEAD/packages/data/README.md#createReduxStore
+ * @see https://github.com/NotMattPress/gutenberg/blob/HEAD/packages/data/README.md#createReduxStore
  *
  * @type {Object}
  */
