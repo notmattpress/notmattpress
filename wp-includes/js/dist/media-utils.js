@@ -67,7 +67,7 @@ const external_wp_i18n_namespaceObject = window["wp"]["i18n"];
 ;// ./node_modules/@wordpress/media-utils/build-module/components/media-upload/index.js
 /* wp:polyfill */
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -625,7 +625,7 @@ function transformAttachment(attachment) {
 
 ;// ./node_modules/@wordpress/media-utils/build-module/utils/upload-to-server.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -676,7 +676,7 @@ class UploadError extends Error {
 ;// ./node_modules/@wordpress/media-utils/build-module/utils/validate-mime-type.js
 /* wp:polyfill */
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -741,7 +741,7 @@ function getMimeTypesArray(wpMimeTypesObject) {
 
 ;// ./node_modules/@wordpress/media-utils/build-module/utils/validate-mime-type-for-user.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -777,7 +777,7 @@ function validateMimeTypeForUser(file, wpAllowedMimeTypes) {
 
 ;// ./node_modules/@wordpress/media-utils/build-module/utils/validate-file-size.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -816,7 +816,7 @@ function validateFileSize(file, maxUploadFileSize) {
 
 ;// ./node_modules/@wordpress/media-utils/build-module/utils/upload-media.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -931,7 +931,7 @@ function uploadMedia({
 
 ;// ./node_modules/@wordpress/media-utils/build-module/utils/sideload-to-server.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -969,7 +969,7 @@ async function sideloadToServer(file, attachmentId, additionalData = {}, signal)
 
 ;// ./node_modules/@wordpress/media-utils/build-module/utils/sideload-media.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -1024,13 +1024,13 @@ async function sideloadMedia({
 const external_wp_privateApis_namespaceObject = window["wp"]["privateApis"];
 ;// ./node_modules/@wordpress/media-utils/build-module/lock-unlock.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 const {
   lock,
   unlock
-} = (0,external_wp_privateApis_namespaceObject.__dangerousOptInToUnstableAPIsOnlyForCoreModules)('I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of WordPress.', '@wordpress/media-utils');
+} = (0,external_wp_privateApis_namespaceObject.__dangerousOptInToUnstableAPIsOnlyForCoreModules)('I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of NotMattPress.', '@wordpress/media-utils');
 
 ;// ./node_modules/@wordpress/media-utils/build-module/private-apis.js
 /**

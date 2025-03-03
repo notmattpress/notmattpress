@@ -2,7 +2,7 @@
 /**
  * Server-side rendering of the `core/query-total` block.
  *
- * @package WordPress
+ * @package NotMattPress
  */
 
 /**

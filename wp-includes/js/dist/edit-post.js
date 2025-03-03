@@ -166,7 +166,7 @@ const external_wp_primitives_namespaceObject = window["wp"]["primitives"];
 const external_ReactJSXRuntime_namespaceObject = window["ReactJSXRuntime"];
 ;// ./node_modules/@wordpress/icons/build-module/library/chevron-up.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -181,7 +181,7 @@ const chevronUp = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(
 
 ;// ./node_modules/@wordpress/icons/build-module/library/chevron-down.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -212,7 +212,7 @@ const external_wp_components_namespaceObject = window["wp"]["components"];
 const external_wp_compose_namespaceObject = window["wp"]["compose"];
 ;// ./node_modules/@wordpress/icons/build-module/library/wordpress.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -232,7 +232,7 @@ const wordpress = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -332,17 +332,17 @@ function FullscreenModeClose({
 const external_wp_privateApis_namespaceObject = window["wp"]["privateApis"];
 ;// ./node_modules/@wordpress/edit-post/build-module/lock-unlock.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 const {
   lock,
   unlock
-} = (0,external_wp_privateApis_namespaceObject.__dangerousOptInToUnstableAPIsOnlyForCoreModules)('I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of WordPress.', '@wordpress/edit-post');
+} = (0,external_wp_privateApis_namespaceObject.__dangerousOptInToUnstableAPIsOnlyForCoreModules)('I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of NotMattPress.', '@wordpress/edit-post');
 
 ;// ./node_modules/@wordpress/edit-post/build-module/components/back-button/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -416,7 +416,7 @@ const VIEW_AS_PREVIEW_LINK_SELECTOR = '#wp-admin-bar-preview a';
 
 ;// ./node_modules/@wordpress/edit-post/build-module/components/editor-initialization/listener-hooks.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -470,7 +470,7 @@ function EditorInitialization() {
 const external_wp_keyboardShortcuts_namespaceObject = window["wp"]["keyboardShortcuts"];
 ;// ./node_modules/@wordpress/edit-post/build-module/store/reducer.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -582,7 +582,7 @@ const getMetaBoxContainer = location => {
 ;// ./node_modules/@wordpress/edit-post/build-module/store/actions.js
 /* wp:polyfill */
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -1009,7 +1009,7 @@ function __unstableCreateTemplate() {
 let actions_metaBoxesInitialized = false;
 
 /**
- * Initializes WordPress `postboxes` script and the logic for saving meta boxes.
+ * Initializes NotMattPress `postboxes` script and the logic for saving meta boxes.
  */
 const initializeMetaBoxes = () => ({
   registry,
@@ -1081,7 +1081,7 @@ const toggleFullscreenMode = () => ({
 ;// ./node_modules/@wordpress/edit-post/build-module/store/selectors.js
 /* wp:polyfill */
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -1579,7 +1579,7 @@ const getEditedPostTemplate = (0,external_wp_data_namespaceObject.createRegistry
 
 ;// ./node_modules/@wordpress/edit-post/build-module/store/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -1594,7 +1594,7 @@ const getEditedPostTemplate = (0,external_wp_data_namespaceObject.createRegistry
 /**
  * Store definition for the edit post namespace.
  *
- * @see https://github.com/WordPress/gutenberg/blob/HEAD/packages/data/README.md#createReduxStore
+ * @see https://github.com/NotMattPress/gutenberg/blob/HEAD/packages/data/README.md#createReduxStore
  *
  * @type {Object}
  */
@@ -1607,7 +1607,7 @@ const store = (0,external_wp_data_namespaceObject.createReduxStore)(STORE_NAME, 
 
 ;// ./node_modules/@wordpress/edit-post/build-module/components/keyboard-shortcuts/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -1645,7 +1645,7 @@ function KeyboardShortcuts() {
 
 ;// ./node_modules/@wordpress/edit-post/build-module/components/init-pattern-modal/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -1731,7 +1731,7 @@ function InitPatternModal() {
 
 ;// ./node_modules/@wordpress/edit-post/build-module/components/browser-url/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -1819,7 +1819,7 @@ class BrowserURL extends external_wp_element_namespaceObject.Component {
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -1874,7 +1874,7 @@ function MetaBoxesArea({
 
 ;// ./node_modules/@wordpress/edit-post/build-module/components/meta-boxes/meta-box-visibility.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -1902,7 +1902,7 @@ function MetaBoxVisibility({
 ;// ./node_modules/@wordpress/edit-post/build-module/components/meta-boxes/index.js
 /* wp:polyfill */
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -1932,7 +1932,7 @@ function MetaBoxes({
 const external_wp_keycodes_namespaceObject = window["wp"]["keycodes"];
 ;// ./node_modules/@wordpress/edit-post/build-module/components/more-menu/manage-patterns-menu-item.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -1970,7 +1970,7 @@ function ManagePatternsMenuItem() {
 
 ;// ./node_modules/@wordpress/edit-post/build-module/components/more-menu/welcome-guide-menu-item.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -1988,7 +1988,7 @@ function WelcomeGuideMenuItem() {
 
 ;// ./node_modules/@wordpress/edit-post/build-module/components/preferences-modal/enable-custom-fields.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -2054,7 +2054,7 @@ function EnableCustomFieldsOption({
 
 ;// ./node_modules/@wordpress/edit-post/build-module/components/preferences-modal/enable-panel.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -2098,7 +2098,7 @@ function EnablePanelOption(props) {
 ;// ./node_modules/@wordpress/edit-post/build-module/components/preferences-modal/meta-boxes-section.js
 /* wp:polyfill */
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -2157,7 +2157,7 @@ function MetaBoxesSection({
 
 ;// ./node_modules/@wordpress/edit-post/build-module/components/preferences-modal/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -2195,7 +2195,7 @@ function EditPostPreferencesModal() {
 
 ;// ./node_modules/@wordpress/edit-post/build-module/components/more-menu/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -2257,7 +2257,7 @@ function WelcomeGuideImage({
 
 ;// ./node_modules/@wordpress/edit-post/build-module/components/welcome-guide/default.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -2290,7 +2290,7 @@ function WelcomeGuideDefault() {
           children: (0,external_wp_i18n_namespaceObject.__)('Welcome to the editor')
         }), /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)("p", {
           className: "edit-post-welcome-guide__text",
-          children: (0,external_wp_i18n_namespaceObject.__)('In the WordPress editor, each paragraph, image, or video is presented as a distinct “block” of content.')
+          children: (0,external_wp_i18n_namespaceObject.__)('In the NotMattPress editor, each paragraph, image, or video is presented as a distinct “block” of content.')
         })]
       })
     }, {
@@ -2339,7 +2339,7 @@ function WelcomeGuideDefault() {
           className: "edit-post-welcome-guide__text",
           children: (0,external_wp_element_namespaceObject.createInterpolateElement)((0,external_wp_i18n_namespaceObject.__)("New to the block editor? Want to learn more about using it? <a>Here's a detailed guide.</a>"), {
             a: /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(external_wp_components_namespaceObject.ExternalLink, {
-              href: (0,external_wp_i18n_namespaceObject.__)('https://wordpress.org/documentation/article/wordpress-block-editor/')
+              href: (0,external_wp_i18n_namespaceObject.__)('https://notmatt.press/documentation/article/wordpress-block-editor/')
             })
           })
         })]
@@ -2350,7 +2350,7 @@ function WelcomeGuideDefault() {
 
 ;// ./node_modules/@wordpress/edit-post/build-module/components/welcome-guide/template.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -2391,7 +2391,7 @@ function WelcomeGuideTemplate() {
 
 ;// ./node_modules/@wordpress/edit-post/build-module/components/welcome-guide/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -2427,7 +2427,7 @@ function WelcomeGuide({
 
 ;// ./node_modules/@wordpress/icons/build-module/library/fullscreen.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -2442,7 +2442,7 @@ const fullscreen = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)
 
 ;// ./node_modules/@wordpress/edit-post/build-module/commands/use-commands.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -2492,7 +2492,7 @@ function useCommands() {
 
 ;// ./node_modules/@wordpress/edit-post/build-module/components/layout/use-padding-appender.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -2553,7 +2553,7 @@ function usePaddingAppender(enabled) {
 ;// ./node_modules/@wordpress/edit-post/build-module/components/layout/use-should-iframe.js
 /* wp:polyfill */
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -2590,7 +2590,7 @@ function useShouldIframe() {
 
 ;// ./node_modules/@wordpress/edit-post/build-module/hooks/use-navigate-to-entity-record.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -2675,7 +2675,7 @@ function useNavigateToEntityRecord(initialPostId, initialPostType, defaultRender
 
 ;// ./node_modules/@wordpress/edit-post/build-module/components/meta-boxes/use-meta-box-initialization.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -2687,7 +2687,7 @@ function useNavigateToEntityRecord(initialPostId, initialPostType, defaultRender
 
 
 /**
- * Initializes WordPress `postboxes` script and the logic for saving meta boxes.
+ * Initializes NotMattPress `postboxes` script and the logic for saving meta boxes.
  *
  * @param { boolean } enabled
  */
@@ -2712,7 +2712,7 @@ const useMetaBoxInitialization = enabled => {
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -3198,7 +3198,7 @@ function Layout({
 
 ;// ./node_modules/@wordpress/edit-post/build-module/deprecated.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -3335,7 +3335,7 @@ function __experimentalPluginPostExcerpt() {
   external_wp_deprecated_default()('wp.editPost.__experimentalPluginPostExcerpt', {
     since: '6.6',
     hint: 'Core and custom panels can be access programmatically using their panel name.',
-    link: 'https://developer.wordpress.org/block-editor/reference-guides/slotfills/plugin-document-setting-panel/#accessing-a-panel-programmatically'
+    link: 'https://developer.notmatt.press/block-editor/reference-guides/slotfills/plugin-document-setting-panel/#accessing-a-panel-programmatically'
   });
   return PluginPostExcerpt;
 }
@@ -3344,7 +3344,7 @@ function __experimentalPluginPostExcerpt() {
 
 ;// ./node_modules/@wordpress/edit-post/build-module/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 

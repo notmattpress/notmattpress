@@ -238,7 +238,7 @@ var external_wp_deprecated_default = /*#__PURE__*/__webpack_require__.n(external
 const external_ReactJSXRuntime_namespaceObject = window["ReactJSXRuntime"];
 ;// ./node_modules/@wordpress/plugins/build-module/components/plugin-context/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -290,7 +290,7 @@ const withPluginContext = mapContextToProps => (0,external_wp_compose_namespaceO
 
 ;// ./node_modules/@wordpress/plugins/build-module/components/plugin-error-boundary/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 class PluginErrorBoundary extends external_wp_element_namespaceObject.Component {
@@ -333,7 +333,7 @@ class PluginErrorBoundary extends external_wp_element_namespaceObject.Component 
 const external_wp_primitives_namespaceObject = window["wp"]["primitives"];
 ;// ./node_modules/@wordpress/icons/build-module/library/plugins.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -354,7 +354,7 @@ const plugins = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(ex
  */
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -555,7 +555,7 @@ function getPlugins(scope) {
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
