@@ -2,12 +2,12 @@
 /**
  * Multisite upgrade administration panel.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Multisite
  * @since 3.0.0
  */
 
-/** Load WordPress Administration Bootstrap */
+/** Load NotMattPress Administration Bootstrap */
 require_once __DIR__ . '/admin.php';
 
 require_once ABSPATH . WPINC . '/http.php';
@@ -21,7 +21,7 @@ get_current_screen()->add_help_tab(
 		'id'      => 'overview',
 		'title'   => __( 'Overview' ),
 		'content' =>
-			'<p>' . __( 'Only use this screen once you have updated to a new version of WordPress through Updates/Available Updates (via the Network Administration navigation menu or the Toolbar). Clicking the Upgrade Network button will step through each site in the network, five at a time, and make sure any database updates are applied.' ) . '</p>' .
+			'<p>' . __( 'Only use this screen once you have updated to a new version of NotMattPress through Updates/Available Updates (via the Network Administration navigation menu or the Toolbar). Clicking the Upgrade Network button will step through each site in the network, five at a time, and make sure any database updates are applied.' ) . '</p>' .
 			'<p>' . __( 'If a version update to core has not happened, clicking this button will not affect anything.' ) . '</p>' .
 			'<p>' . __( 'If this process fails for any reason, users logging in to their sites will force the same update.' ) . '</p>',
 	)
@@ -29,8 +29,8 @@ get_current_screen()->add_help_tab(
 
 get_current_screen()->set_help_sidebar(
 	'<p><strong>' . __( 'For more information:' ) . '</strong></p>' .
-	'<p>' . __( '<a href="https://developer.wordpress.org/advanced-administration/multisite/admin/#network-admin-updates-screen">Documentation on Upgrade Network</a>' ) . '</p>' .
-	'<p>' . __( '<a href="https://wordpress.org/support/forums/">Support forums</a>' ) . '</p>'
+	'<p>' . __( '<a href="https://developer.notmatt.press/advanced-administration/multisite/admin/#network-admin-updates-screen">Documentation on Upgrade Network</a>' ) . '</p>' .
+	'<p>' . __( '<a href="https://notmatt.press/support/forums/">Support forums</a>' ) . '</p>'
 );
 
 require_once ABSPATH . 'wp-admin/admin-header.php';
@@ -50,7 +50,7 @@ switch ( $action ) {
 
 		if ( $n < 5 ) {
 			/**
-			 * @global int $wp_db_version WordPress database version.
+			 * @global int $wp_db_version NotMattPress database version.
 			 */
 			global $wp_db_version;
 			update_site_option( 'wpmu_upgrade_site', $wp_db_version );
@@ -138,7 +138,7 @@ switch ( $action ) {
 		if ( (int) get_site_option( 'wpmu_upgrade_site' ) !== $GLOBALS['wp_db_version'] ) :
 			?>
 		<h2><?php _e( 'Database Update Required' ); ?></h2>
-		<p><?php _e( 'WordPress has been updated! Next and final step is to individually upgrade the sites in your network.' ); ?></p>
+		<p><?php _e( 'NotMattPress has been updated! Next and final step is to individually upgrade the sites in your network.' ); ?></p>
 		<?php endif; ?>
 
 		<p><?php _e( 'The database update process may take a little while, so please be patient.' ); ?></p>
