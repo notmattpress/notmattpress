@@ -1909,7 +1909,7 @@ const external_wp_hooks_namespaceObject = window["wp"]["hooks"];
 const external_wp_blockEditor_namespaceObject = window["wp"]["blockEditor"];
 ;// ./node_modules/@wordpress/editor/build-module/store/defaults.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -1920,7 +1920,7 @@ const external_wp_blockEditor_namespaceObject = window["wp"]["blockEditor"];
  * @property {boolean}       richEditingEnabled    Whether rich editing is enabled or not
  * @property {boolean}       codeEditingEnabled    Whether code editing is enabled or not
  * @property {boolean}       fontLibraryEnabled    Whether the font library is enabled or not.
- * @property {boolean}       enableCustomFields    Whether the WordPress custom fields are enabled or not.
+ * @property {boolean}       enableCustomFields    Whether the NotMattPress custom fields are enabled or not.
  *                                                 true  = the user has opted to show the Custom Fields panel at the bottom of the editor.
  *                                                 false = the user has opted to hide the Custom Fields panel at the bottom of the editor.
  *                                                 undefined = the current environment does not support Custom Fields, so the option toggle in Preferences -> Panels to enable the Custom Fields panel is not displayed.
@@ -1943,7 +1943,7 @@ const EDITOR_SETTINGS_DEFAULTS = {
 
 ;// ./node_modules/@wordpress/editor/build-module/dataviews/store/reducer.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 function isReady(state = {}, action) {
@@ -2014,7 +2014,7 @@ function fields(state = {}, action) {
 
 ;// ./node_modules/@wordpress/editor/build-module/store/reducer.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -2459,7 +2459,7 @@ const external_wp_primitives_namespaceObject = window["wp"]["primitives"];
 const external_ReactJSXRuntime_namespaceObject = window["ReactJSXRuntime"];
 ;// ./node_modules/@wordpress/icons/build-module/library/header.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -2474,7 +2474,7 @@ const header = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(ext
 
 ;// ./node_modules/@wordpress/icons/build-module/library/footer.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -2490,7 +2490,7 @@ const footer = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(ext
 
 ;// ./node_modules/@wordpress/icons/build-module/library/sidebar.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -2505,7 +2505,7 @@ const sidebar = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(ex
 
 ;// ./node_modules/@wordpress/icons/build-module/library/symbol-filled.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -2520,7 +2520,7 @@ const symbolFilled = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.js
 
 ;// ./node_modules/@wordpress/editor/build-module/utils/get-template-part-icon.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 /**
@@ -2545,17 +2545,17 @@ function getTemplatePartIcon(iconName) {
 const external_wp_privateApis_namespaceObject = window["wp"]["privateApis"];
 ;// ./node_modules/@wordpress/editor/build-module/lock-unlock.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 const {
   lock,
   unlock
-} = (0,external_wp_privateApis_namespaceObject.__dangerousOptInToUnstableAPIsOnlyForCoreModules)('I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of WordPress.', '@wordpress/editor');
+} = (0,external_wp_privateApis_namespaceObject.__dangerousOptInToUnstableAPIsOnlyForCoreModules)('I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of NotMattPress.', '@wordpress/editor');
 
 ;// ./node_modules/@wordpress/icons/build-module/library/layout.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -2570,7 +2570,7 @@ const layout = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(ext
 
 ;// ./node_modules/@wordpress/editor/build-module/utils/get-template-info.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 /**
@@ -2622,7 +2622,7 @@ const getTemplateInfo = params => {
 
 ;// ./node_modules/@wordpress/editor/build-module/store/selectors.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -3063,7 +3063,7 @@ function isEditedPostSaveable(state) {
   //  See: `isEditedPostPublishable` (includes `isEditedPostDirty` condition)
   //  See: <PostSavedState /> (`forceIsDirty` prop)
   //  See: <PostPublishButton /> (`forceIsDirty` prop)
-  //  See: https://github.com/WordPress/gutenberg/pull/4184.
+  //  See: https://github.com/NotMattPress/gutenberg/pull/4184.
 
   return !!getEditedPostAttribute(state, 'title') || !!getEditedPostAttribute(state, 'excerpt') || !isEditedPostEmpty(state) || external_wp_element_namespaceObject.Platform.OS === 'native';
 }
@@ -3212,7 +3212,7 @@ function isEditedPostDateFloating(state) {
   // This should be the status of the persisted post
   // It shouldn't use the "edited" status otherwise it breaks the
   // inferred post data floating status
-  // See https://github.com/WordPress/gutenberg/issues/28083.
+  // See https://github.com/NotMattPress/gutenberg/issues/28083.
   const status = getCurrentPost(state).status;
   if (status === 'draft' || status === 'auto-draft' || status === 'pending') {
     return date === modified || date === null;
@@ -3320,11 +3320,11 @@ function getEditedPostPreviewLink(state) {
     return;
   }
   let previewLink = getAutosaveAttribute(state, 'preview_link');
-  // Fix for issue: https://github.com/WordPress/gutenberg/issues/33616
+  // Fix for issue: https://github.com/NotMattPress/gutenberg/issues/33616
   // If the post is draft, ignore the preview link from the autosave record,
   // because the preview could be a stale autosave if the post was switched from
   // published to draft.
-  // See: https://github.com/WordPress/gutenberg/pull/37952.
+  // See: https://github.com/NotMattPress/gutenberg/pull/37952.
   if (!previewLink || 'draft' === getCurrentPost(state).status) {
     previewLink = getEditedPostAttribute(state, 'link');
     if (previewLink) {
@@ -4185,7 +4185,7 @@ const external_wp_i18n_namespaceObject = window["wp"]["i18n"];
  * Keys are crucially prefixed with 'wp-autosave-' so that wp-login.php's
  * `loggedout` handler can clear sessionStorage of any user-private content.
  *
- * @see https://github.com/WordPress/wordpress-develop/blob/6dad32d2aed47e6c0cf2aee8410645f6d7aba6bd/src/wp-login.php#L103
+ * @see https://github.com/NotMattPress/wordpress-develop/blob/6dad32d2aed47e6c0cf2aee8410645f6d7aba6bd/src/wp-login.php#L103
  *
  * @param {string}  postId    Post ID.
  * @param {boolean} isPostNew Whether post new.
@@ -4211,7 +4211,7 @@ function localAutosaveClear(postId, isPostNew) {
 
 ;// ./node_modules/@wordpress/editor/build-module/store/utils/notice-builder.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -4335,7 +4335,7 @@ function getNotificationArgumentsForTrashFail(data) {
 
 ;// ./node_modules/@wordpress/editor/build-module/store/actions.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -4413,7 +4413,7 @@ function __experimentalTearDownEditor() {
  * Returns an action object used in signalling that the latest version of the
  * post has been received, either by initialization or save.
  *
- * @deprecated Since WordPress 6.0.
+ * @deprecated Since NotMattPress 6.0.
  */
 function resetPost() {
   external_wp_deprecated_default()("wp.data.dispatch( 'core/editor' ).resetPost", {
@@ -4615,7 +4615,7 @@ const savePost = (options = {}) => async ({
 /**
  * Action for refreshing the current post.
  *
- * @deprecated Since WordPress 6.0.
+ * @deprecated Since NotMattPress 6.0.
  */
 function refreshPost() {
   external_wp_deprecated_default()("wp.data.dispatch( 'core/editor' ).refreshPost", {
@@ -4739,7 +4739,7 @@ const undo = () => ({
 /**
  * Action that creates an undo history record.
  *
- * @deprecated Since WordPress 6.0
+ * @deprecated Since NotMattPress 6.0
  */
 function createUndoLevel() {
   external_wp_deprecated_default()("wp.data.dispatch( 'core/editor' ).createUndoLevel", {
@@ -5439,7 +5439,7 @@ function isTemplateRevertable(templateOrTemplatePart) {
 
 ;// ./node_modules/@wordpress/icons/build-module/library/external.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -5454,7 +5454,7 @@ const external = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(e
 
 ;// ./node_modules/@wordpress/fields/build-module/actions/view-post.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -5489,7 +5489,7 @@ const viewPost = {
 
 ;// ./node_modules/@wordpress/fields/build-module/actions/view-post-revisions.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -5539,7 +5539,7 @@ const viewPostRevisions = {
 const external_wp_components_namespaceObject = window["wp"]["components"];
 ;// ./node_modules/@wordpress/icons/build-module/library/check.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -6059,7 +6059,7 @@ function paramCase(input, options) {
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -6110,7 +6110,7 @@ const getCleanTemplatePartSlug = title => {
 
 ;// ./node_modules/@wordpress/fields/build-module/components/create-template-part-modal/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -6306,7 +6306,7 @@ function CreateTemplatePartModalContents({
 
 ;// ./node_modules/@wordpress/fields/build-module/actions/utils.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -6354,7 +6354,7 @@ function isTemplateRemovable(template) {
 
 ;// ./node_modules/@wordpress/fields/build-module/actions/duplicate-template-part.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -6423,17 +6423,17 @@ const duplicateTemplatePart = {
 const external_wp_patterns_namespaceObject = window["wp"]["patterns"];
 ;// ./node_modules/@wordpress/fields/build-module/lock-unlock.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 const {
   lock: lock_unlock_lock,
   unlock: lock_unlock_unlock
-} = (0,external_wp_privateApis_namespaceObject.__dangerousOptInToUnstableAPIsOnlyForCoreModules)('I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of WordPress.', '@wordpress/fields');
+} = (0,external_wp_privateApis_namespaceObject.__dangerousOptInToUnstableAPIsOnlyForCoreModules)('I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of NotMattPress.', '@wordpress/fields');
 
 ;// ./node_modules/@wordpress/fields/build-module/actions/duplicate-pattern.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 // @ts-ignore
@@ -6477,7 +6477,7 @@ const duplicatePattern = {
 
 ;// ./node_modules/@wordpress/fields/build-module/actions/rename-post.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -6722,7 +6722,7 @@ function getFieldTypeDefinition(type) {
 
 ;// ./node_modules/@wordpress/dataviews/build-module/dataform-controls/datetime.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -6765,7 +6765,7 @@ function DateTime({
 
 ;// ./node_modules/@wordpress/dataviews/build-module/dataform-controls/integer.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -6804,7 +6804,7 @@ function Integer({
 
 ;// ./node_modules/@wordpress/dataviews/build-module/dataform-controls/radio.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -6843,7 +6843,7 @@ function Radio({
 
 ;// ./node_modules/@wordpress/dataviews/build-module/dataform-controls/select.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -6895,7 +6895,7 @@ function Select({
 
 ;// ./node_modules/@wordpress/dataviews/build-module/dataform-controls/text.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -7073,7 +7073,7 @@ function isItemValid(item, fields, form) {
 
 ;// ./node_modules/@wordpress/dataviews/build-module/components/dataform-context/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -7108,7 +7108,7 @@ function isCombinedField(field) {
 
 ;// ./node_modules/@wordpress/dataviews/build-module/dataforms-layouts/regular/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -7212,7 +7212,7 @@ function FormRegularField({
 
 ;// ./node_modules/@wordpress/icons/build-module/library/close-small.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -7227,7 +7227,7 @@ const closeSmall = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)
 
 ;// ./node_modules/@wordpress/dataviews/build-module/dataforms-layouts/panel/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -7488,7 +7488,7 @@ function normalizeFormFields(form) {
 
 ;// ./node_modules/@wordpress/dataviews/build-module/dataforms-layouts/data-form-layout.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -7541,7 +7541,7 @@ function DataFormLayout({
 
 ;// ./node_modules/@wordpress/dataviews/build-module/components/dataform/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -7575,7 +7575,7 @@ function DataForm({
 
 ;// ./node_modules/@wordpress/fields/build-module/fields/order/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -7598,7 +7598,7 @@ const orderField = {
 
 ;// ./node_modules/@wordpress/fields/build-module/actions/reorder-page.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -7717,7 +7717,7 @@ const reorderPage = {
 const external_wp_blob_namespaceObject = window["wp"]["blob"];
 ;// ./node_modules/@wordpress/icons/build-module/library/download.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -7738,7 +7738,7 @@ const download = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(e
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -7788,7 +7788,7 @@ const exportPattern = {
 
 ;// ./node_modules/@wordpress/icons/build-module/library/backup.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -7803,7 +7803,7 @@ const backup = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(ext
 
 ;// ./node_modules/@wordpress/fields/build-module/actions/restore-post.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -7912,7 +7912,7 @@ const restorePost = {
 
 ;// ./node_modules/@wordpress/fields/build-module/actions/reset-post.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -7939,7 +7939,7 @@ const reset_post_isTemplateRevertable = templateOrTemplatePart => {
 };
 
 /**
- *  Copied - pasted from https://github.com/WordPress/gutenberg/blob/bf1462ad37d4637ebbf63270b9c244b23c69e2a8/packages/editor/src/store/private-actions.js#L233-L365
+ *  Copied - pasted from https://github.com/NotMattPress/gutenberg/blob/bf1462ad37d4637ebbf63270b9c244b23c69e2a8/packages/editor/src/store/private-actions.js#L233-L365
  *
  * @param {Object}  template            The template to revert.
  * @param {Object}  [options]
@@ -8114,7 +8114,7 @@ const resetPostAction = {
 
 ;// ./node_modules/@wordpress/icons/build-module/library/trash.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -8131,7 +8131,7 @@ const trash = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(exte
 
 ;// ./node_modules/@wordpress/fields/build-module/mutation/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -8263,7 +8263,7 @@ const editPostWithNotices = async (postsWithUpdates, notice, callbacks) => {
 
 ;// ./node_modules/@wordpress/fields/build-module/actions/delete-post.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -8390,7 +8390,7 @@ const deletePostAction = {
 
 ;// ./node_modules/@wordpress/fields/build-module/actions/trash-post.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -8531,7 +8531,7 @@ const trash_post_trashPost = {
 
 ;// ./node_modules/@wordpress/fields/build-module/actions/permanently-delete-post.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -8679,7 +8679,7 @@ const permanentlyDeletePost = {
 const external_wp_mediaUtils_namespaceObject = window["wp"]["mediaUtils"];
 ;// ./node_modules/@wordpress/icons/build-module/library/line-solid.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -8694,7 +8694,7 @@ const lineSolid = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(
 
 ;// ./node_modules/@wordpress/fields/build-module/fields/featured-image/featured-image-edit.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -8799,7 +8799,7 @@ const FeaturedImageEdit = ({
 
 ;// ./node_modules/@wordpress/fields/build-module/fields/featured-image/featured-image-view.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -8833,7 +8833,7 @@ const FeaturedImageView = ({
 
 ;// ./node_modules/@wordpress/fields/build-module/fields/featured-image/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -8862,7 +8862,7 @@ const featuredImageField = {
 function clsx_r(e){var t,f,n="";if("string"==typeof e||"number"==typeof e)n+=e;else if("object"==typeof e)if(Array.isArray(e)){var o=e.length;for(t=0;t<o;t++)e[t]&&(f=clsx_r(e[t]))&&(n&&(n+=" "),n+=f)}else for(f in e)e[f]&&(n&&(n+=" "),n+=f);return n}function clsx(){for(var e,t,f=0,n="",o=arguments.length;f<o;f++)(e=arguments[f])&&(t=clsx_r(e))&&(n&&(n+=" "),n+=t);return n}/* harmony default export */ const dist_clsx = (clsx);
 ;// ./node_modules/@wordpress/icons/build-module/library/comment-author-avatar.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -8884,7 +8884,7 @@ const commentAuthorAvatar = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceOb
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -8944,7 +8944,7 @@ function AuthorView({
 
 ;// ./node_modules/@wordpress/fields/build-module/fields/author/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -8974,7 +8974,7 @@ const authorField = {
 
 ;// ./node_modules/@wordpress/icons/build-module/library/drafts.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -8991,7 +8991,7 @@ const drafts = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(ext
 
 ;// ./node_modules/@wordpress/icons/build-module/library/scheduled.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -9008,7 +9008,7 @@ const scheduled = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(
 
 ;// ./node_modules/@wordpress/icons/build-module/library/pending.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -9025,7 +9025,7 @@ const pending = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(ex
 
 ;// ./node_modules/@wordpress/icons/build-module/library/not-allowed.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -9042,7 +9042,7 @@ const notAllowed = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)
 
 ;// ./node_modules/@wordpress/icons/build-module/library/published.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -9059,12 +9059,12 @@ const published = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(
 
 ;// ./node_modules/@wordpress/fields/build-module/fields/status/status-elements.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
 
-// See https://github.com/WordPress/gutenberg/issues/55886
+// See https://github.com/NotMattPress/gutenberg/issues/55886
 // We do not support custom statutes at the moment.
 const STATUSES = [{
   value: 'draft',
@@ -9100,7 +9100,7 @@ const STATUSES = [{
 
 ;// ./node_modules/@wordpress/fields/build-module/fields/status/status-view.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -9135,7 +9135,7 @@ function StatusView({
 
 ;// ./node_modules/@wordpress/fields/build-module/fields/status/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -9167,7 +9167,7 @@ const statusField = {
 
 ;// ./node_modules/@wordpress/fields/build-module/fields/date/date-view.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -9230,7 +9230,7 @@ const DateView = ({
 
 ;// ./node_modules/@wordpress/fields/build-module/fields/date/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -9254,7 +9254,7 @@ const dateField = {
 
 ;// ./node_modules/@wordpress/icons/build-module/library/copy-small.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -9271,7 +9271,7 @@ const copySmall = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(
 
 ;// ./node_modules/@wordpress/fields/build-module/fields/slug/utils.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 /**
@@ -9288,7 +9288,7 @@ const getSlug = item => {
 
 ;// ./node_modules/@wordpress/fields/build-module/fields/slug/slug-edit.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -9351,7 +9351,7 @@ const SlugEdit = ({
         children: [/*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)("span", {
           children: (0,external_wp_i18n_namespaceObject.__)('Customize the last part of the Permalink.')
         }), /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(external_wp_components_namespaceObject.ExternalLink, {
-          href: "https://wordpress.org/documentation/article/page-post-settings-sidebar/#permalink",
+          href: "https://notmatt.press/documentation/article/page-post-settings-sidebar/#permalink",
           children: (0,external_wp_i18n_namespaceObject.__)('Learn more')
         })]
       }), /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(external_wp_components_namespaceObject.__experimentalInputControl, {
@@ -9412,7 +9412,7 @@ const SlugEdit = ({
 
 ;// ./node_modules/@wordpress/fields/build-module/fields/slug/slug-view.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -9438,7 +9438,7 @@ const SlugView = ({
 
 ;// ./node_modules/@wordpress/fields/build-module/fields/slug/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -9467,7 +9467,7 @@ var remove_accents = __webpack_require__(9681);
 var remove_accents_default = /*#__PURE__*/__webpack_require__.n(remove_accents);
 ;// ./node_modules/@wordpress/fields/build-module/fields/parent/utils.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -9487,7 +9487,7 @@ function getTitleWithFallbackName(post) {
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -9591,7 +9591,7 @@ function PageAttributesParent({
   }, [fieldValue, pageId, postId, postTypeSlug]);
 
   /**
-   * This logic has been copied from https://github.com/WordPress/gutenberg/blob/0249771b519d5646171fb9fae422006c8ab773f2/packages/editor/src/components/page-attributes/parent.js#L106.
+   * This logic has been copied from https://github.com/NotMattPress/gutenberg/blob/0249771b519d5646171fb9fae422006c8ab773f2/packages/editor/src/components/page-attributes/parent.js#L106.
    */
   const parentOptions = (0,external_wp_element_namespaceObject.useMemo)(() => {
     const getOptionsFromTree = (tree, level = 0) => {
@@ -9693,13 +9693,13 @@ const ParentEdit = ({
   return /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)("fieldset", {
     className: "fields-controls__parent",
     children: /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsxs)("div", {
-      children: [(0,external_wp_element_namespaceObject.createInterpolateElement)((0,external_wp_i18n_namespaceObject.sprintf)(/* translators: %1$s The home URL of the WordPress installation without the scheme. */
+      children: [(0,external_wp_element_namespaceObject.createInterpolateElement)((0,external_wp_i18n_namespaceObject.sprintf)(/* translators: %1$s The home URL of the NotMattPress installation without the scheme. */
       (0,external_wp_i18n_namespaceObject.__)('Child pages inherit characteristics from their parent, such as URL structure. For instance, if "Pricing" is a child of "Services", its URL would be %1$s<wbr />/services<wbr />/pricing.'), (0,external_wp_url_namespaceObject.filterURLForDisplay)(homeUrl).replace(/([/.])/g, '<wbr />$1')), {
         wbr: /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)("wbr", {})
       }), /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)("p", {
         children: (0,external_wp_element_namespaceObject.createInterpolateElement)((0,external_wp_i18n_namespaceObject.__)('They also show up as sub-items in the default navigation menu. <a>Learn more.</a>'), {
           a: /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(external_wp_components_namespaceObject.ExternalLink, {
-            href: (0,external_wp_i18n_namespaceObject.__)('https://wordpress.org/documentation/article/page-post-settings-sidebar/#page-attributes'),
+            href: (0,external_wp_i18n_namespaceObject.__)('https://notmatt.press/documentation/article/page-post-settings-sidebar/#page-attributes'),
             children: undefined
           })
         })
@@ -9713,7 +9713,7 @@ const ParentEdit = ({
 
 ;// ./node_modules/@wordpress/fields/build-module/fields/parent/parent-view.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -9746,7 +9746,7 @@ const ParentView = ({
 
 ;// ./node_modules/@wordpress/fields/build-module/fields/parent/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -9773,7 +9773,7 @@ const parentField = {
 
 ;// ./node_modules/@wordpress/fields/build-module/fields/comment-status/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -9809,7 +9809,7 @@ const commentStatusField = {
 
 ;// ./node_modules/@wordpress/fields/build-module/fields/template/template-edit.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 // @ts-ignore
@@ -9961,7 +9961,7 @@ const TemplateEdit = ({
 
 ;// ./node_modules/@wordpress/fields/build-module/fields/template/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 /**
@@ -9984,7 +9984,7 @@ const templateField = {
 
 ;// ./node_modules/@wordpress/fields/build-module/fields/password/edit.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -10043,7 +10043,7 @@ function PasswordEdit({
 
 ;// ./node_modules/@wordpress/fields/build-module/fields/password/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 /**
@@ -10071,7 +10071,7 @@ const passwordField = {
  */
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -10107,7 +10107,7 @@ function TitleView({
 
 ;// ./node_modules/@wordpress/fields/build-module/fields/page-title/view.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -10151,7 +10151,7 @@ function PageTitleView({
 
 ;// ./node_modules/@wordpress/fields/build-module/fields/page-title/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -10182,7 +10182,7 @@ const pageTitleField = {
 
 ;// ./node_modules/@wordpress/fields/build-module/fields/template-title/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -10213,7 +10213,7 @@ const templateTitleField = {
 
 ;// ./node_modules/@wordpress/icons/build-module/icon/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -10245,7 +10245,7 @@ function Icon({
 
 ;// ./node_modules/@wordpress/icons/build-module/library/lock-small.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -10262,7 +10262,7 @@ const lockSmall = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(
 
 ;// ./node_modules/@wordpress/fields/build-module/fields/pattern-title/view.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -10299,7 +10299,7 @@ function PatternTitleView({
 
 ;// ./node_modules/@wordpress/fields/build-module/fields/pattern-title/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -10330,7 +10330,7 @@ const patternTitleField = {
 
 ;// ./node_modules/@wordpress/fields/build-module/fields/title/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -10363,7 +10363,7 @@ const titleField = {
 
 ;// ./node_modules/@wordpress/editor/build-module/components/provider/with-registry-provider.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -10424,7 +10424,7 @@ const withRegistryProvider = (0,external_wp_compose_namespaceObject.createHigher
  */
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -10569,7 +10569,7 @@ const inserterMediaCategories = [{
     });
     const response = await window.fetch(url, {
       headers: {
-        'User-Agent': 'WordPress/inserter-media-fetch'
+        'User-Agent': 'NotMattPress/inserter-media-fetch'
       }
     });
     const jsonResponse = await response.json();
@@ -10587,7 +10587,7 @@ const inserterMediaCategories = [{
   },
   getReportUrl: ({
     sourceId
-  }) => `https://wordpress.org/openverse/image/${sourceId}/report/`,
+  }) => `https://notmatt.press/openverse/image/${sourceId}/report/`,
   isExternalResource: true
 }];
 /* harmony default export */ const media_categories = (inserterMediaCategories);
@@ -10687,7 +10687,7 @@ function v4(options, buf, offset) {
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -10782,7 +10782,7 @@ function mediaUpload({
 
 ;// ./node_modules/@wordpress/editor/build-module/utils/media-sideload/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -10842,7 +10842,7 @@ function isPlainObject(o) {
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -11025,7 +11025,7 @@ function GlobalStylesProvider({
 
 ;// ./node_modules/@wordpress/editor/build-module/components/provider/use-block-editor-settings.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -11261,7 +11261,7 @@ function useBlockEditorSettings(settings, postType, postId, renderingMode) {
 
 ;// ./node_modules/@wordpress/editor/build-module/components/provider/use-post-content-blocks.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -11289,7 +11289,7 @@ function usePostContentBlocks() {
 
 ;// ./node_modules/@wordpress/editor/build-module/components/provider/disable-non-page-content-blocks.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -11408,7 +11408,7 @@ function DisableNonPageContentBlocks() {
 
 ;// ./node_modules/@wordpress/editor/build-module/components/provider/navigation-block-editing-mode.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -11443,7 +11443,7 @@ function NavigationBlockEditingMode() {
 
 ;// ./node_modules/@wordpress/editor/build-module/components/provider/use-hide-blocks-from-inserter.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -11492,7 +11492,7 @@ function useHideBlocksFromInserter(postType, mode) {
 
 ;// ./node_modules/@wordpress/icons/build-module/library/keyboard.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -11509,7 +11509,7 @@ const keyboard = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsxs)(
 
 ;// ./node_modules/@wordpress/icons/build-module/library/list-view.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -11524,7 +11524,7 @@ const listView = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(e
 
 ;// ./node_modules/@wordpress/icons/build-module/library/code.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -11539,7 +11539,7 @@ const code = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(exter
 
 ;// ./node_modules/@wordpress/icons/build-module/library/drawer-left.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -11558,7 +11558,7 @@ const drawerLeft = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)
 
 ;// ./node_modules/@wordpress/icons/build-module/library/drawer-right.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -11577,7 +11577,7 @@ const drawerRight = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx
 
 ;// ./node_modules/@wordpress/icons/build-module/library/block-default.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -11592,7 +11592,7 @@ const blockDefault = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.js
 
 ;// ./node_modules/@wordpress/icons/build-module/library/format-list-bullets.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -11607,7 +11607,7 @@ const formatListBullets = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObje
 
 ;// ./node_modules/@wordpress/icons/build-module/library/pencil.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -11630,7 +11630,7 @@ const pencil = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(ext
 
 ;// ./node_modules/@wordpress/icons/build-module/library/symbol.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -11645,7 +11645,7 @@ const symbol = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(ext
 
 ;// ./node_modules/@wordpress/icons/build-module/library/page.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -11662,7 +11662,7 @@ const page = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsxs)(exte
 
 ;// ./node_modules/@wordpress/icons/build-module/library/rotate-right.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -11677,7 +11677,7 @@ const rotateRight = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx
 
 ;// ./node_modules/@wordpress/icons/build-module/library/rotate-left.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -11694,7 +11694,7 @@ const rotateLeft = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)
 const external_wp_commands_namespaceObject = window["wp"]["commands"];
 ;// ./node_modules/@wordpress/icons/build-module/library/star-filled.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -11709,7 +11709,7 @@ const starFilled = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)
 
 ;// ./node_modules/@wordpress/icons/build-module/library/star-empty.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -11730,7 +11730,7 @@ const external_wp_viewport_namespaceObject = window["wp"]["viewport"];
 const external_wp_plugins_namespaceObject = window["wp"]["plugins"];
 ;// ./node_modules/@wordpress/interface/build-module/store/deprecated.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 function normalizeComplementaryAreaScope(scope) {
@@ -11764,7 +11764,7 @@ function normalizeComplementaryAreaName(scope, name) {
 
 ;// ./node_modules/@wordpress/interface/build-module/store/actions.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -11972,7 +11972,7 @@ function closeModal() {
 
 ;// ./node_modules/@wordpress/interface/build-module/store/selectors.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -12064,7 +12064,7 @@ function isModalActive(state, modalName) {
 
 ;// ./node_modules/@wordpress/interface/build-module/store/reducer.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 function complementaryAreas(state = {}, action) {
@@ -12132,7 +12132,7 @@ const constants_STORE_NAME = 'core/interface';
 
 ;// ./node_modules/@wordpress/interface/build-module/store/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -12147,7 +12147,7 @@ const constants_STORE_NAME = 'core/interface';
 /**
  * Store definition for the interface namespace.
  *
- * @see https://github.com/WordPress/gutenberg/blob/HEAD/packages/data/README.md#createReduxStore
+ * @see https://github.com/NotMattPress/gutenberg/blob/HEAD/packages/data/README.md#createReduxStore
  *
  * @type {Object}
  */
@@ -12163,7 +12163,7 @@ const store = (0,external_wp_data_namespaceObject.createReduxStore)(constants_ST
 
 ;// ./node_modules/@wordpress/interface/build-module/components/complementary-area-toggle/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -12229,7 +12229,7 @@ function ComplementaryAreaToggle({
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -12257,7 +12257,7 @@ const ComplementaryAreaHeader = ({
 
 ;// ./node_modules/@wordpress/interface/build-module/components/action-item/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -12283,7 +12283,7 @@ function ActionItemSlot({
       // It ensures that menu items created by plugin authors aren't
       // duplicated with automatically injected menu items coming
       // from pinnable plugin sidebars.
-      // @see https://github.com/WordPress/gutenberg/issues/14457
+      // @see https://github.com/NotMattPress/gutenberg/issues/14457
       const initializedByPlugins = [];
       external_wp_element_namespaceObject.Children.forEach(fills, ({
         props: {
@@ -12334,7 +12334,7 @@ ActionItem.Slot = ActionItemSlot;
 
 ;// ./node_modules/@wordpress/interface/build-module/components/complementary-area-more-menu-item/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -12348,7 +12348,7 @@ ActionItem.Slot = ActionItemSlot;
 const PluginsMenuItem = ({
   // Menu item is marked with unstable prop for backward compatibility.
   // They are removed so they don't leak to DOM elements.
-  // @see https://github.com/WordPress/gutenberg/issues/14457
+  // @see https://github.com/NotMattPress/gutenberg/issues/14457
   __unstableExplicitMenuItem,
   __unstableTarget,
   ...restProps
@@ -12386,7 +12386,7 @@ function ComplementaryAreaMoreMenuItem({
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -12423,7 +12423,7 @@ PinnedItems.Slot = PinnedItemsSlot;
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -12688,7 +12688,7 @@ ComplementaryArea.Slot = ComplementaryAreaSlot;
 
 ;// ./node_modules/@wordpress/interface/build-module/components/fullscreen-mode/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 const FullscreenMode = ({
@@ -12697,7 +12697,7 @@ const FullscreenMode = ({
   (0,external_wp_element_namespaceObject.useEffect)(() => {
     let isSticky = false;
     // `is-fullscreen-mode` is set in PHP as a body class by Gutenberg, and this causes
-    // `sticky-menu` to be applied by WordPress and prevents the admin menu being scrolled
+    // `sticky-menu` to be applied by NotMattPress and prevents the admin menu being scrolled
     // even if `is-fullscreen-mode` is then removed. Let's remove `sticky-menu` here as
     // a consequence of the FullscreenMode setup.
     if (document.body.classList.contains('sticky-menu')) {
@@ -12728,7 +12728,7 @@ const FullscreenMode = ({
 
 ;// ./node_modules/@wordpress/interface/build-module/components/navigable-region/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -12764,7 +12764,7 @@ NavigableRegion.displayName = 'NavigableRegion';
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -12964,7 +12964,7 @@ function InterfaceSkeleton({
 
 ;// ./node_modules/@wordpress/editor/build-module/components/pattern-rename-modal/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -13015,7 +13015,7 @@ function PatternRenameModal() {
 
 ;// ./node_modules/@wordpress/editor/build-module/components/pattern-duplicate-modal/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -13067,7 +13067,7 @@ function PatternDuplicateModal() {
 
 ;// ./node_modules/@wordpress/editor/build-module/components/commands/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -13536,7 +13536,7 @@ function useCommands() {
 
 ;// ./node_modules/@wordpress/editor/build-module/components/block-removal-warnings/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -13601,7 +13601,7 @@ function BlockRemovalWarnings() {
 
 ;// ./node_modules/@wordpress/editor/build-module/components/start-page-options/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -13781,7 +13781,7 @@ function StartPageOptions() {
 const external_wp_keyboardShortcuts_namespaceObject = window["wp"]["keyboardShortcuts"];
 ;// ./node_modules/@wordpress/editor/build-module/components/keyboard-shortcut-help-modal/config.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 const textFormattingShortcuts = [{
@@ -13859,7 +13859,7 @@ const textFormattingShortcuts = [{
 const external_wp_keycodes_namespaceObject = window["wp"]["keycodes"];
 ;// ./node_modules/@wordpress/editor/build-module/components/keyboard-shortcut-help-modal/shortcut.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -13912,7 +13912,7 @@ function Shortcut({
 
 ;// ./node_modules/@wordpress/editor/build-module/components/keyboard-shortcut-help-modal/dynamic-shortcut.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -13959,7 +13959,7 @@ function DynamicShortcut({
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -14078,7 +14078,7 @@ function KeyboardShortcutHelpModal() {
 
 ;// ./node_modules/@wordpress/editor/build-module/components/block-settings-menu/content-only-settings-menu.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -14217,7 +14217,7 @@ function ContentOnlySettingsMenu() {
 
 ;// ./node_modules/@wordpress/editor/build-module/components/start-template-options/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -14407,7 +14407,7 @@ function StartTemplateOptions() {
 
 ;// ./node_modules/@wordpress/editor/build-module/components/global-keyboard-shortcuts/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -14519,7 +14519,7 @@ function EditorKeyboardShortcuts() {
 
 ;// ./node_modules/@wordpress/editor/build-module/components/template-part-menu-items/convert-to-regular.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -14551,7 +14551,7 @@ function ConvertToRegularBlocks({
 
 ;// ./node_modules/@wordpress/editor/build-module/components/template-part-menu-items/convert-to-template-part.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -14621,7 +14621,7 @@ function ConvertToTemplatePart({
 
 ;// ./node_modules/@wordpress/editor/build-module/components/template-part-menu-items/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -14673,7 +14673,7 @@ function TemplatePartConverterMenuItem({
 
 ;// ./node_modules/@wordpress/editor/build-module/components/provider/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -15012,7 +15012,7 @@ function EditorProvider(props) {
 
 ;// ./node_modules/@wordpress/editor/build-module/dataviews/fields/content-preview/content-preview-view.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -15106,7 +15106,7 @@ function PostPreviewView({
 
 ;// ./node_modules/@wordpress/editor/build-module/dataviews/fields/content-preview/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -15126,7 +15126,7 @@ const postPreviewField = {
 
 ;// ./node_modules/@wordpress/editor/build-module/dataviews/store/private-actions.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -15221,7 +15221,7 @@ const registerPostTypeSchema = postType => async ({
 
 ;// ./node_modules/@wordpress/editor/build-module/store/private-actions.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -15580,7 +15580,7 @@ var fast_deep_equal = __webpack_require__(5215);
 var fast_deep_equal_default = /*#__PURE__*/__webpack_require__.n(fast_deep_equal);
 ;// ./node_modules/@wordpress/icons/build-module/library/navigation.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -15595,7 +15595,7 @@ const navigation = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)
 
 ;// ./node_modules/@wordpress/icons/build-module/library/verse.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -15633,7 +15633,7 @@ function isEntityReady(state, kind, name) {
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -15827,7 +15827,7 @@ const getDefaultRenderingMode = (0,external_wp_data_namespaceObject.createRegist
 
 ;// ./node_modules/@wordpress/editor/build-module/store/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -15845,7 +15845,7 @@ const getDefaultRenderingMode = (0,external_wp_data_namespaceObject.createRegist
 /**
  * Post editor data store configuration.
  *
- * @see https://github.com/WordPress/gutenberg/blob/HEAD/packages/data/README.md#registerStore
+ * @see https://github.com/NotMattPress/gutenberg/blob/HEAD/packages/data/README.md#registerStore
  */
 const storeConfig = {
   reducer: store_reducer,
@@ -15856,7 +15856,7 @@ const storeConfig = {
 /**
  * Store definition for the editor namespace.
  *
- * @see https://github.com/WordPress/gutenberg/blob/HEAD/packages/data/README.md#createReduxStore
+ * @see https://github.com/NotMattPress/gutenberg/blob/HEAD/packages/data/README.md#createReduxStore
  */
 const store_store = (0,external_wp_data_namespaceObject.createReduxStore)(STORE_NAME, {
   ...storeConfig
@@ -15867,7 +15867,7 @@ unlock(store_store).registerPrivateSelectors(store_private_selectors_namespaceOb
 
 ;// ./node_modules/@wordpress/editor/build-module/hooks/custom-sources-backwards-compatibility.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -15887,7 +15887,7 @@ unlock(store_store).registerPrivateSelectors(store_private_selectors_namespaceOb
  * Object whose keys are the names of block attributes, where each value
  * represents the meta key to which the block attribute is intended to save.
  *
- * @see https://developer.wordpress.org/reference/functions/register_meta/
+ * @see https://developer.notmatt.press/reference/functions/register_meta/
  *
  * @typedef {Object<string,string>} WPMetaAttributeMapping
  */
@@ -15957,7 +15957,7 @@ function shimAttributeSource(settings) {
 
 ;// ./node_modules/@wordpress/editor/build-module/components/autocompleters/user.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -16015,7 +16015,7 @@ function getUserLabel(user) {
 
 ;// ./node_modules/@wordpress/editor/build-module/hooks/default-autocompleters.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -16034,7 +16034,7 @@ function setDefaultCompleters(completers = []) {
 
 ;// ./node_modules/@wordpress/editor/build-module/hooks/media-upload.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -16042,7 +16042,7 @@ function setDefaultCompleters(completers = []) {
 
 ;// ./node_modules/@wordpress/editor/build-module/hooks/pattern-overrides.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -16137,7 +16137,7 @@ function ControlsWithStoreSubscription(props) {
 
 ;// ./node_modules/@wordpress/editor/build-module/components/autosave-monitor/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -16259,7 +16259,7 @@ class AutosaveMonitor extends external_wp_element_namespaceObject.Component {
 
 ;// ./node_modules/@wordpress/icons/build-module/library/chevron-right-small.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -16274,7 +16274,7 @@ const chevronRightSmall = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObje
 
 ;// ./node_modules/@wordpress/icons/build-module/library/chevron-left-small.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -16291,7 +16291,7 @@ const chevronLeftSmall = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObjec
 const external_wp_dom_namespaceObject = window["wp"]["dom"];
 ;// ./node_modules/@wordpress/editor/build-module/utils/pageTypeBadge.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -16336,7 +16336,7 @@ function usePageTypeBadge(postId) {
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -16571,7 +16571,7 @@ const TableOfContentsItem = ({
 
 ;// ./node_modules/@wordpress/editor/build-module/components/document-outline/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -16819,7 +16819,7 @@ function DocumentOutline({
 
 ;// ./node_modules/@wordpress/editor/build-module/components/document-outline/check.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -16849,7 +16849,7 @@ function DocumentOutlineCheck({
 
 ;// ./node_modules/@wordpress/editor/build-module/components/global-keyboard-shortcuts/register-shortcuts.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -16986,7 +16986,7 @@ function EditorKeyboardShortcutsRegister() {
 
 ;// ./node_modules/@wordpress/icons/build-module/library/redo.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -17001,7 +17001,7 @@ const redo_redo = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(
 
 ;// ./node_modules/@wordpress/icons/build-module/library/undo.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -17016,7 +17016,7 @@ const undo_undo = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(
 
 ;// ./node_modules/@wordpress/editor/build-module/components/editor-history/redo.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -17046,7 +17046,7 @@ function EditorHistoryRedo(props, ref) {
     shortcut: shortcut
     // If there are no redo levels we don't want to actually disable this
     // button, because it will remove focus for keyboard users.
-    // See: https://github.com/WordPress/gutenberg/issues/3486
+    // See: https://github.com/NotMattPress/gutenberg/issues/3486
     ,
     "aria-disabled": !hasRedo,
     onClick: hasRedo ? redo : undefined,
@@ -17068,7 +17068,7 @@ function EditorHistoryRedo(props, ref) {
 
 ;// ./node_modules/@wordpress/editor/build-module/components/editor-history/undo.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -17097,7 +17097,7 @@ function EditorHistoryUndo(props, ref) {
     shortcut: external_wp_keycodes_namespaceObject.displayShortcut.primary('z')
     // If there are no undo levels we don't want to actually disable this
     // button, because it will remove focus for keyboard users.
-    // See: https://github.com/WordPress/gutenberg/issues/3486
+    // See: https://github.com/NotMattPress/gutenberg/issues/3486
     ,
     "aria-disabled": !hasUndo,
     onClick: hasUndo ? undo : undefined,
@@ -17119,7 +17119,7 @@ function EditorHistoryUndo(props, ref) {
 
 ;// ./node_modules/@wordpress/editor/build-module/components/template-validation-notice/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -17168,7 +17168,7 @@ function TemplateValidationNotice() {
 
 ;// ./node_modules/@wordpress/editor/build-module/components/editor-notices/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -17223,7 +17223,7 @@ function EditorNotices() {
 
 ;// ./node_modules/@wordpress/editor/build-module/components/editor-snackbars/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -17255,7 +17255,7 @@ function EditorSnackbars() {
 
 ;// ./node_modules/@wordpress/editor/build-module/components/entities-saved-states/entity-record-item.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -17326,7 +17326,7 @@ function EntityRecordItem({
 
 ;// ./node_modules/@wordpress/editor/build-module/components/entities-saved-states/entity-type-list.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -17418,7 +17418,7 @@ function EntityTypeList({
 
 ;// ./node_modules/@wordpress/editor/build-module/components/entities-saved-states/hooks/use-is-dirty.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -17502,7 +17502,7 @@ const useIsDirty = () => {
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -17687,7 +17687,7 @@ function EntitiesSavedStatesExtensible({
 
 ;// ./node_modules/@wordpress/editor/build-module/components/error-boundary/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -17789,7 +17789,7 @@ class ErrorBoundary extends external_wp_element_namespaceObject.Component {
 
 ;// ./node_modules/@wordpress/editor/build-module/components/local-autosave-monitor/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -17980,7 +17980,7 @@ function LocalAutosaveMonitor() {
 
 ;// ./node_modules/@wordpress/editor/build-module/components/page-attributes/check.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -18022,7 +18022,7 @@ function PageAttributesCheck({
 
 ;// ./node_modules/@wordpress/editor/build-module/components/post-type-support-check/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -18070,7 +18070,7 @@ function PostTypeSupportCheck({
 
 ;// ./node_modules/@wordpress/editor/build-module/components/page-attributes/order.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -18140,7 +18140,7 @@ function PageAttributesOrderWithChecks() {
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -18166,7 +18166,7 @@ const PostPanelRow = (0,external_wp_element_namespaceObject.forwardRef)(({
 
 ;// ./node_modules/@wordpress/editor/build-module/utils/terms.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -18250,7 +18250,7 @@ const unescapeTerms = terms => {
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -18486,13 +18486,13 @@ function ParentRow() {
           title: (0,external_wp_i18n_namespaceObject.__)('Parent'),
           onClose: onClose
         }), /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsxs)("div", {
-          children: [(0,external_wp_element_namespaceObject.createInterpolateElement)((0,external_wp_i18n_namespaceObject.sprintf)(/* translators: %s: The home URL of the WordPress installation without the scheme. */
+          children: [(0,external_wp_element_namespaceObject.createInterpolateElement)((0,external_wp_i18n_namespaceObject.sprintf)(/* translators: %s: The home URL of the NotMattPress installation without the scheme. */
           (0,external_wp_i18n_namespaceObject.__)('Child pages inherit characteristics from their parent, such as URL structure. For instance, if "Pricing" is a child of "Services", its URL would be %s<wbr />/services<wbr />/pricing.'), (0,external_wp_url_namespaceObject.filterURLForDisplay)(homeUrl).replace(/([/.])/g, '<wbr />$1')), {
             wbr: /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)("wbr", {})
           }), /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)("p", {
             children: (0,external_wp_element_namespaceObject.createInterpolateElement)((0,external_wp_i18n_namespaceObject.__)('They also show up as sub-items in the default navigation menu. <a>Learn more.</a>'), {
               a: /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(external_wp_components_namespaceObject.ExternalLink, {
-                href: (0,external_wp_i18n_namespaceObject.__)('https://wordpress.org/documentation/article/page-post-settings-sidebar/#page-attributes')
+                href: (0,external_wp_i18n_namespaceObject.__)('https://notmatt.press/documentation/article/page-post-settings-sidebar/#page-attributes')
               })
             })
           })]
@@ -18505,7 +18505,7 @@ function ParentRow() {
 
 ;// ./node_modules/@wordpress/editor/build-module/components/page-attributes/panel.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -18553,7 +18553,7 @@ function PageAttributesPanel() {
 
 ;// ./node_modules/@wordpress/icons/build-module/library/add-template.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -18570,7 +18570,7 @@ const addTemplate = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx
 
 ;// ./node_modules/@wordpress/editor/build-module/components/post-template/create-new-template-modal.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -18690,7 +18690,7 @@ function CreateNewTemplateModal({
 
 ;// ./node_modules/@wordpress/editor/build-module/components/post-template/hooks.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -18773,7 +18773,7 @@ function useCurrentTemplateSlug() {
 
 ;// ./node_modules/@wordpress/editor/build-module/components/post-template/classic-theme.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -18985,7 +18985,7 @@ const external_wp_warning_namespaceObject = window["wp"]["warning"];
 var external_wp_warning_default = /*#__PURE__*/__webpack_require__.n(external_wp_warning_namespaceObject);
 ;// ./node_modules/@wordpress/editor/build-module/components/preferences-modal/enable-panel.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -19028,7 +19028,7 @@ function EnablePanelOption(props) {
 
 ;// ./node_modules/@wordpress/editor/build-module/components/preferences-modal/enable-plugin-document-setting-panel.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -19055,7 +19055,7 @@ EnablePluginDocumentSettingPanelOption.Slot = Slot;
 
 ;// ./node_modules/@wordpress/editor/build-module/components/plugin-document-setting-panel/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -19080,7 +19080,7 @@ const {
  * @param {string}                props.name                            Required. A machine-friendly name for the panel.
  * @param {string}                [props.className]                     An optional class name added to the row.
  * @param {string}                [props.title]                         The title of the panel
- * @param {WPBlockTypeIconRender} [props.icon=inherits from the plugin] The [Dashicon](https://developer.wordpress.org/resource/dashicons/) icon slug string, or an SVG WP element, to be rendered when the sidebar is pinned to toolbar.
+ * @param {WPBlockTypeIconRender} [props.icon=inherits from the plugin] The [Dashicon](https://developer.notmatt.press/resource/dashicons/) icon slug string, or an SVG WP element, to be rendered when the sidebar is pinned to toolbar.
  * @param {React.ReactNode}       props.children                        Children to be rendered
  *
  * @example
@@ -19176,7 +19176,7 @@ PluginDocumentSettingPanel.Slot = plugin_document_setting_panel_Slot;
 
 ;// ./node_modules/@wordpress/editor/build-module/components/block-settings-menu/plugin-block-settings-menu-item.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -19202,7 +19202,7 @@ const shouldRenderItem = (selectedBlocks, allowedBlocks) => !Array.isArray(allow
  *
  * @param {Object}                props                 Component props.
  * @param {Array}                 [props.allowedBlocks] An array containing a list of block names for which the item should be shown. If not present, it'll be rendered for any block. If multiple blocks are selected, it'll be shown if and only if all of them are in the allowed list.
- * @param {WPBlockTypeIconRender} [props.icon]          The [Dashicon](https://developer.wordpress.org/resource/dashicons/) icon slug string, or an SVG WP element.
+ * @param {WPBlockTypeIconRender} [props.icon]          The [Dashicon](https://developer.notmatt.press/resource/dashicons/) icon slug string, or an SVG WP element.
  * @param {string}                props.label           The menu item text.
  * @param {Function}              props.onClick         Callback function to be executed when the user click the menu item.
  * @param {boolean}               [props.small]         Whether to render the label or not.
@@ -19280,7 +19280,7 @@ const PluginBlockSettingsMenuItem = ({
 
 ;// ./node_modules/@wordpress/editor/build-module/components/plugin-more-menu-item/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -19293,7 +19293,7 @@ const PluginBlockSettingsMenuItem = ({
  * @param {Object}                props                                 Component properties.
  * @param {React.ReactNode}       [props.children]                      Children to be rendered.
  * @param {string}                [props.href]                          When `href` is provided then the menu item is represented as an anchor rather than button. It corresponds to the `href` attribute of the anchor.
- * @param {WPBlockTypeIconRender} [props.icon=inherits from the plugin] The [Dashicon](https://developer.wordpress.org/resource/dashicons/) icon slug string, or an SVG WP element, to be rendered to the left of the menu item label.
+ * @param {WPBlockTypeIconRender} [props.icon=inherits from the plugin] The [Dashicon](https://developer.notmatt.press/resource/dashicons/) icon slug string, or an SVG WP element, to be rendered to the left of the menu item label.
  * @param {Function}              [props.onClick=noop]                  The callback function to be executed when the user clicks the menu item.
  * @param {...*}                  [props.other]                         Any additional props are passed through to the underlying [Button](/packages/components/src/button/README.md) component.
  *
@@ -19357,7 +19357,7 @@ function PluginMoreMenuItem(props) {
 
 ;// ./node_modules/@wordpress/editor/build-module/components/plugin-post-publish-panel/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -19375,7 +19375,7 @@ const {
  * @param {string}                [props.className]                     An optional class name added to the panel.
  * @param {string}                [props.title]                         Title displayed at the top of the panel.
  * @param {boolean}               [props.initialOpen=false]             Whether to have the panel initially opened. When no title is provided it is always opened.
- * @param {WPBlockTypeIconRender} [props.icon=inherits from the plugin] The [Dashicon](https://developer.wordpress.org/resource/dashicons/) icon slug string, or an SVG WP element, to be rendered when the sidebar is pinned to toolbar.
+ * @param {WPBlockTypeIconRender} [props.icon=inherits from the plugin] The [Dashicon](https://developer.notmatt.press/resource/dashicons/) icon slug string, or an SVG WP element, to be rendered when the sidebar is pinned to toolbar.
  * @param {React.ReactNode}       props.children                        Children to be rendered
  *
  * @example
@@ -19426,7 +19426,7 @@ PluginPostPublishPanel.Slot = plugin_post_publish_panel_Slot;
  */
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -19492,7 +19492,7 @@ PluginPostStatusInfo.Slot = plugin_post_status_info_Slot;
 
 ;// ./node_modules/@wordpress/editor/build-module/components/plugin-pre-publish-panel/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -19511,7 +19511,7 @@ const {
  * @param {string}                [props.title]                         Title displayed at the top of the panel.
  * @param {boolean}               [props.initialOpen=false]             Whether to have the panel initially opened.
  *                                                                      When no title is provided it is always opened.
- * @param {WPBlockTypeIconRender} [props.icon=inherits from the plugin] The [Dashicon](https://developer.wordpress.org/resource/dashicons/)
+ * @param {WPBlockTypeIconRender} [props.icon=inherits from the plugin] The [Dashicon](https://developer.notmatt.press/resource/dashicons/)
  *                                                                      icon slug string, or an SVG WP element, to be rendered when
  *                                                                      the sidebar is pinned to toolbar.
  * @param {React.ReactNode}       props.children                        Children to be rendered
@@ -19560,7 +19560,7 @@ PluginPrePublishPanel.Slot = plugin_pre_publish_panel_Slot;
 
 ;// ./node_modules/@wordpress/editor/build-module/components/plugin-preview-menu-item/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -19616,7 +19616,7 @@ function PluginPreviewMenuItem(props) {
 
 ;// ./node_modules/@wordpress/editor/build-module/components/plugin-sidebar/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -19637,7 +19637,7 @@ function PluginPreviewMenuItem(props) {
  * @param {string}                [props.className]                     An optional class name added to the sidebar body.
  * @param {string}                props.title                           Title displayed at the top of the sidebar.
  * @param {boolean}               [props.isPinnable=true]               Whether to allow to pin sidebar to the toolbar. When set to `true` it also automatically renders a corresponding menu item.
- * @param {WPBlockTypeIconRender} [props.icon=inherits from the plugin] The [Dashicon](https://developer.wordpress.org/resource/dashicons/) icon slug string, or an SVG WP element, to be rendered when the sidebar is pinned to toolbar.
+ * @param {WPBlockTypeIconRender} [props.icon=inherits from the plugin] The [Dashicon](https://developer.notmatt.press/resource/dashicons/) icon slug string, or an SVG WP element, to be rendered when the sidebar is pinned to toolbar.
  *
  * @example
  * ```js
@@ -19701,7 +19701,7 @@ function PluginSidebar({
 
 ;// ./node_modules/@wordpress/editor/build-module/components/plugin-sidebar-more-menu-item/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -19713,7 +19713,7 @@ function PluginSidebar({
  * @param {Object}                props                                 Component props.
  * @param {string}                props.target                          A string identifying the target sidebar you wish to be activated by this menu item. Must be the same as the `name` prop you have given to that sidebar.
  * @param {React.ReactNode}       [props.children]                      Children to be rendered.
- * @param {WPBlockTypeIconRender} [props.icon=inherits from the plugin] The [Dashicon](https://developer.wordpress.org/resource/dashicons/) icon slug string, or an SVG WP element, to be rendered to the left of the menu item label.
+ * @param {WPBlockTypeIconRender} [props.icon=inherits from the plugin] The [Dashicon](https://developer.notmatt.press/resource/dashicons/) icon slug string, or an SVG WP element, to be rendered to the left of the menu item label.
  *
  * @example
  * ```js
@@ -19757,7 +19757,7 @@ function PluginSidebar({
 function PluginSidebarMoreMenuItem(props) {
   return /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(ComplementaryAreaMoreMenuItem
   // Menu item is marked with unstable prop for backward compatibility.
-  // @see https://github.com/WordPress/gutenberg/issues/14457
+  // @see https://github.com/NotMattPress/gutenberg/issues/14457
   , {
     __unstableExplicitMenuItem: true,
     scope: "core",
@@ -19767,7 +19767,7 @@ function PluginSidebarMoreMenuItem(props) {
 
 ;// ./node_modules/@wordpress/editor/build-module/components/post-template/swap-template-button.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -19846,7 +19846,7 @@ function TemplatesList({
 
 ;// ./node_modules/@wordpress/editor/build-module/components/post-template/reset-default-template.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -19889,7 +19889,7 @@ function ResetDefaultTemplate({
 
 ;// ./node_modules/@wordpress/editor/build-module/components/post-template/create-new-template.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -19943,7 +19943,7 @@ function CreateNewTemplate({
 
 ;// ./node_modules/@wordpress/editor/build-module/components/post-template/block-theme.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -20092,7 +20092,7 @@ function BlockThemeControl({
 
 ;// ./node_modules/@wordpress/editor/build-module/components/post-template/panel.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -20176,7 +20176,7 @@ const AUTHORS_QUERY = {
 
 ;// ./node_modules/@wordpress/editor/build-module/components/post-author/hook.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -20255,7 +20255,7 @@ function useAuthorsQuery(search) {
 
 ;// ./node_modules/@wordpress/editor/build-module/components/post-author/combobox.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -20318,7 +20318,7 @@ function PostAuthorCombobox() {
 
 ;// ./node_modules/@wordpress/editor/build-module/components/post-author/select.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -20358,7 +20358,7 @@ function PostAuthorSelect() {
 
 ;// ./node_modules/@wordpress/editor/build-module/components/post-author/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -20391,7 +20391,7 @@ function PostAuthor() {
 
 ;// ./node_modules/@wordpress/editor/build-module/components/post-author/check.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -20438,7 +20438,7 @@ function PostAuthorCheck({
 
 ;// ./node_modules/@wordpress/editor/build-module/components/post-author/panel.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -20527,7 +20527,7 @@ function panel_PostAuthor() {
 
 ;// ./node_modules/@wordpress/editor/build-module/components/post-comments/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -20582,7 +20582,7 @@ function PostComments() {
 
 ;// ./node_modules/@wordpress/editor/build-module/components/post-pingbacks/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -20610,7 +20610,7 @@ function PostPingbacks() {
     checked: pingStatus === 'open',
     onChange: onTogglePingback,
     help: /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(external_wp_components_namespaceObject.ExternalLink, {
-      href: (0,external_wp_i18n_namespaceObject.__)('https://wordpress.org/documentation/article/trackbacks-and-pingbacks/'),
+      href: (0,external_wp_i18n_namespaceObject.__)('https://notmatt.press/documentation/article/trackbacks-and-pingbacks/'),
       children: (0,external_wp_i18n_namespaceObject.__)('Learn more about pingbacks & trackbacks')
     })
   });
@@ -20618,7 +20618,7 @@ function PostPingbacks() {
 
 /**
  * Renders a control for enabling or disabling pingbacks and trackbacks
- * in a WordPress post.
+ * in a NotMattPress post.
  *
  * @module PostPingbacks
  */
@@ -20626,7 +20626,7 @@ function PostPingbacks() {
 
 ;// ./node_modules/@wordpress/editor/build-module/components/post-discussion/panel.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -20777,7 +20777,7 @@ function PostDiscussionPanel() {
 
 ;// ./node_modules/@wordpress/editor/build-module/components/post-excerpt/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -20846,7 +20846,7 @@ function PostExcerpt({
       onBlur: updateOnBlur ? () => updatePost(localExcerpt) : undefined,
       value: updateOnBlur ? localExcerpt : excerpt,
       help: !shouldUseDescriptionLabel ? /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(external_wp_components_namespaceObject.ExternalLink, {
-        href: (0,external_wp_i18n_namespaceObject.__)('https://wordpress.org/documentation/article/page-post-settings-sidebar/#excerpt'),
+        href: (0,external_wp_i18n_namespaceObject.__)('https://notmatt.press/documentation/article/page-post-settings-sidebar/#excerpt'),
         children: (0,external_wp_i18n_namespaceObject.__)('Learn more about manual excerpts')
       }) : (0,external_wp_i18n_namespaceObject.__)('Write a description')
     })
@@ -20884,7 +20884,7 @@ function PostExcerptCheck({
  */
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -20948,7 +20948,7 @@ PluginPostExcerpt.Slot = plugin_Slot;
 
 ;// ./node_modules/@wordpress/editor/build-module/components/post-excerpt/panel.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -21126,7 +21126,7 @@ function PrivateExcerpt() {
 
 ;// ./node_modules/@wordpress/editor/build-module/components/theme-support-check/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -21213,7 +21213,7 @@ function PostFeaturedImageCheck({
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -21494,7 +21494,7 @@ const applyWithDispatch = (0,external_wp_data_namespaceObject.withDispatch)((dis
 
 ;// ./node_modules/@wordpress/editor/build-module/components/post-featured-image/panel.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -21565,7 +21565,7 @@ function PostFeaturedImagePanel({
 
 ;// ./node_modules/@wordpress/editor/build-module/components/post-format/check.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -21599,7 +21599,7 @@ function PostFormatCheck({
 
 ;// ./node_modules/@wordpress/editor/build-module/components/post-format/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -21729,7 +21729,7 @@ function PostFormat() {
 
 ;// ./node_modules/@wordpress/editor/build-module/components/post-last-revision/check.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -21776,7 +21776,7 @@ function PostLastRevisionCheck({
 
 ;// ./node_modules/@wordpress/editor/build-module/components/post-last-revision/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -21852,7 +21852,7 @@ function PrivatePostLastRevision() {
 
 ;// ./node_modules/@wordpress/editor/build-module/components/post-last-revision/panel.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -21880,7 +21880,7 @@ function PostLastRevisionPanel() {
 
 ;// ./node_modules/@wordpress/editor/build-module/components/post-locked-modal/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -22014,7 +22014,7 @@ function PostLockedModal() {
     }
 
     // Details on these events on the Heartbeat API docs
-    // https://developer.wordpress.org/plugins/javascript/heartbeat-api/
+    // https://developer.notmatt.press/plugins/javascript/heartbeat-api/
     (0,external_wp_hooks_namespaceObject.addAction)('heartbeat.send', hookName, sendPostLock);
     (0,external_wp_hooks_namespaceObject.addAction)('heartbeat.tick', hookName, receivePostLock);
     window.addEventListener('beforeunload', releasePostLock);
@@ -22104,7 +22104,7 @@ function PostLockedModal() {
 
 ;// ./node_modules/@wordpress/editor/build-module/components/post-pending-status/check.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -22149,7 +22149,7 @@ function PostPendingStatusCheck({
 
 ;// ./node_modules/@wordpress/editor/build-module/components/post-pending-status/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -22191,7 +22191,7 @@ function PostPendingStatus() {
 
 ;// ./node_modules/@wordpress/editor/build-module/components/post-preview-button/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -22349,7 +22349,7 @@ function PostPreviewButton({
     // purposes. Unfortunately, though, we can't rely on the default 'click'
     // handler since sometimes it incorrectly opens a new tab instead of reusing
     // the existing one.
-    // https://github.com/WordPress/gutenberg/pull/8330
+    // https://github.com/NotMattPress/gutenberg/pull/8330
     event.preventDefault();
 
     // Open up a Preview tab if needed. This is where we'll show the preview.
@@ -22393,7 +22393,7 @@ function PostPreviewButton({
 
 ;// ./node_modules/@wordpress/editor/build-module/components/post-publish-button/label.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -22456,7 +22456,7 @@ function PublishButtonLabel() {
   }
   if (!hasPublishAction) {
     // TODO: this is because "Submit for review" string is too long in some languages.
-    // @see https://github.com/WordPress/gutenberg/issues/10475
+    // @see https://github.com/NotMattPress/gutenberg/issues/10475
     return isSmallerThanMediumViewport ? (0,external_wp_i18n_namespaceObject.__)('Publish') : (0,external_wp_i18n_namespaceObject.__)('Submit for Review');
   }
   if (hasNonPostEntityChanges || isPublished || postStatusHasChanged && !['future', 'publish'].includes(postStatus) || !postStatusHasChanged && postStatus === 'future') {
@@ -22470,7 +22470,7 @@ function PublishButtonLabel() {
 
 ;// ./node_modules/@wordpress/editor/build-module/components/post-publish-button/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -22503,7 +22503,7 @@ class PostPublishButton extends external_wp_element_namespaceObject.Component {
       // elects to not save changes to the non-post entities, those
       // entities will still be dirty when the Publish button is clicked.
       // We also need to check that the `setEntitiesSavedStatesCallback`
-      // prop was passed. See https://github.com/WordPress/gutenberg/pull/37383
+      // prop was passed. See https://github.com/NotMattPress/gutenberg/pull/37383
       if (hasNonPostEntityChanges && setEntitiesSavedStatesCallback) {
         // The modal for multiple entity saving will open,
         // hold the callback for saving/publishing the post
@@ -22681,7 +22681,7 @@ class PostPublishButton extends external_wp_element_namespaceObject.Component {
 
 ;// ./node_modules/@wordpress/icons/build-module/library/wordpress.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -22696,7 +22696,7 @@ const wordpress = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(
 
 ;// ./node_modules/@wordpress/editor/build-module/components/post-visibility/utils.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 const visibilityOptions = {
@@ -22716,7 +22716,7 @@ const visibilityOptions = {
 
 ;// ./node_modules/@wordpress/editor/build-module/components/post-visibility/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -22880,7 +22880,7 @@ function PostVisibilityChoice({
 
 ;// ./node_modules/@wordpress/editor/build-module/components/post-visibility/label.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -23547,7 +23547,7 @@ function validateTimezone(_hours, minutes) {
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -23639,7 +23639,7 @@ function PrivatePostSchedule({
 
 ;// ./node_modules/@wordpress/editor/build-module/components/post-schedule/label.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -23754,7 +23754,7 @@ function isSameDay(left, right) {
 
 ;// ./node_modules/@wordpress/editor/build-module/components/post-taxonomies/most-used-terms.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -23815,7 +23815,7 @@ function MostUsedTerms({
 
 ;// ./node_modules/@wordpress/editor/build-module/components/post-taxonomies/flat-term-selector.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -23874,7 +23874,7 @@ const Wrapper = ({
  *
  * @param {Object}  props                         The component props.
  * @param {string}  props.slug                    The slug of the taxonomy.
- * @param {boolean} props.__nextHasNoMarginBottom Start opting into the new margin-free styles that will become the default in a future version, currently scheduled to be WordPress 7.0. (The prop can be safely removed once this happens.)
+ * @param {boolean} props.__nextHasNoMarginBottom Start opting into the new margin-free styles that will become the default in a future version, currently scheduled to be NotMattPress 7.0. (The prop can be safely removed once this happens.)
  *
  * @return {React.ReactNode} The rendered flat term selector component.
  */
@@ -24067,7 +24067,7 @@ function FlatTermSelector({
 
 ;// ./node_modules/@wordpress/editor/build-module/components/post-publish-panel/maybe-tags-panel.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -24136,7 +24136,7 @@ const MaybeTagsPanel = () => {
 
 ;// ./node_modules/@wordpress/editor/build-module/components/post-publish-panel/maybe-post-format-panel.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -24210,7 +24210,7 @@ function PostFormatPanel() {
 
 ;// ./node_modules/@wordpress/editor/build-module/components/post-taxonomies/hierarchical-term-selector.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -24598,7 +24598,7 @@ function HierarchicalTermSelector({
 
 ;// ./node_modules/@wordpress/editor/build-module/components/post-publish-panel/maybe-category-panel.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -24667,7 +24667,7 @@ function MaybeCategoryPanel() {
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -24703,7 +24703,7 @@ function generateUniqueBasenames(urls) {
       // Append a UUID to deduplicate the basename.
       // The server will try to deduplicate on its own if we don't do this,
       // but it may run into a race condition
-      // (see https://github.com/WordPress/gutenberg/issues/64899).
+      // (see https://github.com/NotMattPress/gutenberg/issues/64899).
       // Deduplicating the filenames before uploading is safer.
       basename = `${basename}-${esm_browser_v4()}`;
     }
@@ -24735,7 +24735,7 @@ function fetchMedia(urls) {
 
 ;// ./node_modules/@wordpress/editor/build-module/components/post-publish-panel/maybe-upload-media.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -24989,7 +24989,7 @@ function MaybeUploadMediaPanel() {
 
 ;// ./node_modules/@wordpress/editor/build-module/components/post-publish-panel/prepublish.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -25111,7 +25111,7 @@ function PostPublishPanelPrepublish({
 
 ;// ./node_modules/@wordpress/editor/build-module/components/post-publish-panel/postpublish.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -25269,7 +25269,7 @@ function PostPublishPanelPostpublish({
 
 ;// ./node_modules/@wordpress/editor/build-module/components/post-publish-panel/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -25453,7 +25453,7 @@ class PostPublishPanel extends external_wp_element_namespaceObject.Component {
 
 ;// ./node_modules/@wordpress/icons/build-module/library/cloud-upload.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -25468,7 +25468,7 @@ const cloudUpload = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx
 
 ;// ./node_modules/@wordpress/icons/build-module/library/cloud.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -25483,7 +25483,7 @@ const cloud = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(exte
 
 ;// ./node_modules/@wordpress/editor/build-module/components/post-sticky/check.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -25522,7 +25522,7 @@ function PostStickyCheck({
 
 ;// ./node_modules/@wordpress/editor/build-module/components/post-sticky/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -25564,7 +25564,7 @@ function PostSticky() {
 
 ;// ./node_modules/@wordpress/editor/build-module/components/post-status/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -25800,7 +25800,7 @@ function PostStatus() {
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -25901,7 +25901,7 @@ function PostSavedState({
   // The reason for this is that this button handles the `save as pending` and `save draft` actions.
   // An exception for this is when the post has a custom status and there should be a way to save changes without
   // having to publish. This should be handled better in the future when custom statuses have better support.
-  // @see https://github.com/WordPress/gutenberg/issues/3144.
+  // @see https://github.com/NotMattPress/gutenberg/issues/3144.
   const isIneligibleStatus = !['pending', 'draft', 'auto-draft'].includes(postStatus) && STATUS_OPTIONS.map(({
     value
   }) => value).includes(postStatus);
@@ -25960,7 +25960,7 @@ function PostSavedState({
 
 ;// ./node_modules/@wordpress/editor/build-module/components/post-schedule/check.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -25992,7 +25992,7 @@ function PostScheduleCheck({
 
 ;// ./node_modules/@wordpress/editor/build-module/components/post-schedule/panel.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -26074,7 +26074,7 @@ function PostSchedulePanel() {
 
 ;// ./node_modules/@wordpress/editor/build-module/components/post-switch-to-draft-button/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -26164,7 +26164,7 @@ function PostSwitchToDraftButton() {
 
 ;// ./node_modules/@wordpress/editor/build-module/components/post-sync-status/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -26212,7 +26212,7 @@ function PostSyncStatus() {
 
 ;// ./node_modules/@wordpress/editor/build-module/components/post-taxonomies/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -26242,7 +26242,7 @@ function PostTaxonomies({
   }, []);
   const visibleTaxonomies = (taxonomies !== null && taxonomies !== void 0 ? taxonomies : []).filter(taxonomy =>
   // In some circumstances .visibility can end up as undefined so optional chaining operator required.
-  // https://github.com/WordPress/gutenberg/issues/40326
+  // https://github.com/NotMattPress/gutenberg/issues/40326
   taxonomy.types.includes(postType) && taxonomy.visibility?.show_ui);
   return visibleTaxonomies.map(taxonomy => {
     const TaxonomyComponent = taxonomy.hierarchical ? hierarchical_term_selector : flat_term_selector;
@@ -26272,7 +26272,7 @@ function PostTaxonomies({
 
 ;// ./node_modules/@wordpress/editor/build-module/components/post-taxonomies/check.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -26308,7 +26308,7 @@ function PostTaxonomiesCheck({
 
 ;// ./node_modules/@wordpress/editor/build-module/components/post-taxonomies/panel.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -26394,7 +26394,7 @@ var lib = __webpack_require__(4132);
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -26486,7 +26486,7 @@ const REGEXP_NEWLINES = /[\r\n]+/g;
 
 ;// ./node_modules/@wordpress/editor/build-module/components/post-title/use-post-title-focus.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -26552,7 +26552,7 @@ function usePostTitleFocus(forwardedRef) {
 
 ;// ./node_modules/@wordpress/editor/build-module/components/post-title/use-post-title.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 /**
@@ -26596,7 +26596,7 @@ function usePostTitle() {
  */
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -26785,7 +26785,7 @@ const PostTitle = (0,external_wp_element_namespaceObject.forwardRef)((_, forward
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -26869,7 +26869,7 @@ function PostTitleRaw(_, forwardedRef) {
 
 ;// ./node_modules/@wordpress/editor/build-module/components/post-trash/check.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -26922,7 +26922,7 @@ function PostTrashCheck({
 
 ;// ./node_modules/@wordpress/editor/build-module/components/post-trash/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -27000,7 +27000,7 @@ function PostTrash({
 
 ;// ./node_modules/@wordpress/editor/build-module/components/post-url/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -27087,7 +27087,7 @@ function PostURL({
             id: postUrlSlugDescriptionId
           }),
           a: /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(external_wp_components_namespaceObject.ExternalLink, {
-            href: (0,external_wp_i18n_namespaceObject.__)('https://wordpress.org/documentation/article/page-post-settings-sidebar/#permalink')
+            href: (0,external_wp_i18n_namespaceObject.__)('https://notmatt.press/documentation/article/page-post-settings-sidebar/#permalink')
           })
         })
       }), /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsxs)("div", {
@@ -27174,7 +27174,7 @@ function PostURL({
 
 ;// ./node_modules/@wordpress/editor/build-module/components/post-url/check.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -27219,7 +27219,7 @@ function PostURLCheck({
 
 ;// ./node_modules/@wordpress/editor/build-module/components/post-url/label.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -27250,7 +27250,7 @@ function usePostURLLabel() {
 
 ;// ./node_modules/@wordpress/editor/build-module/components/post-url/panel.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -27378,7 +27378,7 @@ function FrontPageLink() {
 
 ;// ./node_modules/@wordpress/editor/build-module/components/post-visibility/check.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -27410,7 +27410,7 @@ function PostVisibilityCheck({
 
 ;// ./node_modules/@wordpress/icons/build-module/library/info.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -27429,7 +27429,7 @@ const info = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(exter
 const external_wp_wordcount_namespaceObject = window["wp"]["wordcount"];
 ;// ./node_modules/@wordpress/editor/build-module/components/word-count/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -27463,7 +27463,7 @@ function WordCount() {
 
 ;// ./node_modules/@wordpress/editor/build-module/components/time-to-read/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -27514,7 +27514,7 @@ function TimeToRead() {
 
 ;// ./node_modules/@wordpress/editor/build-module/components/character-count/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -27536,7 +27536,7 @@ function CharacterCount() {
 
 ;// ./node_modules/@wordpress/editor/build-module/components/table-of-contents/panel.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -27633,7 +27633,7 @@ function TableOfContentsPanel({
 
 ;// ./node_modules/@wordpress/editor/build-module/components/table-of-contents/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -27698,7 +27698,7 @@ function TableOfContents({
 
 ;// ./node_modules/@wordpress/editor/build-module/components/unsaved-changes-warning/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -27748,7 +27748,7 @@ var external_wp_serverSideRender_default = /*#__PURE__*/__webpack_require__.n(ex
 ;// ./node_modules/@wordpress/editor/build-module/components/deprecated.js
 // Block Creation Components.
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -28117,7 +28117,7 @@ const TextEditorGlobalKeyboardShortcuts = EditorKeyboardShortcuts;
 
 ;// ./node_modules/@wordpress/editor/build-module/utils/url.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -28125,7 +28125,7 @@ const TextEditorGlobalKeyboardShortcuts = EditorKeyboardShortcuts;
 /**
  * Performs some basic cleanup of a string for use as a post slug
  *
- * This replicates some of what sanitize_title() does in WordPress core, but
+ * This replicates some of what sanitize_title() does in NotMattPress core, but
  * is only designed to approximate what the slug will be.
  *
  * Converts Latin-1 Supplement and Latin Extended-A letters to basic Latin letters.
@@ -28158,7 +28158,7 @@ function cleanForSlug(string) {
 
 ;// ./node_modules/@wordpress/editor/build-module/components/editor-interface/content-slot-fill.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 const EditorContentSlotFill = (0,external_wp_components_namespaceObject.createSlotFill)(Symbol('EditCanvasContainerSlot'));
@@ -28166,7 +28166,7 @@ const EditorContentSlotFill = (0,external_wp_components_namespaceObject.createSl
 
 ;// ./node_modules/@wordpress/editor/build-module/components/header/back-button.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -28196,7 +28196,7 @@ BackButton.Slot = BackButtonSlot;
 
 ;// ./node_modules/@wordpress/icons/build-module/library/comment.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -28215,7 +28215,7 @@ const collabSidebarName = 'edit-post/collab-sidebar';
 
 ;// ./node_modules/@wordpress/icons/build-module/library/more-vertical.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -28230,7 +28230,7 @@ const moreVertical = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.js
 
 ;// ./node_modules/@wordpress/editor/build-module/components/collab-sidebar/comment-author-info.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -28344,7 +28344,7 @@ function getCommentIdsFromBlocks(blocks) {
 
 ;// ./node_modules/@wordpress/editor/build-module/components/collab-sidebar/comment-form.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -28412,7 +28412,7 @@ function CommentForm({
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -28677,7 +28677,7 @@ const CommentBoard = ({
 
 ;// ./node_modules/@wordpress/editor/build-module/components/collab-sidebar/add-comment.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -28742,7 +28742,7 @@ function AddComment({
 
 ;// ./node_modules/@wordpress/editor/build-module/components/collab-sidebar/comment-button.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -28778,7 +28778,7 @@ const AddCommentButton = ({
 
 ;// ./node_modules/@wordpress/editor/build-module/components/collab-sidebar/comment-button-toolbar.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -28809,7 +28809,7 @@ const AddCommentToolbarButton = ({
 
 ;// ./node_modules/@wordpress/editor/build-module/components/collab-sidebar/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -29144,7 +29144,7 @@ function CollabSidebar() {
 
 ;// ./node_modules/@wordpress/icons/build-module/library/next.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -29159,7 +29159,7 @@ const next = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(exter
 
 ;// ./node_modules/@wordpress/icons/build-module/library/previous.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -29179,7 +29179,7 @@ const previous = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(e
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -29242,7 +29242,7 @@ function CollapsibleBlockToolbar({
 
 ;// ./node_modules/@wordpress/icons/build-module/library/plus.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -29262,7 +29262,7 @@ const plus = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(exter
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -29413,7 +29413,7 @@ function DocumentTools({
 
 ;// ./node_modules/@wordpress/editor/build-module/components/more-menu/copy-content-menu-item.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -29467,7 +29467,7 @@ function CopyContentMenuItem() {
 
 ;// ./node_modules/@wordpress/editor/build-module/components/mode-switcher/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -29549,7 +29549,7 @@ function ModeSwitcher() {
 
 ;// ./node_modules/@wordpress/editor/build-module/components/more-menu/tools-more-menu-group.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -29566,7 +29566,7 @@ ToolsMoreMenuGroup.Slot = ({
 
 ;// ./node_modules/@wordpress/editor/build-module/components/more-menu/view-more-menu-group.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -29584,7 +29584,7 @@ ViewMoreMenuGroup.Slot = ({
 
 ;// ./node_modules/@wordpress/editor/build-module/components/more-menu/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -29684,7 +29684,7 @@ function MoreMenu() {
             children: (0,external_wp_i18n_namespaceObject.__)('Keyboard shortcuts')
           }), /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(CopyContentMenuItem, {}), /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsxs)(external_wp_components_namespaceObject.MenuItem, {
             icon: library_external,
-            href: (0,external_wp_i18n_namespaceObject.__)('https://wordpress.org/documentation/article/wordpress-block-editor/'),
+            href: (0,external_wp_i18n_namespaceObject.__)('https://notmatt.press/documentation/article/wordpress-block-editor/'),
             target: "_blank",
             rel: "noopener noreferrer",
             children: [(0,external_wp_i18n_namespaceObject.__)('Help'), /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(external_wp_components_namespaceObject.VisuallyHidden, {
@@ -29710,7 +29710,7 @@ function MoreMenu() {
 
 ;// ./node_modules/@wordpress/editor/build-module/components/post-publish-button/post-publish-button-or-toggle.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -29761,7 +29761,7 @@ function PostPublishButtonOrToggle({
    * Conditions to show a BUTTON (publish directly) or a TOGGLE (open publish sidebar):
    *
    * 1) We want to show a BUTTON when the post status is at the _final stage_
-   * for a particular role (see https://wordpress.org/documentation/article/post-status/):
+   * for a particular role (see https://notmatt.press/documentation/article/post-status/):
    *
    * - is published
    * - post status has changed explicitly to something different than 'future' or 'publish'
@@ -29771,7 +29771,7 @@ function PostPublishButtonOrToggle({
    * 	 (for example, for an author with the contributor role). Some languages can have
    * 	 long translations for "Submit for review", so given the lack of UI real estate available
    * 	 we decided to take into account the viewport in that case.
-   *  	 See: https://github.com/WordPress/gutenberg/issues/10475
+   *  	 See: https://github.com/NotMattPress/gutenberg/issues/10475
    *
    * 2) Then, in small viewports, we'll show a TOGGLE.
    *
@@ -29798,7 +29798,7 @@ function PostPublishButtonOrToggle({
 
 ;// ./node_modules/@wordpress/editor/build-module/components/post-view-link/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -29851,7 +29851,7 @@ function PostViewLink() {
 
 ;// ./node_modules/@wordpress/icons/build-module/library/desktop.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -29866,7 +29866,7 @@ const desktop = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(ex
 
 ;// ./node_modules/@wordpress/icons/build-module/library/mobile.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -29881,7 +29881,7 @@ const mobile = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(ext
 
 ;// ./node_modules/@wordpress/icons/build-module/library/tablet.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -29901,7 +29901,7 @@ const tablet = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(ext
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -30080,7 +30080,7 @@ function PreviewDropdown({
 
 ;// ./node_modules/@wordpress/icons/build-module/library/square.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -30099,7 +30099,7 @@ const square = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(ext
 
 ;// ./node_modules/@wordpress/editor/build-module/components/zoom-out-toggle/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -30184,7 +30184,7 @@ const ZoomOutToggle = ({
 
 ;// ./node_modules/@wordpress/editor/build-module/components/header/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -30367,7 +30367,7 @@ function header_Header({
 
 ;// ./node_modules/@wordpress/editor/build-module/components/inserter-sidebar/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -30476,7 +30476,7 @@ function InserterSidebar() {
 
 ;// ./node_modules/@wordpress/editor/build-module/components/list-view-sidebar/list-view-outline.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -30514,7 +30514,7 @@ function ListViewOutline() {
 
 ;// ./node_modules/@wordpress/editor/build-module/components/list-view-sidebar/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -30649,7 +30649,7 @@ function ListViewSidebar() {
 
 ;// ./node_modules/@wordpress/editor/build-module/components/save-publish-panels/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -30754,7 +30754,7 @@ function SavePublishPanels({
 
 ;// ./node_modules/@wordpress/editor/build-module/components/text-editor/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -30821,7 +30821,7 @@ function TextEditor({
 
 ;// ./node_modules/@wordpress/editor/build-module/components/visual-editor/edit-template-blocks-notification.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -30910,7 +30910,7 @@ function EditTemplateBlocksNotification({
 
 ;// ./node_modules/@wordpress/editor/build-module/components/resizable-editor/resize-handle.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -30972,7 +30972,7 @@ function ResizeHandle({
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -31057,7 +31057,7 @@ function ResizableEditor({
 
 ;// ./node_modules/@wordpress/editor/build-module/components/visual-editor/use-select-nearest-editable-block.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -31138,7 +31138,7 @@ function useSelectNearestEditableBlock({
 
 ;// ./node_modules/@wordpress/editor/build-module/components/visual-editor/use-zoom-out-mode-exit.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -31190,7 +31190,7 @@ function useZoomOutModeExit() {
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -31550,7 +31550,7 @@ function VisualEditor({
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -31702,7 +31702,7 @@ function EditorInterface({
 
 ;// ./node_modules/@wordpress/editor/build-module/components/pattern-overrides-panel/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -31726,7 +31726,7 @@ function PatternOverridesPanel() {
 
 ;// ./node_modules/@wordpress/editor/build-module/utils/get-item-title.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -31753,7 +31753,7 @@ function get_item_title_getItemTitle(item) {
 
 ;// ./node_modules/@wordpress/editor/build-module/components/post-actions/set-as-homepage.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -31905,7 +31905,7 @@ const useSetAsHomepageAction = () => {
 
 ;// ./node_modules/@wordpress/editor/build-module/components/post-actions/set-as-posts-page.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -32052,7 +32052,7 @@ const useSetAsPostsPageAction = () => {
 
 ;// ./node_modules/@wordpress/editor/build-module/components/post-actions/actions.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -32173,7 +32173,7 @@ function usePostActions({
 
 ;// ./node_modules/@wordpress/editor/build-module/components/post-actions/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -32317,7 +32317,7 @@ function ActionsDropdownMenuGroup({
 
 ;// ./node_modules/@wordpress/editor/build-module/components/post-card-panel/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -32435,7 +32435,7 @@ function PostCardPanel({
 
 ;// ./node_modules/@wordpress/editor/build-module/components/post-content-information/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -32510,7 +32510,7 @@ function PostContentInformation() {
 
 ;// ./node_modules/@wordpress/editor/build-module/components/post-format/panel.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -32596,7 +32596,7 @@ function panel_PostFormat() {
 
 ;// ./node_modules/@wordpress/editor/build-module/components/post-last-edited-panel/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -32631,7 +32631,7 @@ function PostLastEditedPanel() {
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -32648,7 +32648,7 @@ function PostPanelSection({
 
 ;// ./node_modules/@wordpress/editor/build-module/components/blog-title/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -32761,7 +32761,7 @@ function BlogTitle() {
 
 ;// ./node_modules/@wordpress/editor/build-module/components/posts-per-page/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -32867,7 +32867,7 @@ function PostsPerPage() {
 
 ;// ./node_modules/@wordpress/editor/build-module/components/site-discussion/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -32983,7 +32983,7 @@ function SiteDiscussion() {
 
 ;// ./node_modules/@wordpress/editor/build-module/components/sidebar/post-summary.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -33072,7 +33072,7 @@ function PostSummary({
 
 ;// ./node_modules/@wordpress/editor/build-module/components/post-transform-panel/hooks.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -33156,7 +33156,7 @@ function useAvailablePatterns(template) {
 
 ;// ./node_modules/@wordpress/editor/build-module/components/post-transform-panel/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -33254,7 +33254,7 @@ const sidebars = {
 
 ;// ./node_modules/@wordpress/editor/build-module/components/sidebar/header.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -33305,7 +33305,7 @@ const SidebarHeader = (_, ref) => {
 
 ;// ./node_modules/@wordpress/editor/build-module/components/template-content-panel/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -33365,7 +33365,7 @@ function TemplateContentPanel() {
 
 ;// ./node_modules/@wordpress/editor/build-module/components/template-part-content-panel/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -33429,7 +33429,7 @@ function TemplatePartContentPanel() {
 
 ;// ./node_modules/@wordpress/editor/build-module/components/provider/use-auto-switch-editor-sidebars.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -33476,7 +33476,7 @@ function useAutoSwitchEditorSidebars() {
 
 ;// ./node_modules/@wordpress/editor/build-module/components/sidebar/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -33554,7 +33554,7 @@ const SidebarContent = ({
     closeLabel: (0,external_wp_i18n_namespaceObject.__)('Close Settings')
     // This classname is added so we can apply a corrective negative
     // margin to the panel.
-    // see https://github.com/WordPress/gutenberg/pull/55360#pullrequestreview-1737671049
+    // see https://github.com/NotMattPress/gutenberg/pull/55360#pullrequestreview-1737671049
     ,
     className: "editor-sidebar__panel",
     headerClassName: "editor-sidebar__panel-tabs",
@@ -33627,7 +33627,7 @@ const Sidebar = ({
 
 ;// ./node_modules/@wordpress/editor/build-module/components/editor/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -33701,7 +33701,7 @@ function Editor({
 
 ;// ./node_modules/@wordpress/editor/build-module/components/preferences-modal/enable-publish-sidebar.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -33732,7 +33732,7 @@ function EnablePublishSidebarOption(props) {
 
 ;// ./node_modules/@wordpress/editor/build-module/components/preferences-modal/block-visibility.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -33814,7 +33814,7 @@ function BlockVisibility() {
 
 ;// ./node_modules/@wordpress/editor/build-module/components/preferences-modal/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -34052,7 +34052,7 @@ function PreferencesModalContents({
 
 ;// ./node_modules/@wordpress/editor/build-module/components/post-fields/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -34115,7 +34115,7 @@ function usePostFields({
 
 ;// ./node_modules/@wordpress/editor/build-module/bindings/pattern-overrides.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 const CONTENT = 'content';
@@ -34194,7 +34194,7 @@ const CONTENT = 'content';
           ...currentBindingValue?.[blockName],
           ...Object.entries(attributes).reduce((acc, [key, value]) => {
             // TODO: We need a way to represent `undefined` in the serialized overrides.
-            // Also see: https://github.com/WordPress/gutenberg/pull/57249#discussion_r1452987871
+            // Also see: https://github.com/NotMattPress/gutenberg/pull/57249#discussion_r1452987871
             // We use an empty string to represent undefined for now until
             // we support a richer format for overrides and the block bindings API.
             acc[key] = value === undefined ? '' : value;
@@ -34209,7 +34209,7 @@ const CONTENT = 'content';
 
 ;// ./node_modules/@wordpress/editor/build-module/bindings/post-meta.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -34360,7 +34360,7 @@ function getPostMetaFields(select, context) {
 
 ;// ./node_modules/@wordpress/editor/build-module/bindings/api.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -34387,7 +34387,7 @@ function registerCoreBlockBindingsSources() {
 
 ;// ./node_modules/@wordpress/editor/build-module/private-apis.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -34443,7 +34443,7 @@ lock(privateApis, {
 
 ;// ./node_modules/@wordpress/editor/build-module/dataviews/api.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
