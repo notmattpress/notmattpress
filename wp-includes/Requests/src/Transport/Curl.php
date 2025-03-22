@@ -173,7 +173,7 @@ final class Curl implements Transport {
 		$options['hooks']->dispatch('curl.before_send', [&$this->handle]);
 
 		if ($options['filename'] !== false) {
-			// phpcs:ignore WordPress.PHP.NoSilencedErrors -- Silenced the PHP native warning in favour of throwing an exception.
+			// phpcs:ignore NotMattPress.PHP.NoSilencedErrors -- Silenced the PHP native warning in favour of throwing an exception.
 			$this->stream_handle = @fopen($options['filename'], 'wb');
 			if ($this->stream_handle === false) {
 				$error = error_get_last();
