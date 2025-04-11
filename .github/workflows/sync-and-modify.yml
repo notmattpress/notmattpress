@@ -1,0 +1,69 @@
+name: Sync and Modify WordPress
+
+on:
+  workflow_dispatch:  # Allows manual triggering of the workflow
+  schedule:
+    - cron: '20 4 * * *'  # Runs daily at 4:20 AM UTC
+
+permissions:
+  contents: write
+
+jobs:
+  sync-and-modify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Configure Git
+        run: |
+          git config user.name 'Not Matt'
+          git config user.email 'notmatt@momshouse.com'
+
+      - name: Add Upstream Repository
+        run: |
+          git remote add upstream https://github.com/WordPress/WordPress.git || true
+          git fetch upstream
+
+      - name: Pull WordPress from Upstream (Overwrite)
+        run: |
+          git checkout main
+          git reset --hard upstream/master  # Pulls everything fresh from upstream
+          git clean -fd  # Clean up any untracked files
+
+      - name: Fetch and Checkout .github from sync-branch
+        run: |
+          git fetch origin sync-branch  # Fetch the sync-branch content
+          git checkout origin/sync-branch -- .github  # Pull only the .github folder from sync-branch
+
+      - name: Remove Hello Plugin
+        run: |
+          rm -f wp-content/plugins/hello.php  # Remove the hello.php plugin file
+
+      - name: Replace 'WordPress' with 'NotMattPress'
+        run: |
+          find . -type f -not -path './.git/*' -not -path './.github/*' \
+          -exec sed -i 's/WordPress/NotMattPress/g' {} +
+
+      - name: Replace 'wordpress.org' with 'notmatt.press'
+        run: |
+          find . -type f -not -path './.git/*' -not -path './.github/*' \
+          -exec sed -i 's/wordpress\.org/notmatt.press/g' {} +
+
+      - name: Replace <h1> with <h2> in Login Header
+        run: |
+          find . -type f -not -path './.git/*' -not -path './.github/*' \
+          -exec sed -i 's/<h1><a href="<?php echo esc_url( $login_header_url ); ?>"><?php echo $login_header_text; ?><\/a><\/h1>/<h2><a href="<?php echo esc_url( $login_header_url ); ?>"><?php echo $login_header_text; ?><\/a><\/h2>/g' {} +
+
+      - name: Replace 'Matt Mullenweg' with 'Not Matt'
+        run: |
+          find . -type f -not -path './.git/*' -not -path './.github/*' \
+          -exec sed -i 's/Matt Mullenweg/Not Matt/g' {} +
+
+      - name: Commit and Push Changes
+        env:
+          GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
+        run: |
+          git add .
+          git commit -m "Automated sync and customization" || echo "No changes to commit"
+          git push origin main --force
