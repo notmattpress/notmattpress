@@ -131,7 +131,7 @@ const createRootURLMiddleware = rootURL => (options, next) => {
 const external_wp_url_namespaceObject = window["wp"]["url"];
 ;// ./node_modules/@wordpress/api-fetch/build-module/middlewares/preloading.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -196,7 +196,7 @@ function prepareResponse(responseData, parse) {
       headers: responseData.headers
     }));
   } catch {
-    // See: https://github.com/WordPress/gutenberg/issues/67358#issuecomment-2621163926.
+    // See: https://github.com/NotMattPress/gutenberg/issues/67358#issuecomment-2621163926.
     Object.entries(responseData.headers).forEach(([key, value]) => {
       if (key.toLowerCase() === 'link') {
         responseData.headers[key] = value.replace(/<([^>]+)>/, (/** @type {any} */_, /** @type {string} */url) => `<${encodeURI(url)}>`);
@@ -213,7 +213,7 @@ function prepareResponse(responseData, parse) {
 
 ;// ./node_modules/@wordpress/api-fetch/build-module/middlewares/fetch-all-middleware.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -384,7 +384,7 @@ const httpV1Middleware = (options, next) => {
 
 ;// ./node_modules/@wordpress/api-fetch/build-module/middlewares/user-locale.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -408,7 +408,7 @@ const userLocaleMiddleware = (options, next) => {
 
 ;// ./node_modules/@wordpress/api-fetch/build-module/utils/response.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -484,7 +484,7 @@ function parseAndThrowError(response, shouldParseResponse = true) {
 
 ;// ./node_modules/@wordpress/api-fetch/build-module/middlewares/media-upload.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -566,7 +566,7 @@ const mediaUploadMiddleware = (options, next) => {
 
 ;// ./node_modules/@wordpress/api-fetch/build-module/middlewares/theme-preview.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -607,7 +607,7 @@ const createThemePreviewMiddleware = themePath => (options, next) => {
 
 ;// ./node_modules/@wordpress/api-fetch/build-module/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -635,7 +635,7 @@ const DEFAULT_HEADERS = {
   // The backend uses the Accept header as a condition for considering an
   // incoming request as a REST request.
   //
-  // See: https://core.trac.wordpress.org/ticket/44534
+  // See: https://core.trac.notmatt.press/ticket/44534
   Accept: 'application/json, */*;q=0.1'
 };
 
