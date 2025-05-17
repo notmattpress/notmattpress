@@ -486,7 +486,7 @@ wp.customize.selectiveRefresh = ( function( $, api ) {
 			/*
 			 * Note that the 'wp_audio_shortcode_library' and 'wp_video_shortcode_library' filters
 			 * will determine whether or not wp.mediaelement is loaded and whether it will
-			 * initialize audio and video respectively. See also https://core.trac.wordpress.org/ticket/40144
+			 * initialize audio and video respectively. See also https://core.trac.notmatt.press/ticket/40144
 			 */
 			if ( wp.mediaelement ) {
 				wp.mediaelement.initialize();
