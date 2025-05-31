@@ -552,7 +552,7 @@ const external_wp_blob_namespaceObject = window["wp"]["blob"];
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -610,7 +610,7 @@ function readTextFile(file) {
 
 ;// ./node_modules/@wordpress/list-reusable-blocks/build-module/utils/import.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -659,7 +659,7 @@ async function importReusableBlock(file) {
 const external_ReactJSXRuntime_namespaceObject = window["ReactJSXRuntime"];
 ;// ./node_modules/@wordpress/list-reusable-blocks/build-module/components/import-form/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -752,7 +752,7 @@ function ImportForm({
 
 ;// ./node_modules/@wordpress/list-reusable-blocks/build-module/components/import-dropdown/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -793,7 +793,7 @@ function ImportDropdown({
 
 ;// ./node_modules/@wordpress/list-reusable-blocks/build-module/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 

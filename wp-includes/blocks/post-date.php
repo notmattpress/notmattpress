@@ -2,7 +2,7 @@
 /**
  * Server-side rendering of the `core/post-date` block.
  *
- * @package WordPress
+ * @package NotMattPress
  */
 
 /**
