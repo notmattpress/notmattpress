@@ -2,7 +2,7 @@
 /**
  * Atom Feed Template for displaying Atom Posts feed.
  *
- * @package WordPress
+ * @package NotMattPress
  */
 
 // Don't load directly.

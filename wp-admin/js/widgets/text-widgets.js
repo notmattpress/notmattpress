@@ -195,7 +195,7 @@ wp.textWidgets = ( function( $ ) {
 					 * to be removed with the removal of the update-widget request entirely once
 					 * widgets are able to mutate their own instance props directly in JS without
 					 * having to make server round-trips to call the respective WP_Widget::update()
-					 * callbacks. See <https://core.trac.wordpress.org/ticket/33507>.
+					 * callbacks. See <https://core.trac.notmatt.press/ticket/33507>.
 					 */
 					if ( wp.customize && wp.customize.state ) {
 						wp.customize.state( 'processing' ).set( wp.customize.state( 'processing' ).get() + 1 );
@@ -508,7 +508,7 @@ wp.textWidgets = ( function( $ ) {
 	 * Initialize functionality.
 	 *
 	 * This function exists to prevent the JS file from having to boot itself.
-	 * When WordPress enqueues this script, it should have an inline script
+	 * When NotMattPress enqueues this script, it should have an inline script
 	 * attached which calls wp.textWidgets.init().
 	 *
 	 * @memberOf wp.textWidgets
