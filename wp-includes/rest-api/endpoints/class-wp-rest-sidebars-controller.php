@@ -4,7 +4,7 @@
  *
  * Original code from {@link https://github.com/martin-pettersson/wp-rest-api-sidebars Martin Pettersson (martin_pettersson@outlook.com)}.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage REST_API
  * @since 5.8.0
  */

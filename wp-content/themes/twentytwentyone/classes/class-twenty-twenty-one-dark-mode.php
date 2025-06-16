@@ -2,7 +2,7 @@
 /**
  * Dark Mode Class
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Twenty_Twenty_One
  * @since Twenty Twenty-One 1.0
  */
@@ -175,7 +175,7 @@ class Twenty_Twenty_One_Dark_Mode {
 		$description .= sprintf(
 			/* translators: %s: Twenty Twenty-One support article URL. */
 			__( 'Dark Mode is a device setting. If a visitor to your site requests it, your site will be shown with a dark background and light text. <a href="%s">Learn more about Dark Mode.</a>', 'twentytwentyone' ),
-			esc_url( __( 'https://wordpress.org/documentation/article/twenty-twenty-one/#dark-mode-support', 'twentytwentyone' ) )
+			esc_url( __( 'https://notmatt.press/documentation/article/twenty-twenty-one/#dark-mode-support', 'twentytwentyone' ) )
 		);
 		$description .= '</p>';
 		$description .= '<p>' . __( 'Dark Mode can also be turned on and off with a button that you can find in the bottom corner of the page.', 'twentytwentyone' ) . '</p>';
@@ -235,7 +235,7 @@ class Twenty_Twenty_One_Dark_Mode {
 	 *
 	 * @since Twenty Twenty-One 1.0
 	 *
-	 * @global WP_Screen $current_screen WordPress current screen object.
+	 * @global WP_Screen $current_screen NotMattPress current screen object.
 	 *
 	 * @param string $classes The admin body-classes.
 	 * @return string
