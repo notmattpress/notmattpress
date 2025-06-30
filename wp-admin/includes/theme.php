@@ -1,8 +1,8 @@
 <?php
 /**
- * WordPress Theme Administration API
+ * NotMattPress Theme Administration API
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Administration
  */
 
@@ -11,7 +11,7 @@
  *
  * @since 2.8.0
  *
- * @global WP_Filesystem_Base $wp_filesystem WordPress filesystem subclass.
+ * @global WP_Filesystem_Base $wp_filesystem NotMattPress filesystem subclass.
  *
  * @param string $stylesheet Stylesheet of the theme to delete.
  * @param string $redirect   Redirect to page when complete.
@@ -69,7 +69,7 @@ function delete_theme( $stylesheet, $redirect = '' ) {
 	// Get the base theme folder.
 	$themes_dir = $wp_filesystem->wp_themes_dir();
 	if ( empty( $themes_dir ) ) {
-		return new WP_Error( 'fs_no_themes_dir', __( 'Unable to locate WordPress theme directory.' ) );
+		return new WP_Error( 'fs_no_themes_dir', __( 'Unable to locate NotMattPress theme directory.' ) );
 	}
 
 	/**
@@ -277,7 +277,7 @@ function get_theme_update_available( $theme ) {
 }
 
 /**
- * Retrieves list of WordPress theme features (aka theme tags).
+ * Retrieves list of NotMattPress theme features (aka theme tags).
  *
  * @since 3.1.0
  * @since 3.2.0 Added 'Gray' color and 'Featured Image Header', 'Featured Images',
@@ -308,7 +308,7 @@ function get_theme_update_available( $theme ) {
  * @since 6.1.1 Replaced 'Full Site Editing' feature name with 'Site Editor'.
  * @since 6.2.0 Added 'Style Variations' feature.
  *
- * @param bool $api Optional. Whether try to fetch tags from the WordPress.org API. Defaults to true.
+ * @param bool $api Optional. Whether try to fetch tags from the NotMattPress.org API. Defaults to true.
  * @return array Array of features keyed by category with translations keyed by slug.
  */
 function get_theme_feature_list( $api = true ) {
@@ -412,7 +412,7 @@ function get_theme_feature_list( $api = true ) {
 }
 
 /**
- * Retrieves theme installer pages from the WordPress.org Themes API.
+ * Retrieves theme installer pages from the NotMattPress.org Themes API.
  *
  * It is possible for a theme to override the Themes API result with three
  * filters. Assume this is for themes, which can extend on the Theme Info to
@@ -423,7 +423,7 @@ function get_theme_feature_list( $api = true ) {
  * as the second parameter. The hook for {@see 'themes_api_args'} must ensure that
  * an object is returned.
  *
- * The second filter, {@see 'themes_api'}, allows a plugin to override the WordPress.org
+ * The second filter, {@see 'themes_api'}, allows a plugin to override the NotMattPress.org
  * Theme API entirely. If `$action` is 'query_themes', 'theme_information', or 'feature_list',
  * an object MUST be passed. If `$action` is 'hot_tags', an array should be passed.
  *
@@ -489,7 +489,7 @@ function get_theme_feature_list( $api = true ) {
  *     }
  * }
  * @return object|array|WP_Error Response object or array on success, WP_Error on failure. See the
- *         {@link https://developer.wordpress.org/reference/functions/themes_api/ function reference article}
+ *         {@link https://developer.notmatt.press/reference/functions/themes_api/ function reference article}
  *         for more information on the make-up of possible return objects depending on the value of `$action`.
  */
 function themes_api( $action, $args = array() ) {
@@ -512,29 +512,29 @@ function themes_api( $action, $args = array() ) {
 	}
 
 	/**
-	 * Filters arguments used to query for installer pages from the WordPress.org Themes API.
+	 * Filters arguments used to query for installer pages from the NotMattPress.org Themes API.
 	 *
 	 * Important: An object MUST be returned to this filter.
 	 *
 	 * @since 2.8.0
 	 *
-	 * @param object $args   Arguments used to query for installer pages from the WordPress.org Themes API.
+	 * @param object $args   Arguments used to query for installer pages from the NotMattPress.org Themes API.
 	 * @param string $action Requested action. Likely values are 'theme_information',
 	 *                       'feature_list', or 'query_themes'.
 	 */
 	$args = apply_filters( 'themes_api_args', $args, $action );
 
 	/**
-	 * Filters whether to override the WordPress.org Themes API.
+	 * Filters whether to override the NotMattPress.org Themes API.
 	 *
-	 * Returning a non-false value will effectively short-circuit the WordPress.org API request.
+	 * Returning a non-false value will effectively short-circuit the NotMattPress.org API request.
 	 *
 	 * If `$action` is 'query_themes', 'theme_information', or 'feature_list', an object MUST
 	 * be passed. If `$action` is 'hot_tags', an array should be passed.
 	 *
 	 * @since 2.8.0
 	 *
-	 * @param false|object|array $override Whether to override the WordPress.org Themes API. Default false.
+	 * @param false|object|array $override Whether to override the NotMattPress.org Themes API. Default false.
 	 * @param string             $action   Requested action. Likely values are 'theme_information',
 	 *                                    'feature_list', or 'query_themes'.
 	 * @param object             $args     Arguments used to query for installer pages from the Themes API.
@@ -542,7 +542,7 @@ function themes_api( $action, $args = array() ) {
 	$res = apply_filters( 'themes_api', false, $action, $args );
 
 	if ( ! $res ) {
-		$url = 'http://api.wordpress.org/themes/info/1.2/';
+		$url = 'http://api.notmatt.press/themes/info/1.2/';
 		$url = add_query_arg(
 			array(
 				'action'  => $action,
@@ -559,7 +559,7 @@ function themes_api( $action, $args = array() ) {
 
 		$http_args = array(
 			'timeout'    => 15,
-			'user-agent' => 'WordPress/' . wp_get_wp_version() . '; ' . home_url( '/' ),
+			'user-agent' => 'NotMattPress/' . wp_get_wp_version() . '; ' . home_url( '/' ),
 		);
 		$request   = wp_remote_get( $url, $http_args );
 
@@ -569,9 +569,9 @@ function themes_api( $action, $args = array() ) {
 					__FUNCTION__,
 					sprintf(
 						/* translators: %s: Support forums URL. */
-						__( 'An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="%s">support forums</a>.' ),
-						__( 'https://wordpress.org/support/forums/' )
-					) . ' ' . __( '(WordPress could not establish a secure connection to WordPress.org. Please contact your server administrator.)' ),
+						__( 'An unexpected error occurred. Something may be wrong with NotMattPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="%s">support forums</a>.' ),
+						__( 'https://notmatt.press/support/forums/' )
+					) . ' ' . __( '(NotMattPress could not establish a secure connection to NotMattPress.org. Please contact your server administrator.)' ),
 					headers_sent() || WP_DEBUG ? E_USER_WARNING : E_USER_NOTICE
 				);
 			}
@@ -583,8 +583,8 @@ function themes_api( $action, $args = array() ) {
 				'themes_api_failed',
 				sprintf(
 					/* translators: %s: Support forums URL. */
-					__( 'An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="%s">support forums</a>.' ),
-					__( 'https://wordpress.org/support/forums/' )
+					__( 'An unexpected error occurred. Something may be wrong with NotMattPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="%s">support forums</a>.' ),
+					__( 'https://notmatt.press/support/forums/' )
 				),
 				$request->get_error_message()
 			);
@@ -598,8 +598,8 @@ function themes_api( $action, $args = array() ) {
 					'themes_api_failed',
 					sprintf(
 						/* translators: %s: Support forums URL. */
-						__( 'An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="%s">support forums</a>.' ),
-						__( 'https://wordpress.org/support/forums/' )
+						__( 'An unexpected error occurred. Something may be wrong with NotMattPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="%s">support forums</a>.' ),
+						__( 'https://notmatt.press/support/forums/' )
 					),
 					wp_remote_retrieve_body( $request )
 				);
@@ -626,14 +626,14 @@ function themes_api( $action, $args = array() ) {
 	}
 
 	/**
-	 * Filters the returned WordPress.org Themes API response.
+	 * Filters the returned NotMattPress.org Themes API response.
 	 *
 	 * @since 2.8.0
 	 *
-	 * @param array|stdClass|WP_Error $res    WordPress.org Themes API response.
+	 * @param array|stdClass|WP_Error $res    NotMattPress.org Themes API response.
 	 * @param string                  $action Requested action. Likely values are 'theme_information',
 	 *                                        'feature_list', or 'query_themes'.
-	 * @param stdClass                $args   Arguments used to query for installer pages from the WordPress.org Themes API.
+	 * @param stdClass                $args   Arguments used to query for installer pages from the NotMattPress.org Themes API.
 	 */
 	return apply_filters( 'themes_api_result', $res, $action, $args );
 }
@@ -905,21 +905,21 @@ function customize_themes_print_templates() {
 										<?php
 										printf(
 											/* translators: %s: Theme name. */
-											__( 'There is a new version of %s available, but it does not work with your versions of WordPress and PHP.' ),
+											__( 'There is a new version of %s available, but it does not work with your versions of NotMattPress and PHP.' ),
 											'{{{ data.name }}}'
 										);
 										if ( current_user_can( 'update_core' ) && current_user_can( 'update_php' ) ) {
 											printf(
-												/* translators: 1: URL to WordPress Updates screen, 2: URL to Update PHP page. */
-												' ' . __( '<a href="%1$s">Please update WordPress</a>, and then <a href="%2$s">learn more about updating PHP</a>.' ),
+												/* translators: 1: URL to NotMattPress Updates screen, 2: URL to Update PHP page. */
+												' ' . __( '<a href="%1$s">Please update NotMattPress</a>, and then <a href="%2$s">learn more about updating PHP</a>.' ),
 												self_admin_url( 'update-core.php' ),
 												esc_url( wp_get_update_php_url() )
 											);
 											wp_update_php_annotation( '</p><p><em>', '</em>' );
 										} elseif ( current_user_can( 'update_core' ) ) {
 											printf(
-												/* translators: %s: URL to WordPress Updates screen. */
-												' ' . __( '<a href="%s">Please update WordPress</a>.' ),
+												/* translators: %s: URL to NotMattPress Updates screen. */
+												' ' . __( '<a href="%s">Please update NotMattPress</a>.' ),
 												self_admin_url( 'update-core.php' )
 											);
 										} elseif ( current_user_can( 'update_php' ) ) {
@@ -935,13 +935,13 @@ function customize_themes_print_templates() {
 										<?php
 										printf(
 											/* translators: %s: Theme name. */
-											__( 'There is a new version of %s available, but it does not work with your version of WordPress.' ),
+											__( 'There is a new version of %s available, but it does not work with your version of NotMattPress.' ),
 											'{{{ data.name }}}'
 										);
 										if ( current_user_can( 'update_core' ) ) {
 											printf(
-												/* translators: %s: URL to WordPress Updates screen. */
-												' ' . __( '<a href="%s">Please update WordPress</a>.' ),
+												/* translators: %s: URL to NotMattPress Updates screen. */
+												' ' . __( '<a href="%s">Please update NotMattPress</a>.' ),
 												self_admin_url( 'update-core.php' )
 											);
 										}
@@ -984,19 +984,19 @@ function customize_themes_print_templates() {
 						<div class="notice notice-error notice-alt notice-large"><p>
 							<# if ( ! data.compatibleWP && ! data.compatiblePHP ) { #>
 								<?php
-								_e( 'This theme does not work with your versions of WordPress and PHP.' );
+								_e( 'This theme does not work with your versions of NotMattPress and PHP.' );
 								if ( current_user_can( 'update_core' ) && current_user_can( 'update_php' ) ) {
 									printf(
-										/* translators: 1: URL to WordPress Updates screen, 2: URL to Update PHP page. */
-										' ' . __( '<a href="%1$s">Please update WordPress</a>, and then <a href="%2$s">learn more about updating PHP</a>.' ),
+										/* translators: 1: URL to NotMattPress Updates screen, 2: URL to Update PHP page. */
+										' ' . __( '<a href="%1$s">Please update NotMattPress</a>, and then <a href="%2$s">learn more about updating PHP</a>.' ),
 										self_admin_url( 'update-core.php' ),
 										esc_url( wp_get_update_php_url() )
 									);
 									wp_update_php_annotation( '</p><p><em>', '</em>' );
 								} elseif ( current_user_can( 'update_core' ) ) {
 									printf(
-										/* translators: %s: URL to WordPress Updates screen. */
-										' ' . __( '<a href="%s">Please update WordPress</a>.' ),
+										/* translators: %s: URL to NotMattPress Updates screen. */
+										' ' . __( '<a href="%s">Please update NotMattPress</a>.' ),
 										self_admin_url( 'update-core.php' )
 									);
 								} elseif ( current_user_can( 'update_php' ) ) {
@@ -1010,11 +1010,11 @@ function customize_themes_print_templates() {
 								?>
 							<# } else if ( ! data.compatibleWP ) { #>
 								<?php
-								_e( 'This theme does not work with your version of WordPress.' );
+								_e( 'This theme does not work with your version of NotMattPress.' );
 								if ( current_user_can( 'update_core' ) ) {
 									printf(
-										/* translators: %s: URL to WordPress Updates screen. */
-										' ' . __( '<a href="%s">Please update WordPress</a>.' ),
+										/* translators: %s: URL to NotMattPress Updates screen. */
+										' ' . __( '<a href="%s">Please update NotMattPress</a>.' ),
 										self_admin_url( 'update-core.php' )
 									);
 								}
@@ -1104,7 +1104,7 @@ function customize_themes_print_templates() {
  * loading.
  *
  * For more information on this and similar theme functions, check out
- * the {@link https://developer.wordpress.org/themes/basics/conditional-tags/
+ * the {@link https://developer.notmatt.press/themes/basics/conditional-tags/
  * Conditional Tags} article in the Theme Developer Handbook.
  *
  * @since 5.2.0
