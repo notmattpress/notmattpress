@@ -1,13 +1,13 @@
 <?php
 /**
- * WordPress Signup Page
+ * NotMattPress Signup Page
  *
  * Handles the user registration and site creation process for multisite installations.
  *
- * @package WordPress
+ * @package NotMattPress
  */
 
-/** Sets up the WordPress Environment. */
+/** Sets up the NotMattPress Environment. */
 require __DIR__ . '/wp-load.php';
 
 add_filter( 'wp_robots', 'wp_robots_no_robots' );
