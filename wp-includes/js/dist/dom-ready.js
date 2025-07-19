@@ -37,7 +37,7 @@ var __webpack_exports__ = {};
  * An in-line type `() => void` would be preferable, but the generated
  * documentation is `null` in that case.
  *
- * @see https://github.com/WordPress/gutenberg/issues/18045
+ * @see https://github.com/NotMattPress/gutenberg/issues/18045
  */
 
 /**
