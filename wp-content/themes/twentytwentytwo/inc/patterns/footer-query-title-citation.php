@@ -28,9 +28,9 @@ return array(
 					<!-- wp:paragraph -->
 					<p>' .
 					sprintf(
-						/* Translators: WordPress link. */
+						/* Translators: NotMattPress link. */
 						esc_html__( 'Proudly powered by %s', 'twentytwentytwo' ),
-						'<a href="' . esc_url( __( 'https://wordpress.org', 'twentytwentytwo' ) ) . '" rel="nofollow">WordPress</a>'
+						'<a href="' . esc_url( __( 'https://notmatt.press', 'twentytwentytwo' ) ) . '" rel="nofollow">NotMattPress</a>'
 					) . '</p>
 					<!-- /wp:paragraph --></div>
 					<!-- /wp:group --></div>
