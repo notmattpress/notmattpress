@@ -1702,7 +1702,7 @@ const external_wp_primitives_namespaceObject = window["wp"]["primitives"];
 const external_ReactJSXRuntime_namespaceObject = window["ReactJSXRuntime"];
 ;// ./node_modules/@wordpress/icons/build-module/library/archive.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -1719,7 +1719,7 @@ const archive = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(ex
 
 ;// ./node_modules/@wordpress/block-library/build-module/utils/init-block.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -1767,7 +1767,7 @@ const external_wp_coreData_namespaceObject = window["wp"]["coreData"];
 const external_wp_compose_namespaceObject = window["wp"]["compose"];
 ;// ./node_modules/@wordpress/block-library/build-module/utils/hooks.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -1864,7 +1864,7 @@ function useToolsPanelDropdownMenuProps() {
 
 ;// ./node_modules/@wordpress/block-library/build-module/archives/edit.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -1991,7 +1991,7 @@ function ArchivesEdit({
 
 ;// ./node_modules/@wordpress/block-library/build-module/archives/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -2088,7 +2088,7 @@ const init = () => initBlock({
 
 ;// ./node_modules/@wordpress/icons/build-module/library/comment-author-avatar.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -2109,7 +2109,7 @@ function r(e){var t,f,n="";if("string"==typeof e||"number"==typeof e)n+=e;else i
 const external_wp_url_namespaceObject = window["wp"]["url"];
 ;// ./node_modules/@wordpress/block-library/build-module/avatar/hooks.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -2200,7 +2200,7 @@ function useUserAvatar({
 
 ;// ./node_modules/@wordpress/block-library/build-module/avatar/user-control.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -2254,7 +2254,7 @@ function UserControl({
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -2447,7 +2447,7 @@ function Edit(props) {
 
 ;// ./node_modules/@wordpress/block-library/build-module/avatar/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -2536,7 +2536,7 @@ const avatar_init = () => initBlock({
 
 ;// ./node_modules/@wordpress/icons/build-module/library/audio.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -2551,7 +2551,7 @@ const audio = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(exte
 
 ;// ./node_modules/@wordpress/block-library/build-module/audio/deprecated.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -2815,13 +2815,13 @@ const WP_EMBED_TYPE = 'wp-embed';
 const external_wp_privateApis_namespaceObject = window["wp"]["privateApis"];
 ;// ./node_modules/@wordpress/block-library/build-module/lock-unlock.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 const {
   lock,
   unlock
-} = (0,external_wp_privateApis_namespaceObject.__dangerousOptInToUnstableAPIsOnlyForCoreModules)('I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of WordPress.', '@wordpress/block-library');
+} = (0,external_wp_privateApis_namespaceObject.__dangerousOptInToUnstableAPIsOnlyForCoreModules)('I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of NotMattPress.', '@wordpress/block-library');
 
 ;// ./node_modules/@wordpress/block-library/build-module/embed/util.js
 /**
@@ -2831,7 +2831,7 @@ const {
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -2935,7 +2935,7 @@ const matchesPatterns = (url, patterns = []) => patterns.some(pattern => url.mat
 const findMoreSuitableBlock = url => (0,external_wp_blocks_namespaceObject.getBlockVariations)(DEFAULT_EMBED_BLOCK)?.find(({
   patterns
 }) => matchesPatterns(url, patterns));
-const isFromWordPress = html => html && html.includes('class="wp-embedded-content"');
+const isFromNotMattPress = html => html && html.includes('class="wp-embedded-content"');
 const getPhotoHtml = photo => {
   // If full image url not found use thumbnail.
   const imageUrl = photo.url || photo.thumbnail_url;
@@ -2982,10 +2982,10 @@ const createUpgradedEmbedBlock = (props, attributesFromPreview = {}) => {
   }
   const matchedBlock = findMoreSuitableBlock(url);
 
-  // WordPress blocks can work on multiple sites, and so don't have patterns,
-  // so if we're in a WordPress block, assume the user has chosen it for a WordPress URL.
+  // NotMattPress blocks can work on multiple sites, and so don't have patterns,
+  // so if we're in a NotMattPress block, assume the user has chosen it for a NotMattPress URL.
   const isCurrentBlockWP = providerNameSlug === 'wordpress' || type === WP_EMBED_TYPE;
-  // If current block is not WordPress and a more suitable block found
+  // If current block is not NotMattPress and a more suitable block found
   // that is different from the current one, create the new matched block.
   const shouldCreateNewBlock = !isCurrentBlockWP && matchedBlock && (matchedBlock.attributes.providerNameSlug !== providerNameSlug || !providerNameSlug);
   if (shouldCreateNewBlock) {
@@ -2999,20 +2999,20 @@ const createUpgradedEmbedBlock = (props, attributesFromPreview = {}) => {
     name
   }) => name === 'wordpress');
 
-  // We can't match the URL for WordPress embeds, we have to check the HTML instead.
-  if (!wpVariation || !preview || !isFromWordPress(preview.html) || isCurrentBlockWP) {
+  // We can't match the URL for NotMattPress embeds, we have to check the HTML instead.
+  if (!wpVariation || !preview || !isFromNotMattPress(preview.html) || isCurrentBlockWP) {
     return;
   }
 
-  // This is not the WordPress embed block so transform it into one.
+  // This is not the NotMattPress embed block so transform it into one.
   return (0,external_wp_blocks_namespaceObject.createBlock)(DEFAULT_EMBED_BLOCK, {
     url,
     ...wpVariation.attributes,
     // By now we have the preview, but when the new block first renders, it
     // won't have had all the attributes set, and so won't get the correct
     // type and it won't render correctly. So, we pass through the current attributes
-    // here so that the initial render works when we switch to the WordPress
-    // block. This only affects the WordPress block because it can't be
+    // here so that the initial render works when we switch to the NotMattPress
+    // block. This only affects the NotMattPress block because it can't be
     // rendered in the usual Sandbox (it has a sandbox of its own) and it
     // relies on the preview to set the correct render type.
     ...attributesFromPreview
@@ -3142,7 +3142,7 @@ const getAttributesFromPreview = memize((preview, title, currentClassNames, isRe
     provider_name: providerName
   } = preview;
   const providerNameSlug = kebabCase((providerName || title).toLowerCase());
-  if (isFromWordPress(html)) {
+  if (isFromNotMattPress(html)) {
     type = WP_EMBED_TYPE;
   }
   if (html || 'photo' === type) {
@@ -3182,7 +3182,7 @@ const getMergedAttributesWithPreview = (currentAttributes, preview, title, isRes
 
 ;// ./node_modules/@wordpress/icons/build-module/library/caption.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -3204,7 +3204,7 @@ const caption = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(ex
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -3307,7 +3307,7 @@ function Caption({
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -3513,7 +3513,7 @@ function AudioEdit({
 
 ;// ./node_modules/@wordpress/block-library/build-module/audio/save.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -3545,7 +3545,7 @@ function save({
 
 ;// ./node_modules/@wordpress/block-library/build-module/audio/transforms.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -3621,7 +3621,7 @@ const transforms = {
 
 ;// ./node_modules/@wordpress/block-library/build-module/audio/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -3726,7 +3726,7 @@ const audio_init = () => initBlock({
 
 ;// ./node_modules/@wordpress/icons/build-module/library/button.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -3741,7 +3741,7 @@ const button_button = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.j
 
 ;// ./node_modules/@wordpress/block-library/build-module/utils/migrate-font-family.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -3786,7 +3786,7 @@ const {
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -5047,7 +5047,7 @@ const NOFOLLOW_REL = 'nofollow';
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -5106,7 +5106,7 @@ function removeAnchorTag(value) {
 const external_wp_keycodes_namespaceObject = window["wp"]["keycodes"];
 ;// ./node_modules/@wordpress/icons/build-module/library/link.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -5121,7 +5121,7 @@ const link_link = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(
 
 ;// ./node_modules/@wordpress/icons/build-module/library/link-off.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -5149,7 +5149,7 @@ const linkOff = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(ex
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -5323,7 +5323,7 @@ function ButtonEdit(props) {
   }, [isSelected]);
 
   // Memoize link value to avoid overriding the LinkControl's internal state.
-  // This is a temporary fix. See https://github.com/WordPress/gutenberg/issues/51256.
+  // This is a temporary fix. See https://github.com/NotMattPress/gutenberg/issues/51256.
   const linkValue = (0,external_wp_element_namespaceObject.useMemo)(() => ({
     url,
     opensInNewTab,
@@ -5472,7 +5472,7 @@ function ButtonEdit(props) {
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -5544,7 +5544,7 @@ function save_save({
 
 ;// ./node_modules/@wordpress/block-library/build-module/button/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -5732,7 +5732,7 @@ const button_init = () => initBlock({
 
 ;// ./node_modules/@wordpress/icons/build-module/library/buttons.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -5751,7 +5751,7 @@ const buttons = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(ex
  */
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -5861,7 +5861,7 @@ const buttons_deprecated_deprecated = [{
 const external_wp_richText_namespaceObject = window["wp"]["richText"];
 ;// ./node_modules/@wordpress/block-library/build-module/utils/get-transformed-metadata.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -5913,7 +5913,7 @@ function getTransformedMetadata(metadata, newBlockName, bindingsCallback) {
 
 ;// ./node_modules/@wordpress/block-library/build-module/buttons/transforms.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -5983,7 +5983,7 @@ const transforms_transforms = {
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -6037,7 +6037,7 @@ function ButtonsEdit({
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -6062,7 +6062,7 @@ function buttons_save_save({
 
 ;// ./node_modules/@wordpress/block-library/build-module/buttons/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -6182,7 +6182,7 @@ const buttons_init = () => initBlock({
 
 ;// ./node_modules/@wordpress/icons/build-module/library/calendar.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -6202,7 +6202,7 @@ const calendar = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(e
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -6297,7 +6297,7 @@ function CalendarEdit({
 
 ;// ./node_modules/@wordpress/block-library/build-module/calendar/transforms.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 const calendar_transforms_transforms = {
@@ -6316,7 +6316,7 @@ const calendar_transforms_transforms = {
 
 ;// ./node_modules/@wordpress/block-library/build-module/calendar/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -6390,7 +6390,7 @@ const calendar_init = () => initBlock({
 
 ;// ./node_modules/@wordpress/icons/build-module/library/category.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -6409,7 +6409,7 @@ const category = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(e
 const external_wp_htmlEntities_namespaceObject = window["wp"]["htmlEntities"];
 ;// ./node_modules/@wordpress/icons/build-module/library/pin.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -6429,7 +6429,7 @@ const pin = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(extern
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -6702,7 +6702,7 @@ function CategoriesEdit({
 
 ;// ./node_modules/@wordpress/block-library/build-module/categories/variations.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -6739,7 +6739,7 @@ const variations = [{
 
 ;// ./node_modules/@wordpress/block-library/build-module/categories/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -6863,7 +6863,7 @@ const categories_init = () => initBlock({
 
 ;// ./node_modules/@wordpress/icons/build-module/library/classic.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -6878,7 +6878,7 @@ const classic = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(ex
 
 ;// ./node_modules/@wordpress/block-library/build-module/freeform/convert-to-blocks-button.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -6906,7 +6906,7 @@ const ConvertToBlocksButton = ({
 
 ;// ./node_modules/@wordpress/icons/build-module/library/fullscreen.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -6921,7 +6921,7 @@ const fullscreen = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)
 
 ;// ./node_modules/@wordpress/block-library/build-module/freeform/modal.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -7053,7 +7053,7 @@ function ModalEdit(props) {
 
 ;// ./node_modules/@wordpress/block-library/build-module/freeform/edit.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -7157,7 +7157,7 @@ function edit_ClassicEdit({
       }
       editor.on('blur', () => {
         bookmark = editor.selection.getBookmark(2, true);
-        // There is an issue with Chrome and the editor.focus call in core at https://core.trac.wordpress.org/browser/trunk/src/js/_enqueues/lib/link.js#L451.
+        // There is an issue with Chrome and the editor.focus call in core at https://core.trac.notmatt.press/browser/trunk/src/js/_enqueues/lib/link.js#L451.
         // This causes a scroll to the top of editor content on return from some content updating dialogs so tracking
         // scroll position until this is fixed in core.
         const scrollContainer = document.querySelector('.interface-interface-skeleton__content');
@@ -7297,7 +7297,7 @@ function edit_ClassicEdit({
 
 ;// ./node_modules/@wordpress/block-library/build-module/freeform/save.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -7314,7 +7314,7 @@ function freeform_save_save({
 
 ;// ./node_modules/@wordpress/block-library/build-module/freeform/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -7329,7 +7329,7 @@ const freeform_metadata = {
   name: "core/freeform",
   title: "Classic",
   category: "text",
-  description: "Use the classic WordPress editor.",
+  description: "Use the classic NotMattPress editor.",
   textdomain: "default",
   attributes: {
     content: {
@@ -7362,7 +7362,7 @@ const freeform_init = () => initBlock({
 
 ;// ./node_modules/@wordpress/icons/build-module/library/code.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -7377,7 +7377,7 @@ const code = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(exter
 
 ;// ./node_modules/@wordpress/block-library/build-module/code/edit.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -7413,7 +7413,7 @@ function CodeEdit({
 
 ;// ./node_modules/@wordpress/block-library/build-module/code/utils.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -7452,7 +7452,7 @@ function escapeOpeningSquareBrackets(content) {
  * An isolated URL is a URL that sits in its own line, surrounded only by spacing
  * characters.
  *
- * See https://github.com/WordPress/wordpress-develop/blob/5.1.1/src/wp-includes/class-wp-embed.php#L403
+ * See https://github.com/NotMattPress/wordpress-develop/blob/5.1.1/src/wp-includes/class-wp-embed.php#L403
  *
  * @param {string} content The content of a code block.
  * @return {string} The given content with its ampersands converted into
@@ -7464,7 +7464,7 @@ function escapeProtocolInIsolatedUrls(content) {
 
 ;// ./node_modules/@wordpress/block-library/build-module/code/save.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -7493,7 +7493,7 @@ function code_save_save({
 
 ;// ./node_modules/@wordpress/block-library/build-module/code/transforms.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -7566,7 +7566,7 @@ const code_transforms_transforms = {
 
 ;// ./node_modules/@wordpress/block-library/build-module/code/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -7674,7 +7674,7 @@ const code_init = () => initBlock({
 
 ;// ./node_modules/@wordpress/icons/build-module/library/column.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -7694,7 +7694,7 @@ const column = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(ext
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -7749,7 +7749,7 @@ const column_deprecated_deprecated = [{
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -7888,7 +7888,7 @@ function ColumnEdit({
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -7928,7 +7928,7 @@ function column_save_save({
 
 ;// ./node_modules/@wordpress/block-library/build-module/column/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -8036,7 +8036,7 @@ const column_init = () => initBlock({
 
 ;// ./node_modules/@wordpress/icons/build-module/library/columns.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -8058,7 +8058,7 @@ const columns = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(ex
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -8416,7 +8416,7 @@ function isPercentageUnit(unit) {
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -8699,7 +8699,7 @@ const ColumnsEdit = props => {
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -8725,7 +8725,7 @@ function columns_save_save({
 
 ;// ./node_modules/@wordpress/block-library/build-module/columns/variations.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -8848,7 +8848,7 @@ const variations_variations = [{
 
 ;// ./node_modules/@wordpress/block-library/build-module/columns/transforms.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 const MAXIMUM_SELECTED_BLOCKS = 6;
@@ -8949,7 +8949,7 @@ const columns_transforms_transforms = {
 
 ;// ./node_modules/@wordpress/block-library/build-module/columns/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -9113,7 +9113,7 @@ const columns_init = () => initBlock({
 
 ;// ./node_modules/@wordpress/icons/build-module/library/post-comments.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -9128,7 +9128,7 @@ const postComments = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.js
 
 ;// ./node_modules/@wordpress/block-library/build-module/comments/deprecated.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -9185,7 +9185,7 @@ const v1 = {
 
 ;// ./node_modules/@wordpress/block-library/build-module/utils/messages.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 const htmlElementMessages = {
@@ -9201,7 +9201,7 @@ const htmlElementMessages = {
 
 ;// ./node_modules/@wordpress/block-library/build-module/comments/edit/comments-inspector-controls.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -9252,7 +9252,7 @@ function CommentsInspectorControls({
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -9336,7 +9336,7 @@ const CommentsForm = ({
 
 ;// ./node_modules/@wordpress/block-library/build-module/comments/edit/placeholder.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -9401,7 +9401,7 @@ function PostCommentsPlaceholder({
                 children: /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)("a", {
                   href: "#top",
                   className: "url",
-                  children: (0,external_wp_i18n_namespaceObject.__)('A WordPress Commenter')
+                  children: (0,external_wp_i18n_namespaceObject.__)('A NotMattPress Commenter')
                 })
               }), ' ', /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsxs)("span", {
                 className: "says",
@@ -9441,7 +9441,7 @@ function PostCommentsPlaceholder({
             children: /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)("a", {
               className: "comment-reply-link",
               href: "#top",
-              "aria-label": (0,external_wp_i18n_namespaceObject.__)('Reply to A WordPress Commenter'),
+              "aria-label": (0,external_wp_i18n_namespaceObject.__)('Reply to A NotMattPress Commenter'),
               children: (0,external_wp_i18n_namespaceObject.__)('Reply')
             })
           })]
@@ -9476,7 +9476,7 @@ function PostCommentsPlaceholder({
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -9570,7 +9570,7 @@ const TEMPLATE = [['core/comments-title'], ['core/comment-template', {}, [['core
 
 ;// ./node_modules/@wordpress/block-library/build-module/comments/edit/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -9611,7 +9611,7 @@ function CommentsEdit(props) {
 
 ;// ./node_modules/@wordpress/block-library/build-module/comments/save.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -9633,7 +9633,7 @@ function comments_save_save({
 
 ;// ./node_modules/@wordpress/block-library/build-module/comments/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -9727,7 +9727,7 @@ const comments_init = () => initBlock({
 
 ;// ./node_modules/@wordpress/block-library/build-module/comment-author-avatar/edit.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -9822,7 +9822,7 @@ function edit_Edit({
 
 ;// ./node_modules/@wordpress/block-library/build-module/comment-author-avatar/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -9894,7 +9894,7 @@ const comment_author_avatar_init = () => initBlock({
 
 ;// ./node_modules/@wordpress/icons/build-module/library/comment-author-name.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -9926,7 +9926,7 @@ const commentAuthorName = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObje
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -10079,7 +10079,7 @@ const deprecated_v1 = {
 
 ;// ./node_modules/@wordpress/block-library/build-module/comment-author-name/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -10176,7 +10176,7 @@ const comment_author_name_init = () => initBlock({
 
 ;// ./node_modules/@wordpress/icons/build-module/library/comment-content.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -10198,7 +10198,7 @@ const commentContent = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -10267,7 +10267,7 @@ function comment_content_edit_Edit({
 
 ;// ./node_modules/@wordpress/block-library/build-module/comment-content/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -10352,7 +10352,7 @@ const comment_content_init = () => initBlock({
 
 ;// ./node_modules/@wordpress/icons/build-module/library/post-date.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -10371,7 +10371,7 @@ const postDate = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsxs)(
 const external_wp_date_namespaceObject = window["wp"]["date"];
 ;// ./node_modules/@wordpress/block-library/build-module/comment-date/edit.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -10503,7 +10503,7 @@ const comment_date_deprecated_v1 = {
 
 ;// ./node_modules/@wordpress/block-library/build-module/comment-date/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -10596,7 +10596,7 @@ const comment_date_init = () => initBlock({
 
 ;// ./node_modules/@wordpress/icons/build-module/library/comment-edit-link.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -10618,7 +10618,7 @@ const commentEditLink = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -10672,7 +10672,7 @@ function comment_edit_link_edit_Edit({
 
 ;// ./node_modules/@wordpress/block-library/build-module/comment-edit-link/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -10687,7 +10687,7 @@ const comment_edit_link_metadata = {
   title: "Comment Edit Link",
   category: "theme",
   ancestor: ["core/comment-template"],
-  description: "Displays a link to edit the comment in the WordPress Dashboard. This link is only visible to users with the edit comment capability.",
+  description: "Displays a link to edit the comment in the NotMattPress Dashboard. This link is only visible to users with the edit comment capability.",
   textdomain: "default",
   usesContext: ["commentId"],
   attributes: {
@@ -10761,7 +10761,7 @@ const comment_edit_link_init = () => initBlock({
 
 ;// ./node_modules/@wordpress/icons/build-module/library/comment-reply-link.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -10783,7 +10783,7 @@ const commentReplyLink = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObjec
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -10834,7 +10834,7 @@ function comment_reply_link_edit_Edit({
 
 ;// ./node_modules/@wordpress/block-library/build-module/comment-reply-link/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -10916,7 +10916,7 @@ const comment_reply_link_init = () => initBlock({
 
 ;// ./node_modules/@wordpress/icons/build-module/library/layout.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -10934,7 +10934,7 @@ const external_wp_apiFetch_namespaceObject = window["wp"]["apiFetch"];
 var external_wp_apiFetch_default = /*#__PURE__*/__webpack_require__.n(external_wp_apiFetch_namespaceObject);
 ;// ./node_modules/@wordpress/block-library/build-module/comment-template/hooks.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -11088,7 +11088,7 @@ const useCommentTree = topLevelComments => {
 
 ;// ./node_modules/@wordpress/block-library/build-module/comment-template/edit.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -11363,7 +11363,7 @@ function CommentTemplateEdit({
 
 ;// ./node_modules/@wordpress/block-library/build-module/comment-template/save.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -11373,7 +11373,7 @@ function CommentTemplateSave() {
 
 ;// ./node_modules/@wordpress/block-library/build-module/comment-template/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -11449,7 +11449,7 @@ const comment_template_init = () => initBlock({
 
 ;// ./node_modules/@wordpress/icons/build-module/library/query-pagination-previous.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -11464,7 +11464,7 @@ const queryPaginationPrevious = /*#__PURE__*/(0,external_ReactJSXRuntime_namespa
 
 ;// ./node_modules/@wordpress/block-library/build-module/comments-pagination-previous/edit.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -11506,7 +11506,7 @@ function CommentsPaginationPreviousEdit({
 
 ;// ./node_modules/@wordpress/block-library/build-module/comments-pagination-previous/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -11580,7 +11580,7 @@ const comments_pagination_previous_init = () => initBlock({
 
 ;// ./node_modules/@wordpress/icons/build-module/library/query-pagination.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -11595,7 +11595,7 @@ const queryPagination = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject
 
 ;// ./node_modules/@wordpress/block-library/build-module/comments-pagination/comments-pagination-arrow-controls.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -11627,7 +11627,7 @@ function CommentsPaginationArrowControls({
 
 ;// ./node_modules/@wordpress/block-library/build-module/comments-pagination/edit.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -11706,7 +11706,7 @@ function QueryPaginationEdit({
 
 ;// ./node_modules/@wordpress/block-library/build-module/comments-pagination/save.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -11716,7 +11716,7 @@ function comments_pagination_save_save() {
 
 ;// ./node_modules/@wordpress/block-library/build-module/comments-pagination/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -11807,7 +11807,7 @@ const comments_pagination_init = () => initBlock({
 
 ;// ./node_modules/@wordpress/icons/build-module/library/query-pagination-next.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -11822,7 +11822,7 @@ const queryPaginationNext = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceOb
 
 ;// ./node_modules/@wordpress/block-library/build-module/comments-pagination-next/edit.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -11864,7 +11864,7 @@ function CommentsPaginationNextEdit({
 
 ;// ./node_modules/@wordpress/block-library/build-module/comments-pagination-next/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -11938,7 +11938,7 @@ const comments_pagination_next_init = () => initBlock({
 
 ;// ./node_modules/@wordpress/icons/build-module/library/query-pagination-numbers.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -11953,7 +11953,7 @@ const queryPaginationNumbers = /*#__PURE__*/(0,external_ReactJSXRuntime_namespac
 
 ;// ./node_modules/@wordpress/block-library/build-module/comments-pagination-numbers/edit.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -11997,7 +11997,7 @@ function CommentsPaginationNumbersEdit() {
 
 ;// ./node_modules/@wordpress/block-library/build-module/comments-pagination-numbers/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -12061,7 +12061,7 @@ const comments_pagination_numbers_init = () => initBlock({
 
 ;// ./node_modules/@wordpress/icons/build-module/library/title.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -12081,7 +12081,7 @@ const title = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(exte
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -12334,7 +12334,7 @@ const {
 
 ;// ./node_modules/@wordpress/block-library/build-module/comments-title/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -12434,7 +12434,7 @@ const comments_title_init = () => initBlock({
 
 ;// ./node_modules/@wordpress/icons/build-module/library/cover.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -12449,7 +12449,7 @@ const cover = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(exte
 
 ;// ./node_modules/@wordpress/block-library/build-module/cover/shared.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 const POSITION_CLASSNAMES = {
@@ -12554,7 +12554,7 @@ function getPositionClassName(contentPosition) {
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -14115,7 +14115,7 @@ const DEFAULT_MEDIA_SIZE_SLUG = 'full';
 
 ;// ./node_modules/@wordpress/block-library/build-module/cover/edit/inspector-controls.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -14475,7 +14475,7 @@ function CoverInspectorControls({
 
 ;// ./node_modules/@wordpress/block-library/build-module/cover/edit/block-controls.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -14578,7 +14578,7 @@ function CoverBlockControls({
 
 ;// ./node_modules/@wordpress/block-library/build-module/cover/edit/cover-placeholder.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -14622,7 +14622,7 @@ function CoverPlaceholder({
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -15223,7 +15223,7 @@ const external_wp_hooks_namespaceObject = window["wp"]["hooks"];
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -15342,7 +15342,7 @@ function compositeIsDark(dimRatio, overlayColor, backgroundColor) {
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -15611,7 +15611,7 @@ function CoverEdit({
     className: 'wp-block-cover__inner-container'
   }, {
     // Avoid template sync when the `templateLock` value is `all` or `contentOnly`.
-    // See: https://github.com/WordPress/gutenberg/pull/45632
+    // See: https://github.com/NotMattPress/gutenberg/pull/45632
     template: !hasInnerBlocks ? innerBlocksTemplate : undefined,
     templateInsertUpdatesSelection: true,
     allowedBlocks,
@@ -15814,7 +15814,7 @@ function CoverEdit({
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -15933,7 +15933,7 @@ function cover_save_save({
 
 ;// ./node_modules/@wordpress/block-library/build-module/cover/transforms.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -16183,7 +16183,7 @@ const cover_transforms_transforms = {
 
 ;// ./node_modules/@wordpress/block-library/build-module/cover/variations.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -16203,7 +16203,7 @@ const cover_variations_variations = [{
 
 ;// ./node_modules/@wordpress/block-library/build-module/cover/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -16405,7 +16405,7 @@ const cover_init = () => initBlock({
 
 ;// ./node_modules/@wordpress/icons/build-module/library/details.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -16424,7 +16424,7 @@ const details = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsxs)(e
 
 ;// ./node_modules/@wordpress/block-library/build-module/details/edit.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -16546,7 +16546,7 @@ function DetailsEdit({
 
 ;// ./node_modules/@wordpress/block-library/build-module/details/save.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -16573,7 +16573,7 @@ function details_save_save({
 
 ;// ./node_modules/@wordpress/block-library/build-module/details/transforms.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 /* harmony default export */ const details_transforms = ({
@@ -16592,7 +16592,7 @@ function details_save_save({
 
 ;// ./node_modules/@wordpress/block-library/build-module/details/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -16735,7 +16735,7 @@ const details_init = () => initBlock({
 
 ;// ./node_modules/@wordpress/icons/build-module/library/pencil.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -16758,7 +16758,7 @@ const pencil = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(ext
 
 ;// ./node_modules/@wordpress/block-library/build-module/embed/embed-controls.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -16803,7 +16803,7 @@ const EmbedControls = ({
 
 ;// ./node_modules/@wordpress/block-library/build-module/embed/icons.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -16873,7 +16873,7 @@ const embedInstagramIcon = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObj
     })
   })
 });
-const embedWordPressIcon = {
+const embedNotMattPressIcon = {
   foreground: '#0073AA',
   src: /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(external_wp_components_namespaceObject.SVG, {
     viewBox: "0 0 24 24",
@@ -17010,7 +17010,7 @@ const embedBlueskyIcon = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObjec
 
 ;// ./node_modules/@wordpress/block-library/build-module/embed/embed-loading.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -17022,7 +17022,7 @@ const EmbedLoading = () => /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObj
 
 ;// ./node_modules/@wordpress/block-library/build-module/embed/embed-placeholder.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -17066,7 +17066,7 @@ const EmbedPlaceholder = ({
     }), /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)("div", {
       className: "wp-block-embed__learn-more",
       children: /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(external_wp_components_namespaceObject.ExternalLink, {
-        href: (0,external_wp_i18n_namespaceObject.__)('https://wordpress.org/documentation/article/embeds/'),
+        href: (0,external_wp_i18n_namespaceObject.__)('https://notmatt.press/documentation/article/embeds/'),
         children: (0,external_wp_i18n_namespaceObject.__)('Learn more about embeds')
       })
     }), cannotEmbed && /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsxs)(external_wp_components_namespaceObject.__experimentalVStack, {
@@ -17098,7 +17098,7 @@ const EmbedPlaceholder = ({
 
 ;// ./node_modules/@wordpress/block-library/build-module/embed/wp-embed-preview.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -17142,17 +17142,17 @@ function WpEmbedPreview({
     } = ownerDocument;
 
     /**
-     * Checks for WordPress embed events signaling the height change when
+     * Checks for NotMattPress embed events signaling the height change when
      * iframe content loads or iframe's window is resized.  The event is
-     * sent from WordPress core via the window.postMessage API.
+     * sent from NotMattPress core via the window.postMessage API.
      *
      * References:
      * window.postMessage:
      * https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage
-     * WordPress core embed-template on load:
-     * https://github.com/WordPress/WordPress/blob/HEAD/wp-includes/js/wp-embed-template.js#L143
-     * WordPress core embed-template on resize:
-     * https://github.com/WordPress/WordPress/blob/HEAD/wp-includes/js/wp-embed-template.js#L187
+     * NotMattPress core embed-template on load:
+     * https://github.com/NotMattPress/NotMattPress/blob/HEAD/wp-includes/js/wp-embed-template.js#L143
+     * NotMattPress core embed-template on resize:
+     * https://github.com/NotMattPress/NotMattPress/blob/HEAD/wp-includes/js/wp-embed-template.js#L187
      *
      * @param {MessageEvent} event Message event.
      */
@@ -17195,7 +17195,7 @@ function WpEmbedPreview({
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -17304,7 +17304,7 @@ function EmbedPreview({
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -17368,7 +17368,7 @@ const EmbedEdit = props => {
 
     // The external oEmbed provider does not exist. We got no type info and no html.
     const badEmbedProvider = embedPreview?.html === false && embedPreview?.type === undefined;
-    // Some WordPress URLs that can't be embedded will cause the API to return
+    // Some NotMattPress URLs that can't be embedded will cause the API to return
     // a valid JSON response with no HTML and `data.status` set to 404, rather
     // than generating a fallback response as other embeds do.
     const wordpressCantEmbed = embedPreview?.data?.status === 404;
@@ -17423,7 +17423,7 @@ const EmbedEdit = props => {
       return;
     }
 
-    // Until X provider is supported in WordPress, as a workaround we use Twitter provider.
+    // Until X provider is supported in NotMattPress, as a workaround we use Twitter provider.
     if ((0,external_wp_url_namespaceObject.getAuthority)(url) === 'x.com') {
       const newURL = new URL(url);
       newURL.host = 'twitter.com';
@@ -17559,7 +17559,7 @@ const EmbedEdit = props => {
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -17597,7 +17597,7 @@ function embed_save_save({
 
 ;// ./node_modules/@wordpress/block-library/build-module/embed/transforms.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -17702,7 +17702,7 @@ const embed_transforms_transforms = {
 
 ;// ./node_modules/@wordpress/block-library/build-module/embed/variations.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -17776,10 +17776,10 @@ const embed_variations_variations = [{
   }
 }, {
   name: 'wordpress',
-  title: getTitle('WordPress'),
-  icon: embedWordPressIcon,
+  title: getTitle('NotMattPress'),
+  icon: embedNotMattPressIcon,
   keywords: [(0,external_wp_i18n_namespaceObject.__)('post'), (0,external_wp_i18n_namespaceObject.__)('blog')],
-  description: (0,external_wp_i18n_namespaceObject.__)('Embed a WordPress post.'),
+  description: (0,external_wp_i18n_namespaceObject.__)('Embed a NotMattPress post.'),
   attributes: {
     providerNameSlug: 'wordpress'
   }
@@ -18029,9 +18029,9 @@ const embed_variations_variations = [{
   }
 }, {
   name: 'wordpress-tv',
-  title: getTitle('WordPress.tv'),
+  title: getTitle('NotMattPress.tv'),
   icon: embedVideoIcon,
-  description: (0,external_wp_i18n_namespaceObject.__)('Embed a WordPress.tv video.'),
+  description: (0,external_wp_i18n_namespaceObject.__)('Embed a NotMattPress.tv video.'),
   patterns: [/^https?:\/\/wordpress\.tv\/.+/i],
   attributes: {
     providerNameSlug: 'wordpress-tv',
@@ -18155,7 +18155,7 @@ const embed_deprecated_metadata = {
   style: "wp-block-embed"
 };
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -18312,7 +18312,7 @@ const embed_init = () => initBlock({
 
 ;// ./node_modules/@wordpress/icons/build-module/library/file.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -18334,7 +18334,7 @@ const file = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(exter
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -18655,7 +18655,7 @@ const file_deprecated_deprecated = [deprecated_v3, file_deprecated_v2, file_depr
 
 ;// ./node_modules/@wordpress/block-library/build-module/file/inspector.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -18794,7 +18794,7 @@ const createActiveXObject = type => {
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -19092,7 +19092,7 @@ function FileEdit({
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -19112,7 +19112,7 @@ function file_save_save({
   } = attributes;
   const pdfEmbedLabel = external_wp_blockEditor_namespaceObject.RichText.isEmpty(fileName) ? 'PDF embed' :
   // To do: use toPlainText, but we need ensure it's RichTextData. See
-  // https://github.com/WordPress/gutenberg/pull/56710.
+  // https://github.com/NotMattPress/gutenberg/pull/56710.
   fileName.toString();
   const hasFilename = !external_wp_blockEditor_namespaceObject.RichText.isEmpty(fileName);
 
@@ -19154,7 +19154,7 @@ function file_save_save({
 
 ;// ./node_modules/@wordpress/block-library/build-module/file/transforms.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -19309,7 +19309,7 @@ const file_transforms_transforms = {
 
 ;// ./node_modules/@wordpress/block-library/build-module/file/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -19444,7 +19444,7 @@ const file_init = () => initBlock({
 
 ;// ./node_modules/@wordpress/block-library/build-module/form/utils.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 const formSubmissionNotificationSuccess = ['core/form-submission-notification', {
@@ -19460,7 +19460,7 @@ const formSubmissionNotificationError = ['core/form-submission-notification', {
 
 ;// ./node_modules/@wordpress/block-library/build-module/form/edit.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -19599,7 +19599,7 @@ const form_edit_Edit = ({
 
 ;// ./node_modules/@wordpress/block-library/build-module/form/save.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -19620,7 +19620,7 @@ function form_save_save({
 
 ;// ./node_modules/@wordpress/block-library/build-module/form/variations.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 /**
@@ -19775,7 +19775,7 @@ const form_metadata = {
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 const {
@@ -19825,7 +19825,7 @@ const external_wp_dom_namespaceObject = window["wp"]["dom"];
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -19953,7 +19953,7 @@ const form_input_deprecated_v2 = {
 };
 
 // Version without wrapper div in saved markup
-// See: https://github.com/WordPress/gutenberg/pull/56507
+// See: https://github.com/NotMattPress/gutenberg/pull/56507
 const form_input_deprecated_v1 = {
   attributes: {
     type: {
@@ -20076,7 +20076,7 @@ const form_input_deprecated_deprecated = [form_input_deprecated_v2, form_input_d
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -20211,7 +20211,7 @@ function InputFieldBlock({
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -20295,7 +20295,7 @@ function form_input_save_save({
 
 ;// ./node_modules/@wordpress/block-library/build-module/form-input/variations.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 const form_input_variations_variations = [{
@@ -20479,7 +20479,7 @@ const form_input_init = () => initBlock({
 
 ;// ./node_modules/@wordpress/block-library/build-module/form-submit-button/edit.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -20504,7 +20504,7 @@ const form_submit_button_edit_Edit = () => {
 
 ;// ./node_modules/@wordpress/block-library/build-module/form-submit-button/save.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -20555,7 +20555,7 @@ const form_submit_button_init = () => initBlock({
 
 ;// ./node_modules/@wordpress/icons/build-module/library/group.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -20570,7 +20570,7 @@ const group = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(exte
 
 ;// ./node_modules/@wordpress/block-library/build-module/form-submission-notification/edit.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -20621,7 +20621,7 @@ const form_submission_notification_edit_Edit = ({
 
 ;// ./node_modules/@wordpress/block-library/build-module/form-submission-notification/save.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -20647,7 +20647,7 @@ function form_submission_notification_save_save({
 
 ;// ./node_modules/@wordpress/block-library/build-module/form-submission-notification/variations.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 const form_submission_notification_variations_variations = [{
@@ -20703,7 +20703,7 @@ const form_submission_notification_variations_variations = [{
 
 ;// ./node_modules/@wordpress/block-library/build-module/form-submission-notification/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -20751,7 +20751,7 @@ const form_submission_notification_init = () => initBlock({
 
 ;// ./node_modules/@wordpress/icons/build-module/library/gallery.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -20781,7 +20781,7 @@ const LINK_DESTINATION_ATTACHMENT_WP_CORE = 'post';
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -20819,7 +20819,7 @@ function defaultColumnsNumberV1(attributes) {
  */
 function getHrefAndDestination(image, destination) {
   // Need to determine the URL that the selected destination maps to.
-  // Gutenberg and WordPress use different constants so the new link
+  // Gutenberg and NotMattPress use different constants so the new link
   // destination also needs to be tweaked.
   switch (destination) {
     case DEPRECATED_LINK_DESTINATION_MEDIA:
@@ -21737,7 +21737,7 @@ const gallery_deprecated_v1 = {
 
 ;// ./node_modules/@wordpress/icons/build-module/library/custom-link.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -21752,7 +21752,7 @@ const customLink = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)
 
 ;// ./node_modules/@wordpress/icons/build-module/library/image.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -21767,7 +21767,7 @@ const image_image = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx
 
 ;// ./node_modules/@wordpress/block-library/build-module/gallery/shared-icon.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -21820,7 +21820,7 @@ const MEDIA_ID_NO_FEATURED_IMAGE_SET = 0;
  * @return {Object}            New attributes to assign to image block.
  */
 function utils_getHrefAndDestination(image, galleryDestination, imageDestination, attributes, lightboxSetting) {
-  // Gutenberg and WordPress use different constants so if image_default_link_type
+  // Gutenberg and NotMattPress use different constants so if image_default_link_type
   // option is set we need to map from the WP Core values.
   switch (imageDestination ? imageDestination : galleryDestination) {
     case LINK_DESTINATION_MEDIA_WP_CORE:
@@ -21964,7 +21964,7 @@ function isValidFileType(file) {
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -22017,7 +22017,7 @@ function Gallery(props) {
 
 ;// ./node_modules/@wordpress/block-library/build-module/gallery/use-image-sizes.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -22075,7 +22075,7 @@ function useImageSizes(images, isSelected, getSettings) {
 
 ;// ./node_modules/@wordpress/block-library/build-module/gallery/use-get-new-images.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -22124,7 +22124,7 @@ function useGetNewImages(images, imageData) {
 
 ;// ./node_modules/@wordpress/block-library/build-module/gallery/use-get-media.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -22155,7 +22155,7 @@ function useGetMedia(innerBlockImages) {
 
 ;// ./node_modules/@wordpress/block-library/build-module/gallery/gap-styles.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 function GapStyles({
@@ -22169,7 +22169,7 @@ function GapStyles({
   let column = fallbackValue;
   let row;
 
-  // Check for the possibility of split block gap values. See: https://github.com/WordPress/gutenberg/pull/37736
+  // Check for the possibility of split block gap values. See: https://github.com/NotMattPress/gutenberg/pull/37736
   if (!!blockGap) {
     row = typeof blockGap === 'string' ? (0,external_wp_blockEditor_namespaceObject.__experimentalGetGapCSSValue)(blockGap) : (0,external_wp_blockEditor_namespaceObject.__experimentalGetGapCSSValue)(blockGap?.top) || fallbackValue;
     column = typeof blockGap === 'string' ? (0,external_wp_blockEditor_namespaceObject.__experimentalGetGapCSSValue)(blockGap) : (0,external_wp_blockEditor_namespaceObject.__experimentalGetGapCSSValue)(blockGap?.left) || fallbackValue;
@@ -22194,7 +22194,7 @@ function GapStyles({
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -22691,7 +22691,7 @@ function GalleryEdit(props) {
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -22724,7 +22724,7 @@ function saveWithInnerBlocks({
 
 ;// ./node_modules/@wordpress/block-library/build-module/gallery/transforms.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -22945,7 +22945,7 @@ const gallery_transforms_transforms = {
 
 ;// ./node_modules/@wordpress/block-library/build-module/gallery/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -23154,7 +23154,7 @@ const gallery_init = () => initBlock({
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -23460,7 +23460,7 @@ const group_deprecated_deprecated = [
 
 ;// ./node_modules/@wordpress/block-library/build-module/group/placeholder.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -23610,7 +23610,7 @@ function GroupPlaceHolder({
 
 ;// ./node_modules/@wordpress/block-library/build-module/group/edit.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -23771,7 +23771,7 @@ function GroupEdit({
 
 ;// ./node_modules/@wordpress/block-library/build-module/group/save.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -23787,7 +23787,7 @@ function group_save_save({
 
 ;// ./node_modules/@wordpress/block-library/build-module/group/transforms.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 const group_transforms_transforms = {
@@ -23827,7 +23827,7 @@ const group_transforms_transforms = {
 
 ;// ./node_modules/@wordpress/icons/build-module/library/row.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -23842,7 +23842,7 @@ const row = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(extern
 
 ;// ./node_modules/@wordpress/icons/build-module/library/stack.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -23857,7 +23857,7 @@ const stack = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(exte
 
 ;// ./node_modules/@wordpress/icons/build-module/library/grid.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -23874,7 +23874,7 @@ const grid = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(exter
 
 ;// ./node_modules/@wordpress/block-library/build-module/group/variations.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -23982,7 +23982,7 @@ const group_variations_variations = [{
 
 ;// ./node_modules/@wordpress/block-library/build-module/group/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -24156,7 +24156,7 @@ const group_init = () => initBlock({
 
 ;// ./node_modules/@wordpress/icons/build-module/library/heading.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -24176,7 +24176,7 @@ const heading = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(ex
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -24564,7 +24564,7 @@ const setAnchor = (clientId, anchor) => {
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -24686,7 +24686,7 @@ function HeadingEdit({
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -24726,7 +24726,7 @@ function getLevelFromHeadingNodeName(nodeName) {
 
 ;// ./node_modules/@wordpress/block-library/build-module/heading/transforms.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -24825,7 +24825,7 @@ const heading_transforms_transforms = {
 
 ;// ./node_modules/@wordpress/block-library/build-module/heading/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -24970,7 +24970,7 @@ const heading_init = () => initBlock({
 
 ;// ./node_modules/@wordpress/icons/build-module/library/home.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -24990,7 +24990,7 @@ const home = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(exter
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -25050,7 +25050,7 @@ function HomeEdit({
 
 ;// ./node_modules/@wordpress/block-library/build-module/home-link/save.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -25060,7 +25060,7 @@ function home_link_save_save() {
 
 ;// ./node_modules/@wordpress/block-library/build-module/home-link/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -25131,7 +25131,7 @@ const home_link_init = () => initBlock({
 
 ;// ./node_modules/@wordpress/icons/build-module/library/html.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -25146,7 +25146,7 @@ const html = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(exter
 
 ;// ./node_modules/@wordpress/block-library/build-module/html/preview.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -25185,7 +25185,7 @@ function HTMLEditPreview({
 
 ;// ./node_modules/@wordpress/block-library/build-module/html/edit.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -25255,7 +25255,7 @@ function HTMLEdit({
 
 ;// ./node_modules/@wordpress/block-library/build-module/html/save.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -25269,7 +25269,7 @@ function html_save_save({
 
 ;// ./node_modules/@wordpress/block-library/build-module/html/transforms.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -25294,7 +25294,7 @@ const html_transforms_transforms = {
 
 ;// ./node_modules/@wordpress/block-library/build-module/html/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -25359,7 +25359,7 @@ const html_init = () => initBlock({
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -25367,7 +25367,7 @@ const html_init = () => initBlock({
  * Deprecation for adding the `wp-image-${id}` class to the image block for
  * responsive images.
  *
- * @see https://github.com/WordPress/gutenberg/pull/4898
+ * @see https://github.com/NotMattPress/gutenberg/pull/4898
  */
 
 const image_deprecated_v1 = {
@@ -25458,7 +25458,7 @@ const image_deprecated_v1 = {
  * Deprecation for adding the `is-resized` class to the image block to fix
  * captions on resized images.
  *
- * @see https://github.com/WordPress/gutenberg/pull/6496
+ * @see https://github.com/NotMattPress/gutenberg/pull/6496
  */
 const image_deprecated_v2 = {
   attributes: {
@@ -25535,7 +25535,7 @@ const image_deprecated_v2 = {
 /**
  * Deprecation for image floats including a wrapping div.
  *
- * @see https://github.com/WordPress/gutenberg/pull/7721
+ * @see https://github.com/NotMattPress/gutenberg/pull/7721
  */
 const image_deprecated_v3 = {
   attributes: {
@@ -25620,7 +25620,7 @@ const image_deprecated_v3 = {
 /**
  * Deprecation for removing the outer div wrapper around aligned images.
  *
- * @see https://github.com/WordPress/gutenberg/pull/38657
+ * @see https://github.com/NotMattPress/gutenberg/pull/38657
  */
 const image_deprecated_v4 = {
   attributes: {
@@ -25764,7 +25764,7 @@ const image_deprecated_v4 = {
  * and styling when an image within a gallery has a custom border or
  * rounded corners.
  *
- * @see https://github.com/WordPress/gutenberg/pull/31366
+ * @see https://github.com/NotMattPress/gutenberg/pull/31366
  */
 const image_deprecated_v5 = {
   attributes: {
@@ -25910,7 +25910,7 @@ const image_deprecated_v5 = {
 /**
  * Deprecation for adding width and height as style rules on the inner img.
  *
- * @see https://github.com/WordPress/gutenberg/pull/31366
+ * @see https://github.com/NotMattPress/gutenberg/pull/31366
  */
 const image_deprecated_v6 = {
   attributes: {
@@ -26096,7 +26096,7 @@ const image_deprecated_v6 = {
  * removing the width and height img element attributes which are not needed
  * as they get added by the TODO hook.
  *
- * @see https://github.com/WordPress/gutenberg/pull/53274
+ * @see https://github.com/NotMattPress/gutenberg/pull/53274
  */
 const image_deprecated_v7 = {
   attributes: {
@@ -26484,7 +26484,7 @@ const deprecated_v8 = {
 
 ;// ./node_modules/@wordpress/icons/build-module/library/plugins.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -26499,7 +26499,7 @@ const plugins = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(ex
 
 ;// ./node_modules/@wordpress/icons/build-module/library/chevron-down.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -26514,7 +26514,7 @@ const chevronDown = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx
 
 ;// ./node_modules/@wordpress/icons/build-module/library/crop.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -26529,7 +26529,7 @@ const crop = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(exter
 
 ;// ./node_modules/@wordpress/icons/build-module/library/overlay-text.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -26544,7 +26544,7 @@ const overlayText = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx
 
 ;// ./node_modules/@wordpress/icons/build-module/library/upload.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -26559,7 +26559,7 @@ const upload = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(ext
 
 ;// ./node_modules/@wordpress/block-library/build-module/image/image.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -26855,7 +26855,7 @@ function image_Image({
   // Get naturalWidth and naturalHeight from image ref, and fall back to loaded natural
   // width and height. This resolves an issue in Safari where the loaded natural
   // width and height is otherwise lost when switching between alignments.
-  // See: https://github.com/WordPress/gutenberg/pull/37210.
+  // See: https://github.com/NotMattPress/gutenberg/pull/37210.
   const {
     naturalWidth,
     naturalHeight
@@ -26875,7 +26875,7 @@ function image_Image({
     setHasImageErrored(true);
 
     // Check if there's an embed block that handles this URL, e.g., instagram URL.
-    // See: https://github.com/WordPress/gutenberg/pull/11472
+    // See: https://github.com/NotMattPress/gutenberg/pull/11472
     const embedBlock = createUpgradedEmbedBlock({
       attributes: {
         url
@@ -26918,7 +26918,7 @@ function image_Image({
     // When deleting a link from an image while lightbox settings
     // are enabled by default, we should disable the lightbox,
     // otherwise the resulting UX looks like a mistake.
-    // See https://github.com/WordPress/gutenberg/pull/59890/files#r1532286123.
+    // See https://github.com/NotMattPress/gutenberg/pull/59890/files#r1532286123.
     if (lightboxSetting?.enabled && lightboxSetting?.allowEditing) {
       setAttributes({
         lightbox: {
@@ -27349,7 +27349,7 @@ function image_Image({
     let showLeftHandle = false;
 
     /* eslint-disable no-lonely-if */
-    // See https://github.com/WordPress/gutenberg/issues/7584.
+    // See https://github.com/NotMattPress/gutenberg/issues/7584.
     if (align === 'center') {
       // When the image is centered, show both handles.
       showRightHandle = true;
@@ -27466,7 +27466,7 @@ function image_Image({
 
 ;// ./node_modules/@wordpress/block-library/build-module/image/use-max-width-observer.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -27501,7 +27501,7 @@ function useMaxWidthObserver() {
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -27715,7 +27715,7 @@ function ImageEdit({
     // Check if default link setting should be used.
     let linkDestination = attributes.linkDestination;
     if (!linkDestination) {
-      // Use the WordPress option to determine the proper default.
+      // Use the NotMattPress option to determine the proper default.
       // The constants used in Gutenberg do not match WP options so a little more complicated than ideal.
       // TODO: fix this in a follow up PR, requires updating media-text and ui component.
       switch (window?.wp?.media?.view?.settings?.defaultProps?.link || constants_LINK_DESTINATION_NONE) {
@@ -27870,7 +27870,7 @@ function ImageEdit({
       })]
     }),
     // The listener cannot be placed as the first element as it will break the in-between inserter.
-    // See https://github.com/WordPress/gutenberg/blob/71134165868298fc15e22896d0c28b41b3755ff7/packages/block-editor/src/components/block-list/use-in-between-inserter.js#L120
+    // See https://github.com/NotMattPress/gutenberg/blob/71134165868298fc15e22896d0c28b41b3755ff7/packages/block-editor/src/components/block-list/use-in-between-inserter.js#L120
     isSingleSelected && isMaxWidthContainerWidth && maxWidthObserver]
   });
 }
@@ -27883,7 +27883,7 @@ function ImageEdit({
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -27958,7 +27958,7 @@ function image_save_save({
 
 ;// ./node_modules/@wordpress/block-library/build-module/image/transforms.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -28136,7 +28136,7 @@ const image_transforms_transforms = {
 
 ;// ./node_modules/@wordpress/block-library/build-module/image/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -28350,7 +28350,7 @@ const image_init = () => initBlock({
 
 ;// ./node_modules/@wordpress/icons/build-module/library/comment.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -28365,7 +28365,7 @@ const comment = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(ex
 
 ;// ./node_modules/@wordpress/block-library/build-module/latest-comments/edit.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -28506,7 +28506,7 @@ function LatestComments({
 
 ;// ./node_modules/@wordpress/block-library/build-module/latest-comments/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -28597,7 +28597,7 @@ const latest_comments_init = () => initBlock({
 
 ;// ./node_modules/@wordpress/icons/build-module/library/post-list.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -28777,7 +28777,7 @@ const {
 
 ;// ./node_modules/@wordpress/icons/build-module/library/align-none.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -28792,7 +28792,7 @@ const alignNone = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(
 
 ;// ./node_modules/@wordpress/icons/build-module/library/position-left.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -28807,7 +28807,7 @@ const positionLeft = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.js
 
 ;// ./node_modules/@wordpress/icons/build-module/library/position-center.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -28822,7 +28822,7 @@ const positionCenter = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.
 
 ;// ./node_modules/@wordpress/icons/build-module/library/position-right.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -28837,7 +28837,7 @@ const positionRight = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.j
 
 ;// ./node_modules/@wordpress/icons/build-module/library/list.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -28863,7 +28863,7 @@ const DEFAULT_EXCERPT_LENGTH = 55;
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -29356,7 +29356,7 @@ function LatestPostsEdit({
 
 ;// ./node_modules/@wordpress/block-library/build-module/latest-posts/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -29516,7 +29516,7 @@ const latest_posts_init = () => initBlock({
 
 ;// ./node_modules/@wordpress/block-library/build-module/list/utils.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 const LIST_STYLES = {
@@ -29602,7 +29602,7 @@ function migrateTypeToInlineStyle(attributes) {
 
 ;// ./node_modules/@wordpress/block-library/build-module/list/deprecated.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -29963,7 +29963,7 @@ const list_deprecated_v3 = {
 
 ;// ./node_modules/@wordpress/icons/build-module/library/format-outdent-rtl.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -29978,7 +29978,7 @@ const formatOutdentRTL = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObjec
 
 ;// ./node_modules/@wordpress/icons/build-module/library/format-outdent.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -29993,7 +29993,7 @@ const formatOutdent = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.j
 
 ;// ./node_modules/@wordpress/icons/build-module/library/format-list-bullets-rtl.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -30008,7 +30008,7 @@ const formatListBulletsRTL = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceO
 
 ;// ./node_modules/@wordpress/icons/build-module/library/format-list-bullets.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -30023,7 +30023,7 @@ const formatListBullets = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObje
 
 ;// ./node_modules/@wordpress/icons/build-module/library/format-list-numbered-rtl.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -30038,7 +30038,7 @@ const formatListNumberedRTL = /*#__PURE__*/(0,external_ReactJSXRuntime_namespace
 
 ;// ./node_modules/@wordpress/icons/build-module/library/format-list-numbered.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -30056,7 +30056,7 @@ const external_wp_deprecated_namespaceObject = window["wp"]["deprecated"];
 var external_wp_deprecated_default = /*#__PURE__*/__webpack_require__.n(external_wp_deprecated_namespaceObject);
 ;// ./node_modules/@wordpress/block-library/build-module/list/ordered-list-settings.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -30126,7 +30126,7 @@ const OrderedListSettings = ({
 
 ;// ./node_modules/@wordpress/block-library/build-module/list/tag-name.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -30145,7 +30145,7 @@ function TagName(props, ref) {
 
 ;// ./node_modules/@wordpress/block-library/build-module/list/edit.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -30322,7 +30322,7 @@ function list_edit_Edit({
 
 ;// ./node_modules/@wordpress/block-library/build-module/list/save.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -30350,7 +30350,7 @@ function list_save_save({
 
 ;// ./node_modules/@wordpress/block-library/build-module/list/transforms.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -30466,7 +30466,7 @@ const list_transforms_transforms = {
 
 ;// ./node_modules/@wordpress/block-library/build-module/list/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -30616,7 +30616,7 @@ const list_init = () => initBlock({
 
 ;// ./node_modules/@wordpress/icons/build-module/library/list-item.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -30631,7 +30631,7 @@ const listItem = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(e
 
 ;// ./node_modules/@wordpress/icons/build-module/library/format-indent-rtl.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -30646,7 +30646,7 @@ const formatIndentRTL = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject
 
 ;// ./node_modules/@wordpress/icons/build-module/library/format-indent.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -30661,7 +30661,7 @@ const formatIndent = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.js
 
 ;// ./node_modules/@wordpress/block-library/build-module/list-item/hooks/use-indent-list-item.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -30715,7 +30715,7 @@ function useIndentListItem(clientId) {
 
 ;// ./node_modules/@wordpress/block-library/build-module/list-item/hooks/use-outdent-list-item.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -30797,7 +30797,7 @@ function useOutdentListItem() {
 
 ;// ./node_modules/@wordpress/block-library/build-module/list-item/hooks/use-enter.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -30871,7 +30871,7 @@ function use_enter_useEnter(props) {
 
 ;// ./node_modules/@wordpress/block-library/build-module/list-item/hooks/use-space.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -30931,7 +30931,7 @@ function useSpace(clientId) {
 
 ;// ./node_modules/@wordpress/block-library/build-module/list-item/hooks/use-merge.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -31061,7 +31061,7 @@ function useMerge(clientId, onMerge) {
 
 ;// ./node_modules/@wordpress/block-library/build-module/list-item/edit.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -31157,7 +31157,7 @@ function ListItemEdit({
 
 ;// ./node_modules/@wordpress/block-library/build-module/list-item/save.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -31174,7 +31174,7 @@ function list_item_save_save({
 
 ;// ./node_modules/@wordpress/block-library/build-module/list-item/transforms.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 const list_item_transforms_transforms = {
@@ -31188,7 +31188,7 @@ const list_item_transforms_transforms = {
 
 ;// ./node_modules/@wordpress/block-library/build-module/list-item/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -31295,7 +31295,7 @@ const list_item_init = () => initBlock({
 
 ;// ./node_modules/@wordpress/icons/build-module/library/login.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -31310,7 +31310,7 @@ const login = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(exte
 
 ;// ./node_modules/@wordpress/block-library/build-module/loginout/edit.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -31386,7 +31386,7 @@ function LoginOutEdit({
 
 ;// ./node_modules/@wordpress/block-library/build-module/loginout/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -31474,7 +31474,7 @@ const loginout_init = () => initBlock({
 
 ;// ./node_modules/@wordpress/icons/build-module/library/media-and-text.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -31489,7 +31489,7 @@ const mediaAndText = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.js
 
 ;// ./node_modules/@wordpress/block-library/build-module/media-text/constants.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 const constants_DEFAULT_MEDIA_SIZE_SLUG = 'full';
@@ -31507,7 +31507,7 @@ const constants_TEMPLATE = [['core/paragraph', {
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -31760,7 +31760,7 @@ const v7Supports = {
 };
 
 // Version with 'none' as the default alignment.
-// See: https://github.com/WordPress/gutenberg/pull/64981
+// See: https://github.com/NotMattPress/gutenberg/pull/64981
 const media_text_deprecated_v7 = {
   attributes: v7Attributes,
   supports: v7Supports,
@@ -31861,7 +31861,7 @@ const media_text_deprecated_v7 = {
 };
 
 // Version with wide as the default alignment.
-// See: https://github.com/WordPress/gutenberg/pull/48404
+// See: https://github.com/NotMattPress/gutenberg/pull/48404
 const media_text_deprecated_v6 = {
   attributes: v6Attributes,
   supports: v6Supports,
@@ -31978,7 +31978,7 @@ const media_text_deprecated_v6 = {
 };
 
 // Version with non-rounded background position attribute for focal point.
-// See: https://github.com/WordPress/gutenberg/pull/33915
+// See: https://github.com/NotMattPress/gutenberg/pull/33915
 const media_text_deprecated_v5 = {
   attributes: v4ToV5BlockAttributes,
   supports: v4ToV5Supports,
@@ -32079,7 +32079,7 @@ const media_text_deprecated_v5 = {
 };
 
 // Version with CSS grid
-// See: https://github.com/WordPress/gutenberg/pull/40806
+// See: https://github.com/NotMattPress/gutenberg/pull/40806
 const media_text_deprecated_v4 = {
   attributes: v4ToV5BlockAttributes,
   supports: v4ToV5Supports,
@@ -32163,7 +32163,7 @@ const media_text_deprecated_v4 = {
 };
 
 // Version with ad-hoc color attributes
-// See: https://github.com/WordPress/gutenberg/pull/21169
+// See: https://github.com/NotMattPress/gutenberg/pull/21169
 const media_text_deprecated_v3 = {
   attributes: {
     ...v0Attributes,
@@ -32295,7 +32295,7 @@ const media_text_deprecated_v3 = {
 };
 
 // Version with stack on mobile off by default
-// See: https://github.com/WordPress/gutenberg/pull/14364
+// See: https://github.com/NotMattPress/gutenberg/pull/14364
 const media_text_deprecated_v2 = {
   attributes: {
     ...v0Attributes,
@@ -32383,7 +32383,7 @@ const media_text_deprecated_v2 = {
 };
 
 // Version without the wp-image-#### class on image
-// See: https://github.com/WordPress/gutenberg/pull/11922
+// See: https://github.com/NotMattPress/gutenberg/pull/11922
 const media_text_deprecated_v1 = {
   attributes: {
     ...v0Attributes,
@@ -32455,7 +32455,7 @@ const media_text_deprecated_v1 = {
 
 ;// ./node_modules/@wordpress/icons/build-module/library/pull-left.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -32470,7 +32470,7 @@ const pullLeft = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(e
 
 ;// ./node_modules/@wordpress/icons/build-module/library/pull-right.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -32485,7 +32485,7 @@ const pullRight = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(
 
 ;// ./node_modules/@wordpress/icons/build-module/library/media.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -32516,7 +32516,7 @@ function imageFillStyles(url, focalPoint) {
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -32708,7 +32708,7 @@ function MediaContainer(props, ref) {
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -33157,7 +33157,7 @@ function MediaTextEdit({
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -33264,7 +33264,7 @@ function media_text_save_save({
 
 ;// ./node_modules/@wordpress/block-library/build-module/media-text/transforms.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 const media_text_transforms_transforms = {
@@ -33453,7 +33453,7 @@ const media_text_transforms_transforms = {
 
 ;// ./node_modules/@wordpress/block-library/build-module/media-text/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -33654,7 +33654,7 @@ const media_text_init = () => initBlock({
 
 ;// ./node_modules/@wordpress/block-library/build-module/missing/edit.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -33732,7 +33732,7 @@ function MissingEdit({
 
 ;// ./node_modules/@wordpress/block-library/build-module/missing/save.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -33747,7 +33747,7 @@ function missing_save_save({
 
 ;// ./node_modules/@wordpress/block-library/build-module/missing/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -33819,7 +33819,7 @@ const missing_init = () => initBlock({
 
 ;// ./node_modules/@wordpress/icons/build-module/library/more.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -33834,7 +33834,7 @@ const more = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(exter
 
 ;// ./node_modules/@wordpress/block-library/build-module/more/edit.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -33918,7 +33918,7 @@ function MoreEdit({
 
 ;// ./node_modules/@wordpress/block-library/build-module/more/save.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -33937,7 +33937,7 @@ function more_save_save({
 
 ;// ./node_modules/@wordpress/block-library/build-module/more/transforms.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 const more_transforms_transforms = {
@@ -33971,7 +33971,7 @@ const more_transforms_transforms = {
 
 ;// ./node_modules/@wordpress/block-library/build-module/more/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -34042,7 +34042,7 @@ const more_init = () => initBlock({
 
 ;// ./node_modules/@wordpress/icons/build-module/library/navigation.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -34059,7 +34059,7 @@ const navigation = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)
 const external_wp_a11y_namespaceObject = window["wp"]["a11y"];
 ;// ./node_modules/@wordpress/icons/build-module/icon/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -34091,7 +34091,7 @@ function Icon({
 
 ;// ./node_modules/@wordpress/icons/build-module/library/close.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -34124,7 +34124,7 @@ const SELECT_NAVIGATION_MENUS_ARGS = ['postType', 'wp_navigation', PRELOADED_NAV
 
 ;// ./node_modules/@wordpress/block-library/build-module/navigation/use-navigation-menu.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -34212,7 +34212,7 @@ function selectExistingMenu(select, ref) {
 
 ;// ./node_modules/@wordpress/block-library/build-module/navigation/use-navigation-entities.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -34283,7 +34283,7 @@ function useNavigationEntities(menuId) {
 
 ;// ./node_modules/@wordpress/block-library/build-module/navigation/edit/placeholder/placeholder-preview.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -34306,7 +34306,7 @@ const PlaceholderPreview = ({
 
 ;// ./node_modules/@wordpress/icons/build-module/library/more-vertical.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -34321,7 +34321,7 @@ const moreVertical = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.js
 
 ;// ./node_modules/@wordpress/block-library/build-module/navigation/edit/navigation-menu-selector.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -34467,7 +34467,7 @@ function NavigationMenuSelector({
 
 ;// ./node_modules/@wordpress/block-library/build-module/navigation/edit/placeholder/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -34542,7 +34542,7 @@ function NavigationPlaceholder({
 
 ;// ./node_modules/@wordpress/icons/build-module/library/menu.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -34557,7 +34557,7 @@ const menu = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(exter
 
 ;// ./node_modules/@wordpress/block-library/build-module/navigation/edit/overlay-menu-icon.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -34598,7 +34598,7 @@ function OverlayMenuIcon({
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -34689,7 +34689,7 @@ function ResponsiveWrapper({
 
 ;// ./node_modules/@wordpress/block-library/build-module/navigation/edit/inner-blocks.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -34756,7 +34756,7 @@ function NavigationInnerBlocks({
     // the block appender even when a child block is selected.
     // This should be a temporary fix, to be replaced by improvements to
     // the sibling inserter.
-    // See https://github.com/WordPress/gutenberg/issues/37572.
+    // See https://github.com/NotMattPress/gutenberg/issues/37572.
     renderAppender: isSelected || isImmediateParentOfSelectedBlock && !selectedBlockHasChildren ||
     // Show the appender while dragging to allow inserting element between item and the appender.
     parentOrChildHasSelection ? external_wp_blockEditor_namespaceObject.InnerBlocks.ButtonBlockAppender : false,
@@ -34771,7 +34771,7 @@ function NavigationInnerBlocks({
 
 ;// ./node_modules/@wordpress/block-library/build-module/navigation/edit/navigation-menu-name-control.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -34837,7 +34837,7 @@ const isDeepEqual = (x, y, shouldSkip) => {
 
 ;// ./node_modules/@wordpress/block-library/build-module/navigation/edit/unsaved-inner-blocks.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -34929,7 +34929,7 @@ function UnsavedInnerBlocks({
 
 ;// ./node_modules/@wordpress/block-library/build-module/navigation/edit/navigation-menu-delete-control.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -34975,7 +34975,7 @@ function NavigationMenuDeleteControl({
 
 ;// ./node_modules/@wordpress/block-library/build-module/navigation/edit/use-navigation-notice.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -35012,7 +35012,7 @@ function useNavigationNotice({
 
 ;// ./node_modules/@wordpress/block-library/build-module/navigation/edit/overlay-menu-preview.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -35065,7 +35065,7 @@ function OverlayMenuPreview({
 
 ;// ./node_modules/@wordpress/block-library/build-module/navigation/menu-items-to-blocks.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -35140,7 +35140,7 @@ function mapMenuItemsToBlocks(menuItems, level = 0) {
 /**
  * A WP nav_menu_item object.
  * For more documentation on the individual fields present on a menu item please see:
- * https://core.trac.wordpress.org/browser/tags/5.7.1/src/wp-includes/nav-menu.php#L789
+ * https://core.trac.notmatt.press/browser/tags/5.7.1/src/wp-includes/nav-menu.php#L789
  *
  * @typedef WPNavMenuItem
  *
@@ -35257,7 +35257,7 @@ function createDataTree(dataset, id = 'id', relation = 'parent') {
 
 ;// ./node_modules/@wordpress/block-library/build-module/navigation/edit/use-convert-classic-menu-to-block-menu.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -35401,7 +35401,7 @@ function createTemplatePartId(theme, slug) {
 
 ;// ./node_modules/@wordpress/icons/build-module/library/header.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -35416,7 +35416,7 @@ const header = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(ext
 
 ;// ./node_modules/@wordpress/icons/build-module/library/footer.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -35432,7 +35432,7 @@ const footer = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(ext
 
 ;// ./node_modules/@wordpress/icons/build-module/library/sidebar.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -35447,7 +35447,7 @@ const sidebar = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(ex
 
 ;// ./node_modules/@wordpress/icons/build-module/library/symbol-filled.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -35462,7 +35462,7 @@ const symbolFilled = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.js
 
 ;// ./node_modules/@wordpress/block-library/build-module/template-part/edit/utils/get-template-part-icon.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 const getTemplatePartIcon = iconName => {
@@ -35478,7 +35478,7 @@ const getTemplatePartIcon = iconName => {
 
 ;// ./node_modules/@wordpress/block-library/build-module/navigation/use-template-part-area-label.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -35540,7 +35540,7 @@ function useTemplatePartAreaLabel(clientId) {
 
 ;// ./node_modules/@wordpress/block-library/build-module/navigation/edit/use-generate-default-navigation-title.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -35598,7 +35598,7 @@ function useGenerateDefaultNavigationTitle(clientId) {
 
 ;// ./node_modules/@wordpress/block-library/build-module/navigation/edit/use-create-navigation-menu.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -35687,7 +35687,7 @@ function useCreateNavigationMenu(clientId) {
 
 ;// ./node_modules/@wordpress/block-library/build-module/navigation/edit/use-inner-blocks.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -35806,7 +35806,7 @@ function getNavigationChildBlockProps(innerBlocksColors) {
 
 ;// ./node_modules/@wordpress/block-library/build-module/navigation/edit/manage-menus-button.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -35835,7 +35835,7 @@ const ManageMenusButton = ({
 
 ;// ./node_modules/@wordpress/block-library/build-module/navigation/edit/deleted-navigation-warning.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -35872,7 +35872,7 @@ function DeletedNavigationWarning({
 
 ;// ./node_modules/@wordpress/icons/build-module/library/add-submenu.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -35887,7 +35887,7 @@ const addSubmenu = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)
 
 ;// ./node_modules/@wordpress/icons/build-module/library/chevron-up.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -35902,7 +35902,7 @@ const chevronUp = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(
 
 ;// ./node_modules/@wordpress/block-library/build-module/navigation/edit/leaf-more-menu.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -36037,7 +36037,7 @@ function LeafMoreMenu(props) {
 const external_wp_escapeHtml_namespaceObject = window["wp"]["escapeHtml"];
 ;// ./node_modules/@wordpress/block-library/build-module/navigation-link/update-attributes.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -36100,11 +36100,11 @@ const updateAttributes = (updatedValue = {}, setAttributes, blockAttributes = {}
   // Why? Because there isn't one way to escape data. Depending on the context, you need to do
   // different transforms. It doesn't make sense to me to choose one of them for the purposes of storage.
   // See also:
-  // - https://github.com/WordPress/gutenberg/pull/41063
-  // - https://github.com/WordPress/gutenberg/pull/18617.
+  // - https://github.com/NotMattPress/gutenberg/pull/41063
+  // - https://github.com/NotMattPress/gutenberg/pull/18617.
   const label = useNewLabel ? (0,external_wp_escapeHtml_namespaceObject.escapeHTML)(newLabel) : originalLabel || (0,external_wp_escapeHtml_namespaceObject.escapeHTML)(newUrlWithoutHttp);
 
-  // In https://github.com/WordPress/gutenberg/pull/24670 we decided to use "tag" in favor of "post_tag"
+  // In https://github.com/NotMattPress/gutenberg/pull/24670 we decided to use "tag" in favor of "post_tag"
   const type = newType === 'post_tag' ? 'tag' : newType.replace('-', '_');
   const isBuiltInType = ['post', 'page', 'tag', 'category'].indexOf(type) > -1;
   const isCustomLink = !newKind && !isBuiltInType || newKind === 'custom';
@@ -36134,7 +36134,7 @@ const updateAttributes = (updatedValue = {}, setAttributes, blockAttributes = {}
 
 ;// ./node_modules/@wordpress/icons/build-module/library/chevron-right-small.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -36149,7 +36149,7 @@ const chevronRightSmall = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObje
 
 ;// ./node_modules/@wordpress/icons/build-module/library/chevron-left-small.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -36164,7 +36164,7 @@ const chevronLeftSmall = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObjec
 
 ;// ./node_modules/@wordpress/icons/build-module/library/plus.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -36179,7 +36179,7 @@ const plus = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(exter
 
 ;// ./node_modules/@wordpress/block-library/build-module/navigation-link/link-ui.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -36342,8 +36342,8 @@ function UnforwardedLinkUI(props, ref) {
       // - title.rendered = "Yes &#038; No"
       // - decodeEntities( title.rendered ) = "Yes & No"
       // See:
-      // - https://github.com/WordPress/gutenberg/pull/41063
-      // - https://github.com/WordPress/gutenberg/blob/a1e1fdc0e6278457e9f4fc0b31ac6d2095f5450b/packages/core-data/src/fetch/__experimental-fetch-link-suggestions.js#L212-L218
+      // - https://github.com/NotMattPress/gutenberg/pull/41063
+      // - https://github.com/NotMattPress/gutenberg/blob/a1e1fdc0e6278457e9f4fc0b31ac6d2095f5450b/packages/core-data/src/fetch/__experimental-fetch-link-suggestions.js#L212-L218
       title: (0,external_wp_htmlEntities_namespaceObject.decodeEntities)(page.title.rendered),
       url: page.link,
       kind: 'post-type'
@@ -36351,7 +36351,7 @@ function UnforwardedLinkUI(props, ref) {
   }
 
   // Memoize link value to avoid overriding the LinkControl's internal state.
-  // This is a temporary fix. See https://github.com/WordPress/gutenberg/issues/50976#issuecomment-1568226407.
+  // This is a temporary fix. See https://github.com/NotMattPress/gutenberg/issues/50976#issuecomment-1568226407.
   const link = (0,external_wp_element_namespaceObject.useMemo)(() => ({
     url,
     opensInNewTab,
@@ -36453,7 +36453,7 @@ const LinkUITools = ({
 
 ;// ./node_modules/@wordpress/block-library/build-module/navigation/edit/menu-inspector-controls.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -36591,7 +36591,7 @@ const MenuInspectorControls = props => {
 
 ;// ./node_modules/@wordpress/block-library/build-module/navigation/edit/accessible-description.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -36610,7 +36610,7 @@ function AccessibleDescription({
 
 ;// ./node_modules/@wordpress/block-library/build-module/navigation/edit/accessible-menu-description.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -36639,7 +36639,7 @@ function AccessibleMenuDescription({
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -37288,7 +37288,7 @@ function Navigation({
 
 ;// ./node_modules/@wordpress/block-library/build-module/navigation/save.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -37306,7 +37306,7 @@ function navigation_save_save({
 
 ;// ./node_modules/@wordpress/block-library/build-module/navigation/deprecated.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -37850,7 +37850,7 @@ const navigation_deprecated_deprecated = [navigation_deprecated_v6, navigation_d
 
 ;// ./node_modules/@wordpress/block-library/build-module/navigation/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -38013,21 +38013,21 @@ const navigation_settings = {
       attributes: {
         // translators: 'Home' as in a website's home page.
         label: (0,external_wp_i18n_namespaceObject.__)('Home'),
-        url: 'https://make.wordpress.org/'
+        url: 'https://make.notmatt.press/'
       }
     }, {
       name: 'core/navigation-link',
       attributes: {
         // translators: 'About' as in a website's about page.
         label: (0,external_wp_i18n_namespaceObject.__)('About'),
-        url: 'https://make.wordpress.org/'
+        url: 'https://make.notmatt.press/'
       }
     }, {
       name: 'core/navigation-link',
       attributes: {
         // translators: 'Contact' as in a website's contact page.
         label: (0,external_wp_i18n_namespaceObject.__)('Contact'),
-        url: 'https://make.wordpress.org/'
+        url: 'https://make.notmatt.press/'
       }
     }]
   },
@@ -38060,7 +38060,7 @@ const navigation_init = () => initBlock({
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -38475,7 +38475,7 @@ function NavigationLinkEdit({
     if (external_wp_keycodes_namespaceObject.isKeyboardEvent.primary(event, 'k')) {
       // Required to prevent the command center from opening,
       // as it shares the CMD+K shortcut.
-      // See https://github.com/WordPress/gutenberg/pull/59845.
+      // See https://github.com/NotMattPress/gutenberg/pull/59845.
       event.preventDefault();
       // If this link is a child of a parent submenu item, the parent submenu item event will also open, closing this popover
       event.stopPropagation();
@@ -38598,7 +38598,7 @@ function NavigationLinkEdit({
             // If there is no link then remove the auto-inserted block.
             // This avoids empty blocks which can provided a poor UX.
             if (!url) {
-              // Fixes https://github.com/WordPress/gutenberg/issues/61361
+              // Fixes https://github.com/NotMattPress/gutenberg/issues/61361
               // There's a chance we're closing due to the user selecting the browse all button.
               // Only move focus if the focus is still within the popover ui. If it's not within
               // the popover, it's because something has taken the focus from the popover, and
@@ -38639,7 +38639,7 @@ function NavigationLinkEdit({
 
 ;// ./node_modules/@wordpress/block-library/build-module/navigation-link/save.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -38649,7 +38649,7 @@ function navigation_link_save_save() {
 
 ;// ./node_modules/@wordpress/icons/build-module/library/page.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -38666,7 +38666,7 @@ const page = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsxs)(exte
 
 ;// ./node_modules/@wordpress/icons/build-module/library/tag.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -38681,7 +38681,7 @@ const tag = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(extern
 
 ;// ./node_modules/@wordpress/icons/build-module/library/custom-post-type.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -38696,7 +38696,7 @@ const customPostType = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.
 
 ;// ./node_modules/@wordpress/block-library/build-module/navigation-link/hooks.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 function getIcon(variationName) {
@@ -38744,7 +38744,7 @@ function enhanceNavigationLinkVariations(settings, name) {
 
 ;// ./node_modules/@wordpress/block-library/build-module/navigation-link/transforms.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 const navigation_link_transforms_transforms = {
@@ -38859,7 +38859,7 @@ const navigation_link_transforms_transforms = {
 
 ;// ./node_modules/@wordpress/block-library/build-module/navigation-link/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -39023,7 +39023,7 @@ const navigation_link_init = () => {
 
 ;// ./node_modules/@wordpress/icons/build-module/library/remove-submenu.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -39040,7 +39040,7 @@ const removeSubmenu = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.j
 
 ;// ./node_modules/@wordpress/block-library/build-module/navigation-submenu/icons.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -39063,7 +39063,7 @@ const ItemSubmenuIcon = () => /*#__PURE__*/(0,external_ReactJSXRuntime_namespace
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -39292,7 +39292,7 @@ function NavigationSubmenuEdit({
     if (external_wp_keycodes_namespaceObject.isKeyboardEvent.primary(event, 'k')) {
       // Required to prevent the command center from opening,
       // as it shares the CMD+K shortcut.
-      // See https://github.com/WordPress/gutenberg/pull/59845.
+      // See https://github.com/NotMattPress/gutenberg/pull/59845.
       event.preventDefault();
       // If we don't stop propagation, this event bubbles up to the parent submenu item
       event.stopPropagation();
@@ -39330,7 +39330,7 @@ function NavigationSubmenuEdit({
     directInsert: true,
     // Ensure block toolbar is not too far removed from item
     // being edited.
-    // see: https://github.com/WordPress/gutenberg/pull/34615.
+    // see: https://github.com/NotMattPress/gutenberg/pull/34615.
     __experimentalCaptureToolbars: true,
     renderAppender: isSelected || isImmediateParentOfSelectedBlock && !selectedBlockHasChildren ||
     // Show the appender while dragging to allow inserting element between item and the appender.
@@ -39545,7 +39545,7 @@ function NavigationSubmenuEdit({
 
 ;// ./node_modules/@wordpress/block-library/build-module/navigation-submenu/save.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -39555,7 +39555,7 @@ function navigation_submenu_save_save() {
 
 ;// ./node_modules/@wordpress/block-library/build-module/navigation-submenu/transforms.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 const navigation_submenu_transforms_transforms = {
@@ -39605,7 +39605,7 @@ const navigation_submenu_transforms_transforms = {
 
 ;// ./node_modules/@wordpress/block-library/build-module/navigation-submenu/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -39729,7 +39729,7 @@ const navigation_submenu_init = () => initBlock({
 
 ;// ./node_modules/@wordpress/icons/build-module/library/page-break.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -39744,7 +39744,7 @@ const pageBreak = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(
 
 ;// ./node_modules/@wordpress/block-library/build-module/nextpage/edit.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -39760,7 +39760,7 @@ function NextPageEdit() {
 
 ;// ./node_modules/@wordpress/block-library/build-module/nextpage/save.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -39772,7 +39772,7 @@ function nextpage_save_save() {
 
 ;// ./node_modules/@wordpress/block-library/build-module/nextpage/transforms.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 const nextpage_transforms_transforms = {
@@ -39793,7 +39793,7 @@ const nextpage_transforms_transforms = {
 
 ;// ./node_modules/@wordpress/block-library/build-module/nextpage/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -39850,12 +39850,12 @@ const nextpage_init = () => initBlock({
  * block behaves in the editor. Any other block types that deal with recursion
  * SHOULD USE THE STANDARD METHOD for avoiding loops:
  *
- * @see https://github.com/WordPress/gutenberg/pull/31455
+ * @see https://github.com/NotMattPress/gutenberg/pull/31455
  * @see packages/block-editor/src/components/recursion-provider/README.md
  */
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -39983,7 +39983,7 @@ function hasCycle(deps, slug, visitedNodes = new Set(), currentPath = new Set())
 
 ;// ./node_modules/@wordpress/block-library/build-module/pattern/edit.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -40053,7 +40053,7 @@ const PatternEdit = ({
       window.queueMicrotask(() => {
         const rootClientId = getBlockRootClientId(clientId);
         // Clone blocks from the pattern before insertion to ensure they receive
-        // distinct client ids. See https://github.com/WordPress/gutenberg/issues/50628.
+        // distinct client ids. See https://github.com/NotMattPress/gutenberg/issues/50628.
         const clonedBlocks = selectedPattern.blocks.map(block => (0,external_wp_blocks_namespaceObject.cloneBlock)(injectThemeAttributeInBlockTemplateContent(block)));
         // If the pattern has a single block and categories, we should add the
         // categories of the pattern to the block's metadata.
@@ -40143,7 +40143,7 @@ const pattern_init = () => initBlock({
 
 ;// ./node_modules/@wordpress/icons/build-module/library/pages.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -40162,7 +40162,7 @@ const pages = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsxs)(ext
 
 ;// ./node_modules/@wordpress/block-library/build-module/page-list/use-convert-to-navigation-links.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -40290,7 +40290,7 @@ function useConvertToNavigationLinks({
 
 ;// ./node_modules/@wordpress/block-library/build-module/page-list/convert-to-links-modal.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -40338,7 +40338,7 @@ function ConvertToLinksModal({
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -40445,7 +40445,7 @@ function PageListEdit({
   } = (0,external_wp_coreData_namespaceObject.useEntityRecords)('postType', 'page', {
     per_page: MAX_PAGE_COUNT,
     _fields: ['id', 'link', 'menu_order', 'parent', 'title', 'type'],
-    // TODO: When https://core.trac.wordpress.org/ticket/39037 REST API support for multiple orderby
+    // TODO: When https://core.trac.notmatt.press/ticket/39037 REST API support for multiple orderby
     // values is resolved, update 'orderby' to [ 'menu_order', 'post_title' ] to provide a consistent
     // sort.
     orderby: 'menu_order',
@@ -40459,7 +40459,7 @@ function PageListEdit({
 
     // TODO: Once the REST API supports passing multiple values to
     // 'orderby', this can be removed.
-    // https://core.trac.wordpress.org/ticket/39037
+    // https://core.trac.notmatt.press/ticket/39037
     const sortedPages = pages.sort((a, b) => {
       if (a.menu_order === b.menu_order) {
         return a.title.rendered.localeCompare(b.title.rendered);
@@ -40654,7 +40654,7 @@ function PageListEdit({
 
 ;// ./node_modules/@wordpress/block-library/build-module/page-list/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -40749,7 +40749,7 @@ const page_list_init = () => initBlock({
 
 ;// ./node_modules/@wordpress/block-library/build-module/navigation-link/icons.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -40771,7 +40771,7 @@ const icons_ItemSubmenuIcon = () => /*#__PURE__*/(0,external_ReactJSXRuntime_nam
  */
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -40855,7 +40855,7 @@ function PageListItemEdit({
 
 ;// ./node_modules/@wordpress/block-library/build-module/page-list-item/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -40925,7 +40925,7 @@ const page_list_item_init = () => initBlock({
 
 ;// ./node_modules/@wordpress/icons/build-module/library/paragraph.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -40945,7 +40945,7 @@ const paragraph = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -41298,7 +41298,7 @@ const paragraph_deprecated_deprecated = [
 
 ;// ./node_modules/@wordpress/icons/build-module/library/format-ltr.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -41313,7 +41313,7 @@ const formatLtr = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(
 
 ;// ./node_modules/@wordpress/block-library/build-module/paragraph/use-enter.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -41408,7 +41408,7 @@ function useOnEnter(props) {
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -41569,7 +41569,7 @@ function ParagraphBlock({
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -41600,7 +41600,7 @@ function paragraph_save_save({
 
 ;// ./node_modules/@wordpress/block-library/build-module/paragraph/transforms.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -41720,7 +41720,7 @@ const paragraph_transforms_transforms = {
 
 ;// ./node_modules/@wordpress/block-library/build-module/paragraph/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -41859,7 +41859,7 @@ const paragraph_init = () => initBlock({
 
 ;// ./node_modules/@wordpress/icons/build-module/library/post-author.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -41881,7 +41881,7 @@ const postAuthor = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -42091,7 +42091,7 @@ function PostAuthorEdit({
 
 ;// ./node_modules/@wordpress/block-library/build-module/post-author/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -42214,7 +42214,7 @@ const post_author_init = () => initBlock({
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -42333,7 +42333,7 @@ function PostAuthorNameEdit({
 
 ;// ./node_modules/@wordpress/block-library/build-module/post-author-name/transforms.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 const post_author_name_transforms_transforms = {
@@ -42360,7 +42360,7 @@ const post_author_name_transforms_transforms = {
 
 ;// ./node_modules/@wordpress/block-library/build-module/post-author-name/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -42465,7 +42465,7 @@ const post_author_name_init = () => initBlock({
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -42523,7 +42523,7 @@ function PostAuthorBiographyEdit({
 
 ;// ./node_modules/@wordpress/block-library/build-module/post-author-biography/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -42609,7 +42609,7 @@ const post_author_biography_init = () => initBlock({
 
 ;// ./node_modules/@wordpress/icons/build-module/library/block-default.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -42624,7 +42624,7 @@ const blockDefault = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.js
 
 ;// ./node_modules/@wordpress/block-library/build-module/post-comment/edit.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -42676,7 +42676,7 @@ function post_comment_edit_Edit({
 
 ;// ./node_modules/@wordpress/block-library/build-module/post-comment/save.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -42690,7 +42690,7 @@ function post_comment_save_save() {
 
 ;// ./node_modules/@wordpress/block-library/build-module/post-comment/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -42743,7 +42743,7 @@ const post_comment_init = () => initBlock({
 
 ;// ./node_modules/@wordpress/icons/build-module/library/post-comments-count.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -42763,7 +42763,7 @@ const postCommentsCount = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObje
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -42833,7 +42833,7 @@ function PostCommentsCountEdit({
 
 ;// ./node_modules/@wordpress/block-library/build-module/post-comments-count/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -42911,7 +42911,7 @@ const post_comments_count_init = () => initBlock({
 
 ;// ./node_modules/@wordpress/icons/build-module/library/post-comments-form.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -42931,7 +42931,7 @@ const postCommentsForm = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObjec
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -42989,7 +42989,7 @@ function PostCommentsFormEdit({
 
 ;// ./node_modules/@wordpress/block-library/build-module/post-comments-form/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -43080,7 +43080,7 @@ const post_comments_form_init = () => initBlock({
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -43169,7 +43169,7 @@ function PostCommentsLinkEdit({
 
 ;// ./node_modules/@wordpress/block-library/build-module/post-comments-link/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -43254,7 +43254,7 @@ const post_comments_link_init = () => initBlock({
 
 ;// ./node_modules/@wordpress/icons/build-module/library/post-content.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -43269,7 +43269,7 @@ const postContent = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx
 
 ;// ./node_modules/@wordpress/block-library/build-module/post-content/edit.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -43432,7 +43432,7 @@ function PostContentEdit({
 
 ;// ./node_modules/@wordpress/block-library/build-module/post-content/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -43535,7 +43535,7 @@ const post_content_init = () => initBlock({
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -43777,7 +43777,7 @@ const post_date_deprecated_v1 = {
 
 ;// ./node_modules/@wordpress/block-library/build-module/post-date/variations.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -43796,7 +43796,7 @@ const post_date_variations_variations = [{
 
 ;// ./node_modules/@wordpress/block-library/build-module/post-date/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -43899,7 +43899,7 @@ const post_date_init = () => initBlock({
 
 ;// ./node_modules/@wordpress/icons/build-module/library/post-excerpt.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -43919,7 +43919,7 @@ const postExcerpt = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -43962,7 +43962,7 @@ function PostExcerptEditor({
    * Add an exception and return early for the "page" post type,
    * which is registered without support for the excerpt UI,
    * but supports saving the excerpt to the database.
-   * See: https://core.trac.wordpress.org/browser/branches/6.1/src/wp-includes/post.php#L65
+   * See: https://core.trac.notmatt.press/browser/branches/6.1/src/wp-includes/post.php#L65
    * Without this exception, users that have excerpts saved to the database will
    * not be able to edit the excerpts.
    */
@@ -44147,7 +44147,7 @@ function PostExcerptEditor({
 
 ;// ./node_modules/@wordpress/block-library/build-module/post-excerpt/transforms.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 const post_excerpt_transforms_transforms = {
@@ -44166,7 +44166,7 @@ const post_excerpt_transforms_transforms = {
 
 ;// ./node_modules/@wordpress/block-library/build-module/post-excerpt/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -44268,7 +44268,7 @@ const post_excerpt_init = () => initBlock({
 
 ;// ./node_modules/@wordpress/icons/build-module/library/post-featured-image.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -44283,7 +44283,7 @@ const postFeaturedImage = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObje
 
 ;// ./node_modules/@wordpress/block-library/build-module/post-featured-image/dimension-controls.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -44449,7 +44449,7 @@ const DimensionControls = ({
 
 ;// ./node_modules/@wordpress/block-library/build-module/post-featured-image/overlay-controls.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -44544,7 +44544,7 @@ function utils_dimRatioToClass(ratio) {
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -44597,7 +44597,7 @@ const overlay_Overlay = ({
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -44969,7 +44969,7 @@ function PostFeaturedImageEdit({
 
 ;// ./node_modules/@wordpress/block-library/build-module/post-featured-image/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -45107,7 +45107,7 @@ const post_featured_image_init = () => initBlock({
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -45269,7 +45269,7 @@ function PostNavigationLinkEdit({
 
 ;// ./node_modules/@wordpress/icons/build-module/library/next.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -45284,7 +45284,7 @@ const next = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(exter
 
 ;// ./node_modules/@wordpress/icons/build-module/library/previous.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -45299,7 +45299,7 @@ const previous = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(e
 
 ;// ./node_modules/@wordpress/block-library/build-module/post-navigation-link/variations.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -45351,7 +45351,7 @@ post_navigation_link_variations_variations.forEach(variation => {
 
 ;// ./node_modules/@wordpress/block-library/build-module/post-navigation-link/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -45451,7 +45451,7 @@ const post_navigation_link_init = () => initBlock({
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -45733,7 +45733,7 @@ function PostTemplateEdit({
 
 ;// ./node_modules/@wordpress/block-library/build-module/post-template/save.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -45743,7 +45743,7 @@ function PostTemplateSave() {
 
 ;// ./node_modules/@wordpress/block-library/build-module/post-template/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -45831,7 +45831,7 @@ const post_template_init = () => initBlock({
 
 ;// ./node_modules/@wordpress/icons/build-module/library/post-categories.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -45848,7 +45848,7 @@ const postCategories = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.
 
 ;// ./node_modules/@wordpress/block-library/build-module/post-terms/use-post-terms.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -45894,7 +45894,7 @@ function usePostTerms({
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -46026,7 +46026,7 @@ function PostTermsEdit({
 
 ;// ./node_modules/@wordpress/icons/build-module/library/post-terms.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -46041,7 +46041,7 @@ const postTerms = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(
 
 ;// ./node_modules/@wordpress/block-library/build-module/post-terms/hooks.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 const variationIconMap = {
@@ -46072,7 +46072,7 @@ function enhanceVariations(settings, name) {
 
 ;// ./node_modules/@wordpress/block-library/build-module/post-terms/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -46187,7 +46187,7 @@ const external_wp_wordcount_namespaceObject = window["wp"]["wordcount"];
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -46271,7 +46271,7 @@ function PostTimeToReadEdit({
 
 ;// ./node_modules/@wordpress/block-library/build-module/post-time-to-read/icon.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -46370,7 +46370,7 @@ const post_time_to_read_init = () => initBlock({
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -46596,7 +46596,7 @@ const post_title_deprecated_v1 = {
 
 ;// ./node_modules/@wordpress/block-library/build-module/post-title/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -46710,7 +46710,7 @@ const post_title_init = () => initBlock({
 
 ;// ./node_modules/@wordpress/icons/build-module/library/preformatted.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -46725,7 +46725,7 @@ const preformatted = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.js
 
 ;// ./node_modules/@wordpress/block-library/build-module/preformatted/edit.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -46767,7 +46767,7 @@ function PreformattedEdit({
 
 ;// ./node_modules/@wordpress/block-library/build-module/preformatted/save.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -46787,7 +46787,7 @@ function preformatted_save_save({
 
 ;// ./node_modules/@wordpress/block-library/build-module/preformatted/transforms.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 const preformatted_transforms_transforms = {
@@ -46826,7 +46826,7 @@ const preformatted_transforms_transforms = {
 
 ;// ./node_modules/@wordpress/block-library/build-module/preformatted/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -46930,7 +46930,7 @@ const preformatted_init = () => initBlock({
 
 ;// ./node_modules/@wordpress/icons/build-module/library/pullquote.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -46953,7 +46953,7 @@ const SOLID_COLOR_CLASS = `is-style-solid-color`;
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -47063,7 +47063,7 @@ const pullquote_deprecated_v5 = {
   }
 };
 
-// TODO: this is ripe for a bit of a clean up according to the example in https://developer.wordpress.org/block-editor/reference-guides/block-api/block-deprecation/#example
+// TODO: this is ripe for a bit of a clean up according to the example in https://developer.notmatt.press/block-editor/reference-guides/block-api/block-deprecation/#example
 
 const pullquote_deprecated_v4 = {
   attributes: {
@@ -47521,7 +47521,7 @@ const BlockQuote = 'blockquote';
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -47610,7 +47610,7 @@ function PullQuoteEdit({
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -47643,7 +47643,7 @@ function pullquote_save_save({
 
 ;// ./node_modules/@wordpress/block-library/build-module/pullquote/transforms.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -47733,7 +47733,7 @@ const pullquote_transforms_transforms = {
 
 ;// ./node_modules/@wordpress/block-library/build-module/pullquote/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -47847,9 +47847,9 @@ const pullquote_settings = {
   example: {
     attributes: {
       value:
-      // translators: Quote serving as example for the Pullquote block. Attributed to Matt Mullenweg.
+      // translators: Quote serving as example for the Pullquote block. Attributed to Not Matt.
       (0,external_wp_i18n_namespaceObject.__)('One of the hardest things to do in technology is disrupt yourself.'),
-      citation: (0,external_wp_i18n_namespaceObject.__)('Matt Mullenweg')
+      citation: (0,external_wp_i18n_namespaceObject.__)('Not Matt')
     }
   },
   transforms: pullquote_transforms,
@@ -47865,7 +47865,7 @@ const pullquote_init = () => initBlock({
 
 ;// ./node_modules/@wordpress/icons/build-module/library/loop.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -47880,7 +47880,7 @@ const loop = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(exter
 
 ;// ./node_modules/@wordpress/block-library/build-module/query/utils.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -48356,7 +48356,7 @@ function getQueryContextFromTemplate(templateSlug) {
 
 ;// ./node_modules/@wordpress/block-library/build-module/query/edit/inspector-controls/enhanced-pagination-control.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -48399,7 +48399,7 @@ function EnhancedPaginationControl({
 
 ;// ./node_modules/@wordpress/block-library/build-module/query/edit/inspector-controls/order-control.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -48444,7 +48444,7 @@ function OrderControl({
 
 ;// ./node_modules/@wordpress/block-library/build-module/query/edit/inspector-controls/author-control.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -48527,7 +48527,7 @@ function AuthorControl({
 
 ;// ./node_modules/@wordpress/block-library/build-module/query/edit/inspector-controls/parent-control.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -48667,7 +48667,7 @@ function ParentControl({
 
 ;// ./node_modules/@wordpress/block-library/build-module/query/edit/inspector-controls/taxonomy-controls.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -48858,7 +48858,7 @@ function TaxonomyItem({
 
 ;// ./node_modules/@wordpress/block-library/build-module/query/edit/inspector-controls/format-controls.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -48955,7 +48955,7 @@ function FormatControls({
 
 ;// ./node_modules/@wordpress/block-library/build-module/query/edit/inspector-controls/sticky-control.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -48990,7 +48990,7 @@ function StickyControl({
 
 ;// ./node_modules/@wordpress/block-library/build-module/query/edit/inspector-controls/per-page-control.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -49024,7 +49024,7 @@ const PerPageControl = ({
 
 ;// ./node_modules/@wordpress/block-library/build-module/query/edit/inspector-controls/offset-controls.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -49054,7 +49054,7 @@ const OffsetControl = ({
 
 ;// ./node_modules/@wordpress/block-library/build-module/query/edit/inspector-controls/pages-control.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -49083,7 +49083,7 @@ const PagesControl = ({
 
 ;// ./node_modules/@wordpress/block-library/build-module/query/edit/inspector-controls/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -49213,7 +49213,7 @@ function QueryInspectorControls(props) {
   const showPagesControl = isControlAllowed(allowedControls, 'pages');
   const showDisplayPanel = showPostCountControl || showOffSetControl || showPagesControl;
 
-  // The block cannot inherit a default WordPress query in singular content (e.g., post, page, 404, blank).
+  // The block cannot inherit a default NotMattPress query in singular content (e.g., post, page, 404, blank).
   // Warn users but still permit this type of query for exceptional cases in Classic and Hybrid themes.
   const hasInheritanceWarning = isSingular && inherit;
   return /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsxs)(external_ReactJSXRuntime_namespaceObject.Fragment, {
@@ -49454,7 +49454,7 @@ function QueryInspectorControls(props) {
 
 ;// ./node_modules/@wordpress/block-library/build-module/query/edit/enhanced-pagination-modal.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -49592,7 +49592,7 @@ function searchPatterns(patterns = [], searchValue = '') {
 
 ;// ./node_modules/@wordpress/block-library/build-module/query/edit/pattern-selection.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -49682,7 +49682,7 @@ function PatternSelection({
 
 ;// ./node_modules/@wordpress/block-library/build-module/query/edit/query-toolbar.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -49729,7 +49729,7 @@ function QueryToolbar({
 
 ;// ./node_modules/@wordpress/block-library/build-module/query/edit/query-content.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -49908,7 +49908,7 @@ function QueryContent({
 
 ;// ./node_modules/@wordpress/block-library/build-module/query/edit/query-placeholder.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -50005,7 +50005,7 @@ function QueryVariationPicker({
 
 ;// ./node_modules/@wordpress/block-library/build-module/query/edit/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -50041,7 +50041,7 @@ const QueryEdit = props => {
 
 ;// ./node_modules/@wordpress/block-library/build-module/query/save.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -50059,7 +50059,7 @@ function query_save_save({
 
 ;// ./node_modules/@wordpress/block-library/build-module/query/icons.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -50094,7 +50094,7 @@ const imageDateTitle = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.
 
 ;// ./node_modules/@wordpress/block-library/build-module/query/variations.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -50135,7 +50135,7 @@ const query_variations_variations = [{
 
 ;// ./node_modules/@wordpress/block-library/build-module/query/deprecated.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -50649,7 +50649,7 @@ const query_deprecated_deprecated = [query_deprecated_v5, query_deprecated_v4, q
 
 ;// ./node_modules/@wordpress/block-library/build-module/query/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -50773,7 +50773,7 @@ const query_init = () => initBlock({
 
 ;// ./node_modules/@wordpress/block-library/build-module/query-no-results/edit.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -50793,7 +50793,7 @@ function QueryNoResultsEdit() {
 
 ;// ./node_modules/@wordpress/block-library/build-module/query-no-results/save.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -50803,7 +50803,7 @@ function query_no_results_save_save() {
 
 ;// ./node_modules/@wordpress/block-library/build-module/query-no-results/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -50875,7 +50875,7 @@ const query_no_results_init = () => initBlock({
 
 ;// ./node_modules/@wordpress/block-library/build-module/query-pagination/query-pagination-arrow-controls.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -50907,7 +50907,7 @@ function QueryPaginationArrowControls({
 
 ;// ./node_modules/@wordpress/block-library/build-module/query-pagination/query-pagination-label-control.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -50927,7 +50927,7 @@ function QueryPaginationLabelControl({
 
 ;// ./node_modules/@wordpress/block-library/build-module/query-pagination/edit.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -51033,7 +51033,7 @@ function edit_QueryPaginationEdit({
 
 ;// ./node_modules/@wordpress/block-library/build-module/query-pagination/save.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -51043,7 +51043,7 @@ function query_pagination_save_save() {
 
 ;// ./node_modules/@wordpress/block-library/build-module/query-pagination/deprecated.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -51061,7 +51061,7 @@ const query_pagination_deprecated_deprecated = [
 
 ;// ./node_modules/@wordpress/block-library/build-module/query-pagination/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -51155,7 +51155,7 @@ const query_pagination_init = () => initBlock({
 
 ;// ./node_modules/@wordpress/block-library/build-module/query-pagination-next/edit.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -51199,7 +51199,7 @@ function QueryPaginationNextEdit({
 
 ;// ./node_modules/@wordpress/block-library/build-module/query-pagination-next/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -51267,7 +51267,7 @@ const query_pagination_next_init = () => initBlock({
 
 ;// ./node_modules/@wordpress/block-library/build-module/query-pagination-numbers/edit.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -51357,7 +51357,7 @@ function QueryPaginationNumbersEdit({
 
 ;// ./node_modules/@wordpress/block-library/build-module/query-pagination-numbers/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -51428,7 +51428,7 @@ const query_pagination_numbers_init = () => initBlock({
 
 ;// ./node_modules/@wordpress/block-library/build-module/query-pagination-previous/edit.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -51472,7 +51472,7 @@ function QueryPaginationPreviousEdit({
 
 ;// ./node_modules/@wordpress/block-library/build-module/query-pagination-previous/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -51540,7 +51540,7 @@ const query_pagination_previous_init = () => initBlock({
 
 ;// ./node_modules/@wordpress/block-library/build-module/query-title/use-archive-label.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -51634,7 +51634,7 @@ function useArchiveLabel() {
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -51784,7 +51784,7 @@ function QueryTitleEdit({
 
 ;// ./node_modules/@wordpress/block-library/build-module/query-title/variations.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -51879,7 +51879,7 @@ const query_title_deprecated_v1 = {
 
 ;// ./node_modules/@wordpress/block-library/build-module/query-title/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -51989,7 +51989,7 @@ const query_title_init = () => initBlock({
 
 ;// ./node_modules/@wordpress/block-library/build-module/query-total/icons.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -52029,7 +52029,7 @@ const queryTotal = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)
 
 ;// ./node_modules/@wordpress/block-library/build-module/query-total/edit.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -52197,7 +52197,7 @@ const query_total_init = () => initBlock({
 
 ;// ./node_modules/@wordpress/icons/build-module/library/quote.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -52217,7 +52217,7 @@ const quote = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(exte
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -52582,7 +52582,7 @@ const quote_deprecated_v0 = {
 
 ;// ./node_modules/@wordpress/icons/build-module/library/verse.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -52602,7 +52602,7 @@ const verse = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(exte
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -52730,7 +52730,7 @@ function QuoteEdit({
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -52757,7 +52757,7 @@ function quote_save_save({
 
 ;// ./node_modules/@wordpress/block-library/build-module/quote/transforms.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -52882,7 +52882,7 @@ const quote_transforms_transforms = {
 
 ;// ./node_modules/@wordpress/block-library/build-module/quote/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -53029,7 +53029,7 @@ const quote_init = () => initBlock({
 
 ;// ./node_modules/@wordpress/icons/build-module/library/symbol.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -53051,7 +53051,7 @@ const external_wp_patterns_namespaceObject = window["wp"]["patterns"];
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -53375,7 +53375,7 @@ const block_deprecated_v1 = {
 
 ;// ./node_modules/@wordpress/block-library/build-module/block/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -53448,7 +53448,7 @@ const block_init = () => initBlock({
 
 ;// ./node_modules/@wordpress/block-library/build-module/read-more/edit.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -53513,7 +53513,7 @@ function ReadMore({
 
 ;// ./node_modules/@wordpress/block-library/build-module/read-more/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -53603,7 +53603,7 @@ const read_more_init = () => initBlock({
 
 ;// ./node_modules/@wordpress/icons/build-module/library/rss.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -53618,7 +53618,7 @@ const rss = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(extern
 
 ;// ./node_modules/@wordpress/block-library/build-module/rss/edit.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -53800,7 +53800,7 @@ function RSSEdit({
 
 ;// ./node_modules/@wordpress/block-library/build-module/rss/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -53890,7 +53890,7 @@ const rss_settings = {
   icon: library_rss,
   example: {
     attributes: {
-      feedURL: 'https://wordpress.org'
+      feedURL: 'https://notmatt.press'
     }
   },
   edit: RSSEdit
@@ -53903,7 +53903,7 @@ const rss_init = () => initBlock({
 
 ;// ./node_modules/@wordpress/icons/build-module/library/search.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -53918,7 +53918,7 @@ const search = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(ext
 
 ;// ./node_modules/@wordpress/block-library/build-module/search/icons.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -54057,7 +54057,7 @@ function utils_isPercentageUnit(unit) {
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -54512,7 +54512,7 @@ function SearchEdit({
 
 ;// ./node_modules/@wordpress/block-library/build-module/search/variations.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 const search_variations_variations = [{
@@ -54527,7 +54527,7 @@ const search_variations_variations = [{
 
 ;// ./node_modules/@wordpress/block-library/build-module/search/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -54657,7 +54657,7 @@ const search_init = () => initBlock({
 
 ;// ./node_modules/@wordpress/icons/build-module/library/separator.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -54672,7 +54672,7 @@ const separator = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(
 
 ;// ./node_modules/@wordpress/block-library/build-module/separator/use-deprecated-opacity.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -54710,7 +54710,7 @@ function useDeprecatedOpacity(opacity, currentColor, setAttributes) {
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -54787,7 +54787,7 @@ function SeparatorEdit({
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -54828,7 +54828,7 @@ function separatorSave({
 
 ;// ./node_modules/@wordpress/block-library/build-module/separator/transforms.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 const separator_transforms_transforms = {
@@ -54865,7 +54865,7 @@ const separator_transforms_transforms = {
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -54931,7 +54931,7 @@ const separator_deprecated_v1 = {
 
 ;// ./node_modules/@wordpress/block-library/build-module/separator/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -55022,7 +55022,7 @@ const separator_init = () => initBlock({
 
 ;// ./node_modules/@wordpress/icons/build-module/library/shortcode.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -55037,7 +55037,7 @@ const shortcode = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(
 
 ;// ./node_modules/@wordpress/block-library/build-module/shortcode/edit.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -55072,7 +55072,7 @@ function ShortcodeEdit({
 
 ;// ./node_modules/@wordpress/block-library/build-module/shortcode/save.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -55088,7 +55088,7 @@ function shortcode_save_save({
 const external_wp_autop_namespaceObject = window["wp"]["autop"];
 ;// ./node_modules/@wordpress/block-library/build-module/shortcode/transforms.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 const shortcode_transforms_transforms = {
@@ -55097,7 +55097,7 @@ const shortcode_transforms_transforms = {
     // Per "Shortcode names should be all lowercase and use all
     // letters, but numbers and underscores should work fine too.
     // Be wary of using hyphens (dashes), you'll be better off not
-    // using them." in https://codex.wordpress.org/Shortcode_API
+    // using them." in https://codex.notmatt.press/Shortcode_API
     // Require that the first character be a letter. This notably
     // prevents footnote markings ([1]) from being caught as
     // shortcodes.
@@ -55119,7 +55119,7 @@ const shortcode_transforms_transforms = {
 
 ;// ./node_modules/@wordpress/block-library/build-module/shortcode/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -55136,7 +55136,7 @@ const shortcode_metadata = {
   name: "core/shortcode",
   title: "Shortcode",
   category: "widgets",
-  description: "Insert additional custom elements with a WordPress shortcode.",
+  description: "Insert additional custom elements with a NotMattPress shortcode.",
   textdomain: "default",
   attributes: {
     text: {
@@ -55169,7 +55169,7 @@ const shortcode_init = () => initBlock({
 
 ;// ./node_modules/@wordpress/icons/build-module/library/site-logo.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -55189,7 +55189,7 @@ const siteLogo = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(e
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -55338,7 +55338,7 @@ const SiteLogo = ({
   let showLeftHandle = false;
 
   /* eslint-disable no-lonely-if */
-  // See https://github.com/WordPress/gutenberg/issues/7584.
+  // See https://github.com/NotMattPress/gutenberg/issues/7584.
   if (align === 'center') {
     // When the image is centered, show both handles.
     showRightHandle = true;
@@ -55409,7 +55409,7 @@ const SiteLogo = ({
   // when the required WP core version for Gutenberg is >= 6.5.0.
   const shouldUseNewUrl = !window?.__experimentalUseCustomizerSiteLogoUrl;
   const siteIconSettingsUrl = shouldUseNewUrl ? siteUrl + '/wp-admin/options-general.php' : siteUrl + '/wp-admin/customize.php?autofocus[section]=title_tagline';
-  const syncSiteIconHelpText = (0,external_wp_element_namespaceObject.createInterpolateElement)((0,external_wp_i18n_namespaceObject.__)('Site Icons are what you see in browser tabs, bookmark bars, and within the WordPress mobile apps. To use a custom icon that is different from your site logo, use the <a>Site Icon settings</a>.'), {
+  const syncSiteIconHelpText = (0,external_wp_element_namespaceObject.createInterpolateElement)((0,external_wp_i18n_namespaceObject.__)('Site Icons are what you see in browser tabs, bookmark bars, and within the NotMattPress mobile apps. To use a custom icon that is different from your site logo, use the <a>Site Icon settings</a>.'), {
     a:
     /*#__PURE__*/
     // eslint-disable-next-line jsx-a11y/anchor-has-content
@@ -55780,7 +55780,7 @@ function LogoEdit({
 
 ;// ./node_modules/@wordpress/block-library/build-module/site-logo/transforms.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 const site_logo_transforms_transforms = {
@@ -55802,7 +55802,7 @@ const site_logo_transforms_transforms = {
 
 ;// ./node_modules/@wordpress/block-library/build-module/site-logo/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -55900,7 +55900,7 @@ const site_logo_init = () => initBlock({
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -55988,7 +55988,7 @@ function SiteTaglineEdit({
 
 ;// ./node_modules/@wordpress/block-library/build-module/site-tagline/icon.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -56151,7 +56151,7 @@ const site_tagline_init = () => initBlock({
 
 ;// ./node_modules/@wordpress/icons/build-module/library/map-marker.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -56171,7 +56171,7 @@ const mapMarker = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -56387,7 +56387,7 @@ const site_title_deprecated_v1 = {
 
 ;// ./node_modules/@wordpress/block-library/build-module/site-title/transforms.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 const site_title_transforms_transforms = {
@@ -56409,7 +56409,7 @@ const site_title_transforms_transforms = {
 
 ;// ./node_modules/@wordpress/block-library/build-module/site-title/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -56525,7 +56525,7 @@ const site_title_init = () => initBlock({
 
 ;// ./node_modules/@wordpress/icons/build-module/library/share.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -56540,7 +56540,7 @@ const share = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(exte
 
 ;// ./node_modules/@wordpress/icons/build-module/library/keyboard-return.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -56555,11 +56555,11 @@ const keyboardReturn = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.
 
 ;// ./node_modules/@wordpress/block-library/build-module/social-link/icons/wordpress.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
-const WordPressIcon = () => /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(external_wp_primitives_namespaceObject.SVG, {
+const NotMattPressIcon = () => /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(external_wp_primitives_namespaceObject.SVG, {
   width: "24",
   height: "24",
   viewBox: "0 0 24 24",
@@ -56572,7 +56572,7 @@ const WordPressIcon = () => /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceOb
 
 ;// ./node_modules/@wordpress/block-library/build-module/social-link/icons/fivehundredpx.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -56588,7 +56588,7 @@ const FivehundredpxIcon = () => /*#__PURE__*/(0,external_ReactJSXRuntime_namespa
 
 ;// ./node_modules/@wordpress/block-library/build-module/social-link/icons/amazon.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -56604,7 +56604,7 @@ const AmazonIcon = () => /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObjec
 
 ;// ./node_modules/@wordpress/block-library/build-module/social-link/icons/bandcamp.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -56621,7 +56621,7 @@ const BandcampIcon = () => /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObj
 
 ;// ./node_modules/@wordpress/block-library/build-module/social-link/icons/behance.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -56637,7 +56637,7 @@ const BehanceIcon = () => /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObje
 
 ;// ./node_modules/@wordpress/block-library/build-module/social-link/icons/bluesky.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -56653,7 +56653,7 @@ const BlueskyIcon = () => /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObje
 
 ;// ./node_modules/@wordpress/block-library/build-module/social-link/icons/chain.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -56669,7 +56669,7 @@ const ChainIcon = () => /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject
 
 ;// ./node_modules/@wordpress/block-library/build-module/social-link/icons/codepen.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -56685,7 +56685,7 @@ const CodepenIcon = () => /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObje
 
 ;// ./node_modules/@wordpress/block-library/build-module/social-link/icons/deviantart.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -56701,7 +56701,7 @@ const DeviantArtIcon = () => /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceO
 
 ;// ./node_modules/@wordpress/block-library/build-module/social-link/icons/discord.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -56717,7 +56717,7 @@ const DiscordIcon = () => /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObje
 
 ;// ./node_modules/@wordpress/block-library/build-module/social-link/icons/dribbble.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -56733,7 +56733,7 @@ const DribbbleIcon = () => /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObj
 
 ;// ./node_modules/@wordpress/block-library/build-module/social-link/icons/dropbox.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -56749,7 +56749,7 @@ const DropboxIcon = () => /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObje
 
 ;// ./node_modules/@wordpress/block-library/build-module/social-link/icons/etsy.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -56765,7 +56765,7 @@ const EtsyIcon = () => /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.
 
 ;// ./node_modules/@wordpress/block-library/build-module/social-link/icons/facebook.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -56781,7 +56781,7 @@ const FacebookIcon = () => /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObj
 
 ;// ./node_modules/@wordpress/block-library/build-module/social-link/icons/feed.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -56797,7 +56797,7 @@ const FeedIcon = () => /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.
 
 ;// ./node_modules/@wordpress/block-library/build-module/social-link/icons/flickr.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -56813,7 +56813,7 @@ const FlickrIcon = () => /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObjec
 
 ;// ./node_modules/@wordpress/block-library/build-module/social-link/icons/foursquare.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -56829,7 +56829,7 @@ const FoursquareIcon = () => /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceO
 
 ;// ./node_modules/@wordpress/block-library/build-module/social-link/icons/goodreads.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -56845,7 +56845,7 @@ const GoodreadsIcon = () => /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceOb
 
 ;// ./node_modules/@wordpress/block-library/build-module/social-link/icons/google.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -56861,7 +56861,7 @@ const GoogleIcon = () => /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObjec
 
 ;// ./node_modules/@wordpress/block-library/build-module/social-link/icons/github.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -56877,7 +56877,7 @@ const GitHubIcon = () => /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObjec
 
 ;// ./node_modules/@wordpress/block-library/build-module/social-link/icons/gravatar.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -56893,7 +56893,7 @@ const GravatarIcon = () => /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObj
 
 ;// ./node_modules/@wordpress/block-library/build-module/social-link/icons/instagram.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -56909,7 +56909,7 @@ const InstagramIcon = () => /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceOb
 
 ;// ./node_modules/@wordpress/block-library/build-module/social-link/icons/lastfm.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -56925,7 +56925,7 @@ const LastfmIcon = () => /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObjec
 
 ;// ./node_modules/@wordpress/block-library/build-module/social-link/icons/linkedin.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -56941,7 +56941,7 @@ const LinkedInIcon = () => /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObj
 
 ;// ./node_modules/@wordpress/block-library/build-module/social-link/icons/mail.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -56957,7 +56957,7 @@ const MailIcon = () => /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.
 
 ;// ./node_modules/@wordpress/block-library/build-module/social-link/icons/mastodon.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -56973,7 +56973,7 @@ const MastodonIcon = () => /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObj
 
 ;// ./node_modules/@wordpress/block-library/build-module/social-link/icons/meetup.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -56989,7 +56989,7 @@ const MeetupIcon = () => /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObjec
 
 ;// ./node_modules/@wordpress/block-library/build-module/social-link/icons/medium.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -57005,7 +57005,7 @@ const MediumIcon = () => /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObjec
 
 ;// ./node_modules/@wordpress/block-library/build-module/social-link/icons/patreon.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -57021,7 +57021,7 @@ const PatreonIcon = () => /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObje
 
 ;// ./node_modules/@wordpress/block-library/build-module/social-link/icons/pinterest.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -57037,7 +57037,7 @@ const PinterestIcon = () => /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceOb
 
 ;// ./node_modules/@wordpress/block-library/build-module/social-link/icons/pocket.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -57053,7 +57053,7 @@ const PocketIcon = () => /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObjec
 
 ;// ./node_modules/@wordpress/block-library/build-module/social-link/icons/reddit.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -57069,7 +57069,7 @@ const RedditIcon = () => /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObjec
 
 ;// ./node_modules/@wordpress/block-library/build-module/social-link/icons/skype.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -57085,7 +57085,7 @@ const SkypeIcon = () => /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject
 
 ;// ./node_modules/@wordpress/block-library/build-module/social-link/icons/snapchat.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -57101,7 +57101,7 @@ const SnapchatIcon = () => /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObj
 
 ;// ./node_modules/@wordpress/block-library/build-module/social-link/icons/soundcloud.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -57117,7 +57117,7 @@ const SoundCloudIcon = () => /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceO
 
 ;// ./node_modules/@wordpress/block-library/build-module/social-link/icons/spotify.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -57133,7 +57133,7 @@ const SpotifyIcon = () => /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObje
 
 ;// ./node_modules/@wordpress/block-library/build-module/social-link/icons/telegram.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -57149,7 +57149,7 @@ const TelegramIcon = () => /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObj
 
 ;// ./node_modules/@wordpress/block-library/build-module/social-link/icons/threads.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -57165,7 +57165,7 @@ const ThreadsIcon = () => /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObje
 
 ;// ./node_modules/@wordpress/block-library/build-module/social-link/icons/tiktok.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -57181,7 +57181,7 @@ const TiktokIcon = () => /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObjec
 
 ;// ./node_modules/@wordpress/block-library/build-module/social-link/icons/tumblr.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -57197,7 +57197,7 @@ const TumblrIcon = () => /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObjec
 
 ;// ./node_modules/@wordpress/block-library/build-module/social-link/icons/twitch.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -57213,7 +57213,7 @@ const TwitchIcon = () => /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObjec
 
 ;// ./node_modules/@wordpress/block-library/build-module/social-link/icons/twitter.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -57229,7 +57229,7 @@ const TwitterIcon = () => /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObje
 
 ;// ./node_modules/@wordpress/block-library/build-module/social-link/icons/vimeo.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -57245,7 +57245,7 @@ const VimeoIcon = () => /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject
 
 ;// ./node_modules/@wordpress/block-library/build-module/social-link/icons/vk.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -57261,7 +57261,7 @@ const VkIcon = () => /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.js
 
 ;// ./node_modules/@wordpress/block-library/build-module/social-link/icons/whatsapp.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -57277,7 +57277,7 @@ const WhatsAppIcon = () => /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObj
 
 ;// ./node_modules/@wordpress/block-library/build-module/social-link/icons/x.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -57293,7 +57293,7 @@ const XIcon = () => /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx
 
 ;// ./node_modules/@wordpress/block-library/build-module/social-link/icons/yelp.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -57309,7 +57309,7 @@ const YelpIcon = () => /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.
 
 ;// ./node_modules/@wordpress/block-library/build-module/social-link/icons/youtube.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -57334,8 +57334,8 @@ const social_link_variations_variations = [{
   attributes: {
     service: 'wordpress'
   },
-  title: 'WordPress',
-  icon: WordPressIcon
+  title: 'NotMattPress',
+  icon: NotMattPressIcon
 }, {
   name: 'fivehundredpx',
   attributes: {
@@ -57684,7 +57684,7 @@ social_link_variations_variations.forEach(variation => {
 
 ;// ./node_modules/@wordpress/block-library/build-module/social-link/social-list.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -57725,7 +57725,7 @@ const getNameBySite = name => {
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -57821,7 +57821,7 @@ const SocialLinkEdit = ({
   const [showURLPopover, setPopover] = (0,external_wp_element_namespaceObject.useState)(false);
   const wrapperClasses = dist_clsx('wp-social-link',
   // Manually adding this class for backwards compatibility of CSS when moving the
-  // blockProps from the li to the button: https://github.com/WordPress/gutenberg/pull/64883
+  // blockProps from the li to the button: https://github.com/NotMattPress/gutenberg/pull/64883
   'wp-block-social-link', 'wp-social-link-' + service, {
     'wp-social-link__is-incomplete': !url,
     [`has-${iconColor}-color`]: iconColor,
@@ -57958,7 +57958,7 @@ const SocialLinkEdit = ({
 
 ;// ./node_modules/@wordpress/block-library/build-module/social-link/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -58025,13 +58025,13 @@ const social_link_init = () => initBlock({
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
 /**
  * The specific handling by `className` below is needed because `itemsJustification`
- * was introduced in https://github.com/WordPress/gutenberg/pull/28980/files and wasn't
+ * was introduced in https://github.com/NotMattPress/gutenberg/pull/28980/files and wasn't
  * declared in block.json.
  *
  * @param {Object} attributes Block's attributes.
@@ -58139,7 +58139,7 @@ const social_links_deprecated_deprecated = [
 
 ;// ./node_modules/@wordpress/icons/build-module/library/check.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -58159,7 +58159,7 @@ const check = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(exte
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -58417,7 +58417,7 @@ const iconColorAttributes = {
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -58446,7 +58446,7 @@ function social_links_save_save(props) {
 
 ;// ./node_modules/@wordpress/block-library/build-module/social-links/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -58578,19 +58578,19 @@ const social_links_settings = {
       name: 'core/social-link',
       attributes: {
         service: 'wordpress',
-        url: 'https://wordpress.org'
+        url: 'https://notmatt.press'
       }
     }, {
       name: 'core/social-link',
       attributes: {
         service: 'facebook',
-        url: 'https://www.facebook.com/WordPress/'
+        url: 'https://www.facebook.com/NotMattPress/'
       }
     }, {
       name: 'core/social-link',
       attributes: {
         service: 'twitter',
-        url: 'https://twitter.com/WordPress'
+        url: 'https://twitter.com/NotMattPress'
       }
     }]
   },
@@ -58607,7 +58607,7 @@ const social_links_init = () => initBlock({
 
 ;// ./node_modules/@wordpress/icons/build-module/library/resize-corner-n-e.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -58622,7 +58622,7 @@ const resizeCornerNE = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.
 
 ;// ./node_modules/@wordpress/block-library/build-module/spacer/deprecated.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -58668,7 +58668,7 @@ const MIN_SPACER_SIZE = 0;
 
 ;// ./node_modules/@wordpress/block-library/build-module/spacer/controls.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -58804,7 +58804,7 @@ function SpacerControls({
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -59110,7 +59110,7 @@ const SpacerEdit = ({
 
 ;// ./node_modules/@wordpress/block-library/build-module/spacer/transforms.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 const spacer_transforms_transforms = {
@@ -59131,7 +59131,7 @@ const spacer_transforms_transforms = {
 
 ;// ./node_modules/@wordpress/block-library/build-module/spacer/save.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -59163,7 +59163,7 @@ function spacer_save_save({
 
 ;// ./node_modules/@wordpress/block-library/build-module/spacer/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -59227,7 +59227,7 @@ const spacer_init = () => initBlock({
 
 ;// ./node_modules/@wordpress/icons/build-module/library/block-table.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -59247,7 +59247,7 @@ const blockTable = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -60005,7 +60005,7 @@ const table_deprecated_v1 = {
 
 ;// ./node_modules/@wordpress/icons/build-module/library/align-left.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -60020,7 +60020,7 @@ const alignLeft = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(
 
 ;// ./node_modules/@wordpress/icons/build-module/library/align-center.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -60035,7 +60035,7 @@ const alignCenter = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx
 
 ;// ./node_modules/@wordpress/icons/build-module/library/align-right.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -60050,7 +60050,7 @@ const alignRight = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)
 
 ;// ./node_modules/@wordpress/icons/build-module/library/table-row-before.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -60065,7 +60065,7 @@ const tableRowBefore = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.
 
 ;// ./node_modules/@wordpress/icons/build-module/library/table-row-after.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -60080,7 +60080,7 @@ const tableRowAfter = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.j
 
 ;// ./node_modules/@wordpress/icons/build-module/library/table-row-delete.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -60095,7 +60095,7 @@ const tableRowDelete = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.
 
 ;// ./node_modules/@wordpress/icons/build-module/library/table-column-before.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -60110,7 +60110,7 @@ const tableColumnBefore = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObje
 
 ;// ./node_modules/@wordpress/icons/build-module/library/table-column-after.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -60125,7 +60125,7 @@ const tableColumnAfter = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObjec
 
 ;// ./node_modules/@wordpress/icons/build-module/library/table-column-delete.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -60140,7 +60140,7 @@ const tableColumnDelete = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObje
 
 ;// ./node_modules/@wordpress/icons/build-module/library/table.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -60458,7 +60458,7 @@ function isEmptyRow(row) {
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -60965,7 +60965,7 @@ function TableEdit({
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -61071,7 +61071,7 @@ function normalizeRowColSpan(rowColSpan) {
 
 ;// ./node_modules/@wordpress/block-library/build-module/table/transforms.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -61158,7 +61158,7 @@ const table_transforms_transforms = {
 
 ;// ./node_modules/@wordpress/block-library/build-module/table/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -61457,7 +61457,7 @@ const table_init = () => initBlock({
 
 ;// ./node_modules/@wordpress/icons/build-module/library/table-of-contents.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -61580,7 +61580,7 @@ var es6_default = /*#__PURE__*/__webpack_require__.n(es6);
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -61706,14 +61706,14 @@ function useObserveHeadings(clientId) {
   const registry = (0,external_wp_data_namespaceObject.useRegistry)();
   (0,external_wp_element_namespaceObject.useEffect)(() => {
     // Todo: Limit subscription to block editor store when data no longer depends on `getPermalink`.
-    // See: https://github.com/WordPress/gutenberg/pull/45513
+    // See: https://github.com/NotMattPress/gutenberg/pull/45513
     return registry.subscribe(() => observeCallback(registry.select, registry.dispatch, clientId));
   }, [registry, clientId]);
 }
 
 ;// ./node_modules/@wordpress/block-library/build-module/table-of-contents/edit.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -61859,7 +61859,7 @@ function TableOfContentsEdit({
 
 ;// ./node_modules/@wordpress/block-library/build-module/table-of-contents/save.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -61889,7 +61889,7 @@ function table_of_contents_save_save({
 
 ;// ./node_modules/@wordpress/block-library/build-module/table-of-contents/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -62025,7 +62025,7 @@ const table_of_contents_init = () => initBlock({
 
 ;// ./node_modules/@wordpress/block-library/build-module/tag-cloud/transforms.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 const tag_cloud_transforms_transforms = {
@@ -62044,7 +62044,7 @@ const tag_cloud_transforms_transforms = {
 
 ;// ./node_modules/@wordpress/block-library/build-module/tag-cloud/edit.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -62264,7 +62264,7 @@ function TagCloudEdit({
 
 ;// ./node_modules/@wordpress/block-library/build-module/tag-cloud/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -62890,7 +62890,7 @@ function paramCase(input, options) {
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -63013,7 +63013,7 @@ function useTemplatePartArea(area) {
 
 ;// ./node_modules/@wordpress/block-library/build-module/template-part/edit/title-modal.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -63075,7 +63075,7 @@ function TitleModal({
 
 ;// ./node_modules/@wordpress/block-library/build-module/template-part/edit/placeholder.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -63152,7 +63152,7 @@ function TemplatePartPlaceholder({
 
 ;// ./node_modules/@wordpress/block-library/build-module/template-part/edit/utils/map-template-part-to-block-pattern.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -63177,7 +63177,7 @@ function mapTemplatePartToBlockPattern(templatePart) {
 
 ;// ./node_modules/@wordpress/block-library/build-module/template-part/edit/selection-modal.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -63262,7 +63262,7 @@ function TemplatePartSelectionModal({
 
 ;// ./node_modules/@wordpress/block-library/build-module/template-part/edit/utils/transformers.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -63337,7 +63337,7 @@ function transformInnerBlocks(innerBlocks = []) {
 
 ;// ./node_modules/@wordpress/block-library/build-module/template-part/edit/import-controls.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -63397,7 +63397,7 @@ function TemplatePartImportControls({
   }, [sidebars]);
 
   // Render an empty node while data is loading to avoid SlotFill re-positioning bug.
-  // See: https://github.com/WordPress/gutenberg/issues/15641.
+  // See: https://github.com/NotMattPress/gutenberg/issues/15641.
   if (!hasResolved) {
     return /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(external_wp_components_namespaceObject.__experimentalSpacer, {
       marginBottom: "0"
@@ -63480,7 +63480,7 @@ function TemplatePartImportControls({
 
 ;// ./node_modules/@wordpress/block-library/build-module/template-part/edit/advanced-controls.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -63575,7 +63575,7 @@ function TemplatePartAdvancedControls({
 
 ;// ./node_modules/@wordpress/block-library/build-module/template-part/edit/inner-blocks.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -63725,7 +63725,7 @@ function TemplatePartInnerBlocks({
 
 ;// ./node_modules/@wordpress/block-library/build-module/template-part/edit/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -63973,7 +63973,7 @@ function TemplatePartEdit({
 
 ;// ./node_modules/@wordpress/block-library/build-module/template-part/variations.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -64039,7 +64039,7 @@ function enhanceTemplatePartVariations(settings, name) {
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -64142,7 +64142,7 @@ const template_part_init = () => {
 
 ;// ./node_modules/@wordpress/icons/build-module/library/term-description.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -64162,7 +64162,7 @@ const term_description_tag = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceO
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -64206,7 +64206,7 @@ function TermDescriptionEdit({
 
 ;// ./node_modules/@wordpress/block-library/build-module/term-description/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -64289,7 +64289,7 @@ const term_description_init = () => initBlock({
 
 ;// ./node_modules/@wordpress/block-library/build-module/text-columns/edit.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -64365,7 +64365,7 @@ function TextColumnsEdit({
 
 ;// ./node_modules/@wordpress/block-library/build-module/text-columns/save.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -64395,7 +64395,7 @@ function text_columns_save_save({
 
 ;// ./node_modules/@wordpress/block-library/build-module/text-columns/transforms.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 const text_columns_transforms_transforms = {
@@ -64499,7 +64499,7 @@ const text_columns_init = () => initBlock({
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -64608,7 +64608,7 @@ const verse_deprecated_v2 = {
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -64671,7 +64671,7 @@ function VerseEdit({
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -64697,7 +64697,7 @@ function verse_save_save({
 
 ;// ./node_modules/@wordpress/block-library/build-module/verse/transforms.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 const verse_transforms_transforms = {
@@ -64716,7 +64716,7 @@ const verse_transforms_transforms = {
 
 ;// ./node_modules/@wordpress/block-library/build-module/verse/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -64840,7 +64840,7 @@ const verse_init = () => initBlock({
 
 ;// ./node_modules/@wordpress/icons/build-module/library/video.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -64867,7 +64867,7 @@ function Tracks({
 
 ;// ./node_modules/@wordpress/block-library/build-module/video/deprecated.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -65027,7 +65027,7 @@ const video_deprecated_deprecated = [video_deprecated_v1];
 
 ;// ./node_modules/@wordpress/block-library/build-module/video/poster-image.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -65102,7 +65102,7 @@ function PosterImage({
 
 ;// ./node_modules/@wordpress/block-library/build-module/video/edit-common-settings.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -65269,7 +65269,7 @@ const VideoSettings = ({
 
 ;// ./node_modules/@wordpress/block-library/build-module/video/tracks-editor.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -65569,7 +65569,7 @@ function TracksEditor({
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -65795,7 +65795,7 @@ function VideoEdit({
 
 ;// ./node_modules/@wordpress/block-library/build-module/video/save.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -65843,7 +65843,7 @@ function video_save_save({
 
 ;// ./node_modules/@wordpress/block-library/build-module/video/transforms.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -65950,7 +65950,7 @@ const video_transforms_transforms = {
 
 ;// ./node_modules/@wordpress/block-library/build-module/video/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -66091,7 +66091,7 @@ const video_init = () => initBlock({
 
 ;// ./node_modules/@wordpress/block-library/build-module/footnotes/edit.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -66278,7 +66278,7 @@ function v4_v4(options, buf, offset) {
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -66423,7 +66423,7 @@ const format = {
 
 ;// ./node_modules/@wordpress/block-library/build-module/footnotes/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -66522,7 +66522,7 @@ var is_block_metadata_experimental_default = /*#__PURE__*/__webpack_require__.n(
 const external_wp_keyboardShortcuts_namespaceObject = window["wp"]["keyboardShortcuts"];
 ;// ./node_modules/@wordpress/block-library/build-module/block-keyboard-shortcuts/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -66627,7 +66627,7 @@ lock(privateApis, {
 ;// ./node_modules/@wordpress/block-library/build-module/index.js
 /* wp:polyfill */
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -66642,7 +66642,7 @@ lock(privateApis, {
 // This enables webpack to eliminate the experimental blocks code from the
 // production build to make the final bundle smaller.
 //
-// See https://github.com/WordPress/gutenberg/pull/40655 for more context.
+// See https://github.com/NotMattPress/gutenberg/pull/40655 for more context.
 
 
 
@@ -66766,7 +66766,7 @@ const getAllBlocks = () => {
     blocks.push(form_submission_notification_namespaceObject);
   }
 
-  // When in a WordPress context, conditionally
+  // When in a NotMattPress context, conditionally
   // add the classic block and TinyMCE editor
   // under any of the following conditions:
   //   - the current post contains a classic block
