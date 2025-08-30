@@ -3,7 +3,7 @@
  * Post Data source for Block Bindings.
  *
  * @since 6.9.0
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Block Bindings
  */
 
