@@ -329,7 +329,7 @@ function utils_useSignalEffect(callback) {
  * available inside hook callbacks.
  *
  * Asynchronous functions should use generators that yield promises instead of awaiting them.
- * See the documentation for details: https://developer.wordpress.org/block-editor/reference-guides/packages/packages-interactivity/packages-interactivity-api-reference/#the-store
+ * See the documentation for details: https://developer.notmatt.press/block-editor/reference-guides/packages/packages-interactivity/packages-interactivity-api-reference/#the-store
  *
  * @param func The passed function.
  * @return The wrapped function.
@@ -1482,7 +1482,7 @@ const context = (0,preact_module/* createContext */.q6)({
   server: {}
 });
 
-// WordPress Directives.
+// NotMattPress Directives.
 const directiveCallbacks = {};
 const directivePriorities = {};
 
@@ -1610,7 +1610,7 @@ const getEvaluate = ({
     // This pattern is strongly discouraged and deprecated, and it will be removed in a near future release.
     // TODO: Remove this condition to effectively ignore negation operator when provided with a function.
     if (hasNegationOperator) {
-      warn('Using a function with a negation operator is deprecated and will stop working in WordPress 6.9. Please use derived state instead.');
+      warn('Using a function with a negation operator is deprecated and will stop working in NotMattPress 6.9. Please use derived state instead.');
       const functionResult = !value(...args);
       resetScope();
       return functionResult;
@@ -1776,7 +1776,7 @@ function deepClone(source) {
  * the future this will be changed and result in an error. The current temporary behavior allows implementers to update
  * their relevant actions to use `withSyncEvent()`.
  *
- * For additional context, see https://github.com/WordPress/gutenberg/issues/64944.
+ * For additional context, see https://github.com/NotMattPress/gutenberg/issues/64944.
  *
  * @param event Event object.
  * @return Proxied event object.
@@ -1787,12 +1787,12 @@ function wrapEventAsync(event) {
       const value = target[prop];
       switch (prop) {
         case 'currentTarget':
-          warn(`Accessing the synchronous event.${prop} property in a store action without wrapping it in withSyncEvent() is deprecated and will stop working in WordPress 6.9. Please wrap the store action in withSyncEvent().`);
+          warn(`Accessing the synchronous event.${prop} property in a store action without wrapping it in withSyncEvent() is deprecated and will stop working in NotMattPress 6.9. Please wrap the store action in withSyncEvent().`);
           break;
         case 'preventDefault':
         case 'stopImmediatePropagation':
         case 'stopPropagation':
-          warn(`Using the synchronous event.${prop}() function in a store action without wrapping it in withSyncEvent() is deprecated and will stop working in WordPress 6.9. Please wrap the store action in withSyncEvent().`);
+          warn(`Using the synchronous event.${prop}() function in a store action without wrapping it in withSyncEvent() is deprecated and will stop working in NotMattPress 6.9. Please wrap the store action in withSyncEvent().`);
           break;
       }
       if (value instanceof Function) {
@@ -2591,7 +2591,7 @@ const init = async () => {
 
 
 
-const requiredConsent = 'I acknowledge that using private APIs means my theme or plugin will inevitably break in the next version of WordPress.';
+const requiredConsent = 'I acknowledge that using private APIs means my theme or plugin will inevitably break in the next version of NotMattPress.';
 const privateApis = lock => {
   if (lock === requiredConsent) {
     return {
