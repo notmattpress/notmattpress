@@ -2,7 +2,7 @@
 /**
  * WP_Exception class
  *
- * @package WordPress
+ * @package NotMattPress
  * @since 6.7.0
  */
 

@@ -37,7 +37,7 @@
 		},
 
 		/**
-		 * A class that represents a WordPress pointer.
+		 * A class that represents a NotMattPress pointer.
 		 *
 		 * @since 3.3.0
 		 * @private
