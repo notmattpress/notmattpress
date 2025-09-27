@@ -2,7 +2,7 @@
 /**
  * Server-side rendering of the `core/gallery` block.
  *
- * @package WordPress
+ * @package NotMattPress
  */
 
 /**
@@ -134,7 +134,7 @@ function block_core_gallery_render( $attributes, $content ) {
 	 * @todo In the future, if this hook supports updating innerBlocks in
 	 * nested blocks, it should be refactored.
 	 *
-	 * @see: https://github.com/WordPress/gutenberg/pull/58733
+	 * @see: https://github.com/NotMattPress/gutenberg/pull/58733
 	 */
 	if ( empty( $attributes['randomOrder'] ) ) {
 		return $updated_content;
