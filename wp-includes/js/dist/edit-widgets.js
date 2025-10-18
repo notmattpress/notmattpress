@@ -167,7 +167,7 @@ const external_wp_apiFetch_namespaceObject = window["wp"]["apiFetch"];
 var external_wp_apiFetch_default = /*#__PURE__*/__webpack_require__.n(external_wp_apiFetch_namespaceObject);
 ;// ./node_modules/@wordpress/edit-widgets/build-module/store/reducer.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -291,7 +291,7 @@ const external_wp_primitives_namespaceObject = window["wp"]["primitives"];
 const external_ReactJSXRuntime_namespaceObject = window["ReactJSXRuntime"];
 ;// ./node_modules/@wordpress/icons/build-module/library/check.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -306,7 +306,7 @@ const check = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(exte
 
 ;// ./node_modules/@wordpress/icons/build-module/library/star-filled.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -321,7 +321,7 @@ const starFilled = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)
 
 ;// ./node_modules/@wordpress/icons/build-module/library/star-empty.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -344,7 +344,7 @@ const external_wp_compose_namespaceObject = window["wp"]["compose"];
 const external_wp_plugins_namespaceObject = window["wp"]["plugins"];
 ;// ./node_modules/@wordpress/icons/build-module/library/close-small.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -359,7 +359,7 @@ const closeSmall = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)
 
 ;// ./node_modules/@wordpress/interface/build-module/store/deprecated.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 function normalizeComplementaryAreaScope(scope) {
@@ -393,7 +393,7 @@ function normalizeComplementaryAreaName(scope, name) {
 
 ;// ./node_modules/@wordpress/interface/build-module/store/actions.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -601,7 +601,7 @@ function closeModal() {
 
 ;// ./node_modules/@wordpress/interface/build-module/store/selectors.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -693,7 +693,7 @@ function isModalActive(state, modalName) {
 
 ;// ./node_modules/@wordpress/interface/build-module/store/reducer.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 function complementaryAreas(state = {}, action) {
@@ -761,7 +761,7 @@ const STORE_NAME = 'core/interface';
 
 ;// ./node_modules/@wordpress/interface/build-module/store/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -776,7 +776,7 @@ const STORE_NAME = 'core/interface';
 /**
  * Store definition for the interface namespace.
  *
- * @see https://github.com/WordPress/gutenberg/blob/HEAD/packages/data/README.md#createReduxStore
+ * @see https://github.com/NotMattPress/gutenberg/blob/HEAD/packages/data/README.md#createReduxStore
  *
  * @type {Object}
  */
@@ -792,7 +792,7 @@ const store = (0,external_wp_data_namespaceObject.createReduxStore)(STORE_NAME, 
 
 ;// ./node_modules/@wordpress/interface/build-module/components/complementary-area-toggle/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -858,7 +858,7 @@ function ComplementaryAreaToggle({
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -886,7 +886,7 @@ const ComplementaryAreaHeader = ({
 
 ;// ./node_modules/@wordpress/interface/build-module/components/action-item/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -912,7 +912,7 @@ function ActionItemSlot({
       // It ensures that menu items created by plugin authors aren't
       // duplicated with automatically injected menu items coming
       // from pinnable plugin sidebars.
-      // @see https://github.com/WordPress/gutenberg/issues/14457
+      // @see https://github.com/NotMattPress/gutenberg/issues/14457
       const initializedByPlugins = [];
       external_wp_element_namespaceObject.Children.forEach(fills, ({
         props: {
@@ -963,7 +963,7 @@ ActionItem.Slot = ActionItemSlot;
 
 ;// ./node_modules/@wordpress/interface/build-module/components/complementary-area-more-menu-item/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -977,7 +977,7 @@ ActionItem.Slot = ActionItemSlot;
 const PluginsMenuItem = ({
   // Menu item is marked with unstable prop for backward compatibility.
   // They are removed so they don't leak to DOM elements.
-  // @see https://github.com/WordPress/gutenberg/issues/14457
+  // @see https://github.com/NotMattPress/gutenberg/issues/14457
   __unstableExplicitMenuItem,
   __unstableTarget,
   ...restProps
@@ -1015,7 +1015,7 @@ function ComplementaryAreaMoreMenuItem({
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -1052,7 +1052,7 @@ PinnedItems.Slot = PinnedItemsSlot;
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -1317,7 +1317,7 @@ ComplementaryArea.Slot = ComplementaryAreaSlot;
 
 ;// ./node_modules/@wordpress/interface/build-module/components/navigable-region/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -1353,7 +1353,7 @@ NavigableRegion.displayName = 'NavigableRegion';
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -1555,7 +1555,7 @@ function InterfaceSkeleton({
 const external_wp_blockEditor_namespaceObject = window["wp"]["blockEditor"];
 ;// ./node_modules/@wordpress/edit-widgets/build-module/store/transformers.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -1713,7 +1713,7 @@ const constants_STORE_NAME = 'core/edit-widgets';
 
 ;// ./node_modules/@wordpress/edit-widgets/build-module/store/actions.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -1820,7 +1820,7 @@ const saveWidgetArea = widgetAreaId => async ({
 
   // Remove all duplicate reference widget instances for legacy widgets.
   // Why? We filter out the widgets with duplicate IDs to prevent adding more than one instance of a widget
-  // implemented using a function. WordPress doesn't support having more than one instance of these, if you try to
+  // implemented using a function. NotMattPress doesn't support having more than one instance of these, if you try to
   // save multiple instances of these in different sidebars you will run into undefined behaviors.
   const usedReferenceWidgets = [];
   const widgetsBlocks = post.blocks.filter(block => {
@@ -2066,7 +2066,7 @@ const moveBlockToWidgetArea = (clientId, widgetAreaId) => async ({
 
 ;// ./node_modules/@wordpress/edit-widgets/build-module/store/resolvers.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -2150,7 +2150,7 @@ const getWidgets = () => async ({
 
 ;// ./node_modules/@wordpress/edit-widgets/build-module/store/selectors.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -2391,17 +2391,17 @@ function getInserterSidebarToggleRef(state) {
 const external_wp_privateApis_namespaceObject = window["wp"]["privateApis"];
 ;// ./node_modules/@wordpress/edit-widgets/build-module/lock-unlock.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 const {
   lock,
   unlock
-} = (0,external_wp_privateApis_namespaceObject.__dangerousOptInToUnstableAPIsOnlyForCoreModules)('I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of WordPress.', '@wordpress/edit-widgets');
+} = (0,external_wp_privateApis_namespaceObject.__dangerousOptInToUnstableAPIsOnlyForCoreModules)('I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of NotMattPress.', '@wordpress/edit-widgets');
 
 ;// ./node_modules/@wordpress/edit-widgets/build-module/store/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -2420,7 +2420,7 @@ const {
 /**
  * Block editor data store configuration.
  *
- * @see https://github.com/WordPress/gutenberg/blob/HEAD/packages/data/README.md#register
+ * @see https://github.com/NotMattPress/gutenberg/blob/HEAD/packages/data/README.md#register
  *
  * @type {Object}
  */
@@ -2434,7 +2434,7 @@ const storeConfig = {
 /**
  * Store definition for the edit widgets namespace.
  *
- * @see https://github.com/WordPress/gutenberg/blob/HEAD/packages/data/README.md#createReduxStore
+ * @see https://github.com/NotMattPress/gutenberg/blob/HEAD/packages/data/README.md#createReduxStore
  *
  * @type {Object}
  */
@@ -2456,7 +2456,7 @@ unlock(store_store).registerPrivateSelectors(private_selectors_namespaceObject);
 const external_wp_hooks_namespaceObject = window["wp"]["hooks"];
 ;// ./node_modules/@wordpress/edit-widgets/build-module/filters/move-to-widget-area.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -2517,7 +2517,7 @@ const withMoveToWidgetAreaToolbarItem = (0,external_wp_compose_namespaceObject.c
 const external_wp_mediaUtils_namespaceObject = window["wp"]["mediaUtils"];
 ;// ./node_modules/@wordpress/edit-widgets/build-module/filters/replace-media-upload.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -2533,7 +2533,7 @@ const replaceMediaUpload = () => external_wp_mediaUtils_namespaceObject.MediaUpl
 
 ;// ./node_modules/@wordpress/edit-widgets/build-module/blocks/widget-area/edit/use-is-dragging-within.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -2592,7 +2592,7 @@ const useIsDraggingWithin = elementRef => {
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -2633,7 +2633,7 @@ function WidgetAreaInnerBlocks({
 
 ;// ./node_modules/@wordpress/edit-widgets/build-module/blocks/widget-area/edit/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -2743,7 +2743,7 @@ const useIsDragging = elementRef => {
 
 ;// ./node_modules/@wordpress/edit-widgets/build-module/blocks/widget-area/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -2791,7 +2791,7 @@ const settings = {
 
 ;// ./node_modules/@wordpress/edit-widgets/build-module/components/error-boundary/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -2860,7 +2860,7 @@ const external_wp_keyboardShortcuts_namespaceObject = window["wp"]["keyboardShor
 const external_wp_keycodes_namespaceObject = window["wp"]["keycodes"];
 ;// ./node_modules/@wordpress/edit-widgets/build-module/components/keyboard-shortcuts/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -2982,7 +2982,7 @@ KeyboardShortcuts.Register = KeyboardShortcutsRegister;
 
 ;// ./node_modules/@wordpress/edit-widgets/build-module/hooks/use-last-selected-widget-area.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -3036,7 +3036,7 @@ const ENABLE_EXPERIMENTAL_FSE_BLOCKS = false;
 
 ;// ./node_modules/@wordpress/edit-widgets/build-module/components/widget-areas-block-editor-provider/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -3158,7 +3158,7 @@ function WidgetAreasBlockEditorProvider({
 
 ;// ./node_modules/@wordpress/icons/build-module/library/drawer-left.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -3177,7 +3177,7 @@ const drawerLeft = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)
 
 ;// ./node_modules/@wordpress/icons/build-module/library/drawer-right.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -3196,7 +3196,7 @@ const drawerRight = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx
 
 ;// ./node_modules/@wordpress/icons/build-module/library/block-default.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -3215,7 +3215,7 @@ const external_wp_url_namespaceObject = window["wp"]["url"];
 const external_wp_dom_namespaceObject = window["wp"]["dom"];
 ;// ./node_modules/@wordpress/edit-widgets/build-module/components/sidebar/widget-areas.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -3256,8 +3256,8 @@ function WidgetAreas({
         children: [/*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)("p", {
           // Use `dangerouslySetInnerHTML` to keep backwards
           // compatibility. Basic markup in the description is an
-          // established feature of WordPress.
-          // @see https://github.com/WordPress/gutenberg/issues/33106
+          // established feature of NotMattPress.
+          // @see https://github.com/NotMattPress/gutenberg/issues/33106
           dangerouslySetInnerHTML: {
             __html: (0,external_wp_dom_namespaceObject.safeHTML)(description)
           }
@@ -3279,7 +3279,7 @@ function WidgetAreas({
 
 ;// ./node_modules/@wordpress/edit-widgets/build-module/components/sidebar/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -3455,7 +3455,7 @@ function Sidebar() {
 
 ;// ./node_modules/@wordpress/icons/build-module/library/plus.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -3470,7 +3470,7 @@ const plus = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(exter
 
 ;// ./node_modules/@wordpress/icons/build-module/library/list-view.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -3485,7 +3485,7 @@ const listView = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(e
 
 ;// ./node_modules/@wordpress/icons/build-module/library/undo.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -3500,7 +3500,7 @@ const undo = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(exter
 
 ;// ./node_modules/@wordpress/icons/build-module/library/redo.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -3515,7 +3515,7 @@ const redo = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(exter
 
 ;// ./node_modules/@wordpress/edit-widgets/build-module/components/header/undo-redo/undo.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -3538,7 +3538,7 @@ function UndoButton(props, ref) {
     shortcut: external_wp_keycodes_namespaceObject.displayShortcut.primary('z')
     // If there are no undo levels we don't want to actually disable this
     // button, because it will remove focus for keyboard users.
-    // See: https://github.com/WordPress/gutenberg/issues/3486
+    // See: https://github.com/NotMattPress/gutenberg/issues/3486
     ,
     "aria-disabled": !hasUndo,
     onClick: hasUndo ? undo : undefined,
@@ -3549,7 +3549,7 @@ function UndoButton(props, ref) {
 
 ;// ./node_modules/@wordpress/edit-widgets/build-module/components/header/undo-redo/redo.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -3573,7 +3573,7 @@ function RedoButton(props, ref) {
     shortcut: shortcut
     // If there are no undo levels we don't want to actually disable this
     // button, because it will remove focus for keyboard users.
-    // See: https://github.com/WordPress/gutenberg/issues/3486
+    // See: https://github.com/NotMattPress/gutenberg/issues/3486
     ,
     "aria-disabled": !hasRedo,
     onClick: hasRedo ? redo : undefined,
@@ -3584,7 +3584,7 @@ function RedoButton(props, ref) {
 
 ;// ./node_modules/@wordpress/edit-widgets/build-module/components/header/document-tools/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -3671,7 +3671,7 @@ function DocumentTools() {
 
 ;// ./node_modules/@wordpress/edit-widgets/build-module/components/save-button/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -3713,7 +3713,7 @@ function SaveButton() {
 
 ;// ./node_modules/@wordpress/icons/build-module/library/more-vertical.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -3728,7 +3728,7 @@ const moreVertical = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.js
 
 ;// ./node_modules/@wordpress/icons/build-module/library/external.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -3743,7 +3743,7 @@ const external = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(e
 
 ;// ./node_modules/@wordpress/edit-widgets/build-module/components/keyboard-shortcut-help-modal/config.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 const textFormattingShortcuts = [{
@@ -3819,7 +3819,7 @@ const textFormattingShortcuts = [{
 
 ;// ./node_modules/@wordpress/edit-widgets/build-module/components/keyboard-shortcut-help-modal/shortcut.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -3873,7 +3873,7 @@ function Shortcut({
 
 ;// ./node_modules/@wordpress/edit-widgets/build-module/components/keyboard-shortcut-help-modal/dynamic-shortcut.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -3920,7 +3920,7 @@ function DynamicShortcut({
 
 
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -4028,7 +4028,7 @@ function KeyboardShortcutHelpModal({
 
 ;// ./node_modules/@wordpress/edit-widgets/build-module/components/more-menu/tools-more-menu-group.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -4046,7 +4046,7 @@ ToolsMoreMenuGroup.Slot = ({
 
 ;// ./node_modules/@wordpress/edit-widgets/build-module/components/more-menu/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -4106,7 +4106,7 @@ function MoreMenu() {
           }), /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsxs)(external_wp_components_namespaceObject.MenuItem, {
             role: "menuitem",
             icon: library_external,
-            href: (0,external_wp_i18n_namespaceObject.__)('https://wordpress.org/documentation/article/block-based-widgets-editor/'),
+            href: (0,external_wp_i18n_namespaceObject.__)('https://notmatt.press/documentation/article/block-based-widgets-editor/'),
             target: "_blank",
             rel: "noopener noreferrer",
             children: [(0,external_wp_i18n_namespaceObject.__)('Help'), /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(external_wp_components_namespaceObject.VisuallyHidden, {
@@ -4152,7 +4152,7 @@ function MoreMenu() {
 
 ;// ./node_modules/@wordpress/edit-widgets/build-module/components/header/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -4214,7 +4214,7 @@ function Header() {
 
 ;// ./node_modules/@wordpress/edit-widgets/build-module/components/notices/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -4264,7 +4264,7 @@ function Notices() {
 
 ;// ./node_modules/@wordpress/edit-widgets/build-module/components/widget-areas-block-editor-content/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -4307,7 +4307,7 @@ function WidgetAreasBlockEditorContent({
 
 ;// ./node_modules/@wordpress/edit-widgets/build-module/hooks/use-widget-library-insertion-point.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -4363,7 +4363,7 @@ const useWidgetLibraryInsertionPoint = () => {
 
 ;// ./node_modules/@wordpress/edit-widgets/build-module/components/secondary-sidebar/inserter-sidebar.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -4413,7 +4413,7 @@ function InserterSidebar() {
 
 ;// ./node_modules/@wordpress/edit-widgets/build-module/components/secondary-sidebar/list-view-sidebar.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -4483,7 +4483,7 @@ function ListViewSidebar() {
 
 ;// ./node_modules/@wordpress/edit-widgets/build-module/components/secondary-sidebar/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 /**
@@ -4522,7 +4522,7 @@ function SecondarySidebar() {
 
 ;// ./node_modules/@wordpress/edit-widgets/build-module/components/layout/interface.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -4613,7 +4613,7 @@ function Interface({
 
 ;// ./node_modules/@wordpress/edit-widgets/build-module/components/layout/unsaved-changes-warning.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -4664,7 +4664,7 @@ function UnsavedChangesWarning() {
 
 ;// ./node_modules/@wordpress/edit-widgets/build-module/components/welcome-guide/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -4721,7 +4721,7 @@ function WelcomeGuide() {
             children: [/*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)("strong", {
               children: (0,external_wp_i18n_namespaceObject.__)('Want to stick with the old widgets?')
             }), ' ', /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(external_wp_components_namespaceObject.ExternalLink, {
-              href: (0,external_wp_i18n_namespaceObject.__)('https://wordpress.org/plugins/classic-widgets/'),
+              href: (0,external_wp_i18n_namespaceObject.__)('https://notmatt.press/plugins/classic-widgets/'),
               children: (0,external_wp_i18n_namespaceObject.__)('Get the Classic Widgets plugin.')
             })]
           })]
@@ -4774,7 +4774,7 @@ function WelcomeGuide() {
           className: "edit-widgets-welcome-guide__text",
           children: (0,external_wp_element_namespaceObject.createInterpolateElement)((0,external_wp_i18n_namespaceObject.__)("New to the block editor? Want to learn more about using it? <a>Here's a detailed guide.</a>"), {
             a: /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(external_wp_components_namespaceObject.ExternalLink, {
-              href: (0,external_wp_i18n_namespaceObject.__)('https://wordpress.org/documentation/article/wordpress-block-editor/')
+              href: (0,external_wp_i18n_namespaceObject.__)('https://notmatt.press/documentation/article/wordpress-block-editor/')
             })
           })
         })]
@@ -4802,7 +4802,7 @@ function WelcomeGuideImage({
 
 ;// ./node_modules/@wordpress/edit-widgets/build-module/components/layout/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -4851,7 +4851,7 @@ function Layout({
 
 ;// ./node_modules/@wordpress/edit-widgets/build-module/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -4903,7 +4903,7 @@ function initializeEditor(id, settings) {
   // As we are unregistering `core/freeform` to avoid the Classic block, we must
   // replace it with something as the default freeform content handler. Failure to
   // do this will result in errors in the default block parser.
-  // see: https://github.com/WordPress/gutenberg/issues/33097
+  // see: https://github.com/NotMattPress/gutenberg/issues/33097
   (0,external_wp_blocks_namespaceObject.setFreeformContentHandlerName)('core/html');
   root.render(/*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(external_wp_element_namespaceObject.StrictMode, {
     children: /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(layout, {

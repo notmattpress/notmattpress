@@ -64,7 +64,7 @@ __webpack_require__.d(selectors_namespaceObject, {
 const external_wp_data_namespaceObject = window["wp"]["data"];
 ;// ./node_modules/@wordpress/patterns/build-module/store/reducer.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 function isEditingPattern(state = {}, action) {
@@ -110,7 +110,7 @@ const PATTERN_OVERRIDES_BINDING_SOURCE = 'core/pattern-overrides';
 
 ;// ./node_modules/@wordpress/patterns/build-module/store/actions.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -248,17 +248,17 @@ function selectors_isEditingPattern(state, clientId) {
 const external_wp_privateApis_namespaceObject = window["wp"]["privateApis"];
 ;// ./node_modules/@wordpress/patterns/build-module/lock-unlock.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 const {
   lock,
   unlock
-} = (0,external_wp_privateApis_namespaceObject.__dangerousOptInToUnstableAPIsOnlyForCoreModules)('I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of WordPress.', '@wordpress/patterns');
+} = (0,external_wp_privateApis_namespaceObject.__dangerousOptInToUnstableAPIsOnlyForCoreModules)('I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of NotMattPress.', '@wordpress/patterns');
 
 ;// ./node_modules/@wordpress/patterns/build-module/store/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -274,7 +274,7 @@ const {
 /**
  * Post editor data store configuration.
  *
- * @see https://github.com/WordPress/gutenberg/blob/HEAD/packages/data/README.md#registerStore
+ * @see https://github.com/NotMattPress/gutenberg/blob/HEAD/packages/data/README.md#registerStore
  *
  * @type {Object}
  */
@@ -285,7 +285,7 @@ const storeConfig = {
 /**
  * Store definition for the editor namespace.
  *
- * @see https://github.com/WordPress/gutenberg/blob/HEAD/packages/data/README.md#createReduxStore
+ * @see https://github.com/NotMattPress/gutenberg/blob/HEAD/packages/data/README.md#createReduxStore
  *
  * @type {Object}
  */
@@ -339,7 +339,7 @@ function hasOverridableBlocks(blocks) {
 const external_ReactJSXRuntime_namespaceObject = window["ReactJSXRuntime"];
 ;// ./node_modules/@wordpress/patterns/build-module/components/overrides-panel.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -384,7 +384,7 @@ const external_wp_compose_namespaceObject = window["wp"]["compose"];
 const external_wp_htmlEntities_namespaceObject = window["wp"]["htmlEntities"];
 ;// ./node_modules/@wordpress/patterns/build-module/components/category-selector.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -436,7 +436,7 @@ function CategorySelector({
 
 ;// ./node_modules/@wordpress/patterns/build-module/private-hooks.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -531,7 +531,7 @@ function useAddPatternCategory() {
 
 ;// ./node_modules/@wordpress/patterns/build-module/components/create-pattern-modal.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -666,7 +666,7 @@ function CreatePatternModalContents({
 
 ;// ./node_modules/@wordpress/patterns/build-module/components/duplicate-pattern-modal.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -751,7 +751,7 @@ function DuplicatePatternModal({
 
 ;// ./node_modules/@wordpress/patterns/build-module/components/rename-pattern-modal.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -855,7 +855,7 @@ function RenamePatternModal({
 const external_wp_primitives_namespaceObject = window["wp"]["primitives"];
 ;// ./node_modules/@wordpress/icons/build-module/library/symbol.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -870,7 +870,7 @@ const symbol = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(ext
 
 ;// ./node_modules/@wordpress/patterns/build-module/components/pattern-convert-button.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -1011,7 +1011,7 @@ function PatternConvertButton({
 const external_wp_url_namespaceObject = window["wp"]["url"];
 ;// ./node_modules/@wordpress/patterns/build-module/components/patterns-manage-button.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -1088,7 +1088,7 @@ function PatternsManageButton({
 
 ;// ./node_modules/@wordpress/patterns/build-module/components/index.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -1121,7 +1121,7 @@ function PatternsMenuItems({
 const external_wp_a11y_namespaceObject = window["wp"]["a11y"];
 ;// ./node_modules/@wordpress/patterns/build-module/components/rename-pattern-category-modal.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -1271,7 +1271,7 @@ function RenamePatternCategoryModal({
 
 ;// ./node_modules/@wordpress/patterns/build-module/components/allow-overrides-modal.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -1392,7 +1392,7 @@ function DisallowOverridesModal({
 
 ;// ./node_modules/@wordpress/patterns/build-module/components/pattern-overrides-controls.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -1483,7 +1483,7 @@ function PatternOverridesControls({
 
 ;// ./node_modules/@wordpress/patterns/build-module/components/reset-overrides-control.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -1554,7 +1554,7 @@ function ResetOverridesControl(props) {
 
 ;// ./node_modules/@wordpress/icons/build-module/library/copy.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
@@ -1571,7 +1571,7 @@ const copy = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(exter
 
 ;// ./node_modules/@wordpress/patterns/build-module/components/pattern-overrides-block-controls.js
 /**
- * WordPress dependencies
+ * NotMattPress dependencies
  */
 
 
