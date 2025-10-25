@@ -3593,7 +3593,7 @@ const external_wp_privateApis_namespaceObject = window["wp"]["privateApis"];
 ;// ./node_modules/@wordpress/block-library/build-module/lock-unlock.js
 
 const { lock, unlock } = (0,external_wp_privateApis_namespaceObject.__dangerousOptInToUnstableAPIsOnlyForCoreModules)(
-  "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of WordPress.",
+  "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of NotMattPress.",
   "@wordpress/block-library"
 );
 
@@ -3617,7 +3617,7 @@ const matchesPatterns = (url, patterns = []) => patterns.some((pattern) => url.m
 const findMoreSuitableBlock = (url) => (0,external_wp_blocks_namespaceObject.getBlockVariations)(DEFAULT_EMBED_BLOCK)?.find(
   ({ patterns }) => matchesPatterns(url, patterns)
 );
-const isFromWordPress = (html) => html && html.includes('class="wp-embedded-content"');
+const isFromNotMattPress = (html) => html && html.includes('class="wp-embedded-content"');
 const getPhotoHtml = (photo) => {
   const imageUrl = photo.url || photo.thumbnail_url;
   const photoPreview = /* @__PURE__ */ (0,external_ReactJSXRuntime_namespaceObject.jsx)("p", { children: /* @__PURE__ */ (0,external_ReactJSXRuntime_namespaceObject.jsx)("img", { src: imageUrl, alt: photo.title, width: "100%" }) });
@@ -3642,7 +3642,7 @@ const createUpgradedEmbedBlock = (props, attributesFromPreview = {}) => {
   const wpVariation = (0,external_wp_blocks_namespaceObject.getBlockVariations)(DEFAULT_EMBED_BLOCK)?.find(
     ({ name }) => name === "wordpress"
   );
-  if (!wpVariation || !preview || !isFromWordPress(preview.html) || isCurrentBlockWP) {
+  if (!wpVariation || !preview || !isFromNotMattPress(preview.html) || isCurrentBlockWP) {
     return;
   }
   return (0,external_wp_blocks_namespaceObject.createBlock)(DEFAULT_EMBED_BLOCK, {
@@ -3651,8 +3651,8 @@ const createUpgradedEmbedBlock = (props, attributesFromPreview = {}) => {
     // By now we have the preview, but when the new block first renders, it
     // won't have had all the attributes set, and so won't get the correct
     // type and it won't render correctly. So, we pass through the current attributes
-    // here so that the initial render works when we switch to the WordPress
-    // block. This only affects the WordPress block because it can't be
+    // here so that the initial render works when we switch to the NotMattPress
+    // block. This only affects the NotMattPress block because it can't be
     // rendered in the usual Sandbox (it has a sandbox of its own) and it
     // relies on the preview to set the correct render type.
     ...attributesFromPreview
@@ -3726,7 +3726,7 @@ const getAttributesFromPreview = memize(
     const providerNameSlug = kebabCase(
       (providerName || title).toLowerCase()
     );
-    if (isFromWordPress(html)) {
+    if (isFromNotMattPress(html)) {
       type = WP_EMBED_TYPE;
     }
     if (html || "photo" === type) {
@@ -7396,7 +7396,7 @@ function edit_ClassicEdit({
 
 
 ;// ./node_modules/@wordpress/block-library/build-module/freeform/block.json
-const freeform_block_namespaceObject = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"core/freeform","title":"Classic","category":"text","description":"Use the classic WordPress editor.","textdomain":"default","attributes":{"content":{"type":"string","source":"raw"}},"supports":{"className":false,"customClassName":false,"reusable":false},"editorStyle":"wp-block-freeform-editor"}');
+const freeform_block_namespaceObject = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"core/freeform","title":"Classic","category":"text","description":"Use the classic NotMattPress editor.","textdomain":"default","attributes":{"content":{"type":"string","source":"raw"}},"supports":{"className":false,"customClassName":false,"reusable":false},"editorStyle":"wp-block-freeform-editor"}');
 ;// ./node_modules/@wordpress/block-library/build-module/freeform/save.js
 
 
@@ -8837,7 +8837,7 @@ function PostCommentsPlaceholder({ postType, postId }) {
               loading: "lazy"
             }
           ),
-          /* @__PURE__ */ (0,external_ReactJSXRuntime_namespaceObject.jsx)("b", { className: "fn", children: /* @__PURE__ */ (0,external_ReactJSXRuntime_namespaceObject.jsx)("a", { href: "#top", className: "url", children: (0,external_wp_i18n_namespaceObject.__)("A WordPress Commenter") }) }),
+          /* @__PURE__ */ (0,external_ReactJSXRuntime_namespaceObject.jsx)("b", { className: "fn", children: /* @__PURE__ */ (0,external_ReactJSXRuntime_namespaceObject.jsx)("a", { href: "#top", className: "url", children: (0,external_wp_i18n_namespaceObject.__)("A NotMattPress Commenter") }) }),
           " ",
           /* @__PURE__ */ (0,external_ReactJSXRuntime_namespaceObject.jsxs)("span", { className: "says", children: [
             (0,external_wp_i18n_namespaceObject.__)("says"),
@@ -8882,7 +8882,7 @@ function PostCommentsPlaceholder({ postType, postId }) {
           className: "comment-reply-link",
           href: "#top",
           "aria-label": (0,external_wp_i18n_namespaceObject.__)(
-            "Reply to A WordPress Commenter"
+            "Reply to A NotMattPress Commenter"
           ),
           children: (0,external_wp_i18n_namespaceObject.__)("Reply")
         }
@@ -9641,7 +9641,7 @@ var comment_edit_link_default = /* @__PURE__ */ (0,external_ReactJSXRuntime_name
 
 
 ;// ./node_modules/@wordpress/block-library/build-module/comment-edit-link/block.json
-const comment_edit_link_block_namespaceObject = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"core/comment-edit-link","title":"Comment Edit Link","category":"theme","ancestor":["core/comment-template"],"description":"Displays a link to edit the comment in the WordPress Dashboard. This link is only visible to users with the edit comment capability.","textdomain":"default","usesContext":["commentId"],"attributes":{"linkTarget":{"type":"string","default":"_self"},"textAlign":{"type":"string"}},"supports":{"html":false,"color":{"link":true,"gradients":true,"text":false,"__experimentalDefaultControls":{"background":true,"link":true}},"spacing":{"margin":true,"padding":true,"__experimentalDefaultControls":{"margin":false,"padding":false}},"typography":{"fontSize":true,"lineHeight":true,"__experimentalFontFamily":true,"__experimentalFontWeight":true,"__experimentalFontStyle":true,"__experimentalTextTransform":true,"__experimentalTextDecoration":true,"__experimentalLetterSpacing":true,"__experimentalDefaultControls":{"fontSize":true}},"interactivity":{"clientNavigation":true},"__experimentalBorder":{"radius":true,"color":true,"width":true,"style":true}},"style":"wp-block-comment-edit-link"}');
+const comment_edit_link_block_namespaceObject = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"core/comment-edit-link","title":"Comment Edit Link","category":"theme","ancestor":["core/comment-template"],"description":"Displays a link to edit the comment in the NotMattPress Dashboard. This link is only visible to users with the edit comment capability.","textdomain":"default","usesContext":["commentId"],"attributes":{"linkTarget":{"type":"string","default":"_self"},"textAlign":{"type":"string"}},"supports":{"html":false,"color":{"link":true,"gradients":true,"text":false,"__experimentalDefaultControls":{"background":true,"link":true}},"spacing":{"margin":true,"padding":true,"__experimentalDefaultControls":{"margin":false,"padding":false}},"typography":{"fontSize":true,"lineHeight":true,"__experimentalFontFamily":true,"__experimentalFontWeight":true,"__experimentalFontStyle":true,"__experimentalTextTransform":true,"__experimentalTextDecoration":true,"__experimentalLetterSpacing":true,"__experimentalDefaultControls":{"fontSize":true}},"interactivity":{"clientNavigation":true},"__experimentalBorder":{"radius":true,"color":true,"width":true,"style":true}},"style":"wp-block-comment-edit-link"}');
 ;// ./node_modules/@wordpress/block-library/build-module/comment-edit-link/edit.js
 
 
@@ -14099,7 +14099,7 @@ function CoverEdit({
     },
     {
       // Avoid template sync when the `templateLock` value is `all` or `contentOnly`.
-      // See: https://github.com/WordPress/gutenberg/pull/45632
+      // See: https://github.com/NotMattPress/gutenberg/pull/45632
       template: !hasInnerBlocks ? innerBlocksTemplate : void 0,
       templateInsertUpdatesSelection: true,
       allowedBlocks,
@@ -15100,7 +15100,7 @@ const embedFacebookIcon = {
   src: /* @__PURE__ */ (0,external_ReactJSXRuntime_namespaceObject.jsx)(external_wp_components_namespaceObject.SVG, { viewBox: "0 0 24 24", children: /* @__PURE__ */ (0,external_ReactJSXRuntime_namespaceObject.jsx)(external_wp_components_namespaceObject.Path, { d: "M20 3H4c-.6 0-1 .4-1 1v16c0 .5.4 1 1 1h8.6v-7h-2.3v-2.7h2.3v-2c0-2.3 1.4-3.6 3.5-3.6 1 0 1.8.1 2.1.1v2.4h-1.4c-1.1 0-1.3.5-1.3 1.3v1.7h2.7l-.4 2.8h-2.3v7H20c.5 0 1-.4 1-1V4c0-.6-.4-1-1-1z" }) })
 };
 const embedInstagramIcon = /* @__PURE__ */ (0,external_ReactJSXRuntime_namespaceObject.jsx)(external_wp_components_namespaceObject.SVG, { viewBox: "0 0 24 24", children: /* @__PURE__ */ (0,external_ReactJSXRuntime_namespaceObject.jsx)(external_wp_components_namespaceObject.G, { children: /* @__PURE__ */ (0,external_ReactJSXRuntime_namespaceObject.jsx)(external_wp_components_namespaceObject.Path, { d: "M12 4.622c2.403 0 2.688.01 3.637.052.877.04 1.354.187 1.67.31.42.163.72.358 1.036.673.315.315.51.615.673 1.035.123.317.27.794.31 1.67.043.95.052 1.235.052 3.638s-.01 2.688-.052 3.637c-.04.877-.187 1.354-.31 1.67-.163.42-.358.72-.673 1.036-.315.315-.615.51-1.035.673-.317.123-.794.27-1.67.31-.95.043-1.234.052-3.638.052s-2.688-.01-3.637-.052c-.877-.04-1.354-.187-1.67-.31-.42-.163-.72-.358-1.036-.673-.315-.315-.51-.615-.673-1.035-.123-.317-.27-.794-.31-1.67-.043-.95-.052-1.235-.052-3.638s.01-2.688.052-3.637c.04-.877.187-1.354.31-1.67.163-.42.358-.72.673-1.036.315-.315.615-.51 1.035-.673.317-.123.794-.27 1.67-.31.95-.043 1.235-.052 3.638-.052M12 3c-2.444 0-2.75.01-3.71.054s-1.613.196-2.185.418c-.592.23-1.094.538-1.594 1.04-.5.5-.807 1-1.037 1.593-.223.572-.375 1.226-.42 2.184C3.01 9.25 3 9.555 3 12s.01 2.75.054 3.71.196 1.613.418 2.186c.23.592.538 1.094 1.038 1.594s1.002.808 1.594 1.038c.572.222 1.227.375 2.185.418.96.044 1.266.054 3.71.054s2.75-.01 3.71-.054 1.613-.196 2.186-.418c.592-.23 1.094-.538 1.594-1.038s.808-1.002 1.038-1.594c.222-.572.375-1.227.418-2.185.044-.96.054-1.266.054-3.71s-.01-2.75-.054-3.71-.196-1.613-.418-2.186c-.23-.592-.538-1.094-1.038-1.594s-1.002-.808-1.594-1.038c-.572-.222-1.227-.375-2.185-.418C14.75 3.01 14.445 3 12 3zm0 4.378c-2.552 0-4.622 2.07-4.622 4.622s2.07 4.622 4.622 4.622 4.622-2.07 4.622-4.622S14.552 7.378 12 7.378zM12 15c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3zm4.804-8.884c-.596 0-1.08.484-1.08 1.08s.484 1.08 1.08 1.08c.596 0 1.08-.484 1.08-1.08s-.483-1.08-1.08-1.08z" }) }) });
-const embedWordPressIcon = {
+const embedNotMattPressIcon = {
   foreground: "#0073AA",
   src: /* @__PURE__ */ (0,external_ReactJSXRuntime_namespaceObject.jsx)(external_wp_components_namespaceObject.SVG, { viewBox: "0 0 24 24", children: /* @__PURE__ */ (0,external_ReactJSXRuntime_namespaceObject.jsx)(external_wp_components_namespaceObject.G, { children: /* @__PURE__ */ (0,external_ReactJSXRuntime_namespaceObject.jsx)(external_wp_components_namespaceObject.Path, { d: "M12.158 12.786l-2.698 7.84c.806.236 1.657.365 2.54.365 1.047 0 2.05-.18 2.986-.51-.024-.037-.046-.078-.065-.123l-2.762-7.57zM3.008 12c0 3.56 2.07 6.634 5.068 8.092L3.788 8.342c-.5 1.117-.78 2.354-.78 3.658zm15.06-.454c0-1.112-.398-1.88-.74-2.48-.456-.74-.883-1.368-.883-2.11 0-.825.627-1.595 1.51-1.595.04 0 .078.006.116.008-1.598-1.464-3.73-2.36-6.07-2.36-3.14 0-5.904 1.613-7.512 4.053.21.008.41.012.58.012.94 0 2.395-.114 2.395-.114.484-.028.54.684.057.74 0 0-.487.058-1.03.086l3.275 9.74 1.968-5.902-1.4-3.838c-.485-.028-.944-.085-.944-.085-.486-.03-.43-.77.056-.742 0 0 1.484.114 2.368.114.94 0 2.397-.114 2.397-.114.486-.028.543.684.058.74 0 0-.488.058-1.03.086l3.25 9.665.897-2.997c.456-1.17.684-2.137.684-2.907zm1.82-3.86c.04.286.06.593.06.924 0 .912-.17 1.938-.683 3.22l-2.746 7.94c2.672-1.558 4.47-4.454 4.47-7.77 0-1.564-.4-3.033-1.1-4.314zM12 22C6.486 22 2 17.514 2 12S6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z" }) }) })
 };
@@ -15263,7 +15263,7 @@ const EmbedPlaceholder = ({
           external_wp_components_namespaceObject.ExternalLink,
           {
             href: (0,external_wp_i18n_namespaceObject.__)(
-              "https://wordpress.org/documentation/article/embeds/"
+              "https://notmatt.press/documentation/article/embeds/"
             ),
             children: (0,external_wp_i18n_namespaceObject.__)("Learn more about embeds")
           }
@@ -15805,10 +15805,10 @@ const embed_variations_variations = [
   },
   {
     name: "wordpress",
-    title: getTitle("WordPress"),
-    icon: embedWordPressIcon,
+    title: getTitle("NotMattPress"),
+    icon: embedNotMattPressIcon,
     keywords: [(0,external_wp_i18n_namespaceObject.__)("post"), (0,external_wp_i18n_namespaceObject.__)("blog")],
-    description: (0,external_wp_i18n_namespaceObject.__)("Embed a WordPress post."),
+    description: (0,external_wp_i18n_namespaceObject.__)("Embed a NotMattPress post."),
     attributes: {
       providerNameSlug: "wordpress"
     }
@@ -16024,9 +16024,9 @@ const embed_variations_variations = [
   },
   {
     name: "wordpress-tv",
-    title: getTitle("WordPress.tv"),
+    title: getTitle("NotMattPress.tv"),
     icon: embedVideoIcon,
-    description: (0,external_wp_i18n_namespaceObject.__)("Embed a WordPress.tv video."),
+    description: (0,external_wp_i18n_namespaceObject.__)("Embed a NotMattPress.tv video."),
     patterns: [/^https?:\/\/wordpress\.tv\/.+/i],
     attributes: { providerNameSlug: "wordpress-tv", responsive: true }
   },
@@ -16988,7 +16988,7 @@ function file_save_save({ attributes }) {
   } = attributes;
   const pdfEmbedLabel = external_wp_blockEditor_namespaceObject.RichText.isEmpty(fileName) ? "PDF embed" : (
     // To do: use toPlainText, but we need ensure it's RichTextData. See
-    // https://github.com/WordPress/gutenberg/pull/56710.
+    // https://github.com/NotMattPress/gutenberg/pull/56710.
     fileName.toString()
   );
   const hasFilename = !external_wp_blockEditor_namespaceObject.RichText.isEmpty(fileName);
@@ -17606,7 +17606,7 @@ const form_deprecated_v1 = {
   // classes. If those block support classes are applied during the
   // deprecation process, this deprecation doesn't match and won't
   // run.
-  // @see https://github.com/WordPress/gutenberg/pull/55755
+  // @see https://github.com/NotMattPress/gutenberg/pull/55755
   supports: {},
   attributes: {
     submissionMethod: {
@@ -24604,7 +24604,7 @@ function ImageEdit({
       )
     ] }),
     // The listener cannot be placed as the first element as it will break the in-between inserter.
-    // See https://github.com/WordPress/gutenberg/blob/71134165868298fc15e22896d0c28b41b3755ff7/packages/block-editor/src/components/block-list/use-in-between-inserter.js#L120
+    // See https://github.com/NotMattPress/gutenberg/blob/71134165868298fc15e22896d0c28b41b3755ff7/packages/block-editor/src/components/block-list/use-in-between-inserter.js#L120
     isSingleSelected && isMaxWidthContainerWidth && maxWidthObserver
   ] });
 }
@@ -30382,7 +30382,7 @@ function NavigationInnerBlocks({
       // the block appender even when a child block is selected.
       // This should be a temporary fix, to be replaced by improvements to
       // the sibling inserter.
-      // See https://github.com/WordPress/gutenberg/issues/37572.
+      // See https://github.com/NotMattPress/gutenberg/issues/37572.
       renderAppender: isSelected || isImmediateParentOfSelectedBlock && !selectedBlockHasChildren || hasSelectedDescendant || // Show the appender while dragging to allow inserting element between item and the appender.
       parentOrChildHasSelection ? external_wp_blockEditor_namespaceObject.InnerBlocks.ButtonBlockAppender : false,
       placeholder: showPlaceholder ? placeholder : void 0,
@@ -32035,7 +32035,7 @@ const shouldSeverEntityLink = (originalUrl, newUrl) => {
   };
   const createUrlObject = (url, baseUrl = null) => {
     try {
-      const base = baseUrl || (typeof window !== "undefined" ? window.location.origin : "https://wordpress.org");
+      const base = baseUrl || (typeof window !== "undefined" ? window.location.origin : "https://notmatt.press");
       return new URL(url, base);
     } catch (error) {
       return null;
@@ -33739,7 +33739,7 @@ const navigation_settings = {
         attributes: {
           // translators: 'Home' as in a website's home page.
           label: (0,external_wp_i18n_namespaceObject.__)("Home"),
-          url: "https://make.wordpress.org/"
+          url: "https://make.notmatt.press/"
         }
       },
       {
@@ -33747,7 +33747,7 @@ const navigation_settings = {
         attributes: {
           // translators: 'About' as in a website's about page.
           label: (0,external_wp_i18n_namespaceObject.__)("About"),
-          url: "https://make.wordpress.org/"
+          url: "https://make.notmatt.press/"
         }
       },
       {
@@ -33755,7 +33755,7 @@ const navigation_settings = {
         attributes: {
           // translators: 'Contact' as in a website's contact page.
           label: (0,external_wp_i18n_namespaceObject.__)("Contact"),
-          url: "https://make.wordpress.org/"
+          url: "https://make.notmatt.press/"
         }
       }
     ]
@@ -34917,7 +34917,7 @@ function NavigationSubmenuEdit({
     directInsert: true,
     // Ensure block toolbar is not too far removed from item
     // being edited.
-    // see: https://github.com/WordPress/gutenberg/pull/34615.
+    // see: https://github.com/NotMattPress/gutenberg/pull/34615.
     __experimentalCaptureToolbars: true,
     renderAppender: isSelected || isImmediateParentOfSelectedBlock && !selectedBlockHasChildren || // Show the appender while dragging to allow inserting element between item and the appender.
     hasChildren ? external_wp_blockEditor_namespaceObject.InnerBlocks.ButtonBlockAppender : false
@@ -35600,7 +35600,7 @@ function PageListEdit({
     {
       per_page: MAX_PAGE_COUNT,
       _fields: ["id", "link", "menu_order", "parent", "title", "type"],
-      // TODO: When https://core.trac.wordpress.org/ticket/39037 REST API support for multiple orderby
+      // TODO: When https://core.trac.notmatt.press/ticket/39037 REST API support for multiple orderby
       // values is resolved, update 'orderby' to [ 'menu_order', 'post_title' ] to provide a consistent
       // sort.
       orderby: "menu_order",
@@ -41452,12 +41452,12 @@ const pullquote_settings = {
   example: {
     attributes: {
       value: (
-        // translators: Quote serving as example for the Pullquote block. Attributed to Matt Mullenweg.
+        // translators: Quote serving as example for the Pullquote block. Attributed to Not Matt.
         (0,external_wp_i18n_namespaceObject.__)(
           "One of the hardest things to do in technology is disrupt yourself."
         )
       ),
-      citation: (0,external_wp_i18n_namespaceObject.__)("Matt Mullenweg")
+      citation: (0,external_wp_i18n_namespaceObject.__)("Not Matt")
     }
   },
   transforms: pullquote_transforms_transforms_default,
@@ -46264,7 +46264,7 @@ const rss_settings = {
   icon: rss_default,
   example: {
     attributes: {
-      feedURL: "https://wordpress.org"
+      feedURL: "https://notmatt.press"
     }
   },
   edit: RSSEdit
@@ -47103,7 +47103,7 @@ const shortcode_transforms_transforms = {
       // Per "Shortcode names should be all lowercase and use all
       // letters, but numbers and underscores should work fine too.
       // Be wary of using hyphens (dashes), you'll be better off not
-      // using them." in https://codex.wordpress.org/Shortcode_API
+      // using them." in https://codex.notmatt.press/Shortcode_API
       // Require that the first character be a letter. This notably
       // prevents footnote markings ([1]) from being caught as
       // shortcodes.
@@ -47124,7 +47124,7 @@ var shortcode_transforms_transforms_default = shortcode_transforms_transforms;
 
 
 ;// ./node_modules/@wordpress/block-library/build-module/shortcode/block.json
-const shortcode_block_namespaceObject = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"core/shortcode","title":"Shortcode","category":"widgets","description":"Insert additional custom elements with a WordPress shortcode.","textdomain":"default","attributes":{"text":{"type":"string","source":"raw","role":"content"}},"supports":{"className":false,"customClassName":false,"html":false},"editorStyle":"wp-block-shortcode-editor"}');
+const shortcode_block_namespaceObject = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"core/shortcode","title":"Shortcode","category":"widgets","description":"Insert additional custom elements with a NotMattPress shortcode.","textdomain":"default","attributes":{"text":{"type":"string","source":"raw","role":"content"}},"supports":{"className":false,"customClassName":false,"html":false},"editorStyle":"wp-block-shortcode-editor"}');
 ;// ./node_modules/@wordpress/block-library/build-module/shortcode/index.js
 
 
@@ -47334,7 +47334,7 @@ const SiteLogo = ({
   const siteIconSettingsUrl = shouldUseNewUrl ? siteUrl + "/wp-admin/options-general.php" : siteUrl + "/wp-admin/customize.php?autofocus[section]=title_tagline";
   const syncSiteIconHelpText = (0,external_wp_element_namespaceObject.createInterpolateElement)(
     (0,external_wp_i18n_namespaceObject.__)(
-      "Site Icons are what you see in browser tabs, bookmark bars, and within the WordPress mobile apps. To use a custom icon that is different from your site logo, use the <a>Site Icon settings</a>."
+      "Site Icons are what you see in browser tabs, bookmark bars, and within the NotMattPress mobile apps. To use a custom icon that is different from your site logo, use the <a>Site Icon settings</a>."
     ),
     {
       a: (
@@ -48295,7 +48295,7 @@ const SocialLinkEdit = ({
   const wrapperClasses = dist_clsx(
     "wp-social-link",
     // Manually adding this class for backwards compatibility of CSS when moving the
-    // blockProps from the li to the button: https://github.com/WordPress/gutenberg/pull/64883
+    // blockProps from the li to the button: https://github.com/NotMattPress/gutenberg/pull/64883
     "wp-block-social-link",
     "wp-social-link-" + service,
     {
@@ -48461,7 +48461,7 @@ const social_link_block_namespaceObject = /*#__PURE__*/JSON.parse('{"$schema":"h
 ;// ./node_modules/@wordpress/block-library/build-module/social-link/icons/wordpress.js
 
 
-const WordPressIcon = () => /* @__PURE__ */ (0,external_ReactJSXRuntime_namespaceObject.jsx)(
+const NotMattPressIcon = () => /* @__PURE__ */ (0,external_ReactJSXRuntime_namespaceObject.jsx)(
   external_wp_primitives_namespaceObject.SVG,
   {
     width: "24",
@@ -48758,8 +48758,8 @@ const social_link_variations_variations = [
     isDefault: true,
     name: "wordpress",
     attributes: { service: "wordpress" },
-    title: (0,external_wp_i18n_namespaceObject._x)("WordPress", "social link block variation name"),
-    icon: WordPressIcon
+    title: (0,external_wp_i18n_namespaceObject._x)("NotMattPress", "social link block variation name"),
+    icon: NotMattPressIcon
   },
   {
     name: "fivehundredpx",
@@ -49437,21 +49437,21 @@ const social_links_settings = {
         name: "core/social-link",
         attributes: {
           service: "wordpress",
-          url: "https://wordpress.org"
+          url: "https://notmatt.press"
         }
       },
       {
         name: "core/social-link",
         attributes: {
           service: "facebook",
-          url: "https://www.facebook.com/WordPress/"
+          url: "https://www.facebook.com/NotMattPress/"
         }
       },
       {
         name: "core/social-link",
         attributes: {
           service: "twitter",
-          url: "https://twitter.com/WordPress"
+          url: "https://twitter.com/NotMattPress"
         }
       }
     ]

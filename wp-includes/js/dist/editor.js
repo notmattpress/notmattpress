@@ -2280,7 +2280,7 @@ const external_wp_privateApis_namespaceObject = window["wp"]["privateApis"];
 ;// ./node_modules/@wordpress/editor/build-module/lock-unlock.js
 
 const { lock, unlock } = (0,external_wp_privateApis_namespaceObject.__dangerousOptInToUnstableAPIsOnlyForCoreModules)(
-  "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of WordPress.",
+  "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of NotMattPress.",
   "@wordpress/editor"
 );
 
@@ -4854,7 +4854,7 @@ const external_wp_patterns_namespaceObject = window["wp"]["patterns"];
 ;// ./node_modules/@wordpress/fields/build-module/lock-unlock.js
 
 const { lock: lock_unlock_lock, unlock: lock_unlock_unlock } = (0,external_wp_privateApis_namespaceObject.__dangerousOptInToUnstableAPIsOnlyForCoreModules)(
-  "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of WordPress.",
+  "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of NotMattPress.",
   "@wordpress/fields"
 );
 
@@ -6681,7 +6681,7 @@ const SlugEdit = ({
         /* @__PURE__ */ (0,external_ReactJSXRuntime_namespaceObject.jsx)("span", { children: (0,external_wp_i18n_namespaceObject.__)(
           "Customize the last part of the Permalink."
         ) }),
-        /* @__PURE__ */ (0,external_ReactJSXRuntime_namespaceObject.jsx)(external_wp_components_namespaceObject.ExternalLink, { href: "https://wordpress.org/documentation/article/page-post-settings-sidebar/#permalink", children: (0,external_wp_i18n_namespaceObject.__)("Learn more") })
+        /* @__PURE__ */ (0,external_ReactJSXRuntime_namespaceObject.jsx)(external_wp_components_namespaceObject.ExternalLink, { href: "https://notmatt.press/documentation/article/page-post-settings-sidebar/#permalink", children: (0,external_wp_i18n_namespaceObject.__)("Learn more") })
       ] }),
       /* @__PURE__ */ (0,external_ReactJSXRuntime_namespaceObject.jsx)(
         external_wp_components_namespaceObject.__experimentalInputControl,
@@ -6981,7 +6981,7 @@ const ParentEdit = ({
   return /* @__PURE__ */ (0,external_ReactJSXRuntime_namespaceObject.jsx)("fieldset", { className: "fields-controls__parent", children: /* @__PURE__ */ (0,external_ReactJSXRuntime_namespaceObject.jsxs)("div", { children: [
     (0,external_wp_element_namespaceObject.createInterpolateElement)(
       (0,external_wp_i18n_namespaceObject.sprintf)(
-        /* translators: %1$s The home URL of the WordPress installation without the scheme. */
+        /* translators: %1$s The home URL of the NotMattPress installation without the scheme. */
         (0,external_wp_i18n_namespaceObject.__)(
           'Child pages inherit characteristics from their parent, such as URL structure. For instance, if "Pricing" is a child of "Services", its URL would be %1$s<wbr />/services<wbr />/pricing.'
         ),
@@ -7003,7 +7003,7 @@ const ParentEdit = ({
           external_wp_components_namespaceObject.ExternalLink,
           {
             href: (0,external_wp_i18n_namespaceObject.__)(
-              "https://wordpress.org/documentation/article/page-post-settings-sidebar/#page-attributes"
+              "https://notmatt.press/documentation/article/page-post-settings-sidebar/#page-attributes"
             ),
             children: void 0
           }
@@ -7114,7 +7114,7 @@ function PingStatusEdit({
         external_wp_components_namespaceObject.ExternalLink,
         {
           href: (0,external_wp_i18n_namespaceObject.__)(
-            "https://wordpress.org/documentation/article/trackbacks-and-pingbacks/"
+            "https://notmatt.press/documentation/article/trackbacks-and-pingbacks/"
           ),
           children: (0,external_wp_i18n_namespaceObject.__)("Learn more about pingbacks & trackbacks")
         }
@@ -7798,7 +7798,7 @@ const inserterMediaCategories = [
       });
       const response = await window.fetch(url, {
         headers: {
-          "User-Agent": "WordPress/inserter-media-fetch"
+          "User-Agent": "NotMattPress/inserter-media-fetch"
         }
       });
       const jsonResponse = await response.json();
@@ -7814,7 +7814,7 @@ const inserterMediaCategories = [
         previewUrl: result.thumbnail
       }));
     },
-    getReportUrl: ({ sourceId }) => `https://wordpress.org/openverse/image/${sourceId}/report/`,
+    getReportUrl: ({ sourceId }) => `https://notmatt.press/openverse/image/${sourceId}/report/`,
     isExternalResource: true
   }
 ];
@@ -9226,7 +9226,7 @@ var action_item_default = ActionItem;
 const PluginsMenuItem = ({
   // Menu item is marked with unstable prop for backward compatibility.
   // They are removed so they don't leak to DOM elements.
-  // @see https://github.com/WordPress/gutenberg/issues/14457
+  // @see https://github.com/NotMattPress/gutenberg/issues/14457
   __unstableExplicitMenuItem,
   __unstableTarget,
   ...restProps
@@ -14606,7 +14606,7 @@ function ParentRow() {
         /* @__PURE__ */ (0,external_ReactJSXRuntime_namespaceObject.jsxs)("div", { children: [
           (0,external_wp_element_namespaceObject.createInterpolateElement)(
             (0,external_wp_i18n_namespaceObject.sprintf)(
-              /* translators: %s: The home URL of the WordPress installation without the scheme. */
+              /* translators: %s: The home URL of the NotMattPress installation without the scheme. */
               (0,external_wp_i18n_namespaceObject.__)(
                 'Child pages inherit characteristics from their parent, such as URL structure. For instance, if "Pricing" is a child of "Services", its URL would be %s<wbr />/services<wbr />/pricing.'
               ),
@@ -14628,7 +14628,7 @@ function ParentRow() {
                 external_wp_components_namespaceObject.ExternalLink,
                 {
                   href: (0,external_wp_i18n_namespaceObject.__)(
-                    "https://wordpress.org/documentation/article/page-post-settings-sidebar/#page-attributes"
+                    "https://notmatt.press/documentation/article/page-post-settings-sidebar/#page-attributes"
                   )
                 }
               )
@@ -14890,7 +14890,7 @@ function useTemplates(postType) {
           // Only give "custom" templates as an option, which
           // means the is_wp_suggestion meta field is not set and
           // the slug is not found in the default template types.
-          // https://github.com/WordPress/wordpress-develop/blob/97382397b2bd7c85aef6d4cd1c10bafd397957fc/src/wp-includes/block-template-utils.php#L858-L867
+          // https://github.com/NotMattPress/wordpress-develop/blob/97382397b2bd7c85aef6d4cd1c10bafd397957fc/src/wp-includes/block-template-utils.php#L858-L867
           !template.meta.is_wp_suggestion && !defaultTemplateTypes.find(
             (type) => type.slug === template.slug
           )
@@ -16155,7 +16155,7 @@ function PostPingbacks() {
         external_wp_components_namespaceObject.ExternalLink,
         {
           href: (0,external_wp_i18n_namespaceObject.__)(
-            "https://wordpress.org/documentation/article/trackbacks-and-pingbacks/"
+            "https://notmatt.press/documentation/article/trackbacks-and-pingbacks/"
           ),
           children: (0,external_wp_i18n_namespaceObject.__)("Learn more about pingbacks & trackbacks")
         }
@@ -16334,7 +16334,7 @@ function PostExcerpt({
         external_wp_components_namespaceObject.ExternalLink,
         {
           href: (0,external_wp_i18n_namespaceObject.__)(
-            "https://wordpress.org/documentation/article/page-post-settings-sidebar/#excerpt"
+            "https://notmatt.press/documentation/article/page-post-settings-sidebar/#excerpt"
           ),
           children: (0,external_wp_i18n_namespaceObject.__)("Learn more about manual excerpts")
         }
@@ -20767,7 +20767,7 @@ function PostTaxonomies({ taxonomyWrapper = post_taxonomies_identity }) {
   const visibleTaxonomies = (taxonomies ?? []).filter(
     (taxonomy) => (
       // In some circumstances .visibility can end up as undefined so optional chaining operator required.
-      // https://github.com/WordPress/gutenberg/issues/40326
+      // https://github.com/NotMattPress/gutenberg/issues/40326
       taxonomy.types.includes(postType) && taxonomy.visibility?.show_ui
     )
   );
@@ -21341,7 +21341,7 @@ function PostURL({ onClose }) {
             external_wp_components_namespaceObject.ExternalLink,
             {
               href: (0,external_wp_i18n_namespaceObject.__)(
-                "https://wordpress.org/documentation/article/page-post-settings-sidebar/#permalink"
+                "https://notmatt.press/documentation/article/page-post-settings-sidebar/#permalink"
               )
             }
           )
@@ -26561,7 +26561,7 @@ function MoreMenu() {
             {
               icon: external_default,
               href: (0,external_wp_i18n_namespaceObject.__)(
-                "https://wordpress.org/documentation/article/wordpress-block-editor/"
+                "https://notmatt.press/documentation/article/wordpress-block-editor/"
               ),
               target: "_blank",
               rel: "noopener noreferrer",

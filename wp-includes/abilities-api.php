@@ -2,9 +2,9 @@
 /**
  * Abilities API
  *
- * Defines functions for managing abilities in WordPress.
+ * Defines functions for managing abilities in NotMattPress.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Abilities_API
  * @since 6.9.0
  */
