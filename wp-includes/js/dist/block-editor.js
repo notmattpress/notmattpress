@@ -8274,7 +8274,7 @@ const external_wp_privateApis_namespaceObject = window["wp"]["privateApis"];
 ;// ./node_modules/@wordpress/block-editor/build-module/lock-unlock.js
 
 const { lock, unlock } = (0,external_wp_privateApis_namespaceObject.__dangerousOptInToUnstableAPIsOnlyForCoreModules)(
-  "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of WordPress.",
+  "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of NotMattPress.",
   "@wordpress/block-editor"
 );
 
@@ -10216,7 +10216,7 @@ const deprecatedFlags = {
 const prefixedFlags = {
   /*
    * These were only available in the plugin
-   * and can be removed when the minimum WordPress version
+   * and can be removed when the minimum NotMattPress version
    * for the plugin is 5.9.
    */
   "border.customColor": "border.color",
@@ -10228,7 +10228,7 @@ const prefixedFlags = {
   "typography.customTextDecorations": "typography.textDecoration",
   "typography.customTextTransforms": "typography.textTransform",
   /*
-   * These were part of WordPress 5.8 and we need to keep them.
+   * These were part of NotMattPress 5.8 and we need to keep them.
    */
   "border.customRadius": "border.radius",
   "spacing.customMargin": "spacing.margin",
@@ -15030,7 +15030,7 @@ function useColorsPerOrigin(settings) {
       result.push({
         name: (0,external_wp_i18n_namespaceObject._x)(
           "Default",
-          "Indicates this palette comes from WordPress."
+          "Indicates this palette comes from NotMattPress."
         ),
         colors: defaultColors
       });
@@ -15072,7 +15072,7 @@ function useGradientsPerOrigin(settings) {
       result.push({
         name: (0,external_wp_i18n_namespaceObject._x)(
           "Default",
-          "Indicates this palette comes from WordPress."
+          "Indicates this palette comes from NotMattPress."
         ),
         gradients: defaultGradients
       });
@@ -19269,7 +19269,7 @@ const handleEntitySearch = async (val, suggestionsQuery, fetchSearchSuggestions,
   return isURLLike(val) || !withCreateSuggestion ? results : results.concat({
     // the `id` prop is intentionally omitted here because it
     // is never exposed as part of the component's public API.
-    // see: https://github.com/WordPress/gutenberg/pull/19775#discussion_r378931316.
+    // see: https://github.com/NotMattPress/gutenberg/pull/19775#discussion_r378931316.
     title: val,
     // Must match the existing `<input>`s text value.
     url: val,
@@ -21915,7 +21915,7 @@ function BlockEditAnchorControlPure({ anchor, setAttributes }) {
             external_wp_components_namespaceObject.ExternalLink,
             {
               href: (0,external_wp_i18n_namespaceObject.__)(
-                "https://wordpress.org/documentation/article/page-jumps/"
+                "https://notmatt.press/documentation/article/page-jumps/"
               ),
               children: (0,external_wp_i18n_namespaceObject.__)("Learn more about anchors")
             }
@@ -22204,7 +22204,7 @@ function useMultipleOriginColorsAndGradients() {
       result.push({
         name: (0,external_wp_i18n_namespaceObject._x)(
           "Default",
-          "Indicates this palette comes from WordPress."
+          "Indicates this palette comes from NotMattPress."
         ),
         slug: "default",
         colors: defaultColors
@@ -22243,7 +22243,7 @@ function useMultipleOriginColorsAndGradients() {
       result.push({
         name: (0,external_wp_i18n_namespaceObject._x)(
           "Default",
-          "Indicates this palette comes from WordPress."
+          "Indicates this palette comes from NotMattPress."
         ),
         slug: "default",
         gradients: defaultGradients
@@ -33092,7 +33092,7 @@ function private_actions_updateSettings(settings) {
 ;// ./node_modules/@wordpress/upload-media/build-module/lock-unlock.js
 
 const { lock: lock_unlock_lock, unlock: lock_unlock_unlock } = (0,external_wp_privateApis_namespaceObject.__dangerousOptInToUnstableAPIsOnlyForCoreModules)(
-  "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of WordPress.",
+  "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of NotMattPress.",
   "@wordpress/upload-media"
 );
 
@@ -38268,7 +38268,7 @@ function useTabNav() {
       if (
         // Bails in case the focus capture elements aren’t present. They
         // may be omitted to avoid silent tab stops in preview mode.
-        // See: https://github.com/WordPress/gutenberg/pull/59317
+        // See: https://github.com/NotMattPress/gutenberg/pull/59317
         !focusCaptureAfterRef.current || !focusCaptureBeforeRef.current
       ) {
         return;
@@ -40738,8 +40738,8 @@ function ScaledBlockPreview({
         transform: `scale(${scale})`,
         // Using width + aspect-ratio instead of height here triggers browsers' native
         // handling of scrollbar's visibility. It prevents the flickering issue seen
-        // in https://github.com/WordPress/gutenberg/issues/52027.
-        // See https://github.com/WordPress/gutenberg/pull/52921 for more info.
+        // in https://github.com/NotMattPress/gutenberg/issues/52027.
+        // See https://github.com/NotMattPress/gutenberg/pull/52921 for more info.
         aspectRatio,
         maxHeight: contentHeight > MAX_HEIGHT ? MAX_HEIGHT * scale : void 0,
         minHeight
@@ -40768,7 +40768,7 @@ function ScaledBlockPreview({
             height: contentHeight,
             pointerEvents: "none",
             // This is a catch-all max-height for patterns.
-            // See: https://github.com/WordPress/gutenberg/pull/38175.
+            // See: https://github.com/NotMattPress/gutenberg/pull/38175.
             maxHeight: MAX_HEIGHT,
             minHeight: scale !== 0 && scale < 1 && minHeight ? minHeight / scale : minHeight
           },
@@ -43065,14 +43065,14 @@ function PatternsFilter({
         ) }),
         /* @__PURE__ */ (0,external_ReactJSXRuntime_namespaceObject.jsx)("div", { className: "block-editor-inserter__patterns-filter-help", children: (0,external_wp_element_namespaceObject.createInterpolateElement)(
           (0,external_wp_i18n_namespaceObject.__)(
-            "Patterns are available from the <Link>WordPress.org Pattern Directory</Link>, bundled in the active theme, or created by users on this site. Only patterns created on this site can be synced."
+            "Patterns are available from the <Link>NotMattPress.org Pattern Directory</Link>, bundled in the active theme, or created by users on this site. Only patterns created on this site can be synced."
           ),
           {
             Link: /* @__PURE__ */ (0,external_ReactJSXRuntime_namespaceObject.jsx)(
               external_wp_components_namespaceObject.ExternalLink,
               {
                 href: (0,external_wp_i18n_namespaceObject.__)(
-                  "https://wordpress.org/patterns/"
+                  "https://notmatt.press/patterns/"
                 )
               }
             )
@@ -52108,7 +52108,7 @@ function useIsAccessibleToolbar(toolbarRef) {
       external_wp_deprecated_default()("Using custom components as toolbar controls", {
         since: "5.6",
         alternative: "ToolbarItem, ToolbarButton or ToolbarDropdownMenu components",
-        link: "https://developer.wordpress.org/block-editor/components/toolbar-button/#inside-blockcontrols"
+        link: "https://developer.notmatt.press/block-editor/components/toolbar-button/#inside-blockcontrols"
       });
     }
     setIsAccessibleToolbar(onlyToolbarItem);
@@ -57151,7 +57151,7 @@ function NonDefaultControls({ format, onChange }) {
               external_wp_components_namespaceObject.ExternalLink,
               {
                 href: (0,external_wp_i18n_namespaceObject.__)(
-                  "https://wordpress.org/documentation/article/customize-date-and-time-format/"
+                  "https://notmatt.press/documentation/article/customize-date-and-time-format/"
                 )
               }
             )
@@ -61106,7 +61106,7 @@ function valueToHTMLString(value, multiline) {
       since: "6.1",
       version: "6.3",
       alternative: "value prop as string",
-      link: "https://developer.wordpress.org/block-editor/how-to-guides/block-tutorial/introducing-attributes-and-editable-fields/"
+      link: "https://developer.notmatt.press/block-editor/how-to-guides/block-tutorial/introducing-attributes-and-editable-fields/"
     });
     return external_wp_blocks_namespaceObject.children.toHTML(value);
   }
@@ -61151,7 +61151,7 @@ function RichTextMultiline({
     since: "6.1",
     version: "6.3",
     alternative: "nested blocks (InnerBlocks)",
-    link: "https://developer.wordpress.org/block-editor/how-to-guides/block-tutorial/nested-blocks-inner-blocks/"
+    link: "https://developer.notmatt.press/block-editor/how-to-guides/block-tutorial/nested-blocks-inner-blocks/"
   });
   const { clientId } = useBlockEditContext();
   const { getSelectionStart, getSelectionEnd } = (0,external_wp_data_namespaceObject.useSelect)(store);
@@ -61267,7 +61267,7 @@ function withDeprecations(Component) {
         since: "6.1",
         version: "6.3",
         alternative: "value prop as string",
-        link: "https://developer.wordpress.org/block-editor/how-to-guides/block-tutorial/introducing-attributes-and-editable-fields/"
+        link: "https://developer.notmatt.press/block-editor/how-to-guides/block-tutorial/introducing-attributes-and-editable-fields/"
       });
       value = external_wp_blocks_namespaceObject.children.toHTML(props.value);
       onChange = (newValue) => props.onChange(

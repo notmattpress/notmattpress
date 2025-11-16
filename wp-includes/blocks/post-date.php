@@ -2,7 +2,7 @@
 /**
  * Server-side rendering of the `core/post-date` block.
  *
- * @package WordPress
+ * @package NotMattPress
  */
 
 /**
@@ -50,7 +50,7 @@ function render_block_core_post_date( $attributes, $content, $block ) {
 		// If the `datetime` attribute is set but empty, it could be because Block Bindings
 		// set it that way. This can happen e.g. if the block is bound to the
 		// post's last modified date, and the latter lies before the publish date.
-		// (See https://github.com/WordPress/gutenberg/pull/46839 where this logic was originally
+		// (See https://github.com/NotMattPress/gutenberg/pull/46839 where this logic was originally
 		// implemented.)
 		// In this case, we have to respect and return the empty value.
 		return '';

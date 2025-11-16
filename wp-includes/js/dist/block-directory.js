@@ -1447,7 +1447,7 @@ function DownloadableBlocksNoResults() {
     /* @__PURE__ */ (0,external_ReactJSXRuntime_namespaceObject.jsx)("div", { className: "block-editor-inserter__tips", children: /* @__PURE__ */ (0,external_ReactJSXRuntime_namespaceObject.jsxs)(external_wp_components_namespaceObject.Tip, { children: [
       (0,external_wp_i18n_namespaceObject.__)("Interested in creating your own block?"),
       /* @__PURE__ */ (0,external_ReactJSXRuntime_namespaceObject.jsx)("br", {}),
-      /* @__PURE__ */ (0,external_ReactJSXRuntime_namespaceObject.jsxs)(external_wp_components_namespaceObject.ExternalLink, { href: "https://developer.wordpress.org/block-editor/", children: [
+      /* @__PURE__ */ (0,external_ReactJSXRuntime_namespaceObject.jsxs)(external_wp_components_namespaceObject.ExternalLink, { href: "https://developer.notmatt.press/block-editor/", children: [
         (0,external_wp_i18n_namespaceObject.__)("Get started here"),
         "."
       ] })

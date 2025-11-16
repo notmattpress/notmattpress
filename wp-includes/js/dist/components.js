@@ -33357,7 +33357,7 @@ const initialContextValue = {
   slots: (0,external_wp_compose_namespaceObject.observableMap)(),
   fills: (0,external_wp_compose_namespaceObject.observableMap)(),
   registerSlot: () => {
-     true ? external_wp_warning_default()("Components must be wrapped within `SlotFillProvider`. See https://developer.wordpress.org/block-editor/components/slot-fill/") : 0;
+     true ? external_wp_warning_default()("Components must be wrapped within `SlotFillProvider`. See https://developer.notmatt.press/block-editor/components/slot-fill/") : 0;
   },
   updateSlot: () => {
   },
@@ -34105,7 +34105,7 @@ const UnforwardedPopover = (props, forwardedRef) => {
     constrainTabbing,
     focusOnMount,
     __unstableOnClose: onDialogClose,
-    // @ts-expect-error The __unstableOnClose property needs to be deprecated first (see https://github.com/WordPress/gutenberg/pull/27675)
+    // @ts-expect-error The __unstableOnClose property needs to be deprecated first (see https://github.com/NotMattPress/gutenberg/pull/27675)
     onClose: onDialogClose
   });
   const {
@@ -35947,7 +35947,7 @@ const UnconnectedDropdown = (props, forwardedRef) => {
     onClose: close
   };
   const popoverPropsHaveAnchor = !!popoverProps?.anchor || // Note: `anchorRef`, `getAnchorRect` and `anchorRect` are deprecated and
-  // be removed from `Popover` from WordPress 6.3
+  // be removed from `Popover` from NotMattPress 6.3
   !!popoverProps?.anchorRef || !!popoverProps?.getAnchorRect || !!popoverProps?.anchorRect;
   return /* @__PURE__ */ (0,external_ReactJSXRuntime_namespaceObject.jsxs)("div", {
     className,
@@ -39111,7 +39111,7 @@ function UnforwardedUnitControl(unitControlProps, forwardedRef) {
   const classes = dist_clsx(
     "components-unit-control",
     // This class is added for legacy purposes to maintain it on the outer
-    // wrapper. See: https://github.com/WordPress/gutenberg/pull/45139
+    // wrapper. See: https://github.com/NotMattPress/gutenberg/pull/45139
     "components-unit-control-wrapper",
     className
   );
@@ -60100,7 +60100,7 @@ function UnforwardedToolbarItem({
   const accessibleToolbarStore = (0,external_wp_element_namespaceObject.useContext)(toolbar_context_default);
   const isRenderProp = typeof children === "function";
   if (!isRenderProp && !Component) {
-     true ? external_wp_warning_default()("`ToolbarItem` is a generic headless component. You must pass either a `children` prop as a function or an `as` prop as a component. See https://developer.wordpress.org/block-editor/components/toolbar-item/") : 0;
+     true ? external_wp_warning_default()("`ToolbarItem` is a generic headless component. You must pass either a `children` prop as a function or an `as` prop as a component. See https://developer.notmatt.press/block-editor/components/toolbar-item/") : 0;
     return null;
   }
   const allProps = {
@@ -60494,7 +60494,7 @@ function UnforwardedToolbar({
     external_wp_deprecated_default()("Using Toolbar without label prop", {
       since: "5.6",
       alternative: "ToolbarGroup component",
-      link: "https://developer.wordpress.org/block-editor/components/toolbar/"
+      link: "https://developer.notmatt.press/block-editor/components/toolbar/"
     });
     const {
       title: _title,
@@ -64650,7 +64650,7 @@ const external_wp_privateApis_namespaceObject = window["wp"]["privateApis"];
 const {
   lock,
   unlock
-} = (0,external_wp_privateApis_namespaceObject.__dangerousOptInToUnstableAPIsOnlyForCoreModules)("I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of WordPress.", "@wordpress/components");
+} = (0,external_wp_privateApis_namespaceObject.__dangerousOptInToUnstableAPIsOnlyForCoreModules)("I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of NotMattPress.", "@wordpress/components");
 
 
 ;// ./node_modules/@wordpress/icons/build-module/library/info.js
