@@ -6666,7 +6666,7 @@ const external_wp_privateApis_namespaceObject = window["wp"]["privateApis"];
 ;// ./node_modules/@wordpress/edit-site/build-module/lock-unlock.js
 
 const { lock, unlock } = (0,external_wp_privateApis_namespaceObject.__dangerousOptInToUnstableAPIsOnlyForCoreModules)(
-  "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of WordPress.",
+  "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of NotMattPress.",
   "@wordpress/edit-site"
 );
 
@@ -10237,7 +10237,7 @@ function WelcomeGuideStyles() {
                 external_wp_components_namespaceObject.ExternalLink,
                 {
                   href: (0,external_wp_i18n_namespaceObject.__)(
-                    "https://wordpress.org/documentation/article/styles-overview/"
+                    "https://notmatt.press/documentation/article/styles-overview/"
                   ),
                   children: (0,external_wp_i18n_namespaceObject.__)(
                     "Here\u2019s a detailed guide to learn how to make the most of it."
@@ -21829,7 +21829,7 @@ function useMultiOriginPalettes() {
       result.duotones.push({
         name: (0,external_wp_i18n_namespaceObject._x)(
           "Default",
-          "Indicates these duotone filters come from WordPress."
+          "Indicates these duotone filters come from NotMattPress."
         ),
         slug: "default",
         duotones: defaultDuotones
@@ -22386,7 +22386,7 @@ function ScreenCSS() {
             external_wp_components_namespaceObject.ExternalLink,
             {
               href: (0,external_wp_i18n_namespaceObject.__)(
-                "https://developer.wordpress.org/advanced-administration/wordpress/css/"
+                "https://developer.notmatt.press/advanced-administration/wordpress/css/"
               ),
               className: "edit-site-global-styles-screen-css-help-link",
               children: (0,external_wp_i18n_namespaceObject.__)("Learn more about CSS")
@@ -23648,7 +23648,7 @@ function useTitle(title) {
     if (title && siteTitle) {
       const formattedTitle = (0,external_wp_i18n_namespaceObject.sprintf)(
         /* translators: Admin document title. 1: Admin screen name, 2: Network or site name. */
-        (0,external_wp_i18n_namespaceObject.__)("%1$s \u2039 %2$s \u2039 Editor \u2014 WordPress"),
+        (0,external_wp_i18n_namespaceObject.__)("%1$s \u2039 %2$s \u2039 Editor \u2014 NotMattPress"),
         (0,external_wp_htmlEntities_namespaceObject.decodeEntities)(title),
         (0,external_wp_htmlEntities_namespaceObject.decodeEntities)(siteTitle)
       );
@@ -24615,7 +24615,7 @@ const PAGES_QUERY = [
   {
     per_page: MAX_PAGE_COUNT,
     _fields: ["id", "link", "menu_order", "parent", "title", "type"],
-    // TODO: When https://core.trac.wordpress.org/ticket/39037 REST API support for multiple orderby
+    // TODO: When https://core.trac.notmatt.press/ticket/39037 REST API support for multiple orderby
     // values is resolved, update 'orderby' to [ 'menu_order', 'post_title' ] to provide a consistent
     // sort.
     orderby: "menu_order",
@@ -27482,7 +27482,7 @@ function getFieldTypeDefinition(type) {
 ;// ./node_modules/@wordpress/dataviews/build-module/lock-unlock.js
 
 const { lock: lock_unlock_lock, unlock: lock_unlock_unlock } = (0,external_wp_privateApis_namespaceObject.__dangerousOptInToUnstableAPIsOnlyForCoreModules)(
-  "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of WordPress.",
+  "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of NotMattPress.",
   "@wordpress/dataviews"
 );
 

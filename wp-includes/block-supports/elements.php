@@ -2,7 +2,7 @@
 /**
  * Elements styles block support.
  *
- * @package WordPress
+ * @package NotMattPress
  * @since 5.8.0
  */
 
@@ -116,7 +116,7 @@ function wp_render_elements_support_styles( $parsed_block ) {
 	 * `render_block_data` filter in 6.6.0 to avoid filtered attributes
 	 * breaking the application of the elements CSS class.
 	 *
-	 * @see https://github.com/WordPress/gutenberg/pull/59535
+	 * @see https://github.com/NotMattPress/gutenberg/pull/59535
 	 *
 	 * The change in filter means, the argument types for this function
 	 * have changed and require deprecating.

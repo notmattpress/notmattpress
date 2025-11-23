@@ -6821,7 +6821,7 @@ const external_wp_privateApis_namespaceObject = window["wp"]["privateApis"];
 ;// ./node_modules/@wordpress/blocks/build-module/lock-unlock.js
 
 const { lock, unlock } = (0,external_wp_privateApis_namespaceObject.__dangerousOptInToUnstableAPIsOnlyForCoreModules)(
-  "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of WordPress.",
+  "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of NotMattPress.",
   "@wordpress/blocks"
 );
 
@@ -8075,7 +8075,7 @@ const processBlockType = (name, blockSettings) => ({ select }) => {
     external_wp_warning_default()(
       `The block "${name}" is registered with API version 2 or lower. This means that the post editor may work as a non-iframe editor.
 Since all editors are planned to work as iframes in the future, set the \`apiVersion\` field to 3 and test the block inside the iframe editor.
-See: https://developer.wordpress.org/block-editor/reference-guides/block-api/block-api-versions/#version-3-wordpress-6-3`
+See: https://developer.notmatt.press/block-editor/reference-guides/block-api/block-api-versions/#version-3-wordpress-6-3`
     );
   }
   if (settings.description && typeof settings.description !== "string") {
@@ -8140,7 +8140,7 @@ See: https://developer.wordpress.org/block-editor/reference-guides/block-api/blo
   settings.icon = normalizeIconObject(settings.icon);
   if (!isValidIcon(settings.icon.src)) {
     external_wp_warning_default()(
-      "The icon passed is invalid. The icon should be a string, an element, a function, or an object following the specifications documented in https://developer.wordpress.org/block-editor/developers/block-api/block-registration/#icon-optional"
+      "The icon passed is invalid. The icon should be a string, an element, a function, or an object following the specifications documented in https://developer.notmatt.press/block-editor/developers/block-api/block-registration/#icon-optional"
     );
     return;
   }
@@ -10695,7 +10695,7 @@ function isNodeOfType(node, type) {
   external_wp_deprecated_default()("wp.blocks.node.isNodeOfType", {
     since: "6.1",
     version: "6.3",
-    link: "https://developer.wordpress.org/block-editor/how-to-guides/block-tutorial/introducing-attributes-and-editable-fields/"
+    link: "https://developer.notmatt.press/block-editor/how-to-guides/block-tutorial/introducing-attributes-and-editable-fields/"
   });
   return node && node.type === type;
 }
@@ -10712,7 +10712,7 @@ function fromDOM(domNode) {
     since: "6.1",
     version: "6.3",
     alternative: "wp.richText.create",
-    link: "https://developer.wordpress.org/block-editor/how-to-guides/block-tutorial/introducing-attributes-and-editable-fields/"
+    link: "https://developer.notmatt.press/block-editor/how-to-guides/block-tutorial/introducing-attributes-and-editable-fields/"
   });
   if (domNode.nodeType === domNode.TEXT_NODE) {
     return domNode.nodeValue;
@@ -10735,7 +10735,7 @@ function toHTML(node) {
     since: "6.1",
     version: "6.3",
     alternative: "wp.richText.toHTMLString",
-    link: "https://developer.wordpress.org/block-editor/how-to-guides/block-tutorial/introducing-attributes-and-editable-fields/"
+    link: "https://developer.notmatt.press/block-editor/how-to-guides/block-tutorial/introducing-attributes-and-editable-fields/"
   });
   return children_toHTML([node]);
 }
@@ -10744,7 +10744,7 @@ function matcher(selector) {
     since: "6.1",
     version: "6.3",
     alternative: "html source",
-    link: "https://developer.wordpress.org/block-editor/how-to-guides/block-tutorial/introducing-attributes-and-editable-fields/"
+    link: "https://developer.notmatt.press/block-editor/how-to-guides/block-tutorial/introducing-attributes-and-editable-fields/"
   });
   return (domNode) => {
     let match = domNode;
@@ -10777,7 +10777,7 @@ function getChildrenArray(children) {
   external_wp_deprecated_default()("wp.blocks.children.getChildrenArray", {
     since: "6.1",
     version: "6.3",
-    link: "https://developer.wordpress.org/block-editor/how-to-guides/block-tutorial/introducing-attributes-and-editable-fields/"
+    link: "https://developer.notmatt.press/block-editor/how-to-guides/block-tutorial/introducing-attributes-and-editable-fields/"
   });
   return children;
 }
@@ -10786,7 +10786,7 @@ function concat(...blockNodes) {
     since: "6.1",
     version: "6.3",
     alternative: "wp.richText.concat",
-    link: "https://developer.wordpress.org/block-editor/how-to-guides/block-tutorial/introducing-attributes-and-editable-fields/"
+    link: "https://developer.notmatt.press/block-editor/how-to-guides/block-tutorial/introducing-attributes-and-editable-fields/"
   });
   const result = [];
   for (let i = 0; i < blockNodes.length; i++) {
@@ -10808,7 +10808,7 @@ function children_fromDOM(domNodes) {
     since: "6.1",
     version: "6.3",
     alternative: "wp.richText.create",
-    link: "https://developer.wordpress.org/block-editor/how-to-guides/block-tutorial/introducing-attributes-and-editable-fields/"
+    link: "https://developer.notmatt.press/block-editor/how-to-guides/block-tutorial/introducing-attributes-and-editable-fields/"
   });
   const result = [];
   for (let i = 0; i < domNodes.length; i++) {
@@ -10824,7 +10824,7 @@ function children_toHTML(children) {
     since: "6.1",
     version: "6.3",
     alternative: "wp.richText.toHTMLString",
-    link: "https://developer.wordpress.org/block-editor/how-to-guides/block-tutorial/introducing-attributes-and-editable-fields/"
+    link: "https://developer.notmatt.press/block-editor/how-to-guides/block-tutorial/introducing-attributes-and-editable-fields/"
   });
   const element = getSerializeCapableElement(children);
   return (0,external_wp_element_namespaceObject.renderToString)(element);
@@ -10834,7 +10834,7 @@ function children_matcher(selector) {
     since: "6.1",
     version: "6.3",
     alternative: "html source",
-    link: "https://developer.wordpress.org/block-editor/how-to-guides/block-tutorial/introducing-attributes-and-editable-fields/"
+    link: "https://developer.notmatt.press/block-editor/how-to-guides/block-tutorial/introducing-attributes-and-editable-fields/"
   });
   return (domNode) => {
     let match = domNode;
