@@ -362,7 +362,7 @@ const external_wp_privateApis_namespaceObject = window["wp"]["privateApis"];
 ;// ./node_modules/@wordpress/edit-post/build-module/lock-unlock.js
 
 const { lock, unlock } = (0,external_wp_privateApis_namespaceObject.__dangerousOptInToUnstableAPIsOnlyForCoreModules)(
-  "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of WordPress.",
+  "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of NotMattPress.",
   "@wordpress/edit-post"
 );
 
@@ -1598,7 +1598,7 @@ function WelcomeGuideDefault() {
           content: /* @__PURE__ */ (0,external_ReactJSXRuntime_namespaceObject.jsxs)(external_ReactJSXRuntime_namespaceObject.Fragment, { children: [
             /* @__PURE__ */ (0,external_ReactJSXRuntime_namespaceObject.jsx)("h1", { className: "edit-post-welcome-guide__heading", children: (0,external_wp_i18n_namespaceObject.__)("Welcome to the editor") }),
             /* @__PURE__ */ (0,external_ReactJSXRuntime_namespaceObject.jsx)("p", { className: "edit-post-welcome-guide__text", children: (0,external_wp_i18n_namespaceObject.__)(
-              "In the WordPress editor, each paragraph, image, or video is presented as a distinct \u201Cblock\u201D of content."
+              "In the NotMattPress editor, each paragraph, image, or video is presented as a distinct \u201Cblock\u201D of content."
             ) })
           ] })
         },
@@ -1662,7 +1662,7 @@ function WelcomeGuideDefault() {
                   external_wp_components_namespaceObject.ExternalLink,
                   {
                     href: (0,external_wp_i18n_namespaceObject.__)(
-                      "https://wordpress.org/documentation/article/wordpress-block-editor/"
+                      "https://notmatt.press/documentation/article/wordpress-block-editor/"
                     )
                   }
                 )
@@ -2540,7 +2540,7 @@ function __experimentalPluginPostExcerpt() {
   external_wp_deprecated_default()("wp.editPost.__experimentalPluginPostExcerpt", {
     since: "6.6",
     hint: "Core and custom panels can be access programmatically using their panel name.",
-    link: "https://developer.wordpress.org/block-editor/reference-guides/slotfills/plugin-document-setting-panel/#accessing-a-panel-programmatically"
+    link: "https://developer.notmatt.press/block-editor/reference-guides/slotfills/plugin-document-setting-panel/#accessing-a-panel-programmatically"
   });
   return PluginPostExcerpt;
 }

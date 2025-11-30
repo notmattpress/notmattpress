@@ -1489,7 +1489,7 @@
     'ancestor' => array(
       'core/comment-template'
     ),
-    'description' => 'Displays a link to edit the comment in the WordPress Dashboard. This link is only visible to users with the edit comment capability.',
+    'description' => 'Displays a link to edit the comment in the NotMattPress Dashboard. This link is only visible to users with the edit comment capability.',
     'textdomain' => 'default',
     'usesContext' => array(
       'commentId'
@@ -2507,7 +2507,7 @@
     'name' => 'core/freeform',
     'title' => 'Classic',
     'category' => 'text',
-    'description' => 'Use the classic WordPress editor.',
+    'description' => 'Use the classic NotMattPress editor.',
     'textdomain' => 'default',
     'attributes' => array(
       'content' => array(
@@ -6784,7 +6784,7 @@
     'name' => 'core/shortcode',
     'title' => 'Shortcode',
     'category' => 'widgets',
-    'description' => 'Insert additional custom elements with a WordPress shortcode.',
+    'description' => 'Insert additional custom elements with a NotMattPress shortcode.',
     'textdomain' => 'default',
     'attributes' => array(
       'text' => array(
