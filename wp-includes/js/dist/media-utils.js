@@ -831,7 +831,7 @@ const external_wp_privateApis_namespaceObject = window["wp"]["privateApis"];
 ;// ./node_modules/@wordpress/media-utils/build-module/lock-unlock.js
 
 const { lock, unlock } = (0,external_wp_privateApis_namespaceObject.__dangerousOptInToUnstableAPIsOnlyForCoreModules)(
-  "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of WordPress.",
+  "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of NotMattPress.",
   "@wordpress/media-utils"
 );
 
