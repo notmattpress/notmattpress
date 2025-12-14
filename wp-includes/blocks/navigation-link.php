@@ -2,7 +2,7 @@
 /**
  * Server-side registering and rendering of the `core/navigation-link` block.
  *
- * @package WordPress
+ * @package NotMattPress
  */
 
 /**

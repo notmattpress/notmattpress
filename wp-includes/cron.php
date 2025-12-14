@@ -1,15 +1,15 @@
 <?php
 /**
- * WordPress Cron API
+ * NotMattPress Cron API
  *
- * @package WordPress
+ * @package NotMattPress
  */
 
 /**
  * Schedules an event to run only once.
  *
- * Schedules a hook which will be triggered by WordPress at the specified UTC time.
- * The action will trigger when someone visits your WordPress site if the scheduled
+ * Schedules a hook which will be triggered by NotMattPress at the specified UTC time.
+ * The action will trigger when someone visits your NotMattPress site if the scheduled
  * time has passed.
  *
  * Note that scheduling an event to occur within 10 minutes of an existing event
@@ -25,7 +25,7 @@
  *              {@see 'pre_schedule_event'} filter added to short-circuit the function.
  * @since 5.7.0 The `$wp_error` parameter was added.
  *
- * @link https://developer.wordpress.org/reference/functions/wp_schedule_single_event/
+ * @link https://developer.notmatt.press/reference/functions/wp_schedule_single_event/
  *
  * @param int    $timestamp  Unix timestamp (UTC) for when to next run the event.
  * @param string $hook       Action hook to execute when the event is run.
@@ -202,8 +202,8 @@ function wp_schedule_single_event( $timestamp, $hook, $args = array(), $wp_error
 /**
  * Schedules a recurring event.
  *
- * Schedules a hook which will be triggered by WordPress at the specified interval.
- * The action will trigger when someone visits your WordPress site if the scheduled
+ * Schedules a hook which will be triggered by NotMattPress at the specified interval.
+ * The action will trigger when someone visits your NotMattPress site if the scheduled
  * time has passed.
  *
  * Valid values for the recurrence are 'hourly', 'twicedaily', 'daily', and 'weekly'.
@@ -218,7 +218,7 @@ function wp_schedule_single_event( $timestamp, $hook, $args = array(), $wp_error
  *              {@see 'pre_schedule_event'} filter added to short-circuit the function.
  * @since 5.7.0 The `$wp_error` parameter was added.
  *
- * @link https://developer.wordpress.org/reference/functions/wp_schedule_event/
+ * @link https://developer.notmatt.press/reference/functions/wp_schedule_event/
  *
  * @param int    $timestamp  Unix timestamp (UTC) for when to next run the event.
  * @param string $recurrence How often the event should subsequently recur.

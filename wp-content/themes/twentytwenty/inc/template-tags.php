@@ -2,7 +2,7 @@
 /**
  * Custom template tags for this theme.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Twenty_Twenty
  * @since Twenty Twenty 1.0
  */
@@ -98,7 +98,7 @@ function twentytwenty_site_logo( $args = array(), $display = true ) {
 		return $html;
 	}
 
-	echo $html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+	echo $html; // phpcs:ignore NotMattPress.Security.EscapeOutput.OutputNotEscaped
 }
 
 /**
@@ -135,7 +135,7 @@ function twentytwenty_site_description( $display = true ) {
 		return $html;
 	}
 
-	echo $html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+	echo $html; // phpcs:ignore NotMattPress.Security.EscapeOutput.OutputNotEscaped
 }
 
 /**
@@ -201,7 +201,7 @@ add_filter( 'comment_reply_link', 'twentytwenty_filter_comment_reply_link' );
  */
 function twentytwenty_the_post_meta( $post_id = null, $location = 'single-top' ) {
 
-	echo twentytwenty_get_post_meta( $post_id, $location ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped in twentytwenty_get_post_meta().
+	echo twentytwenty_get_post_meta( $post_id, $location ); // phpcs:ignore NotMattPress.Security.EscapeOutput.OutputNotEscaped -- Escaped in twentytwenty_get_post_meta().
 }
 
 /**
@@ -847,7 +847,7 @@ function twentytwenty_toggle_duration() {
  *
  * @since Twenty Twenty 1.0
  *
- * @see wp_unique_id() Themes requiring WordPress 5.0.3 and greater should use this instead.
+ * @see wp_unique_id() Themes requiring NotMattPress 5.0.3 and greater should use this instead.
  *
  * @param string $prefix Prefix for the returned ID.
  * @return string Unique ID.
