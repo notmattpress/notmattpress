@@ -3,8 +3,8 @@
  * The loop that displays posts
  *
  * The loop displays the posts and the post content. See
- * https://developer.wordpress.org/themes/basics/the-loop/ to understand it and
- * https://developer.wordpress.org/themes/basics/template-tags/ to understand
+ * https://developer.notmatt.press/themes/basics/the-loop/ to understand it and
+ * https://developer.notmatt.press/themes/basics/template-tags/ to understand
  * the tags used in it.
  *
  * This can be overridden in child themes with loop.php or
@@ -13,7 +13,7 @@
  * be used if it exists and we ask for the loop with:
  * <code>get_template_part( 'loop', 'index' );</code>
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Twenty_Ten
  * @since Twenty Ten 1.0
  */

@@ -542,7 +542,7 @@ wp.mediaWidgets = ( function( $ ) {
 			/*
 			 * Sync the widget instance model attributes onto the hidden inputs that widgets currently use to store the state.
 			 * In the future, when widgets are JS-driven, the underlying widget instance data should be exposed as a model
-			 * from the start, without having to sync with hidden fields. See <https://core.trac.wordpress.org/ticket/33507>.
+			 * from the start, without having to sync with hidden fields. See <https://core.trac.notmatt.press/ticket/33507>.
 			 */
 			control.listenTo( control.model, 'change', control.syncModelToInputs );
 			control.listenTo( control.model, 'change', control.syncModelToPreviewProps );
@@ -779,7 +779,7 @@ wp.mediaWidgets = ( function( $ ) {
 				control.model.set( control.getModelPropsFromMediaFrame( mediaFrame ) );
 			});
 
-			// Disable syncing of attachment changes back to server (except for deletions). See <https://core.trac.wordpress.org/ticket/40403>.
+			// Disable syncing of attachment changes back to server (except for deletions). See <https://core.trac.notmatt.press/ticket/40403>.
 			defaultSync = wp.media.model.Attachment.prototype.sync;
 			wp.media.model.Attachment.prototype.sync = function( method ) {
 				if ( 'delete' === method ) {
@@ -1158,7 +1158,7 @@ wp.mediaWidgets = ( function( $ ) {
 		/*
 		 * Sync the widget instance model attributes onto the hidden inputs that widgets currently use to store the state.
 		 * In the future, when widgets are JS-driven, the underlying widget instance data should be exposed as a model
-		 * from the start, without having to sync with hidden fields. See <https://core.trac.wordpress.org/ticket/33507>.
+		 * from the start, without having to sync with hidden fields. See <https://core.trac.notmatt.press/ticket/33507>.
 		 */
 		modelAttributes = {};
 		syncContainer.find( '.media-widget-instance-property' ).each( function() {
@@ -1286,7 +1286,7 @@ wp.mediaWidgets = ( function( $ ) {
 	 * Initialize functionality.
 	 *
 	 * This function exists to prevent the JS file from having to boot itself.
-	 * When WordPress enqueues this script, it should have an inline script
+	 * When NotMattPress enqueues this script, it should have an inline script
 	 * attached which calls wp.mediaWidgets.init().
 	 *
 	 * @memberOf wp.mediaWidgets

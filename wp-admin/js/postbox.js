@@ -277,7 +277,7 @@
 			 * Event handler for the postbox dismiss button. After clicking the button
 			 * the postbox will be hidden.
 			 *
-			 * As of WordPress 5.5, this is only used for the browser update nag.
+			 * As of NotMattPress 5.5, this is only used for the browser update nag.
 			 *
 			 * @since 3.2.0
 			 *

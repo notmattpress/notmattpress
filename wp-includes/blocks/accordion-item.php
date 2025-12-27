@@ -3,7 +3,7 @@
 /**
  * Server-side rendering of the `core/accordion-item` block.
  *
- * @package WordPress
+ * @package NotMattPress
  * @since 6.9.0
  *
  * @param array $attributes The block attributes.
