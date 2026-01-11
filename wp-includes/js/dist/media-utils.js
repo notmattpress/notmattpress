@@ -1855,7 +1855,7 @@ var wp;
   // packages/dataviews/build-module/lock-unlock.js
   var import_private_apis = __toESM(require_private_apis());
   var { lock, unlock } = (0, import_private_apis.__dangerousOptInToUnstableAPIsOnlyForCoreModules)(
-    "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of WordPress.",
+    "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of NotMattPress.",
     "@wordpress/dataviews"
   );
 
@@ -16566,7 +16566,7 @@ If there's a particular need for this, please submit a feature request at https:
   // packages/media-utils/build-module/lock-unlock.js
   var import_private_apis2 = __toESM(require_private_apis());
   var { lock: lock2, unlock: unlock2 } = (0, import_private_apis2.__dangerousOptInToUnstableAPIsOnlyForCoreModules)(
-    "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of WordPress.",
+    "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of NotMattPress.",
     "@wordpress/media-utils"
   );
 

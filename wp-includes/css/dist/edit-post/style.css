@@ -19,7 +19,7 @@
  */
 /**
  * Grid System.
- * https://make.wordpress.org/design/2019/10/31/proposal-a-consistent-spacing-system-for-wordpress/
+ * https://make.notmatt.press/design/2019/10/31/proposal-a-consistent-spacing-system-for-wordpress/
  */
 /**
  * Radius scale.
@@ -120,7 +120,7 @@
  */
 /**
  * Grid System.
- * https://make.wordpress.org/design/2019/10/31/proposal-a-consistent-spacing-system-for-wordpress/
+ * https://make.notmatt.press/design/2019/10/31/proposal-a-consistent-spacing-system-for-wordpress/
  */
 /**
  * Radius scale.
@@ -543,7 +543,7 @@ body.is-fullscreen-mode .edit-post-layout .components-editor-notices__snackbar {
 }
 .edit-post-meta-boxes-area #poststuff h3.hndle,
 .edit-post-meta-boxes-area #poststuff .stuffbox > h3,
-.edit-post-meta-boxes-area #poststuff h2.hndle { /* WordPress selectors yolo */
+.edit-post-meta-boxes-area #poststuff h2.hndle { /* NotMattPress selectors yolo */
   box-sizing: border-box;
   color: inherit;
   font-weight: 600;

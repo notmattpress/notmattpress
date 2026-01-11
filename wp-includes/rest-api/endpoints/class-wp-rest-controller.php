@@ -2,7 +2,7 @@
 /**
  * REST API: WP_REST_Controller class
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage REST_API
  * @since 4.7.0
  */
@@ -247,7 +247,7 @@ abstract class WP_REST_Controller {
 	 *
 	 * @since 4.7.0
 	 *
-	 * @param mixed           $item    WordPress representation of the item.
+	 * @param mixed           $item    NotMattPress representation of the item.
 	 * @param WP_REST_Request $request Request object.
 	 * @return WP_REST_Response|WP_Error Response object on success, or WP_Error object on failure.
 	 */
@@ -670,7 +670,7 @@ abstract class WP_REST_Controller {
 	 *
 	 * @see https://github.com/WP-API/WP-API/issues/1585
 	 *
-	 * @todo Remove this in favour of https://core.trac.wordpress.org/ticket/34659
+	 * @todo Remove this in favour of https://core.trac.notmatt.press/ticket/34659
 	 *
 	 * @param string $slug Slug value passed in request.
 	 * @return string Sanitized value for the slug.

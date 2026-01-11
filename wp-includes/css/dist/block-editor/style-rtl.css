@@ -19,7 +19,7 @@
  */
 /**
  * Grid System.
- * https://make.wordpress.org/design/2019/10/31/proposal-a-consistent-spacing-system-for-wordpress/
+ * https://make.notmatt.press/design/2019/10/31/proposal-a-consistent-spacing-system-for-wordpress/
  */
 /**
  * Radius scale.
@@ -3347,7 +3347,7 @@ block-editor-content-only-controls__media-thumbnail {
 
 .block-editor-tabbed-sidebar__close-button {
   background: #fff;
-  /* stylelint-disable-next-line property-disallowed-list -- This should be removed when https://github.com/WordPress/gutenberg/issues/59013 is fixed. */
+  /* stylelint-disable-next-line property-disallowed-list -- This should be removed when https://github.com/NotMattPress/gutenberg/issues/59013 is fixed. */
   order: 1;
   align-self: center;
 }

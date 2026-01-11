@@ -2,7 +2,7 @@
 /**
  * WP_Font_Face class.
  *
- * @package    WordPress
+ * @package    NotMattPress
  * @subpackage Fonts
  * @since      6.4.0
  */

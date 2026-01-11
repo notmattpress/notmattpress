@@ -20,7 +20,7 @@
  */
 /**
  * Grid System.
- * https://make.wordpress.org/design/2019/10/31/proposal-a-consistent-spacing-system-for-wordpress/
+ * https://make.notmatt.press/design/2019/10/31/proposal-a-consistent-spacing-system-for-wordpress/
  */
 /**
  * Radius scale.
@@ -251,7 +251,7 @@
  * For easier testing of potential regressions, you can use a Button variant matrix
  * available in a special Storybook instance by running `npm run storybook:e2e:dev`.
  *
- * @see https://github.com/WordPress/gutenberg/blob/trunk/test/storybook-playwright/README.md
+ * @see https://github.com/NotMattPress/gutenberg/blob/trunk/test/storybook-playwright/README.md
  */
 .components-button {
   display: inline-flex;

@@ -3328,7 +3328,7 @@ var wp;
   // packages/editor/build-module/lock-unlock.js
   var import_private_apis = __toESM(require_private_apis());
   var { lock, unlock } = (0, import_private_apis.__dangerousOptInToUnstableAPIsOnlyForCoreModules)(
-    "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of WordPress.",
+    "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of NotMattPress.",
     "@wordpress/editor"
   );
 
@@ -5010,7 +5010,7 @@ var wp;
           /* @__PURE__ */ (0, import_jsx_runtime67.jsx)("span", { children: (0, import_i18n4.__)(
             "Customize the last part of the Permalink."
           ) }),
-          /* @__PURE__ */ (0, import_jsx_runtime67.jsx)(import_components.ExternalLink, { href: "https://wordpress.org/documentation/article/page-post-settings-sidebar/#permalink", children: (0, import_i18n4.__)("Learn more") })
+          /* @__PURE__ */ (0, import_jsx_runtime67.jsx)(import_components.ExternalLink, { href: "https://notmatt.press/documentation/article/page-post-settings-sidebar/#permalink", children: (0, import_i18n4.__)("Learn more") })
         ] }),
         /* @__PURE__ */ (0, import_jsx_runtime67.jsx)(
           import_components.__experimentalInputControl,
@@ -5170,7 +5170,7 @@ var wp;
   // packages/fields/build-module/lock-unlock.js
   var import_private_apis2 = __toESM(require_private_apis());
   var { lock: lock2, unlock: unlock2 } = (0, import_private_apis2.__dangerousOptInToUnstableAPIsOnlyForCoreModules)(
-    "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of WordPress.",
+    "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of NotMattPress.",
     "@wordpress/fields"
   );
 
@@ -5805,7 +5805,7 @@ var wp;
     return /* @__PURE__ */ (0, import_jsx_runtime74.jsx)("fieldset", { className: "fields-controls__parent", children: /* @__PURE__ */ (0, import_jsx_runtime74.jsxs)("div", { children: [
       (0, import_element7.createInterpolateElement)(
         (0, import_i18n18.sprintf)(
-          /* translators: %1$s The home URL of the WordPress installation without the scheme. */
+          /* translators: %1$s The home URL of the NotMattPress installation without the scheme. */
           (0, import_i18n18.__)(
             'Child pages inherit characteristics from their parent, such as URL structure. For instance, if "Pricing" is a child of "Services", its URL would be %1$s<wbr />/services<wbr />/pricing.'
           ),
@@ -5827,7 +5827,7 @@ var wp;
             import_components7.ExternalLink,
             {
               href: (0, import_i18n18.__)(
-                "https://wordpress.org/documentation/article/page-post-settings-sidebar/#page-attributes"
+                "https://notmatt.press/documentation/article/page-post-settings-sidebar/#page-attributes"
               ),
               children: void 0
             }
@@ -6072,7 +6072,7 @@ var wp;
           import_components10.ExternalLink,
           {
             href: (0, import_i18n26.__)(
-              "https://wordpress.org/documentation/article/trackbacks-and-pingbacks/"
+              "https://notmatt.press/documentation/article/trackbacks-and-pingbacks/"
             ),
             children: (0, import_i18n26.__)("Learn more about pingbacks & trackbacks")
           }
@@ -8452,7 +8452,7 @@ var wp;
         });
         const response = await window.fetch(url, {
           headers: {
-            "User-Agent": "WordPress/inserter-media-fetch"
+            "User-Agent": "NotMattPress/inserter-media-fetch"
           }
         });
         const jsonResponse = await response.json();
@@ -8468,7 +8468,7 @@ var wp;
           previewUrl: result.thumbnail
         }));
       },
-      getReportUrl: ({ sourceId }) => `https://wordpress.org/openverse/image/${sourceId}/report/`,
+      getReportUrl: ({ sourceId }) => `https://notmatt.press/openverse/image/${sourceId}/report/`,
       isExternalResource: true
     }
   ];
@@ -12093,7 +12093,7 @@ var wp;
   var PluginsMenuItem = ({
     // Menu item is marked with unstable prop for backward compatibility.
     // They are removed so they don't leak to DOM elements.
-    // @see https://github.com/WordPress/gutenberg/issues/14457
+    // @see https://github.com/NotMattPress/gutenberg/issues/14457
     __unstableExplicitMenuItem,
     __unstableTarget,
     ...restProps
@@ -14599,7 +14599,7 @@ var wp;
   // packages/global-styles-ui/build-module/lock-unlock.js
   var import_private_apis3 = __toESM(require_private_apis());
   var { lock: lock3, unlock: unlock3 } = (0, import_private_apis3.__dangerousOptInToUnstableAPIsOnlyForCoreModules)(
-    "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of WordPress.",
+    "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of NotMattPress.",
     "@wordpress/global-styles-ui"
   );
 
@@ -30079,7 +30079,7 @@ var wp;
               import_components80.ExternalLink,
               {
                 href: (0, import_i18n96.__)(
-                  "https://developer.wordpress.org/advanced-administration/wordpress/css/"
+                  "https://developer.notmatt.press/advanced-administration/wordpress/css/"
                 ),
                 className: "global-styles-ui-screen-css-help-link",
                 children: (0, import_i18n96.__)("Learn more about CSS")
@@ -33524,7 +33524,7 @@ var wp;
         result.duotones.push({
           name: (0, import_i18n112._x)(
             "Default",
-            "Indicates these duotone filters come from WordPress."
+            "Indicates these duotone filters come from NotMattPress."
           ),
           slug: "default",
           duotones: defaultDuotones
@@ -36115,7 +36115,7 @@ var wp;
           /* @__PURE__ */ (0, import_jsx_runtime212.jsxs)("div", { children: [
             (0, import_element93.createInterpolateElement)(
               (0, import_i18n127.sprintf)(
-                /* translators: %s: The home URL of the WordPress installation without the scheme. */
+                /* translators: %s: The home URL of the NotMattPress installation without the scheme. */
                 (0, import_i18n127.__)(
                   'Child pages inherit characteristics from their parent, such as URL structure. For instance, if "Pricing" is a child of "Services", its URL would be %s<wbr />/services<wbr />/pricing.'
                 ),
@@ -36137,7 +36137,7 @@ var wp;
                   import_components111.ExternalLink,
                   {
                     href: (0, import_i18n127.__)(
-                      "https://wordpress.org/documentation/article/page-post-settings-sidebar/#page-attributes"
+                      "https://notmatt.press/documentation/article/page-post-settings-sidebar/#page-attributes"
                     )
                   }
                 )
@@ -37554,7 +37554,7 @@ var wp;
           import_components130.ExternalLink,
           {
             href: (0, import_i18n139.__)(
-              "https://wordpress.org/documentation/article/trackbacks-and-pingbacks/"
+              "https://notmatt.press/documentation/article/trackbacks-and-pingbacks/"
             ),
             children: (0, import_i18n139.__)("Learn more about pingbacks & trackbacks")
           }
@@ -37718,7 +37718,7 @@ var wp;
           import_components132.ExternalLink,
           {
             href: (0, import_i18n141.__)(
-              "https://wordpress.org/documentation/article/page-post-settings-sidebar/#excerpt"
+              "https://notmatt.press/documentation/article/page-post-settings-sidebar/#excerpt"
             ),
             children: (0, import_i18n141.__)("Learn more about manual excerpts")
           }
@@ -41574,7 +41574,7 @@ var wp;
     const visibleTaxonomies = (taxonomies ?? []).filter(
       (taxonomy) => (
         // In some circumstances .visibility can end up as undefined so optional chaining operator required.
-        // https://github.com/WordPress/gutenberg/issues/40326
+        // https://github.com/NotMattPress/gutenberg/issues/40326
         taxonomy.types.includes(postType2) && taxonomy.visibility?.show_ui
       )
     );
@@ -42120,7 +42120,7 @@ var wp;
               import_components164.ExternalLink,
               {
                 href: (0, import_i18n174.__)(
-                  "https://wordpress.org/documentation/article/page-post-settings-sidebar/#permalink"
+                  "https://notmatt.press/documentation/article/page-post-settings-sidebar/#permalink"
                 )
               }
             )
@@ -42844,7 +42844,7 @@ var wp;
         (0, import_deprecated11.default)("Extending MediaUpload as a class component", {
           since: "7.0",
           version: "7.2",
-          hint: "MediaUpload will become a function component in WordPress 7.2 Please update any custom implementations to use function components instead."
+          hint: "MediaUpload will become a function component in NotMattPress 7.2 Please update any custom implementations to use function components instead."
         });
         return MediaUploadModalWrapper;
       }
@@ -43933,7 +43933,7 @@ var wp;
               {
                 icon: external_default,
                 href: (0, import_i18n188.__)(
-                  "https://wordpress.org/documentation/article/wordpress-block-editor/"
+                  "https://notmatt.press/documentation/article/wordpress-block-editor/"
                 ),
                 target: "_blank",
                 rel: "noopener noreferrer",
@@ -50380,7 +50380,7 @@ var wp;
                   import_components212.ExternalLink,
                   {
                     href: (0, import_i18n223.__)(
-                      "https://wordpress.org/documentation/article/styles-overview/"
+                      "https://notmatt.press/documentation/article/styles-overview/"
                     ),
                     children: (0, import_i18n223.__)(
                       "Here\u2019s a detailed guide to learn how to make the most of it."

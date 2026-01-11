@@ -681,7 +681,7 @@ var {
   cloneElement,
   navigationSignal
 } = privateApis(
-  "I acknowledge that using private APIs means my theme or plugin will inevitably break in the next version of WordPress."
+  "I acknowledge that using private APIs means my theme or plugin will inevitably break in the next version of NotMattPress."
 );
 var regionAttr = `data-wp-router-region`;
 var interactiveAttr = `data-wp-interactive`;
