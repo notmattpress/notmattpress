@@ -1,6 +1,6 @@
 <?php
 /**
- * WordPress scripts and styles default loader.
+ * NotMattPress scripts and styles default loader.
  *
  * Several constants are used to manage the loading, concatenating and compression of scripts and CSS:
  * define('SCRIPT_DEBUG', true); loads the development (non-minified) versions of all scripts and CSS, and disables compression and concatenation,
@@ -13,25 +13,25 @@
  * to temporarily override the above settings. Also a compression test is run once and the result is saved
  * as option 'can_compress_scripts' (0/1). The test will run again if that option is deleted.
  *
- * @package WordPress
+ * @package NotMattPress
  */
 
-/** WordPress Dependency Class */
+/** NotMattPress Dependency Class */
 require ABSPATH . WPINC . '/class-wp-dependency.php';
 
-/** WordPress Dependencies Class */
+/** NotMattPress Dependencies Class */
 require ABSPATH . WPINC . '/class-wp-dependencies.php';
 
-/** WordPress Scripts Class */
+/** NotMattPress Scripts Class */
 require ABSPATH . WPINC . '/class-wp-scripts.php';
 
-/** WordPress Scripts Functions */
+/** NotMattPress Scripts Functions */
 require ABSPATH . WPINC . '/functions.wp-scripts.php';
 
-/** WordPress Styles Class */
+/** NotMattPress Styles Class */
 require ABSPATH . WPINC . '/class-wp-styles.php';
 
-/** WordPress Styles Functions */
+/** NotMattPress Styles Functions */
 require ABSPATH . WPINC . '/functions.wp-styles.php';
 
 /**
@@ -71,14 +71,14 @@ function wp_register_tinymce_scripts( $scripts, $force_uncompressed = false ) {
 }
 
 /**
- * Registers all the WordPress vendor scripts that are in the standardized
+ * Registers all the NotMattPress vendor scripts that are in the standardized
  * `js/dist/vendor/` location.
  *
  * For the order of `$scripts->add` see `wp_default_scripts`.
  *
  * @since 5.0.0
  *
- * @global WP_Locale $wp_locale WordPress date and time locale object.
+ * @global WP_Locale $wp_locale NotMattPress date and time locale object.
  *
  * @param WP_Scripts $scripts WP_Scripts object.
  */
@@ -171,7 +171,7 @@ function wp_default_packages_vendor( $scripts ) {
  * These scripts enable hot module replacement (HMR) for block development
  * when using `wp-scripts start --hot`.
  *
- * @see https://github.com/WordPress/gutenberg/tree/trunk/packages/scripts#start
+ * @see https://github.com/NotMattPress/gutenberg/tree/trunk/packages/scripts#start
  *
  * @since 6.0.0
  *
@@ -263,7 +263,7 @@ function wp_get_script_polyfill( $scripts, $tests ) {
 }
 
 /**
- * Registers all the WordPress packages scripts that are in the standardized
+ * Registers all the NotMattPress packages scripts that are in the standardized
  * `js/dist/` location.
  *
  * For the order of `$scripts->add` see `wp_default_scripts`.
@@ -318,7 +318,7 @@ function wp_default_packages_scripts( $scripts ) {
 		 * Manually set the text direction localization after wp-i18n is printed.
 		 * This ensures that wp.i18n.isRTL() returns true in RTL languages.
 		 * We cannot use $scripts->set_translations( 'wp-i18n' ) to do this
-		 * because WordPress prints a script's translations *before* the script,
+		 * because NotMattPress prints a script's translations *before* the script,
 		 * which means, in the case of wp-i18n, that wp.i18n.setLocaleData()
 		 * is called before wp.i18n is defined.
 		 */
@@ -331,13 +331,13 @@ function wp_default_packages_scripts( $scripts ) {
 }
 
 /**
- * Adds inline scripts required for the WordPress JavaScript packages.
+ * Adds inline scripts required for the NotMattPress JavaScript packages.
  *
  * @since 5.0.0
  * @since 6.4.0 Added relative time strings for the `wp-date` inline script output.
  *
- * @global WP_Locale $wp_locale WordPress date and time locale object.
- * @global wpdb      $wpdb      WordPress database abstraction object.
+ * @global WP_Locale $wp_locale NotMattPress date and time locale object.
+ * @global wpdb      $wpdb      NotMattPress database abstraction object.
  *
  * @param WP_Scripts $scripts WP_Scripts object.
  */
@@ -499,7 +499,7 @@ function wp_default_packages_inline_scripts( $scripts ) {
 	 * wp-editor module is exposed as window.wp.editor.
 	 * Problem: there is quite some code expecting window.wp.oldEditor object available under window.wp.editor.
 	 * Solution: fuse the two objects together to maintain backward compatibility.
-	 * For more context, see https://github.com/WordPress/gutenberg/issues/33203.
+	 * For more context, see https://github.com/NotMattPress/gutenberg/issues/33203.
 	 */
 	$scripts->add_inline_script(
 		'wp-editor',
@@ -655,7 +655,7 @@ function wp_tinymce_inline_scripts() {
 }
 
 /**
- * Registers all the WordPress packages scripts.
+ * Registers all the NotMattPress packages scripts.
  *
  * @since 5.0.0
  *
@@ -722,7 +722,7 @@ function wp_scripts_get_suffix( $type = '' ) {
 }
 
 /**
- * Registers all WordPress scripts.
+ * Registers all NotMattPress scripts.
  *
  * Localizes some of them.
  * args order: `$scripts->add( 'handle', 'url', 'dependencies', 'query-string', 1 );`
@@ -880,7 +880,7 @@ function wp_default_scripts( $scripts ) {
 	$scripts->add( 'site-icon', '/wp-admin/js/site-icon.js', array( 'jquery' ), false, 1 );
 	$scripts->set_translations( 'site-icon' );
 
-	// WordPress no longer uses or bundles Prototype or script.aculo.us. These are now pulled from an external source.
+	// NotMattPress no longer uses or bundles Prototype or script.aculo.us. These are now pulled from an external source.
 	$scripts->add( 'prototype', 'https://ajax.googleapis.com/ajax/libs/prototype/1.7.1.0/prototype.js', array(), '1.7.1' );
 	$scripts->add( 'scriptaculous-root', 'https://ajax.googleapis.com/ajax/libs/scriptaculous/1.9.0/scriptaculous.js', array( 'prototype' ), '1.9.0' );
 	$scripts->add( 'scriptaculous-builder', 'https://ajax.googleapis.com/ajax/libs/scriptaculous/1.9.0/builder.js', array( 'scriptaculous-root' ), '1.9.0' );
@@ -1364,7 +1364,7 @@ function wp_default_scripts( $scripts ) {
 			'blockThemeNotification'  => sprintf(
 				/* translators: 1: Link to Site Editor documentation on HelpHub, 2: HTML button. */
 				__( 'Hurray! Your theme supports site editing with blocks. <a href="%1$s">Tell me more</a>. %2$s' ),
-				__( 'https://wordpress.org/documentation/article/site-editor/' ),
+				__( 'https://notmatt.press/documentation/article/site-editor/' ),
 				sprintf(
 					'<button type="button" data-action="%1$s" class="button switch-to-editor">%2$s</button>',
 					esc_url( admin_url( 'site-editor.php' ) ),
@@ -1516,7 +1516,7 @@ function wp_default_scripts( $scripts ) {
 
 		/*
 		 * Navigation Menus: Adding underscore as a dependency to utilize _.debounce
-		 * see https://core.trac.wordpress.org/ticket/42321
+		 * see https://core.trac.notmatt.press/ticket/42321
 		 */
 		$scripts->add( 'nav-menu', "/wp-admin/js/nav-menu$suffix.js", array( 'jquery-ui-sortable', 'jquery-ui-draggable', 'jquery-ui-droppable', 'wp-lists', 'postbox', 'underscore' ) );
 		$scripts->set_translations( 'nav-menu' );
@@ -1971,7 +1971,7 @@ function wp_just_in_time_script_localization() {
  *
  * @link https://api.jqueryui.com/datepicker/#options
  *
- * @global WP_Locale $wp_locale WordPress date and time locale object.
+ * @global WP_Locale $wp_locale NotMattPress date and time locale object.
  */
 function wp_localize_jquery_ui_datepicker() {
 	global $wp_locale;
@@ -2551,7 +2551,7 @@ function wp_enqueue_global_styles() {
 	 * demand is disabled, which is the default.
 	 * The footer should only be used for classic themes when loading assets on demand is enabled.
 	 *
-	 * See https://core.trac.wordpress.org/ticket/53494 and https://core.trac.wordpress.org/ticket/61965.
+	 * See https://core.trac.notmatt.press/ticket/53494 and https://core.trac.notmatt.press/ticket/61965.
 	 */
 	if (
 		( $is_block_theme && doing_action( 'wp_footer' ) ) ||
@@ -2627,7 +2627,7 @@ function wp_enqueue_global_styles() {
  *
  * @since 5.6.0
  *
- * @global WP_Screen $current_screen WordPress current screen object.
+ * @global WP_Screen $current_screen NotMattPress current screen object.
  *
  * @return bool Whether scripts and styles should be enqueued.
  */
@@ -3164,15 +3164,15 @@ function wp_maybe_inline_styles() {
 }
 
 /**
- * Makes URLs relative to the WordPress installation.
+ * Makes URLs relative to the NotMattPress installation.
  *
  * @since 5.9.0
  * @access private
  *
- * @param string $css            The CSS to make URLs relative to the WordPress installation.
+ * @param string $css            The CSS to make URLs relative to the NotMattPress installation.
  * @param string $stylesheet_url The URL to the stylesheet.
  *
- * @return string The CSS with URLs made relative to the WordPress installation.
+ * @return string The CSS with URLs made relative to the NotMattPress installation.
  */
 function _wp_normalize_relative_css_links( $css, $stylesheet_url ) {
 	return preg_replace_callback(
@@ -3224,7 +3224,7 @@ function wp_enqueue_global_styles_css_custom_properties() {
  * For block themes, styles are loaded in the head.
  * For classic ones, styles are loaded in the body because the wp_head action happens before render_block.
  *
- * @link https://core.trac.wordpress.org/ticket/53494.
+ * @link https://core.trac.notmatt.press/ticket/53494.
  *
  * @param string $style    String containing the CSS styles to be added.
  * @param int    $priority To set the priority for the add_action.
@@ -3250,7 +3250,7 @@ function wp_enqueue_block_support_styles( $style, $priority = 10 ) {
  * Fetches, processes and compiles stored core styles, then combines and renders them to the page.
  * Styles are stored via the style engine API.
  *
- * @link https://developer.wordpress.org/block-editor/reference-guides/packages/packages-style-engine/
+ * @link https://developer.notmatt.press/block-editor/reference-guides/packages/packages-style-engine/
  *
  * @since 6.1.0
  *

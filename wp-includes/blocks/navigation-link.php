@@ -2,7 +2,7 @@
 /**
  * Server-side registering and rendering of the `core/navigation-link` block.
  *
- * @package WordPress
+ * @package NotMattPress
  */
 
 /**
@@ -434,7 +434,7 @@ function block_core_navigation_link_filter_variations( $variations, $block_type 
 	 * - The reducer handles deduplication, so it is not needed here
 	 * - This keeps the PHP code simple and relies on the established JavaScript behavior
 	 *
-	 * See: https://github.com/WordPress/gutenberg/pull/72517
+	 * See: https://github.com/NotMattPress/gutenberg/pull/72517
 	 */
 	return array_merge( $generated_variations, $variations );
 }

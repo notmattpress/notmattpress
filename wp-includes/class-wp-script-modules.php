@@ -4,7 +4,7 @@
  *
  * Native support for ES Modules and Import Maps.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Script Modules
  */
 
@@ -91,7 +91,7 @@ class WP_Script_Modules {
 	 * @param string                     $id       The identifier of the script module. Should be unique. It will be used in the
 	 *                                             final import map.
 	 * @param string                     $src      Optional. Full URL of the script module, or path of the script module relative
-	 *                                             to the WordPress root directory. If it is provided and the script module has
+	 *                                             to the NotMattPress root directory. If it is provided and the script module has
 	 *                                             not been registered yet, it will be registered.
 	 * @param array<string|array>        $deps     {
 	 *                                                 Optional. List of dependencies.
@@ -110,7 +110,7 @@ class WP_Script_Modules {
 	 *                                             }
 	 * @param string|false|null          $version  Optional. String specifying the script module version number. Defaults to false.
 	 *                                             It is added to the URL as a query string for cache busting purposes. If $version
-	 *                                             is set to false, the version number is the currently installed WordPress version.
+	 *                                             is set to false, the version number is the currently installed NotMattPress version.
 	 *                                             If $version is set to null, no version is added.
 	 * @param array<string, string|bool> $args     {
 	 *     Optional. An array of additional args. Default empty array.
@@ -263,7 +263,7 @@ class WP_Script_Modules {
 	 * @param string                     $id       The identifier of the script module. Should be unique. It will be used in the
 	 *                                             final import map.
 	 * @param string                     $src      Optional. Full URL of the script module, or path of the script module relative
-	 *                                             to the WordPress root directory. If it is provided and the script module has
+	 *                                             to the NotMattPress root directory. If it is provided and the script module has
 	 *                                             not been registered yet, it will be registered.
 	 * @param array<string|array>        $deps     {
 	 *                                                 Optional. List of dependencies.
@@ -282,7 +282,7 @@ class WP_Script_Modules {
 	 *                                             }
 	 * @param string|false|null          $version  Optional. String specifying the script module version number. Defaults to false.
 	 *                                             It is added to the URL as a query string for cache busting purposes. If $version
-	 *                                             is set to false, the version number is the currently installed WordPress version.
+	 *                                             is set to false, the version number is the currently installed NotMattPress version.
 	 *                                             If $version is set to null, no version is added.
 	 * @param array<string, string|bool> $args     {
 	 *     Optional. An array of additional args. Default empty array.
@@ -770,7 +770,7 @@ class WP_Script_Modules {
 	 * Gets the versioned URL for a script module src.
 	 *
 	 * If $version is set to false, the version number is the currently installed
-	 * WordPress version. If $version is set to null, no version is added.
+	 * NotMattPress version. If $version is set to null, no version is added.
 	 * Otherwise, the string passed in $version is used.
 	 *
 	 * @since 6.5.0

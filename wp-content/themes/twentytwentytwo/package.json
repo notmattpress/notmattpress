@@ -2,16 +2,16 @@
 	"name": "twentytwentytwo",
 	"version": "2.1.0",
 	"description": "Default WP Theme",
-	"author": "The WordPress Contributors",
+	"author": "The NotMattPress Contributors",
 	"license": "GPL-2.0-or-later",
 	"keywords": [
-		"WordPress",
+		"NotMattPress",
 		"Theme"
 	],
 	"bugs": {
-		"url": "https://core.trac.wordpress.org/"
+		"url": "https://core.trac.notmatt.press/"
 	},
-	"homepage": "https://wordpress.org/themes/twentytwentytwo/",
+	"homepage": "https://notmatt.press/themes/twentytwentytwo/",
 	"engines": {
 		"node": ">=20.10.0",
 		"npm": ">=10.2.3"

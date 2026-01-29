@@ -763,7 +763,7 @@ var wp;
   // packages/edit-post/build-module/lock-unlock.js
   var import_private_apis = __toESM(require_private_apis());
   var { lock, unlock } = (0, import_private_apis.__dangerousOptInToUnstableAPIsOnlyForCoreModules)(
-    "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of WordPress.",
+    "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of NotMattPress.",
     "@wordpress/edit-post"
   );
 
@@ -2009,7 +2009,7 @@ var wp;
             content: /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)(import_jsx_runtime20.Fragment, { children: [
               /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("h1", { className: "edit-post-welcome-guide__heading", children: (0, import_i18n11.__)("Welcome to the editor") }),
               /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("p", { className: "edit-post-welcome-guide__text", children: (0, import_i18n11.__)(
-                "In the WordPress editor, each paragraph, image, or video is presented as a distinct \u201Cblock\u201D of content."
+                "In the NotMattPress editor, each paragraph, image, or video is presented as a distinct \u201Cblock\u201D of content."
               ) })
             ] })
           },
@@ -2073,7 +2073,7 @@ var wp;
                     import_components7.ExternalLink,
                     {
                       href: (0, import_i18n11.__)(
-                        "https://wordpress.org/documentation/article/wordpress-block-editor/"
+                        "https://notmatt.press/documentation/article/wordpress-block-editor/"
                       )
                     }
                   )
@@ -2852,7 +2852,7 @@ var wp;
     (0, import_deprecated3.default)("wp.editPost.__experimentalPluginPostExcerpt", {
       since: "6.6",
       hint: "Core and custom panels can be access programmatically using their panel name.",
-      link: "https://developer.wordpress.org/block-editor/reference-guides/slotfills/plugin-document-setting-panel/#accessing-a-panel-programmatically"
+      link: "https://developer.notmatt.press/block-editor/reference-guides/slotfills/plugin-document-setting-panel/#accessing-a-panel-programmatically"
     });
     return PluginPostExcerpt;
   }

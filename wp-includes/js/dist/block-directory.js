@@ -1066,7 +1066,7 @@ var wp;
       /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("div", { className: "block-editor-inserter__tips", children: /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)(import_components3.Tip, { children: [
         (0, import_i18n7.__)("Interested in creating your own block?"),
         /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("br", {}),
-        /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)(import_components3.ExternalLink, { href: "https://developer.wordpress.org/block-editor/", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)(import_components3.ExternalLink, { href: "https://developer.notmatt.press/block-editor/", children: [
           (0, import_i18n7.__)("Get started here"),
           "."
         ] })

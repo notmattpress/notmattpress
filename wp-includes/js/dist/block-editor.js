@@ -7233,7 +7233,7 @@ var wp;
   // packages/block-editor/build-module/lock-unlock.js
   var import_private_apis = __toESM(require_private_apis());
   var { lock, unlock } = (0, import_private_apis.__dangerousOptInToUnstableAPIsOnlyForCoreModules)(
-    "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of WordPress.",
+    "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of NotMattPress.",
     "@wordpress/block-editor"
   );
 
@@ -10718,7 +10718,7 @@ var wp;
   var prefixedFlags = {
     /*
      * These were only available in the plugin
-     * and can be removed when the minimum WordPress version
+     * and can be removed when the minimum NotMattPress version
      * for the plugin is 5.9.
      */
     "border.customColor": "border.color",
@@ -10730,7 +10730,7 @@ var wp;
     "typography.customTextDecorations": "typography.textDecoration",
     "typography.customTextTransforms": "typography.textTransform",
     /*
-     * These were part of WordPress 5.8 and we need to keep them.
+     * These were part of NotMattPress 5.8 and we need to keep them.
      */
     "border.customRadius": "border.radius",
     "spacing.customMargin": "spacing.margin",
@@ -23325,7 +23325,7 @@ var wp;
   // packages/upload-media/build-module/lock-unlock.js
   var import_private_apis2 = __toESM(require_private_apis());
   var { lock: lock2, unlock: unlock2 } = (0, import_private_apis2.__dangerousOptInToUnstableAPIsOnlyForCoreModules)(
-    "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of WordPress.",
+    "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of NotMattPress.",
     "@wordpress/upload-media"
   );
 
@@ -24053,7 +24053,7 @@ var wp;
         if (
           // Bails in case the focus capture elements aren’t present. They
           // may be omitted to avoid silent tab stops in preview mode.
-          // See: https://github.com/WordPress/gutenberg/pull/59317
+          // See: https://github.com/NotMattPress/gutenberg/pull/59317
           !focusCaptureAfterRef.current || !focusCaptureBeforeRef.current
         ) {
           return;
@@ -26221,8 +26221,8 @@ var wp;
           transform: `scale(${scale})`,
           // Using width + aspect-ratio instead of height here triggers browsers' native
           // handling of scrollbar's visibility. It prevents the flickering issue seen
-          // in https://github.com/WordPress/gutenberg/issues/52027.
-          // See https://github.com/WordPress/gutenberg/pull/52921 for more info.
+          // in https://github.com/NotMattPress/gutenberg/issues/52027.
+          // See https://github.com/NotMattPress/gutenberg/pull/52921 for more info.
           aspectRatio,
           maxHeight: contentHeight > MAX_HEIGHT ? MAX_HEIGHT * scale : void 0,
           minHeight
@@ -26251,7 +26251,7 @@ var wp;
               height: contentHeight,
               pointerEvents: "none",
               // This is a catch-all max-height for patterns.
-              // See: https://github.com/WordPress/gutenberg/pull/38175.
+              // See: https://github.com/NotMattPress/gutenberg/pull/38175.
               maxHeight: MAX_HEIGHT,
               minHeight: scale !== 0 && scale < 1 && minHeight ? minHeight / scale : minHeight
             },
@@ -28205,14 +28205,14 @@ var wp;
           ) }),
           /* @__PURE__ */ (0, import_jsx_runtime176.jsx)("div", { className: "block-editor-inserter__patterns-filter-help", children: (0, import_element64.createInterpolateElement)(
             (0, import_i18n49.__)(
-              "Patterns are available from the <Link>WordPress.org Pattern Directory</Link>, bundled in the active theme, or created by users on this site. Only patterns created on this site can be synced."
+              "Patterns are available from the <Link>NotMattPress.org Pattern Directory</Link>, bundled in the active theme, or created by users on this site. Only patterns created on this site can be synced."
             ),
             {
               Link: /* @__PURE__ */ (0, import_jsx_runtime176.jsx)(
                 import_components44.ExternalLink,
                 {
                   href: (0, import_i18n49.__)(
-                    "https://wordpress.org/patterns/"
+                    "https://notmatt.press/patterns/"
                   )
                 }
               )
@@ -36326,7 +36326,7 @@ var wp;
         (0, import_deprecated12.default)("Using custom components as toolbar controls", {
           since: "5.6",
           alternative: "ToolbarItem, ToolbarButton or ToolbarDropdownMenu components",
-          link: "https://developer.wordpress.org/block-editor/components/toolbar-button/#inside-blockcontrols"
+          link: "https://developer.notmatt.press/block-editor/components/toolbar-button/#inside-blockcontrols"
         });
       }
       setIsAccessibleToolbar(onlyToolbarItem);
@@ -44856,7 +44856,7 @@ var wp;
                 import_components139.ExternalLink,
                 {
                   href: (0, import_i18n125.__)(
-                    "https://wordpress.org/documentation/article/customize-date-and-time-format/"
+                    "https://notmatt.press/documentation/article/customize-date-and-time-format/"
                   )
                 }
               )
@@ -45775,7 +45775,7 @@ var wp;
         result.push({
           name: (0, import_i18n137._x)(
             "Default",
-            "Indicates this palette comes from WordPress."
+            "Indicates this palette comes from NotMattPress."
           ),
           slug: "default",
           colors: defaultColors
@@ -45814,7 +45814,7 @@ var wp;
         result.push({
           name: (0, import_i18n137._x)(
             "Default",
-            "Indicates this palette comes from WordPress."
+            "Indicates this palette comes from NotMattPress."
           ),
           slug: "default",
           gradients: defaultGradients
@@ -48679,7 +48679,7 @@ var wp;
     return isURLLike(val) || !withCreateSuggestion ? results : results.concat({
       // the `id` prop is intentionally omitted here because it
       // is never exposed as part of the component's public API.
-      // see: https://github.com/WordPress/gutenberg/pull/19775#discussion_r378931316.
+      // see: https://github.com/NotMattPress/gutenberg/pull/19775#discussion_r378931316.
       title: val,
       // Must match the existing `<input>`s text value.
       url: val,
@@ -51955,7 +51955,7 @@ var wp;
         since: "6.1",
         version: "6.3",
         alternative: "value prop as string",
-        link: "https://developer.wordpress.org/block-editor/how-to-guides/block-tutorial/introducing-attributes-and-editable-fields/"
+        link: "https://developer.notmatt.press/block-editor/how-to-guides/block-tutorial/introducing-attributes-and-editable-fields/"
       });
       return import_blocks84.children.toHTML(value);
     }
@@ -52001,7 +52001,7 @@ var wp;
       since: "6.1",
       version: "6.3",
       alternative: "nested blocks (InnerBlocks)",
-      link: "https://developer.wordpress.org/block-editor/how-to-guides/block-tutorial/nested-blocks-inner-blocks/"
+      link: "https://developer.notmatt.press/block-editor/how-to-guides/block-tutorial/nested-blocks-inner-blocks/"
     });
     const { clientId } = useBlockEditContext();
     const { getSelectionStart: getSelectionStart2, getSelectionEnd: getSelectionEnd2 } = (0, import_data150.useSelect)(store);
@@ -52111,7 +52111,7 @@ var wp;
           since: "6.1",
           version: "6.3",
           alternative: "value prop as string",
-          link: "https://developer.wordpress.org/block-editor/how-to-guides/block-tutorial/introducing-attributes-and-editable-fields/"
+          link: "https://developer.notmatt.press/block-editor/how-to-guides/block-tutorial/introducing-attributes-and-editable-fields/"
         });
         value = import_blocks85.children.toHTML(props.value);
         onChange = (newValue) => props.onChange(
@@ -54150,7 +54150,7 @@ var wp;
         result.push({
           name: (0, import_i18n181._x)(
             "Default",
-            "Indicates this palette comes from WordPress."
+            "Indicates this palette comes from NotMattPress."
           ),
           colors: defaultColors
         });
@@ -54192,7 +54192,7 @@ var wp;
         result.push({
           name: (0, import_i18n181._x)(
             "Default",
-            "Indicates this palette comes from WordPress."
+            "Indicates this palette comes from NotMattPress."
           ),
           gradients: defaultGradients
         });
@@ -59024,7 +59024,7 @@ var wp;
   // packages/dataviews/build-module/lock-unlock.js
   var import_private_apis3 = __toESM(require_private_apis());
   var { lock: lock3, unlock: unlock3 } = (0, import_private_apis3.__dangerousOptInToUnstableAPIsOnlyForCoreModules)(
-    "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of WordPress.",
+    "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of NotMattPress.",
     "@wordpress/dataviews"
   );
 
@@ -68563,7 +68563,7 @@ var wp;
               import_components252.ExternalLink,
               {
                 href: (0, import_i18n226.__)(
-                  "https://wordpress.org/documentation/article/page-jumps/"
+                  "https://notmatt.press/documentation/article/page-jumps/"
                 ),
                 children: (0, import_i18n226.__)("Learn more about anchors")
               }

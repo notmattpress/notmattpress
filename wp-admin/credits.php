@@ -2,11 +2,11 @@
 /**
  * Credits administration panel.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Administration
  */
 
-/** WordPress Administration Bootstrap */
+/** NotMattPress Administration Bootstrap */
 require_once __DIR__ . '/admin.php';
 require_once __DIR__ . '/includes/credits.php';
 
@@ -16,7 +16,7 @@ $title = __( 'Credits' );
 list( $display_version ) = explode( '-', get_bloginfo( 'version' ) );
 $header_alt_text         = sprintf(
 	/* translators: %s: Version number. */
-	__( 'WordPress %s' ),
+	__( 'NotMattPress %s' ),
 	$display_version
 );
 
@@ -57,13 +57,13 @@ $credits = wp_credits();
 			<p>
 				<?php
 				printf(
-					/* translators: 1: https://wordpress.org/about/ */
-					__( 'WordPress is created by a <a href="%1$s">worldwide team</a> of passionate individuals.' ),
-					__( 'https://wordpress.org/about/' )
+					/* translators: 1: https://notmatt.press/about/ */
+					__( 'NotMattPress is created by a <a href="%1$s">worldwide team</a> of passionate individuals.' ),
+					__( 'https://notmatt.press/about/' )
 				);
 				?>
 				<br />
-				<a href="<?php echo esc_url( __( 'https://make.wordpress.org/contribute/' ) ); ?>"><?php _e( 'Get involved in WordPress.' ); ?></a>
+				<a href="<?php echo esc_url( __( 'https://make.notmatt.press/contribute/' ) ); ?>"><?php _e( 'Get involved in NotMattPress.' ); ?></a>
 			</p>
 
 			<?php else : ?>
@@ -71,7 +71,7 @@ $credits = wp_credits();
 			<p>
 				<?php _e( 'Want to see your name in lights on this page?' ); ?>
 				<br />
-				<a href="<?php echo esc_url( __( 'https://make.wordpress.org/contribute/' ) ); ?>"><?php _e( 'Get involved in WordPress.' ); ?></a>
+				<a href="<?php echo esc_url( __( 'https://make.notmatt.press/contribute/' ) ); ?>"><?php _e( 'Get involved in NotMattPress.' ); ?></a>
 			</p>
 
 			<?php endif; ?>
@@ -134,8 +134,8 @@ return;
 
 // These are strings returned by the API that we want to be translatable.
 __( 'Project Leaders' );
-/* translators: %s: The current WordPress version number. */
-__( 'Core Contributors to WordPress %s' );
+/* translators: %s: The current NotMattPress version number. */
+__( 'Core Contributors to NotMattPress %s' );
 __( 'Noteworthy Contributors' );
 __( 'Cofounder, Project Lead' );
 __( 'Lead Developer' );
