@@ -2,7 +2,7 @@
 /**
  * Core Abilities registration.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Abilities_API
  * @since 6.9.0
  */
@@ -60,7 +60,7 @@ function wp_register_core_abilities(): void {
 		),
 		'wpurl'       => array(
 			'type'        => 'string',
-			'description' => __( 'The WordPress installation URL.' ),
+			'description' => __( 'The NotMattPress installation URL.' ),
 		),
 		'admin_email' => array(
 			'type'        => 'string',
@@ -76,7 +76,7 @@ function wp_register_core_abilities(): void {
 		),
 		'version'     => array(
 			'type'        => 'string',
-			'description' => __( 'The WordPress version.' ),
+			'description' => __( 'The NotMattPress version.' ),
 		),
 	);
 	$site_info_fields     = array_keys( $site_info_properties );
@@ -85,7 +85,7 @@ function wp_register_core_abilities(): void {
 		'core/get-site-info',
 		array(
 			'label'               => __( 'Get Site Information' ),
-			'description'         => __( 'Returns site information configured in WordPress. By default returns all fields, or optionally a filtered subset.' ),
+			'description'         => __( 'Returns site information configured in NotMattPress. By default returns all fields, or optionally a filtered subset.' ),
 			'category'            => $category_site,
 			'input_schema'        => array(
 				'type'                 => 'object',
@@ -202,7 +202,7 @@ function wp_register_core_abilities(): void {
 		'core/get-environment-info',
 		array(
 			'label'               => __( 'Get Environment Info' ),
-			'description'         => __( 'Returns core details about the site\'s runtime context for diagnostics and compatibility (environment, PHP runtime, database server info, WordPress version).' ),
+			'description'         => __( 'Returns core details about the site\'s runtime context for diagnostics and compatibility (environment, PHP runtime, database server info, NotMattPress version).' ),
 			'category'            => $category_site,
 			'output_schema'       => array(
 				'type'                 => 'object',
@@ -215,7 +215,7 @@ function wp_register_core_abilities(): void {
 					),
 					'php_version'    => array(
 						'type'        => 'string',
-						'description' => __( 'The PHP runtime version executing WordPress.' ),
+						'description' => __( 'The PHP runtime version executing NotMattPress.' ),
 					),
 					'db_server_info' => array(
 						'type'        => 'string',
@@ -223,7 +223,7 @@ function wp_register_core_abilities(): void {
 					),
 					'wp_version'     => array(
 						'type'        => 'string',
-						'description' => __( 'The WordPress core version running on this site.' ),
+						'description' => __( 'The NotMattPress core version running on this site.' ),
 					),
 				),
 				'additionalProperties' => false,

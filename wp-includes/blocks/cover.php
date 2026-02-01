@@ -2,7 +2,7 @@
 /**
  * Server-side rendering of the `core/cover` block.
  *
- * @package WordPress
+ * @package NotMattPress
  */
 
 /**
@@ -26,7 +26,7 @@ function render_block_core_cover( $attributes, $content ) {
 	) {
 		$url = $attributes['url'];
 
-		// Use WordPress's native oEmbed processing (includes caching).
+		// Use NotMattPress's native oEmbed processing (includes caching).
 		$oembed_html = wp_oembed_get( $url );
 
 		if ( $oembed_html ) {

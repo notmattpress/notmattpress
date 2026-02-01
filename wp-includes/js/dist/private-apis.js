@@ -60,16 +60,16 @@ var wp;
     "@wordpress/upload-media",
     "@wordpress/global-styles-ui"
   ];
-  var requiredConsent = "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of WordPress.";
+  var requiredConsent = "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of NotMattPress.";
   var __dangerousOptInToUnstableAPIsOnlyForCoreModules = (consent, moduleName) => {
     if (!CORE_MODULES_USING_PRIVATE_APIS.includes(moduleName)) {
       throw new Error(
-        `You tried to opt-in to unstable APIs as module "${moduleName}". This feature is only for JavaScript modules shipped with WordPress core. Please do not use it in plugins and themes as the unstable APIs will be removed without a warning. If you ignore this error and depend on unstable features, your product will inevitably break on one of the next WordPress releases.`
+        `You tried to opt-in to unstable APIs as module "${moduleName}". This feature is only for JavaScript modules shipped with NotMattPress core. Please do not use it in plugins and themes as the unstable APIs will be removed without a warning. If you ignore this error and depend on unstable features, your product will inevitably break on one of the next NotMattPress releases.`
       );
     }
     if (consent !== requiredConsent) {
       throw new Error(
-        `You tried to opt-in to unstable APIs without confirming you know the consequences. This feature is only for JavaScript modules shipped with WordPress core. Please do not use it in plugins and themes as the unstable APIs will removed without a warning. If you ignore this error and depend on unstable features, your product will inevitably break on the next WordPress release.`
+        `You tried to opt-in to unstable APIs without confirming you know the consequences. This feature is only for JavaScript modules shipped with NotMattPress core. Please do not use it in plugins and themes as the unstable APIs will removed without a warning. If you ignore this error and depend on unstable features, your product will inevitably break on the next NotMattPress release.`
       );
     }
     return {

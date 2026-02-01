@@ -279,7 +279,7 @@ var import_core_data = __toESM(require_core_data());
 // routes/lock-unlock.ts
 var import_private_apis = __toESM(require_private_apis());
 var { lock, unlock } = (0, import_private_apis.__dangerousOptInToUnstableAPIsOnlyForCoreModules)(
-  "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of WordPress.",
+  "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of NotMattPress.",
   "@wordpress/routes"
 );
 
@@ -377,7 +377,7 @@ var PAGES_QUERY = [
   {
     per_page: MAX_PAGE_COUNT,
     _fields: ["id", "link", "menu_order", "parent", "title", "type"],
-    // TODO: When https://core.trac.wordpress.org/ticket/39037 REST API support for multiple orderby
+    // TODO: When https://core.trac.notmatt.press/ticket/39037 REST API support for multiple orderby
     // values is resolved, update 'orderby' to [ 'menu_order', 'post_title' ] to provide a consistent
     // sort.
     orderby: "menu_order",

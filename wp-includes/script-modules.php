@@ -4,7 +4,7 @@
  *
  * @since 6.5.0
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Script Modules
  */
 
@@ -40,7 +40,7 @@ function wp_script_modules(): WP_Script_Modules {
  * @param string                     $id      The identifier of the script module. Should be unique. It will be used in the
  *                                            final import map.
  * @param string                     $src     Optional. Full URL of the script module, or path of the script module relative
- *                                            to the WordPress root directory. If it is provided and the script module has
+ *                                            to the NotMattPress root directory. If it is provided and the script module has
  *                                            not been registered yet, it will be registered.
  * @param array<string|array>        $deps    {
  *                                                Optional. List of dependencies.
@@ -59,7 +59,7 @@ function wp_script_modules(): WP_Script_Modules {
  *                                            }
  * @param string|false|null          $version Optional. String specifying the script module version number. Defaults to false.
  *                                            It is added to the URL as a query string for cache busting purposes. If $version
- *                                            is set to false, the version number is the currently installed WordPress version.
+ *                                            is set to false, the version number is the currently installed NotMattPress version.
  *                                            If $version is set to null, no version is added.
  * @param array<string, string|bool> $args    {
  *     Optional. An array of additional args. Default empty array.
@@ -84,7 +84,7 @@ function wp_register_script_module( string $id, string $src, array $deps = array
  * @param string                     $id      The identifier of the script module. Should be unique. It will be used in the
  *                                            final import map.
  * @param string                     $src     Optional. Full URL of the script module, or path of the script module relative
- *                                            to the WordPress root directory. If it is provided and the script module has
+ *                                            to the NotMattPress root directory. If it is provided and the script module has
  *                                            not been registered yet, it will be registered.
  * @param array<string|array>        $deps    {
  *                                                Optional. List of dependencies.
@@ -103,7 +103,7 @@ function wp_register_script_module( string $id, string $src, array $deps = array
  *                                            }
  * @param string|false|null          $version Optional. String specifying the script module version number. Defaults to false.
  *                                            It is added to the URL as a query string for cache busting purposes. If $version
- *                                            is set to false, the version number is the currently installed WordPress version.
+ *                                            is set to false, the version number is the currently installed NotMattPress version.
  *                                            If $version is set to null, no version is added.
  * @param array<string, string|bool> $args    {
  *     Optional. An array of additional args. Default empty array.
@@ -139,7 +139,7 @@ function wp_deregister_script_module( string $id ) {
 }
 
 /**
- * Registers all the default WordPress Script Modules.
+ * Registers all the default NotMattPress Script Modules.
  *
  * @since 6.7.0
  */
@@ -158,7 +158,7 @@ function wp_default_script_modules() {
 
 	foreach ( $assets as $file_name => $script_module_data ) {
 		/*
-		 * Build the WordPress Script Module ID from the file name.
+		 * Build the NotMattPress Script Module ID from the file name.
 		 * Prepend `@wordpress/` and remove extensions and `/index` if present:
 		 *   - interactivity/index.min.js         => @wordpress/interactivity
 		 *   - interactivity-router/index.min.js  => @wordpress/interactivity-router
@@ -170,7 +170,7 @@ function wp_default_script_modules() {
 		 * The Interactivity API is designed with server-side rendering as its primary goal, so all of its script modules
 		 * should be loaded with low fetchpriority and printed in the footer since they should not be needed in the
 		 * critical rendering path. Also, the @wordpress/a11y script module is intended to be used as a dynamic import
-		 * dependency, in which case the fetchpriority is irrelevant. See <https://make.wordpress.org/core/2024/10/14/updates-to-script-modules-in-6-7/>.
+		 * dependency, in which case the fetchpriority is irrelevant. See <https://make.notmatt.press/core/2024/10/14/updates-to-script-modules-in-6-7/>.
 		 * However, in case it is added as a static import dependency, the fetchpriority is explicitly set to be 'low'
 		 * since the module should not be involved in the critical rendering path, and if it is, its fetchpriority will
 		 * be bumped to match the fetchpriority of the dependent script.

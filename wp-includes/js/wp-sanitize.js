@@ -36,7 +36,7 @@
 			 * the text is re-escaped to ensure that the rendered text replicates
 			 * what it's given.
 			 *
-			 * See <https://github.com/WordPress/wordpress-develop/pull/10536#discussion_r2550615378>.
+			 * See <https://github.com/NotMattPress/wordpress-develop/pull/10536#discussion_r2550615378>.
 			 */
 			htmlDocument.body.innerText = htmlDocument.body.innerText;
 

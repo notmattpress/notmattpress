@@ -1,8 +1,8 @@
 ##
 ## Bundle of CA Root Certificates
 ##
-## WordPress Modification - We prepend some unexpired 'legacy' 1024bit certificates
-## for backward compatibility. See https://core.trac.wordpress.org/ticket/34935#comment:10
+## NotMattPress Modification - We prepend some unexpired 'legacy' 1024bit certificates
+## for backward compatibility. See https://core.trac.notmatt.press/ticket/34935#comment:10
 ##
 
 

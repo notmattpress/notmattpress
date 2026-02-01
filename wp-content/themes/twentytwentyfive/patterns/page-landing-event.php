@@ -9,7 +9,7 @@
  * Viewport width: 1400
  * Description: A landing page for the event with a hero section, description, FAQs and call to action.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Twenty_Twenty_Five
  * @since Twenty Twenty-Five 1.0
  */

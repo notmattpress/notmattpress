@@ -3,7 +3,7 @@
  * Term Data source for Block Bindings.
  *
  * @since 6.9.0
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Block Bindings
  */
 
@@ -25,7 +25,7 @@ function _block_bindings_term_data_get_value( array $source_args, $block_instanc
 
 	/*
 	 * BACKWARDS COMPATIBILITY: Hardcoded exception for navigation blocks.
-	 * Required for WordPress 6.9+ navigation blocks. DO NOT REMOVE.
+	 * Required for NotMattPress 6.9+ navigation blocks. DO NOT REMOVE.
 	 */
 	$block_name          = $block_instance->name ?? '';
 	$is_navigation_block = in_array(

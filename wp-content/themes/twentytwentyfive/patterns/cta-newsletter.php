@@ -5,7 +5,7 @@
  * Keywords: call-to-action, newsletter
  * Categories: call-to-action
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Twenty_Twenty_Five
  * @since Twenty Twenty-Five 1.0
  */

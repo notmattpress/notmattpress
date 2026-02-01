@@ -4,7 +4,7 @@
  *
  * @since 3.0.0
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Multisite
  */
 
@@ -168,7 +168,7 @@ function get_site_by_path( $domain, $path, $segments = null ) {
 	 *
 	 * @since 3.9.0
 	 *
-	 * @param int|null $segments The number of path segments to consider. WordPress by default looks at
+	 * @param int|null $segments The number of path segments to consider. NotMattPress by default looks at
 	 *                           one path segment following the network path. The function default of
 	 *                           null only makes sense when you know the requested path should match a site.
 	 * @param string   $domain   The requested domain.
@@ -458,7 +458,7 @@ function ms_load_current_site_and_network( $domain, $path, $subdomain = false ) 
  * @since 3.0.0
  * @since 4.4.0 The `$domain` and `$path` parameters were added.
  *
- * @global wpdb $wpdb WordPress database abstraction object.
+ * @global wpdb $wpdb NotMattPress database abstraction object.
  *
  * @param string $domain The requested domain for the error to reference.
  * @param string $path   The requested path for the error to reference.
@@ -481,7 +481,7 @@ function ms_not_installed( $domain, $path ) {
 	if ( ! $wpdb->get_var( $query ) ) {
 		$msg .= '<p>' . sprintf(
 			/* translators: %s: Table name. */
-			__( '<strong>Database tables are missing.</strong> This means that your host&#8217;s database server is not running, WordPress was not installed properly, or someone deleted %s. You really should look at your database now.' ),
+			__( '<strong>Database tables are missing.</strong> This means that your host&#8217;s database server is not running, NotMattPress was not installed properly, or someone deleted %s. You really should look at your database now.' ),
 			'<code>' . $wpdb->site . '</code>'
 		) . '</p>';
 	} else {
@@ -496,8 +496,8 @@ function ms_not_installed( $domain, $path ) {
 	$msg .= '<p><strong>' . __( 'What do I do now?' ) . '</strong> ';
 	$msg .= sprintf(
 		/* translators: %s: Documentation URL. */
-		__( 'Read the <a href="%s" target="_blank">Debugging a WordPress Network</a> article. Some of the suggestions there may help you figure out what went wrong.' ),
-		__( 'https://developer.wordpress.org/advanced-administration/debug/debug-network/' )
+		__( 'Read the <a href="%s" target="_blank">Debugging a NotMattPress Network</a> article. Some of the suggestions there may help you figure out what went wrong.' ),
+		__( 'https://developer.notmatt.press/advanced-administration/debug/debug-network/' )
 	);
 	$msg .= ' ' . __( 'If you are still stuck with this message, then check that your database contains the following tables:' ) . '</p><ul>';
 	foreach ( $wpdb->tables( 'global' ) as $t => $table ) {

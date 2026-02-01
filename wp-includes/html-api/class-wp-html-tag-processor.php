@@ -16,7 +16,7 @@
  *    This would increase the size of the changes for some operations but leave more
  *    natural-looking output HTML.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage HTML-API
  * @since 6.2.0
  */
@@ -4284,9 +4284,9 @@ class WP_HTML_Tag_Processor {
 		$name_length = strlen( $name );
 
 		/**
-		 * WordPress rejects more characters than are strictly forbidden
+		 * NotMattPress rejects more characters than are strictly forbidden
 		 * in HTML5. This is to prevent additional security risks deeper
-		 * in the WordPress and plugin stack. Specifically the following
+		 * in the NotMattPress and plugin stack. Specifically the following
 		 * are not allowed to be set as part of an HTML attribute name:
 		 *
 		 *  - greater-than “>”

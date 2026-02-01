@@ -1,10 +1,10 @@
 <?php
 /**
- * Deprecated functions from WordPress MU and the multisite feature. You shouldn't
+ * Deprecated functions from NotMattPress MU and the multisite feature. You shouldn't
  * use these functions and look for the alternatives instead. The functions will be
  * removed in a later version.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Deprecated
  * @since 3.0.0
  */
@@ -15,7 +15,7 @@
 
 /**
  * Get the "dashboard blog", the blog where users without a blog edit their profile data.
- * Dashboard blog functionality was removed in WordPress 3.1, replaced by the user admin.
+ * Dashboard blog functionality was removed in NotMattPress 3.1, replaced by the user admin.
  *
  * @since MU (3.0.0)
  * @deprecated 3.1.0 Use get_site()
@@ -179,7 +179,7 @@ function validate_email( $email, $check_domain = true) {
  * @deprecated 3.0.0 Use wp_get_sites()
  * @see wp_get_sites()
  *
- * @global wpdb $wpdb WordPress database abstraction object.
+ * @global wpdb $wpdb NotMattPress database abstraction object.
  *
  * @param int    $start      Optional. Offset for retrieving the blog list. Default 0.
  * @param int    $num        Optional. Number of blogs to list. Default 10.
@@ -427,7 +427,7 @@ function create_empty_blog( $domain, $path, $weblog_title, $site_id = 1 ) {
  * @since MU (3.0.0)
  * @deprecated 4.4.0
  *
- * @global wpdb $wpdb WordPress database abstraction object.
+ * @global wpdb $wpdb NotMattPress database abstraction object.
  *
  * @param string $domain Optional. Network domain.
  * @param string $path   Optional. Network path.
@@ -533,7 +533,7 @@ function wp_get_sites( $args = array() ) {
  * @since MU (3.0.0)
  * @deprecated 4.9.0
  *
- * @global wpdb $wpdb WordPress database abstraction object.
+ * @global wpdb $wpdb NotMattPress database abstraction object.
  *
  * @param string $key
  * @param int    $user_id Optional. Defaults to current user.
@@ -598,8 +598,8 @@ function insert_blog($domain, $path, $site_id) {
  * @since MU (3.0.0)
  * @deprecated 5.1.0
  *
- * @global wpdb     $wpdb     WordPress database abstraction object.
- * @global WP_Roles $wp_roles WordPress role management object.
+ * @global wpdb     $wpdb     NotMattPress database abstraction object.
+ * @global WP_Roles $wp_roles NotMattPress role management object.
  *
  * @param int    $blog_id    The value returned by wp_insert_site().
  * @param string $blog_title The title of the new site.
@@ -616,7 +616,7 @@ function install_blog( $blog_id, $blog_title = '' ) {
 
 	$suppress = $wpdb->suppress_errors();
 	if ( $wpdb->get_results( "DESCRIBE {$wpdb->posts}" ) ) {
-		die( '<h1>' . __( 'Already Installed' ) . '</h1><p>' . __( 'You appear to have already installed WordPress. To reinstall please clear your old database tables first.' ) . '</p></body></html>' );
+		die( '<h1>' . __( 'Already Installed' ) . '</h1><p>' . __( 'You appear to have already installed NotMattPress. To reinstall please clear your old database tables first.' ) . '</p></body></html>' );
 	}
 	$wpdb->suppress_errors( $suppress );
 
@@ -669,7 +669,7 @@ function install_blog( $blog_id, $blog_title = '' ) {
  * @deprecated MU
  * @deprecated Use wp_install_defaults()
  *
- * @global wpdb $wpdb WordPress database abstraction object.
+ * @global wpdb $wpdb NotMattPress database abstraction object.
  *
  * @param int $blog_id Ignored in this function.
  * @param int $user_id
@@ -697,7 +697,7 @@ function install_blog_defaults( $blog_id, $user_id ) {
  * @deprecated 5.3.0 Use wp_update_user()
  * @see wp_update_user()
  *
- * @global wpdb $wpdb WordPress database abstraction object.
+ * @global wpdb $wpdb NotMattPress database abstraction object.
  *
  * @param int    $id         The user ID.
  * @param string $pref       The column in the wp_users table to update the user's status

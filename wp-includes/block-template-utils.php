@@ -2,7 +2,7 @@
 /**
  * Utilities used to fetch and create templates and template parts.
  *
- * @package WordPress
+ * @package NotMattPress
  * @since 5.8.0
  */
 
@@ -1094,7 +1094,7 @@ function get_block_templates( $query = array(), $template_type = 'wp_template' )
 	/**
 	 * Filters the block templates array before the query takes place.
 	 *
-	 * Return a non-null value to bypass the WordPress queries.
+	 * Return a non-null value to bypass the NotMattPress queries.
 	 *
 	 * @since 5.9.0
 	 *
@@ -1187,7 +1187,7 @@ function get_block_templates( $query = array(), $template_type = 'wp_template' )
 		 * would be excluded otherwise, like `page.html` when looking for
 		 * `page` templates. We need all templates so we can exclude duplicates
 		 * from plugin-registered templates.
-		 * See: https://github.com/WordPress/gutenberg/issues/65584
+		 * See: https://github.com/NotMattPress/gutenberg/issues/65584
 		 */
 		$template_files_query = $query;
 		unset( $template_files_query['post_type'] );
@@ -1277,7 +1277,7 @@ function get_block_template( $id, $template_type = 'wp_template' ) {
 	/**
 	 * Filters the block template object before the query takes place.
 	 *
-	 * Return a non-null value to bypass the WordPress queries.
+	 * Return a non-null value to bypass the NotMattPress queries.
 	 *
 	 * @since 5.9.0
 	 *
@@ -1352,7 +1352,7 @@ function get_block_file_template( $id, $template_type = 'wp_template' ) {
 	/**
 	 * Filters the block template object before the theme file discovery takes place.
 	 *
-	 * Return a non-null value to bypass the WordPress theme file discovery.
+	 * Return a non-null value to bypass the NotMattPress theme file discovery.
 	 *
 	 * @since 5.9.0
 	 *

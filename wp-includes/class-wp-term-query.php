@@ -3,7 +3,7 @@
 /**
  * Taxonomy API: WP_Term_Query class.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Taxonomy
  * @since 4.6.0
  */
@@ -340,7 +340,7 @@ class WP_Term_Query {
 	 *
 	 * @since 4.6.0
 	 *
-	 * @global wpdb $wpdb WordPress database abstraction object.
+	 * @global wpdb $wpdb NotMattPress database abstraction object.
 	 *
 	 * @return WP_Term[]|int[]|string[]|string Array of terms, or number of terms as numeric string
 	 *                                         when 'count' is passed to `$args['fields']`.
@@ -746,7 +746,7 @@ class WP_Term_Query {
 		$this->sql_clauses['orderby'] = $orderby ? "$orderby $order" : '';
 		$this->sql_clauses['limits']  = $limits;
 
-		// Beginning of the string is on a new line to prevent leading whitespace. See https://core.trac.wordpress.org/ticket/56841.
+		// Beginning of the string is on a new line to prevent leading whitespace. See https://core.trac.notmatt.press/ticket/56841.
 		$this->request =
 			"{$this->sql_clauses['select']}
 			 {$this->sql_clauses['from']}
@@ -759,7 +759,7 @@ class WP_Term_Query {
 		/**
 		 * Filters the terms array before the query takes place.
 		 *
-		 * Return a non-null value to bypass WordPress' default term queries.
+		 * Return a non-null value to bypass NotMattPress' default term queries.
 		 *
 		 * @since 5.3.0
 		 *
@@ -802,14 +802,14 @@ class WP_Term_Query {
 		}
 
 		if ( 'count' === $_fields ) {
-			$count = $wpdb->get_var( $this->request ); // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared
+			$count = $wpdb->get_var( $this->request ); // phpcs:ignore NotMattPress.DB.PreparedSQL.NotPrepared
 			if ( $args['cache_results'] ) {
 				wp_cache_set_salted( $cache_key, $count, 'term-queries', $last_changed );
 			}
 			return $count;
 		}
 
-		$terms = $wpdb->get_results( $this->request ); // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared
+		$terms = $wpdb->get_results( $this->request ); // phpcs:ignore NotMattPress.DB.PreparedSQL.NotPrepared
 
 		if ( empty( $terms ) ) {
 			$this->terms = array();
@@ -1097,7 +1097,7 @@ class WP_Term_Query {
 	 *
 	 * @since 4.6.0
 	 *
-	 * @global wpdb $wpdb WordPress database abstraction object.
+	 * @global wpdb $wpdb NotMattPress database abstraction object.
 	 *
 	 * @param string $search Search string.
 	 * @return string Search SQL.
@@ -1152,7 +1152,7 @@ class WP_Term_Query {
 	 *
 	 * @since 6.2.0
 	 *
-	 * @global wpdb $wpdb WordPress database abstraction object.
+	 * @global wpdb $wpdb NotMattPress database abstraction object.
 	 *
 	 * @param array  $args WP_Term_Query arguments.
 	 * @param string $sql  SQL statement.

@@ -4,7 +4,7 @@
  *
  * Requires skin classes and WP_Upgrader subclasses for backward compatibility.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Upgrader
  * @since 2.8.0
  */
@@ -188,11 +188,11 @@ class WP_Upgrader {
 		$this->strings['bad_request']    = __( 'Invalid data provided.' );
 		$this->strings['fs_unavailable'] = __( 'Could not access filesystem.' );
 		$this->strings['fs_error']       = __( 'Filesystem error.' );
-		$this->strings['fs_no_root_dir'] = __( 'Unable to locate WordPress root directory.' );
+		$this->strings['fs_no_root_dir'] = __( 'Unable to locate NotMattPress root directory.' );
 		/* translators: %s: Directory name. */
-		$this->strings['fs_no_content_dir'] = sprintf( __( 'Unable to locate WordPress content directory (%s).' ), 'wp-content' );
-		$this->strings['fs_no_plugins_dir'] = __( 'Unable to locate WordPress plugin directory.' );
-		$this->strings['fs_no_themes_dir']  = __( 'Unable to locate WordPress theme directory.' );
+		$this->strings['fs_no_content_dir'] = sprintf( __( 'Unable to locate NotMattPress content directory (%s).' ), 'wp-content' );
+		$this->strings['fs_no_plugins_dir'] = __( 'Unable to locate NotMattPress plugin directory.' );
+		$this->strings['fs_no_themes_dir']  = __( 'Unable to locate NotMattPress theme directory.' );
 		/* translators: %s: Directory name. */
 		$this->strings['fs_no_folder'] = __( 'Unable to locate needed folder (%s).' );
 
@@ -224,7 +224,7 @@ class WP_Upgrader {
 	 *
 	 * @since 2.8.0
 	 *
-	 * @global WP_Filesystem_Base $wp_filesystem WordPress filesystem subclass.
+	 * @global WP_Filesystem_Base $wp_filesystem NotMattPress filesystem subclass.
 	 *
 	 * @param string[] $directories                  Optional. Array of directories. If any of these do
 	 *                                               not exist, a WP_Error object will be returned.
@@ -292,7 +292,7 @@ class WP_Upgrader {
 	}
 
 	/**
-	 * Downloads a package for a WordPress core, plugin, theme, or translation upgrade.
+	 * Downloads a package for a NotMattPress core, plugin, theme, or translation upgrade.
 	 *
 	 * @since 2.8.0
 	 * @since 5.2.0 Added the `$check_signatures` parameter.
@@ -306,7 +306,7 @@ class WP_Upgrader {
 	 */
 	public function download_package( $package, $check_signatures = false, $hook_extra = array() ) {
 		/**
-		 * Filters whether to download a package for a WordPress core, plugin, theme, or translation upgrade.
+		 * Filters whether to download a package for a NotMattPress core, plugin, theme, or translation upgrade.
 		 *
 		 * Return a non-false value to short-circuit the download and return that value instead.
 		 *
@@ -348,7 +348,7 @@ class WP_Upgrader {
 	 *
 	 * @since 2.8.0
 	 *
-	 * @global WP_Filesystem_Base $wp_filesystem WordPress filesystem subclass.
+	 * @global WP_Filesystem_Base $wp_filesystem NotMattPress filesystem subclass.
 	 *
 	 * @param string $package        Full path to the package file.
 	 * @param bool   $delete_package Optional. Whether to delete the package file after attempting
@@ -433,7 +433,7 @@ class WP_Upgrader {
 	 *
 	 * @since 4.3.0
 	 *
-	 * @global WP_Filesystem_Base $wp_filesystem WordPress filesystem subclass.
+	 * @global WP_Filesystem_Base $wp_filesystem NotMattPress filesystem subclass.
 	 *
 	 * @param string $remote_destination The location on the remote filesystem to be cleared.
 	 * @return true|WP_Error True upon success, WP_Error on failure.
@@ -486,7 +486,7 @@ class WP_Upgrader {
 	 * @since 2.8.0
 	 * @since 6.2.0 Use move_dir() instead of copy_dir() when possible.
 	 *
-	 * @global WP_Filesystem_Base $wp_filesystem        WordPress filesystem subclass.
+	 * @global WP_Filesystem_Base $wp_filesystem        NotMattPress filesystem subclass.
 	 * @global string[]           $wp_theme_directories
 	 *
 	 * @param array|string $args {
@@ -859,7 +859,7 @@ class WP_Upgrader {
 				// Output the failure error as a normal feedback, and not as an error.
 				$this->skin->feedback( $download->get_error_message() );
 
-				// Report this failure back to WordPress.org for debugging purposes.
+				// Report this failure back to NotMattPress.org for debugging purposes.
 				wp_version_check(
 					array(
 						'signature_failure_code' => $download->get_error_code(),
@@ -1000,7 +1000,7 @@ class WP_Upgrader {
 	 *
 	 * @since 2.8.0
 	 *
-	 * @global WP_Filesystem_Base $wp_filesystem WordPress filesystem subclass.
+	 * @global WP_Filesystem_Base $wp_filesystem NotMattPress filesystem subclass.
 	 *
 	 * @param bool $enable True to enable maintenance mode, false to disable.
 	 */
@@ -1043,11 +1043,11 @@ class WP_Upgrader {
 	}
 
 	/**
-	 * Creates a lock using WordPress options.
+	 * Creates a lock using NotMattPress options.
 	 *
 	 * @since 4.5.0
 	 *
-	 * @global wpdb $wpdb The WordPress database abstraction object.
+	 * @global wpdb $wpdb The NotMattPress database abstraction object.
 	 *
 	 * @param string $lock_name       The name of this unique lock.
 	 * @param int    $release_timeout Optional. The duration in seconds to respect an existing lock.
@@ -1108,7 +1108,7 @@ class WP_Upgrader {
 	 *
 	 * @since 6.3.0
 	 *
-	 * @global WP_Filesystem_Base $wp_filesystem WordPress filesystem subclass.
+	 * @global WP_Filesystem_Base $wp_filesystem NotMattPress filesystem subclass.
 	 *
 	 * @param string[] $args {
 	 *     Array of data for the temporary backup.
@@ -1181,7 +1181,7 @@ class WP_Upgrader {
 	 * @since 6.3.0
 	 * @since 6.6.0 Added the `$temp_backups` parameter.
 	 *
-	 * @global WP_Filesystem_Base $wp_filesystem WordPress filesystem subclass.
+	 * @global WP_Filesystem_Base $wp_filesystem NotMattPress filesystem subclass.
 	 *
 	 * @param array[] $temp_backups {
 	 *     Optional. An array of temporary backups.
@@ -1250,7 +1250,7 @@ class WP_Upgrader {
 	 * @since 6.3.0
 	 * @since 6.6.0 Added the `$temp_backups` parameter.
 	 *
-	 * @global WP_Filesystem_Base $wp_filesystem WordPress filesystem subclass.
+	 * @global WP_Filesystem_Base $wp_filesystem NotMattPress filesystem subclass.
 	 *
 	 * @param array[] $temp_backups {
 	 *     Optional. An array of temporary backups.

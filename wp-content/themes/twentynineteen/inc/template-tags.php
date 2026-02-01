@@ -2,7 +2,7 @@
 /**
  * Custom template tags for this theme
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Twenty_Nineteen
  * @since Twenty Nineteen 1.0
  */
@@ -246,7 +246,7 @@ if ( ! function_exists( 'wp_body_open' ) ) :
 	/**
 	 * Fires the wp_body_open action.
 	 *
-	 * Added for backward compatibility to support pre-5.2.0 WordPress versions.
+	 * Added for backward compatibility to support pre-5.2.0 NotMattPress versions.
 	 *
 	 * @since Twenty Nineteen 1.4
 	 */

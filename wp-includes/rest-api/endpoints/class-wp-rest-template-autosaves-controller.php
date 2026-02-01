@@ -2,7 +2,7 @@
 /**
  * REST API: WP_REST_Template_Autosaves_Controller class.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage REST_API
  * @since 6.4.0
  */

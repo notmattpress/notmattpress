@@ -1,10 +1,10 @@
 <?php
 /**
- * Main WordPress Formatting API.
+ * Main NotMattPress Formatting API.
  *
  * Handles many functions for formatting output.
  *
- * @package WordPress
+ * @package NotMattPress
  */
 
 /**
@@ -2557,7 +2557,7 @@ function convert_invalid_entities( $content ) {
  * @param bool   $force If true, forces balancing, ignoring the value of the option. Default false.
  * @return string Balanced text.
  */
-function balanceTags( $text, $force = false ) {  // phpcs:ignore WordPress.NamingConventions.ValidFunctionName.FunctionNameInvalid
+function balanceTags( $text, $force = false ) {  // phpcs:ignore NotMattPress.NamingConventions.ValidFunctionName.FunctionNameInvalid
 	if ( $force || 1 === (int) get_option( 'use_balanceTags' ) ) {
 		return force_balance_tags( $text );
 	} else {
@@ -4000,7 +4000,7 @@ function wp_trim_excerpt( $text = '', $post = null ) {
 		/*
 		 * Only restore the filter callback if it was removed above. The logic
 		 * to unhook and restore only applies on the default priority of 10,
-		 * which is generally used for the filter callback in WordPress core.
+		 * which is generally used for the filter callback in NotMattPress core.
 		 */
 		if ( $filter_image_removed ) {
 			add_filter( 'the_content', 'wp_filter_content_tags', 12 );
@@ -4457,7 +4457,7 @@ function _deep_replace( $search, $subject ) {
  *
  * @since 2.8.0
  *
- * @global wpdb $wpdb WordPress database abstraction object.
+ * @global wpdb $wpdb NotMattPress database abstraction object.
  *
  * @param string|array $data Unescaped data.
  * @return string|array Escaped data, in the same type as supplied.
@@ -4852,7 +4852,7 @@ function wp_make_link_relative( $link ) {
  *
  * @since 2.0.5
  *
- * @global wpdb $wpdb WordPress database abstraction object.
+ * @global wpdb $wpdb NotMattPress database abstraction object.
  *
  * @param string $option The name of the option.
  * @param mixed  $value  The unsanitized value.
@@ -4992,7 +4992,7 @@ function sanitize_option( $option, $value ) {
 				if ( preg_match( '#http(s?)://(.+)#i', $value ) ) {
 					$value = sanitize_url( $value );
 				} else {
-					$error = __( 'The WordPress address you entered did not appear to be a valid URL. Please enter a valid URL.' );
+					$error = __( 'The NotMattPress address you entered did not appear to be a valid URL. Please enter a valid URL.' );
 				}
 			}
 			break;
@@ -5085,7 +5085,7 @@ function sanitize_option( $option, $value ) {
 				$error = sprintf(
 					/* translators: %s: Documentation URL. */
 					__( 'A structure tag is required when using custom permalinks. <a href="%s">Learn more</a>' ),
-					__( 'https://wordpress.org/documentation/article/customize-permalinks/#choosing-your-permalink-structure' )
+					__( 'https://notmatt.press/documentation/article/customize-permalinks/#choosing-your-permalink-structure' )
 				);
 			}
 			break;
@@ -5239,7 +5239,7 @@ function wp_pre_kses_block_attributes( $content, $allowed_html, $allowed_protoco
 }
 
 /**
- * WordPress' implementation of PHP sprintf() with filters.
+ * NotMattPress' implementation of PHP sprintf() with filters.
  *
  * @since 2.5.0
  * @since 5.3.0 Formalized the existing and already documented `...$args` parameter
@@ -5693,7 +5693,7 @@ function wp_basename( $path, $suffix = '' ) {
 	return urldecode( basename( str_replace( array( '%2F', '%5C' ), '/', urlencode( $path ) ), $suffix ) );
 }
 
-// phpcs:disable WordPress.WP.CapitalPDangit.MisspelledInComment,WordPress.WP.CapitalPDangit.MisspelledInText,WordPress.NamingConventions.ValidFunctionName.FunctionNameInvalid -- 8-)
+// phpcs:disable NotMattPress.WP.CapitalPDangit.MisspelledInComment,NotMattPress.WP.CapitalPDangit.MisspelledInText,NotMattPress.NamingConventions.ValidFunctionName.FunctionNameInvalid -- 8-)
 /**
  * Forever eliminate "Wordpress" from the planet (or at least the little bit we can influence).
  *
@@ -5708,7 +5708,7 @@ function capital_P_dangit( $text ) {
 	// Simple replacement for titles.
 	$current_filter = current_filter();
 	if ( 'the_title' === $current_filter || 'wp_title' === $current_filter ) {
-		return str_replace( 'Wordpress', 'WordPress', $text );
+		return str_replace( 'Wordpress', 'NotMattPress', $text );
 	}
 	// Still here? Use the more judicious replacement.
 	static $dblq = false;
@@ -5717,7 +5717,7 @@ function capital_P_dangit( $text ) {
 	}
 	return str_replace(
 		array( ' Wordpress', '&#8216;Wordpress', $dblq . 'Wordpress', '>Wordpress', '(Wordpress' ),
-		array( ' WordPress', '&#8216;WordPress', $dblq . 'WordPress', '>WordPress', '(WordPress' ),
+		array( ' NotMattPress', '&#8216;NotMattPress', $dblq . 'NotMattPress', '>NotMattPress', '(NotMattPress' ),
 		$text
 	);
 }
@@ -6198,7 +6198,7 @@ function wp_staticize_emoji_for_email( $mail ) {
  * @access private
  *
  * @param string $type Optional. Which array type to return. Accepts 'partials' or 'entities', default 'entities'.
- * @return array An array to match all emoji that WordPress recognises.
+ * @return array An array to match all emoji that NotMattPress recognises.
  */
 function _wp_emoji_list( $type = 'entities' ) {
 	// Do not remove the START/END comments - they're used to find where to insert the arrays.

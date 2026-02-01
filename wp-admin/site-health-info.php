@@ -2,7 +2,7 @@
 /**
  * Tools Administration Screen.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Administration
  */
 
@@ -44,7 +44,7 @@ wp_admin_notice(
 	<p>
 		<?php
 			/* translators: %s: URL to Site Health Status page. */
-			printf( __( 'This page can show you every detail about the configuration of your WordPress website. For any improvements that could be made, see the <a href="%s">Site Health Status</a> page.' ), esc_url( admin_url( 'site-health.php' ) ) );
+			printf( __( 'This page can show you every detail about the configuration of your NotMattPress website. For any improvements that could be made, see the <a href="%s">Site Health Status</a> page.' ), esc_url( admin_url( 'site-health.php' ) ) );
 		?>
 	</p>
 	<p>

@@ -3,7 +3,7 @@
  * These functions can be replaced via plugins. If plugins do not redefine these
  * functions, then these will be used instead.
  *
- * @package WordPress
+ * @package NotMattPress
  */
 
 if ( ! function_exists( 'wp_set_current_user' ) ) :
@@ -12,7 +12,7 @@ if ( ! function_exists( 'wp_set_current_user' ) ) :
 	 *
 	 * Set $id to null and specify a name if you do not know a user's ID.
 	 *
-	 * Some WordPress functionality is based on the current user and not based on
+	 * Some NotMattPress functionality is based on the current user and not based on
 	 * the signed in user. Therefore, it opens the ability to edit and perform
 	 * actions on users who aren't signed in.
 	 *
@@ -118,7 +118,7 @@ if ( ! function_exists( 'cache_users' ) ) :
 	 *
 	 * @since 3.0.0
 	 *
-	 * @global wpdb $wpdb WordPress database abstraction object.
+	 * @global wpdb $wpdb NotMattPress database abstraction object.
 	 *
 	 * @param int[] $user_ids User ID numbers list
 	 */
@@ -395,7 +395,7 @@ if ( ! function_exists( 'wp_mail' ) ) :
 		 * to 7-bit by PHPMailer (based on the body contents) in a previous call
 		 * to wp_mail().
 		 *
-		 * See https://core.trac.wordpress.org/ticket/33972
+		 * See https://core.trac.notmatt.press/ticket/33972
 		 */
 		$phpmailer->Encoding = PHPMailer\PHPMailer\PHPMailer::ENCODING_8BIT;
 
@@ -403,7 +403,7 @@ if ( ! function_exists( 'wp_mail' ) ) :
 
 		// If we don't have a name from the input headers.
 		if ( ! isset( $from_name ) ) {
-			$from_name = 'WordPress';
+			$from_name = 'NotMattPress';
 		}
 
 		/*
@@ -411,7 +411,7 @@ if ( ! function_exists( 'wp_mail' ) ) :
 		 * Some hosts will block outgoing mail from this address if it doesn't exist,
 		 * but there's no easy alternative. Defaulting to admin_email might appear to be
 		 * another option, but some hosts may refuse to relay mail from an unknown domain.
-		 * See https://core.trac.wordpress.org/ticket/5007.
+		 * See https://core.trac.notmatt.press/ticket/5007.
 		 */
 		if ( ! isset( $from_email ) ) {
 			// Get the site domain and get rid of www.
@@ -1252,7 +1252,7 @@ if ( ! function_exists( 'is_user_logged_in' ) ) :
 	 * Determines whether the current visitor is a logged in user.
 	 *
 	 * For more information on this and similar theme functions, check out
-	 * the {@link https://developer.wordpress.org/themes/basics/conditional-tags/
+	 * the {@link https://developer.notmatt.press/themes/basics/conditional-tags/
 	 * Conditional Tags} article in the Theme Developer Handbook.
 	 *
 	 * @since 2.0.0
@@ -1479,10 +1479,10 @@ if ( ! function_exists( 'wp_redirect' ) ) :
 	 *
 	 * @param string       $location      The path or URL to redirect to.
 	 * @param int          $status        Optional. HTTP response status code to use. Default '302' (Moved Temporarily).
-	 * @param string|false $x_redirect_by Optional. The application doing the redirect or false to omit. Default 'WordPress'.
+	 * @param string|false $x_redirect_by Optional. The application doing the redirect or false to omit. Default 'NotMattPress'.
 	 * @return bool False if the redirect was canceled, true otherwise.
 	 */
-	function wp_redirect( $location, $status = 302, $x_redirect_by = 'WordPress' ) {
+	function wp_redirect( $location, $status = 302, $x_redirect_by = 'NotMattPress' ) {
 		global $is_IIS;
 
 		/**
@@ -1622,10 +1622,10 @@ if ( ! function_exists( 'wp_safe_redirect' ) ) :
 	 *
 	 * @param string       $location      The path or URL to redirect to.
 	 * @param int          $status        Optional. HTTP response status code to use. Default '302' (Moved Temporarily).
-	 * @param string|false $x_redirect_by Optional. The application doing the redirect or false to omit. Default 'WordPress'.
+	 * @param string|false $x_redirect_by Optional. The application doing the redirect or false to omit. Default 'NotMattPress'.
 	 * @return bool False if the redirect was canceled, true otherwise.
 	 */
-	function wp_safe_redirect( $location, $status = 302, $x_redirect_by = 'WordPress' ) {
+	function wp_safe_redirect( $location, $status = 302, $x_redirect_by = 'NotMattPress' ) {
 
 		// Need to look at the URL the way it will end up in wp_redirect().
 		$location = wp_sanitize_redirect( $location );
@@ -1994,7 +1994,7 @@ if ( ! function_exists( 'wp_notify_moderator' ) ) :
 	 *
 	 * @since 1.0.0
 	 *
-	 * @global wpdb $wpdb WordPress database abstraction object.
+	 * @global wpdb $wpdb NotMattPress database abstraction object.
 	 *
 	 * Uses the {@see 'notify_moderator'} filter to determine whether the site moderator
 	 * should be notified, overriding the site setting.
@@ -2381,7 +2381,7 @@ if ( ! function_exists( 'wp_new_user_notification' ) ) :
 		 * end in a period. To avoid the ambiguity, ensure that the login is not the last query
 		 * arg in the URL. If moving it to the end, a trailing period will need to be escaped.
 		 *
-		 * @see https://core.trac.wordpress.org/tickets/42957
+		 * @see https://core.trac.notmatt.press/tickets/42957
 		 */
 		$message .= network_site_url( 'wp-login.php?login=' . rawurlencode( $user->user_login ) . "&key=$key&action=rp", 'login' ) . "\r\n";
 
@@ -2556,7 +2556,7 @@ if ( ! function_exists( 'wp_salt' ) ) :
 	 * The secret keys in wp-config.php should be updated to strong, random keys to maximize
 	 * security. Below is an example of how the secret key constants are defined.
 	 * Do not paste this example directly into wp-config.php. Instead, have a
-	 * {@link https://api.wordpress.org/secret-key/1.1/salt/ secret key created} just
+	 * {@link https://api.notmatt.press/secret-key/1.1/salt/ secret key created} just
 	 * for you.
 	 *
 	 *     define('AUTH_KEY',         ' Xakm<o xQy rw4EMsLKM-?!T+,PFF})H4lzcW57AF0U@N@< >M%G4Yt>f`z]MON');
@@ -2573,7 +2573,7 @@ if ( ! function_exists( 'wp_salt' ) ) :
 	 *
 	 * @since 2.5.0
 	 *
-	 * @link https://api.wordpress.org/secret-key/1.1/salt/ Create secrets for wp-config.php
+	 * @link https://api.notmatt.press/secret-key/1.1/salt/ Create secrets for wp-config.php
 	 *
 	 * @param string $scheme Authentication scheme (auth, secure_auth, logged_in, nonce).
 	 * @return string Salt value
@@ -2582,7 +2582,7 @@ if ( ! function_exists( 'wp_salt' ) ) :
 		static $cached_salts = array();
 		if ( isset( $cached_salts[ $scheme ] ) ) {
 			/**
-			 * Filters the WordPress salt.
+			 * Filters the NotMattPress salt.
 			 *
 			 * @since 2.5.0
 			 *
@@ -2612,7 +2612,7 @@ if ( ! function_exists( 'wp_salt' ) ) :
 			/*
 			 * translators: This string should only be translated if wp-config-sample.php is localized.
 			 * You can check the localized release package or
-			 * https://i18n.svn.wordpress.org/<locale code>/branches/<wp version>/dist/wp-config-sample.php
+			 * https://i18n.svn.notmatt.press/<locale code>/branches/<wp version>/dist/wp-config-sample.php
 			 */
 			$duplicated_keys[ __( 'put your unique phrase here' ) ] = true;
 		}
@@ -2825,7 +2825,7 @@ if ( ! function_exists( 'wp_check_password' ) ) :
 	 * instead use the other package password hashing algorithm.
 	 *
 	 * @since 2.5.0
-	 * @since 6.8.0 Passwords in WordPress are now hashed with bcrypt by default. A
+	 * @since 6.8.0 Passwords in NotMattPress are now hashed with bcrypt by default. A
 	 *              password that wasn't hashed with bcrypt will be checked with phpass.
 	 *
 	 * @global PasswordHash $wp_hasher phpass object. Used as a fallback for verifying
@@ -2888,8 +2888,8 @@ if ( ! function_exists( 'wp_password_needs_rehash' ) ) :
 	 * Checks whether a password hash needs to be rehashed.
 	 *
 	 * Passwords are hashed with bcrypt using the default cost. A password hashed in a prior version
-	 * of WordPress may still be hashed with phpass and will need to be rehashed. If the default cost
-	 * or algorithm is changed in PHP or WordPress then a password hashed in a previous version will
+	 * of NotMattPress may still be hashed with phpass and will need to be rehashed. If the default cost
+	 * or algorithm is changed in PHP or NotMattPress then a password hashed in a previous version will
 	 * need to be rehashed.
 	 *
 	 * Note that, just like wp_check_password(), this function may be used to check a value that is
@@ -3091,7 +3091,7 @@ if ( ! function_exists( 'wp_set_password' ) ) :
 	 * @since 2.5.0
 	 * @since 6.8.0 The password is now hashed using bcrypt by default instead of phpass.
 	 *
-	 * @global wpdb $wpdb WordPress database abstraction object.
+	 * @global wpdb $wpdb NotMattPress database abstraction object.
 	 *
 	 * @param string $password The plaintext new user password.
 	 * @param int    $user_id  User ID.

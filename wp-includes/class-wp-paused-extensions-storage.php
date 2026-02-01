@@ -2,7 +2,7 @@
 /**
  * Error Protection API: WP_Paused_Extensions_Storage class
  *
- * @package WordPress
+ * @package NotMattPress
  * @since 5.2.0
  */
 

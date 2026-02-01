@@ -2,7 +2,7 @@
 /**
  * The template for displaying posts in the Quote post format
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Twenty_Twelve
  * @since Twenty Twelve 1.0
  */

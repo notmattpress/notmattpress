@@ -4,7 +4,7 @@
  * Slug: twentytwentyfive/template-query-loop-vertical-header-blog
  * Inserter: no
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Twenty_Twenty_Five
  * @since Twenty Twenty-Five 1.0
  */

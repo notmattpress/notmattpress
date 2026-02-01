@@ -1,17 +1,17 @@
 <?php
 /**
- * WordPress Administration Scheme API
+ * NotMattPress Administration Scheme API
  *
  * Here we keep the DB structure and option values.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Administration
  */
 
 /**
  * Declare these as global in case schema.php is included from a function.
  *
- * @global wpdb   $wpdb            WordPress database abstraction object.
+ * @global wpdb   $wpdb            NotMattPress database abstraction object.
  * @global array  $wp_queries
  * @global string $charset_collate
  */
@@ -27,7 +27,7 @@ $charset_collate = $wpdb->get_charset_collate();
  *
  * @since 3.3.0
  *
- * @global wpdb $wpdb WordPress database abstraction object.
+ * @global wpdb $wpdb NotMattPress database abstraction object.
  *
  * @param string $scope   Optional. The tables for which to retrieve SQL. Can be all, global, ms_global, or blog tables. Defaults to all.
  * @param int    $blog_id Optional. The site ID for which to retrieve SQL. Default is the current site ID.
@@ -348,13 +348,13 @@ CREATE TABLE $wpdb->signups (
 $wp_queries = wp_get_db_schema( 'all' );
 
 /**
- * Create WordPress options and set the default values.
+ * Create NotMattPress options and set the default values.
  *
  * @since 1.5.0
  * @since 5.1.0 The $options parameter has been added.
  *
- * @global wpdb $wpdb                  WordPress database abstraction object.
- * @global int  $wp_db_version         WordPress database version.
+ * @global wpdb $wpdb                  NotMattPress database abstraction object.
+ * @global int  $wp_db_version         NotMattPress database version.
  * @global int  $wp_current_db_version The old (current) database version.
  *
  * @param array $options Optional. Custom option $key => $value pairs to use. Default empty array.
@@ -364,7 +364,7 @@ function populate_options( array $options = array() ) {
 
 	$guessurl = wp_guess_url();
 	/**
-	 * Fires before creating WordPress options and populating their default values.
+	 * Fires before creating NotMattPress options and populating their default values.
 	 *
 	 * @since 2.6.0
 	 */
@@ -551,7 +551,7 @@ function populate_options( array $options = array() ) {
 		'auto_update_core_minor'          => 'enabled',
 		/*
 		 * Default to enabled for new installs.
-		 * See https://core.trac.wordpress.org/ticket/51742.
+		 * See https://core.trac.notmatt.press/ticket/51742.
 		 */
 		'auto_update_core_major'          => 'enabled',
 
@@ -588,7 +588,7 @@ function populate_options( array $options = array() ) {
 	);
 
 	$keys             = "'" . implode( "', '", array_keys( $options ) ) . "'";
-	$existing_options = $wpdb->get_col( "SELECT option_name FROM $wpdb->options WHERE option_name in ( $keys )" ); // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared
+	$existing_options = $wpdb->get_col( "SELECT option_name FROM $wpdb->options WHERE option_name in ( $keys )" ); // phpcs:ignore NotMattPress.DB.PreparedSQL.NotPrepared
 
 	$insert = '';
 
@@ -613,7 +613,7 @@ function populate_options( array $options = array() ) {
 	}
 
 	if ( ! empty( $insert ) ) {
-		$wpdb->query( "INSERT INTO $wpdb->options (option_name, option_value, autoload) VALUES " . $insert ); // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared
+		$wpdb->query( "INSERT INTO $wpdb->options (option_name, option_value, autoload) VALUES " . $insert ); // phpcs:ignore NotMattPress.DB.PreparedSQL.NotPrepared
 	}
 
 	// In case it is set, but blank, update "home".
@@ -712,7 +712,7 @@ function populate_options( array $options = array() ) {
 }
 
 /**
- * Execute WordPress role creation for the various WordPress versions.
+ * Execute NotMattPress role creation for the various NotMattPress versions.
  *
  * @since 2.0.0
  */
@@ -743,7 +743,7 @@ function populate_roles() {
 }
 
 /**
- * Create the roles for WordPress 2.0
+ * Create the roles for NotMattPress 2.0
  *
  * @since 2.0.0
  */
@@ -835,7 +835,7 @@ function populate_roles_160() {
 }
 
 /**
- * Create and modify WordPress roles for WordPress 2.1.
+ * Create and modify NotMattPress roles for NotMattPress 2.1.
  *
  * @since 2.1.0
  */
@@ -883,7 +883,7 @@ function populate_roles_210() {
 }
 
 /**
- * Create and modify WordPress roles for WordPress 2.3.
+ * Create and modify NotMattPress roles for NotMattPress 2.3.
  *
  * @since 2.3.0
  */
@@ -896,7 +896,7 @@ function populate_roles_230() {
 }
 
 /**
- * Create and modify WordPress roles for WordPress 2.5.
+ * Create and modify NotMattPress roles for NotMattPress 2.5.
  *
  * @since 2.5.0
  */
@@ -909,7 +909,7 @@ function populate_roles_250() {
 }
 
 /**
- * Create and modify WordPress roles for WordPress 2.6.
+ * Create and modify NotMattPress roles for NotMattPress 2.6.
  *
  * @since 2.6.0
  */
@@ -923,7 +923,7 @@ function populate_roles_260() {
 }
 
 /**
- * Create and modify WordPress roles for WordPress 2.7.
+ * Create and modify NotMattPress roles for NotMattPress 2.7.
  *
  * @since 2.7.0
  */
@@ -937,7 +937,7 @@ function populate_roles_270() {
 }
 
 /**
- * Create and modify WordPress roles for WordPress 2.8.
+ * Create and modify NotMattPress roles for NotMattPress 2.8.
  *
  * @since 2.8.0
  */
@@ -950,7 +950,7 @@ function populate_roles_280() {
 }
 
 /**
- * Create and modify WordPress roles for WordPress 3.0.
+ * Create and modify NotMattPress roles for NotMattPress 3.0.
  *
  * @since 3.0.0
  */
@@ -988,9 +988,9 @@ endif;
  *
  * @since 3.0.0
  *
- * @global wpdb       $wpdb         WordPress database abstraction object.
+ * @global wpdb       $wpdb         NotMattPress database abstraction object.
  * @global object     $current_site
- * @global WP_Rewrite $wp_rewrite   WordPress rewrite component.
+ * @global WP_Rewrite $wp_rewrite   NotMattPress rewrite component.
  *
  * @param int    $network_id        ID of network to populate.
  * @param string $domain            The domain name for the network. Example: "example.com".
@@ -1218,12 +1218,12 @@ function populate_network( $network_id = 1, $domain = '', $email = '', $site_nam
 }
 
 /**
- * Creates WordPress network meta and sets the default values.
+ * Creates NotMattPress network meta and sets the default values.
  *
  * @since 5.1.0
  *
- * @global wpdb $wpdb          WordPress database abstraction object.
- * @global int  $wp_db_version WordPress database version.
+ * @global wpdb $wpdb          NotMattPress database abstraction object.
+ * @global int  $wp_db_version NotMattPress database version.
  *
  * @param int   $network_id Network ID to populate meta for.
  * @param array $meta       Optional. Custom meta $key => $value pairs to use. Default empty array.
@@ -1369,15 +1369,15 @@ We hope you enjoy your new site. Thanks!
 		}
 		$insert .= $wpdb->prepare( '( %d, %s, %s)', $network_id, $meta_key, $meta_value );
 	}
-	$wpdb->query( "INSERT INTO $wpdb->sitemeta ( site_id, meta_key, meta_value ) VALUES " . $insert ); // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared
+	$wpdb->query( "INSERT INTO $wpdb->sitemeta ( site_id, meta_key, meta_value ) VALUES " . $insert ); // phpcs:ignore NotMattPress.DB.PreparedSQL.NotPrepared
 }
 
 /**
- * Creates WordPress site meta and sets the default values.
+ * Creates NotMattPress site meta and sets the default values.
  *
  * @since 5.1.0
  *
- * @global wpdb $wpdb WordPress database abstraction object.
+ * @global wpdb $wpdb NotMattPress database abstraction object.
  *
  * @param int   $site_id Site ID to populate meta for.
  * @param array $meta    Optional. Custom meta $key => $value pairs to use. Default empty array.
@@ -1416,7 +1416,7 @@ function populate_site_meta( $site_id, array $meta = array() ) {
 		$insert .= $wpdb->prepare( '( %d, %s, %s)', $site_id, $meta_key, $meta_value );
 	}
 
-	$wpdb->query( "INSERT INTO $wpdb->blogmeta ( blog_id, meta_key, meta_value ) VALUES " . $insert ); // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared
+	$wpdb->query( "INSERT INTO $wpdb->blogmeta ( blog_id, meta_key, meta_value ) VALUES " . $insert ); // phpcs:ignore NotMattPress.DB.PreparedSQL.NotPrepared
 
 	wp_cache_delete( $site_id, 'blog_meta' );
 	wp_cache_set_sites_last_changed();
