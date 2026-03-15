@@ -367,7 +367,7 @@ import { Link, privateApis as routePrivateApis } from "@wordpress/route";
 // packages/boot/build-module/lock-unlock.mjs
 var import_private_apis = __toESM(require_private_apis(), 1);
 var { lock, unlock } = (0, import_private_apis.__dangerousOptInToUnstableAPIsOnlyForCoreModules)(
-  "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of WordPress.",
+  "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of NotMattPress.",
   "@wordpress/boot"
 );
 
@@ -1597,7 +1597,7 @@ function useRouteTitle() {
       const decodedSiteTitle = (0, import_html_entities2.decodeEntities)(siteTitle);
       const formattedTitle = (0, import_i18n9.sprintf)(
         /* translators: Admin document title. 1: Admin screen name, 2: Site name. */
-        (0, import_i18n9.__)("%1$s \u2039 %2$s \u2014 WordPress"),
+        (0, import_i18n9.__)("%1$s \u2039 %2$s \u2014 NotMattPress"),
         decodedRouteTitle,
         decodedSiteTitle
       );

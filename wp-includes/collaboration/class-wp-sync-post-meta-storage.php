@@ -2,7 +2,7 @@
 /**
  * WP_Sync_Post_Meta_Storage class
  *
- * @package WordPress
+ * @package NotMattPress
  */
 
 /**

@@ -2,28 +2,28 @@
 /**
  * WP AI Client: WP_AI_Client_HTTP_Client class
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage AI
  * @since 7.0.0
  */
 
-use WordPress\AiClientDependencies\Psr\Http\Client\ClientInterface;
-use WordPress\AiClientDependencies\Psr\Http\Message\RequestInterface;
-use WordPress\AiClientDependencies\Psr\Http\Message\ResponseInterface;
-use WordPress\AiClientDependencies\Psr\Http\Message\ResponseFactoryInterface;
-use WordPress\AiClientDependencies\Psr\Http\Message\StreamFactoryInterface;
-use WordPress\AiClient\Providers\Http\Contracts\ClientWithOptionsInterface;
-use WordPress\AiClient\Providers\Http\DTO\RequestOptions;
-use WordPress\AiClient\Providers\Http\Exception\NetworkException;
+use NotMattPress\AiClientDependencies\Psr\Http\Client\ClientInterface;
+use NotMattPress\AiClientDependencies\Psr\Http\Message\RequestInterface;
+use NotMattPress\AiClientDependencies\Psr\Http\Message\ResponseInterface;
+use NotMattPress\AiClientDependencies\Psr\Http\Message\ResponseFactoryInterface;
+use NotMattPress\AiClientDependencies\Psr\Http\Message\StreamFactoryInterface;
+use NotMattPress\AiClient\Providers\Http\Contracts\ClientWithOptionsInterface;
+use NotMattPress\AiClient\Providers\Http\DTO\RequestOptions;
+use NotMattPress\AiClient\Providers\Http\Exception\NetworkException;
 
 /**
- * PSR-18 HTTP Client adapter using WordPress HTTP API.
+ * PSR-18 HTTP Client adapter using NotMattPress HTTP API.
  *
- * Allows WordPress HTTP functions to be used as a PSR-18 compliant HTTP client
+ * Allows NotMattPress HTTP functions to be used as a PSR-18 compliant HTTP client
  * for the AI Client SDK.
  *
  * @since 7.0.0
- * @internal Intended only to wire up the PHP AI Client SDK to WordPress's HTTP client.
+ * @internal Intended only to wire up the PHP AI Client SDK to NotMattPress's HTTP client.
  * @access private
  */
 class WP_AI_Client_HTTP_Client implements ClientInterface, ClientWithOptionsInterface {
@@ -65,7 +65,7 @@ class WP_AI_Client_HTTP_Client implements ClientInterface, ClientWithOptionsInte
 	 * @param RequestInterface $request The PSR-7 request.
 	 * @return ResponseInterface The PSR-7 response.
 	 *
-	 * @throws NetworkException If the WordPress HTTP request fails.
+	 * @throws NetworkException If the NotMattPress HTTP request fails.
 	 */
 	public function sendRequest( RequestInterface $request ): ResponseInterface {
 		$args = $this->prepare_wp_args( $request );
@@ -81,7 +81,7 @@ class WP_AI_Client_HTTP_Client implements ClientInterface, ClientWithOptionsInte
 				$url,
 				$response->get_error_message()
 			);
-			throw new NetworkException( $message ); // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
+			throw new NetworkException( $message ); // phpcs:ignore NotMattPress.Security.EscapeOutput.ExceptionNotEscaped
 		}
 
 		return $this->create_psr_response( $response );
@@ -96,7 +96,7 @@ class WP_AI_Client_HTTP_Client implements ClientInterface, ClientWithOptionsInte
 	 * @param RequestOptions   $options Transport options for the request.
 	 * @return ResponseInterface The PSR-7 response.
 	 *
-	 * @throws NetworkException If the WordPress HTTP request fails.
+	 * @throws NetworkException If the NotMattPress HTTP request fails.
 	 */
 	public function sendRequestWithOptions( RequestInterface $request, RequestOptions $options ): ResponseInterface {
 		$args = $this->prepare_wp_args( $request, $options );
@@ -113,7 +113,7 @@ class WP_AI_Client_HTTP_Client implements ClientInterface, ClientWithOptionsInte
 			);
 
 			throw new NetworkException(
-				$message, // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
+				$message, // phpcs:ignore NotMattPress.Security.EscapeOutput.ExceptionNotEscaped
 				$response->get_error_code() ? (int) $response->get_error_code() : 0
 			);
 		}
@@ -122,13 +122,13 @@ class WP_AI_Client_HTTP_Client implements ClientInterface, ClientWithOptionsInte
 	}
 
 	/**
-	 * Prepares WordPress HTTP API arguments from a PSR-7 request.
+	 * Prepares NotMattPress HTTP API arguments from a PSR-7 request.
 	 *
 	 * @since 7.0.0
 	 *
 	 * @param RequestInterface    $request The PSR-7 request.
 	 * @param RequestOptions|null $options Optional transport options for the request.
-	 * @return array<string, mixed> WordPress HTTP API arguments.
+	 * @return array<string, mixed> NotMattPress HTTP API arguments.
 	 */
 	private function prepare_wp_args( RequestInterface $request, ?RequestOptions $options = null ): array {
 		$args = array(
@@ -153,12 +153,12 @@ class WP_AI_Client_HTTP_Client implements ClientInterface, ClientWithOptionsInte
 	}
 
 	/**
-	 * Prepares headers for WordPress HTTP API.
+	 * Prepares headers for NotMattPress HTTP API.
 	 *
 	 * @since 7.0.0
 	 *
 	 * @param RequestInterface $request The PSR-7 request.
-	 * @return array<string, string> Headers array for WordPress HTTP API.
+	 * @return array<string, string> Headers array for NotMattPress HTTP API.
 	 */
 	private function prepare_headers( RequestInterface $request ): array {
 		$headers = array();
@@ -171,7 +171,7 @@ class WP_AI_Client_HTTP_Client implements ClientInterface, ClientWithOptionsInte
 	}
 
 	/**
-	 * Prepares request body for WordPress HTTP API.
+	 * Prepares request body for NotMattPress HTTP API.
 	 *
 	 * @since 7.0.0
 	 *
@@ -193,11 +193,11 @@ class WP_AI_Client_HTTP_Client implements ClientInterface, ClientWithOptionsInte
 	}
 
 	/**
-	 * Creates a PSR-7 response from a WordPress HTTP response.
+	 * Creates a PSR-7 response from a NotMattPress HTTP response.
 	 *
 	 * @since 7.0.0
 	 *
-	 * @param array<string, mixed> $wp_response WordPress HTTP API response array.
+	 * @param array<string, mixed> $wp_response NotMattPress HTTP API response array.
 	 * @return ResponseInterface PSR-7 response.
 	 */
 	private function create_psr_response( array $wp_response ): ResponseInterface {

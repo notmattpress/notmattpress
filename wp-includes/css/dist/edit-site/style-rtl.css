@@ -20,7 +20,7 @@
  */
 /**
  * Grid System.
- * https://make.wordpress.org/design/2019/10/31/proposal-a-consistent-spacing-system-for-wordpress/
+ * https://make.notmatt.press/design/2019/10/31/proposal-a-consistent-spacing-system-for-wordpress/
  */
 /**
  * Radius scale.
@@ -125,7 +125,7 @@
  */
 /**
  * Grid System.
- * https://make.wordpress.org/design/2019/10/31/proposal-a-consistent-spacing-system-for-wordpress/
+ * https://make.notmatt.press/design/2019/10/31/proposal-a-consistent-spacing-system-for-wordpress/
  */
 /**
  * Radius scale.
@@ -293,7 +293,7 @@
  */
 /**
  * Grid System.
- * https://make.wordpress.org/design/2019/10/31/proposal-a-consistent-spacing-system-for-wordpress/
+ * https://make.notmatt.press/design/2019/10/31/proposal-a-consistent-spacing-system-for-wordpress/
  */
 /**
  * Radius scale.
@@ -2810,7 +2810,7 @@ div.dataviews-view-list {
  */
 /**
  * Grid System.
- * https://make.wordpress.org/design/2019/10/31/proposal-a-consistent-spacing-system-for-wordpress/
+ * https://make.notmatt.press/design/2019/10/31/proposal-a-consistent-spacing-system-for-wordpress/
  */
 /**
  * Radius scale.
@@ -3341,7 +3341,7 @@ fieldset.fields__media-edit .fields__media-edit-expanded:not(.is-empty) .fields_
  */
 /**
  * Grid System.
- * https://make.wordpress.org/design/2019/10/31/proposal-a-consistent-spacing-system-for-wordpress/
+ * https://make.notmatt.press/design/2019/10/31/proposal-a-consistent-spacing-system-for-wordpress/
  */
 /**
  * Radius scale.
@@ -4635,7 +4635,7 @@ button.font-library__upload-area {
    * yet it needs the Sidebar component for the React context.
    *
    * This removes the padding in this scenario.
-   * See https://github.com/WordPress/gutenberg/pull/63118
+   * See https://github.com/NotMattPress/gutenberg/pull/63118
    */
 }
 .edit-site-layout__mobile .edit-site-sidebar__screen-wrapper {

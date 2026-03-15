@@ -1,18 +1,18 @@
 <?php
 /**
- * WordPress AI Client API.
+ * NotMattPress AI Client API.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage AI
  * @since 7.0.0
  */
 
-use WordPress\AiClient\AiClient;
+use NotMattPress\AiClient\AiClient;
 
 /**
  * Creates a new AI prompt builder using the default provider registry.
  *
- * This is the main entry point for generating AI content in WordPress. It returns
+ * This is the main entry point for generating AI content in NotMattPress. It returns
  * a fluent builder that can be used to configure and execute AI prompts.
  *
  * The prompt can be provided as a simple string for basic text prompts, or as more

@@ -2,7 +2,7 @@
 /**
  * Template loading functions.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Template
  */
 
@@ -753,9 +753,9 @@ function locate_template( $template_names, $load = false, $load_once = true, $ar
 }
 
 /**
- * Requires the template file with WordPress environment.
+ * Requires the template file with NotMattPress environment.
  *
- * The globals are set up for the template file to ensure that the WordPress
+ * The globals are set up for the template file to ensure that the NotMattPress
  * environment is available from within the function. The query variables are
  * also available.
  *
@@ -765,11 +765,11 @@ function locate_template( $template_names, $load = false, $load_once = true, $ar
  * @global array      $posts
  * @global WP_Post    $post          Global post object.
  * @global bool       $wp_did_header
- * @global WP_Query   $wp_query      WordPress Query object.
- * @global WP_Rewrite $wp_rewrite    WordPress rewrite component.
- * @global wpdb       $wpdb          WordPress database abstraction object.
+ * @global WP_Query   $wp_query      NotMattPress Query object.
+ * @global WP_Rewrite $wp_rewrite    NotMattPress rewrite component.
+ * @global wpdb       $wpdb          NotMattPress database abstraction object.
  * @global string     $wp_version
- * @global WP         $wp            Current WordPress environment instance.
+ * @global WP         $wp            Current NotMattPress environment instance.
  * @global int        $id
  * @global WP_Comment $comment       Global comment object.
  * @global int        $user_ID
@@ -791,7 +791,7 @@ function load_template( $_template_file, $load_once = true, $args = array() ) {
 		 * Passing the EXTR_SKIP flag is the safest option, ensuring globals and
 		 * function variables cannot be overwritten.
 		 */
-		// phpcs:ignore WordPress.PHP.DontExtract.extract_extract
+		// phpcs:ignore NotMattPress.PHP.DontExtract.extract_extract
 		extract( $wp_query->query_vars, EXTR_SKIP );
 	}
 
@@ -887,10 +887,10 @@ function wp_start_template_enhancement_output_buffer(): bool {
 		 * output buffer callback could check if the phase is PHP_OUTPUT_HANDLER_FLUSH and abort any subsequent
 		 * processing while also emitting a _doing_it_wrong().
 		 *
-		 * The output buffer needs to be removable because WordPress calls wp_ob_end_flush_all() and then calls
+		 * The output buffer needs to be removable because NotMattPress calls wp_ob_end_flush_all() and then calls
 		 * wp_cache_close(). If the buffers are not all flushed before wp_cache_close() is closed, then some output buffer
 		 * handlers (e.g. for caching plugins) may fail to be able to store the page output in the object cache.
-		 * See <https://github.com/WordPress/performance/pull/1317#issuecomment-2271955356>.
+		 * See <https://github.com/NotMattPress/performance/pull/1317#issuecomment-2271955356>.
 		 */
 		PHP_OUTPUT_HANDLER_STDFLAGS ^ PHP_OUTPUT_HANDLER_FLUSHABLE
 	);

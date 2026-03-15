@@ -751,7 +751,7 @@ class getid3_lib
 			if (PHP_VERSION_ID < 80000) {
 				if (function_exists('libxml_disable_entity_loader')) {
 					// http://websec.io/2012/08/27/Preventing-XEE-in-PHP.html
-					// https://core.trac.wordpress.org/changeset/29378
+					// https://core.trac.notmatt.press/changeset/29378
 					// This function has been deprecated in PHP 8.0 because in libxml 2.9.0, external entity loading is
 					// disabled by default, but is still needed when LIBXML_NOENT is used.
 					$loader = @libxml_disable_entity_loader(true);

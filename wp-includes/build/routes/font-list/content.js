@@ -1518,7 +1518,7 @@ function useCurrentMergeThemeStyleVariationsWithUserConfig(properties = []) {
 // packages/global-styles-ui/build-module/lock-unlock.mjs
 var import_private_apis = __toESM(require_private_apis(), 1);
 var { lock, unlock } = (0, import_private_apis.__dangerousOptInToUnstableAPIsOnlyForCoreModules)(
-  "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of WordPress.",
+  "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of NotMattPress.",
   "@wordpress/global-styles-ui"
 );
 
@@ -14997,7 +14997,7 @@ function FontLibrary({
 // routes/font-list/lock-unlock.ts
 var import_private_apis2 = __toESM(require_private_apis());
 var { unlock: unlock2 } = (0, import_private_apis2.__dangerousOptInToUnstableAPIsOnlyForCoreModules)(
-  "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of WordPress.",
+  "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of NotMattPress.",
   "@wordpress/font-list-route"
 );
 

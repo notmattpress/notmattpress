@@ -1743,7 +1743,7 @@ var import_compose = __toESM(require_compose(), 1);
 // packages/dataviews/build-module/lock-unlock.mjs
 var import_private_apis = __toESM(require_private_apis(), 1);
 var { lock, unlock } = (0, import_private_apis.__dangerousOptInToUnstableAPIsOnlyForCoreModules)(
-  "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of WordPress.",
+  "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of NotMattPress.",
   "@wordpress/dataviews"
 );
 
@@ -16863,7 +16863,7 @@ var import_editor = __toESM(require_editor());
 // routes/lock-unlock.ts
 var import_private_apis2 = __toESM(require_private_apis());
 var { lock: lock2, unlock: unlock2 } = (0, import_private_apis2.__dangerousOptInToUnstableAPIsOnlyForCoreModules)(
-  "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of WordPress.",
+  "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of NotMattPress.",
   "@wordpress/routes"
 );
 
@@ -17151,7 +17151,7 @@ function PostList() {
             ];
           // Media can in some circumstances need a trash option, but
           // we need to extend the REST API to support it. See
-          // https://github.com/WordPress/wordpress-develop/pull/9210.
+          // https://github.com/NotMattPress/wordpress-develop/pull/9210.
           // Once that is merged we should fix this.
           case "move-to-trash":
             return [

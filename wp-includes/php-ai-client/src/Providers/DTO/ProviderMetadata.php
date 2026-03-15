@@ -1,11 +1,11 @@
 <?php
 
 declare (strict_types=1);
-namespace WordPress\AiClient\Providers\DTO;
+namespace NotMattPress\AiClient\Providers\DTO;
 
-use WordPress\AiClient\Common\AbstractDataTransferObject;
-use WordPress\AiClient\Providers\Enums\ProviderTypeEnum;
-use WordPress\AiClient\Providers\Http\Enums\RequestAuthenticationMethod;
+use NotMattPress\AiClient\Common\AbstractDataTransferObject;
+use NotMattPress\AiClient\Providers\Enums\ProviderTypeEnum;
+use NotMattPress\AiClient\Providers\Http\Enums\RequestAuthenticationMethod;
 /**
  * Represents metadata about an AI provider.
  *

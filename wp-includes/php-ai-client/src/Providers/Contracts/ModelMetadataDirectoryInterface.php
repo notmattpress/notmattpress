@@ -1,10 +1,10 @@
 <?php
 
 declare (strict_types=1);
-namespace WordPress\AiClient\Providers\Contracts;
+namespace NotMattPress\AiClient\Providers\Contracts;
 
-use WordPress\AiClient\Common\Exception\InvalidArgumentException;
-use WordPress\AiClient\Providers\Models\DTO\ModelMetadata;
+use NotMattPress\AiClient\Common\Exception\InvalidArgumentException;
+use NotMattPress\AiClient\Providers\Models\DTO\ModelMetadata;
 /**
  * Interface for accessing model metadata within a provider.
  *

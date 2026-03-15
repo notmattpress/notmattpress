@@ -2,7 +2,7 @@
 /**
  * WP_HTTP_Polling_Sync_Server class
  *
- * @package WordPress
+ * @package NotMattPress
  */
 
 /**

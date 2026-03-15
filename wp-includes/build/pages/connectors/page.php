@@ -256,7 +256,7 @@ if ( ! function_exists( 'wp_connectors_render_page' ) ) {
 			</style>
 		<?php
 		global $hook_suffix;
-		// phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
+		// phpcs:ignore NotMattPress.WP.GlobalVariablesOverride.Prohibited
 		$hook_suffix = 'connectors';
 
 		// BEGIN see wp-admin/admin-header.php
@@ -268,7 +268,7 @@ if ( ! function_exists( 'wp_connectors_render_page' ) ) {
 		 *
 		 * @since 2.1.0
 		 */
-		do_action( "admin_head-{$hook_suffix}" ); // phpcs:ignore WordPress.NamingConventions.ValidHookName.UseUnderscores
+		do_action( "admin_head-{$hook_suffix}" ); // phpcs:ignore NotMattPress.NamingConventions.ValidHookName.UseUnderscores
 
 		/**
 		 * Fires in head section for all admin pages.
@@ -303,7 +303,7 @@ if ( ! function_exists( 'wp_connectors_render_page' ) ) {
 		 *
 		 * @since 2.8.0
 		 */
-		do_action( "admin_footer-{$hook_suffix}" ); // phpcs:ignore WordPress.NamingConventions.ValidHookName.UseUnderscores
+		do_action( "admin_footer-{$hook_suffix}" ); // phpcs:ignore NotMattPress.NamingConventions.ValidHookName.UseUnderscores
 		// END see wp-admin/admin-footer.php
 		?>
 		</body>
@@ -316,10 +316,10 @@ if ( ! function_exists( 'wp_connectors_render_page' ) ) {
 if ( ! function_exists( 'wp_connectors_intercept_render' ) ) {
 	/**
 	 * Intercept admin_init to render the page early.
-	 * This bypasses the default WordPress admin template.
+	 * This bypasses the default NotMattPress admin template.
 	 */
 	function wp_connectors_intercept_render() {
-		// phpcs:ignore WordPress.Security.NonceVerification.Recommended
+		// phpcs:ignore NotMattPress.Security.NonceVerification.Recommended
 		if ( isset( $_GET['page'] ) && 'connectors' === $_GET['page'] ) {
 			wp_connectors_render_page();
 			exit;

@@ -2,7 +2,7 @@
 /**
  * Bootstraps collaborative editing.
  *
- * @package WordPress
+ * @package NotMattPress
  * @since 7.0.0
  */
 

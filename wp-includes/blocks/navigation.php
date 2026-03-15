@@ -2,7 +2,7 @@
 /**
  * Server-side rendering of the `core/navigation` block.
  *
- * @package WordPress
+ * @package NotMattPress
  */
 
 /**
@@ -12,7 +12,7 @@
  * This function centralizes the migration logic from the boolean
  * openSubmenusOnClick to the new submenuVisibility enum.
  *
- * Backward compatibility: WordPress applies default attribute values, so submenuVisibility
+ * Backward compatibility: NotMattPress applies default attribute values, so submenuVisibility
  * will always have a value even for legacy blocks. We check the legacy openSubmenusOnClick
  * attribute first to preserve original behavior for blocks saved before the migration.
  *
@@ -25,7 +25,7 @@ function block_core_navigation_get_submenu_visibility( $attributes ) {
 	$deprecated_open_submenus_on_click = $attributes['openSubmenusOnClick'] ?? null;
 
 	// For backward compatibility, prioritize the legacy attribute if present.
-	// Legacy blocks have openSubmenusOnClick in the database. Since WordPress applies
+	// Legacy blocks have openSubmenusOnClick in the database. Since NotMattPress applies
 	// default values, submenuVisibility will also have a value, but we check the legacy
 	// attribute first to preserve the original behavior. If the block has been updated
 	// and saved in the editor, then the deprecated attribute will be replaced by submenuVisibility.
@@ -1013,7 +1013,7 @@ class WP_Navigation_Block_Renderer {
 // when the gutenberg plugin is active.
 if ( defined( 'IS_GUTENBERG_PLUGIN' ) && IS_GUTENBERG_PLUGIN ) {
 	/**
-	 * Returns the menu items for a WordPress menu location.
+	 * Returns the menu items for a NotMattPress menu location.
 	 *
 	 * @since 5.9.0
 	 *
@@ -1414,7 +1414,7 @@ function block_core_navigation_block_contains_core_navigation( $inner_blocks ) {
  * site when there is no menu assigned to the Nav block.
  *
  * This aims to mirror how the fallback mechanic for wp_nav_menu works.
- * See https://developer.wordpress.org/reference/functions/wp_nav_menu/#more-information.
+ * See https://developer.notmatt.press/reference/functions/wp_nav_menu/#more-information.
  *
  * @since 5.9.0
  *

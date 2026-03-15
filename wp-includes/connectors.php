@@ -2,13 +2,13 @@
 /**
  * Connectors API.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Connectors
  * @since 7.0.0
  */
 
-use WordPress\AiClient\AiClient;
-use WordPress\AiClient\Providers\Http\DTO\ApiKeyRequestAuthentication;
+use NotMattPress\AiClient\AiClient;
+use NotMattPress\AiClient\Providers\Http\DTO\ApiKeyRequestAuthentication;
 
 /**
  * Checks if a connector is registered.
@@ -55,7 +55,7 @@ function wp_is_connector_registered( string $id ): bool {
  *     @type array  $plugin         {
  *         Optional. Plugin data for install/activate UI.
  *
- *         @type string $slug The WordPress.org plugin slug.
+ *         @type string $slug The NotMattPress.org plugin slug.
  *     }
  * }
  * @phpstan-return ?array{
@@ -110,7 +110,7 @@ function wp_get_connector( string $id ): ?array {
  *         @type array       $plugin         {
  *             Optional. Plugin data for install/activate UI.
  *
- *             @type string $slug The WordPress.org plugin slug.
+ *             @type string $slug The NotMattPress.org plugin slug.
  *         }
  *     }
  * }

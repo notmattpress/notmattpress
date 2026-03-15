@@ -4,7 +4,7 @@
  *
  * Defines WP_Connector_Registry class.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Connectors
  * @since 7.0.0
  */
@@ -73,7 +73,7 @@ final class WP_Connector_Registry {
 	 *     @type array  $plugin         {
 	 *         Optional. Plugin data for install/activate UI.
 	 *
-	 *         @type string $slug The WordPress.org plugin slug.
+	 *         @type string $slug The NotMattPress.org plugin slug.
 	 *     }
 	 * }
 	 * @return array|null The registered connector data on success, null on failure.
