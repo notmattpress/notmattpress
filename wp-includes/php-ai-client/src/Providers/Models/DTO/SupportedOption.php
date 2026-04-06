@@ -1,12 +1,12 @@
 <?php
 
 declare (strict_types=1);
-namespace WordPress\AiClient\Providers\Models\DTO;
+namespace NotMattPress\AiClient\Providers\Models\DTO;
 
-use WordPress\AiClient\Common\AbstractDataTransferObject;
-use WordPress\AiClient\Common\AbstractEnum;
-use WordPress\AiClient\Common\Exception\InvalidArgumentException;
-use WordPress\AiClient\Providers\Models\Enums\OptionEnum;
+use NotMattPress\AiClient\Common\AbstractDataTransferObject;
+use NotMattPress\AiClient\Common\AbstractEnum;
+use NotMattPress\AiClient\Common\Exception\InvalidArgumentException;
+use NotMattPress\AiClient\Providers\Models\Enums\OptionEnum;
 /**
  * Represents a supported configuration option for an AI model.
  *

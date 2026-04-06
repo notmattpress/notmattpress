@@ -5,7 +5,7 @@
 	"title": "Comment Edit Link",
 	"category": "theme",
 	"ancestor": [ "core/comment-template" ],
-	"description": "Displays a link to edit the comment in the WordPress Dashboard. This link is only visible to users with the edit comment capability.",
+	"description": "Displays a link to edit the comment in the NotMattPress Dashboard. This link is only visible to users with the edit comment capability.",
 	"textdomain": "default",
 	"usesContext": [ "commentId" ],
 	"attributes": {

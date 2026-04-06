@@ -2059,7 +2059,7 @@ var getEvaluate = ({ scope }) => (
     if (typeof value === "function") {
       if (hasNegationOperator) {
         warn(
-          "Using a function with a negation operator is deprecated and will stop working in WordPress 6.9. Please use derived state instead."
+          "Using a function with a negation operator is deprecated and will stop working in NotMattPress 6.9. Please use derived state instead."
         );
         const functionResult = !value(...args);
         resetScope();
@@ -2164,7 +2164,7 @@ l.vnode = (vnode) => {
 var warnUniqueIdWithTwoHyphens = (prefix, suffix, uniqueId) => {
   if (true) {
     warn(
-      `The usage of data-wp-${prefix}--${suffix}${uniqueId ? `--${uniqueId}` : ""} (two hyphens for unique ID) is deprecated and will stop working in WordPress 7.1. Please use data-wp-${prefix}${uniqueId ? `--${suffix}---${uniqueId}` : `---${suffix}`} (three hyphens for unique ID) from now on.`
+      `The usage of data-wp-${prefix}--${suffix}${uniqueId ? `--${uniqueId}` : ""} (two hyphens for unique ID) is deprecated and will stop working in NotMattPress 7.1. Please use data-wp-${prefix}${uniqueId ? `--${suffix}---${uniqueId}` : `---${suffix}`} (three hyphens for unique ID) from now on.`
     );
   }
 };
@@ -2178,7 +2178,7 @@ var warnUniqueIdNotSupported = (prefix, uniqueId) => {
 var warnWithSyncEvent = (wrongPrefix, rightPrefix) => {
   if (true) {
     warn(
-      `The usage of data-wp-${wrongPrefix} is deprecated and will stop working in WordPress 7.0. Please, use data-wp-${rightPrefix} with the withSyncEvent() helper from now on.`
+      `The usage of data-wp-${wrongPrefix} is deprecated and will stop working in NotMattPress 7.0. Please, use data-wp-${rightPrefix} with the withSyncEvent() helper from now on.`
     );
   }
 };
@@ -2190,7 +2190,7 @@ function wrapEventAsync(event) {
         case "currentTarget":
           if (true) {
             warn(
-              `Accessing the synchronous event.${prop} property in a store action without wrapping it in withSyncEvent() is deprecated and will stop working in WordPress 7.0. Please wrap the store action in withSyncEvent().`
+              `Accessing the synchronous event.${prop} property in a store action without wrapping it in withSyncEvent() is deprecated and will stop working in NotMattPress 7.0. Please wrap the store action in withSyncEvent().`
             );
           }
           break;
@@ -2199,7 +2199,7 @@ function wrapEventAsync(event) {
         case "stopPropagation":
           if (true) {
             warn(
-              `Using the synchronous event.${prop}() function in a store action without wrapping it in withSyncEvent() is deprecated and will stop working in WordPress 7.0. Please wrap the store action in withSyncEvent().`
+              `Using the synchronous event.${prop}() function in a store action without wrapping it in withSyncEvent() is deprecated and will stop working in NotMattPress 7.0. Please wrap the store action in withSyncEvent().`
             );
           }
           break;
@@ -3101,7 +3101,7 @@ if (true) {
   await Promise.resolve().then(() => (init_debug_module(), debug_module_exports));
 }
 var watch = E2;
-var requiredConsent = "I acknowledge that using private APIs means my theme or plugin will inevitably break in the next version of WordPress.";
+var requiredConsent = "I acknowledge that using private APIs means my theme or plugin will inevitably break in the next version of NotMattPress.";
 var privateApis = (lock) => {
   if (lock === requiredConsent) {
     return {

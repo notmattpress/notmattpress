@@ -2,21 +2,21 @@
 /**
  * WP AI Client: WP_AI_Client_Cache class
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage AI
  * @since 7.0.0
  */
 
-use WordPress\AiClientDependencies\Psr\SimpleCache\CacheInterface;
+use NotMattPress\AiClientDependencies\Psr\SimpleCache\CacheInterface;
 
 /**
- * WordPress-specific PSR-16 cache adapter for the AI Client.
+ * NotMattPress-specific PSR-16 cache adapter for the AI Client.
  *
- * Bridges PSR-16 cache operations to WordPress object cache functions,
- * enabling the AI client to leverage WordPress caching infrastructure.
+ * Bridges PSR-16 cache operations to NotMattPress object cache functions,
+ * enabling the AI client to leverage NotMattPress caching infrastructure.
  *
  * @since 7.0.0
- * @internal Intended only to wire up the PHP AI Client SDK to WordPress's caching system.
+ * @internal Intended only to wire up the PHP AI Client SDK to NotMattPress's caching system.
  * @access private
  */
 class WP_AI_Client_Cache implements CacheInterface {
@@ -176,7 +176,7 @@ class WP_AI_Client_Cache implements CacheInterface {
 	}
 
 	/**
-	 * Converts a PSR-16 TTL value to seconds for WordPress cache functions.
+	 * Converts a PSR-16 TTL value to seconds for NotMattPress cache functions.
 	 *
 	 * @since 7.0.0
 	 *

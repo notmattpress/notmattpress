@@ -1,7 +1,7 @@
 <?php
 
 declare (strict_types=1);
-namespace WordPress\AiClient\Common\Exception;
+namespace NotMattPress\AiClient\Common\Exception;
 
 /**
  * Exception thrown when a token limit is reached during prompt fulfillment.
@@ -12,7 +12,7 @@ namespace WordPress\AiClient\Common\Exception;
  *
  * @since 1.0.0
  */
-class TokenLimitReachedException extends \WordPress\AiClient\Common\Exception\RuntimeException
+class TokenLimitReachedException extends \NotMattPress\AiClient\Common\Exception\RuntimeException
 {
     /**
      * The token limit that was reached, if known.

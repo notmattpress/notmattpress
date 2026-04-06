@@ -142,7 +142,7 @@ if ( 'undefined' === typeof window.wp.codeEditor ) {
  * @param {Object & {
  *   codeEditor: WpCodeEditor,
  *   CodeMirror: typeof import('codemirror'),
- * }} wp - WordPress namespace.
+ * }} wp - NotMattPress namespace.
  */
 ( function( $, wp ) {
 	'use strict';

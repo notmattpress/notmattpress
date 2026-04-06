@@ -7,7 +7,7 @@
  * Viewport width: 1400
  * Description: A list of posts, 3 columns, with only featured images.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Twenty_Twenty_Five
  * @since Twenty Twenty-Five 1.0
  */

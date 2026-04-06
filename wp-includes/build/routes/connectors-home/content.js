@@ -1319,7 +1319,7 @@ function WpLogoDecoration() {
 // routes/connectors-home/ai-plugin-callout.tsx
 var AI_PLUGIN_SLUG = "ai";
 var AI_PLUGIN_ID = "ai/ai";
-var AI_PLUGIN_URL = "https://wordpress.org/plugins/ai/";
+var AI_PLUGIN_URL = "https://notmatt.press/plugins/ai/";
 var connectorDataValues = Object.values(getConnectorData());
 var hasAiProviders = connectorDataValues.some(
   (c) => c.type === "ai_provider"
@@ -1506,7 +1506,7 @@ function AiPluginCallout() {
 // routes/lock-unlock.ts
 var import_private_apis = __toESM(require_private_apis());
 var { lock, unlock } = (0, import_private_apis.__dangerousOptInToUnstableAPIsOnlyForCoreModules)(
-  "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of WordPress.",
+  "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of NotMattPress.",
   "@wordpress/routes"
 );
 

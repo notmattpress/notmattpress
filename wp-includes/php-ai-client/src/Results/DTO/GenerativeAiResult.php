@@ -1,16 +1,16 @@
 <?php
 
 declare (strict_types=1);
-namespace WordPress\AiClient\Results\DTO;
+namespace NotMattPress\AiClient\Results\DTO;
 
-use WordPress\AiClient\Common\AbstractDataTransferObject;
-use WordPress\AiClient\Common\Exception\InvalidArgumentException;
-use WordPress\AiClient\Common\Exception\RuntimeException;
-use WordPress\AiClient\Files\DTO\File;
-use WordPress\AiClient\Messages\DTO\Message;
-use WordPress\AiClient\Providers\DTO\ProviderMetadata;
-use WordPress\AiClient\Providers\Models\DTO\ModelMetadata;
-use WordPress\AiClient\Results\Contracts\ResultInterface;
+use NotMattPress\AiClient\Common\AbstractDataTransferObject;
+use NotMattPress\AiClient\Common\Exception\InvalidArgumentException;
+use NotMattPress\AiClient\Common\Exception\RuntimeException;
+use NotMattPress\AiClient\Files\DTO\File;
+use NotMattPress\AiClient\Messages\DTO\Message;
+use NotMattPress\AiClient\Providers\DTO\ProviderMetadata;
+use NotMattPress\AiClient\Providers\Models\DTO\ModelMetadata;
+use NotMattPress\AiClient\Results\Contracts\ResultInterface;
 /**
  * Represents the result of a generative AI operation.
  *
@@ -54,7 +54,7 @@ class GenerativeAiResult extends AbstractDataTransferObject implements ResultInt
     /**
      * @var TokenUsage Token usage statistics.
      */
-    private \WordPress\AiClient\Results\DTO\TokenUsage $tokenUsage;
+    private \NotMattPress\AiClient\Results\DTO\TokenUsage $tokenUsage;
     /**
      * @var ProviderMetadata Provider metadata.
      */
@@ -80,7 +80,7 @@ class GenerativeAiResult extends AbstractDataTransferObject implements ResultInt
      * @param array<string, mixed> $additionalData Additional data.
      * @throws InvalidArgumentException If no candidates provided.
      */
-    public function __construct(string $id, array $candidates, \WordPress\AiClient\Results\DTO\TokenUsage $tokenUsage, ProviderMetadata $providerMetadata, ModelMetadata $modelMetadata, array $additionalData = [])
+    public function __construct(string $id, array $candidates, \NotMattPress\AiClient\Results\DTO\TokenUsage $tokenUsage, ProviderMetadata $providerMetadata, ModelMetadata $modelMetadata, array $additionalData = [])
     {
         if (empty($candidates)) {
             throw new InvalidArgumentException('At least one candidate must be provided');
@@ -117,7 +117,7 @@ class GenerativeAiResult extends AbstractDataTransferObject implements ResultInt
      *
      * @since 0.1.0
      */
-    public function getTokenUsage(): \WordPress\AiClient\Results\DTO\TokenUsage
+    public function getTokenUsage(): \NotMattPress\AiClient\Results\DTO\TokenUsage
     {
         return $this->tokenUsage;
     }
@@ -365,7 +365,7 @@ class GenerativeAiResult extends AbstractDataTransferObject implements ResultInt
      */
     public function toMessages(): array
     {
-        return array_values(array_map(fn(\WordPress\AiClient\Results\DTO\Candidate $candidate) => $candidate->getMessage(), $this->candidates));
+        return array_values(array_map(fn(\NotMattPress\AiClient\Results\DTO\Candidate $candidate) => $candidate->getMessage(), $this->candidates));
     }
     /**
      * {@inheritDoc}
@@ -374,7 +374,7 @@ class GenerativeAiResult extends AbstractDataTransferObject implements ResultInt
      */
     public static function getJsonSchema(): array
     {
-        return ['type' => 'object', 'properties' => [self::KEY_ID => ['type' => 'string', 'description' => 'Unique identifier for this result.'], self::KEY_CANDIDATES => ['type' => 'array', 'items' => \WordPress\AiClient\Results\DTO\Candidate::getJsonSchema(), 'minItems' => 1, 'description' => 'The generated candidates.'], self::KEY_TOKEN_USAGE => \WordPress\AiClient\Results\DTO\TokenUsage::getJsonSchema(), self::KEY_PROVIDER_METADATA => ProviderMetadata::getJsonSchema(), self::KEY_MODEL_METADATA => ModelMetadata::getJsonSchema(), self::KEY_ADDITIONAL_DATA => ['type' => 'object', 'additionalProperties' => \true, 'description' => 'Additional data included in the API response.']], 'required' => [self::KEY_ID, self::KEY_CANDIDATES, self::KEY_TOKEN_USAGE, self::KEY_PROVIDER_METADATA, self::KEY_MODEL_METADATA]];
+        return ['type' => 'object', 'properties' => [self::KEY_ID => ['type' => 'string', 'description' => 'Unique identifier for this result.'], self::KEY_CANDIDATES => ['type' => 'array', 'items' => \NotMattPress\AiClient\Results\DTO\Candidate::getJsonSchema(), 'minItems' => 1, 'description' => 'The generated candidates.'], self::KEY_TOKEN_USAGE => \NotMattPress\AiClient\Results\DTO\TokenUsage::getJsonSchema(), self::KEY_PROVIDER_METADATA => ProviderMetadata::getJsonSchema(), self::KEY_MODEL_METADATA => ModelMetadata::getJsonSchema(), self::KEY_ADDITIONAL_DATA => ['type' => 'object', 'additionalProperties' => \true, 'description' => 'Additional data included in the API response.']], 'required' => [self::KEY_ID, self::KEY_CANDIDATES, self::KEY_TOKEN_USAGE, self::KEY_PROVIDER_METADATA, self::KEY_MODEL_METADATA]];
     }
     /**
      * {@inheritDoc}
@@ -385,7 +385,7 @@ class GenerativeAiResult extends AbstractDataTransferObject implements ResultInt
      */
     public function toArray(): array
     {
-        return [self::KEY_ID => $this->id, self::KEY_CANDIDATES => array_map(fn(\WordPress\AiClient\Results\DTO\Candidate $candidate) => $candidate->toArray(), $this->candidates), self::KEY_TOKEN_USAGE => $this->tokenUsage->toArray(), self::KEY_PROVIDER_METADATA => $this->providerMetadata->toArray(), self::KEY_MODEL_METADATA => $this->modelMetadata->toArray(), self::KEY_ADDITIONAL_DATA => $this->additionalData];
+        return [self::KEY_ID => $this->id, self::KEY_CANDIDATES => array_map(fn(\NotMattPress\AiClient\Results\DTO\Candidate $candidate) => $candidate->toArray(), $this->candidates), self::KEY_TOKEN_USAGE => $this->tokenUsage->toArray(), self::KEY_PROVIDER_METADATA => $this->providerMetadata->toArray(), self::KEY_MODEL_METADATA => $this->modelMetadata->toArray(), self::KEY_ADDITIONAL_DATA => $this->additionalData];
     }
     /**
      * {@inheritDoc}
@@ -395,8 +395,8 @@ class GenerativeAiResult extends AbstractDataTransferObject implements ResultInt
     public static function fromArray(array $array): self
     {
         static::validateFromArrayData($array, [self::KEY_ID, self::KEY_CANDIDATES, self::KEY_TOKEN_USAGE, self::KEY_PROVIDER_METADATA, self::KEY_MODEL_METADATA]);
-        $candidates = array_map(fn(array $candidateData) => \WordPress\AiClient\Results\DTO\Candidate::fromArray($candidateData), $array[self::KEY_CANDIDATES]);
-        return new self($array[self::KEY_ID], $candidates, \WordPress\AiClient\Results\DTO\TokenUsage::fromArray($array[self::KEY_TOKEN_USAGE]), ProviderMetadata::fromArray($array[self::KEY_PROVIDER_METADATA]), ModelMetadata::fromArray($array[self::KEY_MODEL_METADATA]), $array[self::KEY_ADDITIONAL_DATA] ?? []);
+        $candidates = array_map(fn(array $candidateData) => \NotMattPress\AiClient\Results\DTO\Candidate::fromArray($candidateData), $array[self::KEY_CANDIDATES]);
+        return new self($array[self::KEY_ID], $candidates, \NotMattPress\AiClient\Results\DTO\TokenUsage::fromArray($array[self::KEY_TOKEN_USAGE]), ProviderMetadata::fromArray($array[self::KEY_PROVIDER_METADATA]), ModelMetadata::fromArray($array[self::KEY_MODEL_METADATA]), $array[self::KEY_ADDITIONAL_DATA] ?? []);
     }
     /**
      * Performs a deep clone of the result.

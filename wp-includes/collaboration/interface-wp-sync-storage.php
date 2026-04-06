@@ -2,7 +2,7 @@
 /**
  * WP_Sync_Storage interface
  *
- * @package WordPress
+ * @package NotMattPress
  */
 
 interface WP_Sync_Storage {

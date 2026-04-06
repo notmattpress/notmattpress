@@ -1,8 +1,8 @@
-<?php // phpcs:ignore WordPress.Files.FileName.InvalidClassFileName // Needed for WP_Block_Cloner helper class.
+<?php // phpcs:ignore NotMattPress.Files.FileName.InvalidClassFileName // Needed for WP_Block_Cloner helper class.
 /**
  * Server-side rendering of the `core/block` block.
  *
- * @package WordPress
+ * @package NotMattPress
  */
 
 /**
@@ -84,10 +84,10 @@ function render_block_core_block( $attributes, $content, $block_instance ) {
 	$block_instance->parsed_block['innerBlocks']  = parse_blocks( $content );
 	$block_instance->parsed_block['innerContent'] = array_fill( 0, count( $block_instance->parsed_block['innerBlocks'] ), null );
 	if ( method_exists( $block_instance, 'refresh_context_dependents' ) ) {
-		// WP_Block::refresh_context_dependents() was introduced in WordPress 6.8.
+		// WP_Block::refresh_context_dependents() was introduced in NotMattPress 6.8.
 		$block_instance->refresh_context_dependents();
 	} else {
-		// This branch can be removed once Gutenberg requires WordPress 6.8 or later.
+		// This branch can be removed once Gutenberg requires NotMattPress 6.8 or later.
 		if ( ! class_exists( 'WP_Block_Cloner' ) ) {
 			// phpcs:ignore Gutenberg.Commenting.SinceTag.MissingClassSinceTag
 			class WP_Block_Cloner extends WP_Block {

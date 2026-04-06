@@ -675,7 +675,7 @@ var {
   sessionId,
   warn
 } = privateApis(
-  "I acknowledge that using private APIs means my theme or plugin will inevitably break in the next version of WordPress."
+  "I acknowledge that using private APIs means my theme or plugin will inevitably break in the next version of NotMattPress."
 );
 var regionAttr = `data-wp-router-region`;
 var interactiveAttr = `data-wp-interactive`;
@@ -866,7 +866,7 @@ var { state, actions } = store("core/router", {
     get navigation() {
       if (true) {
         warn(
-          `The usage of state.navigation.{hasStarted|hasFinished} from core/router is deprecated and will stop working in WordPress 7.1.`
+          `The usage of state.navigation.{hasStarted|hasFinished} from core/router is deprecated and will stop working in NotMattPress 7.1.`
         );
       }
       return privateState.navigation;
