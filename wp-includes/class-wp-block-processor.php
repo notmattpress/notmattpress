@@ -3,7 +3,7 @@
  * Efficiently scan through block structure in document without parsing
  * the entire block tree and all of its JSON attributes into memory.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Blocks
  * @since 6.9.0
  */
@@ -1846,12 +1846,12 @@ class WP_Block_Processor {
 	 *
 	 * Example:
 	 *
-	 *     $processor = new WP_Block_Processor( '<!-- wp:image {"url": "https://wordpress.org/favicon.ico"} -->' );
+	 *     $processor = new WP_Block_Processor( '<!-- wp:image {"url": "https://notmatt.press/favicon.ico"} -->' );
 	 *     $processor->next_delimiter();
 	 *     $memory_hungry_and_slow_attributes = $processor->allocate_and_return_parsed_attributes();
-	 *     $memory_hungry_and_slow_attributes === array( 'url' => 'https://wordpress.org/favicon.ico' );
+	 *     $memory_hungry_and_slow_attributes === array( 'url' => 'https://notmatt.press/favicon.ico' );
 	 *
-	 *     $processor = new WP_Block_Processor( '<!-- /wp:image {"url": "https://wordpress.org/favicon.ico"} -->' );
+	 *     $processor = new WP_Block_Processor( '<!-- /wp:image {"url": "https://notmatt.press/favicon.ico"} -->' );
 	 *     $processor->next_delimiter();
 	 *     null            = $processor->allocate_and_return_parsed_attributes();
 	 *     JSON_ERROR_NONE = $processor->get_last_json_error();

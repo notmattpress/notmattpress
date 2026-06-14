@@ -2,7 +2,7 @@
 /**
  * Object Cache API: WP_Object_Cache class
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Cache
  * @since 5.4.0
  */
@@ -10,7 +10,7 @@
 /**
  * Core class that implements an object cache.
  *
- * The WordPress Object Cache is used to save on trips to the database. The
+ * The NotMattPress Object Cache is used to save on trips to the database. The
  * Object Cache stores all of the cache data to memory and makes the cache
  * contents available by using a key, which is used to name and later retrieve
  * the cache contents.
@@ -283,7 +283,7 @@ class WP_Object_Cache {
 	 * The cache contents are grouped by the $group parameter followed by the
 	 * $key. This allows for duplicate IDs in unique groups. Therefore, naming of
 	 * the group should be used with care and should follow normal function
-	 * naming guidelines outside of core WordPress usage.
+	 * naming guidelines outside of core NotMattPress usage.
 	 *
 	 * The $expire parameter is not used, because the cache will automatically
 	 * expire for each time a page is accessed and PHP finishes. The method is

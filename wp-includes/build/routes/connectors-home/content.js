@@ -891,7 +891,7 @@ import {
 // routes/lock-unlock.ts
 var import_private_apis = __toESM(require_private_apis());
 var { lock, unlock } = (0, import_private_apis.__dangerousOptInToUnstableAPIsOnlyForCoreModules)(
-  "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of WordPress.",
+  "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of NotMattPress.",
   "@wordpress/routes"
 );
 
@@ -1414,7 +1414,7 @@ var PluginDirectoryLink = ({ slug }) => /* @__PURE__ */ React.createElement(
   {
     href: (0, import_i18n2.sprintf)(
       /* translators: %s: plugin slug. */
-      (0, import_i18n2.__)("https://wordpress.org/plugins/%s/"),
+      (0, import_i18n2.__)("https://notmatt.press/plugins/%s/"),
       slug
     )
   },
@@ -1564,7 +1564,7 @@ function WpLogoDecoration() {
 var AI_PLUGIN_SLUG = "ai";
 var AI_PLUGIN_PAGE_SLUG = "ai-wp-admin";
 var AI_PLUGIN_ID = "ai/ai";
-var AI_PLUGIN_URL = "https://wordpress.org/plugins/ai/";
+var AI_PLUGIN_URL = "https://notmatt.press/plugins/ai/";
 var connectorDataValues = Object.values(getConnectorData());
 var hasAiProviders = connectorDataValues.some(
   (c) => c.type === "ai_provider"

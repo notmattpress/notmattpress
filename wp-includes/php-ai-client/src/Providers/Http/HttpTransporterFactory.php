@@ -1,11 +1,11 @@
 <?php
 
 declare (strict_types=1);
-namespace WordPress\AiClient\Providers\Http;
+namespace NotMattPress\AiClient\Providers\Http;
 
-use WordPress\AiClientDependencies\Http\Discovery\Psr17FactoryDiscovery;
-use WordPress\AiClientDependencies\Http\Discovery\Psr18ClientDiscovery;
-use WordPress\AiClient\Providers\Http\Contracts\HttpTransporterInterface;
+use NotMattPress\AiClientDependencies\Http\Discovery\Psr17FactoryDiscovery;
+use NotMattPress\AiClientDependencies\Http\Discovery\Psr18ClientDiscovery;
+use NotMattPress\AiClient\Providers\Http\Contracts\HttpTransporterInterface;
 /**
  * Factory for creating HTTP transporters.
  *
@@ -28,6 +28,6 @@ class HttpTransporterFactory
      */
     public static function createTransporter(): HttpTransporterInterface
     {
-        return new \WordPress\AiClient\Providers\Http\HttpTransporter(Psr18ClientDiscovery::find(), Psr17FactoryDiscovery::findRequestFactory(), Psr17FactoryDiscovery::findStreamFactory());
+        return new \NotMattPress\AiClient\Providers\Http\HttpTransporter(Psr18ClientDiscovery::find(), Psr17FactoryDiscovery::findRequestFactory(), Psr17FactoryDiscovery::findStreamFactory());
     }
 }

@@ -9926,7 +9926,7 @@ var wp;
   // packages/sync/build-module/lock-unlock.mjs
   var import_private_apis = __toESM(require_private_apis(), 1);
   var { lock, unlock } = (0, import_private_apis.__dangerousOptInToUnstableAPIsOnlyForCoreModules)(
-    "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of WordPress.",
+    "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of NotMattPress.",
     "@wordpress/sync"
   );
 
@@ -11026,7 +11026,7 @@ var wp;
     return {
       /**
        * Record changes into the history.
-       * Since Yjs automatically tracks changes, this method translates the WordPress
+       * Since Yjs automatically tracks changes, this method translates the NotMattPress
        * HistoryRecord format into Yjs operations.
        *
        * @param _record   A record of changes to record.
@@ -13060,7 +13060,7 @@ var wp;
   // packages/core-data/build-module/lock-unlock.mjs
   var import_private_apis3 = __toESM(require_private_apis(), 1);
   var { lock: lock2, unlock: unlock2 } = (0, import_private_apis3.__dangerousOptInToUnstableAPIsOnlyForCoreModules)(
-    "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of WordPress.",
+    "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of NotMattPress.",
     "@wordpress/core-data"
   );
 

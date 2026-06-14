@@ -2,7 +2,7 @@
 /**
  * Shared helper function for rendering the submenu icon.
  *
- * @package WordPress
+ * @package NotMattPress
  */
 
 /**

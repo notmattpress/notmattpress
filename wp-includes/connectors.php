@@ -2,13 +2,13 @@
 /**
  * Connectors API.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Connectors
  * @since 7.0.0
  */
 
-use WordPress\AiClient\AiClient;
-use WordPress\AiClient\Providers\Http\DTO\ApiKeyRequestAuthentication;
+use NotMattPress\AiClient\AiClient;
+use NotMattPress\AiClient\Providers\Http\DTO\ApiKeyRequestAuthentication;
 
 /**
  * Checks if a connector is registered.

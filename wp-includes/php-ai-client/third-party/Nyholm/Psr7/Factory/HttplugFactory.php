@@ -1,19 +1,19 @@
 <?php
 
 declare (strict_types=1);
-namespace WordPress\AiClientDependencies\Nyholm\Psr7\Factory;
+namespace NotMattPress\AiClientDependencies\Nyholm\Psr7\Factory;
 
-use WordPress\AiClientDependencies\Http\Message\MessageFactory;
-use WordPress\AiClientDependencies\Http\Message\StreamFactory;
-use WordPress\AiClientDependencies\Http\Message\UriFactory;
-use WordPress\AiClientDependencies\Nyholm\Psr7\Request;
-use WordPress\AiClientDependencies\Nyholm\Psr7\Response;
-use WordPress\AiClientDependencies\Nyholm\Psr7\Stream;
-use WordPress\AiClientDependencies\Nyholm\Psr7\Uri;
-use WordPress\AiClientDependencies\Psr\Http\Message\RequestInterface;
-use WordPress\AiClientDependencies\Psr\Http\Message\ResponseInterface;
-use WordPress\AiClientDependencies\Psr\Http\Message\StreamInterface;
-use WordPress\AiClientDependencies\Psr\Http\Message\UriInterface;
+use NotMattPress\AiClientDependencies\Http\Message\MessageFactory;
+use NotMattPress\AiClientDependencies\Http\Message\StreamFactory;
+use NotMattPress\AiClientDependencies\Http\Message\UriFactory;
+use NotMattPress\AiClientDependencies\Nyholm\Psr7\Request;
+use NotMattPress\AiClientDependencies\Nyholm\Psr7\Response;
+use NotMattPress\AiClientDependencies\Nyholm\Psr7\Stream;
+use NotMattPress\AiClientDependencies\Nyholm\Psr7\Uri;
+use NotMattPress\AiClientDependencies\Psr\Http\Message\RequestInterface;
+use NotMattPress\AiClientDependencies\Psr\Http\Message\ResponseInterface;
+use NotMattPress\AiClientDependencies\Psr\Http\Message\StreamInterface;
+use NotMattPress\AiClientDependencies\Psr\Http\Message\UriInterface;
 if (!\interface_exists(MessageFactory::class)) {
     throw new \LogicException('You cannot use "Nyholm\Psr7\Factory\HttplugFactory" as the "php-http/message-factory" package is not installed. Try running "composer require php-http/message-factory". Note that this package is deprecated, use "psr/http-factory" instead');
 }

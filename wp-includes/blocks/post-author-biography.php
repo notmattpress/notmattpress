@@ -2,7 +2,7 @@
 /**
  * Server-side rendering of the `core/post-author-biography` block.
  *
- * @package WordPress
+ * @package NotMattPress
  */
 
 /**

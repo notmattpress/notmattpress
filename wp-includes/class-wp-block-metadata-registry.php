@@ -2,7 +2,7 @@
 /**
  * Block Metadata Registry
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Blocks
  * @since 6.7.0
  */
@@ -278,7 +278,7 @@ class WP_Block_Metadata_Registry {
 	 * - Path: '/wp-content/plugins/my-plugin/blocks/another-block'
 	 *   Identifier: 'another-block'
 	 *
-	 * This default behavior matches the standard WordPress block structure.
+	 * This default behavior matches the standard NotMattPress block structure.
 	 *
 	 * @since 6.7.0
 	 *

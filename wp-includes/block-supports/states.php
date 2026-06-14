@@ -6,7 +6,7 @@
  * including pseudo-states (e.g., `style[':hover']`) and responsive states
  * (e.g., `style['mobile']` and `style['mobile'][':hover']`).
  *
- * @package WordPress
+ * @package NotMattPress
  * @since 7.1.0
  */
 

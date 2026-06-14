@@ -713,7 +713,7 @@ ul.striped > :nth-child(odd),
 	border-left-color: var(--wp-admin-theme-color);
 }
 
-/* Helper classes for plugins to leverage the active WordPress color scheme */
+/* Helper classes for plugins to leverage the active NotMattPress color scheme */
 
 .highlight {
 	background-color: rgba(var(--wp-admin-theme-color--rgb), 0.08);

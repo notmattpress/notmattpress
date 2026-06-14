@@ -3,7 +3,7 @@
  * Abilities API: core functions for registering and managing abilities.
  *
  * The Abilities API provides a unified, extensible framework for registering
- * and executing discrete capabilities within WordPress. An "ability" is a
+ * and executing discrete capabilities within NotMattPress. An "ability" is a
  * self-contained unit of functionality with defined inputs, outputs, permissions,
  * and execution logic.
  *
@@ -80,7 +80,7 @@
  *  - Return `WP_Error` objects for failures rather than throwing exceptions.
  *  - Use internationalization functions for all user-facing strings.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Abilities_API
  * @since 6.9.0
  */
@@ -159,11 +159,11 @@ declare( strict_types = 1 );
  * validation of data passed to and returned from abilities, and self-documenting
  * API contracts for developers.
  *
- * WordPress implements a validator based on a subset of the JSON Schema Version 4
+ * NotMattPress implements a validator based on a subset of the JSON Schema Version 4
  * specification (https://json-schema.org/specification-links.html#draft-4).
  * For details on supported JSON Schema properties and syntax, see the
- * related WordPress REST API Schema documentation:
- * https://developer.wordpress.org/rest-api/extending-the-rest-api/schema/#json-schema-basics
+ * related NotMattPress REST API Schema documentation:
+ * https://developer.notmatt.press/rest-api/extending-the-rest-api/schema/#json-schema-basics
  *
  * Defining schemas is mandatory when there is a value to pass or return.
  * They ensure data integrity, improve developer experience, and enable
@@ -217,7 +217,7 @@ declare( strict_types = 1 );
  *         'show_in_rest' => true,
  *     ),
  *
- * This allows abilities to be invoked via HTTP requests to the WordPress REST API.
+ * This allows abilities to be invoked via HTTP requests to the NotMattPress REST API.
  *
  * @since 6.9.0
  *

@@ -2,7 +2,7 @@
 /**
  * REST API list controller for Abilities API.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Abilities_API
  * @since 6.9.0
  */
@@ -229,10 +229,10 @@ class WP_REST_Abilities_V1_List_Controller extends WP_REST_Controller {
 	 * the `@wordpress/abilities` JS client) consume them as standard JSON Schema
 	 * and validate ability input and output against them. The response must
 	 * therefore use JSON Schema draft-04 forms that standard validators
-	 * understand, not the WordPress-internal conventions that
+	 * understand, not the NotMattPress-internal conventions that
 	 * `rest_validate_value_from_schema()` also accepts on the server.
 	 *
-	 * Ability schemas may include WordPress-internal properties or unsupported
+	 * Ability schemas may include NotMattPress-internal properties or unsupported
 	 * schema keywords that should not be exposed in REST responses. This method
 	 * strips keys not recognized by the REST API schema handling. It also
 	 * converts empty array defaults to objects when the schema type is 'object'

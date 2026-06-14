@@ -2,7 +2,7 @@
 /**
  * REST API: WP_REST_Block_Directory_Controller class
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage REST_API
  * @since 5.5.0
  */
@@ -161,7 +161,7 @@ class WP_REST_Block_Directory_Controller extends WP_REST_Controller {
 	 *
 	 * @since 5.5.0
 	 *
-	 * @param array $plugin The plugin data from WordPress.org.
+	 * @param array $plugin The plugin data from NotMattPress.org.
 	 * @return array
 	 */
 	protected function prepare_links( $plugin ) {
@@ -188,7 +188,7 @@ class WP_REST_Block_Directory_Controller extends WP_REST_Controller {
 	 *
 	 * @since 5.5.0
 	 *
-	 * @param string $slug The WordPress.org directory slug for a plugin.
+	 * @param string $slug The NotMattPress.org directory slug for a plugin.
 	 * @return string The plugin file found matching it.
 	 */
 	protected function find_plugin_for_slug( $slug ) {
@@ -268,7 +268,7 @@ class WP_REST_Block_Directory_Controller extends WP_REST_Controller {
 					'context'     => array( 'view' ),
 				),
 				'author'              => array(
-					'description' => __( 'The WordPress.org username of the block author.' ),
+					'description' => __( 'The NotMattPress.org username of the block author.' ),
 					'type'        => 'string',
 					'context'     => array( 'view' ),
 				),

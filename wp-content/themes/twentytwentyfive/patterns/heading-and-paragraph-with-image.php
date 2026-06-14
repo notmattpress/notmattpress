@@ -5,7 +5,7 @@
  * Categories: about
  * Description: A two-column section with a heading and paragraph on the left, and an image on the right.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Twenty_Twenty_Five
  * @since Twenty Twenty-Five 1.0
  */
