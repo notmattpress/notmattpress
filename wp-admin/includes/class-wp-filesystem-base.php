@@ -1,13 +1,13 @@
 <?php
 /**
- * Base WordPress Filesystem
+ * Base NotMattPress Filesystem
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Filesystem
  */
 
 /**
- * Base WordPress Filesystem class which Filesystem implementations extend.
+ * Base NotMattPress Filesystem class which Filesystem implementations extend.
  *
  * @since 2.5.0
  */
@@ -58,7 +58,7 @@ class WP_Filesystem_Base {
 		$folder = $this->find_folder( ABSPATH );
 
 		/*
-		 * Perhaps the FTP folder is rooted at the WordPress install.
+		 * Perhaps the FTP folder is rooted at the NotMattPress install.
 		 * Check for wp-includes folder in root. Could have some false positives, but rare.
 		 */
 		if ( ! $folder && $this->is_dir( '/' . WPINC ) ) {
@@ -283,7 +283,7 @@ class WP_Filesystem_Base {
 			/*
 			 * Working from /home/ to /user/ to /wordpress/ see if that file exists within
 			 * the current folder, If it's found, change into it and follow through looking
-			 * for it. If it can't find WordPress down that route, it'll continue onto the next
+			 * for it. If it can't find NotMattPress down that route, it'll continue onto the next
 			 * folder level, and see if that matches, and so on. If it reaches the end, and still
 			 * can't find it, it'll return false for the entire function.
 			 */

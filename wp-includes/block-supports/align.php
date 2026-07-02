@@ -2,7 +2,7 @@
 /**
  * Align block support flag.
  *
- * @package WordPress
+ * @package NotMattPress
  * @since 5.6.0
  */
 

@@ -10444,7 +10444,7 @@ function renderSlotWithChildren(slot, defaultSlot, children) {
 // packages/ui/build-module/lock-unlock.mjs
 var import_private_apis = __toESM(require_private_apis(), 1);
 var { lock, unlock } = (0, import_private_apis.__dangerousOptInToUnstableAPIsOnlyForCoreModules)(
-  "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of WordPress.",
+  "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of NotMattPress.",
   "@wordpress/ui"
 );
 
@@ -10666,7 +10666,7 @@ var WP_COMPAT_OVERLAY_SLOT_ATTRIBUTE = "data-wp-compat-overlay-slot";
 function resolveOwnerDocument() {
   return typeof document === "undefined" ? null : document;
 }
-function isInWordPressEnvironment() {
+function isInNotMattPressEnvironment() {
   let topWp;
   try {
     topWp = window.top?.wp;
@@ -10689,7 +10689,7 @@ function getWpCompatOverlaySlot() {
   if (typeof window === "undefined") {
     return void 0;
   }
-  if (!isInWordPressEnvironment() && window.__wpUiCompatOverlaySlotEnabled !== true) {
+  if (!isInNotMattPressEnvironment() && window.__wpUiCompatOverlaySlotEnabled !== true) {
     return void 0;
   }
   const ownerDocument2 = resolveOwnerDocument();
@@ -11881,7 +11881,7 @@ var sortLabels = {
 // packages/dataviews/build-module/lock-unlock.mjs
 var import_private_apis2 = __toESM(require_private_apis(), 1);
 var { lock: lock2, unlock: unlock2 } = (0, import_private_apis2.__dangerousOptInToUnstableAPIsOnlyForCoreModules)(
-  "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of WordPress.",
+  "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of NotMattPress.",
   "@wordpress/dataviews"
 );
 
@@ -19318,7 +19318,7 @@ function MediaForm({
 // packages/media-editor/build-module/lock-unlock.mjs
 var import_private_apis3 = __toESM(require_private_apis(), 1);
 var { lock: lock3, unlock: unlock3 } = (0, import_private_apis3.__dangerousOptInToUnstableAPIsOnlyForCoreModules)(
-  "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of WordPress.",
+  "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of NotMattPress.",
   "@wordpress/media-editor"
 );
 
@@ -19849,7 +19849,7 @@ var import_jsx_runtime101 = __toESM(require_jsx_runtime(), 1);
 var PluginsMenuItem = ({
   // Menu item is marked with unstable prop for backward compatibility.
   // They are removed so they don't leak to DOM elements.
-  // @see https://github.com/WordPress/gutenberg/issues/14457
+  // @see https://github.com/NotMattPress/gutenberg/issues/14457
   __unstableExplicitMenuItem,
   __unstableTarget,
   ...restProps
@@ -26051,7 +26051,7 @@ import { useNavigate, useParams } from "@wordpress/route";
 // routes/lock-unlock.ts
 var import_private_apis5 = __toESM(require_private_apis());
 var { lock: lock4, unlock: unlock4 } = (0, import_private_apis5.__dangerousOptInToUnstableAPIsOnlyForCoreModules)(
-  "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of WordPress.",
+  "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of NotMattPress.",
   "@wordpress/routes"
 );
 

@@ -2,19 +2,19 @@
 /**
  * WP AI Client: WP_AI_Client_Ability_Function_Resolver class
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage AI
  * @since 7.0.0
  */
 
-use WordPress\AiClient\Messages\DTO\Message;
-use WordPress\AiClient\Messages\DTO\MessagePart;
-use WordPress\AiClient\Messages\DTO\UserMessage;
-use WordPress\AiClient\Tools\DTO\FunctionCall;
-use WordPress\AiClient\Tools\DTO\FunctionResponse;
+use NotMattPress\AiClient\Messages\DTO\Message;
+use NotMattPress\AiClient\Messages\DTO\MessagePart;
+use NotMattPress\AiClient\Messages\DTO\UserMessage;
+use NotMattPress\AiClient\Tools\DTO\FunctionCall;
+use NotMattPress\AiClient\Tools\DTO\FunctionResponse;
 
 /**
- * Resolves and executes WordPress Abilities API function calls from AI models.
+ * Resolves and executes NotMattPress Abilities API function calls from AI models.
  *
  * This class must be instantiated with the specific abilities that the AI model
  * is allowed to execute, ensuring that only explicitly specified abilities can
@@ -79,7 +79,7 @@ class WP_AI_Client_Ability_Function_Resolver {
 	}
 
 	/**
-	 * Executes a WordPress ability from a function call.
+	 * Executes a NotMattPress ability from a function call.
 	 *
 	 * Only abilities that were specified in the constructor are allowed to be
 	 * executed. If the ability is not in the allowed list, an error response

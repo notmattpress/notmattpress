@@ -2,7 +2,7 @@
 /**
  * Class 'WP_Speculation_Rules'.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Speculative Loading
  * @since 6.8.0
  */

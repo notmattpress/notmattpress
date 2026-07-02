@@ -17,7 +17,7 @@
 			bgImage = $( '#custom-background-image' );
 
 		/**
-		 * Instantiates the WordPress color picker and binds the change and clear events.
+		 * Instantiates the NotMattPress color picker and binds the change and clear events.
 		 *
 		 * @since 3.5.0
 		 *

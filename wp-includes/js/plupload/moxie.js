@@ -16,11 +16,11 @@
  */
 
 /**
- * Modified for WordPress.
- * - Silverlight and Flash runtimes support was removed. See https://core.trac.wordpress.org/ticket/41755.
- * - A stray Unicode character has been removed. See https://core.trac.wordpress.org/ticket/59329.
+ * Modified for NotMattPress.
+ * - Silverlight and Flash runtimes support was removed. See https://core.trac.notmatt.press/ticket/41755.
+ * - A stray Unicode character has been removed. See https://core.trac.notmatt.press/ticket/59329.
  *
- * This is a de-facto fork of the mOxie library that will be maintained by WordPress due to upstream license changes
+ * This is a de-facto fork of the mOxie library that will be maintained by NotMattPress due to upstream license changes
  * that are incompatible with the GPL.
  */
 

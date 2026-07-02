@@ -1,9 +1,9 @@
 <?php
 
 declare (strict_types=1);
-namespace WordPress\AiClient\Common\Traits;
+namespace NotMattPress\AiClient\Common\Traits;
 
-use WordPress\AiClient\AiClient;
+use NotMattPress\AiClient\AiClient;
 /**
  * Trait for objects that cache data using PSR-16 cache with in-memory fallback.
  *

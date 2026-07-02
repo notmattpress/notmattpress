@@ -2,7 +2,7 @@
 /**
  * Administration API: WP_Internal_Pointers class
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Administration
  * @since 4.4.0
  */

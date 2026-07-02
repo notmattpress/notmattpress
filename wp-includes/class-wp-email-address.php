@@ -2,7 +2,7 @@
 /**
  * Class 'WP_Email_Address'.
  *
- * @package WordPress
+ * @package NotMattPress
  * @since 7.1.0
  */
 
@@ -17,9 +17,9 @@
  *
  * Example:
  *
- *     $email = WP_Email_Address::from_string( 'wordpress@wordpress.org' );
+ *     $email = WP_Email_Address::from_string( 'wordpress@notmatt.press' );
  *     'wordpress'     === $email->get_local_part();
- *     'wordpress.org' === $email->get_domain();
+ *     'notmatt.press' === $email->get_domain();
  *
  * @see self::from_string()        to parse and validate a provided email address.
  * @see self::get_localpart()      for the local part or mailbox of the address.

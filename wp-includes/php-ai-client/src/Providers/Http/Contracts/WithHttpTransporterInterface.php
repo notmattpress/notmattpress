@@ -1,7 +1,7 @@
 <?php
 
 declare (strict_types=1);
-namespace WordPress\AiClient\Providers\Http\Contracts;
+namespace NotMattPress\AiClient\Providers\Http\Contracts;
 
 /**
  * Interface for models that require HTTP transport capabilities.
@@ -18,7 +18,7 @@ interface WithHttpTransporterInterface
      * @param HttpTransporterInterface $transporter The HTTP transporter instance.
      * @return void
      */
-    public function setHttpTransporter(\WordPress\AiClient\Providers\Http\Contracts\HttpTransporterInterface $transporter): void;
+    public function setHttpTransporter(\NotMattPress\AiClient\Providers\Http\Contracts\HttpTransporterInterface $transporter): void;
     /**
      * Returns the HTTP transporter.
      *
@@ -26,5 +26,5 @@ interface WithHttpTransporterInterface
      *
      * @return HttpTransporterInterface The HTTP transporter instance.
      */
-    public function getHttpTransporter(): \WordPress\AiClient\Providers\Http\Contracts\HttpTransporterInterface;
+    public function getHttpTransporter(): \NotMattPress\AiClient\Providers\Http\Contracts\HttpTransporterInterface;
 }

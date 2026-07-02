@@ -2,7 +2,7 @@
 /**
  * Error Protection API: WP_Recovery_Mode_Link_Handler class
  *
- * @package WordPress
+ * @package NotMattPress
  * @since 5.2.0
  */
 

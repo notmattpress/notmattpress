@@ -1,8 +1,8 @@
 <?php
 /**
- * Base WordPress Image Editor
+ * Base NotMattPress Image Editor
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Image_Editor
  */
 

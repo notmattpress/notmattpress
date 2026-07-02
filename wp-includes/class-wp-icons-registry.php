@@ -3,7 +3,7 @@
 /**
  * Icons API: WP_Icons_Registry class
  *
- * @package WordPress
+ * @package NotMattPress
  * @since 7.0.0
  */
 

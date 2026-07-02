@@ -2,9 +2,9 @@
 /**
  * Object Cache API functions missing from 3rd party object caches.
  *
- * @link https://developer.wordpress.org/reference/classes/wp_object_cache/
+ * @link https://developer.notmatt.press/reference/classes/wp_object_cache/
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Cache
  */
 
@@ -319,7 +319,7 @@ if ( ! function_exists( 'wp_cache_switch_to_blog' ) ) :
 	 * only when a persistent object cache drop-in plugin has omitted the
 	 * wp_cache_switch_to_blog() function that was introduced in 3.5.0.
 	 *
-	 * @link https://core.trac.wordpress.org/ticket/23290
+	 * @link https://core.trac.notmatt.press/ticket/23290
 	 *
 	 * @since 7.0.0
 	 *

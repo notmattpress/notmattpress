@@ -2,7 +2,7 @@
 /**
  * REST API: WP_REST_Icons_Controller class
  *
- * @package    WordPress
+ * @package    NotMattPress
  * @subpackage REST_API
  * @since      7.0.0
  */

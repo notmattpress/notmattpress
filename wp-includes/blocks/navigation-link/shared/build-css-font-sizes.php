@@ -2,7 +2,7 @@
 /**
  * Shared helper function for building CSS font sizes in navigation blocks.
  *
- * @package WordPress
+ * @package NotMattPress
  */
 
 /**

@@ -8470,7 +8470,7 @@ var wp;
   // packages/ui/build-module/lock-unlock.mjs
   var import_private_apis = __toESM(require_private_apis(), 1);
   var { lock, unlock } = (0, import_private_apis.__dangerousOptInToUnstableAPIsOnlyForCoreModules)(
-    "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of WordPress.",
+    "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of NotMattPress.",
     "@wordpress/ui"
   );
 
@@ -8581,7 +8581,7 @@ var wp;
   function resolveOwnerDocument() {
     return typeof document === "undefined" ? null : document;
   }
-  function isInWordPressEnvironment() {
+  function isInNotMattPressEnvironment() {
     let topWp;
     try {
       topWp = window.top?.wp;
@@ -8604,7 +8604,7 @@ var wp;
     if (typeof window === "undefined") {
       return void 0;
     }
-    if (!isInWordPressEnvironment() && window.__wpUiCompatOverlaySlotEnabled !== true) {
+    if (!isInNotMattPressEnvironment() && window.__wpUiCompatOverlaySlotEnabled !== true) {
       return void 0;
     }
     const ownerDocument2 = resolveOwnerDocument();
@@ -9472,7 +9472,7 @@ var wp;
   // packages/edit-post/build-module/lock-unlock.mjs
   var import_private_apis2 = __toESM(require_private_apis(), 1);
   var { lock: lock2, unlock: unlock2 } = (0, import_private_apis2.__dangerousOptInToUnstableAPIsOnlyForCoreModules)(
-    "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of WordPress.",
+    "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of NotMattPress.",
     "@wordpress/edit-post"
   );
 
@@ -10721,7 +10721,7 @@ var wp;
             content: /* @__PURE__ */ (0, import_jsx_runtime39.jsxs)(import_jsx_runtime39.Fragment, { children: [
               /* @__PURE__ */ (0, import_jsx_runtime39.jsx)("h1", { className: "edit-post-welcome-guide__heading", children: (0, import_i18n11.__)("Welcome to the editor") }),
               /* @__PURE__ */ (0, import_jsx_runtime39.jsx)("p", { className: "edit-post-welcome-guide__text", children: (0, import_i18n11.__)(
-                "In the WordPress editor, each paragraph, image, or video is presented as a distinct \u201Cblock\u201D of content."
+                "In the NotMattPress editor, each paragraph, image, or video is presented as a distinct \u201Cblock\u201D of content."
               ) })
             ] })
           },
@@ -10785,7 +10785,7 @@ var wp;
                     import_components7.ExternalLink,
                     {
                       href: (0, import_i18n11.__)(
-                        "https://wordpress.org/documentation/article/wordpress-block-editor/"
+                        "https://notmatt.press/documentation/article/wordpress-block-editor/"
                       )
                     }
                   )
@@ -11597,7 +11597,7 @@ var wp;
     (0, import_deprecated3.default)("wp.editPost.__experimentalPluginPostExcerpt", {
       since: "6.6",
       hint: "Core and custom panels can be access programmatically using their panel name.",
-      link: "https://developer.wordpress.org/block-editor/reference-guides/slotfills/plugin-document-setting-panel/#accessing-a-panel-programmatically"
+      link: "https://developer.notmatt.press/block-editor/reference-guides/slotfills/plugin-document-setting-panel/#accessing-a-panel-programmatically"
     });
     return PluginPostExcerpt;
   }

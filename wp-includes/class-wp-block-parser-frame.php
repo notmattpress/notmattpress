@@ -2,7 +2,7 @@
 /**
  * Block Serialization Parser
  *
- * @package WordPress
+ * @package NotMattPress
  */
 
 /**

@@ -8784,7 +8784,7 @@ function renderPortalWithChildren(portal, defaultPortal, children) {
 // packages/ui/build-module/lock-unlock.mjs
 var import_private_apis = __toESM(require_private_apis(), 1);
 var { lock, unlock } = (0, import_private_apis.__dangerousOptInToUnstableAPIsOnlyForCoreModules)(
-  "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of WordPress.",
+  "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of NotMattPress.",
   "@wordpress/ui"
 );
 
@@ -9389,7 +9389,7 @@ var statusField = {
   id: "status",
   label: (0, import_i18n5.__)("Status"),
   description: (0, import_i18n5.__)(
-    "Active taxonomies are enabled and registered with WordPress."
+    "Active taxonomies are enabled and registered with NotMattPress."
   ),
   elements: [
     { value: "publish", label: (0, import_i18n5.__)("Active") },
@@ -9666,7 +9666,7 @@ function LabelsActionsEdit({
   );
   return /* @__PURE__ */ (0, import_jsx_runtime35.jsxs)(Stack, { direction: "column", gap: "md", children: [
     /* @__PURE__ */ (0, import_jsx_runtime35.jsx)(Text, { variant: "body-md", className: "taxonomy-form__help-text", children: (0, import_i18n6.__)(
-      "Override the text WordPress shows in admin lists, menus, and forms. Auto-fill replaces every label below with values derived from the current plural and singular names \u2014 including any you have already customized. Clearing removes all overrides so WordPress falls back to its defaults. If you rename the taxonomy after auto-filling, click Auto-fill again to keep them in sync."
+      "Override the text NotMattPress shows in admin lists, menus, and forms. Auto-fill replaces every label below with values derived from the current plural and singular names \u2014 including any you have already customized. Clearing removes all overrides so NotMattPress falls back to its defaults. If you rename the taxonomy after auto-filling, click Auto-fill again to keep them in sync."
     ) }),
     /* @__PURE__ */ (0, import_jsx_runtime35.jsxs)(Stack, { direction: "row", justify: "flex-end", gap: "sm", children: [
       /* @__PURE__ */ (0, import_jsx_runtime35.jsx)(

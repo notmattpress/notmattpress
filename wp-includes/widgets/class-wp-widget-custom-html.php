@@ -2,7 +2,7 @@
 /**
  * Widget API: WP_Widget_Custom_HTML class
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Widgets
  * @since 4.8.1
  */

@@ -2,7 +2,7 @@
 /**
  * REST API run controller for Abilities API.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Abilities_API
  * @since 6.9.0
  */
@@ -55,7 +55,7 @@ class WP_REST_Abilities_V1_Run_Controller extends WP_REST_Controller {
 				),
 
 				// TODO: We register ALLMETHODS because at route registration time, we don't know which abilities
-				// exist or their annotations (`destructive`, `idempotent`, `readonly`). This is due to WordPress
+				// exist or their annotations (`destructive`, `idempotent`, `readonly`). This is due to NotMattPress
 				// load order - routes are registered early, before plugins have registered their abilities.
 				// This approach works but could be improved with lazy route registration or a different
 				// architecture that allows type-specific routes after abilities are registered.

@@ -1202,7 +1202,7 @@ var wp;
   // packages/edit-site/build-module/lock-unlock.mjs
   var import_private_apis = __toESM(require_private_apis(), 1);
   var { lock, unlock } = (0, import_private_apis.__dangerousOptInToUnstableAPIsOnlyForCoreModules)(
-    "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of WordPress.",
+    "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of NotMattPress.",
     "@wordpress/edit-site"
   );
 
@@ -12046,7 +12046,7 @@ var wp;
   // packages/ui/build-module/lock-unlock.mjs
   var import_private_apis2 = __toESM(require_private_apis(), 1);
   var { lock: lock2, unlock: unlock2 } = (0, import_private_apis2.__dangerousOptInToUnstableAPIsOnlyForCoreModules)(
-    "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of WordPress.",
+    "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of NotMattPress.",
     "@wordpress/ui"
   );
 
@@ -12268,7 +12268,7 @@ var wp;
   function resolveOwnerDocument() {
     return typeof document === "undefined" ? null : document;
   }
-  function isInWordPressEnvironment() {
+  function isInNotMattPressEnvironment() {
     let topWp;
     try {
       topWp = window.top?.wp;
@@ -12291,7 +12291,7 @@ var wp;
     if (typeof window === "undefined") {
       return void 0;
     }
-    if (!isInWordPressEnvironment() && window.__wpUiCompatOverlaySlotEnabled !== true) {
+    if (!isInNotMattPressEnvironment() && window.__wpUiCompatOverlaySlotEnabled !== true) {
       return void 0;
     }
     const ownerDocument2 = resolveOwnerDocument();
@@ -20389,7 +20389,7 @@ var wp;
   // packages/global-styles-ui/build-module/lock-unlock.mjs
   var import_private_apis3 = __toESM(require_private_apis(), 1);
   var { lock: lock3, unlock: unlock3 } = (0, import_private_apis3.__dangerousOptInToUnstableAPIsOnlyForCoreModules)(
-    "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of WordPress.",
+    "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of NotMattPress.",
     "@wordpress/global-styles-ui"
   );
 
@@ -32873,7 +32873,7 @@ var wp;
       if (title && siteTitle) {
         const formattedTitle = (0, import_i18n69.sprintf)(
           /* translators: Admin document title. 1: Admin screen name, 2: Network or site name. */
-          (0, import_i18n69.__)("%1$s \u2039 %2$s \u2039 Editor \u2014 WordPress"),
+          (0, import_i18n69.__)("%1$s \u2039 %2$s \u2039 Editor \u2014 NotMattPress"),
           (0, import_html_entities2.decodeEntities)(title),
           (0, import_html_entities2.decodeEntities)(siteTitle)
         );
@@ -33574,7 +33574,7 @@ var wp;
   // packages/dataviews/build-module/lock-unlock.mjs
   var import_private_apis4 = __toESM(require_private_apis(), 1);
   var { lock: lock4, unlock: unlock4 } = (0, import_private_apis4.__dangerousOptInToUnstableAPIsOnlyForCoreModules)(
-    "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of WordPress.",
+    "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of NotMattPress.",
     "@wordpress/dataviews"
   );
 
@@ -51491,7 +51491,7 @@ If there's a particular need for this, please submit a feature request at https:
   // packages/fields/build-module/lock-unlock.mjs
   var import_private_apis5 = __toESM(require_private_apis(), 1);
   var { lock: lock5, unlock: unlock5 } = (0, import_private_apis5.__dangerousOptInToUnstableAPIsOnlyForCoreModules)(
-    "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of WordPress.",
+    "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of NotMattPress.",
     "@wordpress/fields"
   );
 
@@ -52952,7 +52952,7 @@ If there's a particular need for this, please submit a feature request at https:
     {
       per_page: MAX_PAGE_COUNT,
       _fields: ["id", "link", "menu_order", "parent", "title", "type"],
-      // TODO: When https://core.trac.wordpress.org/ticket/39037 REST API support for multiple orderby
+      // TODO: When https://core.trac.notmatt.press/ticket/39037 REST API support for multiple orderby
       // values is resolved, update 'orderby' to [ 'menu_order', 'post_title' ] to provide a consistent
       // sort.
       orderby: "menu_order",
@@ -53848,7 +53848,7 @@ If there's a particular need for this, please submit a feature request at https:
   // packages/views/build-module/lock-unlock.mjs
   var import_private_apis6 = __toESM(require_private_apis(), 1);
   var { lock: lock6, unlock: unlock6 } = (0, import_private_apis6.__dangerousOptInToUnstableAPIsOnlyForCoreModules)(
-    "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of WordPress.",
+    "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of NotMattPress.",
     "@wordpress/views"
   );
 
@@ -55514,7 +55514,7 @@ If there's a particular need for this, please submit a feature request at https:
           // Let's avoid calling them "custom templates" to avoid
           // confusion. "Created" is closest to meaning database
           // templates, created by users.
-          // https://developer.wordpress.org/themes/classic-themes/templates/page-template-files/#creating-custom-page-templates-for-global-use
+          // https://developer.notmatt.press/themes/classic-themes/templates/page-template-files/#creating-custom-page-templates-for-global-use
           children: (0, import_i18n143.__)("Created templates")
         }
       ),

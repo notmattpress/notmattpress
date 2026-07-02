@@ -2,13 +2,13 @@
 /**
  * Upgrader API: Plugin_Installer_Skin class
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Upgrader
  * @since 4.6.0
  */
 
 /**
- * Plugin Installer Skin for WordPress Plugin Installer.
+ * Plugin Installer Skin for NotMattPress Plugin Installer.
  *
  * @since 2.8.0
  * @since 4.6.0 Moved to its own file from wp-admin/includes/class-wp-upgrader-skins.php.
@@ -170,7 +170,7 @@ class Plugin_Installer_Skin extends WP_Upgrader_Skin {
 		 * @since 2.7.0
 		 *
 		 * @param string[] $install_actions Array of plugin action links.
-		 * @param object   $api             Object containing WordPress.org API plugin data. Empty
+		 * @param object   $api             Object containing NotMattPress.org API plugin data. Empty
 		 *                                  for non-API installs, such as when a plugin is installed
 		 *                                  via upload.
 		 * @param string   $plugin_file     Path to the plugin file relative to the plugins directory.
@@ -222,7 +222,7 @@ class Plugin_Installer_Skin extends WP_Upgrader_Skin {
 			'Name'        => __( 'Plugin name' ),
 			'Version'     => __( 'Version' ),
 			'Author'      => __( 'Author' ),
-			'RequiresWP'  => __( 'Required WordPress version' ),
+			'RequiresWP'  => __( 'Required NotMattPress version' ),
 			'RequiresPHP' => __( 'Required PHP version' ),
 		);
 
@@ -282,8 +282,8 @@ class Plugin_Installer_Skin extends WP_Upgrader_Skin {
 
 		if ( ! is_wp_version_compatible( $requires_wp ) ) {
 			$error = sprintf(
-				/* translators: 1: Current WordPress version, 2: Version required by the uploaded plugin. */
-				__( 'Your WordPress version is %1$s, however the uploaded plugin requires %2$s.' ),
+				/* translators: 1: Current NotMattPress version, 2: Version required by the uploaded plugin. */
+				__( 'Your NotMattPress version is %1$s, however the uploaded plugin requires %2$s.' ),
 				esc_html( wp_get_wp_version() ),
 				$requires_wp
 			);
@@ -299,13 +299,13 @@ class Plugin_Installer_Skin extends WP_Upgrader_Skin {
 				$warning = sprintf(
 					/* translators: %s: Documentation URL. */
 					__( 'You are uploading an older version of a current plugin. You can continue to install the older version, but be sure to <a href="%s">back up your database and files</a> first.' ),
-					__( 'https://developer.wordpress.org/advanced-administration/security/backup/' )
+					__( 'https://developer.notmatt.press/advanced-administration/security/backup/' )
 				);
 			} else {
 				$warning = sprintf(
 					/* translators: %s: Documentation URL. */
 					__( 'You are updating a plugin. Be sure to <a href="%s">back up your database and files</a> first.' ),
-					__( 'https://developer.wordpress.org/advanced-administration/security/backup/' )
+					__( 'https://developer.notmatt.press/advanced-administration/security/backup/' )
 				);
 			}
 
@@ -337,7 +337,7 @@ class Plugin_Installer_Skin extends WP_Upgrader_Skin {
 		 * @since 5.5.0
 		 *
 		 * @param string[] $install_actions Array of plugin action links.
-		 * @param object   $api             Object containing WordPress.org API plugin data.
+		 * @param object   $api             Object containing NotMattPress.org API plugin data.
 		 * @param array    $new_plugin_data Array with uploaded plugin data.
 		 */
 		$install_actions = apply_filters( 'install_plugin_overwrite_actions', $install_actions, $this->api, $new_plugin_data );

@@ -1,11 +1,11 @@
 <?php
 
 declare (strict_types=1);
-namespace WordPress\AiClient\Providers\Models\Enums;
+namespace NotMattPress\AiClient\Providers\Models\Enums;
 
 use ReflectionClass;
-use WordPress\AiClient\Common\AbstractEnum;
-use WordPress\AiClient\Providers\Models\DTO\ModelConfig;
+use NotMattPress\AiClient\Common\AbstractEnum;
+use NotMattPress\AiClient\Providers\Models\DTO\ModelConfig;
 /**
  * Enum for model options.
  *

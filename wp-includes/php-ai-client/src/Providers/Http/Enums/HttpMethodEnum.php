@@ -1,9 +1,9 @@
 <?php
 
 declare (strict_types=1);
-namespace WordPress\AiClient\Providers\Http\Enums;
+namespace NotMattPress\AiClient\Providers\Http\Enums;
 
-use WordPress\AiClient\Common\AbstractEnum;
+use NotMattPress\AiClient\Common\AbstractEnum;
 /**
  * Represents HTTP request methods.
  *

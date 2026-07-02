@@ -6,7 +6,7 @@
  * the dynamic `get_entity_view_config_{$kind}_{$name}` filter so core and third
  * parties can provide the configuration for a specific entity.
  *
- * @package WordPress
+ * @package NotMattPress
  * @since 7.1.0
  */
 
@@ -615,7 +615,7 @@ function _wp_get_entity_view_config_post_type_wp_template( $config ) {
 				/*
 				 * Added by site.
 				 * Template was created from scratch, but has no author. Author support
-				 * was only added to templates in WordPress 5.9. Fallback to showing the
+				 * was only added to templates in NotMattPress 5.9. Fallback to showing the
 				 * site logo and title.
 				 */
 				$original_source = 'site';
