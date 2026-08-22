@@ -1,8 +1,8 @@
 <?php
 /**
- * The User Interface "Skins" for the WordPress File Upgrader
+ * The User Interface "Skins" for the NotMattPress File Upgrader
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Upgrader
  * @since 2.8.0
  * @deprecated 4.7.0

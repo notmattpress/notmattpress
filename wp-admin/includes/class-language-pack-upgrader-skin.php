@@ -2,13 +2,13 @@
 /**
  * Upgrader API: Language_Pack_Upgrader_Skin class
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Upgrader
  * @since 4.6.0
  */
 
 /**
- * Translation Upgrader Skin for WordPress Translation Upgrades.
+ * Translation Upgrader Skin for NotMattPress Translation Upgrades.
  *
  * @since 3.7.0
  * @since 4.6.0 Moved to its own file from wp-admin/includes/class-wp-upgrader-skins.php.
@@ -56,7 +56,7 @@ class Language_Pack_Upgrader_Skin extends WP_Upgrader_Skin {
 
 		echo '<div class="update-messages lp-show-latest">';
 
-		/* translators: 1: Project name (plugin, theme, or WordPress), 2: Language. */
+		/* translators: 1: Project name (plugin, theme, or NotMattPress), 2: Language. */
 		printf( '<h2>' . __( 'Updating translations for %1$s (%2$s)&#8230;' ) . '</h2>', $name, $this->language_update->language );
 	}
 
@@ -95,7 +95,7 @@ class Language_Pack_Upgrader_Skin extends WP_Upgrader_Skin {
 			'updates_page' => sprintf(
 				'<a href="%s" target="_parent">%s</a>',
 				self_admin_url( 'update-core.php' ),
-				__( 'Go to WordPress Updates page' )
+				__( 'Go to NotMattPress Updates page' )
 			),
 		);
 

@@ -14007,7 +14007,7 @@ var theme = __toESM(require_theme(), 1);
 // packages/ui/build-module/lock-unlock.mjs
 var import_private_apis = __toESM(require_private_apis(), 1);
 var { lock, unlock } = (0, import_private_apis.__dangerousOptInToUnstableAPIsOnlyForCoreModules)(
-  "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of WordPress.",
+  "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of NotMattPress.",
   "@wordpress/ui"
 );
 
@@ -14248,7 +14248,7 @@ var WP_COMPAT_OVERLAY_SLOT_ATTRIBUTE = "data-wp-compat-overlay-slot";
 function resolveOwnerDocument() {
   return typeof document === "undefined" ? null : document;
 }
-function isInWordPressEnvironment() {
+function isInNotMattPressEnvironment() {
   let topWp;
   try {
     topWp = window.top?.wp;
@@ -14275,7 +14275,7 @@ function getWpCompatOverlaySlot() {
   if (typeof window === "undefined") {
     return void 0;
   }
-  if (!isInWordPressEnvironment() && window.__wpUiCompatOverlaySlotEnabled !== true) {
+  if (!isInNotMattPressEnvironment() && window.__wpUiCompatOverlaySlotEnabled !== true) {
     return void 0;
   }
   const ownerDocument2 = resolveOwnerDocument();
@@ -16889,7 +16889,7 @@ import { useNavigate } from "@wordpress/route";
 // packages/content-types/build-module/lock-unlock.mjs
 var import_private_apis2 = __toESM(require_private_apis(), 1);
 var { lock: lock2, unlock: unlock2 } = (0, import_private_apis2.__dangerousOptInToUnstableAPIsOnlyForCoreModules)(
-  "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of WordPress.",
+  "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of NotMattPress.",
   "@wordpress/content-types"
 );
 
@@ -17069,7 +17069,7 @@ var import_compose3 = __toESM(require_compose(), 1);
 // packages/dataviews/build-module/lock-unlock.mjs
 var import_private_apis3 = __toESM(require_private_apis(), 1);
 var { lock: lock3, unlock: unlock3 } = (0, import_private_apis3.__dangerousOptInToUnstableAPIsOnlyForCoreModules)(
-  "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of WordPress.",
+  "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of NotMattPress.",
   "@wordpress/dataviews"
 );
 
@@ -35741,7 +35741,7 @@ var import_core_data = __toESM(require_core_data(), 1);
 // packages/views/build-module/lock-unlock.mjs
 var import_private_apis4 = __toESM(require_private_apis(), 1);
 var { lock: lock4, unlock: unlock4 } = (0, import_private_apis4.__dangerousOptInToUnstableAPIsOnlyForCoreModules)(
-  "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of WordPress.",
+  "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of NotMattPress.",
   "@wordpress/views"
 );
 
@@ -36212,7 +36212,7 @@ function createDescriptionField(description) {
 var statusField = {
   id: "status",
   label: (0, import_i18n58.__)("Status"),
-  description: (0, import_i18n58.__)("Enabled and registered with WordPress when active."),
+  description: (0, import_i18n58.__)("Enabled and registered with NotMattPress when active."),
   // The field keeps `label: 'Status'` so the filter chip and column header
   // read naturally ("Status: Active"); the form toggle uses its own "Active"
   // label — the on/off semantic is clearer next to a switch.
@@ -37004,7 +37004,7 @@ var import_url5 = __toESM(require_url(), 1);
 var viewPostsAction = {
   id: "view-posts",
   label: (items) => items[0]?.config.labels.view_items || (items[0]?.config.hierarchical ? (0, import_i18n63.__)("View pages") : (0, import_i18n63.__)("View posts")),
-  // Drafts are not registered with WordPress, so `edit.php?post_type=…`
+  // Drafts are not registered with NotMattPress, so `edit.php?post_type=…`
   // would 404. Only surface the link for active post types.
   isEligible: (item) => item.status === "publish",
   callback: (items, { onActionPerformed }) => {
@@ -37253,7 +37253,7 @@ var labelsActionsField = createLabelsActionsField(
     labelKeys: STRING_LABEL_KEYS,
     deriveLabels,
     helpText: (0, import_i18n65.__)(
-      "Override the text WordPress shows in admin lists, menus, and forms. Auto-fill replaces every label below with values derived from the current plural and singular names — including any you have already customized. Clearing removes all overrides so WordPress falls back to its defaults. If you rename the post type after auto-filling, click Auto-fill again to keep them in sync."
+      "Override the text NotMattPress shows in admin lists, menus, and forms. Auto-fill replaces every label below with values derived from the current plural and singular names — including any you have already customized. Clearing removes all overrides so NotMattPress falls back to its defaults. If you rename the post type after auto-filling, click Auto-fill again to keep them in sync."
     )
   }
 );
@@ -38782,7 +38782,7 @@ var labelsActionsField2 = createLabelsActionsField(
     labelKeys: STRING_LABEL_KEYS2,
     deriveLabels: deriveLabels2,
     helpText: (0, import_i18n78.__)(
-      "Override the text WordPress shows in admin lists, menus, and forms. Auto-fill replaces every label below with values derived from the current plural and singular names — including any you have already customized. Clearing removes all overrides so WordPress falls back to its defaults. If you rename the taxonomy after auto-filling, click Auto-fill again to keep them in sync."
+      "Override the text NotMattPress shows in admin lists, menus, and forms. Auto-fill replaces every label below with values derived from the current plural and singular names — including any you have already customized. Clearing removes all overrides so NotMattPress falls back to its defaults. If you rename the taxonomy after auto-filling, click Auto-fill again to keep them in sync."
     )
   }
 );

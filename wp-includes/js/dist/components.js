@@ -28140,7 +28140,7 @@ This message will only show in development mode. It won't appear in production. 
     slots: (0, import_compose10.observableMap)(),
     fills: (0, import_compose10.observableMap)(),
     registerSlot: () => {
-      true ? (0, import_warning4.default)("Components must be wrapped within `SlotFillProvider`. See https://developer.wordpress.org/block-editor/components/slot-fill/") : void 0;
+      true ? (0, import_warning4.default)("Components must be wrapped within `SlotFillProvider`. See https://developer.notmatt.press/block-editor/components/slot-fill/") : void 0;
     },
     unregisterSlot: () => {
     },
@@ -28842,7 +28842,7 @@ This message will only show in development mode. It won't appear in production. 
       focusOnMount,
       onKeyDown,
       __unstableOnClose: onDialogClose,
-      // @ts-expect-error The __unstableOnClose property needs to be deprecated first (see https://github.com/WordPress/gutenberg/pull/27675)
+      // @ts-expect-error The __unstableOnClose property needs to be deprecated first (see https://github.com/NotMattPress/gutenberg/pull/27675)
       onClose: onDialogClose
     });
     const {
@@ -29230,7 +29230,7 @@ This message will only show in development mode. It won't appear in production. 
   var {
     lock,
     unlock
-  } = (0, import_private_apis.__dangerousOptInToUnstableAPIsOnlyForCoreModules)("I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of WordPress.", "@wordpress/components");
+  } = (0, import_private_apis.__dangerousOptInToUnstableAPIsOnlyForCoreModules)("I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of NotMattPress.", "@wordpress/components");
 
   // packages/components/build-module/autocomplete/index.mjs
   var import_jsx_runtime111 = __toESM(require_jsx_runtime(), 1);
@@ -30411,7 +30411,7 @@ This message will only show in development mode. It won't appear in production. 
       onClose: close
     };
     const popoverPropsHaveAnchor = !!popoverProps?.anchor || // Note: `anchorRef`, `getAnchorRect` and `anchorRect` are deprecated and
-    // be removed from `Popover` from WordPress 6.3
+    // be removed from `Popover` from NotMattPress 6.3
     !!popoverProps?.anchorRef || !!popoverProps?.getAnchorRect || !!popoverProps?.anchorRect;
     return /* @__PURE__ */ (0, import_jsx_runtime122.jsxs)("div", {
       className: className2,
@@ -33656,7 +33656,7 @@ This message will only show in development mode. It won't appear in production. 
     const classes = clsx_default(
       "components-unit-control",
       // This class is added for legacy purposes to maintain it on the outer
-      // wrapper. See: https://github.com/WordPress/gutenberg/pull/45139
+      // wrapper. See: https://github.com/NotMattPress/gutenberg/pull/45139
       "components-unit-control-wrapper",
       className2
     );
@@ -42668,7 +42668,7 @@ This message will only show in development mode. It won't appear in production. 
   function resolveOwnerDocument() {
     return typeof document === "undefined" ? null : document;
   }
-  function isInWordPressEnvironment() {
+  function isInNotMattPressEnvironment() {
     let topWp;
     try {
       topWp = window.top?.wp;
@@ -42695,7 +42695,7 @@ This message will only show in development mode. It won't appear in production. 
     if (typeof window === "undefined") {
       return void 0;
     }
-    if (!isInWordPressEnvironment() && window.__wpUiCompatOverlaySlotEnabled !== true) {
+    if (!isInNotMattPressEnvironment() && window.__wpUiCompatOverlaySlotEnabled !== true) {
       return void 0;
     }
     const ownerDocument = resolveOwnerDocument();
@@ -49449,7 +49449,7 @@ The screen with id ${screen.id} will not be added.`) : void 0;
     const accessibleToolbarStore = (0, import_element182.useContext)(toolbar_context_default);
     const isRenderProp = typeof children === "function";
     if (!isRenderProp && !Component7) {
-      true ? (0, import_warning10.default)("`ToolbarItem` is a generic headless component. You must pass either a `children` prop as a function or an `as` prop as a component. See https://developer.wordpress.org/block-editor/components/toolbar-item/") : void 0;
+      true ? (0, import_warning10.default)("`ToolbarItem` is a generic headless component. You must pass either a `children` prop as a function or an `as` prop as a component. See https://developer.notmatt.press/block-editor/components/toolbar-item/") : void 0;
       return null;
     }
     const allProps = {
@@ -49707,7 +49707,7 @@ The screen with id ${screen.id} will not be added.`) : void 0;
       (0, import_deprecated23.default)("Using Toolbar without label prop", {
         since: "5.6",
         alternative: "ToolbarGroup component",
-        link: "https://developer.wordpress.org/block-editor/components/toolbar/"
+        link: "https://developer.notmatt.press/block-editor/components/toolbar/"
       });
       const {
         title: _title,

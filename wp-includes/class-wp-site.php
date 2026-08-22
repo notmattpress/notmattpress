@@ -2,7 +2,7 @@
 /**
  * Site API: WP_Site class
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Multisite
  * @since 4.5.0
  */
@@ -111,7 +111,7 @@ final class WP_Site {
 	/**
 	 * Whether the site should be treated as mature.
 	 *
-	 * Handling for this does not exist throughout WordPress core, but custom
+	 * Handling for this does not exist throughout NotMattPress core, but custom
 	 * implementations exist that require the property to be present.
 	 *
 	 * A numeric string, for compatibility reasons.
@@ -160,7 +160,7 @@ final class WP_Site {
 	 *
 	 * @since 4.5.0
 	 *
-	 * @global wpdb $wpdb WordPress database abstraction object.
+	 * @global wpdb $wpdb NotMattPress database abstraction object.
 	 *
 	 * @param int $site_id The ID of the site to retrieve.
 	 * @return WP_Site|false The site's object if found. False if not.

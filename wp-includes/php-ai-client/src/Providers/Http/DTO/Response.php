@@ -1,11 +1,11 @@
 <?php
 
 declare (strict_types=1);
-namespace WordPress\AiClient\Providers\Http\DTO;
+namespace NotMattPress\AiClient\Providers\Http\DTO;
 
-use WordPress\AiClient\Common\AbstractDataTransferObject;
-use WordPress\AiClient\Common\Exception\InvalidArgumentException;
-use WordPress\AiClient\Providers\Http\Collections\HeadersCollection;
+use NotMattPress\AiClient\Common\AbstractDataTransferObject;
+use NotMattPress\AiClient\Common\Exception\InvalidArgumentException;
+use NotMattPress\AiClient\Providers\Http\Collections\HeadersCollection;
 /**
  * Represents an HTTP response.
  *

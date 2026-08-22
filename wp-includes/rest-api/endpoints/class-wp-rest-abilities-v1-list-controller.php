@@ -2,7 +2,7 @@
 /**
  * REST API list controller for Abilities API.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Abilities_API
  * @since 6.9.0
  */

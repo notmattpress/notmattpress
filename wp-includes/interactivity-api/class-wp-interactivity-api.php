@@ -2,7 +2,7 @@
 /**
  * Interactivity API: WP_Interactivity_API class.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Interactivity API
  * @since 6.5.0
  */
@@ -776,7 +776,7 @@ final class WP_Interactivity_API {
 	 * - Unique ID: An optional unique identifier, extracted after the first triple hyphen "---".
 	 *
 	 * This function has an equivalent version for the client side.
-	 * See `parseDirectiveName` in https://github.com/WordPress/gutenberg/blob/trunk/packages/interactivity/src/vdom.ts:
+	 * See `parseDirectiveName` in https://github.com/NotMattPress/gutenberg/blob/trunk/packages/interactivity/src/vdom.ts:
 	 *
 	 * An empty suffix or unique ID is normalized to null, but the string "0" is preserved. The
 	 * client's `|| null` discards only the empty string, since every non-empty string is truthy in

@@ -1,12 +1,12 @@
 <?php
 
 declare (strict_types=1);
-namespace WordPress\AiClient\Providers\Contracts;
+namespace NotMattPress\AiClient\Providers\Contracts;
 
-use WordPress\AiClient\Common\Exception\InvalidArgumentException;
-use WordPress\AiClient\Providers\DTO\ProviderMetadata;
-use WordPress\AiClient\Providers\Models\Contracts\ModelInterface;
-use WordPress\AiClient\Providers\Models\DTO\ModelConfig;
+use NotMattPress\AiClient\Common\Exception\InvalidArgumentException;
+use NotMattPress\AiClient\Providers\DTO\ProviderMetadata;
+use NotMattPress\AiClient\Providers\Models\Contracts\ModelInterface;
+use NotMattPress\AiClient\Providers\Models\DTO\ModelConfig;
 /**
  * Interface for AI providers.
  *
@@ -43,7 +43,7 @@ interface ProviderInterface
      *
      * @return ProviderAvailabilityInterface Provider availability checker.
      */
-    public static function availability(): \WordPress\AiClient\Providers\Contracts\ProviderAvailabilityInterface;
+    public static function availability(): \NotMattPress\AiClient\Providers\Contracts\ProviderAvailabilityInterface;
     /**
      * Gets model metadata directory.
      *
@@ -51,5 +51,5 @@ interface ProviderInterface
      *
      * @return ModelMetadataDirectoryInterface Model metadata directory.
      */
-    public static function modelMetadataDirectory(): \WordPress\AiClient\Providers\Contracts\ModelMetadataDirectoryInterface;
+    public static function modelMetadataDirectory(): \NotMattPress\AiClient\Providers\Contracts\ModelMetadataDirectoryInterface;
 }

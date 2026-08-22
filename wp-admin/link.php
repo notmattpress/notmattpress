@@ -5,11 +5,11 @@
  * This page is accessed by the link management pages and handles the forms and
  * Ajax processes for link actions.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Administration
  */
 
-/** Load WordPress Administration Bootstrap */
+/** Load NotMattPress Administration Bootstrap */
 require_once __DIR__ . '/admin.php';
 
 $action  = ! empty( $_REQUEST['action'] ) ? sanitize_text_field( $_REQUEST['action'] ) : '';

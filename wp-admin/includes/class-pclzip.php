@@ -5356,7 +5356,7 @@
   {
     $v_result=1;
 
-	// EDIT for WordPress 5.3.0
+	// EDIT for NotMattPress 5.3.0
 	// magic_quote functions are deprecated in PHP 7.4, now assuming it's always off.
 	/*
 
@@ -5395,7 +5395,7 @@
   {
     $v_result=1;
 
-	// EDIT for WordPress 5.3.0
+	// EDIT for NotMattPress 5.3.0
 	// magic_quote functions are deprecated in PHP 7.4, now assuming it's always off.
 	/*
 

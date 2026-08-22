@@ -2,7 +2,7 @@
 /**
  * Comment API: WP_Comment class
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Comments
  * @since 4.4.0
  */
@@ -247,7 +247,7 @@ final class WP_Comment {
 	 *
 	 * @since 4.4.0
 	 *
-	 * @global wpdb $wpdb WordPress database abstraction object.
+	 * @global wpdb $wpdb NotMattPress database abstraction object.
 	 *
 	 * @param int $id Comment ID.
 	 * @phpstan-param int|numeric-string $id

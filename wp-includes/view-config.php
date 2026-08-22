@@ -8,7 +8,7 @@
  * portions of the hook name are lowercased, e.g.
  * `get_entity_view_config_posttype_page` for the `page` post type.
  *
- * @package WordPress
+ * @package NotMattPress
  * @since 7.1.0
  */
 
@@ -17,7 +17,7 @@
  * for an entity.
  *
  * The entity kind and name are embedded in the hook name lowercased, so the
- * hook follows the WordPress convention of lowercase hook names regardless of
+ * hook follows the NotMattPress convention of lowercase hook names regardless of
  * how the entity identifiers are spelled: the `postType`/`page` entity maps to
  * the `get_entity_view_config_posttype_page` hook.
  *
@@ -617,7 +617,7 @@ function _wp_get_entity_view_config_posttype_wp_template( $data ) {
 				/*
 				 * Added by site.
 				 * Template was created from scratch, but has no author. Author support
-				 * was only added to templates in WordPress 5.9. Fallback to showing the
+				 * was only added to templates in NotMattPress 5.9. Fallback to showing the
 				 * site logo and title.
 				 */
 				$original_source = 'site';

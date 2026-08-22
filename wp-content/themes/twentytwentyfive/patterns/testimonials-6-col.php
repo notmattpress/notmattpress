@@ -6,7 +6,7 @@
  * Categories: testimonials
  * Description: A section with three columns and two rows, each containing a testimonial and citation.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Twenty_Twenty_Five
  * @since Twenty Twenty-Five 1.0
  */

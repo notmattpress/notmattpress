@@ -2,7 +2,7 @@
 /**
  * Aria label block support flag.
  *
- * @package WordPress
+ * @package NotMattPress
  * @since 6.8.0
  */
 

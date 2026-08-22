@@ -2,7 +2,7 @@
 /**
  * Server-side rendering of the `core/navigation-submenu` block.
  *
- * @package WordPress
+ * @package NotMattPress
  */
 
 require_once __DIR__ . '/navigation-link/shared/item-should-render.php';

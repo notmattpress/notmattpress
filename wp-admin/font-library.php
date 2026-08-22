@@ -2,12 +2,12 @@
 /**
  * Font Library administration screen.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Administration
  * @since 7.0.0
  */
 
-/** WordPress Administration Bootstrap */
+/** NotMattPress Administration Bootstrap */
 require_once __DIR__ . '/admin.php';
 
 if ( ! current_user_can( 'edit_theme_options' ) ) {

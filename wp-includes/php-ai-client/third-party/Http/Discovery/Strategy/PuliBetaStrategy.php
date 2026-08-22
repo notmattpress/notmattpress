@@ -1,11 +1,11 @@
 <?php
 
-namespace WordPress\AiClientDependencies\Http\Discovery\Strategy;
+namespace NotMattPress\AiClientDependencies\Http\Discovery\Strategy;
 
-use WordPress\AiClientDependencies\Http\Discovery\ClassDiscovery;
-use WordPress\AiClientDependencies\Http\Discovery\Exception\PuliUnavailableException;
-use WordPress\AiClientDependencies\Puli\Discovery\Api\Discovery;
-use WordPress\AiClientDependencies\Puli\GeneratedPuliFactory;
+use NotMattPress\AiClientDependencies\Http\Discovery\ClassDiscovery;
+use NotMattPress\AiClientDependencies\Http\Discovery\Exception\PuliUnavailableException;
+use NotMattPress\AiClientDependencies\Puli\Discovery\Api\Discovery;
+use NotMattPress\AiClientDependencies\Puli\GeneratedPuliFactory;
 /**
  * Find candidates using Puli.
  *

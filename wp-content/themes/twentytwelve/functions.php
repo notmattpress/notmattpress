@@ -4,22 +4,22 @@
  *
  * Sets up the theme and provides some helper functions, which are used
  * in the theme as custom template tags. Others are attached to action and
- * filter hooks in WordPress to change core functionality.
+ * filter hooks in NotMattPress to change core functionality.
  *
  * When using a child theme you can override certain functions (those wrapped
  * in a function_exists() call) by defining them first in your child theme's
  * functions.php file. The child theme's functions.php file is included before
  * the parent theme's file, so the child theme functions would be used.
  *
- * @link https://developer.wordpress.org/themes/basics/theme-functions/
- * @link https://developer.wordpress.org/themes/advanced-topics/child-themes/
+ * @link https://developer.notmatt.press/themes/basics/theme-functions/
+ * @link https://developer.notmatt.press/themes/advanced-topics/child-themes/
  *
  * Functions that are not pluggable (not wrapped in function_exists()) are instead attached
  * to a filter or action hook.
  *
- * For more information on hooks, actions, and filters, @link https://developer.wordpress.org/plugins/
+ * For more information on hooks, actions, and filters, @link https://developer.notmatt.press/plugins/
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Twenty_Twelve
  * @since Twenty Twelve 1.0
  */
@@ -32,7 +32,7 @@ if ( ! isset( $content_width ) ) {
 /**
  * Twenty Twelve setup.
  *
- * Sets up theme defaults and registers the various WordPress features that
+ * Sets up theme defaults and registers the various NotMattPress features that
  * Twenty Twelve supports.
  *
  * @uses load_theme_textdomain() For translation/localization support.
@@ -44,18 +44,18 @@ if ( ! isset( $content_width ) ) {
  *
  * @since Twenty Twelve 1.0
  *
- * @global string $wp_version The WordPress version string.
+ * @global string $wp_version The NotMattPress version string.
  */
 function twentytwelve_setup() {
 	/*
 	 * Makes Twenty Twelve available for translation.
 	 *
-	 * Translations can be filed at WordPress.org. See: https://translate.wordpress.org/projects/wp-themes/twentytwelve
+	 * Translations can be filed at NotMattPress.org. See: https://translate.notmatt.press/projects/wp-themes/twentytwelve
 	 * If you're building a theme based on Twenty Twelve, use a find and replace
 	 * to change 'twentytwelve' to the name of your theme in all the template files.
 	 *
 	 * Manual loading of text domain is not required after the introduction of
-	 * just in time translation loading in WordPress version 4.6.
+	 * just in time translation loading in NotMattPress version 4.6.
 	 *
 	 * @ticket 58318
 	 */
@@ -246,7 +246,7 @@ add_action( 'enqueue_block_editor_assets', 'twentytwelve_block_editor_styles' );
  * @since Twenty Twelve 2.2
  * @deprecated Twenty Twelve 3.9 Disabled filter because, by default, fonts are self-hosted.
  *
- * @global string $wp_version The WordPress version string.
+ * @global string $wp_version The NotMattPress version string.
  *
  * @param array   $urls          URLs to print for resource hints.
  * @param string  $relation_type The relation type the URLs are printed.
@@ -403,7 +403,7 @@ if ( ! function_exists( 'wp_get_list_item_separator' ) ) :
 	/**
 	 * Retrieves the list item separator based on the locale.
 	 *
-	 * Added for backward compatibility to support pre-6.0.0 WordPress versions.
+	 * Added for backward compatibility to support pre-6.0.0 NotMattPress versions.
 	 *
 	 * @since Twenty Twelve 3.7
 	 *
@@ -421,7 +421,7 @@ if ( ! function_exists( 'twentytwelve_content_nav' ) ) :
 	 *
 	 * @since Twenty Twelve 1.0
 	 *
-	 * @global WP_Query $wp_query WordPress Query object.
+	 * @global WP_Query $wp_query NotMattPress Query object.
 	 */
 	function twentytwelve_content_nav( $html_id ) {
 		global $wp_query;
@@ -598,9 +598,9 @@ if ( ! function_exists( 'twentytwelve_entry_meta' ) ) :
 endif;
 
 /**
- * Extends the default WordPress body classes.
+ * Extends the default NotMattPress body classes.
  *
- * Extends the default WordPress body class to denote:
+ * Extends the default NotMattPress body class to denote:
  * 1. Using a full-width layout, when no active widgets in the sidebar
  *    or full-width template.
  * 2. Front Page template: thumbnail in use and number of sidebars for
@@ -767,7 +767,7 @@ if ( ! function_exists( 'wp_body_open' ) ) :
 	/**
 	 * Fires the wp_body_open action.
 	 *
-	 * Added for backward compatibility to support pre-5.2.0 WordPress versions.
+	 * Added for backward compatibility to support pre-5.2.0 NotMattPress versions.
 	 *
 	 * @since Twenty Twelve 3.0
 	 */

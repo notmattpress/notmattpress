@@ -2,7 +2,7 @@
 /**
  * Server-side rendering of the `core/post-content` block.
  *
- * @package WordPress
+ * @package NotMattPress
  */
 
 /**

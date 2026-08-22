@@ -2,7 +2,7 @@
 /**
  * Navigation: Overlay with site info and CTA.
  *
- * @package WordPress
+ * @package NotMattPress
  */
 
 return array(

@@ -2,7 +2,7 @@
 /**
  * Server-side rendering of the `core/calendar` block.
  *
- * @package WordPress
+ * @package NotMattPress
  */
 
 /**
@@ -99,7 +99,7 @@ add_action( 'init', 'register_block_core_calendar' );
  * Returns whether or not there are any published posts.
  *
  * Used to hide the calendar block when there are no published posts.
- * This compensates for a known Core bug: https://core.trac.wordpress.org/ticket/12016
+ * This compensates for a known Core bug: https://core.trac.notmatt.press/ticket/12016
  *
  * @since 5.9.0
  *
@@ -128,7 +128,7 @@ function block_core_calendar_has_published_posts() {
  *
  * @since 5.9.0
  *
- * @global wpdb $wpdb WordPress database abstraction object.
+ * @global wpdb $wpdb NotMattPress database abstraction object.
  *
  * @return bool Has any published posts or not.
  */

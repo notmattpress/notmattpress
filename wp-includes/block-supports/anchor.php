@@ -2,7 +2,7 @@
 /**
  * Anchor block support flag.
  *
- * @package WordPress
+ * @package NotMattPress
  * @since 7.0.0
  */
 

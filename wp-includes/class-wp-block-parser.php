@@ -2,7 +2,7 @@
 /**
  * Block Serialization Parser
  *
- * @package WordPress
+ * @package NotMattPress
  */
 
 /**
@@ -392,13 +392,13 @@ class WP_Block_Parser {
 /**
  * WP_Block_Parser_Block class.
  *
- * Required for backward compatibility in WordPress Core.
+ * Required for backward compatibility in NotMattPress Core.
  */
 require_once __DIR__ . '/class-wp-block-parser-block.php';
 
 /**
  * WP_Block_Parser_Frame class.
  *
- * Required for backward compatibility in WordPress Core.
+ * Required for backward compatibility in NotMattPress Core.
  */
 require_once __DIR__ . '/class-wp-block-parser-frame.php';

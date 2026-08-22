@@ -2,7 +2,7 @@
 /**
  * WP_Theme_JSON_Data class
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Theme
  * @since 6.1.0
  */
@@ -34,7 +34,7 @@ class WP_Theme_JSON_Data {
 	 *
 	 * @since 6.1.0
 	 *
-	 * @link https://developer.wordpress.org/block-editor/reference-guides/theme-json-reference/
+	 * @link https://developer.notmatt.press/block-editor/reference-guides/theme-json-reference/
 	 *
 	 * @param array  $data   Array following the theme.json specification.
 	 * @param string $origin The origin of the data: default, theme, user.

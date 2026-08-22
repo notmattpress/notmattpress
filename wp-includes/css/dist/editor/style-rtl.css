@@ -20,7 +20,7 @@
  */
 /**
  * Grid System.
- * https://make.wordpress.org/design/2019/10/31/proposal-a-consistent-spacing-system-for-wordpress/
+ * https://make.notmatt.press/design/2019/10/31/proposal-a-consistent-spacing-system-for-wordpress/
  */
 /**
  * Radius scale.
@@ -69,7 +69,7 @@
  * Focus styles.
  */
 /**
- * Standard focus rings for the WordPress Design System.
+ * Standard focus rings for the NotMattPress Design System.
  *
  * Apply `outset-ring__focus` inside the relevant pseudo-class at the call site,
  * e.g. `&:focus { @include outset-ring__focus(); }`.
@@ -131,7 +131,7 @@
  */
 /**
  * Grid System.
- * https://make.wordpress.org/design/2019/10/31/proposal-a-consistent-spacing-system-for-wordpress/
+ * https://make.notmatt.press/design/2019/10/31/proposal-a-consistent-spacing-system-for-wordpress/
  */
 /**
  * Radius scale.
@@ -193,7 +193,7 @@
  * Focus styles.
  */
 /**
- * Standard focus rings for the WordPress Design System.
+ * Standard focus rings for the NotMattPress Design System.
  *
  * Apply `outset-ring__focus` inside the relevant pseudo-class at the call site,
  * e.g. `&:focus { @include outset-ring__focus(); }`.
@@ -560,7 +560,7 @@ body.is-fullscreen-mode .interface-interface-skeleton {
  */
 /**
  * Grid System.
- * https://make.wordpress.org/design/2019/10/31/proposal-a-consistent-spacing-system-for-wordpress/
+ * https://make.notmatt.press/design/2019/10/31/proposal-a-consistent-spacing-system-for-wordpress/
  */
 /**
  * Radius scale.
@@ -612,7 +612,7 @@ body.is-fullscreen-mode .interface-interface-skeleton {
  * Focus styles.
  */
 /**
- * Standard focus rings for the WordPress Design System.
+ * Standard focus rings for the NotMattPress Design System.
  *
  * Apply `outset-ring__focus` inside the relevant pseudo-class at the call site,
  * e.g. `&:focus { @include outset-ring__focus(); }`.
@@ -1345,7 +1345,7 @@ button.font-library__upload-area {
  */
 /**
  * Grid System.
- * https://make.wordpress.org/design/2019/10/31/proposal-a-consistent-spacing-system-for-wordpress/
+ * https://make.notmatt.press/design/2019/10/31/proposal-a-consistent-spacing-system-for-wordpress/
  */
 /**
  * Radius scale.
@@ -1394,7 +1394,7 @@ button.font-library__upload-area {
  * Focus styles.
  */
 /**
- * Standard focus rings for the WordPress Design System.
+ * Standard focus rings for the NotMattPress Design System.
  *
  * Apply `outset-ring__focus` inside the relevant pseudo-class at the call site,
  * e.g. `&:focus { @include outset-ring__focus(); }`.
@@ -4169,7 +4169,7 @@ div.dataviews-view-list {
  */
 /**
  * Grid System.
- * https://make.wordpress.org/design/2019/10/31/proposal-a-consistent-spacing-system-for-wordpress/
+ * https://make.notmatt.press/design/2019/10/31/proposal-a-consistent-spacing-system-for-wordpress/
  */
 /**
  * Radius scale.
@@ -4218,7 +4218,7 @@ div.dataviews-view-list {
  * Focus styles.
  */
 /**
- * Standard focus rings for the WordPress Design System.
+ * Standard focus rings for the NotMattPress Design System.
  *
  * Apply `outset-ring__focus` inside the relevant pseudo-class at the call site,
  * e.g. `&:focus { @include outset-ring__focus(); }`.
@@ -4757,7 +4757,7 @@ fieldset.fields__media-edit .fields__media-edit-expanded:not(.is-empty) .fields_
  */
 /**
  * Grid System.
- * https://make.wordpress.org/design/2019/10/31/proposal-a-consistent-spacing-system-for-wordpress/
+ * https://make.notmatt.press/design/2019/10/31/proposal-a-consistent-spacing-system-for-wordpress/
  */
 /**
  * Radius scale.
@@ -5127,7 +5127,7 @@ fieldset.fields__media-edit .fields__media-edit-expanded:not(.is-empty) .fields_
  * Focus styles.
  */
 /**
- * Standard focus rings for the WordPress Design System.
+ * Standard focus rings for the NotMattPress Design System.
  *
  * Apply `outset-ring__focus` inside the relevant pseudo-class at the call site,
  * e.g. `&:focus { @include outset-ring__focus(); }`.
