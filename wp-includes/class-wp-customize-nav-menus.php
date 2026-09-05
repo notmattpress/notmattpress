@@ -1,8 +1,8 @@
 <?php
 /**
- * WordPress Customize Nav Menus classes
+ * NotMattPress Customize Nav Menus classes
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Customize
  * @since 4.3.0
  */

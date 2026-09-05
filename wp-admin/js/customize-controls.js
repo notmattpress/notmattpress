@@ -5,7 +5,7 @@
 /* global _wpCustomizeHeader, _wpCustomizeBackground, _wpMediaViewsL10n, MediaElementPlayer, console, confirm */
 
 /**
- * @param {Object}       wp The WordPress global object.
+ * @param {Object}       wp The NotMattPress global object.
  * @param {JQueryStatic} $  The jQuery object.
  */
 (function( wp, $ ){
@@ -361,7 +361,7 @@
 		/**
 		 * A Customizer Setting.
 		 *
-		 * A setting is WordPress data (theme mod, option, menu, etc.) that the user can
+		 * A setting is NotMattPress data (theme mod, option, menu, etc.) that the user can
 		 * draft changes to in the Customizer.
 		 *
 		 * @see PHP class WP_Customize_Setting.
@@ -5277,7 +5277,7 @@
 					control.params.theme.author + ' ';
 			haystack = haystack.toLowerCase().replace( '-', ' ' );
 
-			// Back-compat for behavior in WordPress 4.2.0 to 4.8.X.
+			// Back-compat for behavior in NotMattPress 4.2.0 to 4.8.X.
 			if ( ! _.isArray( terms ) ) {
 				terms = [ terms ];
 			}

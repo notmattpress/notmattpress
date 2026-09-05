@@ -1,9 +1,9 @@
-# Copyright (C) 2019 the WordPress team
+# Copyright (C) 2019 the NotMattPress team
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
 "Project-Id-Version: Twenty Eleven 3.3\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/twentyeleven\n"
+"Report-Msgid-Bugs-To: https://notmatt.press/support/theme/twentyeleven\n"
 "POT-Creation-Date: 2019-05-07 18:19:59+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -257,7 +257,7 @@ msgid "Featured"
 msgstr ""
 
 #: footer.php:34
-msgid "https://wordpress.org/"
+msgid "https://notmatt.press/"
 msgstr ""
 
 #: footer.php:34
@@ -485,11 +485,11 @@ msgid "For more information:"
 msgstr ""
 
 #: inc/theme-options.php:121
-msgid "<a href=\"https://wordpress.org/support/article/appearance-customize-screen/\" target=\"_blank\">Documentation on Theme Options</a>"
+msgid "<a href=\"https://notmatt.press/support/article/appearance-customize-screen/\" target=\"_blank\">Documentation on Theme Options</a>"
 msgstr ""
 
 #: inc/theme-options.php:122
-msgid "<a href=\"https://wordpress.org/support/\" target=\"_blank\">Support</a>"
+msgid "<a href=\"https://notmatt.press/support/\" target=\"_blank\">Support</a>"
 msgstr ""
 
 #: inc/theme-options.php:130
@@ -612,19 +612,19 @@ msgid "Twenty Eleven"
 msgstr ""
 
 #. Theme URI of the plugin/theme
-msgid "https://wordpress.org/themes/twentyeleven/"
+msgid "https://notmatt.press/themes/twentyeleven/"
 msgstr ""
 
 #. Description of the plugin/theme
-msgid "The 2011 theme for WordPress is sophisticated, lightweight, and adaptable. Make it yours with a custom menu, header image, and background -- then go further with available theme options for light or dark color scheme, custom link colors, and three layout choices. Twenty Eleven comes equipped with a Showcase page template that transforms your front page into a showcase to show off your best content, widget support galore (sidebar, three footer areas, and a Showcase page widget area), and a custom \"Ephemera\" widget to display your Aside, Link, Quote, or Status posts. Included are styles for print and for the admin editor, support for featured images (as custom header images on posts and pages and as large images on featured \"sticky\" posts), and special styles for six different post formats."
+msgid "The 2011 theme for NotMattPress is sophisticated, lightweight, and adaptable. Make it yours with a custom menu, header image, and background -- then go further with available theme options for light or dark color scheme, custom link colors, and three layout choices. Twenty Eleven comes equipped with a Showcase page template that transforms your front page into a showcase to show off your best content, widget support galore (sidebar, three footer areas, and a Showcase page widget area), and a custom \"Ephemera\" widget to display your Aside, Link, Quote, or Status posts. Included are styles for print and for the admin editor, support for featured images (as custom header images on posts and pages and as large images on featured \"sticky\" posts), and special styles for six different post formats."
 msgstr ""
 
 #. Author of the plugin/theme
-msgid "the WordPress team"
+msgid "the NotMattPress team"
 msgstr ""
 
 #. Author URI of the plugin/theme
-msgid "https://wordpress.org/"
+msgid "https://notmatt.press/"
 msgstr ""
 
 #. Template Name of the plugin/theme

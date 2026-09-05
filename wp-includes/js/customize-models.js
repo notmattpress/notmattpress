@@ -6,7 +6,7 @@
 
 /**
  * @param {JQueryStatic} $  The jQuery object.
- * @param {Object}       wp The WordPress global object.
+ * @param {Object}       wp The NotMattPress global object.
  */
 (function( $, wp ) {
 	var api = wp.customize;

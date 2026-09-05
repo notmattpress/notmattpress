@@ -10,7 +10,7 @@
  *
  * We are creating two queries to fetch the proper posts and a custom widget for the sidebar.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Twenty_Eleven
  * @since Twenty Eleven 1.0
  */
@@ -80,7 +80,7 @@ get_header(); ?>
 						*/
 						$counter_slider = 0;
 
-						// Compatibility with versions of WordPress prior to 3.4.
+						// Compatibility with versions of NotMattPress prior to 3.4.
 						if ( function_exists( 'get_custom_header' ) ) {
 							$header_image_width = get_theme_support( 'custom-header', 'width' );
 						} else {

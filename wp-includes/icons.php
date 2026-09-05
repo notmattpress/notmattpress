@@ -2,7 +2,7 @@
 /**
  * Icons API: Icon registration and rendering helper functions.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Icons
  * @since 7.1.0
  */
@@ -44,7 +44,7 @@ function wp_unregister_icon_collection( $slug ) {
  *
  * @param string $icon_name Namespaced icon name in the form "collection/icon-name"
  *                          (e.g. "my-plugin/arrow-left"). The "core" collection is
- *                          reserved for WordPress core icons; third-party code should
+ *                          reserved for NotMattPress core icons; third-party code should
  *                          register icons under its own collection rather than the
  *                          "core" collection.
  * @param array  $args {
@@ -85,7 +85,7 @@ function _wp_register_default_icon_collections() {
 	wp_register_icon_collection(
 		'core',
 		array(
-			'label'       => __( 'WordPress' ),
+			'label'       => __( 'NotMattPress' ),
 			'description' => __( 'Default icon collection.' ),
 		)
 	);

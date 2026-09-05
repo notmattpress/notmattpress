@@ -1,15 +1,15 @@
 <?php
 
 declare (strict_types=1);
-namespace WordPress\AiClient\Providers;
+namespace NotMattPress\AiClient\Providers;
 
-use WordPress\AiClient\Providers\Contracts\ModelMetadataDirectoryInterface;
-use WordPress\AiClient\Providers\Contracts\ProviderAvailabilityInterface;
-use WordPress\AiClient\Providers\Contracts\ProviderInterface;
-use WordPress\AiClient\Providers\DTO\ProviderMetadata;
-use WordPress\AiClient\Providers\Models\Contracts\ModelInterface;
-use WordPress\AiClient\Providers\Models\DTO\ModelConfig;
-use WordPress\AiClient\Providers\Models\DTO\ModelMetadata;
+use NotMattPress\AiClient\Providers\Contracts\ModelMetadataDirectoryInterface;
+use NotMattPress\AiClient\Providers\Contracts\ProviderAvailabilityInterface;
+use NotMattPress\AiClient\Providers\Contracts\ProviderInterface;
+use NotMattPress\AiClient\Providers\DTO\ProviderMetadata;
+use NotMattPress\AiClient\Providers\Models\Contracts\ModelInterface;
+use NotMattPress\AiClient\Providers\Models\DTO\ModelConfig;
+use NotMattPress\AiClient\Providers\Models\DTO\ModelMetadata;
 /**
  * Base class for a provider.
  *

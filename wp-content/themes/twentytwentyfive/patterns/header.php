@@ -6,7 +6,7 @@
  * Block Types: core/template-part/header
  * Description: Site header with site title and navigation.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Twenty_Twenty_Five
  * @since Twenty Twenty-Five 1.0
  */

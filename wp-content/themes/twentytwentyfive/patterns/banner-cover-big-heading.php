@@ -5,7 +5,7 @@
  * Categories: banner, about, featured
  * Description: A full-width cover section with a large background image and an oversized heading.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Twenty_Twenty_Five
  * @since Twenty Twenty-Five 1.0
  */

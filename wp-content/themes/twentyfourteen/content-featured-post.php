@@ -2,7 +2,7 @@
 /**
  * The template for displaying featured posts on the front page
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Twenty_Fourteen
  * @since Twenty Fourteen 1.0
  */

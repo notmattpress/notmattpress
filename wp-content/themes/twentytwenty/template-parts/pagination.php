@@ -2,9 +2,9 @@
 /**
  * A template partial to output pagination for the Twenty Twenty default theme.
  *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ * @link https://developer.notmatt.press/themes/basics/template-files/#template-partials
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Twenty_Twenty
  * @since Twenty Twenty 1.0
  */

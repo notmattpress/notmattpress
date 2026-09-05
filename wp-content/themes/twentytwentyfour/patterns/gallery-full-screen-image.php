@@ -5,7 +5,7 @@
  * Categories: gallery, portfolio
  * Description: A cover image section that covers the entire width.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Twenty_Twenty_Four
  * @since Twenty Twenty-Four 1.0
  */

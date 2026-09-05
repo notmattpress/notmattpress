@@ -22,7 +22,7 @@ window.wp = window.wp || {};
  * @property {string} what The prefix before the post ID.
  *
  * @param {JQueryStatic} $ The jQuery object.
- * @param {wp}           wp The WordPress global object.
+ * @param {wp}           wp The NotMattPress global object.
  *
  */
 ( function( $, wp ) {

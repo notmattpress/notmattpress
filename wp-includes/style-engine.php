@@ -5,7 +5,7 @@
  * This file contains a variety of public functions developers can use to interact with
  * the Style Engine API.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage StyleEngine
  * @since 6.1.0
  */
@@ -32,8 +32,8 @@
  *
  * @since 6.1.0
  *
- * @see https://developer.wordpress.org/block-editor/reference-guides/theme-json-reference/theme-json-living/#styles
- * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-supports/
+ * @see https://developer.notmatt.press/block-editor/reference-guides/theme-json-reference/theme-json-living/#styles
+ * @see https://developer.notmatt.press/block-editor/reference-guides/block-api/block-supports/
  *
  * @param array $block_styles The style object.
  * @param array $options {

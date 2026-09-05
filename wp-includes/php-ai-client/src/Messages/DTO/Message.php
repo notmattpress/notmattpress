@@ -1,11 +1,11 @@
 <?php
 
 declare (strict_types=1);
-namespace WordPress\AiClient\Messages\DTO;
+namespace NotMattPress\AiClient\Messages\DTO;
 
-use WordPress\AiClient\Common\AbstractDataTransferObject;
-use WordPress\AiClient\Common\Exception\InvalidArgumentException;
-use WordPress\AiClient\Messages\Enums\MessageRoleEnum;
+use NotMattPress\AiClient\Common\AbstractDataTransferObject;
+use NotMattPress\AiClient\Common\Exception\InvalidArgumentException;
+use NotMattPress\AiClient\Messages\Enums\MessageRoleEnum;
 /**
  * Represents a message in an AI conversation.
  *
@@ -81,11 +81,11 @@ class Message extends AbstractDataTransferObject
      * @return Message A new instance with the part appended.
      * @throws InvalidArgumentException If the part is invalid for the role.
      */
-    public function withPart(\WordPress\AiClient\Messages\DTO\MessagePart $part): \WordPress\AiClient\Messages\DTO\Message
+    public function withPart(\NotMattPress\AiClient\Messages\DTO\MessagePart $part): \NotMattPress\AiClient\Messages\DTO\Message
     {
         $newParts = $this->parts;
         $newParts[] = $part;
-        return new \WordPress\AiClient\Messages\DTO\Message($this->role, $newParts);
+        return new \NotMattPress\AiClient\Messages\DTO\Message($this->role, $newParts);
     }
     /**
      * Validates that the message parts are appropriate for the message role.
@@ -114,7 +114,7 @@ class Message extends AbstractDataTransferObject
      */
     public static function getJsonSchema(): array
     {
-        return ['type' => 'object', 'properties' => [self::KEY_ROLE => ['type' => 'string', 'enum' => MessageRoleEnum::getValues(), 'description' => 'The role of the message sender.'], self::KEY_PARTS => ['type' => 'array', 'items' => \WordPress\AiClient\Messages\DTO\MessagePart::getJsonSchema(), 'minItems' => 1, 'description' => 'The parts that make up this message.']], 'required' => [self::KEY_ROLE, self::KEY_PARTS]];
+        return ['type' => 'object', 'properties' => [self::KEY_ROLE => ['type' => 'string', 'enum' => MessageRoleEnum::getValues(), 'description' => 'The role of the message sender.'], self::KEY_PARTS => ['type' => 'array', 'items' => \NotMattPress\AiClient\Messages\DTO\MessagePart::getJsonSchema(), 'minItems' => 1, 'description' => 'The parts that make up this message.']], 'required' => [self::KEY_ROLE, self::KEY_PARTS]];
     }
     /**
      * {@inheritDoc}
@@ -125,7 +125,7 @@ class Message extends AbstractDataTransferObject
      */
     public function toArray(): array
     {
-        return [self::KEY_ROLE => $this->role->value, self::KEY_PARTS => array_map(function (\WordPress\AiClient\Messages\DTO\MessagePart $part) {
+        return [self::KEY_ROLE => $this->role->value, self::KEY_PARTS => array_map(function (\NotMattPress\AiClient\Messages\DTO\MessagePart $part) {
             return $part->toArray();
         }, $this->parts)];
     }
@@ -142,13 +142,13 @@ class Message extends AbstractDataTransferObject
         $role = MessageRoleEnum::from($array[self::KEY_ROLE]);
         $partsData = $array[self::KEY_PARTS];
         $parts = array_map(function (array $partData) {
-            return \WordPress\AiClient\Messages\DTO\MessagePart::fromArray($partData);
+            return \NotMattPress\AiClient\Messages\DTO\MessagePart::fromArray($partData);
         }, $partsData);
         // Determine which concrete class to instantiate based on role
         if ($role->isUser()) {
-            return new \WordPress\AiClient\Messages\DTO\UserMessage($parts);
+            return new \NotMattPress\AiClient\Messages\DTO\UserMessage($parts);
         } elseif ($role->isModel()) {
-            return new \WordPress\AiClient\Messages\DTO\ModelMessage($parts);
+            return new \NotMattPress\AiClient\Messages\DTO\ModelMessage($parts);
         } else {
             // Only USER and MODEL roles are supported
             throw new InvalidArgumentException('Invalid message role: ' . $role->value);

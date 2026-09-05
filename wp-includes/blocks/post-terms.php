@@ -2,7 +2,7 @@
 /**
  * Server-side rendering of the `core/post-terms` block.
  *
- * @package WordPress
+ * @package NotMattPress
  */
 
 /**

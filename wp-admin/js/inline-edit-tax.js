@@ -18,7 +18,7 @@ window.wp = window.wp || {};
  *                         suffixed.
  *
  * @param {JQueryStatic} $  The jQuery object.
- * @param {Object}       wp The WordPress object.
+ * @param {Object}       wp The NotMattPress object.
  */
 ( function( $, wp ) {
 

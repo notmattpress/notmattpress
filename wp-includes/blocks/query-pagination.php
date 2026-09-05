@@ -2,7 +2,7 @@
 /**
  * Server-side rendering of the `core/query-pagination` block.
  *
- * @package WordPress
+ * @package NotMattPress
  */
 
 /**

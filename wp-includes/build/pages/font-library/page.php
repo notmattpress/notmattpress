@@ -263,7 +263,7 @@ function wp_font_library_render_page() {
 		</style>
 	<?php
 	global $hook_suffix;
-	// phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
+	// phpcs:ignore NotMattPress.WP.GlobalVariablesOverride.Prohibited
 	$hook_suffix = 'font-library';
 
 	// BEGIN see wp-admin/admin-header.php
@@ -271,7 +271,7 @@ function wp_font_library_render_page() {
 	print_head_scripts();
 
 	/** This action is documented in wp-admin/admin-header.php */
-	do_action( "admin_head-{$hook_suffix}" ); // phpcs:ignore WordPress.NamingConventions.ValidHookName.UseUnderscores
+	do_action( "admin_head-{$hook_suffix}" ); // phpcs:ignore NotMattPress.NamingConventions.ValidHookName.UseUnderscores
 
 	/** This action is documented in wp-admin/admin-header.php */
 	do_action( 'admin_head' );
@@ -294,7 +294,7 @@ function wp_font_library_render_page() {
 	wp_script_modules()->print_script_module_data();
 
 	/** This action is documented in wp-admin/admin-footer.php */
-	do_action( "admin_footer-{$hook_suffix}" ); // phpcs:ignore WordPress.NamingConventions.ValidHookName.UseUnderscores
+	do_action( "admin_footer-{$hook_suffix}" ); // phpcs:ignore NotMattPress.NamingConventions.ValidHookName.UseUnderscores
 	// END see wp-admin/admin-footer.php
 	?>
 	</body>
@@ -305,10 +305,10 @@ function wp_font_library_render_page() {
 
 /**
  * Intercept admin_init to render the page early.
- * This bypasses the default WordPress admin template.
+ * This bypasses the default NotMattPress admin template.
  */
 function wp_font_library_intercept_render() {
-	// phpcs:ignore WordPress.Security.NonceVerification.Recommended
+	// phpcs:ignore NotMattPress.Security.NonceVerification.Recommended
 	if ( isset( $_GET['page'] ) && 'font-library' === $_GET['page'] ) {
 		wp_font_library_render_page();
 		exit;

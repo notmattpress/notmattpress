@@ -5,7 +5,7 @@
 /**
  * Script run inside a Customizer preview frame.
  *
- * @param {Object}       wp The WordPress global object.
+ * @param {Object}       wp The NotMattPress global object.
  * @param {JQueryStatic} $  The jQuery object.
  */
 (function( wp, $ ){

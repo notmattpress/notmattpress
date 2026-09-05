@@ -2,12 +2,12 @@
 /**
  * Connectors administration screen.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Administration
  * @since 7.0.0
  */
 
-/** WordPress Administration Bootstrap */
+/** NotMattPress Administration Bootstrap */
 require_once __DIR__ . '/admin.php';
 
 if ( ! current_user_can( 'manage_options' ) ) {
@@ -18,7 +18,7 @@ if ( ! current_user_can( 'manage_options' ) ) {
 	);
 }
 
-if ( ! class_exists( '\WordPress\AiClient\AiClient' ) || ! function_exists( 'wp_options_connectors_wp_admin_render_page' ) ) {
+if ( ! class_exists( '\NotMattPress\AiClient\AiClient' ) || ! function_exists( 'wp_options_connectors_wp_admin_render_page' ) ) {
 	wp_die(
 		'<h1>' . __( 'Connectors are not available.' ) . '</h1>' .
 		'<p>' . __( 'The Connectors page requires build files. Please run <code>npm install</code> to build the necessary files.' ) . '</p>',

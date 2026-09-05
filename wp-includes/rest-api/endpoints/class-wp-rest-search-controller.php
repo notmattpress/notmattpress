@@ -2,13 +2,13 @@
 /**
  * REST API: WP_REST_Search_Controller class
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage REST_API
  * @since 5.0.0
  */
 
 /**
- * Core class to search through all WordPress content via the REST API.
+ * Core class to search through all NotMattPress content via the REST API.
  *
  * @since 5.0.0
  *

@@ -2,7 +2,7 @@
 /**
  * The template for displaying Search Results pages
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Twenty_Thirteen
  * @since Twenty Thirteen 1.0
  */

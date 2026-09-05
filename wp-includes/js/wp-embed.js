@@ -1,5 +1,5 @@
 /**
- * WordPress inline HTML embed
+ * NotMattPress inline HTML embed
  *
  * @param {Window} window The global window object.
  * @param {Document} document The global document object.

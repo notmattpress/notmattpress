@@ -4,7 +4,7 @@
  *
  * Used for both single and index/archive/search.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Twenty_Fifteen
  * @since Twenty Fifteen 1.0
  */
