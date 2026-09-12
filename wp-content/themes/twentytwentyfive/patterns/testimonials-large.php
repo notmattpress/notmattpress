@@ -6,7 +6,7 @@
  * Categories: testimonials
  * Description: A testimonial with a large image on the right.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Twenty_Twenty_Five
  * @since Twenty Twenty-Five 1.0
  */

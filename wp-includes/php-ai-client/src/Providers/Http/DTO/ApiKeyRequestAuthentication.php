@@ -1,10 +1,10 @@
 <?php
 
 declare (strict_types=1);
-namespace WordPress\AiClient\Providers\Http\DTO;
+namespace NotMattPress\AiClient\Providers\Http\DTO;
 
-use WordPress\AiClient\Common\AbstractDataTransferObject;
-use WordPress\AiClient\Providers\Http\Contracts\RequestAuthenticationInterface;
+use NotMattPress\AiClient\Common\AbstractDataTransferObject;
+use NotMattPress\AiClient\Providers\Http\Contracts\RequestAuthenticationInterface;
 /**
  * Class for HTTP request authentication using an API key.
  *
@@ -39,7 +39,7 @@ class ApiKeyRequestAuthentication extends AbstractDataTransferObject implements 
      *
      * @since 0.1.0
      */
-    public function authenticateRequest(\WordPress\AiClient\Providers\Http\DTO\Request $request): \WordPress\AiClient\Providers\Http\DTO\Request
+    public function authenticateRequest(\NotMattPress\AiClient\Providers\Http\DTO\Request $request): \NotMattPress\AiClient\Providers\Http\DTO\Request
     {
         // Add the API key to the request headers.
         return $request->withHeader('Authorization', 'Bearer ' . $this->apiKey);

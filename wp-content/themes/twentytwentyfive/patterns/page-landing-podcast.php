@@ -9,7 +9,7 @@
  * Viewport width: 1400
  * Description: A landing page for the podcast with a hero section, description, logos, grid with videos and newsletter signup.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Twenty_Twenty_Five
  * @since Twenty Twenty-Five 1.0
  */

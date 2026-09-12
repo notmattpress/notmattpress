@@ -2,7 +2,7 @@
 /**
  * The template for displaying posts in the Image post format
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Twenty_Thirteen
  * @since Twenty Thirteen 1.0
  */

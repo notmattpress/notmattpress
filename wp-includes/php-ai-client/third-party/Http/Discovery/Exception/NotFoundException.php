@@ -1,8 +1,8 @@
 <?php
 
-namespace WordPress\AiClientDependencies\Http\Discovery\Exception;
+namespace NotMattPress\AiClientDependencies\Http\Discovery\Exception;
 
-use WordPress\AiClientDependencies\Http\Discovery\Exception;
+use NotMattPress\AiClientDependencies\Http\Discovery\Exception;
 /**
  * Thrown when a discovery does not find any matches.
  *

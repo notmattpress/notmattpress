@@ -2,7 +2,7 @@
 /**
  * Feed API: WP_Feed_Cache class
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Feed
  * @since 4.7.0
  * @deprecated 5.6.0

@@ -6,7 +6,7 @@
  * Block Types: core/query
  * Description: A list of posts, 3 columns.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Twenty_Twenty_Four
  * @since Twenty Twenty-Four 1.0
  */

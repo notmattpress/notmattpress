@@ -2,7 +2,7 @@
 /**
  * Network API: WP_Network class
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Multisite
  * @since 4.4.0
  */
@@ -13,7 +13,7 @@
  * This class is used during load to populate the `$current_site` global and
  * setup the current network.
  *
- * This class is most useful in WordPress multi-network installations where the
+ * This class is most useful in NotMattPress multi-network installations where the
  * ability to interact with any network of sites is required.
  *
  * @since 4.4.0
@@ -92,7 +92,7 @@ class WP_Network {
 	 * @since 4.4.0
 	 * @since 7.2.0 Cache values that are neither a network object nor the -1 miss sentinel are now treated as a cache miss and replaced.
 	 *
-	 * @global wpdb $wpdb WordPress database abstraction object.
+	 * @global wpdb $wpdb NotMattPress database abstraction object.
 	 *
 	 * @param int $network_id The ID of the network to retrieve.
 	 * @return WP_Network|false The network's object if found. False if not.
@@ -385,7 +385,7 @@ class WP_Network {
 			 *
 			 * @since 3.9.0
 			 *
-			 * @param int|null $segments The number of path segments to consider. WordPress by default looks at
+			 * @param int|null $segments The number of path segments to consider. NotMattPress by default looks at
 			 *                           one path segment. The function default of null only makes sense when you
 			 *                           know the requested path should match a network.
 			 * @param string   $domain   The requested domain.

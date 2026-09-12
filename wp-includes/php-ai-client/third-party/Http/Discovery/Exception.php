@@ -1,6 +1,6 @@
 <?php
 
-namespace WordPress\AiClientDependencies\Http\Discovery;
+namespace NotMattPress\AiClientDependencies\Http\Discovery;
 
 /**
  * An interface implemented by all discovery related exceptions.

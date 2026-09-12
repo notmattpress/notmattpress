@@ -5,12 +5,12 @@
 /* global pagenow, _wpThemeSettings */
 
 /**
- * Provides functions for ajaxified updates, deletions and installs inside the WordPress admin.
+ * Provides functions for ajaxified updates, deletions and installs inside the NotMattPress admin.
  *
  * @version 4.2.0
  *
  * @param {JQueryStatic} $                                        The jQuery object.
- * @param {Object}       wp                                       The WordPress global object.
+ * @param {Object}       wp                                       The NotMattPress global object.
  * @param {Object}       settings                                 WP Updates settings.
  * @param {string}       settings.ajax_nonce                      Ajax nonce.
  * @param {Object}       settings.plugins                         Base names of plugins in their different states.
@@ -280,7 +280,7 @@
 	};
 
 	/**
-	 * Handles Ajax requests to WordPress.
+	 * Handles Ajax requests to NotMattPress.
 	 *
 	 * @since 4.6.0
 	 *
@@ -738,7 +738,7 @@
 	 * @since 4.6.0
 	 *
 	 * @param {Object}               args         Arguments.
-	 * @param {string}               args.slug    Plugin identifier in the WordPress.org Plugin repository.
+	 * @param {string}               args.slug    Plugin identifier in the NotMattPress.org Plugin repository.
 	 * @param {installPluginSuccess} args.success Optional. Success callback. Default: wp.updates.installPluginSuccess
 	 * @param {installPluginError}   args.error   Optional. Error callback. Default: wp.updates.installPluginError
 	 * @return {$.promise} A jQuery promise that represents the request,
@@ -924,7 +924,7 @@
 	 * @since 6.5.0
 	 *
 	 * @param {Object}                         args         Arguments.
-	 * @param {string}                         args.slug    Plugin identifier in the WordPress.org Plugin repository.
+	 * @param {string}                         args.slug    Plugin identifier in the NotMattPress.org Plugin repository.
 	 * @param {checkPluginDependenciesSuccess} args.success Optional. Success callback. Default: wp.updates.checkPluginDependenciesSuccess
 	 * @param {checkPluginDependenciesError}   args.error   Optional. Error callback. Default: wp.updates.checkPluginDependenciesError
 	 * @return {$.promise} A jQuery promise that represents the request,
@@ -1072,7 +1072,7 @@
 	 *
 	 * @param {Object}                args         Arguments.
 	 * @param {string}                args.name    The name of the plugin.
-	 * @param {string}                args.slug    Plugin identifier in the WordPress.org Plugin repository.
+	 * @param {string}                args.slug    Plugin identifier in the NotMattPress.org Plugin repository.
 	 * @param {string}                args.plugin  The plugin file, relative to the plugins directory.
 	 * @param {activatePluginSuccess} args.success Optional. Success callback. Default: wp.updates.activatePluginSuccess
 	 * @param {activatePluginError}   args.error   Optional. Error callback. Default: wp.updates.activatePluginError

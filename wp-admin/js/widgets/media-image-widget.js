@@ -103,7 +103,7 @@
 			mediaFrame.state( 'image-details' ).on( 'update', updateCallback );
 			mediaFrame.state( 'replace-image' ).on( 'replace', updateCallback );
 
-			// Disable syncing of attachment changes back to server. See <https://core.trac.wordpress.org/ticket/40403>.
+			// Disable syncing of attachment changes back to server. See <https://core.trac.notmatt.press/ticket/40403>.
 			defaultSync = wp.media.model.Attachment.prototype.sync;
 			wp.media.model.Attachment.prototype.sync = function rejectedSync() {
 				return $.Deferred().rejectWith( this ).promise();

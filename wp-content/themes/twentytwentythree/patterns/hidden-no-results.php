@@ -4,7 +4,7 @@
  * Slug: twentytwentythree/hidden-no-results-content
  * Inserter: no
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Twenty_Twenty_Three
  * @since Twenty Twenty-Three 1.0
  */

@@ -4,7 +4,7 @@
  *
  * This file is not included anywhere. It exists solely for use by xgettext.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage i18n
  * @since 2.8.0
  */

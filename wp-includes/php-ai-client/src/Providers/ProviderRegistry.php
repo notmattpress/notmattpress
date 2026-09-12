@@ -1,25 +1,25 @@
 <?php
 
 declare (strict_types=1);
-namespace WordPress\AiClient\Providers;
+namespace NotMattPress\AiClient\Providers;
 
-use WordPress\AiClientDependencies\Http\Discovery\Exception\NotFoundException as DiscoveryNotFoundException;
-use WordPress\AiClient\Common\Exception\InvalidArgumentException;
-use WordPress\AiClient\Common\Exception\RuntimeException;
-use WordPress\AiClient\Providers\Contracts\ProviderInterface;
-use WordPress\AiClient\Providers\Contracts\ProviderWithOperationsHandlerInterface;
-use WordPress\AiClient\Providers\DTO\ProviderMetadata;
-use WordPress\AiClient\Providers\DTO\ProviderModelsMetadata;
-use WordPress\AiClient\Providers\Http\Contracts\HttpTransporterInterface;
-use WordPress\AiClient\Providers\Http\Contracts\RequestAuthenticationInterface;
-use WordPress\AiClient\Providers\Http\Contracts\WithHttpTransporterInterface;
-use WordPress\AiClient\Providers\Http\Contracts\WithRequestAuthenticationInterface;
-use WordPress\AiClient\Providers\Http\HttpTransporterFactory;
-use WordPress\AiClient\Providers\Http\Traits\WithHttpTransporterTrait;
-use WordPress\AiClient\Providers\Models\Contracts\ModelInterface;
-use WordPress\AiClient\Providers\Models\DTO\ModelConfig;
-use WordPress\AiClient\Providers\Models\DTO\ModelMetadata;
-use WordPress\AiClient\Providers\Models\DTO\ModelRequirements;
+use NotMattPress\AiClientDependencies\Http\Discovery\Exception\NotFoundException as DiscoveryNotFoundException;
+use NotMattPress\AiClient\Common\Exception\InvalidArgumentException;
+use NotMattPress\AiClient\Common\Exception\RuntimeException;
+use NotMattPress\AiClient\Providers\Contracts\ProviderInterface;
+use NotMattPress\AiClient\Providers\Contracts\ProviderWithOperationsHandlerInterface;
+use NotMattPress\AiClient\Providers\DTO\ProviderMetadata;
+use NotMattPress\AiClient\Providers\DTO\ProviderModelsMetadata;
+use NotMattPress\AiClient\Providers\Http\Contracts\HttpTransporterInterface;
+use NotMattPress\AiClient\Providers\Http\Contracts\RequestAuthenticationInterface;
+use NotMattPress\AiClient\Providers\Http\Contracts\WithHttpTransporterInterface;
+use NotMattPress\AiClient\Providers\Http\Contracts\WithRequestAuthenticationInterface;
+use NotMattPress\AiClient\Providers\Http\HttpTransporterFactory;
+use NotMattPress\AiClient\Providers\Http\Traits\WithHttpTransporterTrait;
+use NotMattPress\AiClient\Providers\Models\Contracts\ModelInterface;
+use NotMattPress\AiClient\Providers\Models\DTO\ModelConfig;
+use NotMattPress\AiClient\Providers\Models\DTO\ModelMetadata;
+use NotMattPress\AiClient\Providers\Models\DTO\ModelRequirements;
 /**
  * Registry for managing AI providers and their models.
  *

@@ -2,7 +2,7 @@
 /**
  * Style Engine: WP_Style_Engine_CSS_Declarations class
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage StyleEngine
  * @since 6.1.0
  */

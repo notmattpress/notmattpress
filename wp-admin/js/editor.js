@@ -8,7 +8,7 @@ window.wp = window.wp || {};
  * The editor functionality.
  *
  * @param {JQueryStatic} $  The jQuery object.
- * @param {Object}       wp The WordPress global object.
+ * @param {Object}       wp The NotMattPress global object.
  */
 ( function( $, wp ) {
 	wp.editor = wp.editor || {};

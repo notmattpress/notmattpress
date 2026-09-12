@@ -2,7 +2,7 @@
 /**
  * I18N: WP_Translation_File_MO class.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage I18N
  * @since 6.5.0
  */
@@ -66,12 +66,12 @@ class WP_Translation_File_MO extends WP_Translation_File {
 			return false;
 		}
 
-		// Force cast to an integer as it can be a float on x86 systems. See https://core.trac.wordpress.org/ticket/60678.
+		// Force cast to an integer as it can be a float on x86 systems. See https://core.trac.notmatt.press/ticket/60678.
 		if ( (int) self::MAGIC_MARKER === $big ) {
 			return 'N';
 		}
 
-		// Force cast to an integer as it can be a float on x86 systems. See https://core.trac.wordpress.org/ticket/60678.
+		// Force cast to an integer as it can be a float on x86 systems. See https://core.trac.notmatt.press/ticket/60678.
 		if ( (int) self::MAGIC_MARKER === $little ) {
 			return 'V';
 		}
@@ -207,7 +207,7 @@ class WP_Translation_File_MO extends WP_Translation_File {
 
 		$file_header = pack(
 			$this->uint32 . '*',
-			// Force cast to an integer as it can be a float on x86 systems. See https://core.trac.wordpress.org/ticket/60678.
+			// Force cast to an integer as it can be a float on x86 systems. See https://core.trac.notmatt.press/ticket/60678.
 			(int) self::MAGIC_MARKER,
 			0, /* rev */
 			$entry_count,

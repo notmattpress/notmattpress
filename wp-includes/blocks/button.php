@@ -2,7 +2,7 @@
 /**
  * Server-side rendering of the `core/button` block.
  *
- * @package WordPress
+ * @package NotMattPress
  */
 
 /**
@@ -53,7 +53,7 @@ function render_block_core_button( $attributes, $content ) {
 
 	/*
 	 * When there's no text, render nothing for the block.
-	 * See https://github.com/WordPress/gutenberg/issues/17221 for the
+	 * See https://github.com/NotMattPress/gutenberg/issues/17221 for the
 	 * reasoning behind this.
 	 */
 	if ( $is_empty ) {

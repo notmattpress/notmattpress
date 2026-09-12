@@ -7,7 +7,7 @@
  * Block Types: core/buttons
  * Description: Left-aligned text with a CTA button and a separator.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Twenty_Twenty_Three
  * @since Twenty Twenty-Three 1.0
  */

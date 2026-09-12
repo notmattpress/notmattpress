@@ -1,10 +1,10 @@
 <?php
 
 declare (strict_types=1);
-namespace WordPress\AiClient\Providers\Http\Traits;
+namespace NotMattPress\AiClient\Providers\Http\Traits;
 
-use WordPress\AiClient\Common\Exception\RuntimeException;
-use WordPress\AiClient\Providers\Http\Contracts\RequestAuthenticationInterface;
+use NotMattPress\AiClient\Common\Exception\RuntimeException;
+use NotMattPress\AiClient\Providers\Http\Contracts\RequestAuthenticationInterface;
 /**
  * Trait for a class that implements WithRequestAuthenticationInterface.
  *

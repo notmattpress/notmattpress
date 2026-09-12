@@ -1,38 +1,38 @@
 <?php
 
 declare (strict_types=1);
-namespace WordPress\AiClient\Builders;
+namespace NotMattPress\AiClient\Builders;
 
-use WordPress\AiClientDependencies\Psr\EventDispatcher\EventDispatcherInterface;
-use WordPress\AiClient\Common\Exception\InvalidArgumentException;
-use WordPress\AiClient\Common\Exception\RuntimeException;
-use WordPress\AiClient\Events\AfterGenerateResultEvent;
-use WordPress\AiClient\Events\BeforeGenerateResultEvent;
-use WordPress\AiClient\Files\DTO\File;
-use WordPress\AiClient\Files\Enums\FileTypeEnum;
-use WordPress\AiClient\Files\Enums\MediaOrientationEnum;
-use WordPress\AiClient\Messages\DTO\Message;
-use WordPress\AiClient\Messages\DTO\MessagePart;
-use WordPress\AiClient\Messages\DTO\UserMessage;
-use WordPress\AiClient\Messages\Enums\MessageRoleEnum;
-use WordPress\AiClient\Messages\Enums\ModalityEnum;
-use WordPress\AiClient\Providers\ApiBasedImplementation\Contracts\ApiBasedModelInterface;
-use WordPress\AiClient\Providers\Http\DTO\RequestOptions;
-use WordPress\AiClient\Providers\Models\Contracts\ModelInterface;
-use WordPress\AiClient\Providers\Models\DTO\ModelConfig;
-use WordPress\AiClient\Providers\Models\DTO\ModelMetadata;
-use WordPress\AiClient\Providers\Models\DTO\ModelRequirements;
-use WordPress\AiClient\Providers\Models\Enums\CapabilityEnum;
-use WordPress\AiClient\Providers\Models\ImageGeneration\Contracts\ImageGenerationModelInterface;
-use WordPress\AiClient\Providers\Models\SpeechGeneration\Contracts\SpeechGenerationModelInterface;
-use WordPress\AiClient\Providers\Models\TextGeneration\Contracts\TextGenerationModelInterface;
-use WordPress\AiClient\Providers\Models\TextToSpeechConversion\Contracts\TextToSpeechConversionModelInterface;
-use WordPress\AiClient\Providers\Models\VideoGeneration\Contracts\VideoGenerationModelInterface;
-use WordPress\AiClient\Providers\ProviderRegistry;
-use WordPress\AiClient\Results\DTO\GenerativeAiResult;
-use WordPress\AiClient\Tools\DTO\FunctionDeclaration;
-use WordPress\AiClient\Tools\DTO\FunctionResponse;
-use WordPress\AiClient\Tools\DTO\WebSearch;
+use NotMattPress\AiClientDependencies\Psr\EventDispatcher\EventDispatcherInterface;
+use NotMattPress\AiClient\Common\Exception\InvalidArgumentException;
+use NotMattPress\AiClient\Common\Exception\RuntimeException;
+use NotMattPress\AiClient\Events\AfterGenerateResultEvent;
+use NotMattPress\AiClient\Events\BeforeGenerateResultEvent;
+use NotMattPress\AiClient\Files\DTO\File;
+use NotMattPress\AiClient\Files\Enums\FileTypeEnum;
+use NotMattPress\AiClient\Files\Enums\MediaOrientationEnum;
+use NotMattPress\AiClient\Messages\DTO\Message;
+use NotMattPress\AiClient\Messages\DTO\MessagePart;
+use NotMattPress\AiClient\Messages\DTO\UserMessage;
+use NotMattPress\AiClient\Messages\Enums\MessageRoleEnum;
+use NotMattPress\AiClient\Messages\Enums\ModalityEnum;
+use NotMattPress\AiClient\Providers\ApiBasedImplementation\Contracts\ApiBasedModelInterface;
+use NotMattPress\AiClient\Providers\Http\DTO\RequestOptions;
+use NotMattPress\AiClient\Providers\Models\Contracts\ModelInterface;
+use NotMattPress\AiClient\Providers\Models\DTO\ModelConfig;
+use NotMattPress\AiClient\Providers\Models\DTO\ModelMetadata;
+use NotMattPress\AiClient\Providers\Models\DTO\ModelRequirements;
+use NotMattPress\AiClient\Providers\Models\Enums\CapabilityEnum;
+use NotMattPress\AiClient\Providers\Models\ImageGeneration\Contracts\ImageGenerationModelInterface;
+use NotMattPress\AiClient\Providers\Models\SpeechGeneration\Contracts\SpeechGenerationModelInterface;
+use NotMattPress\AiClient\Providers\Models\TextGeneration\Contracts\TextGenerationModelInterface;
+use NotMattPress\AiClient\Providers\Models\TextToSpeechConversion\Contracts\TextToSpeechConversionModelInterface;
+use NotMattPress\AiClient\Providers\Models\VideoGeneration\Contracts\VideoGenerationModelInterface;
+use NotMattPress\AiClient\Providers\ProviderRegistry;
+use NotMattPress\AiClient\Results\DTO\GenerativeAiResult;
+use NotMattPress\AiClient\Tools\DTO\FunctionDeclaration;
+use NotMattPress\AiClient\Tools\DTO\FunctionResponse;
+use NotMattPress\AiClient\Tools\DTO\WebSearch;
 /**
  * Fluent builder for constructing AI prompts.
  *

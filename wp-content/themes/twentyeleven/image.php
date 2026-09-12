@@ -2,7 +2,7 @@
 /**
  * Template for displaying image attachments
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Twenty_Eleven
  * @since Twenty Eleven 1.0
  */

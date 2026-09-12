@@ -2,7 +2,7 @@
 /**
  * Displays the post header
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Twenty_Nineteen
  * @since Twenty Nineteen 1.0
  */

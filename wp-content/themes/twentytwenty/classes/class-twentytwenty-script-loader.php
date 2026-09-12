@@ -6,7 +6,7 @@
  *
  * Based on a solution in WP Rig.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Twenty_Twenty
  * @since Twenty Twenty 1.0
  */
@@ -43,12 +43,12 @@ if ( ! class_exists( 'TwentyTwenty_Script_Loader' ) ) {
 		/**
 		 * Adds async/defer attributes to enqueued / registered scripts.
 		 *
-		 * Now that #12009 has landed in WordPress 6.3, this method is only used for older versions of WordPress.
+		 * Now that #12009 has landed in NotMattPress 6.3, this method is only used for older versions of NotMattPress.
 		 * This method is used on the `script_loader_tag` filter.
 		 *
 		 * @since Twenty Twenty 1.0
 		 *
-		 * @link https://core.trac.wordpress.org/ticket/12009
+		 * @link https://core.trac.notmatt.press/ticket/12009
 		 *
 		 * @param string $tag    The script tag.
 		 * @param string $handle The script handle.

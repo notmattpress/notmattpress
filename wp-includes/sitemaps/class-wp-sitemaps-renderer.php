@@ -4,7 +4,7 @@
  *
  * Responsible for rendering Sitemaps data to XML in accordance with sitemap protocol.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Sitemaps
  * @since 5.5.0
  */
@@ -58,7 +58,7 @@ class WP_Sitemaps_Renderer {
 	 *
 	 * @since 5.5.0
 	 *
-	 * @global WP_Rewrite $wp_rewrite WordPress rewrite component.
+	 * @global WP_Rewrite $wp_rewrite NotMattPress rewrite component.
 	 *
 	 * @return string The sitemap stylesheet URL.
 	 */
@@ -89,7 +89,7 @@ class WP_Sitemaps_Renderer {
 	 *
 	 * @since 5.5.0
 	 *
-	 * @global WP_Rewrite $wp_rewrite WordPress rewrite component.
+	 * @global WP_Rewrite $wp_rewrite NotMattPress rewrite component.
 	 *
 	 * @return string The sitemap index stylesheet URL.
 	 */
@@ -263,7 +263,7 @@ class WP_Sitemaps_Renderer {
 					esc_xml( __( 'Could not generate XML sitemap due to missing %s extension' ) ),
 					'SimpleXML'
 				),
-				esc_xml( __( 'WordPress &rsaquo; Error' ) ),
+				esc_xml( __( 'NotMattPress &rsaquo; Error' ) ),
 				array(
 					'response' => 501, // "Not implemented".
 				)

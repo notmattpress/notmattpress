@@ -5,7 +5,7 @@
 /* global ajaxurl, ClipboardJS, SiteHealth, wp */
 
 /**
- * Handles the interactions used by the Site Health modules in WordPress.
+ * Handles the interactions used by the Site Health modules in NotMattPress.
  *
  * @param {JQueryStatic} $ The jQuery object.
  */

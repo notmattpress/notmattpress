@@ -30,7 +30,7 @@ final class ArgumentCount extends Exception {
 	 * @return \WpOrg\Requests\Exception\ArgumentCount
 	 */
 	public static function create($expected, $received, $type) {
-		// phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_debug_backtrace
+		// phpcs:ignore NotMattPress.PHP.DevelopmentFunctions.error_log_debug_backtrace
 		$stack = debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS, 2);
 
 		return new self(

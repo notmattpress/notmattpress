@@ -2,7 +2,7 @@
 /**
  * Tab Panel Block
  *
- * @package WordPress
+ * @package NotMattPress
  */
 
 /**

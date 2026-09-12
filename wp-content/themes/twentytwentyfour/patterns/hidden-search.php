@@ -4,7 +4,7 @@
  * Slug: twentytwentyfour/hidden-search
  * Inserter: no
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Twenty_Twenty_Four
  * @since Twenty Twenty-Four 1.0
  */

@@ -1,7 +1,7 @@
 <?php
 
 declare (strict_types=1);
-namespace WordPress\AiClient\Providers\Http\Contracts;
+namespace NotMattPress\AiClient\Providers\Http\Contracts;
 
 /**
  * Interface for models that support request authentication.
@@ -18,7 +18,7 @@ interface WithRequestAuthenticationInterface
      * @param RequestAuthenticationInterface $authentication The authentication instance.
      * @return void
      */
-    public function setRequestAuthentication(\WordPress\AiClient\Providers\Http\Contracts\RequestAuthenticationInterface $authentication): void;
+    public function setRequestAuthentication(\NotMattPress\AiClient\Providers\Http\Contracts\RequestAuthenticationInterface $authentication): void;
     /**
      * Returns the request authentication.
      *
@@ -26,5 +26,5 @@ interface WithRequestAuthenticationInterface
      *
      * @return RequestAuthenticationInterface The authentication instance.
      */
-    public function getRequestAuthentication(): \WordPress\AiClient\Providers\Http\Contracts\RequestAuthenticationInterface;
+    public function getRequestAuthentication(): \NotMattPress\AiClient\Providers\Http\Contracts\RequestAuthenticationInterface;
 }

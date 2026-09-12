@@ -2,7 +2,7 @@
 /**
  * The template for displaying content in the single.php template
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Twenty_Eleven
  * @since Twenty Eleven 1.0
  */

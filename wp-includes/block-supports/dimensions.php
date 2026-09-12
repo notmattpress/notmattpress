@@ -6,7 +6,7 @@
  * appears under the "Dimensions" panel in the editor. It remains in its
  * original `spacing.php` file for compatibility with core.
  *
- * @package WordPress
+ * @package NotMattPress
  * @since 5.9.0
  */
 

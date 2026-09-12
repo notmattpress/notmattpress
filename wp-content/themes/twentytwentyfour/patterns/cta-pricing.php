@@ -6,7 +6,7 @@
  * Viewport width: 1400
  * Description: A pricing section with a title, a paragraph and three pricing levels.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Twenty_Twenty_Four
  * @since Twenty Twenty-Four 1.0
  */

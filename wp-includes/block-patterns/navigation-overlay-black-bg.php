@@ -2,7 +2,7 @@
 /**
  * Navigation: Overlay with black background.
  *
- * @package WordPress
+ * @package NotMattPress
  */
 
 return array(

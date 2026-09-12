@@ -2,7 +2,7 @@
 /**
  * WP_View_Config_Data class
  *
- * @package WordPress
+ * @package NotMattPress
  * @since 7.1.0
  */
 
@@ -44,7 +44,7 @@
  * an associative array where a list lives, or the reverse — is rejected with
  * a notice rather than merged, and an empty array under `merge()` is a
  * no-op. Each patch also declares the configuration schema
- * version it was written against (currently 1), so a future WordPress release
+ * version it was written against (currently 1), so a future NotMattPress release
  * that changes the configuration shape can migrate existing patches forward
  * instead of breaking them.
  *

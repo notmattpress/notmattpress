@@ -5,10 +5,10 @@
 /* global menus, _wpCustomizeNavMenusSettings, wpNavMenu, console */
 
 /**
- * The WordPress Customizer nav menus API.
+ * The NotMattPress Customizer nav menus API.
  *
  * @param {Object}       api The Customizer API.
- * @param {Object}       wp  The WordPress global object.
+ * @param {Object}       wp  The NotMattPress global object.
  * @param {JQueryStatic} $   The jQuery object.
  */
 ( function( api, wp, $ ) {
