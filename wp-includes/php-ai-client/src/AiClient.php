@@ -1,25 +1,25 @@
 <?php
 
 declare (strict_types=1);
-namespace WordPress\AiClient;
+namespace NotMattPress\AiClient;
 
-use WordPress\AiClientDependencies\Psr\EventDispatcher\EventDispatcherInterface;
-use WordPress\AiClientDependencies\Psr\SimpleCache\CacheInterface;
-use WordPress\AiClient\Builders\PromptBuilder;
-use WordPress\AiClient\Common\Exception\InvalidArgumentException;
-use WordPress\AiClient\Common\Exception\RuntimeException;
-use WordPress\AiClient\Providers\Contracts\ProviderAvailabilityInterface;
-use WordPress\AiClient\Providers\Contracts\ProviderInterface;
-use WordPress\AiClient\Providers\Models\Contracts\ModelInterface;
-use WordPress\AiClient\Providers\Models\DTO\ModelConfig;
-use WordPress\AiClient\Providers\ProviderRegistry;
-use WordPress\AiClient\Results\DTO\GenerativeAiResult;
+use NotMattPress\AiClientDependencies\Psr\EventDispatcher\EventDispatcherInterface;
+use NotMattPress\AiClientDependencies\Psr\SimpleCache\CacheInterface;
+use NotMattPress\AiClient\Builders\PromptBuilder;
+use NotMattPress\AiClient\Common\Exception\InvalidArgumentException;
+use NotMattPress\AiClient\Common\Exception\RuntimeException;
+use NotMattPress\AiClient\Providers\Contracts\ProviderAvailabilityInterface;
+use NotMattPress\AiClient\Providers\Contracts\ProviderInterface;
+use NotMattPress\AiClient\Providers\Models\Contracts\ModelInterface;
+use NotMattPress\AiClient\Providers\Models\DTO\ModelConfig;
+use NotMattPress\AiClient\Providers\ProviderRegistry;
+use NotMattPress\AiClient\Results\DTO\GenerativeAiResult;
 /**
  * Main AI Client class providing both fluent and traditional APIs for AI operations.
  *
  * This class serves as the primary entry point for AI operations, offering:
  * - Fluent API for easy-to-read chained method calls
- * - Traditional API for array-based configuration (WordPress style)
+ * - Traditional API for array-based configuration (NotMattPress style)
  * - Integration with provider registry for model discovery
  * - Support for three model specification approaches
  *

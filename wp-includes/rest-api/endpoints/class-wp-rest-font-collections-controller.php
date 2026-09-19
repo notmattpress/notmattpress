@@ -4,7 +4,7 @@
  *
  * This file contains the class for the REST API Font Collections Controller.
  *
- * @package    WordPress
+ * @package    NotMattPress
  * @subpackage REST_API
  * @since      6.5.0
  */

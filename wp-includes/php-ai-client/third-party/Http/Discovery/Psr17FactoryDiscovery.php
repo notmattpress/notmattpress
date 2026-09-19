@@ -1,15 +1,15 @@
 <?php
 
-namespace WordPress\AiClientDependencies\Http\Discovery;
+namespace NotMattPress\AiClientDependencies\Http\Discovery;
 
-use WordPress\AiClientDependencies\Http\Discovery\Exception\DiscoveryFailedException;
-use WordPress\AiClientDependencies\Http\Discovery\Exception\NotFoundException as RealNotFoundException;
-use WordPress\AiClientDependencies\Psr\Http\Message\RequestFactoryInterface;
-use WordPress\AiClientDependencies\Psr\Http\Message\ResponseFactoryInterface;
-use WordPress\AiClientDependencies\Psr\Http\Message\ServerRequestFactoryInterface;
-use WordPress\AiClientDependencies\Psr\Http\Message\StreamFactoryInterface;
-use WordPress\AiClientDependencies\Psr\Http\Message\UploadedFileFactoryInterface;
-use WordPress\AiClientDependencies\Psr\Http\Message\UriFactoryInterface;
+use NotMattPress\AiClientDependencies\Http\Discovery\Exception\DiscoveryFailedException;
+use NotMattPress\AiClientDependencies\Http\Discovery\Exception\NotFoundException as RealNotFoundException;
+use NotMattPress\AiClientDependencies\Psr\Http\Message\RequestFactoryInterface;
+use NotMattPress\AiClientDependencies\Psr\Http\Message\ResponseFactoryInterface;
+use NotMattPress\AiClientDependencies\Psr\Http\Message\ServerRequestFactoryInterface;
+use NotMattPress\AiClientDependencies\Psr\Http\Message\StreamFactoryInterface;
+use NotMattPress\AiClientDependencies\Psr\Http\Message\UploadedFileFactoryInterface;
+use NotMattPress\AiClientDependencies\Psr\Http\Message\UriFactoryInterface;
 /**
  * Finds PSR-17 factories.
  *

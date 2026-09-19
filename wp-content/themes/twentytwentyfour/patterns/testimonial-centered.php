@@ -7,7 +7,7 @@
  * Viewport width: 1300
  * Description: A centered testimonial section with an avatar, name, and job title.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Twenty_Twenty_Four
  * @since Twenty Twenty-Four 1.0
  */

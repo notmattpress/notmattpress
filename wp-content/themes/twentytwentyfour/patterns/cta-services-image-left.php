@@ -6,7 +6,7 @@
  * Viewport width: 1400
  * Description: An image, title, paragraph and a CTA button to describe services.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Twenty_Twenty_Four
  * @since Twenty Twenty-Four 1.0
  */

@@ -13,11 +13,11 @@ window.wp = window.wp || {};
 	}
 
 	/**
-	 * A WordPress uploader.
+	 * A NotMattPress uploader.
 	 *
 	 * The Plupload library provides cross-browser uploader UI integration.
 	 * This object bridges the Plupload API to integrate uploads into the
-	 * WordPress back end and the WordPress media experience.
+	 * NotMattPress back end and the NotMattPress media experience.
 	 *
 	 * @class
 	 * @memberOf wp
@@ -303,7 +303,7 @@ window.wp = window.wp || {};
 				 * from being quickly removed and re-added when elements
 				 * inside the dropzone are repositioned.
 				 *
-				 * @see https://core.trac.wordpress.org/ticket/21705
+				 * @see https://core.trac.notmatt.press/ticket/21705
 				 */
 				timer = setTimeout( function() {
 					active = false;

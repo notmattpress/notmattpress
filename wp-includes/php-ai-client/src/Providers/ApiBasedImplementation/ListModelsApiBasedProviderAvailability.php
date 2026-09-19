@@ -1,11 +1,11 @@
 <?php
 
 declare (strict_types=1);
-namespace WordPress\AiClient\Providers\ApiBasedImplementation;
+namespace NotMattPress\AiClient\Providers\ApiBasedImplementation;
 
 use Exception;
-use WordPress\AiClient\Providers\Contracts\ModelMetadataDirectoryInterface;
-use WordPress\AiClient\Providers\Contracts\ProviderAvailabilityInterface;
+use NotMattPress\AiClient\Providers\Contracts\ModelMetadataDirectoryInterface;
+use NotMattPress\AiClient\Providers\Contracts\ProviderAvailabilityInterface;
 /**
  * Class to check availability for an API-based provider via a test request to the endpoint to list models.
  *

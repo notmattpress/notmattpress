@@ -2,7 +2,7 @@
 /**
  * Widget API: WP_Media_Widget class
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Widgets
  * @since 4.8.0
  */
@@ -133,7 +133,7 @@ abstract class WP_Widget_Media extends WP_Widget {
 	 *
 	 * @see WP_REST_Controller::get_item_schema()
 	 * @see WP_REST_Controller::get_additional_fields()
-	 * @link https://core.trac.wordpress.org/ticket/35574
+	 * @link https://core.trac.notmatt.press/ticket/35574
 	 *
 	 * @return array Schema for properties.
 	 */

@@ -7,7 +7,7 @@
  * Viewport width: 1400
  * Description: Contact section with social media links, email, and multiple location details.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Twenty_Twenty_Five
  * @since Twenty Twenty-Five 1.0
  */

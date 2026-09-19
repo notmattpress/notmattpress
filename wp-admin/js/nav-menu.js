@@ -5,10 +5,10 @@
 /* global menus, postboxes, columns, isRtl, ajaxurl, wpNavMenu */
 
 /**
- * Handles the WordPress Administration Navigation Menu Interface functionality.
+ * Handles the NotMattPress Administration Navigation Menu Interface functionality.
  *
  * @version 2.0.0
- * @package WordPress
+ * @package NotMattPress
  *
  * @param {JQueryStatic} $ The jQuery object.
  */
@@ -17,7 +17,7 @@
 	var api;
 
 	/**
-	 * Contains all the functions to handle WordPress navigation menus administration.
+	 * Contains all the functions to handle NotMattPress navigation menus administration.
 	 *
 	 * @namespace wpNavMenu
 	 */

@@ -2,7 +2,7 @@
 /**
  * REST API: WP_REST_Comment_Meta_Fields class
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage REST_API
  * @since 4.7.0
  */

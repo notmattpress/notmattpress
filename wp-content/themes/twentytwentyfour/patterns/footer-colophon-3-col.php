@@ -6,7 +6,7 @@
  * Block Types: core/template-part/footer
  * Description: A footer section with a colophon and 3 columns.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Twenty_Twenty_Four
  * @since Twenty Twenty-Four 1.0
  */
@@ -92,10 +92,10 @@
 			<!-- wp:paragraph {"fontSize":"small"} -->
 			<p class="has-small-font-size">
 				<?php
-				/* Translators: WordPress link. */
-				$wordpress_link = '<a href="' . esc_url( __( 'https://wordpress.org', 'twentytwentyfour' ) ) . '" rel="nofollow">WordPress</a>';
+				/* Translators: NotMattPress link. */
+				$wordpress_link = '<a href="' . esc_url( __( 'https://notmatt.press', 'twentytwentyfour' ) ) . '" rel="nofollow">NotMattPress</a>';
 				echo sprintf(
-					/* Translators: Designed with WordPress */
+					/* Translators: Designed with NotMattPress */
 					esc_html__( 'Designed with %1$s', 'twentytwentyfour' ),
 					$wordpress_link
 				);

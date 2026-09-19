@@ -2,7 +2,7 @@
 /**
  * Diff API: WP_Text_Diff_Renderer_Table class
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Diff
  * @since 4.7.0
  */

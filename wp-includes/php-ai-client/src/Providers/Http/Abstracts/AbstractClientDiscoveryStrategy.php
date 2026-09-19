@@ -1,12 +1,12 @@
 <?php
 
 declare (strict_types=1);
-namespace WordPress\AiClient\Providers\Http\Abstracts;
+namespace NotMattPress\AiClient\Providers\Http\Abstracts;
 
-use WordPress\AiClientDependencies\Http\Discovery\Psr18ClientDiscovery;
-use WordPress\AiClientDependencies\Http\Discovery\Strategy\DiscoveryStrategy;
-use WordPress\AiClientDependencies\Nyholm\Psr7\Factory\Psr17Factory;
-use WordPress\AiClientDependencies\Psr\Http\Client\ClientInterface;
+use NotMattPress\AiClientDependencies\Http\Discovery\Psr18ClientDiscovery;
+use NotMattPress\AiClientDependencies\Http\Discovery\Strategy\DiscoveryStrategy;
+use NotMattPress\AiClientDependencies\Nyholm\Psr7\Factory\Psr17Factory;
+use NotMattPress\AiClientDependencies\Psr\Http\Client\ClientInterface;
 /**
  * Abstract discovery strategy for HTTP client implementations.
  *
@@ -28,7 +28,7 @@ abstract class AbstractClientDiscoveryStrategy implements DiscoveryStrategy
      */
     public static function init(): void
     {
-        if (!class_exists('WordPress\AiClientDependencies\Http\Discovery\Psr18ClientDiscovery')) {
+        if (!class_exists('NotMattPress\AiClientDependencies\Http\Discovery\Psr18ClientDiscovery')) {
             return;
         }
         Psr18ClientDiscovery::prependStrategy(static::class);
@@ -49,7 +49,7 @@ abstract class AbstractClientDiscoveryStrategy implements DiscoveryStrategy
                 return static::createClient($psr17Factory);
             }]];
         }
-        $psr17Factories = ['WordPress\AiClientDependencies\Psr\Http\Message\RequestFactoryInterface', 'WordPress\AiClientDependencies\Psr\Http\Message\ResponseFactoryInterface', 'WordPress\AiClientDependencies\Psr\Http\Message\ServerRequestFactoryInterface', 'WordPress\AiClientDependencies\Psr\Http\Message\StreamFactoryInterface', 'WordPress\AiClientDependencies\Psr\Http\Message\UploadedFileFactoryInterface', 'WordPress\AiClientDependencies\Psr\Http\Message\UriFactoryInterface'];
+        $psr17Factories = ['NotMattPress\AiClientDependencies\Psr\Http\Message\RequestFactoryInterface', 'NotMattPress\AiClientDependencies\Psr\Http\Message\ResponseFactoryInterface', 'NotMattPress\AiClientDependencies\Psr\Http\Message\ServerRequestFactoryInterface', 'NotMattPress\AiClientDependencies\Psr\Http\Message\StreamFactoryInterface', 'NotMattPress\AiClientDependencies\Psr\Http\Message\UploadedFileFactoryInterface', 'NotMattPress\AiClientDependencies\Psr\Http\Message\UriFactoryInterface'];
         if (in_array($type, $psr17Factories, \true)) {
             return [['class' => Psr17Factory::class]];
         }

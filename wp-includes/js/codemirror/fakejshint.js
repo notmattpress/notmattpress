@@ -6,8 +6,8 @@
  * @since 4.9.3
  * @deprecated 7.0.0
  * @output wp-includes/js/codemirror/fakejshint.js
- * @see https://core.trac.wordpress.org/ticket/42850
- * @see https://core.trac.wordpress.org/ticket/64558
+ * @see https://core.trac.notmatt.press/ticket/42850
+ * @see https://core.trac.notmatt.press/ticket/64558
  */
 
 /* jshint -W057, -W058 */

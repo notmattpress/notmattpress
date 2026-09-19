@@ -7,7 +7,7 @@
  * Viewport width: 1400
  * Description: A gallery section with 2 columns and offset images.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Twenty_Twenty_Four
  * @since Twenty Twenty-Four 1.0
  */

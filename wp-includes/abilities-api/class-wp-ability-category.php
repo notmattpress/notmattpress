@@ -4,7 +4,7 @@
  *
  * Defines WP_Ability_Category class.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Abilities API
  * @since 6.9.0
  */

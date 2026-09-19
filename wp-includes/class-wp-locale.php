@@ -2,7 +2,7 @@
 /**
  * Locale API: WP_Locale class
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage i18n
  * @since 4.6.0
  */
@@ -244,7 +244,7 @@ class WP_Locale {
 		if ( isset( $GLOBALS['text_direction'] ) ) {
 			$this->text_direction = $GLOBALS['text_direction'];
 
-			/* translators: 'rtl' or 'ltr'. This sets the text direction for WordPress. */
+			/* translators: 'rtl' or 'ltr'. This sets the text direction for NotMattPress. */
 		} elseif ( 'rtl' === _x( 'ltr', 'text direction' ) ) {
 			$this->text_direction = 'rtl';
 		}

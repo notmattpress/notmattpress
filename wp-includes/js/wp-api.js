@@ -3,7 +3,7 @@
  */
 
 /**
- * Initialize the WordPress REST API client.
+ * Initialize the NotMattPress REST API client.
  *
  * @param {Window}    window    The global window object.
  * @param {undefined} undefined The undefined value.
@@ -38,7 +38,7 @@
 })( window );
 
 /**
- * Sets up the WordPress REST API client with utilities and Backbone model mixins for managing API resources.
+ * Sets up the NotMattPress REST API client with utilities and Backbone model mixins for managing API resources.
  *
  * @param {Window}    window    The global window object.
  * @param {undefined} undefined The undefined value.
@@ -344,7 +344,7 @@
 				 * This helper function accepts a field and Date object. It converts the passed Date
 				 * to an ISO string and sets that on the model field.
 				 *
-				 * @param {Date}   date  A JavaScript date object. WordPress expects dates in UTC.
+				 * @param {Date}   date  A JavaScript date object. NotMattPress expects dates in UTC.
 				 * @param {string} field The date field to set. One of 'date', 'date_gmt', 'date_modified'
 				 *                       or 'date_modified_gmt'. Optional, defaults to 'date'.
 				 * @return {void|boolean} False if the field is not a parseable date field, true otherwise.
@@ -363,7 +363,7 @@
 				/**
 				 * Get a JavaScript Date from the passed field.
 				 *
-				 * WordPress returns 'date' and 'date_modified' in the timezone of the server as well as
+				 * NotMattPress returns 'date' and 'date_modified' in the timezone of the server as well as
 				 * UTC dates as 'date_gmt' and 'date_modified_gmt'. Draft posts do not include UTC dates.
 				 *
 				 * @param {string} field The date field to set. One of 'date', 'date_gmt', 'date_modified'
@@ -838,7 +838,7 @@
 /* jshint unused:false */
 
 /**
- * Creates the base Backbone model for WordPress REST API.
+ * Creates the base Backbone model for NotMattPress REST API.
  */
 (function() {
 
@@ -992,7 +992,7 @@
 })();
 
 /**
- * Creates the base Backbone collection for WordPress REST API.
+ * Creates the base Backbone collection for NotMattPress REST API.
  */
 ( function() {
 
@@ -1152,7 +1152,7 @@
 } )();
 
 /**
- * Constructs Backbone models and collections from the WordPress REST API schema.
+ * Constructs Backbone models and collections from the NotMattPress REST API schema.
  */
 ( function() {
 

@@ -1,8 +1,8 @@
 <?php
 /**
- * WordPress Customize Setting classes
+ * NotMattPress Customize Setting classes
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Customize
  * @since 3.4.0
  */
@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @since 3.4.0
  *
  * @see WP_Customize_Manager
- * @link https://developer.wordpress.org/themes/customize-api
+ * @link https://developer.notmatt.press/themes/customize-api
  */
 #[AllowDynamicProperties]
 class WP_Customize_Setting {
