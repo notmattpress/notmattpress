@@ -2,7 +2,7 @@
 /**
  * Template for displaying Tag Archive pages
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Twenty_Ten
  * @since Twenty Ten 1.0
  */

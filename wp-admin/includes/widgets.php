@@ -1,8 +1,8 @@
 <?php
 /**
- * WordPress Widgets Administration API
+ * NotMattPress Widgets Administration API
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Administration
  */
 

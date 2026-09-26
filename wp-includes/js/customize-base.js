@@ -6,9 +6,9 @@
 window.wp = window.wp || {};
 
 /**
- * The WordPress Customizer API.
+ * The NotMattPress Customizer API.
  *
- * @param {Object}       wp The WordPress global object.
+ * @param {Object}       wp The NotMattPress global object.
  * @param {JQueryStatic} $  The jQuery object.
  */
 (function( wp, $ ){

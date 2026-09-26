@@ -2,7 +2,7 @@
 /**
  * List Table API: WP_Themes_List_Table class
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Administration
  * @since 3.1.0
  */
@@ -118,7 +118,7 @@ class WP_Themes_List_Table extends WP_List_Table {
 			if ( current_user_can( 'install_themes' ) ) {
 				printf(
 					/* translators: %s: URL to Add Themes screen. */
-					__( 'You only have one theme installed right now. Live a little! You can choose from over 1,000 free themes in the WordPress Theme Directory at any time: just click on the <a href="%s">Install Themes</a> tab above.' ),
+					__( 'You only have one theme installed right now. Live a little! You can choose from over 1,000 free themes in the NotMattPress Theme Directory at any time: just click on the <a href="%s">Install Themes</a> tab above.' ),
 					admin_url( 'theme-install.php' )
 				);
 
@@ -285,7 +285,7 @@ class WP_Themes_List_Table extends WP_List_Table {
 					printf(
 						/* translators: 1: Link to documentation on child themes, 2: Name of parent theme. */
 						' <p class="howto">' . __( 'This <a href="%1$s">child theme</a> requires its parent theme, %2$s.' ) . '</p>',
-						__( 'https://developer.wordpress.org/themes/advanced-topics/child-themes/' ),
+						__( 'https://developer.notmatt.press/themes/advanced-topics/child-themes/' ),
 						$theme->parent()->display( 'Name' )
 					);
 				}

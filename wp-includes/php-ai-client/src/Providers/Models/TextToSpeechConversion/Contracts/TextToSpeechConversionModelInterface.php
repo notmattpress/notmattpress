@@ -1,10 +1,10 @@
 <?php
 
 declare (strict_types=1);
-namespace WordPress\AiClient\Providers\Models\TextToSpeechConversion\Contracts;
+namespace NotMattPress\AiClient\Providers\Models\TextToSpeechConversion\Contracts;
 
-use WordPress\AiClient\Messages\DTO\Message;
-use WordPress\AiClient\Results\DTO\GenerativeAiResult;
+use NotMattPress\AiClient\Messages\DTO\Message;
+use NotMattPress\AiClient\Results\DTO\GenerativeAiResult;
 /**
  * Interface for models that support text-to-speech conversion.
  *

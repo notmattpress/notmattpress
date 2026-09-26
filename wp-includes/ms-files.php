@@ -4,14 +4,14 @@
  *
  * @since 3.0.0
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Multisite
  */
 
 define( 'MS_FILES_REQUEST', true );
 define( 'SHORTINIT', true );
 
-/** Load WordPress Bootstrap */
+/** Load NotMattPress Bootstrap */
 require_once dirname( __DIR__ ) . '/wp-load.php';
 
 if ( ! is_multisite() ) {

@@ -1,14 +1,14 @@
 <?php
 
 declare (strict_types=1);
-namespace WordPress\AiClient\Providers\Models\DTO;
+namespace NotMattPress\AiClient\Providers\Models\DTO;
 
-use WordPress\AiClient\Common\AbstractDataTransferObject;
-use WordPress\AiClient\Common\Exception\InvalidArgumentException;
-use WordPress\AiClient\Messages\DTO\Message;
-use WordPress\AiClient\Messages\Enums\ModalityEnum;
-use WordPress\AiClient\Providers\Models\Enums\CapabilityEnum;
-use WordPress\AiClient\Providers\Models\Enums\OptionEnum;
+use NotMattPress\AiClient\Common\AbstractDataTransferObject;
+use NotMattPress\AiClient\Common\Exception\InvalidArgumentException;
+use NotMattPress\AiClient\Messages\DTO\Message;
+use NotMattPress\AiClient\Messages\Enums\ModalityEnum;
+use NotMattPress\AiClient\Providers\Models\Enums\CapabilityEnum;
+use NotMattPress\AiClient\Providers\Models\Enums\OptionEnum;
 /**
  * Represents requirements that implementing code has for AI model selection.
  *
@@ -89,7 +89,7 @@ class ModelRequirements extends AbstractDataTransferObject
      * @param ModelMetadata $metadata The model metadata to check against.
      * @return bool True if the model meets all requirements, false otherwise.
      */
-    public function areMetBy(\WordPress\AiClient\Providers\Models\DTO\ModelMetadata $metadata): bool
+    public function areMetBy(\NotMattPress\AiClient\Providers\Models\DTO\ModelMetadata $metadata): bool
     {
         // Create lookup maps for better performance (instead of nested foreach loops)
         $capabilitiesMap = [];
@@ -130,7 +130,7 @@ class ModelRequirements extends AbstractDataTransferObject
      * @param ModelConfig $modelConfig The model configuration.
      * @return self The created requirements.
      */
-    public static function fromPromptData(CapabilityEnum $capability, array $messages, \WordPress\AiClient\Providers\Models\DTO\ModelConfig $modelConfig): self
+    public static function fromPromptData(CapabilityEnum $capability, array $messages, \NotMattPress\AiClient\Providers\Models\DTO\ModelConfig $modelConfig): self
     {
         // Start with base capability
         $capabilities = [$capability];
@@ -172,13 +172,13 @@ class ModelRequirements extends AbstractDataTransferObject
         $requiredOptions = self::toRequiredOptions($modelConfig);
         // Add additional options based on message analysis
         if ($hasFunctionMessageParts) {
-            $requiredOptions = self::includeInRequiredOptions($requiredOptions, new \WordPress\AiClient\Providers\Models\DTO\RequiredOption(OptionEnum::functionDeclarations(), \true));
+            $requiredOptions = self::includeInRequiredOptions($requiredOptions, new \NotMattPress\AiClient\Providers\Models\DTO\RequiredOption(OptionEnum::functionDeclarations(), \true));
         }
         // Add input modalities if we have any inputs
         if (!empty($inputModalities)) {
             // Remove duplicates
             $inputModalities = array_unique($inputModalities, \SORT_REGULAR);
-            $requiredOptions = self::includeInRequiredOptions($requiredOptions, new \WordPress\AiClient\Providers\Models\DTO\RequiredOption(OptionEnum::inputModalities(), array_values($inputModalities)));
+            $requiredOptions = self::includeInRequiredOptions($requiredOptions, new \NotMattPress\AiClient\Providers\Models\DTO\RequiredOption(OptionEnum::inputModalities(), array_values($inputModalities)));
         }
         // Step 6: Return new ModelRequirements
         return new self($capabilities, $requiredOptions);
@@ -191,71 +191,71 @@ class ModelRequirements extends AbstractDataTransferObject
      * @param ModelConfig $modelConfig The model configuration.
      * @return list<RequiredOption> The required options.
      */
-    private static function toRequiredOptions(\WordPress\AiClient\Providers\Models\DTO\ModelConfig $modelConfig): array
+    private static function toRequiredOptions(\NotMattPress\AiClient\Providers\Models\DTO\ModelConfig $modelConfig): array
     {
         $requiredOptions = [];
         // Map properties that have corresponding OptionEnum values
         if ($modelConfig->getOutputModalities() !== null) {
-            $requiredOptions[] = new \WordPress\AiClient\Providers\Models\DTO\RequiredOption(OptionEnum::outputModalities(), $modelConfig->getOutputModalities());
+            $requiredOptions[] = new \NotMattPress\AiClient\Providers\Models\DTO\RequiredOption(OptionEnum::outputModalities(), $modelConfig->getOutputModalities());
         }
         if ($modelConfig->getSystemInstruction() !== null) {
-            $requiredOptions[] = new \WordPress\AiClient\Providers\Models\DTO\RequiredOption(OptionEnum::systemInstruction(), $modelConfig->getSystemInstruction());
+            $requiredOptions[] = new \NotMattPress\AiClient\Providers\Models\DTO\RequiredOption(OptionEnum::systemInstruction(), $modelConfig->getSystemInstruction());
         }
         if ($modelConfig->getCandidateCount() !== null) {
-            $requiredOptions[] = new \WordPress\AiClient\Providers\Models\DTO\RequiredOption(OptionEnum::candidateCount(), $modelConfig->getCandidateCount());
+            $requiredOptions[] = new \NotMattPress\AiClient\Providers\Models\DTO\RequiredOption(OptionEnum::candidateCount(), $modelConfig->getCandidateCount());
         }
         if ($modelConfig->getMaxTokens() !== null) {
-            $requiredOptions[] = new \WordPress\AiClient\Providers\Models\DTO\RequiredOption(OptionEnum::maxTokens(), $modelConfig->getMaxTokens());
+            $requiredOptions[] = new \NotMattPress\AiClient\Providers\Models\DTO\RequiredOption(OptionEnum::maxTokens(), $modelConfig->getMaxTokens());
         }
         if ($modelConfig->getTemperature() !== null) {
-            $requiredOptions[] = new \WordPress\AiClient\Providers\Models\DTO\RequiredOption(OptionEnum::temperature(), $modelConfig->getTemperature());
+            $requiredOptions[] = new \NotMattPress\AiClient\Providers\Models\DTO\RequiredOption(OptionEnum::temperature(), $modelConfig->getTemperature());
         }
         if ($modelConfig->getTopP() !== null) {
-            $requiredOptions[] = new \WordPress\AiClient\Providers\Models\DTO\RequiredOption(OptionEnum::topP(), $modelConfig->getTopP());
+            $requiredOptions[] = new \NotMattPress\AiClient\Providers\Models\DTO\RequiredOption(OptionEnum::topP(), $modelConfig->getTopP());
         }
         if ($modelConfig->getTopK() !== null) {
-            $requiredOptions[] = new \WordPress\AiClient\Providers\Models\DTO\RequiredOption(OptionEnum::topK(), $modelConfig->getTopK());
+            $requiredOptions[] = new \NotMattPress\AiClient\Providers\Models\DTO\RequiredOption(OptionEnum::topK(), $modelConfig->getTopK());
         }
         if ($modelConfig->getOutputMimeType() !== null) {
-            $requiredOptions[] = new \WordPress\AiClient\Providers\Models\DTO\RequiredOption(OptionEnum::outputMimeType(), $modelConfig->getOutputMimeType());
+            $requiredOptions[] = new \NotMattPress\AiClient\Providers\Models\DTO\RequiredOption(OptionEnum::outputMimeType(), $modelConfig->getOutputMimeType());
         }
         if ($modelConfig->getOutputSchema() !== null) {
-            $requiredOptions[] = new \WordPress\AiClient\Providers\Models\DTO\RequiredOption(OptionEnum::outputSchema(), $modelConfig->getOutputSchema());
+            $requiredOptions[] = new \NotMattPress\AiClient\Providers\Models\DTO\RequiredOption(OptionEnum::outputSchema(), $modelConfig->getOutputSchema());
         }
         // Handle properties without OptionEnum values as custom options
         if ($modelConfig->getStopSequences() !== null) {
-            $requiredOptions[] = new \WordPress\AiClient\Providers\Models\DTO\RequiredOption(OptionEnum::stopSequences(), $modelConfig->getStopSequences());
+            $requiredOptions[] = new \NotMattPress\AiClient\Providers\Models\DTO\RequiredOption(OptionEnum::stopSequences(), $modelConfig->getStopSequences());
         }
         if ($modelConfig->getPresencePenalty() !== null) {
-            $requiredOptions[] = new \WordPress\AiClient\Providers\Models\DTO\RequiredOption(OptionEnum::presencePenalty(), $modelConfig->getPresencePenalty());
+            $requiredOptions[] = new \NotMattPress\AiClient\Providers\Models\DTO\RequiredOption(OptionEnum::presencePenalty(), $modelConfig->getPresencePenalty());
         }
         if ($modelConfig->getFrequencyPenalty() !== null) {
-            $requiredOptions[] = new \WordPress\AiClient\Providers\Models\DTO\RequiredOption(OptionEnum::frequencyPenalty(), $modelConfig->getFrequencyPenalty());
+            $requiredOptions[] = new \NotMattPress\AiClient\Providers\Models\DTO\RequiredOption(OptionEnum::frequencyPenalty(), $modelConfig->getFrequencyPenalty());
         }
         if ($modelConfig->getLogprobs() !== null) {
-            $requiredOptions[] = new \WordPress\AiClient\Providers\Models\DTO\RequiredOption(OptionEnum::logprobs(), $modelConfig->getLogprobs());
+            $requiredOptions[] = new \NotMattPress\AiClient\Providers\Models\DTO\RequiredOption(OptionEnum::logprobs(), $modelConfig->getLogprobs());
         }
         if ($modelConfig->getTopLogprobs() !== null) {
-            $requiredOptions[] = new \WordPress\AiClient\Providers\Models\DTO\RequiredOption(OptionEnum::topLogprobs(), $modelConfig->getTopLogprobs());
+            $requiredOptions[] = new \NotMattPress\AiClient\Providers\Models\DTO\RequiredOption(OptionEnum::topLogprobs(), $modelConfig->getTopLogprobs());
         }
         if ($modelConfig->getFunctionDeclarations() !== null) {
-            $requiredOptions[] = new \WordPress\AiClient\Providers\Models\DTO\RequiredOption(OptionEnum::functionDeclarations(), \true);
+            $requiredOptions[] = new \NotMattPress\AiClient\Providers\Models\DTO\RequiredOption(OptionEnum::functionDeclarations(), \true);
         }
         if ($modelConfig->getWebSearch() !== null) {
-            $requiredOptions[] = new \WordPress\AiClient\Providers\Models\DTO\RequiredOption(OptionEnum::webSearch(), \true);
+            $requiredOptions[] = new \NotMattPress\AiClient\Providers\Models\DTO\RequiredOption(OptionEnum::webSearch(), \true);
         }
         if ($modelConfig->getOutputFileType() !== null) {
-            $requiredOptions[] = new \WordPress\AiClient\Providers\Models\DTO\RequiredOption(OptionEnum::outputFileType(), $modelConfig->getOutputFileType());
+            $requiredOptions[] = new \NotMattPress\AiClient\Providers\Models\DTO\RequiredOption(OptionEnum::outputFileType(), $modelConfig->getOutputFileType());
         }
         if ($modelConfig->getOutputMediaOrientation() !== null) {
-            $requiredOptions[] = new \WordPress\AiClient\Providers\Models\DTO\RequiredOption(OptionEnum::outputMediaOrientation(), $modelConfig->getOutputMediaOrientation());
+            $requiredOptions[] = new \NotMattPress\AiClient\Providers\Models\DTO\RequiredOption(OptionEnum::outputMediaOrientation(), $modelConfig->getOutputMediaOrientation());
         }
         if ($modelConfig->getOutputMediaAspectRatio() !== null) {
-            $requiredOptions[] = new \WordPress\AiClient\Providers\Models\DTO\RequiredOption(OptionEnum::outputMediaAspectRatio(), $modelConfig->getOutputMediaAspectRatio());
+            $requiredOptions[] = new \NotMattPress\AiClient\Providers\Models\DTO\RequiredOption(OptionEnum::outputMediaAspectRatio(), $modelConfig->getOutputMediaAspectRatio());
         }
         // Add custom options as individual RequiredOptions
         foreach ($modelConfig->getCustomOptions() as $key => $value) {
-            $requiredOptions[] = new \WordPress\AiClient\Providers\Models\DTO\RequiredOption(OptionEnum::customOptions(), [$key => $value]);
+            $requiredOptions[] = new \NotMattPress\AiClient\Providers\Models\DTO\RequiredOption(OptionEnum::customOptions(), [$key => $value]);
         }
         return $requiredOptions;
     }
@@ -268,7 +268,7 @@ class ModelRequirements extends AbstractDataTransferObject
      * @param RequiredOption $newOption The new option to include.
      * @return list<RequiredOption> The updated required options array.
      */
-    private static function includeInRequiredOptions(array $requiredOptions, \WordPress\AiClient\Providers\Models\DTO\RequiredOption $newOption): array
+    private static function includeInRequiredOptions(array $requiredOptions, \NotMattPress\AiClient\Providers\Models\DTO\RequiredOption $newOption): array
     {
         // Check if we already have this option name
         foreach ($requiredOptions as $index => $existingOption) {
@@ -289,7 +289,7 @@ class ModelRequirements extends AbstractDataTransferObject
      */
     public static function getJsonSchema(): array
     {
-        return ['type' => 'object', 'properties' => [self::KEY_REQUIRED_CAPABILITIES => ['type' => 'array', 'items' => ['type' => 'string', 'enum' => CapabilityEnum::getValues()], 'description' => 'The capabilities that the model must support.'], self::KEY_REQUIRED_OPTIONS => ['type' => 'array', 'items' => \WordPress\AiClient\Providers\Models\DTO\RequiredOption::getJsonSchema(), 'description' => 'The options that the model must support with specific values.']], 'required' => [self::KEY_REQUIRED_CAPABILITIES, self::KEY_REQUIRED_OPTIONS]];
+        return ['type' => 'object', 'properties' => [self::KEY_REQUIRED_CAPABILITIES => ['type' => 'array', 'items' => ['type' => 'string', 'enum' => CapabilityEnum::getValues()], 'description' => 'The capabilities that the model must support.'], self::KEY_REQUIRED_OPTIONS => ['type' => 'array', 'items' => \NotMattPress\AiClient\Providers\Models\DTO\RequiredOption::getJsonSchema(), 'description' => 'The options that the model must support with specific values.']], 'required' => [self::KEY_REQUIRED_CAPABILITIES, self::KEY_REQUIRED_OPTIONS]];
     }
     /**
      * {@inheritDoc}
@@ -300,7 +300,7 @@ class ModelRequirements extends AbstractDataTransferObject
      */
     public function toArray(): array
     {
-        return [self::KEY_REQUIRED_CAPABILITIES => array_map(static fn(CapabilityEnum $capability): string => $capability->value, $this->requiredCapabilities), self::KEY_REQUIRED_OPTIONS => array_map(static fn(\WordPress\AiClient\Providers\Models\DTO\RequiredOption $option): array => $option->toArray(), $this->requiredOptions)];
+        return [self::KEY_REQUIRED_CAPABILITIES => array_map(static fn(CapabilityEnum $capability): string => $capability->value, $this->requiredCapabilities), self::KEY_REQUIRED_OPTIONS => array_map(static fn(\NotMattPress\AiClient\Providers\Models\DTO\RequiredOption $option): array => $option->toArray(), $this->requiredOptions)];
     }
     /**
      * {@inheritDoc}
@@ -310,6 +310,6 @@ class ModelRequirements extends AbstractDataTransferObject
     public static function fromArray(array $array): self
     {
         static::validateFromArrayData($array, [self::KEY_REQUIRED_CAPABILITIES, self::KEY_REQUIRED_OPTIONS]);
-        return new self(array_map(static fn(string $capability): CapabilityEnum => CapabilityEnum::from($capability), $array[self::KEY_REQUIRED_CAPABILITIES]), array_map(static fn(array $optionData): \WordPress\AiClient\Providers\Models\DTO\RequiredOption => \WordPress\AiClient\Providers\Models\DTO\RequiredOption::fromArray($optionData), $array[self::KEY_REQUIRED_OPTIONS]));
+        return new self(array_map(static fn(string $capability): CapabilityEnum => CapabilityEnum::from($capability), $array[self::KEY_REQUIRED_CAPABILITIES]), array_map(static fn(array $optionData): \NotMattPress\AiClient\Providers\Models\DTO\RequiredOption => \NotMattPress\AiClient\Providers\Models\DTO\RequiredOption::fromArray($optionData), $array[self::KEY_REQUIRED_OPTIONS]));
     }
 }

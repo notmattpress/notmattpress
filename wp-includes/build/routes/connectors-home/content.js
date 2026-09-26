@@ -8977,7 +8977,7 @@ var WP_COMPAT_OVERLAY_SLOT_ATTRIBUTE = "data-wp-compat-overlay-slot";
 function resolveOwnerDocument() {
   return typeof document === "undefined" ? null : document;
 }
-function isInWordPressEnvironment() {
+function isInNotMattPressEnvironment() {
   let topWp;
   try {
     topWp = window.top?.wp;
@@ -9004,7 +9004,7 @@ function getWpCompatOverlaySlot() {
   if (typeof window === "undefined") {
     return void 0;
   }
-  if (!isInWordPressEnvironment() && window.__wpUiCompatOverlaySlotEnabled !== true) {
+  if (!isInNotMattPressEnvironment() && window.__wpUiCompatOverlaySlotEnabled !== true) {
     return void 0;
   }
   const ownerDocument2 = resolveOwnerDocument();
@@ -9166,7 +9166,7 @@ var theme = __toESM(require_theme(), 1);
 // packages/ui/build-module/lock-unlock.mjs
 var import_private_apis = __toESM(require_private_apis(), 1);
 var { lock, unlock } = (0, import_private_apis.__dangerousOptInToUnstableAPIsOnlyForCoreModules)(
-  "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of WordPress.",
+  "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of NotMattPress.",
   "@wordpress/ui"
 );
 
@@ -11474,7 +11474,7 @@ import {
 // routes/lock-unlock/index.ts
 var import_private_apis2 = __toESM(require_private_apis());
 var { lock: lock2, unlock: unlock2 } = (0, import_private_apis2.__dangerousOptInToUnstableAPIsOnlyForCoreModules)(
-  "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of WordPress.",
+  "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of NotMattPress.",
   "@wordpress/routes"
 );
 
@@ -12104,7 +12104,7 @@ var PluginDirectoryLink = ({ slug }) => /* @__PURE__ */ (0, import_jsx_runtime41
   {
     href: (0, import_i18n8.sprintf)(
       /* translators: %s: plugin slug. */
-      (0, import_i18n8.__)("https://wordpress.org/plugins/%s/"),
+      (0, import_i18n8.__)("https://notmatt.press/plugins/%s/"),
       slug
     ),
     openInNewTab: true,
@@ -12365,7 +12365,7 @@ var import_jsx_runtime43 = __toESM(require_jsx_runtime());
 var AI_PLUGIN_SLUG = "ai";
 var AI_PLUGIN_PAGE_SLUG = "ai-wp-admin";
 var AI_PLUGIN_ID = "ai/ai";
-var AI_PLUGIN_URL = "https://wordpress.org/plugins/ai/";
+var AI_PLUGIN_URL = "https://notmatt.press/plugins/ai/";
 var connectorDataValues = Object.values(getConnectorData());
 var hasAiProviders = connectorDataValues.some(
   (c) => c.type === "ai_provider"

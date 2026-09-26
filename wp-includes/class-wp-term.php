@@ -2,7 +2,7 @@
 /**
  * Taxonomy API: WP_Term class
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Taxonomy
  * @since 4.4.0
  */
@@ -105,7 +105,7 @@ final class WP_Term {
 	 * @since 4.4.0
 	 * @since 7.2.0 Cache values that are not usable as a term object are now treated as a cache miss and replaced.
 	 *
-	 * @global wpdb $wpdb WordPress database abstraction object.
+	 * @global wpdb $wpdb NotMattPress database abstraction object.
 	 *
 	 * @param int    $term_id  Term ID.
 	 * @param string $taxonomy Optional. Limit matched terms to those matching `$taxonomy`. Only used for

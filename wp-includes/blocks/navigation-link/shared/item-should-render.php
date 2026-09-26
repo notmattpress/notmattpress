@@ -2,7 +2,7 @@
 /**
  * Shared helper function for checking if navigation items should render.
  *
- * @package WordPress
+ * @package NotMattPress
  */
 
 /**

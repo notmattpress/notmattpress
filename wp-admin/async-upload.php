@@ -2,7 +2,7 @@
 /**
  * Server-side file upload handler from wp-plupload or other asynchronous upload methods.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Administration
  */
 
@@ -14,7 +14,7 @@ if ( ! defined( 'WP_ADMIN' ) ) {
 	define( 'WP_ADMIN', true );
 }
 
-/** Load WordPress Bootstrap */
+/** Load NotMattPress Bootstrap */
 require_once dirname( __DIR__ ) . '/wp-load.php';
 
 require_once ABSPATH . 'wp-admin/admin.php';

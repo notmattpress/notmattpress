@@ -4,9 +4,9 @@
  *
  * Contains the closing of the #content div and all content after.
  *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ * @link https://developer.notmatt.press/themes/basics/template-files/#template-partials
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Twenty_Seventeen
  * @since Twenty Seventeen 1.0
  * @version 1.2

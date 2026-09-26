@@ -9,7 +9,7 @@
  * Viewport width: 1400
  * Description: A portfolio home page with a description and a 4-column post section with only feature images.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Twenty_Twenty_Four
  * @since Twenty Twenty-Four 1.0
  */

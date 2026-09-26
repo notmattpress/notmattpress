@@ -1,8 +1,8 @@
 <?php
 
-namespace WordPress\AiClientDependencies\Http\Discovery\Exception;
+namespace NotMattPress\AiClientDependencies\Http\Discovery\Exception;
 
-use WordPress\AiClientDependencies\Http\Discovery\Exception;
+use NotMattPress\AiClientDependencies\Http\Discovery\Exception;
 /**
  * This exception is thrown when we cannot use a discovery strategy. This is *not* thrown when
  * the discovery fails to find a class.

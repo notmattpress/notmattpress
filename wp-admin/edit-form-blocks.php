@@ -4,7 +4,7 @@
  *
  * @since 5.0.0
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Administration
  */
 
@@ -88,7 +88,7 @@ $preload_paths = array(
 	/**
 	 * The preloaded URL must exactly match the request the client makes,
 	 * including the field order.
-	 * @link https://github.com/WordPress/gutenberg/blob/trunk/packages/core-data/src/entities.js
+	 * @link https://github.com/NotMattPress/gutenberg/blob/trunk/packages/core-data/src/entities.js
 	 */
 	'/?_fields=' . implode(
 		',',
@@ -113,7 +113,7 @@ $preload_paths = array(
 	),
 	add_query_arg(
 		'slug',
-		// @link https://github.com/WordPress/gutenberg/blob/e093fefd041eb6cc4a4e7f67b92ab54fd75c8858/packages/core-data/src/private-selectors.ts#L244-L254
+		// @link https://github.com/NotMattPress/gutenberg/blob/e093fefd041eb6cc4a4e7f67b92ab54fd75c8858/packages/core-data/src/private-selectors.ts#L244-L254
 		$template_lookup_slug,
 		'/wp/v2/templates/lookup'
 	),

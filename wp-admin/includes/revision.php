@@ -1,8 +1,8 @@
 <?php
 /**
- * WordPress Administration Revisions API
+ * NotMattPress Administration Revisions API
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Administration
  * @since 3.6.0
  */
