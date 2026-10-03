@@ -1,43 +1,43 @@
 <?php
 
-namespace WordPress\AiClientDependencies\Http\Discovery\Strategy;
+namespace NotMattPress\AiClientDependencies\Http\Discovery\Strategy;
 
-use WordPress\AiClientDependencies\GuzzleHttp\Client as GuzzleHttp;
-use WordPress\AiClientDependencies\GuzzleHttp\Promise\Promise;
-use WordPress\AiClientDependencies\GuzzleHttp\Psr7\Request as GuzzleRequest;
-use WordPress\AiClientDependencies\Http\Adapter\Artax\Client as Artax;
-use WordPress\AiClientDependencies\Http\Adapter\Buzz\Client as Buzz;
-use WordPress\AiClientDependencies\Http\Adapter\Cake\Client as Cake;
-use WordPress\AiClientDependencies\Http\Adapter\Guzzle5\Client as Guzzle5;
-use WordPress\AiClientDependencies\Http\Adapter\Guzzle6\Client as Guzzle6;
-use WordPress\AiClientDependencies\Http\Adapter\Guzzle7\Client as Guzzle7;
-use WordPress\AiClientDependencies\Http\Adapter\React\Client as React;
-use WordPress\AiClientDependencies\Http\Client\Curl\Client as Curl;
-use WordPress\AiClientDependencies\Http\Client\HttpAsyncClient;
-use WordPress\AiClientDependencies\Http\Client\HttpClient;
-use WordPress\AiClientDependencies\Http\Client\Socket\Client as Socket;
-use WordPress\AiClientDependencies\Http\Discovery\ClassDiscovery;
-use WordPress\AiClientDependencies\Http\Discovery\Exception\NotFoundException;
-use WordPress\AiClientDependencies\Http\Discovery\Psr17FactoryDiscovery;
-use WordPress\AiClientDependencies\Http\Message\MessageFactory;
-use WordPress\AiClientDependencies\Http\Message\MessageFactory\DiactorosMessageFactory;
-use WordPress\AiClientDependencies\Http\Message\MessageFactory\GuzzleMessageFactory;
-use WordPress\AiClientDependencies\Http\Message\MessageFactory\SlimMessageFactory;
-use WordPress\AiClientDependencies\Http\Message\StreamFactory;
-use WordPress\AiClientDependencies\Http\Message\StreamFactory\DiactorosStreamFactory;
-use WordPress\AiClientDependencies\Http\Message\StreamFactory\GuzzleStreamFactory;
-use WordPress\AiClientDependencies\Http\Message\StreamFactory\SlimStreamFactory;
-use WordPress\AiClientDependencies\Http\Message\UriFactory;
-use WordPress\AiClientDependencies\Http\Message\UriFactory\DiactorosUriFactory;
-use WordPress\AiClientDependencies\Http\Message\UriFactory\GuzzleUriFactory;
-use WordPress\AiClientDependencies\Http\Message\UriFactory\SlimUriFactory;
-use WordPress\AiClientDependencies\Laminas\Diactoros\Request as DiactorosRequest;
-use WordPress\AiClientDependencies\Nyholm\Psr7\Factory\HttplugFactory as NyholmHttplugFactory;
-use WordPress\AiClientDependencies\Psr\Http\Client\ClientInterface as Psr18Client;
-use WordPress\AiClientDependencies\Psr\Http\Message\RequestFactoryInterface as Psr17RequestFactory;
-use WordPress\AiClientDependencies\Slim\Http\Request as SlimRequest;
-use WordPress\AiClientDependencies\Symfony\Component\HttpClient\HttplugClient as SymfonyHttplug;
-use WordPress\AiClientDependencies\Symfony\Component\HttpClient\Psr18Client as SymfonyPsr18;
+use NotMattPress\AiClientDependencies\GuzzleHttp\Client as GuzzleHttp;
+use NotMattPress\AiClientDependencies\GuzzleHttp\Promise\Promise;
+use NotMattPress\AiClientDependencies\GuzzleHttp\Psr7\Request as GuzzleRequest;
+use NotMattPress\AiClientDependencies\Http\Adapter\Artax\Client as Artax;
+use NotMattPress\AiClientDependencies\Http\Adapter\Buzz\Client as Buzz;
+use NotMattPress\AiClientDependencies\Http\Adapter\Cake\Client as Cake;
+use NotMattPress\AiClientDependencies\Http\Adapter\Guzzle5\Client as Guzzle5;
+use NotMattPress\AiClientDependencies\Http\Adapter\Guzzle6\Client as Guzzle6;
+use NotMattPress\AiClientDependencies\Http\Adapter\Guzzle7\Client as Guzzle7;
+use NotMattPress\AiClientDependencies\Http\Adapter\React\Client as React;
+use NotMattPress\AiClientDependencies\Http\Client\Curl\Client as Curl;
+use NotMattPress\AiClientDependencies\Http\Client\HttpAsyncClient;
+use NotMattPress\AiClientDependencies\Http\Client\HttpClient;
+use NotMattPress\AiClientDependencies\Http\Client\Socket\Client as Socket;
+use NotMattPress\AiClientDependencies\Http\Discovery\ClassDiscovery;
+use NotMattPress\AiClientDependencies\Http\Discovery\Exception\NotFoundException;
+use NotMattPress\AiClientDependencies\Http\Discovery\Psr17FactoryDiscovery;
+use NotMattPress\AiClientDependencies\Http\Message\MessageFactory;
+use NotMattPress\AiClientDependencies\Http\Message\MessageFactory\DiactorosMessageFactory;
+use NotMattPress\AiClientDependencies\Http\Message\MessageFactory\GuzzleMessageFactory;
+use NotMattPress\AiClientDependencies\Http\Message\MessageFactory\SlimMessageFactory;
+use NotMattPress\AiClientDependencies\Http\Message\StreamFactory;
+use NotMattPress\AiClientDependencies\Http\Message\StreamFactory\DiactorosStreamFactory;
+use NotMattPress\AiClientDependencies\Http\Message\StreamFactory\GuzzleStreamFactory;
+use NotMattPress\AiClientDependencies\Http\Message\StreamFactory\SlimStreamFactory;
+use NotMattPress\AiClientDependencies\Http\Message\UriFactory;
+use NotMattPress\AiClientDependencies\Http\Message\UriFactory\DiactorosUriFactory;
+use NotMattPress\AiClientDependencies\Http\Message\UriFactory\GuzzleUriFactory;
+use NotMattPress\AiClientDependencies\Http\Message\UriFactory\SlimUriFactory;
+use NotMattPress\AiClientDependencies\Laminas\Diactoros\Request as DiactorosRequest;
+use NotMattPress\AiClientDependencies\Nyholm\Psr7\Factory\HttplugFactory as NyholmHttplugFactory;
+use NotMattPress\AiClientDependencies\Psr\Http\Client\ClientInterface as Psr18Client;
+use NotMattPress\AiClientDependencies\Psr\Http\Message\RequestFactoryInterface as Psr17RequestFactory;
+use NotMattPress\AiClientDependencies\Slim\Http\Request as SlimRequest;
+use NotMattPress\AiClientDependencies\Symfony\Component\HttpClient\HttplugClient as SymfonyHttplug;
+use NotMattPress\AiClientDependencies\Symfony\Component\HttpClient\Psr18Client as SymfonyPsr18;
 /**
  * @internal
  *
@@ -50,7 +50,7 @@ final class CommonClassesStrategy implements DiscoveryStrategy
     /**
      * @var array
      */
-    private static $classes = [MessageFactory::class => [['class' => NyholmHttplugFactory::class, 'condition' => [NyholmHttplugFactory::class]], ['class' => GuzzleMessageFactory::class, 'condition' => [GuzzleRequest::class, GuzzleMessageFactory::class]], ['class' => DiactorosMessageFactory::class, 'condition' => [DiactorosRequest::class, DiactorosMessageFactory::class]], ['class' => SlimMessageFactory::class, 'condition' => [SlimRequest::class, SlimMessageFactory::class]]], StreamFactory::class => [['class' => NyholmHttplugFactory::class, 'condition' => [NyholmHttplugFactory::class]], ['class' => GuzzleStreamFactory::class, 'condition' => [GuzzleRequest::class, GuzzleStreamFactory::class]], ['class' => DiactorosStreamFactory::class, 'condition' => [DiactorosRequest::class, DiactorosStreamFactory::class]], ['class' => SlimStreamFactory::class, 'condition' => [SlimRequest::class, SlimStreamFactory::class]]], UriFactory::class => [['class' => NyholmHttplugFactory::class, 'condition' => [NyholmHttplugFactory::class]], ['class' => GuzzleUriFactory::class, 'condition' => [GuzzleRequest::class, GuzzleUriFactory::class]], ['class' => DiactorosUriFactory::class, 'condition' => [DiactorosRequest::class, DiactorosUriFactory::class]], ['class' => SlimUriFactory::class, 'condition' => [SlimRequest::class, SlimUriFactory::class]]], HttpAsyncClient::class => [['class' => SymfonyHttplug::class, 'condition' => [SymfonyHttplug::class, Promise::class, [self::class, 'isPsr17FactoryInstalled']]], ['class' => Guzzle7::class, 'condition' => Guzzle7::class], ['class' => Guzzle6::class, 'condition' => Guzzle6::class], ['class' => Curl::class, 'condition' => Curl::class], ['class' => React::class, 'condition' => React::class]], HttpClient::class => [['class' => SymfonyHttplug::class, 'condition' => [SymfonyHttplug::class, [self::class, 'isPsr17FactoryInstalled'], [self::class, 'isSymfonyImplementingHttpClient']]], ['class' => Guzzle7::class, 'condition' => Guzzle7::class], ['class' => Guzzle6::class, 'condition' => Guzzle6::class], ['class' => Guzzle5::class, 'condition' => Guzzle5::class], ['class' => Curl::class, 'condition' => Curl::class], ['class' => Socket::class, 'condition' => Socket::class], ['class' => Buzz::class, 'condition' => Buzz::class], ['class' => React::class, 'condition' => React::class], ['class' => Cake::class, 'condition' => Cake::class], ['class' => Artax::class, 'condition' => Artax::class], ['class' => [self::class, 'buzzInstantiate'], 'condition' => [\WordPress\AiClientDependencies\Buzz\Client\FileGetContents::class, \WordPress\AiClientDependencies\Buzz\Message\ResponseBuilder::class]]], Psr18Client::class => [['class' => [self::class, 'symfonyPsr18Instantiate'], 'condition' => [SymfonyPsr18::class, Psr17RequestFactory::class]], ['class' => GuzzleHttp::class, 'condition' => [self::class, 'isGuzzleImplementingPsr18']], ['class' => [self::class, 'buzzInstantiate'], 'condition' => [\WordPress\AiClientDependencies\Buzz\Client\FileGetContents::class, \WordPress\AiClientDependencies\Buzz\Message\ResponseBuilder::class]]]];
+    private static $classes = [MessageFactory::class => [['class' => NyholmHttplugFactory::class, 'condition' => [NyholmHttplugFactory::class]], ['class' => GuzzleMessageFactory::class, 'condition' => [GuzzleRequest::class, GuzzleMessageFactory::class]], ['class' => DiactorosMessageFactory::class, 'condition' => [DiactorosRequest::class, DiactorosMessageFactory::class]], ['class' => SlimMessageFactory::class, 'condition' => [SlimRequest::class, SlimMessageFactory::class]]], StreamFactory::class => [['class' => NyholmHttplugFactory::class, 'condition' => [NyholmHttplugFactory::class]], ['class' => GuzzleStreamFactory::class, 'condition' => [GuzzleRequest::class, GuzzleStreamFactory::class]], ['class' => DiactorosStreamFactory::class, 'condition' => [DiactorosRequest::class, DiactorosStreamFactory::class]], ['class' => SlimStreamFactory::class, 'condition' => [SlimRequest::class, SlimStreamFactory::class]]], UriFactory::class => [['class' => NyholmHttplugFactory::class, 'condition' => [NyholmHttplugFactory::class]], ['class' => GuzzleUriFactory::class, 'condition' => [GuzzleRequest::class, GuzzleUriFactory::class]], ['class' => DiactorosUriFactory::class, 'condition' => [DiactorosRequest::class, DiactorosUriFactory::class]], ['class' => SlimUriFactory::class, 'condition' => [SlimRequest::class, SlimUriFactory::class]]], HttpAsyncClient::class => [['class' => SymfonyHttplug::class, 'condition' => [SymfonyHttplug::class, Promise::class, [self::class, 'isPsr17FactoryInstalled']]], ['class' => Guzzle7::class, 'condition' => Guzzle7::class], ['class' => Guzzle6::class, 'condition' => Guzzle6::class], ['class' => Curl::class, 'condition' => Curl::class], ['class' => React::class, 'condition' => React::class]], HttpClient::class => [['class' => SymfonyHttplug::class, 'condition' => [SymfonyHttplug::class, [self::class, 'isPsr17FactoryInstalled'], [self::class, 'isSymfonyImplementingHttpClient']]], ['class' => Guzzle7::class, 'condition' => Guzzle7::class], ['class' => Guzzle6::class, 'condition' => Guzzle6::class], ['class' => Guzzle5::class, 'condition' => Guzzle5::class], ['class' => Curl::class, 'condition' => Curl::class], ['class' => Socket::class, 'condition' => Socket::class], ['class' => Buzz::class, 'condition' => Buzz::class], ['class' => React::class, 'condition' => React::class], ['class' => Cake::class, 'condition' => Cake::class], ['class' => Artax::class, 'condition' => Artax::class], ['class' => [self::class, 'buzzInstantiate'], 'condition' => [\NotMattPress\AiClientDependencies\Buzz\Client\FileGetContents::class, \NotMattPress\AiClientDependencies\Buzz\Message\ResponseBuilder::class]]], Psr18Client::class => [['class' => [self::class, 'symfonyPsr18Instantiate'], 'condition' => [SymfonyPsr18::class, Psr17RequestFactory::class]], ['class' => GuzzleHttp::class, 'condition' => [self::class, 'isGuzzleImplementingPsr18']], ['class' => [self::class, 'buzzInstantiate'], 'condition' => [\NotMattPress\AiClientDependencies\Buzz\Client\FileGetContents::class, \NotMattPress\AiClientDependencies\Buzz\Message\ResponseBuilder::class]]]];
     public static function getCandidates($type)
     {
         if (Psr18Client::class === $type) {
@@ -82,7 +82,7 @@ final class CommonClassesStrategy implements DiscoveryStrategy
     }
     public static function buzzInstantiate()
     {
-        return new \WordPress\AiClientDependencies\Buzz\Client\FileGetContents(Psr17FactoryDiscovery::findResponseFactory());
+        return new \NotMattPress\AiClientDependencies\Buzz\Client\FileGetContents(Psr17FactoryDiscovery::findResponseFactory());
     }
     public static function symfonyPsr18Instantiate()
     {

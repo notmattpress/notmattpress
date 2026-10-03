@@ -4,7 +4,7 @@
  *
  * If no active widgets are in either sidebar, hide them completely.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Twenty_Twelve
  * @since Twenty Twelve 1.0
  */

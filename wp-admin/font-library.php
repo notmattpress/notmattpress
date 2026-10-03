@@ -2,12 +2,12 @@
 /**
  * Font Library administration screen.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Administration
  * @since 7.0.0
  */
 
-/** WordPress Administration Bootstrap */
+/** NotMattPress Administration Bootstrap */
 require_once __DIR__ . '/admin.php';
 
 if ( ! current_user_can( 'edit_theme_options' ) ) {
@@ -22,7 +22,7 @@ if ( ! current_user_can( 'edit_theme_options' ) ) {
 if ( ! function_exists( 'wp_font_library_wp_admin_render_page' ) ) {
 	wp_die(
 		'<h1>' . __( 'The Font Library is not available.' ) . '</h1>' .
-		'<p>' . __( 'The Font Library requires build files. Please build WordPress and try again.' ) . '</p>',
+		'<p>' . __( 'The Font Library requires build files. Please build NotMattPress and try again.' ) . '</p>',
 		503
 	);
 }

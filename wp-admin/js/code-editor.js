@@ -141,7 +141,7 @@ if ( 'undefined' === typeof window.wp.codeEditor ) {
  * Handles the Code Editor (CodeMirror) functionality.
  *
  * @param {JQueryStatic} $  The jQuery object.
- * @param {wp}           wp The WordPress global object.
+ * @param {wp}           wp The NotMattPress global object.
  */
 ( function( $, wp ) {
 	'use strict';

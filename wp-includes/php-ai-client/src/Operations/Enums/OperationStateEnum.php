@@ -1,9 +1,9 @@
 <?php
 
 declare (strict_types=1);
-namespace WordPress\AiClient\Operations\Enums;
+namespace NotMattPress\AiClient\Operations\Enums;
 
-use WordPress\AiClient\Common\AbstractEnum;
+use NotMattPress\AiClient\Common\AbstractEnum;
 /**
  * Enum for operation states.
  *

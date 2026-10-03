@@ -2,7 +2,7 @@
 /**
  * The template for displaying Author bios
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Twenty_Fifteen
  * @since Twenty Fifteen 1.0
  */

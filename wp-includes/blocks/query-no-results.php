@@ -2,7 +2,7 @@
 /**
  * Server-side rendering of the `core/query-no-results` block.
  *
- * @package WordPress
+ * @package NotMattPress
  */
 
 /**
@@ -10,7 +10,7 @@
  *
  * @since 6.0.0
  *
- * @global WP_Query $wp_query WordPress Query object.
+ * @global WP_Query $wp_query NotMattPress Query object.
  *
  * @param array    $attributes Block attributes.
  * @param string   $content    Block default content.

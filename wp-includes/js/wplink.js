@@ -5,11 +5,11 @@
 /* global wpLink */
 
 /**
- * The WordPress Link Modal dialog.
+ * The NotMattPress Link Modal dialog.
  *
  * @param {JQueryStatic} $          The jQuery object.
- * @param {Object}       wpLinkL10n The WordPress Link localization object.
- * @param {Object}       wp         The WordPress global object.
+ * @param {Object}       wpLinkL10n The NotMattPress Link localization object.
+ * @param {Object}       wp         The NotMattPress global object.
  */
 ( function( $, wpLinkL10n, wp ) {
 	var editor, searchTimer, River, Query, correctedURL,

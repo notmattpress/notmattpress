@@ -1,17 +1,17 @@
 <?php
 
 declare (strict_types=1);
-namespace WordPress\AiClient\Providers\ApiBasedImplementation;
+namespace NotMattPress\AiClient\Providers\ApiBasedImplementation;
 
-use WordPress\AiClient\Providers\ApiBasedImplementation\Contracts\ApiBasedModelInterface;
-use WordPress\AiClient\Providers\DTO\ProviderMetadata;
-use WordPress\AiClient\Providers\Http\Contracts\WithHttpTransporterInterface;
-use WordPress\AiClient\Providers\Http\Contracts\WithRequestAuthenticationInterface;
-use WordPress\AiClient\Providers\Http\DTO\RequestOptions;
-use WordPress\AiClient\Providers\Http\Traits\WithHttpTransporterTrait;
-use WordPress\AiClient\Providers\Http\Traits\WithRequestAuthenticationTrait;
-use WordPress\AiClient\Providers\Models\DTO\ModelConfig;
-use WordPress\AiClient\Providers\Models\DTO\ModelMetadata;
+use NotMattPress\AiClient\Providers\ApiBasedImplementation\Contracts\ApiBasedModelInterface;
+use NotMattPress\AiClient\Providers\DTO\ProviderMetadata;
+use NotMattPress\AiClient\Providers\Http\Contracts\WithHttpTransporterInterface;
+use NotMattPress\AiClient\Providers\Http\Contracts\WithRequestAuthenticationInterface;
+use NotMattPress\AiClient\Providers\Http\DTO\RequestOptions;
+use NotMattPress\AiClient\Providers\Http\Traits\WithHttpTransporterTrait;
+use NotMattPress\AiClient\Providers\Http\Traits\WithRequestAuthenticationTrait;
+use NotMattPress\AiClient\Providers\Models\DTO\ModelConfig;
+use NotMattPress\AiClient\Providers\Models\DTO\ModelMetadata;
 /**
  * Base class for an API-based model for a provider.
  *

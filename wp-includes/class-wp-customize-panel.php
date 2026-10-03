@@ -1,8 +1,8 @@
 <?php
 /**
- * WordPress Customize Panel classes
+ * NotMattPress Customize Panel classes
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Customize
  * @since 4.0.0
  */

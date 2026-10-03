@@ -6,7 +6,7 @@
  * and to reference a dynamic image URL. It does
  * not appear in the inserter.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Twenty_Twenty_Two
  * @since Twenty Twenty-Two 1.0
  */

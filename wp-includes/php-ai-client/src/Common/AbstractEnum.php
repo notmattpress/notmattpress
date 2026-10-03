@@ -1,13 +1,13 @@
 <?php
 
 declare (strict_types=1);
-namespace WordPress\AiClient\Common;
+namespace NotMattPress\AiClient\Common;
 
 use BadMethodCallException;
 use JsonSerializable;
 use ReflectionClass;
-use WordPress\AiClient\Common\Exception\InvalidArgumentException;
-use WordPress\AiClient\Common\Exception\RuntimeException;
+use NotMattPress\AiClient\Common\Exception\InvalidArgumentException;
+use NotMattPress\AiClient\Common\Exception\RuntimeException;
 /**
  * Abstract base class for enum-like behavior in PHP 7.4.
  *

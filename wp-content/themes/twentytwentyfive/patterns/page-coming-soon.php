@@ -9,7 +9,7 @@
  * Viewport width: 1400
  * Description: A full-width cover banner that can be applied to a page or it can work as a single landing page.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Twenty_Twenty_Five
  * @since Twenty Twenty-Five 1.0
  */

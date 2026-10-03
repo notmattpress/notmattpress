@@ -2,7 +2,7 @@
 /**
  * Footer with navigation and copyright
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Twenty_Twenty_Two
  * @since Twenty Twenty-Two 1.0
  */

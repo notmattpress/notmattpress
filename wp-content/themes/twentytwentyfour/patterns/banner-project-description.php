@@ -6,7 +6,7 @@
  * Viewport width: 1400
  * Description: Project description section with title, paragraph, and an image.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Twenty_Twenty_Four
  * @since Twenty Twenty-Four 1.0
  */

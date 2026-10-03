@@ -4,23 +4,23 @@
  *
  * Sets up the theme and provides some helper functions, which are used in the
  * theme as custom template tags. Others are attached to action and filter
- * hooks in WordPress to change core functionality.
+ * hooks in NotMattPress to change core functionality.
  *
  * When using a child theme you can override certain functions (those wrapped
  * in a function_exists() call) by defining them first in your child theme's
  * functions.php file. The child theme's functions.php file is included before
  * the parent theme's file, so the child theme functions would be used.
  *
- * @link https://developer.wordpress.org/themes/basics/theme-functions/
- * @link https://developer.wordpress.org/themes/advanced-topics/child-themes/
+ * @link https://developer.notmatt.press/themes/basics/theme-functions/
+ * @link https://developer.notmatt.press/themes/advanced-topics/child-themes/
  *
  * Functions that are not pluggable (not wrapped in function_exists()) are
  * instead attached to a filter or action hook.
  *
  * For more information on hooks, actions, and filters,
- * @link https://developer.wordpress.org/plugins/
+ * @link https://developer.notmatt.press/plugins/
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Twenty_Fourteen
  * @since Twenty Fourteen 1.0
  */
@@ -37,9 +37,9 @@ if ( ! isset( $content_width ) ) {
 }
 
 /**
- * Twenty Fourteen only works in WordPress 3.6 or later.
+ * Twenty Fourteen only works in NotMattPress 3.6 or later.
  *
- * @global string $wp_version The WordPress version string.
+ * @global string $wp_version The NotMattPress version string.
  */
 if ( version_compare( $GLOBALS['wp_version'], '3.6', '<' ) ) {
 	require get_template_directory() . '/inc/back-compat.php';
@@ -49,7 +49,7 @@ if ( ! function_exists( 'twentyfourteen_setup' ) ) :
 	/**
 	 * Twenty Fourteen setup.
 	 *
-	 * Set up theme defaults and registers support for various WordPress features.
+	 * Set up theme defaults and registers support for various NotMattPress features.
 	 *
 	 * Note that this function is hooked into the after_setup_theme hook, which
 	 * runs before the init hook. The init hook is too late for some features, such
@@ -57,20 +57,20 @@ if ( ! function_exists( 'twentyfourteen_setup' ) ) :
 	 *
 	 * @since Twenty Fourteen 1.0
 	 *
-	 * @global string $wp_version The WordPress version string.
+	 * @global string $wp_version The NotMattPress version string.
 	 */
 	function twentyfourteen_setup() {
 
 		/*
 		 * Make Twenty Fourteen available for translation.
 		 *
-		 * Translations can be filed at WordPress.org. See: https://translate.wordpress.org/projects/wp-themes/twentyfourteen
+		 * Translations can be filed at NotMattPress.org. See: https://translate.notmatt.press/projects/wp-themes/twentyfourteen
 		 * If you're building a theme based on Twenty Fourteen, use a find and
 		 * replace to change 'twentyfourteen' to the name of your theme in all
 		 * template files.
 		 *
 		 * Manual loading of text domain is not required after the introduction of
-		 * just in time translation loading in WordPress version 4.6.
+		 * just in time translation loading in NotMattPress version 4.6.
 		 *
 		 * @ticket 58318
 		 */
@@ -171,7 +171,7 @@ if ( ! function_exists( 'twentyfourteen_setup' ) ) :
 
 		/*
 		 * Enable support for Post Formats.
-		 * See: https://developer.wordpress.org/advanced-administration/wordpress/post-formats/
+		 * See: https://developer.notmatt.press/advanced-administration/wordpress/post-formats/
 		 */
 		add_theme_support(
 			'post-formats',
@@ -422,7 +422,7 @@ add_action( 'admin_print_scripts-appearance_page_custom-header', 'twentyfourteen
  * @since Twenty Fourteen 1.9
  * @deprecated Twenty Fourteen 3.6 Disabled filter because, by default, fonts are self-hosted.
  *
- * @global string $wp_version The WordPress version string.
+ * @global string $wp_version The NotMattPress version string.
  *
  * @param array   $urls          URLs to print for resource hints.
  * @param string  $relation_type The relation type the URLs are printed.
@@ -532,7 +532,7 @@ if ( ! function_exists( 'twentyfourteen_list_authors' ) ) :
 	 *
 	 * @since Twenty Fourteen 1.0
 	 *
-	 * @global string $wp_version The WordPress version string.
+	 * @global string $wp_version The NotMattPress version string.
 	 */
 	function twentyfourteen_list_authors() {
 		$args = array(
@@ -592,7 +592,7 @@ if ( ! function_exists( 'twentyfourteen_list_authors' ) ) :
 endif;
 
 /**
- * Extends the default WordPress body classes.
+ * Extends the default NotMattPress body classes.
  *
  * Adds body classes to denote:
  * 1. Single or multiple authors.
@@ -651,7 +651,7 @@ function twentyfourteen_body_classes( $classes ) {
 add_filter( 'body_class', 'twentyfourteen_body_classes' );
 
 /**
- * Extends the default WordPress post classes.
+ * Extends the default NotMattPress post classes.
  *
  * Adds a post class to denote:
  * Non-password protected page with a post thumbnail.
@@ -765,7 +765,7 @@ if ( ! class_exists( 'Featured_Content' ) && 'plugins.php' !== $GLOBALS['pagenow
 /**
  * Adds an `is_customize_preview` function if it is missing.
  *
- * Enables installing Twenty Fourteen in WordPress versions before 4.0.0 when the
+ * Enables installing Twenty Fourteen in NotMattPress versions before 4.0.0 when the
  * `is_customize_preview` function was introduced.
  *
  * @global WP_Customize_Manager $wp_customize Customizer object.

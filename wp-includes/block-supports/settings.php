@@ -2,7 +2,7 @@
 /**
  * Block level presets support.
  *
- * @package WordPress
+ * @package NotMattPress
  * @since 6.2.0
  */
 

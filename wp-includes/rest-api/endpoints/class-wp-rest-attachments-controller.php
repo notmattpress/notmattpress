@@ -2,7 +2,7 @@
 /**
  * REST API: WP_REST_Attachments_Controller class
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage REST_API
  * @since 4.7.0
  */
@@ -706,7 +706,7 @@ class WP_REST_Attachments_Controller extends WP_REST_Posts_Controller {
 		$max_size = (int) wp_max_upload_size();
 
 		/*
-		 * Download the remote file with WordPress's HTTP API, which validates
+		 * Download the remote file with NotMattPress's HTTP API, which validates
 		 * the host and blocks requests to private or local addresses. This is
 		 * the same primitive core's media_sideload_image() relies on.
 		 *
@@ -2941,7 +2941,7 @@ class WP_REST_Attachments_Controller extends WP_REST_Posts_Controller {
 			 * with the supplied image and keep the file being replaced as
 			 * `original_image`, which is the untouched upload. A 'scaled'
 			 * image is downsized and an 'original' image has any EXIF
-			 * orientation already applied. This is the same swap WordPress
+			 * orientation already applied. This is the same swap NotMattPress
 			 * makes when it scales or rotates an image on upload; see
 			 * _wp_image_meta_replace_original().
 			 */
@@ -3014,7 +3014,7 @@ class WP_REST_Attachments_Controller extends WP_REST_Posts_Controller {
 	 * wp_unique_filename() will always add numeric suffix if the name looks like a sub-size to avoid conflicts.
 	 * Adding this closure to the filter helps work around this safeguard.
 	 *
-	 * Example: when uploading myphoto.jpeg, WordPress normally creates myphoto-150x150.jpeg,
+	 * Example: when uploading myphoto.jpeg, NotMattPress normally creates myphoto-150x150.jpeg,
 	 * and when uploading myphoto-150x150.jpeg, it will be renamed to myphoto-150x150-1.jpeg
 	 * However, here it is desired not to add the suffix in order to maintain the same
 	 * naming convention as if the file was uploaded regularly.
@@ -3028,7 +3028,7 @@ class WP_REST_Attachments_Controller extends WP_REST_Posts_Controller {
 	 *
 	 * @since 7.1.0
 	 *
-	 * @link https://github.com/WordPress/wordpress-develop/blob/30954f7ac0840cfdad464928021d7f380940c347/src/wp-includes/functions.php#L2576-L2582
+	 * @link https://github.com/NotMattPress/wordpress-develop/blob/30954f7ac0840cfdad464928021d7f380940c347/src/wp-includes/functions.php#L2576-L2582
 	 *
 	 * @param string      $filename            Unique file name.
 	 * @param string      $dir                 Directory path.

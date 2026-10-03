@@ -2,7 +2,7 @@
 /**
  * Server-side rendering of the `core/comments-pagination-previous` block.
  *
- * @package WordPress
+ * @package NotMattPress
  */
 
 /**

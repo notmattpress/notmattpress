@@ -6,7 +6,7 @@
  * Viewport width: 1400
  * Description: A hero section with a title, a paragraph, a CTA button, and an image.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Twenty_Twenty_Four
  * @since Twenty Twenty-Four 1.0
  */

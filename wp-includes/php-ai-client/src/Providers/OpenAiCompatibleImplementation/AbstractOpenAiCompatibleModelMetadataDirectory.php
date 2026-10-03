@@ -1,15 +1,15 @@
 <?php
 
 declare (strict_types=1);
-namespace WordPress\AiClient\Providers\OpenAiCompatibleImplementation;
+namespace NotMattPress\AiClient\Providers\OpenAiCompatibleImplementation;
 
-use WordPress\AiClient\Providers\ApiBasedImplementation\AbstractApiBasedModelMetadataDirectory;
-use WordPress\AiClient\Providers\Http\DTO\Request;
-use WordPress\AiClient\Providers\Http\DTO\Response;
-use WordPress\AiClient\Providers\Http\Enums\HttpMethodEnum;
-use WordPress\AiClient\Providers\Http\Exception\ResponseException;
-use WordPress\AiClient\Providers\Http\Util\ResponseUtil;
-use WordPress\AiClient\Providers\Models\DTO\ModelMetadata;
+use NotMattPress\AiClient\Providers\ApiBasedImplementation\AbstractApiBasedModelMetadataDirectory;
+use NotMattPress\AiClient\Providers\Http\DTO\Request;
+use NotMattPress\AiClient\Providers\Http\DTO\Response;
+use NotMattPress\AiClient\Providers\Http\Enums\HttpMethodEnum;
+use NotMattPress\AiClient\Providers\Http\Exception\ResponseException;
+use NotMattPress\AiClient\Providers\Http\Util\ResponseUtil;
+use NotMattPress\AiClient\Providers\Models\DTO\ModelMetadata;
 /**
  * Base class for a model metadata directory for providers that implement OpenAI's API format.
  *

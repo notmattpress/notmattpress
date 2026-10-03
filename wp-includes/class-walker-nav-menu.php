@@ -2,7 +2,7 @@
 /**
  * Nav Menu API: Walker_Nav_Menu class
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Nav_Menus
  * @since 4.6.0
  */

@@ -2,29 +2,29 @@
 /**
  * WP AI Client: WP_AI_Client_Event_Dispatcher class
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage AI
  * @since 7.0.0
  */
 
-use WordPress\AiClientDependencies\Psr\EventDispatcher\EventDispatcherInterface;
+use NotMattPress\AiClientDependencies\Psr\EventDispatcher\EventDispatcherInterface;
 
 /**
- * WordPress-specific PSR-14 event dispatcher for the AI Client.
+ * NotMattPress-specific PSR-14 event dispatcher for the AI Client.
  *
- * Bridges PSR-14 events to WordPress action hooks, enabling plugins to hook
+ * Bridges PSR-14 events to NotMattPress action hooks, enabling plugins to hook
  * into AI client lifecycle events.
  *
  * @since 7.0.0
- * @internal Intended only to wire up the PHP AI Client SDK to WordPress's hook system.
+ * @internal Intended only to wire up the PHP AI Client SDK to NotMattPress's hook system.
  * @access private
  */
 class WP_AI_Client_Event_Dispatcher implements EventDispatcherInterface {
 
 	/**
-	 * Dispatches an event to WordPress action hooks.
+	 * Dispatches an event to NotMattPress action hooks.
 	 *
-	 * Converts the event class name to a WordPress action hook name and fires it.
+	 * Converts the event class name to a NotMattPress action hook name and fires it.
 	 * For example, BeforeGenerateResultEvent becomes wp_ai_client_before_generate_result.
 	 *
 	 * @since 7.0.0
@@ -59,7 +59,7 @@ class WP_AI_Client_Event_Dispatcher implements EventDispatcherInterface {
 	}
 
 	/**
-	 * Converts an event object class name to a WordPress action hook name portion.
+	 * Converts an event object class name to a NotMattPress action hook name portion.
 	 *
 	 * @since 7.0.0
 	 *
