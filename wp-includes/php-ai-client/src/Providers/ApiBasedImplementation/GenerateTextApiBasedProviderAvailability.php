@@ -1,16 +1,16 @@
 <?php
 
 declare (strict_types=1);
-namespace WordPress\AiClient\Providers\ApiBasedImplementation;
+namespace NotMattPress\AiClient\Providers\ApiBasedImplementation;
 
 use Exception;
-use WordPress\AiClient\Messages\DTO\Message;
-use WordPress\AiClient\Messages\DTO\MessagePart;
-use WordPress\AiClient\Messages\Enums\MessageRoleEnum;
-use WordPress\AiClient\Providers\Contracts\ProviderAvailabilityInterface;
-use WordPress\AiClient\Providers\Models\Contracts\ModelInterface;
-use WordPress\AiClient\Providers\Models\DTO\ModelConfig;
-use WordPress\AiClient\Providers\Models\TextGeneration\Contracts\TextGenerationModelInterface;
+use NotMattPress\AiClient\Messages\DTO\Message;
+use NotMattPress\AiClient\Messages\DTO\MessagePart;
+use NotMattPress\AiClient\Messages\Enums\MessageRoleEnum;
+use NotMattPress\AiClient\Providers\Contracts\ProviderAvailabilityInterface;
+use NotMattPress\AiClient\Providers\Models\Contracts\ModelInterface;
+use NotMattPress\AiClient\Providers\Models\DTO\ModelConfig;
+use NotMattPress\AiClient\Providers\Models\TextGeneration\Contracts\TextGenerationModelInterface;
 /**
  * Class to check availability for an API-based provider via a test request to the endpoint to generate text.
  *

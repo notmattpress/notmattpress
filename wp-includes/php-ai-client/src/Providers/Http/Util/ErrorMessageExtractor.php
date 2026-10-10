@@ -1,7 +1,7 @@
 <?php
 
 declare (strict_types=1);
-namespace WordPress\AiClient\Providers\Http\Util;
+namespace NotMattPress\AiClient\Providers\Http\Util;
 
 /**
  * Utility for extracting error messages from API response data.

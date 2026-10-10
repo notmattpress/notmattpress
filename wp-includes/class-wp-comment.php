@@ -2,7 +2,7 @@
 /**
  * Comment API: WP_Comment class
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Comments
  * @since 4.4.0
  */
@@ -250,7 +250,7 @@ final class WP_Comment {
 	 * @since 4.4.0
 	 * @since 7.2.0 Cache values that are not usable as a comment object are now treated as a cache miss and replaced.
 	 *
-	 * @global wpdb $wpdb WordPress database abstraction object.
+	 * @global wpdb $wpdb NotMattPress database abstraction object.
 	 *
 	 * @param int $id Comment ID.
 	 * @phpstan-param int|numeric-string $id

@@ -2,19 +2,19 @@
 /**
  * REST API: WP_REST_Server class
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage REST_API
  * @since 4.4.0
  */
 
 /**
- * Core class used to implement the WordPress REST API server.
+ * Core class used to implement the NotMattPress REST API server.
  *
  * The aliases below describe a route handler as {@see WP_REST_Server::get_routes()}
  * returns it, once the defaults have been filled in and the methods normalized.
  *
  * An endpoint argument is a JSON Schema fragment, so the keys named here are only the
- * ones WordPress reads itself. The rest are schema keywords, left to the open end of
+ * ones NotMattPress reads itself. The rest are schema keywords, left to the open end of
  * the shape and validated by {@see rest_validate_value_from_schema()}. See
  * {@see rest_get_allowed_schema_keywords()} for the vocabulary the REST API exposes.
  *
@@ -1478,7 +1478,7 @@ class WP_REST_Server {
 		}
 
 		if ( rest_is_field_included( '_links', $fields ) || rest_is_field_included( '_embedded', $fields ) ) {
-			$response->add_link( 'help', 'https://developer.wordpress.org/rest-api/' );
+			$response->add_link( 'help', 'https://developer.notmatt.press/rest-api/' );
 			$this->add_active_theme_link_to_index( $response );
 			$this->add_site_logo_to_index( $response );
 			$this->add_site_icon_to_index( $response );
@@ -1537,7 +1537,7 @@ class WP_REST_Server {
 	}
 
 	/**
-	 * Exposes the site logo through the WordPress REST API.
+	 * Exposes the site logo through the NotMattPress REST API.
 	 *
 	 * This is used for fetching this information when user has no rights
 	 * to update settings.
@@ -1553,7 +1553,7 @@ class WP_REST_Server {
 	}
 
 	/**
-	 * Exposes the site icon through the WordPress REST API.
+	 * Exposes the site icon through the NotMattPress REST API.
 	 *
 	 * This is used for fetching this information when user has no rights
 	 * to update settings.
@@ -1571,7 +1571,7 @@ class WP_REST_Server {
 	}
 
 	/**
-	 * Exposes an image through the WordPress REST API.
+	 * Exposes an image through the NotMattPress REST API.
 	 * This is used for fetching this information when user has no rights
 	 * to update settings.
 	 *

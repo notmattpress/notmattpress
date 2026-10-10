@@ -8970,7 +8970,7 @@ var wp;
                   openInNewTab: true,
                   className: "block-editor-format-toolbar__math-learn-more",
                   href: (0, import_i18n21.__)(
-                    "https://wordpress.org/documentation/article/math-block/"
+                    "https://notmatt.press/documentation/article/math-block/"
                   ),
                   children: (0, import_i18n21.__)("Learn more about LaTeX syntax")
                 }

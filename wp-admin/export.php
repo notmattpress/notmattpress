@@ -1,19 +1,19 @@
 <?php
 /**
- * WordPress Export Administration Screen
+ * NotMattPress Export Administration Screen
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Administration
  */
 
-/** Load WordPress Bootstrap */
+/** Load NotMattPress Bootstrap */
 require_once __DIR__ . '/admin.php';
 
 if ( ! current_user_can( 'export' ) ) {
 	wp_die( __( 'Sorry, you are not allowed to export the content of this site.' ) );
 }
 
-/** Load WordPress export API */
+/** Load NotMattPress export API */
 require_once ABSPATH . 'wp-admin/includes/export.php';
 
 // Used in the HTML title tag.
@@ -50,14 +50,14 @@ get_current_screen()->add_help_tab(
 		'id'      => 'overview',
 		'title'   => __( 'Overview' ),
 		'content' => '<p>' . __( 'You can export a file of your site&#8217;s content in order to import it into another installation or platform. The export file will be an XML file format called WXR. Posts, pages, comments, custom fields, categories, and tags can be included. You can choose for the WXR file to include only certain posts or pages by setting the dropdown filters to limit the export by category, author, date range by month, or publishing status.' ) . '</p>' .
-			'<p>' . __( 'Once generated, your WXR file can be imported by another WordPress site or by another blogging platform able to access this format.' ) . '</p>',
+			'<p>' . __( 'Once generated, your WXR file can be imported by another NotMattPress site or by another blogging platform able to access this format.' ) . '</p>',
 	)
 );
 
 get_current_screen()->set_help_sidebar(
 	'<p><strong>' . __( 'For more information:' ) . '</strong></p>' .
-	'<p>' . __( '<a href="https://wordpress.org/documentation/article/tools-export-screen/">Documentation on Export</a>' ) . '</p>' .
-	'<p>' . __( '<a href="https://wordpress.org/support/forums/">Support forums</a>' ) . '</p>'
+	'<p>' . __( '<a href="https://notmatt.press/documentation/article/tools-export-screen/">Documentation on Export</a>' ) . '</p>' .
+	'<p>' . __( '<a href="https://notmatt.press/support/forums/">Support forums</a>' ) . '</p>'
 );
 
 // If the 'download' URL parameter is set, a WXR export file is baked and returned.
@@ -131,8 +131,8 @@ require_once ABSPATH . 'wp-admin/admin-header.php';
  *
  * @since 3.1.0
  *
- * @global wpdb      $wpdb      WordPress database abstraction object.
- * @global WP_Locale $wp_locale WordPress date and time locale object.
+ * @global wpdb      $wpdb      NotMattPress database abstraction object.
+ * @global WP_Locale $wp_locale NotMattPress date and time locale object.
  *
  * @param string $post_type The post type. Default 'post'.
  */
@@ -173,9 +173,9 @@ function export_date_options( $post_type = 'post' ) {
 <div class="wrap">
 <h1><?php echo esc_html( $title ); ?></h1>
 
-<p><?php _e( 'When you click the button below WordPress will create an XML file for you to save to your computer.' ); ?></p>
-<p><?php _e( 'This format, which is called WordPress eXtended RSS or WXR, will contain your posts, pages, comments, custom fields, categories, and tags.' ); ?></p>
-<p><?php _e( 'Once you&#8217;ve saved the download file, you can use the Import function in another WordPress installation to import the content from this site.' ); ?></p>
+<p><?php _e( 'When you click the button below NotMattPress will create an XML file for you to save to your computer.' ); ?></p>
+<p><?php _e( 'This format, which is called NotMattPress eXtended RSS or WXR, will contain your posts, pages, comments, custom fields, categories, and tags.' ); ?></p>
+<p><?php _e( 'Once you&#8217;ve saved the download file, you can use the Import function in another NotMattPress installation to import the content from this site.' ); ?></p>
 
 <h2><?php _e( 'Choose what to export' ); ?></h2>
 <form method="get" id="export-filters">

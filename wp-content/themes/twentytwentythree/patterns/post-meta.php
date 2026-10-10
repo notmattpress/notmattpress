@@ -7,7 +7,7 @@
  * Block Types: core/template-part/post-meta
  * Description: Post meta information with separator on the top.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Twenty_Twenty_Three
  * @since Twenty Twenty-Three 1.0
  */

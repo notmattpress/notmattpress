@@ -2,7 +2,7 @@
 /**
  * Server-side rendering of the `core/tag-cloud` block.
  *
- * @package WordPress
+ * @package NotMattPress
  */
 
 /**

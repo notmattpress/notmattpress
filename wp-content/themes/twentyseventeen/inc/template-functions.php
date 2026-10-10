@@ -2,7 +2,7 @@
 /**
  * Additional features to allow styling of the templates.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Twenty_Seventeen
  * @since Twenty Seventeen 1.0
  */

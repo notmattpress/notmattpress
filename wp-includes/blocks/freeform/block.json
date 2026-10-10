@@ -4,7 +4,7 @@
 	"name": "core/freeform",
 	"title": "Classic",
 	"category": "text",
-	"description": "Use the classic WordPress editor.",
+	"description": "Use the classic NotMattPress editor.",
 	"textdomain": "default",
 	"attributes": {
 		"content": {

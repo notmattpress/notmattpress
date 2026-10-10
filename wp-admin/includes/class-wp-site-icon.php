@@ -2,7 +2,7 @@
 /**
  * Administration API: WP_Site_Icon class
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Administration
  * @since 4.3.0
  */

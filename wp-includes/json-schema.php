@@ -2,7 +2,7 @@
 /**
  * JSON Schema API: shared functions for working with JSON Schema.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage JSON_Schema
  * @since 7.1.0
  */
@@ -11,7 +11,7 @@
  * Gets the JSON Schema keywords allowed for a given schema profile.
  *
  * Use this when preparing a schema that will be consumed outside of
- * WordPress's server-side validation, such as by REST clients, frontend code,
+ * NotMattPress's server-side validation, such as by REST clients, frontend code,
  * or AI providers.
  *
  * The 'rest-api' profile returns the subset of JSON Schema draft-04 keywords
@@ -19,7 +19,7 @@
  * the larger draft-04 vocabulary used by clients that can consume standalone
  * schemas.
  *
- * Allowing a keyword to be exposed does not make WordPress validate or
+ * Allowing a keyword to be exposed does not make NotMattPress validate or
  * sanitize values against it.
  *
  * @since 7.1.0
@@ -58,7 +58,7 @@ function wp_get_json_schema_allowed_keywords( string $schema_profile = 'rest-api
 	 * Filters the JSON Schema keywords allowed for a given schema profile.
 	 *
 	 * Use this to decide which keywords may be exposed to clients for a profile.
-	 * It does not make WordPress validate or sanitize values against the keyword.
+	 * It does not make NotMattPress validate or sanitize values against the keyword.
 	 *
 	 * @since 7.1.0
 	 *
@@ -71,12 +71,12 @@ function wp_get_json_schema_allowed_keywords( string $schema_profile = 'rest-api
 /**
  * Prepares a JSON Schema for clients.
  *
- * Use this before exposing a schema outside of WordPress's server-side
+ * Use this before exposing a schema outside of NotMattPress's server-side
  * validation, for example in REST responses, Ability metadata, or AI provider
  * requests. The prepared schema uses forms that JSON Schema draft-04 clients
  * can understand.
  *
- * WordPress-internal schema conveniences are converted or removed only where
+ * NotMattPress-internal schema conveniences are converted or removed only where
  * needed to keep the exposed schema valid for the selected profile.
  *
  * @since 7.1.0

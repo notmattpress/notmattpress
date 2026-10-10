@@ -3,10 +3,10 @@
  */
 
 /**
- * The WordPress Customizer views API.
+ * The NotMattPress Customizer views API.
  *
  * @param {JQueryStatic}       $  The jQuery object.
- * @param {Object}             wp The WordPress global object.
+ * @param {Object}             wp The NotMattPress global object.
  * @param {_.UnderscoreStatic} _  The Underscore.js object.
  */
 (function( $, wp, _ ) {

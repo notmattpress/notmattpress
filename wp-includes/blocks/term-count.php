@@ -2,7 +2,7 @@
 /**
  * Server-side rendering of the `core/term-count` block.
  *
- * @package WordPress
+ * @package NotMattPress
  */
 
 /**

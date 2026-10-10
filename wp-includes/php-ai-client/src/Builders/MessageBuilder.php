@@ -1,15 +1,15 @@
 <?php
 
 declare (strict_types=1);
-namespace WordPress\AiClient\Builders;
+namespace NotMattPress\AiClient\Builders;
 
 use InvalidArgumentException;
-use WordPress\AiClient\Files\DTO\File;
-use WordPress\AiClient\Messages\DTO\Message;
-use WordPress\AiClient\Messages\DTO\MessagePart;
-use WordPress\AiClient\Messages\Enums\MessageRoleEnum;
-use WordPress\AiClient\Tools\DTO\FunctionCall;
-use WordPress\AiClient\Tools\DTO\FunctionResponse;
+use NotMattPress\AiClient\Files\DTO\File;
+use NotMattPress\AiClient\Messages\DTO\Message;
+use NotMattPress\AiClient\Messages\DTO\MessagePart;
+use NotMattPress\AiClient\Messages\Enums\MessageRoleEnum;
+use NotMattPress\AiClient\Tools\DTO\FunctionCall;
+use NotMattPress\AiClient\Tools\DTO\FunctionResponse;
 /**
  * Fluent builder for constructing AI messages.
  *

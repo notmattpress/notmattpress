@@ -1,8 +1,8 @@
 <?php
 /**
- * WordPress Administration Privacy Tools API.
+ * NotMattPress Administration Privacy Tools API.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Administration
  */
 

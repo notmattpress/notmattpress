@@ -1,9 +1,9 @@
 <?php
 
 declare (strict_types=1);
-namespace WordPress\AiClient\Providers\Http\Exception;
+namespace NotMattPress\AiClient\Providers\Http\Exception;
 
-use WordPress\AiClient\Common\Exception\RuntimeException;
+use NotMattPress\AiClient\Common\Exception\RuntimeException;
 /**
  * Exception class for HTTP response errors.
  *

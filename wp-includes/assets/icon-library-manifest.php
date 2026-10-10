@@ -496,7 +496,7 @@ return array(
 		'collections' => array( 'core' ),
 	),
 	'wordpress'           => array(
-		'label'       => _x( 'WordPress', 'icon label' ),
+		'label'       => _x( 'NotMattPress', 'icon label' ),
 		'filePath'    => 'wordpress.svg',
 		'collections' => array( 'core-admin' ),
 	),

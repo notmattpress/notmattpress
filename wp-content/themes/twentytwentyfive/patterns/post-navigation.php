@@ -6,7 +6,7 @@
  * Description: Next and previous post links.
  * Block Types: core/post-navigation-link
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Twenty_Twenty_Five
  * @since Twenty Twenty-Five 1.0
  */

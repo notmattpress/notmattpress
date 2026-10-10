@@ -1,8 +1,8 @@
 <?php
 /**
- * WordPress List utility class
+ * NotMattPress List utility class
  *
- * @package WordPress
+ * @package NotMattPress
  * @since 4.7.0
  */
 

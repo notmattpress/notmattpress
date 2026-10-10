@@ -19,7 +19,7 @@
  */
 /**
  * Grid System.
- * https://make.wordpress.org/design/2019/10/31/proposal-a-consistent-spacing-system-for-wordpress/
+ * https://make.notmatt.press/design/2019/10/31/proposal-a-consistent-spacing-system-for-wordpress/
  */
 /**
  * Radius scale.
@@ -68,7 +68,7 @@
  * Focus styles.
  */
 /**
- * Standard focus rings for the WordPress Design System.
+ * Standard focus rings for the NotMattPress Design System.
  *
  * Apply `outset-ring__focus` inside the relevant pseudo-class at the call site,
  * e.g. `&:focus { @include outset-ring__focus(); }`.

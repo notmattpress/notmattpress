@@ -2,7 +2,7 @@
 /**
  * Server-side rendering of the `core/read-more` block.
  *
- * @package WordPress
+ * @package NotMattPress
  */
 
 /**

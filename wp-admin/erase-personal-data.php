@@ -2,11 +2,11 @@
 /**
  * Privacy tools, Erase Personal Data screen.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Administration
  */
 
-/** WordPress Administration Bootstrap */
+/** NotMattPress Administration Bootstrap */
 require_once __DIR__ . '/admin.php';
 
 if ( ! current_user_can( 'erase_others_personal_data' ) || ! current_user_can( 'delete_users' ) ) {
@@ -24,8 +24,8 @@ get_current_screen()->add_help_tab(
 		'content' =>
 					'<p>' . __( 'This screen is where you manage requests to erase personal data.' ) . '</p>' .
 					'<p>' . __( 'Privacy Laws around the world require businesses and online services to delete, anonymize, or forget the data they collect about an individual. The rights those laws enshrine are sometimes called the "Right to be Forgotten".' ) . '</p>' .
-					'<p>' . __( 'The tool associates data stored in WordPress with a supplied email address, including profile data and comments.' ) . '</p>' .
-					'<p><strong>' . __( 'Note: As this tool only gathers data from WordPress and participating plugins, you may need to do more to comply with erasure requests. For example, you are also responsible for ensuring that data collected by or stored with the 3rd party services your organization uses gets deleted.' ) . '</strong></p>',
+					'<p>' . __( 'The tool associates data stored in NotMattPress with a supplied email address, including profile data and comments.' ) . '</p>' .
+					'<p><strong>' . __( 'Note: As this tool only gathers data from NotMattPress and participating plugins, you may need to do more to comply with erasure requests. For example, you are also responsible for ensuring that data collected by or stored with the 3rd party services your organization uses gets deleted.' ) . '</strong></p>',
 	)
 );
 
@@ -34,11 +34,11 @@ get_current_screen()->add_help_tab(
 		'id'      => 'default-data',
 		'title'   => __( 'Default Data' ),
 		'content' =>
-					'<p>' . __( 'WordPress collects (but <em>never</em> publishes) a limited amount of data from logged-in users but then deletes it or anonymizes it. That data can include:' ) . '</p>' .
+					'<p>' . __( 'NotMattPress collects (but <em>never</em> publishes) a limited amount of data from logged-in users but then deletes it or anonymizes it. That data can include:' ) . '</p>' .
 					'<p>' . __( '<strong>Profile Information</strong> &mdash; user email address, username, display name, nickname, first name, last name, description/bio, and registration date.' ) . '</p>' .
 					'<p>' . __( '<strong>Community Events Location</strong> &mdash; The IP Address of the user which is used for the Upcoming Community Events shown in the dashboard widget.' ) . '</p>' .
 					'<p>' . __( '<strong>Session Tokens</strong> &mdash; User login information, IP Addresses, Expiration Date, User Agent (Browser/OS), and Last Login.' ) . '</p>' .
-					'<p>' . __( '<strong>Comments</strong> &mdash; WordPress does not delete comments. The software does anonymize (but, again, <em>never</em> publishes) the associated Email Address, IP Address, and User Agent (Browser/OS).' ) . '</p>' .
+					'<p>' . __( '<strong>Comments</strong> &mdash; NotMattPress does not delete comments. The software does anonymize (but, again, <em>never</em> publishes) the associated Email Address, IP Address, and User Agent (Browser/OS).' ) . '</p>' .
 					'<p>' . __( '<strong>Media</strong> &mdash; A list of URLs for all media file uploads made by the user.' ) . '</p>',
 	)
 );
@@ -54,16 +54,16 @@ get_current_screen()->add_help_tab(
 		'id'      => 'plugin-data',
 		'title'   => __( 'Plugin Data' ),
 		'content' =>
-					'<p>' . __( 'Many plugins may collect or store personal data either in the WordPress database or remotely. Any Erase Personal Data request should delete data from plugins as well.' ) . '</p>' .
+					'<p>' . __( 'Many plugins may collect or store personal data either in the NotMattPress database or remotely. Any Erase Personal Data request should delete data from plugins as well.' ) . '</p>' .
 					$privacy_policy_guide .
-					'<p>' . __( 'If you are a plugin author, you can learn more about <a href="https://developer.wordpress.org/plugins/privacy/adding-the-personal-data-eraser-to-your-plugin/">how to add the Personal Data Eraser to a plugin</a>.' ) . '</p>',
+					'<p>' . __( 'If you are a plugin author, you can learn more about <a href="https://developer.notmatt.press/plugins/privacy/adding-the-personal-data-eraser-to-your-plugin/">how to add the Personal Data Eraser to a plugin</a>.' ) . '</p>',
 	)
 );
 
 get_current_screen()->set_help_sidebar(
 	'<p><strong>' . __( 'For more information:' ) . '</strong></p>' .
-	'<p>' . __( '<a href="https://wordpress.org/documentation/article/tools-erase-personal-data-screen/">Documentation on Erase Personal Data</a>' ) . '</p>' .
-	'<p>' . __( '<a href="https://wordpress.org/support/forums/">Support forums</a>' ) . '</p>'
+	'<p>' . __( '<a href="https://notmatt.press/documentation/article/tools-erase-personal-data-screen/">Documentation on Erase Personal Data</a>' ) . '</p>' .
+	'<p>' . __( '<a href="https://notmatt.press/support/forums/">Support forums</a>' ) . '</p>'
 );
 
 // Handle list table actions.

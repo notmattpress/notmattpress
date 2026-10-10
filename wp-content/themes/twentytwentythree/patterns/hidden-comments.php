@@ -4,7 +4,7 @@
  * Slug: twentytwentythree/hidden-comments
  * Inserter: no
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Twenty_Twenty_Three
  * @since Twenty Twenty-Three 1.0
  */
