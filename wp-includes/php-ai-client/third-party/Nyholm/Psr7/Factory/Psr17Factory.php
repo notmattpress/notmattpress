@@ -1,26 +1,26 @@
 <?php
 
 declare (strict_types=1);
-namespace WordPress\AiClientDependencies\Nyholm\Psr7\Factory;
+namespace NotMattPress\AiClientDependencies\Nyholm\Psr7\Factory;
 
-use WordPress\AiClientDependencies\Nyholm\Psr7\Request;
-use WordPress\AiClientDependencies\Nyholm\Psr7\Response;
-use WordPress\AiClientDependencies\Nyholm\Psr7\ServerRequest;
-use WordPress\AiClientDependencies\Nyholm\Psr7\Stream;
-use WordPress\AiClientDependencies\Nyholm\Psr7\UploadedFile;
-use WordPress\AiClientDependencies\Nyholm\Psr7\Uri;
-use WordPress\AiClientDependencies\Psr\Http\Message\RequestFactoryInterface;
-use WordPress\AiClientDependencies\Psr\Http\Message\RequestInterface;
-use WordPress\AiClientDependencies\Psr\Http\Message\ResponseFactoryInterface;
-use WordPress\AiClientDependencies\Psr\Http\Message\ResponseInterface;
-use WordPress\AiClientDependencies\Psr\Http\Message\ServerRequestFactoryInterface;
-use WordPress\AiClientDependencies\Psr\Http\Message\ServerRequestInterface;
-use WordPress\AiClientDependencies\Psr\Http\Message\StreamFactoryInterface;
-use WordPress\AiClientDependencies\Psr\Http\Message\StreamInterface;
-use WordPress\AiClientDependencies\Psr\Http\Message\UploadedFileFactoryInterface;
-use WordPress\AiClientDependencies\Psr\Http\Message\UploadedFileInterface;
-use WordPress\AiClientDependencies\Psr\Http\Message\UriFactoryInterface;
-use WordPress\AiClientDependencies\Psr\Http\Message\UriInterface;
+use NotMattPress\AiClientDependencies\Nyholm\Psr7\Request;
+use NotMattPress\AiClientDependencies\Nyholm\Psr7\Response;
+use NotMattPress\AiClientDependencies\Nyholm\Psr7\ServerRequest;
+use NotMattPress\AiClientDependencies\Nyholm\Psr7\Stream;
+use NotMattPress\AiClientDependencies\Nyholm\Psr7\UploadedFile;
+use NotMattPress\AiClientDependencies\Nyholm\Psr7\Uri;
+use NotMattPress\AiClientDependencies\Psr\Http\Message\RequestFactoryInterface;
+use NotMattPress\AiClientDependencies\Psr\Http\Message\RequestInterface;
+use NotMattPress\AiClientDependencies\Psr\Http\Message\ResponseFactoryInterface;
+use NotMattPress\AiClientDependencies\Psr\Http\Message\ResponseInterface;
+use NotMattPress\AiClientDependencies\Psr\Http\Message\ServerRequestFactoryInterface;
+use NotMattPress\AiClientDependencies\Psr\Http\Message\ServerRequestInterface;
+use NotMattPress\AiClientDependencies\Psr\Http\Message\StreamFactoryInterface;
+use NotMattPress\AiClientDependencies\Psr\Http\Message\StreamInterface;
+use NotMattPress\AiClientDependencies\Psr\Http\Message\UploadedFileFactoryInterface;
+use NotMattPress\AiClientDependencies\Psr\Http\Message\UploadedFileInterface;
+use NotMattPress\AiClientDependencies\Psr\Http\Message\UriFactoryInterface;
+use NotMattPress\AiClientDependencies\Psr\Http\Message\UriInterface;
 /**
  * @author Tobias Nyholm <tobias.nyholm@gmail.com>
  * @author Martijn van der Ven <martijn@vanderven.se>

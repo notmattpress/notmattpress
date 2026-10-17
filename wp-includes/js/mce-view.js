@@ -27,7 +27,7 @@
  * |  |- ...
  *
  * @param {Window}       window    The global window object.
- * @param {Object}       wp        The WordPress global object.
+ * @param {Object}       wp        The NotMattPress global object.
  * @param {Object}       shortcode The shortcode API.
  * @param {JQueryStatic} $         The jQuery object.
  */
@@ -702,7 +702,7 @@
 		 * Sets an error for all view nodes tied to this view instance.
 		 *
 		 * @param {string} message  The error message to set.
-		 * @param {string} dashicon A dashicon ID. Optional. {@link https://developer.wordpress.org/resource/dashicons/}
+		 * @param {string} dashicon A dashicon ID. Optional. {@link https://developer.notmatt.press/resource/dashicons/}
 		 */
 		setError: function( message, dashicon ) {
 			this.setContent(
@@ -775,7 +775,7 @@
 } )( window, window.wp, window.wp.shortcode, window.jQuery );
 
 /**
- * The WordPress core TinyMCE views.
+ * The NotMattPress core TinyMCE views.
  *
  * Views for the gallery, audio, video, playlist and embed shortcodes,
  * and a view for embeddable URLs.

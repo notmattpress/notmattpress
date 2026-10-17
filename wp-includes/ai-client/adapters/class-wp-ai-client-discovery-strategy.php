@@ -2,29 +2,29 @@
 /**
  * WP AI Client: WP_AI_Client_Discovery_Strategy class
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage AI
  * @since 7.0.0
  */
 
-use WordPress\AiClient\Providers\Http\Abstracts\AbstractClientDiscoveryStrategy;
-use WordPress\AiClientDependencies\Nyholm\Psr7\Factory\Psr17Factory;
-use WordPress\AiClientDependencies\Psr\Http\Client\ClientInterface;
+use NotMattPress\AiClient\Providers\Http\Abstracts\AbstractClientDiscoveryStrategy;
+use NotMattPress\AiClientDependencies\Nyholm\Psr7\Factory\Psr17Factory;
+use NotMattPress\AiClientDependencies\Psr\Http\Client\ClientInterface;
 
 /**
- * Discovery strategy for WordPress HTTP client.
+ * Discovery strategy for NotMattPress HTTP client.
  *
- * Registers the WordPress HTTP client adapter with the HTTPlug discovery system
+ * Registers the NotMattPress HTTP client adapter with the HTTPlug discovery system
  * so the AI Client SDK can find and use it automatically.
  *
  * @since 7.0.0
- * @internal Intended only to register WordPress's HTTP client so that the PHP AI Client SDK can use it.
+ * @internal Intended only to register NotMattPress's HTTP client so that the PHP AI Client SDK can use it.
  * @access private
  */
 class WP_AI_Client_Discovery_Strategy extends AbstractClientDiscoveryStrategy {
 
 	/**
-	 * Creates an instance of the WordPress HTTP client.
+	 * Creates an instance of the NotMattPress HTTP client.
 	 *
 	 * @since 7.0.0
 	 *

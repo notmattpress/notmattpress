@@ -2,7 +2,7 @@
 /**
  * Auto-register block support.
  *
- * @package WordPress
+ * @package NotMattPress
  * @since 7.0.0
  */
 

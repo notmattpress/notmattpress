@@ -2,35 +2,35 @@
 /**
  * WP AI Client: WP_AI_Client_Prompt_Builder class
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage AI
  * @since 7.0.0
  */
 
-use WordPress\AiClient\AiClient;
-use WordPress\AiClient\Builders\PromptBuilder;
-use WordPress\AiClient\Files\DTO\File;
-use WordPress\AiClient\Files\Enums\FileTypeEnum;
-use WordPress\AiClient\Files\Enums\MediaOrientationEnum;
-use WordPress\AiClient\Messages\DTO\Message;
-use WordPress\AiClient\Messages\DTO\MessagePart;
-use WordPress\AiClient\Messages\Enums\ModalityEnum;
-use WordPress\AiClient\Providers\Http\DTO\RequestOptions;
-use WordPress\AiClient\Providers\Models\Contracts\ModelInterface;
-use WordPress\AiClient\Providers\Models\DTO\ModelConfig;
-use WordPress\AiClient\Providers\Models\Enums\CapabilityEnum;
-use WordPress\AiClient\Providers\ProviderRegistry;
-use WordPress\AiClient\Results\DTO\GenerativeAiResult;
-use WordPress\AiClient\Tools\DTO\FunctionDeclaration;
-use WordPress\AiClient\Tools\DTO\FunctionResponse;
-use WordPress\AiClient\Tools\DTO\WebSearch;
+use NotMattPress\AiClient\AiClient;
+use NotMattPress\AiClient\Builders\PromptBuilder;
+use NotMattPress\AiClient\Files\DTO\File;
+use NotMattPress\AiClient\Files\Enums\FileTypeEnum;
+use NotMattPress\AiClient\Files\Enums\MediaOrientationEnum;
+use NotMattPress\AiClient\Messages\DTO\Message;
+use NotMattPress\AiClient\Messages\DTO\MessagePart;
+use NotMattPress\AiClient\Messages\Enums\ModalityEnum;
+use NotMattPress\AiClient\Providers\Http\DTO\RequestOptions;
+use NotMattPress\AiClient\Providers\Models\Contracts\ModelInterface;
+use NotMattPress\AiClient\Providers\Models\DTO\ModelConfig;
+use NotMattPress\AiClient\Providers\Models\Enums\CapabilityEnum;
+use NotMattPress\AiClient\Providers\ProviderRegistry;
+use NotMattPress\AiClient\Results\DTO\GenerativeAiResult;
+use NotMattPress\AiClient\Tools\DTO\FunctionDeclaration;
+use NotMattPress\AiClient\Tools\DTO\FunctionResponse;
+use NotMattPress\AiClient\Tools\DTO\WebSearch;
 
 /**
  * Fluent builder for constructing AI prompts, returning WP_Error on failure.
  *
  * This class provides a fluent interface for building prompts with various
  * content types and model configurations. It wraps the PHP AI Client SDK's
- * PromptBuilder and adds WordPress-specific behavior including WP_Error
+ * PromptBuilder and adds NotMattPress-specific behavior including WP_Error
  * handling instead of exceptions, snake_case method naming, and integration
  * with the Abilities API.
  *
@@ -153,7 +153,7 @@ class WP_AI_Client_Prompt_Builder extends WP_AI_Client_Builder {
 	);
 
 	/**
-	 * Registers WordPress abilities as function declarations for the AI model.
+	 * Registers NotMattPress abilities as function declarations for the AI model.
 	 *
 	 * Converts each WP_Ability to a FunctionDeclaration using the wpab__ prefix
 	 * naming convention and passes them to the underlying prompt builder.

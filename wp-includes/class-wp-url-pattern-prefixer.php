@@ -2,7 +2,7 @@
 /**
  * Class 'WP_URL_Pattern_Prefixer'.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Speculative Loading
  * @since 6.8.0
  */
@@ -50,8 +50,8 @@ class WP_URL_Pattern_Prefixer {
 	/**
 	 * Prefixes the given URL path pattern with the base path for the given context.
 	 *
-	 * This ensures that these path patterns work correctly on WordPress subdirectory sites, for example in a multisite
-	 * network, or when WordPress itself is installed in a subdirectory of the hostname.
+	 * This ensures that these path patterns work correctly on NotMattPress subdirectory sites, for example in a multisite
+	 * network, or when NotMattPress itself is installed in a subdirectory of the hostname.
 	 *
 	 * The given URL path pattern is only prefixed if it does not already include the expected prefix.
 	 *

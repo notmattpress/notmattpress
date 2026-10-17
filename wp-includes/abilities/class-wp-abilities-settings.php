@@ -2,7 +2,7 @@
 /**
  * Abilities API: WP_Abilities_Settings class.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Abilities API
  * @since 7.2.0
  */
@@ -82,7 +82,7 @@ final class WP_Abilities_Settings {
 			'core/settings-get',
 			array(
 				'label'               => __( 'Get Settings' ),
-				'description'         => __( 'Returns WordPress settings as a flat map of setting name to value. By default returns all settings exposed to abilities, or optionally a subset filtered by settings group, by setting name, or both. A setting whose value does not match its schema is left out. Requires an authenticated user who can manage options.' ),
+				'description'         => __( 'Returns NotMattPress settings as a flat map of setting name to value. By default returns all settings exposed to abilities, or optionally a subset filtered by settings group, by setting name, or both. A setting whose value does not match its schema is left out. Requires an authenticated user who can manage options.' ),
 				'category'            => self::CATEGORY,
 				'input_schema'        => $this->get_settings_get_input_schema( $groups, array_map( 'strval', array_keys( $this->exposed_settings ) ) ),
 				'output_schema'       => $this->get_settings_get_output_schema(),
@@ -136,7 +136,7 @@ final class WP_Abilities_Settings {
 				continue;
 			}
 
-			// WordPress stores false as '', which the boolean schema rejects.
+			// NotMattPress stores false as '', which the boolean schema rejects.
 			if ( '' === $value && 'boolean' === $setting['schema']['type'] ) {
 				$value = false;
 			}

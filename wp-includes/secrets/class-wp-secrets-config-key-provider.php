@@ -2,7 +2,7 @@
 /**
  * Secrets API: WP_Secrets_Config_Key_Provider class
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Secrets
  * @since 7.2.0
  */
@@ -248,7 +248,7 @@ final class WP_Secrets_Config_Key_Provider implements WP_Secrets_Keyring {
 	 *
 	 * Takes explicit arguments rather than reading LOGGED_IN_KEY/LOGGED_IN_SALT
 	 * directly so the decision logic is testable without touching real constants,
-	 * which – once WordPress has bootstrapped once in a process – can never be
+	 * which – once NotMattPress has bootstrapped once in a process – can never be
 	 * redefined to a different value for a test.
 	 *
 	 * @since 7.2.0

@@ -2,7 +2,7 @@
 /**
  * Displays the next and previous post navigation in single posts.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Twenty_Twenty
  * @since Twenty Twenty 1.0
  */

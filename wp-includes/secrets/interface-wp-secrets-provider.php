@@ -2,7 +2,7 @@
 /**
  * Secrets API: WP_Secrets_Provider interface
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Secrets
  * @since 7.2.0
  */
@@ -14,7 +14,7 @@
  * it to a caller. It is the outermost extension point in the Secrets API, and the
  * one a hosting platform implements.
  *
- * WordPress ships WP_Secrets_Libsodium_Provider, which encrypts with libsodium and
+ * NotMattPress ships WP_Secrets_Libsodium_Provider, which encrypts with libsodium and
  * stores ciphertext in the options tables. That provider is the default rather than
  * a privileged case: a platform that protects credentials in a key management
  * service, a hardware security module, or its own control panel implements this
@@ -25,7 +25,7 @@
  * prevent. Receiving a value over an authenticated channel and holding it in a
  * hardware security module satisfies that requirement.
  *
- * WordPress cannot verify any of this. A provider is loaded from a drop-in, which is
+ * NotMattPress cannot verify any of this. A provider is loaded from a drop-in, which is
  * fully trusted code: it runs before plugins, and could already read every secret by
  * implementing the keyring. get_protection_boundary() and is_writable() are
  * declarations rather than enforcement. They exist so that a developer reviewing a
@@ -54,9 +54,9 @@
 interface WP_Secrets_Provider {
 
 	/**
-	 * Protection happens inside WordPress.
+	 * Protection happens inside NotMattPress.
 	 *
-	 * The provider holds ciphertext that WordPress produced, and WordPress holds the
+	 * The provider holds ciphertext that NotMattPress produced, and NotMattPress holds the
 	 * key material.
 	 *
 	 * @since 7.2.0
@@ -65,9 +65,9 @@ interface WP_Secrets_Provider {
 	const BOUNDARY_WORDPRESS = 'wordpress';
 
 	/**
-	 * Protection happens outside WordPress.
+	 * Protection happens outside NotMattPress.
 	 *
-	 * The provider is itself the encryption boundary, and WordPress is a consumer of a
+	 * The provider is itself the encryption boundary, and NotMattPress is a consumer of a
 	 * credential it does not protect.
 	 *
 	 * @since 7.2.0
@@ -199,7 +199,7 @@ interface WP_Secrets_Provider {
 	 *
 	 * One of the BOUNDARY_* constants. This is what lets Site Health and a future
 	 * admin screen tell an operator whether their credentials are protected by
-	 * WordPress's own libsodium envelope or by something outside it, a question
+	 * NotMattPress's own libsodium envelope or by something outside it, a question
 	 * they currently have no way to answer, and the one hosts asked to be able to
 	 * answer honestly.
 	 *

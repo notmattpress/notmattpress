@@ -2,7 +2,7 @@
 /**
  * Secrets API: WP_Secrets_Option_Store class
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Secrets
  * @since 7.2.0
  */
@@ -143,7 +143,7 @@ final class WP_Secrets_Option_Store implements WP_Secrets_Store {
 	 *
 	 * @since 7.2.0
 	 *
-	 * @global wpdb $wpdb WordPress database abstraction object.
+	 * @global wpdb $wpdb NotMattPress database abstraction object.
 	 *
 	 * @param bool $network Whether to list network-scope secrets.
 	 * @return string[]|WP_Error

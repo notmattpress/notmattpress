@@ -1,14 +1,14 @@
 <?php
 
 declare (strict_types=1);
-namespace WordPress\AiClient\Results\DTO;
+namespace NotMattPress\AiClient\Results\DTO;
 
 use ArrayIterator;
 use Countable;
 use IteratorAggregate;
 use JsonSerializable;
 use Traversable;
-use WordPress\AiClient\Common\Exception\InvalidArgumentException;
+use NotMattPress\AiClient\Common\Exception\InvalidArgumentException;
 /**
  * Represents a single generated embedding vector.
  *

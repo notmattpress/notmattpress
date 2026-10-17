@@ -2,7 +2,7 @@
 /**
  * Meta API: WP_Meta_Query class
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Meta
  * @since 4.4.0
  */
@@ -516,7 +516,7 @@ class WP_Meta_Query {
 	 *
 	 * @since 4.1.0
 	 *
-	 * @global wpdb $wpdb WordPress database abstraction object.
+	 * @global wpdb $wpdb NotMattPress database abstraction object.
 	 *
 	 * @param array  $clause       Query clause (passed by reference).
 	 * @param array  $parent_query Parent query array.
@@ -668,15 +668,15 @@ class WP_Meta_Query {
 				switch ( $meta_compare_key ) {
 					case '=':
 					case 'EXISTS':
-						$where = $wpdb->prepare( "$alias.meta_key = %s", trim( $clause['key'] ) ); // phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared
+						$where = $wpdb->prepare( "$alias.meta_key = %s", trim( $clause['key'] ) ); // phpcs:ignore NotMattPress.DB.PreparedSQL.InterpolatedNotPrepared
 						break;
 					case 'LIKE':
 						$meta_compare_value = '%' . $wpdb->esc_like( trim( $clause['key'] ) ) . '%';
-						$where              = $wpdb->prepare( "$alias.meta_key LIKE %s", $meta_compare_value ); // phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared
+						$where              = $wpdb->prepare( "$alias.meta_key LIKE %s", $meta_compare_value ); // phpcs:ignore NotMattPress.DB.PreparedSQL.InterpolatedNotPrepared
 						break;
 					case 'IN':
 						$meta_compare_string = "$alias.meta_key IN (" . substr( str_repeat( ',%s', count( $clause['key'] ) ), 1 ) . ')';
-						$where               = $wpdb->prepare( $meta_compare_string, $clause['key'] ); // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared
+						$where               = $wpdb->prepare( $meta_compare_string, $clause['key'] ); // phpcs:ignore NotMattPress.DB.PreparedSQL.NotPrepared
 						break;
 					case 'RLIKE':
 					case 'REGEXP':
@@ -688,24 +688,24 @@ class WP_Meta_Query {
 							$cast     = '';
 							$meta_key = "$alias.meta_key";
 						}
-						$where = $wpdb->prepare( "$meta_key $operator $cast %s", trim( $clause['key'] ) ); // phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared
+						$where = $wpdb->prepare( "$meta_key $operator $cast %s", trim( $clause['key'] ) ); // phpcs:ignore NotMattPress.DB.PreparedSQL.InterpolatedNotPrepared
 						break;
 
 					case '!=':
 					case 'NOT EXISTS':
 						$meta_compare_string = $meta_compare_string_start . "AND $subquery_alias.meta_key = %s " . $meta_compare_string_end;
-						$where               = $wpdb->prepare( $meta_compare_string, $clause['key'] ); // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared
+						$where               = $wpdb->prepare( $meta_compare_string, $clause['key'] ); // phpcs:ignore NotMattPress.DB.PreparedSQL.NotPrepared
 						break;
 					case 'NOT LIKE':
 						$meta_compare_string = $meta_compare_string_start . "AND $subquery_alias.meta_key LIKE %s " . $meta_compare_string_end;
 
 						$meta_compare_value = '%' . $wpdb->esc_like( trim( $clause['key'] ) ) . '%';
-						$where              = $wpdb->prepare( $meta_compare_string, $meta_compare_value ); // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared
+						$where              = $wpdb->prepare( $meta_compare_string, $meta_compare_value ); // phpcs:ignore NotMattPress.DB.PreparedSQL.NotPrepared
 						break;
 					case 'NOT IN':
 						$array_subclause     = '(' . substr( str_repeat( ',%s', count( $clause['key'] ) ), 1 ) . ') ';
 						$meta_compare_string = $meta_compare_string_start . "AND $subquery_alias.meta_key IN " . $array_subclause . $meta_compare_string_end;
-						$where               = $wpdb->prepare( $meta_compare_string, $clause['key'] ); // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared
+						$where               = $wpdb->prepare( $meta_compare_string, $clause['key'] ); // phpcs:ignore NotMattPress.DB.PreparedSQL.NotPrepared
 						break;
 					case 'NOT REGEXP':
 						$operator = $meta_compare_key;
@@ -718,7 +718,7 @@ class WP_Meta_Query {
 						}
 
 						$meta_compare_string = $meta_compare_string_start . "AND $meta_key REGEXP $cast %s " . $meta_compare_string_end;
-						$where               = $wpdb->prepare( $meta_compare_string, $clause['key'] ); // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared
+						$where               = $wpdb->prepare( $meta_compare_string, $clause['key'] ); // phpcs:ignore NotMattPress.DB.PreparedSQL.NotPrepared
 						break;
 				}
 

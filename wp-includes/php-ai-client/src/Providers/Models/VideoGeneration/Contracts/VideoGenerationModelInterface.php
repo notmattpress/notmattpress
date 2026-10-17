@@ -1,10 +1,10 @@
 <?php
 
 declare (strict_types=1);
-namespace WordPress\AiClient\Providers\Models\VideoGeneration\Contracts;
+namespace NotMattPress\AiClient\Providers\Models\VideoGeneration\Contracts;
 
-use WordPress\AiClient\Messages\DTO\Message;
-use WordPress\AiClient\Results\DTO\GenerativeAiResult;
+use NotMattPress\AiClient\Messages\DTO\Message;
+use NotMattPress\AiClient\Results\DTO\GenerativeAiResult;
 /**
  * Interface for models that support video generation.
  *
