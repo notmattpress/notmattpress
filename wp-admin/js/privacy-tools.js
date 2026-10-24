@@ -3,7 +3,7 @@
  */
 
 /**
- * Sets the interactions used by the User Privacy tools in WordPress.
+ * Sets the interactions used by the User Privacy tools in NotMattPress.
  *
  * @param {jQueryStatic} $ The jQuery object.
  */

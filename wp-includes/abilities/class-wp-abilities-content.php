@@ -2,7 +2,7 @@
 /**
  * Abilities API: WP_Abilities_Content class.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Abilities API
  * @since 7.2.0
  */
@@ -916,7 +916,7 @@ final class WP_Abilities_Content {
 	 * Normalizes the post slugs the `slugs` filter lists.
 	 *
 	 * Like schema validation, it also accepts a single slug, even one sent as a number, or a
-	 * comma-separated string. Each slug is sanitized with sanitize_title(), as WordPress
+	 * comma-separated string. Each slug is sanitized with sanitize_title(), as NotMattPress
 	 * sanitizes a post slug when it saves the post, so `Hello-World` matches `hello-world`.
 	 * A slug that sanitizes to an empty string, such as `!!!`, is dropped: it names no post,
 	 * and querying it would match the posts that have no slug yet, such as drafts.
@@ -1671,7 +1671,7 @@ final class WP_Abilities_Content {
 	 * @param WP_Post $post The post to render.
 	 */
 	private function set_up_post_context( WP_Post $post ): void {
-		// phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited -- Temporarily mirrors REST post context for rendering.
+		// phpcs:ignore NotMattPress.WP.GlobalVariablesOverride.Prohibited -- Temporarily mirrors REST post context for rendering.
 		$GLOBALS['post'] = $post;
 		setup_postdata( $post );
 	}
@@ -1709,7 +1709,7 @@ final class WP_Abilities_Content {
 
 		try {
 			if ( $previous_post instanceof WP_Post ) {
-				// phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited -- Restores the previous global post context.
+				// phpcs:ignore NotMattPress.WP.GlobalVariablesOverride.Prohibited -- Restores the previous global post context.
 				$GLOBALS['post'] = $previous_post;
 				setup_postdata( $previous_post );
 			}

@@ -2,7 +2,7 @@
 /**
  * Query: Small image and title.
  *
- * @package WordPress
+ * @package NotMattPress
  */
 
 return array(

@@ -5,7 +5,7 @@
  * Patterns exclude the default excerpt and title fields; this collection
  * registers their description, title, and sync status instead.
  *
- * @package WordPress
+ * @package NotMattPress
  */
 
 return array(

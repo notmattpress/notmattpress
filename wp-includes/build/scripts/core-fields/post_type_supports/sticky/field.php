@@ -3,7 +3,7 @@
  * The sticky field of posts, the only post type with sticky posts. Its
  * JavaScript part (`isVisible`) is in `field.tsx`, next to this file.
  *
- * @package WordPress
+ * @package NotMattPress
  */
 
 return array(

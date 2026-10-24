@@ -2,7 +2,7 @@
 /**
  * Page layout with image, text and video.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Twenty_Twenty_Two
  * @since Twenty Twenty-Two 1.0
  */

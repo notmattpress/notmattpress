@@ -5,7 +5,7 @@
  * `callback`, and the `label` with the number of revisions, which overrides
  * this one) are in `action.tsx`, next to this file.
  *
- * @package WordPress
+ * @package NotMattPress
  */
 
 return array(

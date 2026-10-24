@@ -7,7 +7,7 @@
  * Its id is not the name of the folder, since folder names are written in
  * snake case, hence the explicit `id`.
  *
- * @package WordPress
+ * @package NotMattPress
  */
 
 return array(

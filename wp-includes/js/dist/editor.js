@@ -1762,7 +1762,7 @@ var wp;
   // packages/editor/build-module/lock-unlock.mjs
   var import_private_apis = __toESM(require_private_apis(), 1);
   var { lock, unlock } = (0, import_private_apis.__dangerousOptInToUnstableAPIsOnlyForCoreModules)(
-    "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of WordPress.",
+    "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of NotMattPress.",
     "@wordpress/editor"
   );
 
@@ -5005,7 +5005,7 @@ var wp;
   // packages/global-styles-engine/build-module/lock-unlock.mjs
   var import_private_apis2 = __toESM(require_private_apis(), 1);
   var { lock: lock2, unlock: unlock2 } = (0, import_private_apis2.__dangerousOptInToUnstableAPIsOnlyForCoreModules)(
-    "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of WordPress.",
+    "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of NotMattPress.",
     "@wordpress/global-styles-engine"
   );
 
@@ -36862,7 +36862,7 @@ var wp;
   function resolveOwnerDocument() {
     return typeof document === "undefined" ? null : document;
   }
-  function isInWordPressEnvironment() {
+  function isInNotMattPressEnvironment() {
     let topWp;
     try {
       topWp = window.top?.wp;
@@ -36889,7 +36889,7 @@ var wp;
     if (typeof window === "undefined") {
       return void 0;
     }
-    if (!isInWordPressEnvironment() && window.__wpUiCompatOverlaySlotEnabled !== true) {
+    if (!isInNotMattPressEnvironment() && window.__wpUiCompatOverlaySlotEnabled !== true) {
       return void 0;
     }
     const ownerDocument2 = resolveOwnerDocument();
@@ -38255,7 +38255,7 @@ var wp;
   // packages/ui/build-module/lock-unlock.mjs
   var import_private_apis4 = __toESM(require_private_apis(), 1);
   var { lock: lock3, unlock: unlock3 } = (0, import_private_apis4.__dangerousOptInToUnstableAPIsOnlyForCoreModules)(
-    "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of WordPress.",
+    "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of NotMattPress.",
     "@wordpress/ui"
   );
 
@@ -55226,7 +55226,7 @@ var wp;
   // packages/global-styles-ui/build-module/lock-unlock.mjs
   var import_private_apis5 = __toESM(require_private_apis(), 1);
   var { lock: lock4, unlock: unlock4 } = (0, import_private_apis5.__dangerousOptInToUnstableAPIsOnlyForCoreModules)(
-    "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of WordPress.",
+    "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of NotMattPress.",
     "@wordpress/global-styles-ui"
   );
 
@@ -72241,7 +72241,7 @@ var wp;
               import_components56.ExternalLink,
               {
                 href: (0, import_i18n72.__)(
-                  "https://developer.wordpress.org/advanced-administration/wordpress/css/"
+                  "https://developer.notmatt.press/advanced-administration/wordpress/css/"
                 ),
                 className: "global-styles-ui-screen-css-help-link",
                 children: (0, import_i18n72.__)("Learn more about CSS")
@@ -93230,7 +93230,7 @@ If there's a particular need for this, please submit a feature request at https:
         result.duotones.push({
           name: (0, import_i18n132._x)(
             "Default",
-            "Indicates these duotone filters come from WordPress."
+            "Indicates these duotone filters come from NotMattPress."
           ),
           slug: "default",
           duotones: defaultDuotones
@@ -95776,7 +95776,7 @@ ${content}
           /* @__PURE__ */ (0, import_jsx_runtime485.jsxs)("div", { children: [
             (0, import_element294.createInterpolateElement)(
               (0, import_i18n144.sprintf)(
-                /* translators: %s: The home URL of the WordPress installation without the scheme. */
+                /* translators: %s: The home URL of the NotMattPress installation without the scheme. */
                 (0, import_i18n144.__)(
                   'Child pages inherit characteristics from their parent, such as URL structure. For instance, if "Pricing" is a child of "Services", its URL would be %s<wbr />/services<wbr />/pricing.'
                 ),
@@ -95798,7 +95798,7 @@ ${content}
                   import_components129.ExternalLink,
                   {
                     href: (0, import_i18n144.__)(
-                      "https://wordpress.org/documentation/article/page-post-settings-sidebar/#page-attributes"
+                      "https://notmatt.press/documentation/article/page-post-settings-sidebar/#page-attributes"
                     )
                   }
                 )
@@ -97207,7 +97207,7 @@ ${content}
           import_components142.ExternalLink,
           {
             href: (0, import_i18n155.__)(
-              "https://wordpress.org/documentation/article/trackbacks-and-pingbacks/"
+              "https://notmatt.press/documentation/article/trackbacks-and-pingbacks/"
             ),
             children: (0, import_i18n155.__)("Learn more about pingbacks & trackbacks")
           }
@@ -97371,7 +97371,7 @@ ${content}
           import_components144.ExternalLink,
           {
             href: (0, import_i18n157.__)(
-              "https://wordpress.org/documentation/article/page-post-settings-sidebar/#excerpt"
+              "https://notmatt.press/documentation/article/page-post-settings-sidebar/#excerpt"
             ),
             children: (0, import_i18n157.__)("Learn more about manual excerpts")
           }
@@ -100961,7 +100961,7 @@ ${content}
     const visibleTaxonomies = (taxonomies ?? []).filter(
       (taxonomy) => (
         // In some circumstances .visibility can end up as undefined so optional chaining operator required.
-        // https://github.com/WordPress/gutenberg/issues/40326
+        // https://github.com/NotMattPress/gutenberg/issues/40326
         taxonomy.types.includes(postType2) && taxonomy.visibility?.show_ui
       )
     );
@@ -102810,7 +102810,7 @@ ${content}
               import_components176.ExternalLink,
               {
                 href: (0, import_i18n193.__)(
-                  "https://wordpress.org/documentation/article/page-post-settings-sidebar/#permalink"
+                  "https://notmatt.press/documentation/article/page-post-settings-sidebar/#permalink"
                 )
               }
             )
@@ -103581,7 +103581,7 @@ ${content}
   // packages/media-editor/build-module/lock-unlock.mjs
   var import_private_apis6 = __toESM(require_private_apis(), 1);
   var { lock: lock5, unlock: unlock5 } = (0, import_private_apis6.__dangerousOptInToUnstableAPIsOnlyForCoreModules)(
-    "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of WordPress.",
+    "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of NotMattPress.",
     "@wordpress/media-editor"
   );
 
@@ -110426,7 +110426,7 @@ ${content}
         });
         const response = await window.fetch(url, {
           headers: {
-            "User-Agent": "WordPress/inserter-media-fetch"
+            "User-Agent": "NotMattPress/inserter-media-fetch"
           }
         });
         const jsonResponse = await response.json();
@@ -110442,7 +110442,7 @@ ${content}
           previewUrl: result.thumbnail
         }));
       },
-      getReportUrl: ({ sourceId }) => `https://wordpress.org/openverse/image/${sourceId}/report/`,
+      getReportUrl: ({ sourceId }) => `https://notmatt.press/openverse/image/${sourceId}/report/`,
       isExternalResource: true
     }
   ];
@@ -113160,7 +113160,7 @@ ${content}
   // packages/views/build-module/lock-unlock.mjs
   var import_private_apis8 = __toESM(require_private_apis(), 1);
   var { lock: lock6, unlock: unlock6 } = (0, import_private_apis8.__dangerousOptInToUnstableAPIsOnlyForCoreModules)(
-    "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of WordPress.",
+    "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of NotMattPress.",
     "@wordpress/views"
   );
 
@@ -113941,7 +113941,7 @@ ${content}
         (0, import_deprecated17.default)("Extending MediaUpload as a class component", {
           since: "7.0",
           version: "7.2",
-          hint: "MediaUpload will become a function component in WordPress 7.2 Please update any custom implementations to use function components instead."
+          hint: "MediaUpload will become a function component in NotMattPress 7.2 Please update any custom implementations to use function components instead."
         });
         return MediaUploadModalWrapper;
       }
@@ -115725,7 +115725,7 @@ ${content}
                 menu_exports.LinkItem,
                 {
                   href: (0, import_i18n238.__)(
-                    "https://wordpress.org/documentation/article/wordpress-block-editor/"
+                    "https://notmatt.press/documentation/article/wordpress-block-editor/"
                   ),
                   openInNewTab: true,
                   children: /* @__PURE__ */ (0, import_jsx_runtime605.jsx)(menu_exports.ItemLabel, { children: (0, import_i18n238.__)("Help") })
@@ -126359,7 +126359,7 @@ ${content}
                   import_components245.ExternalLink,
                   {
                     href: (0, import_i18n298.__)(
-                      "https://wordpress.org/documentation/article/styles-overview/"
+                      "https://notmatt.press/documentation/article/styles-overview/"
                     ),
                     children: (0, import_i18n298.__)(
                       "Here\u2019s a detailed guide to learn how to make the most of it."

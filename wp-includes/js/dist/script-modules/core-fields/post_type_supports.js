@@ -13188,7 +13188,7 @@ var WP_COMPAT_OVERLAY_SLOT_ATTRIBUTE = "data-wp-compat-overlay-slot";
 function resolveOwnerDocument() {
   return typeof document === "undefined" ? null : document;
 }
-function isInWordPressEnvironment() {
+function isInNotMattPressEnvironment() {
   let topWp;
   try {
     topWp = window.top?.wp;
@@ -13215,7 +13215,7 @@ function getWpCompatOverlaySlot() {
   if (typeof window === "undefined") {
     return void 0;
   }
-  if (!isInWordPressEnvironment() && window.__wpUiCompatOverlaySlotEnabled !== true) {
+  if (!isInNotMattPressEnvironment() && window.__wpUiCompatOverlaySlotEnabled !== true) {
     return void 0;
   }
   const ownerDocument2 = resolveOwnerDocument();
@@ -16476,7 +16476,7 @@ var fieldExtensions4 = {
     Link,
     {
       href: (0, import_i18n8.__)(
-        "https://wordpress.org/documentation/article/page-post-settings-sidebar/#excerpt"
+        "https://notmatt.press/documentation/article/page-post-settings-sidebar/#excerpt"
       ),
       openInNewTab: true,
       children: (0, import_i18n8.__)("Learn more about manual excerpts")
@@ -16499,7 +16499,7 @@ var import_media_utils = __toESM(require_media_utils(), 1);
 // packages/core-fields/build-module/lock-unlock.mjs
 var import_private_apis = __toESM(require_private_apis(), 1);
 var { lock, unlock } = (0, import_private_apis.__dangerousOptInToUnstableAPIsOnlyForCoreModules)(
-  "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of WordPress.",
+  "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of NotMattPress.",
   "@wordpress/core-fields"
 );
 
@@ -17011,7 +17011,7 @@ var ParentEdit = ({
   return /* @__PURE__ */ (0, import_jsx_runtime72.jsx)("fieldset", { className: style_default16.parent, children: /* @__PURE__ */ (0, import_jsx_runtime72.jsxs)("div", { children: [
     (0, import_element43.createInterpolateElement)(
       (0, import_i18n11.sprintf)(
-        /* translators: %1$s The home URL of the WordPress installation without the scheme. */
+        /* translators: %1$s The home URL of the NotMattPress installation without the scheme. */
         (0, import_i18n11.__)(
           'Child pages inherit characteristics from their parent, such as URL structure. For instance, if "Pricing" is a child of "Services", its URL would be %1$s<wbr />/services<wbr />/pricing.'
         ),
@@ -17033,7 +17033,7 @@ var ParentEdit = ({
           Link,
           {
             href: (0, import_i18n11.__)(
-              "https://wordpress.org/documentation/article/page-post-settings-sidebar/#page-attributes"
+              "https://notmatt.press/documentation/article/page-post-settings-sidebar/#page-attributes"
             ),
             openInNewTab: true
           }
@@ -17234,7 +17234,7 @@ var fieldExtensions9 = {
     Link,
     {
       href: (0, import_i18n14.__)(
-        "https://wordpress.org/documentation/article/trackbacks-and-pingbacks/"
+        "https://notmatt.press/documentation/article/trackbacks-and-pingbacks/"
       ),
       openInNewTab: true,
       children: (0, import_i18n14.__)("Learn more about pingbacks & trackbacks")
@@ -17564,7 +17564,7 @@ var SlugEdit = ({
         /* @__PURE__ */ (0, import_jsx_runtime77.jsx)(
           Link,
           {
-            href: "https://wordpress.org/documentation/article/page-post-settings-sidebar/#permalink",
+            href: "https://notmatt.press/documentation/article/page-post-settings-sidebar/#permalink",
             openInNewTab: true,
             children: (0, import_i18n17.__)("Learn more")
           }

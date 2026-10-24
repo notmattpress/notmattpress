@@ -2,7 +2,7 @@
 /**
  * Server-side rendering of the `core/page-list-item` block.
  *
- * @package WordPress
+ * @package NotMattPress
  */
 
 /**

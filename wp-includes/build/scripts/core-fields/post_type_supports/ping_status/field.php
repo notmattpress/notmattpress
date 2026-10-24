@@ -5,7 +5,7 @@
  * and `render`) are in `field.tsx`, next to this file: the REST API stores
  * the setting as `open` or `closed`, and the field exposes it as a boolean.
  *
- * @package WordPress
+ * @package NotMattPress
  */
 
 return array(

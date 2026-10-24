@@ -9,7 +9,7 @@
  * It has no `type`: its value is the `author_text` of the template part, not
  * the integer `author` of the post.
  *
- * @package WordPress
+ * @package NotMattPress
  */
 
 return array(

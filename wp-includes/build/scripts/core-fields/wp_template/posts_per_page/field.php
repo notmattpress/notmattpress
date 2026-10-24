@@ -3,7 +3,7 @@
  * The default number of posts per page. The editor summary form maps this
  * field to the `root/site` entity.
  *
- * @package WordPress
+ * @package NotMattPress
  */
 
 return array(

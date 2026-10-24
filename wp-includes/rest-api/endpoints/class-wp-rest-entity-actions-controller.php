@@ -2,7 +2,7 @@
 /**
  * REST API: WP_REST_Entity_Actions_Controller class
  *
- * @package    WordPress
+ * @package    NotMattPress
  * @subpackage REST_API
  * @since      7.2.0
  */

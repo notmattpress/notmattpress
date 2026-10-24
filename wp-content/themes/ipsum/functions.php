@@ -2,7 +2,7 @@
 /**
  * Ipsum functions and definitions.
  *
- * @link https://developer.wordpress.org/themes/basics/theme-functions/
+ * @link https://developer.notmatt.press/themes/basics/theme-functions/
  *
  * @package Ipsum
  * @since Ipsum 1.0

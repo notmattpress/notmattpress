@@ -1,6 +1,6 @@
 <?php
 /**
- * Registers the fields of WordPress core through the Entity fields API, like a
+ * Registers the fields of NotMattPress core through the Entity fields API, like a
  * plugin registers its own.
  *
  * The default fields every post type derives from its supports are
@@ -13,7 +13,7 @@
  * collections, the other folders next to this file, see
  * wp_register_entity_field_collection() for their format.
  *
- * @package WordPress
+ * @package NotMattPress
  */
 
 /**
@@ -56,7 +56,7 @@ function wp_register_core_post_type_supports_fields() {
 	$definitions = wp_get_entity_field_collection_fields( __DIR__ . '/post_type_supports' );
 
 	foreach ( get_post_types( array( 'show_in_rest' => true ) ) as $post_type ) {
-		// WordPress stores the arguments of a support as a list of argument
+		// NotMattPress stores the arguments of a support as a list of argument
 		// arrays, and a support without arguments as `true`.
 		$editor = get_all_post_type_supports( $post_type )['editor'] ?? null;
 
@@ -91,7 +91,7 @@ function wp_register_core_post_type_supports_fields() {
 }
 
 /**
- * Registers the fields of WordPress core: the defaults first, without the
+ * Registers the fields of NotMattPress core: the defaults first, without the
  * ones the core post types do not get, then the collections of single post
  * types, then the collection of the site.
  *

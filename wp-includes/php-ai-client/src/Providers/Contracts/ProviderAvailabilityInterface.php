@@ -1,7 +1,7 @@
 <?php
 
 declare (strict_types=1);
-namespace WordPress\AiClient\Providers\Contracts;
+namespace NotMattPress\AiClient\Providers\Contracts;
 
 /**
  * Interface for checking provider availability.

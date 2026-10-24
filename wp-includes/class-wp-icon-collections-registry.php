@@ -2,7 +2,7 @@
 /**
  * Icons API: WP_Icon_Collections_Registry class
  *
- * @package WordPress
+ * @package NotMattPress
  * @since 7.1.0
  */
 

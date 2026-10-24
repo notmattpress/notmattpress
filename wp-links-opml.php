@@ -2,14 +2,14 @@
 /**
  * Outputs the OPML XML format for getting the links defined in the link
  * administration. This can be used to export links from one blog over to
- * another. Links aren't exported by the WordPress export, so this file handles
+ * another. Links aren't exported by the NotMattPress export, so this file handles
  * that.
  *
- * This file is not added by default to WordPress theme pages when outputting
+ * This file is not added by default to NotMattPress theme pages when outputting
  * feed links. It will have to be added manually for browsers and users to pick
  * up that this file exists.
  *
- * @package WordPress
+ * @package NotMattPress
  */
 
 require_once __DIR__ . '/wp-load.php';

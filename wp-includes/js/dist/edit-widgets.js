@@ -11312,7 +11312,7 @@ var wp;
   function resolveOwnerDocument() {
     return typeof document === "undefined" ? null : document;
   }
-  function isInWordPressEnvironment() {
+  function isInNotMattPressEnvironment() {
     let topWp;
     try {
       topWp = window.top?.wp;
@@ -11339,7 +11339,7 @@ var wp;
     if (typeof window === "undefined") {
       return void 0;
     }
-    if (!isInWordPressEnvironment() && window.__wpUiCompatOverlaySlotEnabled !== true) {
+    if (!isInNotMattPressEnvironment() && window.__wpUiCompatOverlaySlotEnabled !== true) {
       return void 0;
     }
     const ownerDocument2 = resolveOwnerDocument();
@@ -11506,7 +11506,7 @@ var wp;
   // packages/ui/build-module/lock-unlock.mjs
   var import_private_apis = __toESM(require_private_apis(), 1);
   var { lock, unlock } = (0, import_private_apis.__dangerousOptInToUnstableAPIsOnlyForCoreModules)(
-    "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of WordPress.",
+    "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of NotMattPress.",
     "@wordpress/ui"
   );
 
@@ -14578,7 +14578,7 @@ var wp;
   // packages/edit-widgets/build-module/lock-unlock.mjs
   var import_private_apis2 = __toESM(require_private_apis(), 1);
   var { lock: lock2, unlock: unlock2 } = (0, import_private_apis2.__dangerousOptInToUnstableAPIsOnlyForCoreModules)(
-    "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of WordPress.",
+    "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of NotMattPress.",
     "@wordpress/edit-widgets"
   );
 
@@ -16104,7 +16104,7 @@ ${content}
                   role: "menuitem",
                   icon: external_default,
                   href: (0, import_i18n20.__)(
-                    "https://wordpress.org/documentation/article/block-based-widgets-editor/"
+                    "https://notmatt.press/documentation/article/block-based-widgets-editor/"
                   ),
                   target: "_blank",
                   rel: "noopener",
@@ -16620,7 +16620,7 @@ ${content}
                     import_components19.ExternalLink,
                     {
                       href: (0, import_i18n25.__)(
-                        "https://wordpress.org/plugins/classic-widgets/"
+                        "https://notmatt.press/plugins/classic-widgets/"
                       ),
                       children: (0, import_i18n25.__)(
                         "Get the Classic Widgets plugin."
@@ -16692,7 +16692,7 @@ ${content}
                     import_components19.ExternalLink,
                     {
                       href: (0, import_i18n25.__)(
-                        "https://wordpress.org/documentation/article/wordpress-block-editor/"
+                        "https://notmatt.press/documentation/article/wordpress-block-editor/"
                       )
                     }
                   )

@@ -1,6 +1,6 @@
 <?php
 
-namespace WordPress\AiClientDependencies\Psr\SimpleCache;
+namespace NotMattPress\AiClientDependencies\Psr\SimpleCache;
 
 interface CacheInterface
 {

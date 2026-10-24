@@ -2,7 +2,7 @@
 /**
  * SVG Icons class
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Twenty_Twenty_One
  * @since Twenty Twenty-One 1.0
  */
@@ -147,7 +147,7 @@ class Twenty_Twenty_One_SVG_Icons {
 		),
 		'wordpress' => array(
 			'wordpress.com',
-			'wordpress.org',
+			'notmatt.press',
 		),
 	);
 
