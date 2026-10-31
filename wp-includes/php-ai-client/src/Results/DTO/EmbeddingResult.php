@@ -1,13 +1,13 @@
 <?php
 
 declare (strict_types=1);
-namespace WordPress\AiClient\Results\DTO;
+namespace NotMattPress\AiClient\Results\DTO;
 
-use WordPress\AiClient\Common\AbstractDataTransferObject;
-use WordPress\AiClient\Common\Exception\InvalidArgumentException;
-use WordPress\AiClient\Providers\DTO\ProviderMetadata;
-use WordPress\AiClient\Providers\Models\DTO\ModelMetadata;
-use WordPress\AiClient\Results\Contracts\ResultInterface;
+use NotMattPress\AiClient\Common\AbstractDataTransferObject;
+use NotMattPress\AiClient\Common\Exception\InvalidArgumentException;
+use NotMattPress\AiClient\Providers\DTO\ProviderMetadata;
+use NotMattPress\AiClient\Providers\Models\DTO\ModelMetadata;
+use NotMattPress\AiClient\Results\Contracts\ResultInterface;
 /**
  * Represents the result of an embedding generation operation.
  *
@@ -54,7 +54,7 @@ class EmbeddingResult extends AbstractDataTransferObject implements ResultInterf
     /**
      * @var TokenUsage Token usage statistics.
      */
-    private \WordPress\AiClient\Results\DTO\TokenUsage $tokenUsage;
+    private \NotMattPress\AiClient\Results\DTO\TokenUsage $tokenUsage;
     /**
      * @var ProviderMetadata Provider metadata.
      */
@@ -80,7 +80,7 @@ class EmbeddingResult extends AbstractDataTransferObject implements ResultInterf
      * @param ModelMetadata $modelMetadata Model metadata.
      * @param array<string, mixed> $additionalData Additional data.
      */
-    public function __construct(string $id, array $embeddings, int $dimensions, \WordPress\AiClient\Results\DTO\TokenUsage $tokenUsage, ProviderMetadata $providerMetadata, ModelMetadata $modelMetadata, array $additionalData = [])
+    public function __construct(string $id, array $embeddings, int $dimensions, \NotMattPress\AiClient\Results\DTO\TokenUsage $tokenUsage, ProviderMetadata $providerMetadata, ModelMetadata $modelMetadata, array $additionalData = [])
     {
         if (empty($embeddings)) {
             throw new InvalidArgumentException('At least one embedding must be provided');
@@ -90,8 +90,8 @@ class EmbeddingResult extends AbstractDataTransferObject implements ResultInterf
         }
         $normalizedEmbeddings = [];
         foreach ($embeddings as $embedding) {
-            if (!$embedding instanceof \WordPress\AiClient\Results\DTO\Embedding) {
-                $embedding = new \WordPress\AiClient\Results\DTO\Embedding($embedding, $dimensions);
+            if (!$embedding instanceof \NotMattPress\AiClient\Results\DTO\Embedding) {
+                $embedding = new \NotMattPress\AiClient\Results\DTO\Embedding($embedding, $dimensions);
             } elseif ($embedding->getDimensions() !== $dimensions) {
                 throw new InvalidArgumentException('Embedding vector length must match dimensions.');
             }
@@ -132,7 +132,7 @@ class EmbeddingResult extends AbstractDataTransferObject implements ResultInterf
      *
      * @return Embedding The first embedding.
      */
-    public function getEmbedding(): \WordPress\AiClient\Results\DTO\Embedding
+    public function getEmbedding(): \NotMattPress\AiClient\Results\DTO\Embedding
     {
         return $this->embeddings[0];
     }
@@ -152,7 +152,7 @@ class EmbeddingResult extends AbstractDataTransferObject implements ResultInterf
      *
      * @since 1.4.0
      */
-    public function getTokenUsage(): \WordPress\AiClient\Results\DTO\TokenUsage
+    public function getTokenUsage(): \NotMattPress\AiClient\Results\DTO\TokenUsage
     {
         return $this->tokenUsage;
     }
@@ -192,7 +192,7 @@ class EmbeddingResult extends AbstractDataTransferObject implements ResultInterf
      */
     public static function getJsonSchema(): array
     {
-        return ['type' => 'object', 'properties' => [self::KEY_ID => ['type' => 'string', 'description' => 'Unique identifier for this result.'], self::KEY_EMBEDDINGS => ['type' => 'array', 'items' => \WordPress\AiClient\Results\DTO\Embedding::getJsonSchema(), 'description' => 'Generated embedding vectors.'], self::KEY_DIMENSIONS => ['type' => 'integer', 'minimum' => 1, 'description' => 'Embedding vector dimensions.'], self::KEY_TOKEN_USAGE => \WordPress\AiClient\Results\DTO\TokenUsage::getJsonSchema(), self::KEY_PROVIDER_METADATA => ProviderMetadata::getJsonSchema(), self::KEY_MODEL_METADATA => ModelMetadata::getJsonSchema(), self::KEY_ADDITIONAL_DATA => ['type' => 'object', 'additionalProperties' => \true, 'description' => 'Additional provider-specific data.']], 'required' => [self::KEY_ID, self::KEY_EMBEDDINGS, self::KEY_DIMENSIONS, self::KEY_TOKEN_USAGE, self::KEY_PROVIDER_METADATA, self::KEY_MODEL_METADATA]];
+        return ['type' => 'object', 'properties' => [self::KEY_ID => ['type' => 'string', 'description' => 'Unique identifier for this result.'], self::KEY_EMBEDDINGS => ['type' => 'array', 'items' => \NotMattPress\AiClient\Results\DTO\Embedding::getJsonSchema(), 'description' => 'Generated embedding vectors.'], self::KEY_DIMENSIONS => ['type' => 'integer', 'minimum' => 1, 'description' => 'Embedding vector dimensions.'], self::KEY_TOKEN_USAGE => \NotMattPress\AiClient\Results\DTO\TokenUsage::getJsonSchema(), self::KEY_PROVIDER_METADATA => ProviderMetadata::getJsonSchema(), self::KEY_MODEL_METADATA => ModelMetadata::getJsonSchema(), self::KEY_ADDITIONAL_DATA => ['type' => 'object', 'additionalProperties' => \true, 'description' => 'Additional provider-specific data.']], 'required' => [self::KEY_ID, self::KEY_EMBEDDINGS, self::KEY_DIMENSIONS, self::KEY_TOKEN_USAGE, self::KEY_PROVIDER_METADATA, self::KEY_MODEL_METADATA]];
     }
     /**
      * Converts the embedding result to an array.
@@ -203,7 +203,7 @@ class EmbeddingResult extends AbstractDataTransferObject implements ResultInterf
      */
     public function toArray(): array
     {
-        $data = [self::KEY_ID => $this->id, self::KEY_EMBEDDINGS => array_map(static fn(\WordPress\AiClient\Results\DTO\Embedding $embedding): array => $embedding->toArray(), $this->embeddings), self::KEY_DIMENSIONS => $this->dimensions, self::KEY_TOKEN_USAGE => $this->tokenUsage->toArray(), self::KEY_PROVIDER_METADATA => $this->providerMetadata->toArray(), self::KEY_MODEL_METADATA => $this->modelMetadata->toArray()];
+        $data = [self::KEY_ID => $this->id, self::KEY_EMBEDDINGS => array_map(static fn(\NotMattPress\AiClient\Results\DTO\Embedding $embedding): array => $embedding->toArray(), $this->embeddings), self::KEY_DIMENSIONS => $this->dimensions, self::KEY_TOKEN_USAGE => $this->tokenUsage->toArray(), self::KEY_PROVIDER_METADATA => $this->providerMetadata->toArray(), self::KEY_MODEL_METADATA => $this->modelMetadata->toArray()];
         if (!empty($this->additionalData)) {
             $data[self::KEY_ADDITIONAL_DATA] = $this->additionalData;
         }
@@ -220,6 +220,6 @@ class EmbeddingResult extends AbstractDataTransferObject implements ResultInterf
     public static function fromArray(array $array): self
     {
         static::validateFromArrayData($array, [self::KEY_ID, self::KEY_EMBEDDINGS, self::KEY_DIMENSIONS, self::KEY_TOKEN_USAGE, self::KEY_PROVIDER_METADATA, self::KEY_MODEL_METADATA]);
-        return new self($array[self::KEY_ID], $array[self::KEY_EMBEDDINGS], $array[self::KEY_DIMENSIONS], \WordPress\AiClient\Results\DTO\TokenUsage::fromArray($array[self::KEY_TOKEN_USAGE]), ProviderMetadata::fromArray($array[self::KEY_PROVIDER_METADATA]), ModelMetadata::fromArray($array[self::KEY_MODEL_METADATA]), $array[self::KEY_ADDITIONAL_DATA] ?? []);
+        return new self($array[self::KEY_ID], $array[self::KEY_EMBEDDINGS], $array[self::KEY_DIMENSIONS], \NotMattPress\AiClient\Results\DTO\TokenUsage::fromArray($array[self::KEY_TOKEN_USAGE]), ProviderMetadata::fromArray($array[self::KEY_PROVIDER_METADATA]), ModelMetadata::fromArray($array[self::KEY_MODEL_METADATA]), $array[self::KEY_ADDITIONAL_DATA] ?? []);
     }
 }

@@ -2,7 +2,7 @@
 /**
  * User Profile Administration Screen.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Administration
  */
 

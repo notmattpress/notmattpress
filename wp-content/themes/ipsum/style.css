@@ -1,8 +1,8 @@
 /*
 Theme Name: Ipsum
-Theme URI: https://wordpress.org/themes/ipsum/
-Author: the WordPress team
-Author URI: https://wordpress.org
+Theme URI: https://notmatt.press/themes/ipsum/
+Author: the NotMattPress team
+Author URI: https://notmatt.press
 Description: Ipsum is a blank canvas built around the blogging experience, our proposal for what a default theme should be. Named after lorem ipsum, the placeholder that fills a page until real content arrives, it is composed enough to stand on its own and to be transformed the moment people start writing.
 Requires at least: 7.2
 Tested up to: 7.2
@@ -36,7 +36,7 @@ body {
 
 /*
  * Progressive enhancement to reduce widows and orphans
- * https://github.com/WordPress/gutenberg/issues/55190
+ * https://github.com/NotMattPress/gutenberg/issues/55190
  */
 h1,
 h2,
@@ -53,7 +53,7 @@ p {
 
 /*
  * Link styles
- * https://github.com/WordPress/gutenberg/issues/42319
+ * https://github.com/NotMattPress/gutenberg/issues/42319
  * Dotted editorial underlines; !important also keeps the style from being reset
  * by the text-decoration shorthand emitted in generated global styles.
  * The span selector catches the editor's inline underline format.
@@ -86,7 +86,7 @@ span[style*="text-decoration"] {
 
 /*
  * Change the position of the more block on the front, by making it a block level element.
- * https://github.com/WordPress/gutenberg/issues/65934
+ * https://github.com/NotMattPress/gutenberg/issues/65934
  */
 .more-link {
 	display: block;
@@ -94,7 +94,7 @@ span[style*="text-decoration"] {
 
 /*
  * Prevents unnecessary scrollbars while handling long lines of preformatted text.
- * https://core.trac.wordpress.org/ticket/63875
+ * https://core.trac.notmatt.press/ticket/63875
  */
 :where(pre) {
 	overflow-x: auto;
@@ -103,7 +103,7 @@ span[style*="text-decoration"] {
 /*
  * Make sure headers and footers have no margin, so the root block gap
  * never adds spacing the parts don't control themselves.
- * https://github.com/WordPress/gutenberg/issues/47637
+ * https://github.com/NotMattPress/gutenberg/issues/47637
  */
 header.wp-block-template-part,
 footer.wp-block-template-part {

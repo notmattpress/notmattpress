@@ -2,7 +2,7 @@
 /**
  * Filter Sentinel API.
  *
- * @package WordPress
+ * @package NotMattPress
  * @since 7.1.0
  */
 

@@ -1,12 +1,12 @@
 <?php
 
 declare (strict_types=1);
-namespace WordPress\AiClient\Operations\DTO;
+namespace NotMattPress\AiClient\Operations\DTO;
 
-use WordPress\AiClient\Common\AbstractDataTransferObject;
-use WordPress\AiClient\Operations\Contracts\OperationInterface;
-use WordPress\AiClient\Operations\Enums\OperationStateEnum;
-use WordPress\AiClient\Results\DTO\GenerativeAiResult;
+use NotMattPress\AiClient\Common\AbstractDataTransferObject;
+use NotMattPress\AiClient\Operations\Contracts\OperationInterface;
+use NotMattPress\AiClient\Operations\Enums\OperationStateEnum;
+use NotMattPress\AiClient\Results\DTO\GenerativeAiResult;
 /**
  * Represents a long-running generative AI operation.
  *

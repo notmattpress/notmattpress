@@ -13,7 +13,7 @@
  * It is used as a fallback to parse AVIF files when the server doesn't support AVIF,
  * primarily to identify the width and height of the image.
  *
- * Note PHP 8.2 added native support for AVIF, so this class can be removed when WordPress requires PHP 8.2.
+ * Note PHP 8.2 added native support for AVIF, so this class can be removed when NotMattPress requires PHP 8.2.
  */
 
 namespace Avifinfo;

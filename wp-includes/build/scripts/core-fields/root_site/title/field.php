@@ -3,7 +3,7 @@
  * The title of the site. Its JavaScript part (`getValue`) is in
  * `field.tsx`, next to this file.
  *
- * @package WordPress
+ * @package NotMattPress
  */
 
 return array(

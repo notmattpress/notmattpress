@@ -1,12 +1,12 @@
 <?php
 
 declare (strict_types=1);
-namespace WordPress\AiClient\Providers\Http\Enums;
+namespace NotMattPress\AiClient\Providers\Http\Enums;
 
-use WordPress\AiClient\Common\AbstractEnum;
-use WordPress\AiClient\Common\Contracts\WithArrayTransformationInterface;
-use WordPress\AiClient\Providers\Http\Contracts\RequestAuthenticationInterface;
-use WordPress\AiClient\Providers\Http\DTO\ApiKeyRequestAuthentication;
+use NotMattPress\AiClient\Common\AbstractEnum;
+use NotMattPress\AiClient\Common\Contracts\WithArrayTransformationInterface;
+use NotMattPress\AiClient\Providers\Http\Contracts\RequestAuthenticationInterface;
+use NotMattPress\AiClient\Providers\Http\DTO\ApiKeyRequestAuthentication;
 /**
  * Enum for request authentication methods.
  *

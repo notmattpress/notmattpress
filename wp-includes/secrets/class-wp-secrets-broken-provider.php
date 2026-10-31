@@ -2,7 +2,7 @@
 /**
  * Secrets API: WP_Secrets_Broken_Provider class
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Secrets
  * @since 7.2.0
  */
@@ -123,7 +123,7 @@ final class WP_Secrets_Broken_Provider implements WP_Secrets_Provider {
 	/**
 	 * Reports the provider boundary.
 	 *
-	 * Whatever was meant to protect these secrets is not WordPress, and is not
+	 * Whatever was meant to protect these secrets is not NotMattPress, and is not
 	 * working.
 	 *
 	 * @since 7.2.0

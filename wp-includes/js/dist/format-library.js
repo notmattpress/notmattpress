@@ -13867,7 +13867,7 @@ var wp;
   function resolveOwnerDocument() {
     return typeof document === "undefined" ? null : document;
   }
-  function isInWordPressEnvironment() {
+  function isInNotMattPressEnvironment() {
     let topWp;
     try {
       topWp = window.top?.wp;
@@ -13894,7 +13894,7 @@ var wp;
     if (typeof window === "undefined") {
       return void 0;
     }
-    if (!isInWordPressEnvironment() && window.__wpUiCompatOverlaySlotEnabled !== true) {
+    if (!isInNotMattPressEnvironment() && window.__wpUiCompatOverlaySlotEnabled !== true) {
       return void 0;
     }
     const ownerDocument2 = resolveOwnerDocument();
@@ -19029,7 +19029,7 @@ var wp;
                   openInNewTab: true,
                   className: "block-editor-format-toolbar__math-learn-more",
                   href: (0, import_i18n22.__)(
-                    "https://wordpress.org/documentation/article/math-block/"
+                    "https://notmatt.press/documentation/article/math-block/"
                   ),
                   children: (0, import_i18n22.__)("Learn more about LaTeX syntax")
                 }

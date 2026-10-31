@@ -2,7 +2,7 @@
 /**
  * Secrets API: Site Health integration
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Secrets
  * @since 7.2.0
  */
@@ -322,8 +322,8 @@ function wp_secrets_site_health_debug_info( $info ) {
 		'protection_at'  => array(
 			'label' => __( 'Encryption boundary' ),
 			'value' => WP_Secrets_Provider::BOUNDARY_WORDPRESS === $provider->get_protection_boundary()
-				? __( 'WordPress' )
-				: __( 'The provider (outside WordPress)' ),
+				? __( 'NotMattPress' )
+				: __( 'The provider (outside NotMattPress)' ),
 		),
 		'writable'       => array(
 			'label' => __( 'Accepts writes' ),

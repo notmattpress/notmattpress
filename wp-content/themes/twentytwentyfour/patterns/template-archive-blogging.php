@@ -6,7 +6,7 @@
  * Viewport width: 1400
  * Inserter: no
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Twenty_Twenty_Four
  * @since Twenty Twenty-Four 1.0
  */

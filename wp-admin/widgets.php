@@ -2,14 +2,14 @@
 /**
  * Widget administration screen.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Administration
  */
 
-/** WordPress Administration Bootstrap */
+/** NotMattPress Administration Bootstrap */
 require_once __DIR__ . '/admin.php';
 
-/** WordPress Administration Widgets API */
+/** NotMattPress Administration Widgets API */
 require_once ABSPATH . 'wp-admin/includes/widgets.php';
 
 if ( ! current_user_can( 'edit_theme_options' ) ) {
@@ -21,7 +21,7 @@ if ( ! current_user_can( 'edit_theme_options' ) ) {
 }
 
 if ( ! current_theme_supports( 'widgets' ) ) {
-	wp_die( __( 'The theme you are currently using is not widget-aware, meaning that it has no sidebars that you are able to change. For information on making your theme widget-aware, please <a href="https://developer.wordpress.org/themes/functionality/widgets/">follow these instructions</a>.' ) );
+	wp_die( __( 'The theme you are currently using is not widget-aware, meaning that it has no sidebars that you are able to change. For information on making your theme widget-aware, please <a href="https://developer.notmatt.press/themes/functionality/widgets/">follow these instructions</a>.' ) );
 }
 
 // Used in the HTML title tag.

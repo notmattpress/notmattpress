@@ -2,9 +2,9 @@
 /**
  * The template part for displaying a message that posts cannot be found
  *
- * Learn more: {@link https://developer.wordpress.org/themes/basics/template-hierarchy/}
+ * Learn more: {@link https://developer.notmatt.press/themes/basics/template-hierarchy/}
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Twenty_Fifteen
  * @since Twenty Fifteen 1.0
  */

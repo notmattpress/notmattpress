@@ -1,6 +1,6 @@
 <?php
 
-namespace WordPress\AiClientDependencies\Http\Discovery\Exception;
+namespace NotMattPress\AiClientDependencies\Http\Discovery\Exception;
 
 /**
  * Thrown when we can't use Puli for discovery.

@@ -3,7 +3,7 @@
  * The default comment status. The editor summary form maps this field to the
  * `root/site` entity.
  *
- * @package WordPress
+ * @package NotMattPress
  */
 
 return array(

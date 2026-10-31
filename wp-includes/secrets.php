@@ -2,7 +2,7 @@
 /**
  * Secrets API
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Secrets
  * @since 7.2.0
  */
@@ -98,7 +98,7 @@ define( 'WP_SECRETS_ERROR_RECORD_UNSUPPORTED_VERSION', 'secret_record_unsupporte
  * The active provider does not accept writes.
  *
  * Its credentials are managed by host tooling, a control panel, or a key policy
- * outside WordPress. Distinct from WP_SECRETS_ERROR_STORE_UNAVAILABLE, which means
+ * outside NotMattPress. Distinct from WP_SECRETS_ERROR_STORE_UNAVAILABLE, which means
  * the write could have succeeded and did not. This one means it was never possible.
  *
  * @since 7.2.0
@@ -625,7 +625,7 @@ function wp_list_network_secrets( string $namespace = '' ) { // phpcs:ignore Uni
  * this site's secrets.
  *
  * A secrets.php drop-in overrides it by setting $GLOBALS['wp_secrets_provider'] to
- * an instance before this is first called. Absent that, the provider WordPress
+ * an instance before this is first called. Absent that, the provider NotMattPress
  * ships is assembled from the active store and keyring, which a drop-in can also
  * replace individually, so wanting host-managed key custody with default storage needs
  * no provider at all.

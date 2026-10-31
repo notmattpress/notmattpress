@@ -1,10 +1,10 @@
 <?php
 
-namespace WordPress\AiClientDependencies\Http\Discovery;
+namespace NotMattPress\AiClientDependencies\Http\Discovery;
 
-use WordPress\AiClientDependencies\Http\Discovery\Exception\DiscoveryFailedException;
-use WordPress\AiClientDependencies\Http\Discovery\Exception\NotFoundException as RealNotFoundException;
-use WordPress\AiClientDependencies\Psr\Http\Client\ClientInterface;
+use NotMattPress\AiClientDependencies\Http\Discovery\Exception\DiscoveryFailedException;
+use NotMattPress\AiClientDependencies\Http\Discovery\Exception\NotFoundException as RealNotFoundException;
+use NotMattPress\AiClientDependencies\Psr\Http\Client\ClientInterface;
 /**
  * Finds a PSR-18 HTTP Client.
  *
