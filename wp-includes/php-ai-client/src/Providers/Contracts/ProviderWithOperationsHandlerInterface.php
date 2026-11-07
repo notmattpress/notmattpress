@@ -1,7 +1,7 @@
 <?php
 
 declare (strict_types=1);
-namespace WordPress\AiClient\Providers\Contracts;
+namespace NotMattPress\AiClient\Providers\Contracts;
 
 /**
  * Interface for providers that support operations handlers.
@@ -20,5 +20,5 @@ interface ProviderWithOperationsHandlerInterface
      *
      * @return ProviderOperationsHandlerInterface The operations handler.
      */
-    public static function operationsHandler(): \WordPress\AiClient\Providers\Contracts\ProviderOperationsHandlerInterface;
+    public static function operationsHandler(): \NotMattPress\AiClient\Providers\Contracts\ProviderOperationsHandlerInterface;
 }

@@ -2,7 +2,7 @@
 /**
  * Meta API: WP_Metadata_Lazyloader class
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Meta
  * @since 4.5.0
  */

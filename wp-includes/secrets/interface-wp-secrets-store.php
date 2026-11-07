@@ -2,7 +2,7 @@
 /**
  * Secrets API: WP_Secrets_Store interface
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Secrets
  * @since 7.2.0
  */

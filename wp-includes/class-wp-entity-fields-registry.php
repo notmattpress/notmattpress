@@ -2,7 +2,7 @@
 /**
  * Entity Fields API: WP_Entity_Fields_Registry class
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Entity Fields API
  * @since 7.2.0
  */

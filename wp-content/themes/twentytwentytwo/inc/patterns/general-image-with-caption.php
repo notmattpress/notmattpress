@@ -2,7 +2,7 @@
 /**
  * Image with caption block pattern
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Twenty_Twenty_Two
  * @since Twenty Twenty-Two 1.0
  */

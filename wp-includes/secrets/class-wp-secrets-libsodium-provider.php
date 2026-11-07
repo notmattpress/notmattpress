@@ -2,13 +2,13 @@
 /**
  * Secrets API: WP_Secrets_Libsodium_Provider class
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Secrets
  * @since 7.2.0
  */
 
 /**
- * The provider WordPress ships.
+ * The provider NotMattPress ships.
  *
  * Uses libsodium envelope encryption and stores ciphertext in the options tables.
  *
@@ -18,7 +18,7 @@
  * this one.
  *
  * It is assembled from two smaller pieces, and that is deliberate: a host who wants
- * their own key custody but is happy with WordPress's storage swaps only the
+ * their own key custody but is happy with NotMattPress's storage swaps only the
  * keyring and keeps everything else, and the inverse works too. Coupling them would
  * force an all-or-nothing decision most sites cannot make.
  *
@@ -26,7 +26,7 @@
  * - WP_Secrets_Keyring – what wraps the root key everything else derives from.
  *
  * Neither is handed a plaintext, because for this provider the encryption boundary
- * genuinely is inside WordPress. That is a property of *this* implementation rather
+ * genuinely is inside NotMattPress. That is a property of *this* implementation rather
  * than a rule imposed on every provider; see WP_Secrets_Provider for why the
  * distinction matters.
  *
@@ -79,13 +79,13 @@ final class WP_Secrets_Libsodium_Provider implements WP_Secrets_Provider {
 
 		return sprintf(
 			/* translators: %s: Human-readable description of the key source. */
-			__( 'WordPress (libsodium), key source: %s' ),
+			__( 'NotMattPress (libsodium), key source: %s' ),
 			$keyring->get_key_source()
 		);
 	}
 
 	/**
-	 * Protection happens inside WordPress for this provider.
+	 * Protection happens inside NotMattPress for this provider.
 	 *
 	 * @since 7.2.0
 	 *

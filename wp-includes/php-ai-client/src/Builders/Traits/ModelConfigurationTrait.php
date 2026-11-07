@@ -1,14 +1,14 @@
 <?php
 
 declare (strict_types=1);
-namespace WordPress\AiClient\Builders\Traits;
+namespace NotMattPress\AiClient\Builders\Traits;
 
-use WordPress\AiClient\Providers\Models\DTO\ModelConfig;
+use NotMattPress\AiClient\Providers\Models\DTO\ModelConfig;
 /**
  * Provides shared model configuration methods for builders.
  *
- * Builders that generate results from a model (e.g. {@see \WordPress\AiClient\Builders\PromptBuilder}
- * and {@see \WordPress\AiClient\Builders\EmbeddingBuilder}) use this trait to accumulate model
+ * Builders that generate results from a model (e.g. {@see \NotMattPress\AiClient\Builders\PromptBuilder}
+ * and {@see \NotMattPress\AiClient\Builders\EmbeddingBuilder}) use this trait to accumulate model
  * configuration, regardless of how they determine which model to use.
  *
  * @since 1.5.0

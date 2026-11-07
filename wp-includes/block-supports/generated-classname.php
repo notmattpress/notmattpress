@@ -2,7 +2,7 @@
 /**
  * Generated classname block support flag.
  *
- * @package WordPress
+ * @package NotMattPress
  * @since 5.6.0
  */
 
@@ -18,7 +18,7 @@
  */
 function wp_get_block_default_classname( $block_name ) {
 	// Generated HTML classes for blocks follow the `wp-block-{name}` nomenclature.
-	// Blocks provided by WordPress drop the prefixes 'core/' or 'core-' (historically used in 'core-embed/').
+	// Blocks provided by NotMattPress drop the prefixes 'core/' or 'core-' (historically used in 'core-embed/').
 	$classname = 'wp-block-' . preg_replace(
 		'/^core-/',
 		'',

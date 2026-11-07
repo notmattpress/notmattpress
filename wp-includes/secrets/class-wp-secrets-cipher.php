@@ -2,7 +2,7 @@
 /**
  * Secrets API: WP_Secrets_Cipher class
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Secrets
  * @since 7.2.0
  */
@@ -274,7 +274,7 @@ final class WP_Secrets_Cipher {
 	 * $scope, $site_id, and $slot are never influenced by external input – every
 	 * call site in this API supplies them internally – so a bad value here means
 	 * the calling code is wrong, not that a runtime condition failed. That still
-	 * reports as a WP_Error rather than an exception: WordPress functions return
+	 * reports as a WP_Error rather than an exception: NotMattPress functions return
 	 * WP_Error or false, they do not throw. The _doing_it_wrong() notice is what
 	 * makes the distinction visible during development. $name and $master_key
 	 * legitimately vary at runtime (a plugin author's typo, an unavailable key
@@ -322,7 +322,7 @@ final class WP_Secrets_Cipher {
 	}
 
 	/**
-	 * Reports a caller error the way WordPress does.
+	 * Reports a caller error the way NotMattPress does.
 	 *
 	 * Emits a _doing_it_wrong() notice for the developer, and returns a WP_Error the
 	 * caller can act on.

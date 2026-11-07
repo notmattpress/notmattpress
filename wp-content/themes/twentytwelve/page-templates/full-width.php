@@ -9,7 +9,7 @@
  * any active widgets from the Main Sidebar area, and the sidebar will
  * disappear everywhere.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Twenty_Twelve
  * @since Twenty Twelve 1.0
  */

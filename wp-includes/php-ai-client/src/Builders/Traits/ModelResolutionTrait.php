@@ -1,17 +1,17 @@
 <?php
 
 declare (strict_types=1);
-namespace WordPress\AiClient\Builders\Traits;
+namespace NotMattPress\AiClient\Builders\Traits;
 
-use WordPress\AiClient\Common\Exception\InvalidArgumentException;
-use WordPress\AiClient\Providers\Http\DTO\RequestOptions;
-use WordPress\AiClient\Providers\ModelResolver;
-use WordPress\AiClient\Providers\Models\Contracts\ModelInterface;
+use NotMattPress\AiClient\Common\Exception\InvalidArgumentException;
+use NotMattPress\AiClient\Providers\Http\DTO\RequestOptions;
+use NotMattPress\AiClient\Providers\ModelResolver;
+use NotMattPress\AiClient\Providers\Models\Contracts\ModelInterface;
 /**
  * Provides shared model selection methods for builders.
  *
  * Builders that resolve a model from the available providers (e.g.
- * {@see \WordPress\AiClient\Builders\PromptBuilder}) use this trait to expose a consistent fluent API
+ * {@see \NotMattPress\AiClient\Builders\PromptBuilder}) use this trait to expose a consistent fluent API
  * for choosing a model, provider, preferences, and request options. Model selection state and logic
  * live on the {@see ModelResolver} owned by the builder. Model configuration is handled by the
  * composed {@see ModelConfigurationTrait}.
@@ -22,7 +22,7 @@ use WordPress\AiClient\Providers\Models\Contracts\ModelInterface;
  */
 trait ModelResolutionTrait
 {
-    use \WordPress\AiClient\Builders\Traits\ModelConfigurationTrait;
+    use \NotMattPress\AiClient\Builders\Traits\ModelConfigurationTrait;
     /**
      * @var ModelResolver The resolver that owns model selection state and logic.
      */

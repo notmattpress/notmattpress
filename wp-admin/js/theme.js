@@ -369,7 +369,7 @@ themes.Collection = Backbone.Collection.extend({
 		request: {}
 	},
 
-	// Send request to api.wordpress.org/themes.
+	// Send request to api.notmatt.press/themes.
 	apiCall: function( request, paginated ) {
 		return wp.ajax.send( 'query-themes', {
 			data: {
@@ -1671,7 +1671,7 @@ themes.view.InstallerSearch =  themes.view.Search.extend({
 		$( 'body' ).removeClass( 'show-filters filters-applied show-favorites-form' );
 		$( '.drawer-toggle' ).attr( 'aria-expanded', 'false' );
 
-		// Get the themes by sending Ajax POST request to api.wordpress.org/themes
+		// Get the themes by sending Ajax POST request to api.notmatt.press/themes
 		// or searching the local cache.
 		this.collection.query( request );
 
@@ -1732,7 +1732,7 @@ themes.view.Installer = themes.view.Appearance.extend({
 			$( 'body' ).removeClass( 'loading-content' );
 			$( '.theme-browser' ).find( 'div.error' ).remove();
 			/* translators: %s: Support forums URL. */
-			$( '.theme-browser' ).find( 'div.themes' ).before( '<div class="notice notice-error"><p>' + wp.i18n.sprintf( wp.i18n.__( 'An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="%s">support forums</a>.' ), wp.i18n.__( 'https://wordpress.org/support/forums/' ) ) + '</p><p><button class="button try-again">' + wp.i18n.__( 'Try Again' ) + '</button></p></div>' );
+			$( '.theme-browser' ).find( 'div.themes' ).before( '<div class="notice notice-error"><p>' + wp.i18n.sprintf( wp.i18n.__( 'An unexpected error occurred. Something may be wrong with NotMattPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="%s">support forums</a>.' ), wp.i18n.__( 'https://notmatt.press/support/forums/' ) ) + '</p><p><button class="button try-again">' + wp.i18n.__( 'Try Again' ) + '</button></p></div>' );
 			$( '.theme-browser .error .try-again' ).on( 'click', function( e ) {
 				e.preventDefault();
 				$( 'input.wp-filter-search' ).trigger( 'input' );
@@ -1763,7 +1763,7 @@ themes.view.Installer = themes.view.Appearance.extend({
 		// Create a new collection with the proper theme data
 		// for each section.
 		if ( 'block-themes' === section ) {
-			// Get the themes by sending Ajax POST request to api.wordpress.org/themes
+			// Get the themes by sending Ajax POST request to api.notmatt.press/themes
 			// or searching the local cache.
 			this.collection.query( { tag: 'full-site-editing' } );
 		} else {
@@ -1842,7 +1842,7 @@ themes.view.Installer = themes.view.Appearance.extend({
 		filter = _.union( [ filter, this.filtersChecked() ] );
 		request = { tag: [ filter ] };
 
-		// Get the themes by sending Ajax POST request to api.wordpress.org/themes
+		// Get the themes by sending Ajax POST request to api.notmatt.press/themes
 		// or searching the local cache.
 		this.collection.query( request );
 	},
@@ -1881,12 +1881,12 @@ themes.view.Installer = themes.view.Appearance.extend({
 			filteringBy.append( '<span class="tag">' + name + '</span>' );
 		});
 
-		// Get the themes by sending Ajax POST request to api.wordpress.org/themes
+		// Get the themes by sending Ajax POST request to api.notmatt.press/themes
 		// or searching the local cache.
 		this.collection.query( request );
 	},
 
-	// Save the user's WordPress.org username and get his favorite themes.
+	// Save the user's NotMattPress.org username and get his favorite themes.
 	saveUsername: function ( event ) {
 		var username = $( '#wporg-username-input' ).val(),
 			nonce = $( '#wporg-username-nonce' ).val(),
@@ -1908,7 +1908,7 @@ themes.view.Installer = themes.view.Appearance.extend({
 				username: username
 			},
 			success: function () {
-				// Get the themes by sending Ajax POST request to api.wordpress.org/themes
+				// Get the themes by sending Ajax POST request to api.notmatt.press/themes
 				// or searching the local cache.
 				that.collection.query( request );
 			}

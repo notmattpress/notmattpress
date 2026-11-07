@@ -2,7 +2,7 @@
 /**
  * Abilities API: WP_Abilities_Users class.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Abilities API
  * @since 7.2.0
  */
@@ -13,7 +13,7 @@ declare( strict_types = 1 );
  * Core class used to register user-related abilities.
  *
  * Registers the read-only `core/users-query` ability, which retrieves a paginated
- * list of readable WordPress users, optionally filtered by IDs, slugs, usernames,
+ * list of readable NotMattPress users, optionally filtered by IDs, slugs, usernames,
  * roles, or published-post authorship. Field-level access is enforced per user by
  * omitting fields the current user cannot view.
  *
@@ -115,7 +115,7 @@ final class WP_Abilities_Users {
 			'core/users-query',
 			array(
 				'label'               => __( 'Query Users' ),
-				'description'         => __( 'Retrieves a paginated list of readable WordPress users, optionally filtered by IDs, slugs, usernames, roles, or published-post authorship. Callers without permission to list users only see public authors. To read your own profile, use `core/get-user-info`. Requires an authenticated user.' ),
+				'description'         => __( 'Retrieves a paginated list of readable NotMattPress users, optionally filtered by IDs, slugs, usernames, roles, or published-post authorship. Callers without permission to list users only see public authors. To read your own profile, use `core/get-user-info`. Requires an authenticated user.' ),
 				'category'            => self::CATEGORY,
 				'input_schema'        => $this->get_users_query_input_schema(),
 				'output_schema'       => $this->get_users_query_output_schema(),

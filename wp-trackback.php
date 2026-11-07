@@ -1,10 +1,10 @@
 <?php
 /**
- * Handle Trackbacks and Pingbacks Sent to WordPress
+ * Handle Trackbacks and Pingbacks Sent to NotMattPress
  *
  * @since 0.71
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Trackbacks
  */
 
@@ -92,7 +92,7 @@ $excerpt   = wp_slash( $excerpt );
 $blog_name = wp_slash( $blog_name );
 
 /**
- * @global wpdb      $wpdb  WordPress database abstraction object.
+ * @global wpdb      $wpdb  NotMattPress database abstraction object.
  * @global WP_Post[] $posts Array of post objects.
  */
 global $wpdb, $posts;

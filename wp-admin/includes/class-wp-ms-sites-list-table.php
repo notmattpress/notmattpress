@@ -2,7 +2,7 @@
 /**
  * List Table API: WP_MS_Sites_List_Table class
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Administration
  * @since 3.1.0
  */
@@ -66,7 +66,7 @@ class WP_MS_Sites_List_Table extends WP_List_Table {
 	 * @since 3.1.0
 	 *
 	 * @global string $s    Search string.
-	 * @global wpdb   $wpdb WordPress database abstraction object.
+	 * @global wpdb   $wpdb NotMattPress database abstraction object.
 	 */
 	public function prepare_items() {
 		global $s, $wpdb;

@@ -8,7 +8,7 @@
  * Contributing: http://www.tinymce.com/contributing
  */
 
-// Forked for WordPress so it can be turned on/off after loading.
+// Forked for NotMattPress so it can be turned on/off after loading.
 
 /*global tinymce:true */
 /*eslint no-nested-ternary:0 */

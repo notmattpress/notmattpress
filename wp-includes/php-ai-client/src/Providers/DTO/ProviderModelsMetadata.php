@@ -1,11 +1,11 @@
 <?php
 
 declare (strict_types=1);
-namespace WordPress\AiClient\Providers\DTO;
+namespace NotMattPress\AiClient\Providers\DTO;
 
-use WordPress\AiClient\Common\AbstractDataTransferObject;
-use WordPress\AiClient\Common\Exception\InvalidArgumentException;
-use WordPress\AiClient\Providers\Models\DTO\ModelMetadata;
+use NotMattPress\AiClient\Common\AbstractDataTransferObject;
+use NotMattPress\AiClient\Common\Exception\InvalidArgumentException;
+use NotMattPress\AiClient\Providers\Models\DTO\ModelMetadata;
 /**
  * Represents metadata about a provider and its available models.
  *
@@ -31,7 +31,7 @@ class ProviderModelsMetadata extends AbstractDataTransferObject
     /**
      * @var ProviderMetadata The provider metadata.
      */
-    protected \WordPress\AiClient\Providers\DTO\ProviderMetadata $provider;
+    protected \NotMattPress\AiClient\Providers\DTO\ProviderMetadata $provider;
     /**
      * @var list<ModelMetadata> The available models.
      */
@@ -46,7 +46,7 @@ class ProviderModelsMetadata extends AbstractDataTransferObject
      *
      * @throws InvalidArgumentException If models is not a list.
      */
-    public function __construct(\WordPress\AiClient\Providers\DTO\ProviderMetadata $provider, array $models)
+    public function __construct(\NotMattPress\AiClient\Providers\DTO\ProviderMetadata $provider, array $models)
     {
         if (!array_is_list($models)) {
             throw new InvalidArgumentException('Models must be a list array.');
@@ -80,7 +80,7 @@ class ProviderModelsMetadata extends AbstractDataTransferObject
      *
      * @return ProviderMetadata The provider metadata.
      */
-    public function getProvider(): \WordPress\AiClient\Providers\DTO\ProviderMetadata
+    public function getProvider(): \NotMattPress\AiClient\Providers\DTO\ProviderMetadata
     {
         return $this->provider;
     }
@@ -102,7 +102,7 @@ class ProviderModelsMetadata extends AbstractDataTransferObject
      */
     public static function getJsonSchema(): array
     {
-        return ['type' => 'object', 'properties' => [self::KEY_PROVIDER => \WordPress\AiClient\Providers\DTO\ProviderMetadata::getJsonSchema(), self::KEY_MODELS => ['type' => 'array', 'items' => ModelMetadata::getJsonSchema(), 'description' => 'The available models for this provider.']], 'required' => [self::KEY_PROVIDER, self::KEY_MODELS]];
+        return ['type' => 'object', 'properties' => [self::KEY_PROVIDER => \NotMattPress\AiClient\Providers\DTO\ProviderMetadata::getJsonSchema(), self::KEY_MODELS => ['type' => 'array', 'items' => ModelMetadata::getJsonSchema(), 'description' => 'The available models for this provider.']], 'required' => [self::KEY_PROVIDER, self::KEY_MODELS]];
     }
     /**
      * {@inheritDoc}
@@ -123,6 +123,6 @@ class ProviderModelsMetadata extends AbstractDataTransferObject
     public static function fromArray(array $array): self
     {
         static::validateFromArrayData($array, [self::KEY_PROVIDER, self::KEY_MODELS]);
-        return new self(\WordPress\AiClient\Providers\DTO\ProviderMetadata::fromArray($array[self::KEY_PROVIDER]), array_map(static fn(array $modelData): ModelMetadata => ModelMetadata::fromArray($modelData), $array[self::KEY_MODELS]));
+        return new self(\NotMattPress\AiClient\Providers\DTO\ProviderMetadata::fromArray($array[self::KEY_PROVIDER]), array_map(static fn(array $modelData): ModelMetadata => ModelMetadata::fromArray($modelData), $array[self::KEY_MODELS]));
     }
 }

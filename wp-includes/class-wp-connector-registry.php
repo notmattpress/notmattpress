@@ -2,7 +2,7 @@
 /**
  * Connectors API: WP_Connector_Registry class.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Connectors
  * @since 7.0.0
  */

@@ -2,7 +2,7 @@
 /**
  * Secrets API: WP_Secret class
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Secrets
  * @since 7.2.0
  */
@@ -64,7 +64,7 @@ final class WP_Secret implements JsonSerializable {
 	 *
 	 * Set only for a secret a provider can prove exists but will not hand over –
 	 * an HSM that will sign with a key but never export it, a broker that releases
-	 * a credential to a subsystem rather than to WordPress. Such a secret is still
+	 * a credential to a subsystem rather than to NotMattPress. Such a secret is still
 	 * a real secret with a real name and fingerprint; what it is not is readable,
 	 * and reveal() says so rather than returning something misleading.
 	 *
@@ -123,7 +123,7 @@ final class WP_Secret implements JsonSerializable {
 	 *
 	 * Returns WP_Error for a secret whose provider will not release the value to
 	 * PHP at all – see withheld(). That case does not arise for the provider
-	 * WordPress ships, which decrypts eagerly and therefore always has a value in
+	 * NotMattPress ships, which decrypts eagerly and therefore always has a value in
 	 * hand, so most callers will never see it. It is in the signature because a
 	 * return type cannot be widened after adoption: leaving reveal() as
 	 * `string` would permanently foreclose brokered and use-only credentials,
