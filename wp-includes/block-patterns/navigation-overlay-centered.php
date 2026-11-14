@@ -2,7 +2,7 @@
 /**
  * Navigation: Overlay with centered navigation.
  *
- * @package WordPress
+ * @package NotMattPress
  */
 
 return array(

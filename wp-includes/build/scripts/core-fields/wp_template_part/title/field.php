@@ -2,7 +2,7 @@
 /**
  * The title field of template parts. Its JavaScript parts are in `field.tsx`.
  *
- * @package WordPress
+ * @package NotMattPress
  */
 
 return array(

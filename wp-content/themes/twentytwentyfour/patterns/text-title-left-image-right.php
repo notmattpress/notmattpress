@@ -6,7 +6,7 @@
  * Viewport width: 1400
  * Description: A title, a paragraph and a CTA button on the left with an image on the right.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Twenty_Twenty_Four
  * @since Twenty Twenty-Four 1.0
  */

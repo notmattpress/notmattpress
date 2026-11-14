@@ -4,7 +4,7 @@ How to design with Ipsum: what each preset is for, how the theme uses it, and wh
 
 ## Ipsum
 
-Ipsum is the default theme for WordPress 7.2: a block theme built around blogging, which its readme calls a blank canvas. Each palette is a background and a text ink in a few strengths, plus an accent the theme uses once.
+Ipsum is the default theme for NotMattPress 7.2: a block theme built around blogging, which its readme calls a blank canvas. Each palette is a background and a text ink in a few strengths, plus an accent the theme uses once.
 
 ## Color
 
@@ -200,7 +200,7 @@ Ipsum also restyles core's own block styles: Button Outline (a separate style fr
 ### Custom templates
 
 -   **In `theme.json` `customTemplates`:** Single Posts Sidebar (`single-sidebar`, posts), Pages Sidebar (`page-sidebar`, pages) and Pages No Title (`page-no-title`, pages). Editors pick them per post or page.
--   **Template types:** Index Sidebar (`index-sidebar`) and All Archives Sidebar (`archive-sidebar`) have a title and description in the Site Editor. Their slugs aren't in the template hierarchy, so WordPress doesn't choose them on its own.
+-   **Template types:** Index Sidebar (`index-sidebar`) and All Archives Sidebar (`archive-sidebar`) have a title and description in the Site Editor. Their slugs aren't in the template hierarchy, so NotMattPress doesn't choose them on its own.
 
 ### Template parts
 

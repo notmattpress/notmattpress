@@ -1,28 +1,28 @@
 <?php
 
 declare (strict_types=1);
-namespace WordPress\AiClient\Providers\OpenAiCompatibleImplementation;
+namespace NotMattPress\AiClient\Providers\OpenAiCompatibleImplementation;
 
-use WordPress\AiClient\Common\Exception\InvalidArgumentException;
-use WordPress\AiClient\Common\Exception\RuntimeException;
-use WordPress\AiClient\Messages\DTO\Message;
-use WordPress\AiClient\Messages\DTO\MessagePart;
-use WordPress\AiClient\Messages\Enums\MessagePartChannelEnum;
-use WordPress\AiClient\Messages\Enums\MessageRoleEnum;
-use WordPress\AiClient\Messages\Enums\ModalityEnum;
-use WordPress\AiClient\Providers\ApiBasedImplementation\AbstractApiBasedModel;
-use WordPress\AiClient\Providers\Http\DTO\Request;
-use WordPress\AiClient\Providers\Http\DTO\Response;
-use WordPress\AiClient\Providers\Http\Enums\HttpMethodEnum;
-use WordPress\AiClient\Providers\Http\Exception\ResponseException;
-use WordPress\AiClient\Providers\Http\Util\ResponseUtil;
-use WordPress\AiClient\Providers\Models\TextGeneration\Contracts\TextGenerationModelInterface;
-use WordPress\AiClient\Results\DTO\Candidate;
-use WordPress\AiClient\Results\DTO\GenerativeAiResult;
-use WordPress\AiClient\Results\DTO\TokenUsage;
-use WordPress\AiClient\Results\Enums\FinishReasonEnum;
-use WordPress\AiClient\Tools\DTO\FunctionCall;
-use WordPress\AiClient\Tools\DTO\FunctionDeclaration;
+use NotMattPress\AiClient\Common\Exception\InvalidArgumentException;
+use NotMattPress\AiClient\Common\Exception\RuntimeException;
+use NotMattPress\AiClient\Messages\DTO\Message;
+use NotMattPress\AiClient\Messages\DTO\MessagePart;
+use NotMattPress\AiClient\Messages\Enums\MessagePartChannelEnum;
+use NotMattPress\AiClient\Messages\Enums\MessageRoleEnum;
+use NotMattPress\AiClient\Messages\Enums\ModalityEnum;
+use NotMattPress\AiClient\Providers\ApiBasedImplementation\AbstractApiBasedModel;
+use NotMattPress\AiClient\Providers\Http\DTO\Request;
+use NotMattPress\AiClient\Providers\Http\DTO\Response;
+use NotMattPress\AiClient\Providers\Http\Enums\HttpMethodEnum;
+use NotMattPress\AiClient\Providers\Http\Exception\ResponseException;
+use NotMattPress\AiClient\Providers\Http\Util\ResponseUtil;
+use NotMattPress\AiClient\Providers\Models\TextGeneration\Contracts\TextGenerationModelInterface;
+use NotMattPress\AiClient\Results\DTO\Candidate;
+use NotMattPress\AiClient\Results\DTO\GenerativeAiResult;
+use NotMattPress\AiClient\Results\DTO\TokenUsage;
+use NotMattPress\AiClient\Results\Enums\FinishReasonEnum;
+use NotMattPress\AiClient\Tools\DTO\FunctionCall;
+use NotMattPress\AiClient\Tools\DTO\FunctionDeclaration;
 /**
  * Base class for a text generation model for providers that implement OpenAI's API format.
  *

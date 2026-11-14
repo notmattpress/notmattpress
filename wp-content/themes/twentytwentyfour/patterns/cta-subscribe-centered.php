@@ -6,7 +6,7 @@
  * Keywords: newsletter, subscribe, button
  * Description: Subscribers CTA section with a title, a paragraph and a CTA button.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Twenty_Twenty_Four
  * @since Twenty Twenty-Four 1.0
  */

@@ -8,7 +8,7 @@
  * lists can't show, sort, or filter by it: they keep the `date` field, whose
  * value is never "Immediately".
  *
- * @package WordPress
+ * @package NotMattPress
  */
 
 return array(

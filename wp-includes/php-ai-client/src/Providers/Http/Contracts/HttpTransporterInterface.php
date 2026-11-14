@@ -1,11 +1,11 @@
 <?php
 
 declare (strict_types=1);
-namespace WordPress\AiClient\Providers\Http\Contracts;
+namespace NotMattPress\AiClient\Providers\Http\Contracts;
 
-use WordPress\AiClient\Providers\Http\DTO\Request;
-use WordPress\AiClient\Providers\Http\DTO\RequestOptions;
-use WordPress\AiClient\Providers\Http\DTO\Response;
+use NotMattPress\AiClient\Providers\Http\DTO\Request;
+use NotMattPress\AiClient\Providers\Http\DTO\RequestOptions;
+use NotMattPress\AiClient\Providers\Http\DTO\Response;
 /**
  * Interface for HTTP transport implementations.
  *

@@ -2,7 +2,7 @@
 /**
  * Server-side rendering of the `core/archives` block.
  *
- * @package WordPress
+ * @package NotMattPress
  */
 
 /**

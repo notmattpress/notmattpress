@@ -2,7 +2,7 @@
 /**
  * Secrets API: WP_Secrets_Keyring class
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Secrets
  * @since 7.2.0
  */

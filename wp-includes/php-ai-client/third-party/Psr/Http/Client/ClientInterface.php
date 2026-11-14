@@ -1,9 +1,9 @@
 <?php
 
-namespace WordPress\AiClientDependencies\Psr\Http\Client;
+namespace NotMattPress\AiClientDependencies\Psr\Http\Client;
 
-use WordPress\AiClientDependencies\Psr\Http\Message\RequestInterface;
-use WordPress\AiClientDependencies\Psr\Http\Message\ResponseInterface;
+use NotMattPress\AiClientDependencies\Psr\Http\Message\RequestInterface;
+use NotMattPress\AiClientDependencies\Psr\Http\Message\ResponseInterface;
 interface ClientInterface
 {
     /**

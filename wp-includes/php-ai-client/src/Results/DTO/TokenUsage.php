@@ -1,9 +1,9 @@
 <?php
 
 declare (strict_types=1);
-namespace WordPress\AiClient\Results\DTO;
+namespace NotMattPress\AiClient\Results\DTO;
 
-use WordPress\AiClient\Common\AbstractDataTransferObject;
+use NotMattPress\AiClient\Common\AbstractDataTransferObject;
 /**
  * Represents token usage statistics for an AI operation.
  *

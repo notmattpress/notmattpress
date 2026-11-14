@@ -2,7 +2,7 @@
 /**
  * Server-side rendering of the `core/post-time-to-read` block.
  *
- * @package WordPress
+ * @package NotMattPress
  */
 
 /**

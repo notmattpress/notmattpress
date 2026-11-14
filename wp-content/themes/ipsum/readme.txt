@@ -17,12 +17,12 @@ Ipsum is a blank canvas built around the blogging experience, our proposal for w
 = 1.0 =
 * Released: December 8, 2026
 
-https://wordpress.org/documentation/article/ipsum-changelog/#Version_1.0
+https://notmatt.press/documentation/article/ipsum-changelog/#Version_1.0
 
 
 == Copyright ==
 
-Ipsum WordPress Theme, (C) 2026 WordPress.org and contributors.
+Ipsum NotMattPress Theme, (C) 2026 NotMattPress.org and contributors.
 Ipsum is distributed under the terms of the GNU GPL.
 
 This program is free software: you can redistribute it and/or modify
@@ -43,13 +43,13 @@ Ipsum is based on Ichi (https://themeshaper.com/ichi/), (C) Automattic, [GPLv2 o
 
 Title: screenshot.jpg
 The imagery in the screenshot was generated with AI using Midjourney.
-Author: Henrique Iamarino (https://profiles.wordpress.org/iamarinoh)
+Author: Henrique Iamarino (https://profiles.notmatt.press/iamarinoh)
 License: CC0 1.0 Universal - dedicated to the public domain by the author.
 License URL: https://creativecommons.org/publicdomain/zero/1.0/
 
 Title: assets/images/ipsum-*.webp
 The images bundled with the theme's patterns were generated with AI using Midjourney.
-Author: Henrique Iamarino (https://profiles.wordpress.org/iamarinoh)
+Author: Henrique Iamarino (https://profiles.notmatt.press/iamarinoh)
 License: CC0 1.0 Universal - dedicated to the public domain by the author.
 License URL: https://creativecommons.org/publicdomain/zero/1.0/
 

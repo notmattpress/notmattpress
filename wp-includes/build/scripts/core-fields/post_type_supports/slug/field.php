@@ -8,7 +8,7 @@
  * alone is not the full condition (the post type must also be public), so
  * the field also checks each post, see `isVisible`.
  *
- * @package WordPress
+ * @package NotMattPress
  */
 
 return array(

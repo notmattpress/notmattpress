@@ -3,7 +3,7 @@
  * The icon of the site. Its JavaScript parts (`Edit` and `setValue`) are in
  * `field.tsx`, next to this file.
  *
- * @package WordPress
+ * @package NotMattPress
  */
 
 return array(

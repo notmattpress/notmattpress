@@ -1,9 +1,9 @@
 <?php
 
 declare (strict_types=1);
-namespace WordPress\AiClient\Files\ValueObjects;
+namespace NotMattPress\AiClient\Files\ValueObjects;
 
-use WordPress\AiClient\Common\Exception\InvalidArgumentException;
+use NotMattPress\AiClient\Common\Exception\InvalidArgumentException;
 /**
  * Value object representing a MIME type.
  *

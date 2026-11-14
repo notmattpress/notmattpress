@@ -5,16 +5,16 @@
  *
  * The elements are the formats the theme opted in, plus `standard`, which
  * every theme supporting formats gets, as the themes REST route exposes
- * them. Their labels are the ones WordPress already translates for post
+ * them. Their labels are the ones NotMattPress already translates for post
  * formats, and they are sorted by label, as the client field sorted them.
  *
- * @package WordPress
+ * @package NotMattPress
  */
 
 $format_labels = get_post_format_strings();
 
 // A theme declares its formats as the first argument of the support. It may
-// also declare the support without arguments, or name a format WordPress
+// also declare the support without arguments, or name a format NotMattPress
 // does not have.
 $format_support = get_theme_support( 'post-formats' );
 $theme_formats  = is_array( $format_support ) && isset( $format_support[0] ) && is_array( $format_support[0] )

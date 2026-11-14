@@ -2,7 +2,7 @@
 /**
  * Secrets API: WP_Secrets_Key_Manager class
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Secrets
  * @since 7.2.0
  */
@@ -362,7 +362,7 @@ final class WP_Secrets_Key_Manager {
 	 *
 	 * @since 7.2.0
 	 *
-	 * @global wpdb $wpdb WordPress database abstraction object.
+	 * @global wpdb $wpdb NotMattPress database abstraction object.
 	 *
 	 * @return string|WP_Error
 	 */
@@ -428,7 +428,7 @@ final class WP_Secrets_Key_Manager {
 	 *
 	 * @since 7.2.0
 	 *
-	 * @global wpdb $wpdb WordPress database abstraction object.
+	 * @global wpdb $wpdb NotMattPress database abstraction object.
 	 *
 	 * @param string $wrapped The wrapped root key.
 	 * @return int ID of the inserted wp_sitemeta row on multisite, 0 otherwise.
@@ -477,7 +477,7 @@ final class WP_Secrets_Key_Manager {
 	 *
 	 * @since 7.2.0
 	 *
-	 * @global wpdb $wpdb WordPress database abstraction object.
+	 * @global wpdb $wpdb NotMattPress database abstraction object.
 	 *
 	 * @return string|false|WP_Error The wrapped root key, false if none is stored, or
 	 *                               WP_Error if the read failed or the row is malformed.

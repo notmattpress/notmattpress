@@ -4,7 +4,7 @@
  * this file: the render adds a badge to the homepage, the posts page, and
  * the privacy policy page.
  *
- * @package WordPress
+ * @package NotMattPress
  */
 
 return array(

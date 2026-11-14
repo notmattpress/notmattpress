@@ -1,6 +1,6 @@
 <?php
 
-namespace WordPress\AiClientDependencies\Psr\Http\Message;
+namespace NotMattPress\AiClientDependencies\Psr\Http\Message;
 
 /**
  * Representation of an outgoing, client-side request.

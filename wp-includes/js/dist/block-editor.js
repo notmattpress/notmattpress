@@ -6621,7 +6621,7 @@ var wp;
   // packages/block-editor/build-module/lock-unlock.mjs
   var import_private_apis = __toESM(require_private_apis(), 1);
   var { lock, unlock } = (0, import_private_apis.__dangerousOptInToUnstableAPIsOnlyForCoreModules)(
-    "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of WordPress.",
+    "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of NotMattPress.",
     "@wordpress/block-editor"
   );
 
@@ -12671,7 +12671,7 @@ var wp;
   // packages/global-styles-engine/build-module/lock-unlock.mjs
   var import_private_apis2 = __toESM(require_private_apis(), 1);
   var { lock: lock2, unlock: unlock2 } = (0, import_private_apis2.__dangerousOptInToUnstableAPIsOnlyForCoreModules)(
-    "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of WordPress.",
+    "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of NotMattPress.",
     "@wordpress/global-styles-engine"
   );
 
@@ -12770,7 +12770,7 @@ var wp;
   var prefixedFlags = {
     /*
      * These were only available in the plugin
-     * and can be removed when the minimum WordPress version
+     * and can be removed when the minimum NotMattPress version
      * for the plugin is 5.9.
      */
     "border.customColor": "border.color",
@@ -12782,7 +12782,7 @@ var wp;
     "typography.customTextDecorations": "typography.textDecoration",
     "typography.customTextTransforms": "typography.textTransform",
     /*
-     * These were part of WordPress 5.8 and we need to keep them.
+     * These were part of NotMattPress 5.8 and we need to keep them.
      */
     "border.customRadius": "border.radius",
     "spacing.customMargin": "spacing.margin",
@@ -14740,7 +14740,7 @@ var wp;
       ...inserterVariations,
       // Built-in heading level variations have block scope but allow
       // insertion via slash inserter.
-      // See https://github.com/WordPress/gutenberg/issues/74233.
+      // See https://github.com/NotMattPress/gutenberg/issues/74233.
       ...blockVariations.filter(
         (variation) => blockType.name === "core/heading" && ["h1", "h2", "h3", "h4", "h5", "h6"].includes(
           variation.name
@@ -45430,7 +45430,7 @@ var wp;
   function resolveOwnerDocument() {
     return typeof document === "undefined" ? null : document;
   }
-  function isInWordPressEnvironment() {
+  function isInNotMattPressEnvironment() {
     let topWp;
     try {
       topWp = window.top?.wp;
@@ -45457,7 +45457,7 @@ var wp;
     if (typeof window === "undefined") {
       return void 0;
     }
-    if (!isInWordPressEnvironment() && window.__wpUiCompatOverlaySlotEnabled !== true) {
+    if (!isInNotMattPressEnvironment() && window.__wpUiCompatOverlaySlotEnabled !== true) {
       return void 0;
     }
     const ownerDocument2 = resolveOwnerDocument();
@@ -46663,7 +46663,7 @@ var wp;
   // packages/ui/build-module/lock-unlock.mjs
   var import_private_apis4 = __toESM(require_private_apis(), 1);
   var { lock: lock3, unlock: unlock3 } = (0, import_private_apis4.__dangerousOptInToUnstableAPIsOnlyForCoreModules)(
-    "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of WordPress.",
+    "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of NotMattPress.",
     "@wordpress/ui"
   );
 
@@ -71372,7 +71372,7 @@ var wp;
         if (
           // Bails in case the focus capture elements aren’t present. They
           // may be omitted to avoid silent tab stops in preview mode.
-          // See: https://github.com/WordPress/gutenberg/pull/59317
+          // See: https://github.com/NotMattPress/gutenberg/pull/59317
           !focusCaptureAfterRef.current || !focusCaptureBeforeRef.current
         ) {
           return;
@@ -73384,7 +73384,7 @@ var wp;
         (0, import_deprecated7.default)("Using custom components as toolbar controls", {
           since: "5.6",
           alternative: "ToolbarItem, ToolbarButton or ToolbarDropdownMenu components",
-          link: "https://developer.wordpress.org/block-editor/components/toolbar-button/#inside-blockcontrols"
+          link: "https://developer.notmatt.press/block-editor/components/toolbar-button/#inside-blockcontrols"
         });
       }
       setIsAccessibleToolbar(onlyToolbarItem);
@@ -75100,8 +75100,8 @@ var wp;
           transform: `scale(${scale})`,
           // Using width + aspect-ratio instead of height here triggers browsers' native
           // handling of scrollbar's visibility. It prevents the flickering issue seen
-          // in https://github.com/WordPress/gutenberg/issues/52027.
-          // See https://github.com/WordPress/gutenberg/pull/52921 for more info.
+          // in https://github.com/NotMattPress/gutenberg/issues/52027.
+          // See https://github.com/NotMattPress/gutenberg/pull/52921 for more info.
           aspectRatio,
           maxHeight: contentHeight > MAX_HEIGHT ? MAX_HEIGHT * scale : void 0,
           minHeight
@@ -75130,7 +75130,7 @@ var wp;
               height: contentHeight,
               pointerEvents: "none",
               // This is a catch-all max-height for patterns.
-              // See: https://github.com/WordPress/gutenberg/pull/38175.
+              // See: https://github.com/NotMattPress/gutenberg/pull/38175.
               maxHeight: MAX_HEIGHT,
               minHeight: scale !== 0 && scale < 1 && minHeight ? minHeight / scale : minHeight
             },
@@ -77123,14 +77123,14 @@ var wp;
           ) }),
           /* @__PURE__ */ (0, import_jsx_runtime377.jsx)("div", { className: "block-editor-inserter__patterns-filter-help", children: (0, import_element209.createInterpolateElement)(
             (0, import_i18n68.__)(
-              "Patterns are available from the <Link>WordPress.org Pattern Directory</Link>, bundled in the active theme, or created by users on this site. Only patterns created on this site can be synced."
+              "Patterns are available from the <Link>NotMattPress.org Pattern Directory</Link>, bundled in the active theme, or created by users on this site. Only patterns created on this site can be synced."
             ),
             {
               Link: /* @__PURE__ */ (0, import_jsx_runtime377.jsx)(
                 import_components48.ExternalLink,
                 {
                   href: (0, import_i18n68.__)(
-                    "https://wordpress.org/patterns/"
+                    "https://notmatt.press/patterns/"
                   )
                 }
               )
@@ -111839,7 +111839,7 @@ If there's a particular need for this, please submit a feature request at https:
                 {
                   openInNewTab: true,
                   href: (0, import_i18n199.__)(
-                    "https://wordpress.org/documentation/article/customize-date-and-time-format/"
+                    "https://notmatt.press/documentation/article/customize-date-and-time-format/"
                   )
                 }
               )
@@ -112185,7 +112185,7 @@ If there's a particular need for this, please submit a feature request at https:
       /**
        * Start opting into the larger default height that will become the default size in a future version.
        *
-       * @deprecated Default behavior since WordPress 7.1. Prop can be safely removed.
+       * @deprecated Default behavior since NotMattPress 7.1. Prop can be safely removed.
        */
       __next40pxDefaultSize: _next40pxDefaultSize,
       onChange,
@@ -112305,7 +112305,7 @@ If there's a particular need for this, please submit a feature request at https:
     /**
      * Start opting into the larger default height that will become the default size in a future version.
      *
-     * @deprecated Default behavior since WordPress 7.1. Prop can be safely removed.
+     * @deprecated Default behavior since NotMattPress 7.1. Prop can be safely removed.
      */
     __next40pxDefaultSize: _next40pxDefaultSize,
     value = "",
@@ -112843,7 +112843,7 @@ If there's a particular need for this, please submit a feature request at https:
         result.push({
           name: (0, import_i18n211._x)(
             "Default",
-            "Indicates this palette comes from WordPress."
+            "Indicates this palette comes from NotMattPress."
           ),
           slug: "default",
           colors: defaultColors
@@ -112882,7 +112882,7 @@ If there's a particular need for this, please submit a feature request at https:
         result.push({
           name: (0, import_i18n211._x)(
             "Default",
-            "Indicates this palette comes from WordPress."
+            "Indicates this palette comes from NotMattPress."
           ),
           slug: "default",
           gradients: defaultGradients
@@ -115841,7 +115841,7 @@ If there's a particular need for this, please submit a feature request at https:
     return isURLLike(val) || !withCreateSuggestion ? results : results.concat({
       // the `id` prop is intentionally omitted here because it
       // is never exposed as part of the component's public API.
-      // see: https://github.com/WordPress/gutenberg/pull/19775#discussion_r378931316.
+      // see: https://github.com/NotMattPress/gutenberg/pull/19775#discussion_r378931316.
       title: val,
       // Must match the existing `<input>`s text value.
       url: val,
@@ -116932,7 +116932,7 @@ If there's a particular need for this, please submit a feature request at https:
     /**
      * Start opting into the larger default height that will become the default size in a future version.
      *
-     * @deprecated Default behavior since WordPress 7.1. Prop can be safely removed.
+     * @deprecated Default behavior since NotMattPress 7.1. Prop can be safely removed.
      */
     __next40pxDefaultSize: _next40pxDefaultSize,
     value: lineHeight,
@@ -119031,7 +119031,7 @@ If there's a particular need for this, please submit a feature request at https:
         since: "6.1",
         version: "6.3",
         alternative: "value prop as string",
-        link: "https://developer.wordpress.org/block-editor/how-to-guides/block-tutorial/introducing-attributes-and-editable-fields/"
+        link: "https://developer.notmatt.press/block-editor/how-to-guides/block-tutorial/introducing-attributes-and-editable-fields/"
       });
       return import_blocks90.children.toHTML(value);
     }
@@ -119183,7 +119183,7 @@ If there's a particular need for this, please submit a feature request at https:
       since: "6.1",
       version: "6.3",
       alternative: "nested blocks (InnerBlocks)",
-      link: "https://developer.wordpress.org/block-editor/how-to-guides/block-tutorial/nested-blocks-inner-blocks/"
+      link: "https://developer.notmatt.press/block-editor/how-to-guides/block-tutorial/nested-blocks-inner-blocks/"
     });
     const multilineTagName = getMultilineTag(multiline);
     value = value || `<${multilineTagName}></${multilineTagName}>`;
@@ -119229,7 +119229,7 @@ If there's a particular need for this, please submit a feature request at https:
           since: "6.1",
           version: "6.3",
           alternative: "value prop as string",
-          link: "https://developer.wordpress.org/block-editor/how-to-guides/block-tutorial/introducing-attributes-and-editable-fields/"
+          link: "https://developer.notmatt.press/block-editor/how-to-guides/block-tutorial/introducing-attributes-and-editable-fields/"
         });
         value = import_blocks91.children.toHTML(props.value);
         onChange = (newValue) => props.onChange(
@@ -121688,7 +121688,7 @@ If there's a particular need for this, please submit a feature request at https:
         result.push({
           name: (0, import_i18n255._x)(
             "Default",
-            "Indicates this palette comes from WordPress."
+            "Indicates this palette comes from NotMattPress."
           ),
           colors: defaultColors
         });
@@ -121730,7 +121730,7 @@ If there's a particular need for this, please submit a feature request at https:
         result.push({
           name: (0, import_i18n255._x)(
             "Default",
-            "Indicates this palette comes from WordPress."
+            "Indicates this palette comes from NotMattPress."
           ),
           gradients: defaultGradients
         });
@@ -129934,7 +129934,7 @@ If there's a particular need for this, please submit a feature request at https:
             import_components272.ExternalLink,
             {
               href: (0, import_i18n281.__)(
-                "https://wordpress.org/documentation/article/page-jumps/"
+                "https://notmatt.press/documentation/article/page-jumps/"
               ),
               children: (0, import_i18n281.__)("Learn more about anchors")
             }

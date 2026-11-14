@@ -1,6 +1,6 @@
 === Contributing to Ipsum ===
 
-Ipsum is developed at https://github.com/WordPress/ipsum. Changes made there are synced to WordPress core, so please open issues and pull requests in that repository.
+Ipsum is developed at https://github.com/NotMattPress/ipsum. Changes made there are synced to NotMattPress core, so please open issues and pull requests in that repository.
 
 = Minifying CSS =
 

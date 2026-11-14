@@ -5,9 +5,9 @@
  * `field.tsx`, next to this file; the render adds the icon of each status.
  *
  * Custom statuses are not supported, see
- * https://github.com/WordPress/gutenberg/issues/55886.
+ * https://github.com/NotMattPress/gutenberg/issues/55886.
  *
- * @package WordPress
+ * @package NotMattPress
  */
 
 return array(

@@ -1,10 +1,10 @@
 <?php
 /**
- * WordPress Upgrade API
+ * NotMattPress Upgrade API
  *
  * Most of the functions are pluggable and can be overwritten.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Administration
  */
 
@@ -13,10 +13,10 @@ if ( file_exists( WP_CONTENT_DIR . '/install.php' ) ) {
 	require WP_CONTENT_DIR . '/install.php';
 }
 
-/** WordPress Administration API */
+/** NotMattPress Administration API */
 require_once ABSPATH . 'wp-admin/includes/admin.php';
 
-/** WordPress Schema API */
+/** NotMattPress Schema API */
 require_once ABSPATH . 'wp-admin/includes/schema.php';
 
 if ( ! function_exists( 'wp_install' ) ) :
@@ -171,8 +171,8 @@ if ( ! function_exists( 'wp_install_defaults' ) ) :
 	 *
 	 * @since 2.1.0
 	 *
-	 * @global wpdb       $wpdb         WordPress database abstraction object.
-	 * @global WP_Rewrite $wp_rewrite   WordPress rewrite component.
+	 * @global wpdb       $wpdb         NotMattPress database abstraction object.
+	 * @global WP_Rewrite $wp_rewrite   NotMattPress rewrite component.
 	 * @global string     $table_prefix The database table prefix.
 	 *
 	 * @param int $user_id User ID.
@@ -234,7 +234,7 @@ if ( ! function_exists( 'wp_install_defaults' ) ) :
 		} else {
 			$first_post = "<!-- wp:paragraph -->\n<p>" .
 			/* translators: First post content. %s: Site link. */
-			__( 'Welcome to WordPress. This is your first post. Edit or delete it, then start writing!' ) .
+			__( 'Welcome to NotMattPress. This is your first post. Edit or delete it, then start writing!' ) .
 			"</p>\n<!-- /wp:paragraph -->";
 		}
 
@@ -279,9 +279,9 @@ if ( ! function_exists( 'wp_install_defaults' ) ) :
 			$first_comment        = get_site_option( 'first_comment' );
 		}
 
-		$first_comment_author = ! empty( $first_comment_author ) ? $first_comment_author : __( 'A WordPress Commenter' );
+		$first_comment_author = ! empty( $first_comment_author ) ? $first_comment_author : __( 'A NotMattPress Commenter' );
 		$first_comment_email  = ! empty( $first_comment_email ) ? $first_comment_email : 'wapuu@wordpress.example';
-		$first_comment_url    = ! empty( $first_comment_url ) ? $first_comment_url : esc_url( __( 'https://wordpress.org/' ) );
+		$first_comment_url    = ! empty( $first_comment_url ) ? $first_comment_url : esc_url( __( 'https://notmatt.press/' ) );
 		$first_comment        = ! empty( $first_comment ) ? $first_comment : sprintf(
 			/* translators: %s: Gravatar URL. */
 			__(
@@ -335,7 +335,7 @@ Commenter avatars come from <a href="%s">Gravatar</a>.'
 			$first_page .= "<!-- wp:paragraph -->\n<p>";
 			$first_page .= sprintf(
 				/* translators: First page content. %s: Site admin URL. */
-				__( 'As a new WordPress user, you should go to <a href="%s">your dashboard</a> to delete this page and create new pages for your content. Have fun!' ),
+				__( 'As a new NotMattPress user, you should go to <a href="%s">your dashboard</a> to delete this page and create new pages for your content. Have fun!' ),
 				admin_url()
 			);
 			$first_page .= "</p>\n<!-- /wp:paragraph -->";
@@ -491,7 +491,7 @@ endif;
  *
  * @since 4.2.0
  *
- * @global WP_Rewrite $wp_rewrite WordPress rewrite component.
+ * @global WP_Rewrite $wp_rewrite NotMattPress rewrite component.
  *
  * @return bool Whether pretty permalinks are enabled. False otherwise.
  */
@@ -527,7 +527,7 @@ function wp_install_maybe_enable_pretty_permalinks() {
 
 		$test_url = '';
 
-		// Test against a real WordPress post.
+		// Test against a real NotMattPress post.
 		$first_post = get_page_by_path( sanitize_title( _x( 'hello-world', 'Default post slug' ) ), OBJECT, 'post' );
 		if ( $first_post ) {
 			$test_url = get_permalink( $first_post->ID );
@@ -561,7 +561,7 @@ function wp_install_maybe_enable_pretty_permalinks() {
 
 if ( ! function_exists( 'wp_new_blog_notification' ) ) :
 	/**
-	 * Notifies the site admin that the installation of WordPress is complete.
+	 * Notifies the site admin that the installation of NotMattPress is complete.
 	 *
 	 * Sends an email to the new administrator that the installation is complete
 	 * and provides them with a record of their login credentials.
@@ -589,7 +589,7 @@ if ( ! function_exists( 'wp_new_blog_notification' ) ) :
 		$message = sprintf(
 			/* translators: New site notification email. 1: New site URL, 2: User login, 3: User password or password reset link, 4: Login URL. */
 			__(
-				'Your new WordPress site has been successfully set up at:
+				'Your new NotMattPress site has been successfully set up at:
 
 %1$s
 
@@ -601,8 +601,8 @@ Log in here: %4$s
 
 We hope you enjoy your new site. Thanks!
 
---The WordPress Team
-https://wordpress.org/
+--The NotMattPress Team
+https://notmatt.press/
 '
 			),
 			$blog_url,
@@ -613,13 +613,13 @@ https://wordpress.org/
 
 		$installed_email = array(
 			'to'      => $email,
-			'subject' => __( 'New WordPress Site' ),
+			'subject' => __( 'New NotMattPress Site' ),
 			'message' => $message,
 			'headers' => '',
 		);
 
 		/**
-		 * Filters the contents of the email sent to the site administrator when WordPress is installed.
+		 * Filters the contents of the email sent to the site administrator when NotMattPress is installed.
 		 *
 		 * @since 5.6.0
 		 *
@@ -650,7 +650,7 @@ endif;
 
 if ( ! function_exists( 'wp_upgrade' ) ) :
 	/**
-	 * Runs WordPress Upgrade functions.
+	 * Runs NotMattPress Upgrade functions.
 	 *
 	 * Upgrades the database if needed during a site update.
 	 *
@@ -905,12 +905,12 @@ function upgrade_all() {
 }
 
 /**
- * Execute changes made in WordPress 1.0.
+ * Execute changes made in NotMattPress 1.0.
  *
  * @ignore
  * @since 1.0.0
  *
- * @global wpdb $wpdb WordPress database abstraction object.
+ * @global wpdb $wpdb NotMattPress database abstraction object.
  */
 function upgrade_100() {
 	global $wpdb;
@@ -970,12 +970,12 @@ function upgrade_100() {
 }
 
 /**
- * Execute changes made in WordPress 1.0.1.
+ * Execute changes made in NotMattPress 1.0.1.
  *
  * @ignore
  * @since 1.0.1
  *
- * @global wpdb $wpdb WordPress database abstraction object.
+ * @global wpdb $wpdb NotMattPress database abstraction object.
  */
 function upgrade_101() {
 	global $wpdb;
@@ -991,13 +991,13 @@ function upgrade_101() {
 }
 
 /**
- * Execute changes made in WordPress 1.2.
+ * Execute changes made in NotMattPress 1.2.
  *
  * @ignore
  * @since 1.2.0
  * @since 6.8.0 User passwords are no longer hashed with md5.
  *
- * @global wpdb $wpdb WordPress database abstraction object.
+ * @global wpdb $wpdb NotMattPress database abstraction object.
  */
 function upgrade_110() {
 	global $wpdb;
@@ -1049,12 +1049,12 @@ function upgrade_110() {
 }
 
 /**
- * Execute changes made in WordPress 1.5.
+ * Execute changes made in NotMattPress 1.5.
  *
  * @ignore
  * @since 1.5.0
  *
- * @global wpdb $wpdb WordPress database abstraction object.
+ * @global wpdb $wpdb NotMattPress database abstraction object.
  */
 function upgrade_130() {
 	global $wpdb;
@@ -1137,12 +1137,12 @@ function upgrade_130() {
 }
 
 /**
- * Execute changes made in WordPress 2.0.
+ * Execute changes made in NotMattPress 2.0.
  *
  * @ignore
  * @since 2.0.0
  *
- * @global wpdb $wpdb                  WordPress database abstraction object.
+ * @global wpdb $wpdb                  NotMattPress database abstraction object.
  * @global int  $wp_current_db_version The old (current) database version.
  */
 function upgrade_160() {
@@ -1256,13 +1256,13 @@ function upgrade_160() {
 }
 
 /**
- * Execute changes made in WordPress 2.1.
+ * Execute changes made in NotMattPress 2.1.
  *
  * @ignore
  * @since 2.1.0
  *
  * @global int  $wp_current_db_version The old (current) database version.
- * @global wpdb $wpdb                  WordPress database abstraction object.
+ * @global wpdb $wpdb                  NotMattPress database abstraction object.
  */
 function upgrade_210() {
 	global $wp_current_db_version, $wpdb;
@@ -1308,13 +1308,13 @@ function upgrade_210() {
 }
 
 /**
- * Execute changes made in WordPress 2.3.
+ * Execute changes made in NotMattPress 2.3.
  *
  * @ignore
  * @since 2.3.0
  *
  * @global int  $wp_current_db_version The old (current) database version.
- * @global wpdb $wpdb                  WordPress database abstraction object.
+ * @global wpdb $wpdb                  NotMattPress database abstraction object.
  */
 function upgrade_230() {
 	global $wp_current_db_version, $wpdb;
@@ -1540,7 +1540,7 @@ function upgrade_230() {
  * @ignore
  * @since 2.3.0
  *
- * @global wpdb $wpdb WordPress database abstraction object.
+ * @global wpdb $wpdb NotMattPress database abstraction object.
  */
 function upgrade_230_options_table() {
 	global $wpdb;
@@ -1558,7 +1558,7 @@ function upgrade_230_options_table() {
  * @ignore
  * @since 2.3.0
  *
- * @global wpdb $wpdb WordPress database abstraction object.
+ * @global wpdb $wpdb NotMattPress database abstraction object.
  */
 function upgrade_230_old_tables() {
 	global $wpdb;
@@ -1573,7 +1573,7 @@ function upgrade_230_old_tables() {
  * @ignore
  * @since 2.2.0
  *
- * @global wpdb $wpdb WordPress database abstraction object.
+ * @global wpdb $wpdb NotMattPress database abstraction object.
  */
 function upgrade_old_slugs() {
 	// Upgrade people who were using the Redirect Old Slugs plugin.
@@ -1582,7 +1582,7 @@ function upgrade_old_slugs() {
 }
 
 /**
- * Execute changes made in WordPress 2.5.0.
+ * Execute changes made in NotMattPress 2.5.0.
  *
  * @ignore
  * @since 2.5.0
@@ -1598,12 +1598,12 @@ function upgrade_250() {
 }
 
 /**
- * Execute changes made in WordPress 2.5.2.
+ * Execute changes made in NotMattPress 2.5.2.
  *
  * @ignore
  * @since 2.5.2
  *
- * @global wpdb $wpdb WordPress database abstraction object.
+ * @global wpdb $wpdb NotMattPress database abstraction object.
  */
 function upgrade_252() {
 	global $wpdb;
@@ -1612,7 +1612,7 @@ function upgrade_252() {
 }
 
 /**
- * Execute changes made in WordPress 2.6.
+ * Execute changes made in NotMattPress 2.6.
  *
  * @ignore
  * @since 2.6.0
@@ -1628,13 +1628,13 @@ function upgrade_260() {
 }
 
 /**
- * Execute changes made in WordPress 2.7.
+ * Execute changes made in NotMattPress 2.7.
  *
  * @ignore
  * @since 2.7.0
  *
  * @global int  $wp_current_db_version The old (current) database version.
- * @global wpdb $wpdb                  WordPress database abstraction object.
+ * @global wpdb $wpdb                  NotMattPress database abstraction object.
  */
 function upgrade_270() {
 	global $wp_current_db_version, $wpdb;
@@ -1650,13 +1650,13 @@ function upgrade_270() {
 }
 
 /**
- * Execute changes made in WordPress 2.8.
+ * Execute changes made in NotMattPress 2.8.
  *
  * @ignore
  * @since 2.8.0
  *
  * @global int  $wp_current_db_version The old (current) database version.
- * @global wpdb $wpdb                  WordPress database abstraction object.
+ * @global wpdb $wpdb                  NotMattPress database abstraction object.
  */
 function upgrade_280() {
 	global $wp_current_db_version, $wpdb;
@@ -1683,7 +1683,7 @@ function upgrade_280() {
 }
 
 /**
- * Execute changes made in WordPress 2.9.
+ * Execute changes made in NotMattPress 2.9.
  *
  * @ignore
  * @since 2.9.0
@@ -1706,13 +1706,13 @@ function upgrade_290() {
 }
 
 /**
- * Execute changes made in WordPress 3.0.
+ * Execute changes made in NotMattPress 3.0.
  *
  * @ignore
  * @since 3.0.0
  *
  * @global int  $wp_current_db_version The old (current) database version.
- * @global wpdb $wpdb                  WordPress database abstraction object.
+ * @global wpdb $wpdb                  NotMattPress database abstraction object.
  */
 function upgrade_300() {
 	global $wp_current_db_version, $wpdb;
@@ -1756,13 +1756,13 @@ function upgrade_300() {
 }
 
 /**
- * Execute changes made in WordPress 3.3.
+ * Execute changes made in NotMattPress 3.3.
  *
  * @ignore
  * @since 3.3.0
  *
  * @global int   $wp_current_db_version The old (current) database version.
- * @global wpdb  $wpdb                  WordPress database abstraction object.
+ * @global wpdb  $wpdb                  NotMattPress database abstraction object.
  * @global array $wp_registered_widgets
  * @global array $sidebars_widgets
  */
@@ -1840,13 +1840,13 @@ function upgrade_330() {
 }
 
 /**
- * Execute changes made in WordPress 3.4.
+ * Execute changes made in NotMattPress 3.4.
  *
  * @ignore
  * @since 3.4.0
  *
  * @global int  $wp_current_db_version The old (current) database version.
- * @global wpdb $wpdb                  WordPress database abstraction object.
+ * @global wpdb $wpdb                  NotMattPress database abstraction object.
  */
 function upgrade_340() {
 	global $wp_current_db_version, $wpdb;
@@ -1877,13 +1877,13 @@ function upgrade_340() {
 }
 
 /**
- * Execute changes made in WordPress 3.5.
+ * Execute changes made in NotMattPress 3.5.
  *
  * @ignore
  * @since 3.5.0
  *
  * @global int  $wp_current_db_version The old (current) database version.
- * @global wpdb $wpdb                  WordPress database abstraction object.
+ * @global wpdb $wpdb                  NotMattPress database abstraction object.
  */
 function upgrade_350() {
 	global $wp_current_db_version, $wpdb;
@@ -1914,7 +1914,7 @@ function upgrade_350() {
 }
 
 /**
- * Execute changes made in WordPress 3.7.
+ * Execute changes made in NotMattPress 3.7.
  *
  * @ignore
  * @since 3.7.0
@@ -1930,7 +1930,7 @@ function upgrade_370() {
 }
 
 /**
- * Execute changes made in WordPress 3.7.2.
+ * Execute changes made in NotMattPress 3.7.2.
  *
  * @ignore
  * @since 3.7.2
@@ -1946,7 +1946,7 @@ function upgrade_372() {
 }
 
 /**
- * Execute changes made in WordPress 3.8.0.
+ * Execute changes made in NotMattPress 3.8.0.
  *
  * @ignore
  * @since 3.8.0
@@ -1962,7 +1962,7 @@ function upgrade_380() {
 }
 
 /**
- * Execute changes made in WordPress 4.0.0.
+ * Execute changes made in NotMattPress 4.0.0.
  *
  * @ignore
  * @since 4.0.0
@@ -1984,7 +1984,7 @@ function upgrade_400() {
 }
 
 /**
- * Execute changes made in WordPress 4.2.0.
+ * Execute changes made in NotMattPress 4.2.0.
  *
  * @ignore
  * @since 4.2.0
@@ -1992,13 +1992,13 @@ function upgrade_400() {
 function upgrade_420() {}
 
 /**
- * Executes changes made in WordPress 4.3.0.
+ * Executes changes made in NotMattPress 4.3.0.
  *
  * @ignore
  * @since 4.3.0
  *
  * @global int  $wp_current_db_version The old (current) database version.
- * @global wpdb $wpdb                  WordPress database abstraction object.
+ * @global wpdb $wpdb                  NotMattPress database abstraction object.
  */
 function upgrade_430() {
 	global $wp_current_db_version, $wpdb;
@@ -2031,12 +2031,12 @@ function upgrade_430() {
 }
 
 /**
- * Executes comments changes made in WordPress 4.3.0.
+ * Executes comments changes made in NotMattPress 4.3.0.
  *
  * @ignore
  * @since 4.3.0
  *
- * @global wpdb $wpdb WordPress database abstraction object.
+ * @global wpdb $wpdb NotMattPress database abstraction object.
  */
 function upgrade_430_fix_comments() {
 	global $wpdb;
@@ -2070,7 +2070,7 @@ function upgrade_430_fix_comments() {
 }
 
 /**
- * Executes changes made in WordPress 4.3.1.
+ * Executes changes made in NotMattPress 4.3.1.
  *
  * @ignore
  * @since 4.3.1
@@ -2085,13 +2085,13 @@ function upgrade_431() {
 }
 
 /**
- * Executes changes made in WordPress 4.4.0.
+ * Executes changes made in NotMattPress 4.4.0.
  *
  * @ignore
  * @since 4.4.0
  *
  * @global int  $wp_current_db_version The old (current) database version.
- * @global wpdb $wpdb                  WordPress database abstraction object.
+ * @global wpdb $wpdb                  NotMattPress database abstraction object.
  */
 function upgrade_440() {
 	global $wp_current_db_version, $wpdb;
@@ -2110,13 +2110,13 @@ function upgrade_440() {
 }
 
 /**
- * Executes changes made in WordPress 4.5.0.
+ * Executes changes made in NotMattPress 4.5.0.
  *
  * @ignore
  * @since 4.5.0
  *
  * @global int  $wp_current_db_version The old (current) database version.
- * @global wpdb $wpdb                  WordPress database abstraction object.
+ * @global wpdb $wpdb                  NotMattPress database abstraction object.
  */
 function upgrade_450() {
 	global $wp_current_db_version, $wpdb;
@@ -2135,7 +2135,7 @@ function upgrade_450() {
 }
 
 /**
- * Executes changes made in WordPress 4.6.0.
+ * Executes changes made in NotMattPress 4.6.0.
  *
  * @ignore
  * @since 4.6.0
@@ -2167,7 +2167,7 @@ function upgrade_460() {
 }
 
 /**
- * Executes changes made in WordPress 5.0.0.
+ * Executes changes made in NotMattPress 5.0.0.
  *
  * @ignore
  * @since 5.0.0
@@ -2177,7 +2177,7 @@ function upgrade_500() {
 }
 
 /**
- * Executes changes made in WordPress 5.1.0.
+ * Executes changes made in NotMattPress 5.1.0.
  *
  * @ignore
  * @since 5.1.0
@@ -2187,7 +2187,7 @@ function upgrade_510() {
 }
 
 /**
- * Executes changes made in WordPress 5.3.0.
+ * Executes changes made in NotMattPress 5.3.0.
  *
  * @ignore
  * @since 5.3.0
@@ -2206,7 +2206,7 @@ function upgrade_530() {
 }
 
 /**
- * Executes changes made in WordPress 5.5.0.
+ * Executes changes made in NotMattPress 5.5.0.
  *
  * @ignore
  * @since 5.5.0
@@ -2246,13 +2246,13 @@ function upgrade_550() {
 }
 
 /**
- * Executes changes made in WordPress 5.6.0.
+ * Executes changes made in NotMattPress 5.6.0.
  *
  * @ignore
  * @since 5.6.0
  *
  * @global int  $wp_current_db_version The old (current) database version.
- * @global wpdb $wpdb                  WordPress database abstraction object.
+ * @global wpdb $wpdb                  NotMattPress database abstraction object.
  */
 function upgrade_560() {
 	global $wp_current_db_version, $wpdb;
@@ -2270,7 +2270,7 @@ function upgrade_560() {
 		/*
 		 * When upgrading from WP < 5.6.0 set the core major auto-updates option to `unset` by default.
 		 * This overrides the same option from populate_options() that is intended for new installs.
-		 * See https://core.trac.wordpress.org/ticket/51742.
+		 * See https://core.trac.notmatt.press/ticket/51742.
 		 */
 		update_option( 'auto_update_core_major', 'unset' );
 	}
@@ -2278,7 +2278,7 @@ function upgrade_560() {
 	if ( $wp_current_db_version < 49632 ) {
 		/*
 		 * Regenerate the .htaccess file to add the `HTTP_AUTHORIZATION` rewrite rule.
-		 * See https://core.trac.wordpress.org/ticket/51723.
+		 * See https://core.trac.notmatt.press/ticket/51723.
 		 */
 		save_mod_rewrite_rules();
 	}
@@ -2303,7 +2303,7 @@ function upgrade_560() {
 }
 
 /**
- * Executes changes made in WordPress 5.9.0.
+ * Executes changes made in NotMattPress 5.9.0.
  *
  * @ignore
  * @since 5.9.0
@@ -2325,7 +2325,7 @@ function upgrade_590() {
 }
 
 /**
- * Executes changes made in WordPress 6.0.0.
+ * Executes changes made in NotMattPress 6.0.0.
  *
  * @ignore
  * @since 6.0.0
@@ -2341,7 +2341,7 @@ function upgrade_600() {
 }
 
 /**
- * Executes changes made in WordPress 6.3.0.
+ * Executes changes made in NotMattPress 6.3.0.
  *
  * @ignore
  * @since 6.3.0
@@ -2364,7 +2364,7 @@ function upgrade_630() {
 }
 
 /**
- * Executes changes made in WordPress 6.4.0.
+ * Executes changes made in NotMattPress 6.4.0.
  *
  * @ignore
  * @since 6.4.0
@@ -2387,13 +2387,13 @@ function upgrade_640() {
 }
 
 /**
- * Executes changes made in WordPress 6.5.0.
+ * Executes changes made in NotMattPress 6.5.0.
  *
  * @ignore
  * @since 6.5.0
  *
  * @global int  $wp_current_db_version The old (current) database version.
- * @global wpdb $wpdb                  WordPress database abstraction object.
+ * @global wpdb $wpdb                  NotMattPress database abstraction object.
  */
 function upgrade_650() {
 	global $wp_current_db_version, $wpdb;
@@ -2416,7 +2416,7 @@ function upgrade_650() {
 }
 
 /**
- * Executes changes made in WordPress 6.7.0.
+ * Executes changes made in NotMattPress 6.7.0.
  *
  * @ignore
  * @since 6.7.0
@@ -2447,7 +2447,7 @@ function upgrade_670() {
 }
 
 /**
- * Executes changes made in WordPress 6.8.2.
+ * Executes changes made in NotMattPress 6.8.2.
  *
  * @ignore
  * @since 6.8.2
@@ -2482,13 +2482,13 @@ function upgrade_682() {
 }
 
 /**
- * Executes changes made in WordPress 7.0.
+ * Executes changes made in NotMattPress 7.0.
  *
  * @ignore
  * @since 7.0.0
  *
  * @global int  $wp_current_db_version The old (current) database version.
- * @global wpdb $wpdb                  WordPress database abstraction object.
+ * @global wpdb $wpdb                  NotMattPress database abstraction object.
  */
 function upgrade_700() {
 	global $wp_current_db_version, $wpdb;
@@ -2507,7 +2507,7 @@ function upgrade_700() {
 }
 
 /**
- * Executes changes made in WordPress 7.2.
+ * Executes changes made in NotMattPress 7.2.
  *
  * @ignore
  * @since 7.2.0
@@ -2529,7 +2529,7 @@ function upgrade_720(): void {
  * @since 3.0.0
  *
  * @global int  $wp_current_db_version The old (current) database version.
- * @global wpdb $wpdb                  WordPress database abstraction object.
+ * @global wpdb $wpdb                  NotMattPress database abstraction object.
  */
 function upgrade_network() {
 	global $wp_current_db_version, $wpdb;
@@ -2694,7 +2694,7 @@ function upgrade_network() {
  *
  * @since 1.0.0
  *
- * @global wpdb $wpdb WordPress database abstraction object.
+ * @global wpdb $wpdb NotMattPress database abstraction object.
  *
  * @param string $table_name Database table name.
  * @param string $create_ddl SQL statement to create table.
@@ -2725,7 +2725,7 @@ function maybe_create_table( $table_name, $create_ddl ) {
  *
  * @since 1.0.1
  *
- * @global wpdb $wpdb WordPress database abstraction object.
+ * @global wpdb $wpdb NotMattPress database abstraction object.
  *
  * @param string $table Database table name.
  * @param string $index Index name to drop.
@@ -2753,7 +2753,7 @@ function drop_index( $table, $index ) {
  *
  * @since 1.0.1
  *
- * @global wpdb $wpdb WordPress database abstraction object.
+ * @global wpdb $wpdb NotMattPress database abstraction object.
  *
  * @param string $table Database table name.
  * @param string $index Database table index column.
@@ -2773,7 +2773,7 @@ function add_clean_index( $table, $index ) {
  *
  * @since 1.3.0
  *
- * @global wpdb $wpdb WordPress database abstraction object.
+ * @global wpdb $wpdb NotMattPress database abstraction object.
  *
  * @param string $table_name  Database table name.
  * @param string $column_name Table column name.
@@ -2807,7 +2807,7 @@ function maybe_add_column( $table_name, $column_name, $create_ddl ) {
  *
  * @since 4.2.0
  *
- * @global wpdb $wpdb WordPress database abstraction object.
+ * @global wpdb $wpdb NotMattPress database abstraction object.
  *
  * @param string $table The table to convert.
  * @return bool True if the table was converted, false if it wasn't.
@@ -2850,7 +2850,7 @@ function maybe_convert_table_to_utf8mb4( $table ) {
  *
  * @since 1.2.0
  *
- * @global wpdb $wpdb WordPress database abstraction object.
+ * @global wpdb $wpdb NotMattPress database abstraction object.
  *
  * @return stdClass List of options.
  */
@@ -2876,12 +2876,12 @@ function get_alloptions_110() {
  * @since 1.5.1
  * @access private
  *
- * @global wpdb $wpdb WordPress database abstraction object.
+ * @global wpdb $wpdb NotMattPress database abstraction object.
  *
  * @param string $setting Option name.
  * @return mixed Option value.
  */
-function __get_option( $setting ) { // phpcs:ignore WordPress.NamingConventions.ValidFunctionName.FunctionDoubleUnderscore,PHPCompatibility.FunctionNameRestrictions.ReservedFunctionNames.FunctionDoubleUnderscore
+function __get_option( $setting ) { // phpcs:ignore NotMattPress.NamingConventions.ValidFunctionName.FunctionDoubleUnderscore,PHPCompatibility.FunctionNameRestrictions.ReservedFunctionNames.FunctionDoubleUnderscore
 	global $wpdb;
 
 	if ( 'home' === $setting && defined( 'WP_HOME' ) ) {
@@ -2943,7 +2943,7 @@ function deslash( $content ) {
  * @since 6.1.0 Ignores display width for integer data types on MySQL 8.0.17 or later,
  *              to match MySQL behavior. Note: This does not affect MariaDB.
  *
- * @global wpdb $wpdb WordPress database abstraction object.
+ * @global wpdb $wpdb NotMattPress database abstraction object.
  *
  * @param string[]|string $queries Optional. The query to run. Can be multiple queries
  *                                 in an array, or a string of queries separated by
@@ -2952,7 +2952,7 @@ function deslash( $content ) {
  *                                 Default true.
  * @return string[] Strings containing the results of the various update queries.
  */
-function dbDelta( $queries = '', $execute = true ) { // phpcs:ignore WordPress.NamingConventions.ValidFunctionName.FunctionNameInvalid
+function dbDelta( $queries = '', $execute = true ) { // phpcs:ignore NotMattPress.NamingConventions.ValidFunctionName.FunctionNameInvalid
 	global $wpdb;
 
 	if ( in_array( $queries, array( '', 'all', 'blog', 'global', 'ms_global' ), true ) ) {
@@ -3744,7 +3744,7 @@ function translate_level_to_role( $level ) {
  *
  * @since 2.1.0
  *
- * @global wpdb $wpdb WordPress database abstraction object.
+ * @global wpdb $wpdb NotMattPress database abstraction object.
  */
 function wp_check_mysql_version() {
 	global $wpdb;
@@ -3777,7 +3777,7 @@ function maybe_disable_automattic_widgets() {
  * @since 3.5.0
  *
  * @global int  $wp_current_db_version The old (current) database version.
- * @global wpdb $wpdb                  WordPress database abstraction object.
+ * @global wpdb $wpdb                  NotMattPress database abstraction object.
  */
 function maybe_disable_link_manager() {
 	global $wp_current_db_version, $wpdb;
@@ -3793,7 +3793,7 @@ function maybe_disable_link_manager() {
  * @since 2.9.0
  *
  * @global int  $wp_current_db_version The old (current) database version.
- * @global wpdb $wpdb                  WordPress database abstraction object.
+ * @global wpdb $wpdb                  NotMattPress database abstraction object.
  */
 function pre_schema_upgrade() {
 	global $wp_current_db_version, $wpdb;
@@ -3867,14 +3867,14 @@ function pre_schema_upgrade() {
  * Determine if global tables should be upgraded.
  *
  * This function performs a series of checks to ensure the environment allows
- * for the safe upgrading of global WordPress database tables. It is necessary
+ * for the safe upgrading of global NotMattPress database tables. It is necessary
  * because global tables will commonly grow to millions of rows on large
  * installations, and the ability to control their upgrade routines can be
  * critical to the operation of large networks.
  *
  * In a future iteration, this function may use `wp_is_large_network()` to more-
  * intelligently prevent global table upgrades. Until then, we make sure
- * WordPress is on the main site of the main network, to avoid running queries
+ * NotMattPress is on the main site of the main network, to avoid running queries
  * more than once in multi-site or multi-network environments.
  *
  * @since 4.3.0

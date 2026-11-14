@@ -2,7 +2,7 @@
 /**
  * Server-side registering of the `core/navigation-overlay-close` block.
  *
- * @package WordPress
+ * @package NotMattPress
  */
 
 /**

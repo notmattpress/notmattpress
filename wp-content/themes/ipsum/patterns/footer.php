@@ -18,7 +18,7 @@
 <p class="has-manrope-font-family has-small-font-size">
 <?php
 /* Translators: 1. is the start of a 'a' HTML element, 2. is the end of a 'a' HTML element */
-printf( esc_html__( 'Designed with %1$sWordPress%2$s', 'ipsum' ), '<a href="' . esc_url( 'https://wordpress.org' ) . '" rel="nofollow">', '</a>' );
+printf( esc_html__( 'Designed with %1$sNotMattPress%2$s', 'ipsum' ), '<a href="' . esc_url( 'https://notmatt.press' ) . '" rel="nofollow">', '</a>' );
 ?>
 </p>
 <!-- /wp:paragraph -->

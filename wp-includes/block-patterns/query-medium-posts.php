@@ -2,7 +2,7 @@
 /**
  * Query: Image at left.
  *
- * @package WordPress
+ * @package NotMattPress
  */
 
 return array(

@@ -4,7 +4,7 @@ import { store, privateApis as privateApis2, getConfig } from "@wordpress/intera
 // packages/interactivity-router/build-module/html-directive-element.mjs
 import { privateApis } from "@wordpress/interactivity";
 var { parseDirectiveName } = privateApis(
-  "I acknowledge that using private APIs means my theme or plugin will inevitably break in the next version of WordPress."
+  "I acknowledge that using private APIs means my theme or plugin will inevitably break in the next version of NotMattPress."
 );
 var directivePrefix = "data-wp-";
 function closestHtmlDirectiveElement(element) {
@@ -720,7 +720,7 @@ var {
   getScope,
   runWithoutScope
 } = privateApis2(
-  "I acknowledge that using private APIs means my theme or plugin will inevitably break in the next version of WordPress."
+  "I acknowledge that using private APIs means my theme or plugin will inevitably break in the next version of NotMattPress."
 );
 var regionAttr = `data-wp-router-region`;
 var interactiveAttr = `data-wp-interactive`;
@@ -1062,7 +1062,7 @@ var { state, actions } = store("core/router", {
     get navigation() {
       if (true) {
         warn(
-          `The usage of state.navigation.{hasStarted|hasFinished} from core/router is deprecated and will stop working in WordPress 7.1.`
+          `The usage of state.navigation.{hasStarted|hasFinished} from core/router is deprecated and will stop working in NotMattPress 7.1.`
         );
       }
       return privateState.navigation;

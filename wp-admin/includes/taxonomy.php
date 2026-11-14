@@ -1,8 +1,8 @@
 <?php
 /**
- * WordPress Taxonomy Administration API.
+ * NotMattPress Taxonomy Administration API.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Administration
  */
 

@@ -1,7 +1,7 @@
 /**
  * Routes "Add New Media File" uploads through the client-side media pipeline.
  *
- * On wp-admin/media-new.php WordPress uploads via a raw plupload.Uploader
+ * On wp-admin/media-new.php NotMattPress uploads via a raw plupload.Uploader
  * (created by plupload-handlers) posting to async-upload.php. When the
  * browser is cross-origin isolated and supports the client-side pipeline,
  * this script intercepts the uploader's FilesAdded handler and hands files

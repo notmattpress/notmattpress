@@ -4,9 +4,9 @@
  *
  * Used on index and archive pages.
  *
- * @link https://developer.wordpress.org/advanced-administration/wordpress/post-formats/
+ * @link https://developer.notmatt.press/advanced-administration/wordpress/post-formats/
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Twenty_Eleven
  * @since Twenty Eleven 1.0
  */

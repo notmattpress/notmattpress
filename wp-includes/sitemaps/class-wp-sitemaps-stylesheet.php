@@ -4,7 +4,7 @@
  *
  * This class is retained for backward compatibility.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Sitemaps
  * @since 5.5.0
  * @deprecated 7.2.0 Stylesheets are no longer supported.

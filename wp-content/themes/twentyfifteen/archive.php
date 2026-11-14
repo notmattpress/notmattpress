@@ -9,9 +9,9 @@
  * new template file for each one. For example, tag.php (Tag archives),
  * category.php (Category archives), author.php (Author archives), etc.
  *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ * @link https://developer.notmatt.press/themes/basics/template-hierarchy/
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Twenty_Fifteen
  * @since Twenty Fifteen 1.0
  */
