@@ -5,7 +5,7 @@
  * This file uses rtrim() instead of untrailingslashit() and trailingslashit()
  * to avoid formatting.php dependency.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage i18n
  * @since 6.1.0
  */

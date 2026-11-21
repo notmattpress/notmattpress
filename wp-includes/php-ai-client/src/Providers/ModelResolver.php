@@ -1,15 +1,15 @@
 <?php
 
 declare (strict_types=1);
-namespace WordPress\AiClient\Providers;
+namespace NotMattPress\AiClient\Providers;
 
-use WordPress\AiClient\Common\Exception\InvalidArgumentException;
-use WordPress\AiClient\Providers\ApiBasedImplementation\Contracts\ApiBasedModelInterface;
-use WordPress\AiClient\Providers\Http\DTO\RequestOptions;
-use WordPress\AiClient\Providers\Models\Contracts\ModelInterface;
-use WordPress\AiClient\Providers\Models\DTO\ModelConfig;
-use WordPress\AiClient\Providers\Models\DTO\ModelMetadata;
-use WordPress\AiClient\Providers\Models\DTO\ModelRequirements;
+use NotMattPress\AiClient\Common\Exception\InvalidArgumentException;
+use NotMattPress\AiClient\Providers\ApiBasedImplementation\Contracts\ApiBasedModelInterface;
+use NotMattPress\AiClient\Providers\Http\DTO\RequestOptions;
+use NotMattPress\AiClient\Providers\Models\Contracts\ModelInterface;
+use NotMattPress\AiClient\Providers\Models\DTO\ModelConfig;
+use NotMattPress\AiClient\Providers\Models\DTO\ModelMetadata;
+use NotMattPress\AiClient\Providers\Models\DTO\ModelRequirements;
 /**
  * Resolves the concrete AI model to use based on selection preferences.
  *
@@ -31,7 +31,7 @@ class ModelResolver
     /**
      * @var ProviderRegistry The provider registry for finding suitable models.
      */
-    private \WordPress\AiClient\Providers\ProviderRegistry $registry;
+    private \NotMattPress\AiClient\Providers\ProviderRegistry $registry;
     /**
      * @var ModelInterface|null The model to use for generation.
      */
@@ -55,7 +55,7 @@ class ModelResolver
      *
      * @param ProviderRegistry $registry The provider registry for finding suitable models.
      */
-    public function __construct(\WordPress\AiClient\Providers\ProviderRegistry $registry)
+    public function __construct(\NotMattPress\AiClient\Providers\ProviderRegistry $registry)
     {
         $this->registry = $registry;
     }

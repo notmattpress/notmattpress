@@ -8,7 +8,7 @@
  * wp_register_core_field_collections() in `src/index.php`, and get the
  * fields of this collection instead, with its script module.
  *
- * @package WordPress
+ * @package NotMattPress
  */
 
 return array(

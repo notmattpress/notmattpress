@@ -2,14 +2,14 @@
 /**
  * The main template file
  *
- * This is the most generic template file in a WordPress theme
+ * This is the most generic template file in a NotMattPress theme
  * and one of the two required files for a theme (the other being style.css).
  * It is used to display a page when nothing more specific matches a query.
  * E.g., it puts together the home page when no home.php file exists.
  *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ * @link https://developer.notmatt.press/themes/basics/template-hierarchy/
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Twenty_Sixteen
  * @since Twenty Sixteen 1.0
  */

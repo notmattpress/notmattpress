@@ -4,14 +4,14 @@
  * `@wordpress/media-fields`. Its JavaScript parts (`getValue` and `render`)
  * are in `field.tsx`, next to this file.
  *
- * @package WordPress
+ * @package NotMattPress
  */
 
 return array(
 	'type'          => 'text',
 	'label'         => __( 'File type' ),
 	// Sorting is disabled until the REST API supports ordering by
-	// `mime_type`, see https://core.trac.wordpress.org/ticket/64073.
+	// `mime_type`, see https://core.trac.notmatt.press/ticket/64073.
 	'enableSorting' => false,
 	'filterBy'      => false,
 	'readOnly'      => true,

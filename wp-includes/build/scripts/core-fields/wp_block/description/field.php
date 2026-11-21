@@ -3,7 +3,7 @@
  * The description field of patterns, which edits their excerpt.
  * Its JavaScript parts are in `field.tsx`.
  *
- * @package WordPress
+ * @package NotMattPress
  */
 
 return array(

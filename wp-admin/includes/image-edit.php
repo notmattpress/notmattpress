@@ -1,8 +1,8 @@
 <?php
 /**
- * WordPress Image Editor
+ * NotMattPress Image Editor
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Administration
  */
 
@@ -596,7 +596,7 @@ function _flip_image_resource( $img, $horz, $vert ) {
 	 * _rotate_image_resource() and _crop_image_resource() copy into a new image, which resets them to GD's defaults:
 	 * 96 DPI and no interlacing. Reset them here too, so a flip gives the same result as the other edits.
 	 *
-	 * @link https://core.trac.wordpress.org/ticket/66113
+	 * @link https://core.trac.notmatt.press/ticket/66113
 	 */
 	imageresolution( $img, 96, 96 );
 	imageinterlace( $img, 0 );
@@ -879,7 +879,7 @@ function wp_restore_image( $post_id ) {
 			/*
 			 * Restore the original filesize if it was backed up.
 			 *
-			 * See https://core.trac.wordpress.org/ticket/59684.
+			 * See https://core.trac.notmatt.press/ticket/59684.
 			 */
 			$meta['filesize'] = $data['filesize'];
 		}
@@ -1102,7 +1102,7 @@ function wp_save_image( $post_id ) {
 	 * We need to remove any existing resized image files because
 	 * a new crop or rotate could generate different sizes (and hence, filenames),
 	 * keeping the new resized images from overwriting the existing image files.
-	 * https://core.trac.wordpress.org/ticket/32171
+	 * https://core.trac.notmatt.press/ticket/32171
 	 */
 	if ( defined( 'IMAGE_EDIT_OVERWRITE' ) && IMAGE_EDIT_OVERWRITE && ! empty( $meta['sizes'] ) ) {
 		foreach ( $meta['sizes'] as $size ) {

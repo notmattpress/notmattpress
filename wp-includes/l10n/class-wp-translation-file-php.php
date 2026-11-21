@@ -2,7 +2,7 @@
 /**
  * I18N: WP_Translation_File_PHP class.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage I18N
  * @since 6.5.0
  */

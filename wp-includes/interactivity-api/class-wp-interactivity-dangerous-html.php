@@ -2,7 +2,7 @@
 /**
  * Interactivity API: WP_Interactivity_Dangerous_HTML class.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Interactivity API
  * @since 7.2.0
  */

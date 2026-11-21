@@ -1,8 +1,8 @@
 <?php
 
-namespace WordPress\AiClientDependencies\Psr\Http\Client;
+namespace NotMattPress\AiClientDependencies\Psr\Http\Client;
 
-use WordPress\AiClientDependencies\Psr\Http\Message\RequestInterface;
+use NotMattPress\AiClientDependencies\Psr\Http\Message\RequestInterface;
 /**
  * Thrown when the request cannot be completed because of network issues.
  *

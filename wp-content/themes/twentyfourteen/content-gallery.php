@@ -2,7 +2,7 @@
 /**
  * The template for displaying posts in the Gallery post format
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Twenty_Fourteen
  * @since Twenty Fourteen 1.0
  */

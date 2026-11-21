@@ -1,8 +1,8 @@
 <?php
 /**
- * WordPress User Administration Bootstrap
+ * NotMattPress User Administration Bootstrap
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Administration
  * @since 3.1.0
  */

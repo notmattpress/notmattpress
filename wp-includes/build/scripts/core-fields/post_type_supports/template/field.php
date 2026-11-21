@@ -8,7 +8,7 @@
  * post resolving to one, which only the client knows: both the control and
  * the view render nothing when it cannot, see `hooks.ts`.
  *
- * @package WordPress
+ * @package NotMattPress
  */
 
 return array(

@@ -10,7 +10,7 @@
  * with its script module. Likewise for the title, labeled after the
  * template.
  *
- * @package WordPress
+ * @package NotMattPress
  */
 
 return array(

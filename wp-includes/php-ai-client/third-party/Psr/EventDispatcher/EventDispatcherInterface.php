@@ -1,7 +1,7 @@
 <?php
 
 declare (strict_types=1);
-namespace WordPress\AiClientDependencies\Psr\EventDispatcher;
+namespace NotMattPress\AiClientDependencies\Psr\EventDispatcher;
 
 /**
  * Defines a dispatcher for events.

@@ -2,7 +2,7 @@
 /**
  * WP_oEmbed_Controller class, used to provide an oEmbed endpoint.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Embeds
  * @since 4.4.0
  */
@@ -160,7 +160,7 @@ final class WP_oEmbed_Controller {
 	 * @since 4.8.0
 	 *
 	 * @see WP_oEmbed::get_html()
-	 * @global WP_Embed   $wp_embed   WordPress Embed object.
+	 * @global WP_Embed   $wp_embed   NotMattPress Embed object.
 	 * @global WP_Scripts $wp_scripts
 	 *
 	 * @param WP_REST_Request $request Full data about the request.

@@ -2,7 +2,7 @@
 /**
  * Server-side rendering of the `core/playlist-track` block.
  *
- * @package WordPress
+ * @package NotMattPress
  */
 
 /**

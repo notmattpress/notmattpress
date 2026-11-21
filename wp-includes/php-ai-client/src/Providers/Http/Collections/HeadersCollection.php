@@ -1,7 +1,7 @@
 <?php
 
 declare (strict_types=1);
-namespace WordPress\AiClient\Providers\Http\Collections;
+namespace NotMattPress\AiClient\Providers\Http\Collections;
 
 /**
  * Simple collection for managing HTTP headers with case-insensitive access.

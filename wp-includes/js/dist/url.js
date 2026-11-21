@@ -746,7 +746,7 @@ var wp;
     }
     const lowercase = stripTags(removeAccents(string)).replace(/%(?![0-9a-fA-F]{2})/g, "").toLowerCase();
     return (
-      // Like WordPress, keep what fits in 200 percent-encoded characters,
+      // Like NotMattPress, keep what fits in 200 percent-encoded characters,
       // the length of the slug column.
       truncateEncoded(lowercase, 200).replace(/[\u00a0\u2011\u2013\u2014/]/g, "-").replace(
         /&nbsp;|&#8209;|&#160;|&ndash;|&#8211;|&mdash;|&#8212;/g,

@@ -1,10 +1,10 @@
 <?php
 
 declare (strict_types=1);
-namespace WordPress\AiClient\Providers\Models\DTO;
+namespace NotMattPress\AiClient\Providers\Models\DTO;
 
-use WordPress\AiClient\Common\AbstractDataTransferObject;
-use WordPress\AiClient\Providers\Models\Enums\OptionEnum;
+use NotMattPress\AiClient\Common\AbstractDataTransferObject;
+use NotMattPress\AiClient\Providers\Models\Enums\OptionEnum;
 /**
  * Represents an option that the implementing code requires the model to support.
  *

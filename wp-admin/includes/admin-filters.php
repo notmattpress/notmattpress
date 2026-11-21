@@ -2,7 +2,7 @@
 /**
  * Administration API: Default admin hooks
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Administration
  * @since 4.3.0
  */
@@ -161,7 +161,7 @@ add_action( 'admin_init', array( 'WP_Privacy_Policy_Content', 'text_change_check
 // Show a "postbox" with the text suggestions for a privacy policy.
 add_action( 'admin_notices', array( 'WP_Privacy_Policy_Content', 'notice' ) );
 
-// Add the suggested policy text from WordPress.
+// Add the suggested policy text from NotMattPress.
 add_action( 'admin_init', array( 'WP_Privacy_Policy_Content', 'add_suggested_content' ), 1 );
 
 // Update the cached policy info when the policy page is updated.

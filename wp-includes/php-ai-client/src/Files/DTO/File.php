@@ -1,13 +1,13 @@
 <?php
 
 declare (strict_types=1);
-namespace WordPress\AiClient\Files\DTO;
+namespace NotMattPress\AiClient\Files\DTO;
 
-use WordPress\AiClient\Common\AbstractDataTransferObject;
-use WordPress\AiClient\Common\Exception\InvalidArgumentException;
-use WordPress\AiClient\Common\Exception\RuntimeException;
-use WordPress\AiClient\Files\Enums\FileTypeEnum;
-use WordPress\AiClient\Files\ValueObjects\MimeType;
+use NotMattPress\AiClient\Common\AbstractDataTransferObject;
+use NotMattPress\AiClient\Common\Exception\InvalidArgumentException;
+use NotMattPress\AiClient\Common\Exception\RuntimeException;
+use NotMattPress\AiClient\Files\Enums\FileTypeEnum;
+use NotMattPress\AiClient\Files\ValueObjects\MimeType;
 /**
  * Represents a file in the AI client.
  *

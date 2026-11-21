@@ -4,7 +4,7 @@
  *
  * Supports overriding content in blocks by connecting them to different sources.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Block Bindings
  * @since 6.5.0
  */

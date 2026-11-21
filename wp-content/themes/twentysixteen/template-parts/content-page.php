@@ -2,7 +2,7 @@
 /**
  * The template used for displaying page content
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Twenty_Sixteen
  * @since Twenty Sixteen 1.0
  */

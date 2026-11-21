@@ -1,14 +1,14 @@
 <?php
 
 declare (strict_types=1);
-namespace WordPress\AiClient\Providers\Http\DTO;
+namespace NotMattPress\AiClient\Providers\Http\DTO;
 
 use JsonException;
-use WordPress\AiClientDependencies\Psr\Http\Message\RequestInterface;
-use WordPress\AiClient\Common\AbstractDataTransferObject;
-use WordPress\AiClient\Common\Exception\InvalidArgumentException;
-use WordPress\AiClient\Providers\Http\Collections\HeadersCollection;
-use WordPress\AiClient\Providers\Http\Enums\HttpMethodEnum;
+use NotMattPress\AiClientDependencies\Psr\Http\Message\RequestInterface;
+use NotMattPress\AiClient\Common\AbstractDataTransferObject;
+use NotMattPress\AiClient\Common\Exception\InvalidArgumentException;
+use NotMattPress\AiClient\Providers\Http\Collections\HeadersCollection;
+use NotMattPress\AiClient\Providers\Http\Enums\HttpMethodEnum;
 /**
  * Represents an HTTP request.
  *
@@ -58,7 +58,7 @@ class Request extends AbstractDataTransferObject
     /**
      * @var RequestOptions|null Request transport options.
      */
-    protected ?\WordPress\AiClient\Providers\Http\DTO\RequestOptions $options = null;
+    protected ?\NotMattPress\AiClient\Providers\Http\DTO\RequestOptions $options = null;
     /**
      * Constructor.
      *
@@ -72,7 +72,7 @@ class Request extends AbstractDataTransferObject
      *
      * @throws InvalidArgumentException If the URI is empty.
      */
-    public function __construct(HttpMethodEnum $method, string $uri, array $headers = [], $data = null, ?\WordPress\AiClient\Providers\Http\DTO\RequestOptions $options = null)
+    public function __construct(HttpMethodEnum $method, string $uri, array $headers = [], $data = null, ?\NotMattPress\AiClient\Providers\Http\DTO\RequestOptions $options = null)
     {
         if (empty($uri)) {
             throw new InvalidArgumentException('URI cannot be empty.');
@@ -288,7 +288,7 @@ class Request extends AbstractDataTransferObject
      *
      * @return RequestOptions|null Request transport options when configured.
      */
-    public function getOptions(): ?\WordPress\AiClient\Providers\Http\DTO\RequestOptions
+    public function getOptions(): ?\NotMattPress\AiClient\Providers\Http\DTO\RequestOptions
     {
         return $this->options;
     }
@@ -300,7 +300,7 @@ class Request extends AbstractDataTransferObject
      * @param RequestOptions|null $options The request options to apply.
      * @return self A new instance with the options.
      */
-    public function withOptions(?\WordPress\AiClient\Providers\Http\DTO\RequestOptions $options): self
+    public function withOptions(?\NotMattPress\AiClient\Providers\Http\DTO\RequestOptions $options): self
     {
         $new = clone $this;
         $new->options = $options;
@@ -313,7 +313,7 @@ class Request extends AbstractDataTransferObject
      */
     public static function getJsonSchema(): array
     {
-        return ['type' => 'object', 'properties' => [self::KEY_METHOD => ['type' => 'string', 'description' => 'The HTTP method.'], self::KEY_URI => ['type' => 'string', 'description' => 'The request URI.'], self::KEY_HEADERS => ['type' => 'object', 'additionalProperties' => ['type' => 'array', 'items' => ['type' => 'string']], 'description' => 'The request headers.'], self::KEY_BODY => ['type' => ['string'], 'description' => 'The request body.'], self::KEY_OPTIONS => \WordPress\AiClient\Providers\Http\DTO\RequestOptions::getJsonSchema()], 'required' => [self::KEY_METHOD, self::KEY_URI, self::KEY_HEADERS]];
+        return ['type' => 'object', 'properties' => [self::KEY_METHOD => ['type' => 'string', 'description' => 'The HTTP method.'], self::KEY_URI => ['type' => 'string', 'description' => 'The request URI.'], self::KEY_HEADERS => ['type' => 'object', 'additionalProperties' => ['type' => 'array', 'items' => ['type' => 'string']], 'description' => 'The request headers.'], self::KEY_BODY => ['type' => ['string'], 'description' => 'The request body.'], self::KEY_OPTIONS => \NotMattPress\AiClient\Providers\Http\DTO\RequestOptions::getJsonSchema()], 'required' => [self::KEY_METHOD, self::KEY_URI, self::KEY_HEADERS]];
     }
     /**
      * {@inheritDoc}
@@ -351,7 +351,7 @@ class Request extends AbstractDataTransferObject
     public static function fromArray(array $array): self
     {
         static::validateFromArrayData($array, [self::KEY_METHOD, self::KEY_URI, self::KEY_HEADERS]);
-        return new self(HttpMethodEnum::from($array[self::KEY_METHOD]), $array[self::KEY_URI], $array[self::KEY_HEADERS] ?? [], $array[self::KEY_BODY] ?? null, isset($array[self::KEY_OPTIONS]) ? \WordPress\AiClient\Providers\Http\DTO\RequestOptions::fromArray($array[self::KEY_OPTIONS]) : null);
+        return new self(HttpMethodEnum::from($array[self::KEY_METHOD]), $array[self::KEY_URI], $array[self::KEY_HEADERS] ?? [], $array[self::KEY_BODY] ?? null, isset($array[self::KEY_OPTIONS]) ? \NotMattPress\AiClient\Providers\Http\DTO\RequestOptions::fromArray($array[self::KEY_OPTIONS]) : null);
     }
     /**
      * Creates a Request instance from a PSR-7 RequestInterface.

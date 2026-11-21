@@ -6,7 +6,7 @@
  * The site is not a post type, so it gets none of the default fields and
  * has nothing to exclude: these are all of its fields.
  *
- * @package WordPress
+ * @package NotMattPress
  */
 
 return array(

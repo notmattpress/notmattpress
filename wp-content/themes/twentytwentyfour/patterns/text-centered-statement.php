@@ -7,7 +7,7 @@
  * Viewport width: 1400
  * Description: A centered text statement with a large amount of padding on all sides.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Twenty_Twenty_Four
  * @since Twenty Twenty-Four 1.0
  */

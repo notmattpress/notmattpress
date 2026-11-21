@@ -4,7 +4,7 @@ How to design with Ipsum: what each preset is for, how the theme uses it, and wh
 
 ## Ipsum
 
-Ipsum is the default theme for WordPress 7.2: a block theme built around blogging, which its readme calls a blank canvas. Each palette is a background and a text ink in a few strengths, plus an accent the theme uses once.
+Ipsum is the default theme for NotMattPress 7.2: a block theme built around blogging, which its readme calls a blank canvas. Each palette is a background and a text ink in a few strengths, plus an accent the theme uses once.
 
 ## Color
 
@@ -201,7 +201,7 @@ Text Statement Wide and Page Blog Home open with a Plain Quote, and Text Stateme
 ### Custom templates
 
 -   **In `theme.json` `customTemplates`:** Single Posts Sidebar (`single-sidebar`, posts), Pages Sidebar (`page-sidebar`, pages) and Pages No Title (`page-no-title`, pages). Editors pick them per post or page.
--   **Template types:** Index Sidebar (`index-sidebar`) and All Archives Sidebar (`archive-sidebar`) have a title and description in the Site Editor. Their slugs aren't in the template hierarchy, so WordPress doesn't choose them on its own.
+-   **Template types:** Index Sidebar (`index-sidebar`) and All Archives Sidebar (`archive-sidebar`) have a title and description in the Site Editor. Their slugs aren't in the template hierarchy, so NotMattPress doesn't choose them on its own.
 
 ### Template parts
 
@@ -255,12 +255,12 @@ The separator between meta items is built three ways, on purpose:
 
 ## Writing patterns
 
-What a pattern in Ipsum needs, on top of the [block patterns reference](https://developer.wordpress.org/block-editor/reference-guides/block-api/block-patterns/).
+What a pattern in Ipsum needs, on top of the [block patterns reference](https://developer.notmatt.press/block-editor/reference-guides/block-api/block-patterns/).
 
 ### Files and headers
 
 -   **File names:** full page layouts take the `page-` prefix, and patterns that only fill a template or part take `hidden-`. The inserter sorts patterns by file name, so the name also sets their order.
--   **Categories:** use the [default categories](https://github.com/WordPress/gutenberg/blob/c20350c1d246163201375f090b0b7b4ab49b1dad/packages/block-editor/src/components/inserter/block-patterns-tab.js#L35), separated by commas, plus the two that `functions.php` registers: `ipsum_page` (Pages) for full page layouts and `ipsum_post-format` (Post formats) for post format patterns.
+-   **Categories:** use the [default categories](https://github.com/NotMattPress/gutenberg/blob/c20350c1d246163201375f090b0b7b4ab49b1dad/packages/block-editor/src/components/inserter/block-patterns-tab.js#L35), separated by commas, plus the two that `functions.php` registers: `ipsum_page` (Pages) for full page layouts and `ipsum_post-format` (Post formats) for post format patterns.
 -   **Hiding from the inserter:** a pattern people shouldn't insert on its own, such as one that only fills a template or part, or one that exists to make a template's text translatable, like the 404 pattern, carries ` * Inserter: no`.
 -   **Title and Description:** every pattern needs both, hidden ones too, since agents read them through the REST API (`/wp/v2/block-patterns/patterns`). Write full sentences, not dashes: what the pattern is, then a second sentence on what's in it. A hidden pattern says which template or template part it fills.
 -   **Block Types:** suggests the pattern when someone inserts that block or template part, such as a Query, Post Content, header or footer. Header, footer and navigation overlay patterns take `Block Types: core/template-part/<area>`. Patterns for General parts, like the sidebar and the search bar, leave it out, or the Site Editor offers each one as a design for every other General part.
@@ -269,7 +269,7 @@ What a pattern in Ipsum needs, on top of the [block patterns reference](https://
 
 ### Strings
 
-Every user-visible string goes through an [i18n function](https://developer.wordpress.org/apis/internationalization/internationalization-guidelines/) with the `ipsum` text domain, so it's translatable and escaped:
+Every user-visible string goes through an [i18n function](https://developer.notmatt.press/apis/internationalization/internationalization-guidelines/) with the `ipsum` text domain, so it's translatable and escaped:
 
 -   `esc_html__()` translates and escapes text shown in HTML, and `esc_html_x()` does the same with a context for translators. `esc_html_e()` echoes it as well.
 -   `esc_attr__()` and `esc_attr_x()` translate and escape text that goes in an HTML attribute, such as alt text.

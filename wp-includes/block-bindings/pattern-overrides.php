@@ -3,7 +3,7 @@
  * Pattern Overrides source for the Block Bindings.
  *
  * @since 6.5.0
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Block Bindings
  */
 

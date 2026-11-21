@@ -12,7 +12,7 @@
  *
  *     php tests/phpunit/data/html5-entities/generate-html5-named-character-references.php
  *
- * @package WordPress
+ * @package NotMattPress
  * @since 6.6.0
  */
 

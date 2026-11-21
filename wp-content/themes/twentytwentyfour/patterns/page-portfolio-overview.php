@@ -9,7 +9,7 @@
  * Viewport width: 1400
  * Description: A full portfolio page with a section for project description, project details, a full screen image, and a gallery section with two images.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Twenty_Twenty_Four
  * @since Twenty Twenty-Four 1.0
  */

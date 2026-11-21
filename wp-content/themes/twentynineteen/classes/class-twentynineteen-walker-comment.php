@@ -2,13 +2,13 @@
 /**
  * Custom comment walker for this theme
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Twenty_Nineteen
  * @since Twenty Nineteen 1.0
  */
 
 /**
- * This class outputs custom comment walker for HTML5 friendly WordPress comment and threaded replies.
+ * This class outputs custom comment walker for HTML5 friendly NotMattPress comment and threaded replies.
  *
  * @since Twenty Nineteen 1.0
  */

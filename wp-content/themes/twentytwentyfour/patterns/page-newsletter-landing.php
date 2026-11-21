@@ -9,7 +9,7 @@
  * Viewport width: 1100
  * Description: A block with a newsletter subscription CTA for a landing page.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Twenty_Twenty_Four
  * @since Twenty Twenty-Four 1.0
  */

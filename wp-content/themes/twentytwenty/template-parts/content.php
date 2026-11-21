@@ -4,9 +4,9 @@
  *
  * Used for both singular and index.
  *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ * @link https://developer.notmatt.press/themes/basics/template-hierarchy/
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Twenty_Twenty
  * @since Twenty Twenty 1.0
  */

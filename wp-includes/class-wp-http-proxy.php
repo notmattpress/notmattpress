@@ -2,7 +2,7 @@
 /**
  * HTTP API: WP_HTTP_Proxy class
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage HTTP
  * @since 4.4.0
  */
@@ -25,17 +25,17 @@
  * <li>WP_PROXY_PASSWORD - Proxy password, if it requires authentication.</li>
  * <li>WP_PROXY_BYPASS_HOSTS - Will prevent the hosts in this list from going through the proxy.
  * You do not need to have localhost and the site host in this list, because they will not be passed
- * through the proxy. The list should be presented in a comma separated list, wildcards using * are supported. Example: *.wordpress.org</li>
+ * through the proxy. The list should be presented in a comma separated list, wildcards using * are supported. Example: *.notmatt.press</li>
  * </ol>
  *
  * An example can be as seen below.
  *
  *     define('WP_PROXY_HOST', '192.168.84.101');
  *     define('WP_PROXY_PORT', '8080');
- *     define('WP_PROXY_BYPASS_HOSTS', 'localhost, www.example.com, *.wordpress.org');
+ *     define('WP_PROXY_BYPASS_HOSTS', 'localhost, www.example.com, *.notmatt.press');
  *
- * @link https://core.trac.wordpress.org/ticket/4011 Proxy support ticket in WordPress.
- * @link https://core.trac.wordpress.org/ticket/14636 Allow wildcard domains in WP_PROXY_BYPASS_HOSTS
+ * @link https://core.trac.notmatt.press/ticket/4011 Proxy support ticket in NotMattPress.
+ * @link https://core.trac.notmatt.press/ticket/14636 Allow wildcard domains in WP_PROXY_BYPASS_HOSTS
  *
  * @since 2.8.0
  */

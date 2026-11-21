@@ -1,11 +1,11 @@
 <?php
 
 declare (strict_types=1);
-namespace WordPress\AiClient\Providers\Http\Exception;
+namespace NotMattPress\AiClient\Providers\Http\Exception;
 
-use WordPress\AiClientDependencies\Psr\Http\Message\RequestInterface;
-use WordPress\AiClient\Common\Exception\RuntimeException;
-use WordPress\AiClient\Providers\Http\DTO\Request;
+use NotMattPress\AiClientDependencies\Psr\Http\Message\RequestInterface;
+use NotMattPress\AiClient\Common\Exception\RuntimeException;
+use NotMattPress\AiClient\Providers\Http\DTO\Request;
 /**
  * Exception thrown for network-related errors.
  *

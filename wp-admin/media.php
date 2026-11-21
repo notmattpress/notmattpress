@@ -5,11 +5,11 @@
  * This file is deprecated, use 'wp-admin/upload.php' instead.
  *
  * @deprecated 6.3.0
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Administration
  */
 
-/** Load WordPress Administration Bootstrap. */
+/** Load NotMattPress Administration Bootstrap. */
 require_once __DIR__ . '/admin.php';
 
 $parent_file  = 'upload.php';

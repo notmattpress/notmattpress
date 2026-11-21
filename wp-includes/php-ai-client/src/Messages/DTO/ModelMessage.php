@@ -1,9 +1,9 @@
 <?php
 
 declare (strict_types=1);
-namespace WordPress\AiClient\Messages\DTO;
+namespace NotMattPress\AiClient\Messages\DTO;
 
-use WordPress\AiClient\Messages\Enums\MessageRoleEnum;
+use NotMattPress\AiClient\Messages\Enums\MessageRoleEnum;
 /**
  * Represents a message from the AI model.
  *
@@ -16,7 +16,7 @@ use WordPress\AiClient\Messages\Enums\MessageRoleEnum;
  *
  * @since 0.1.0
  */
-class ModelMessage extends \WordPress\AiClient\Messages\DTO\Message
+class ModelMessage extends \NotMattPress\AiClient\Messages\DTO\Message
 {
     /**
      * Constructor.

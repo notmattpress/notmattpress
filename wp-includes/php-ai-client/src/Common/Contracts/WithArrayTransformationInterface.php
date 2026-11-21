@@ -1,7 +1,7 @@
 <?php
 
 declare (strict_types=1);
-namespace WordPress\AiClient\Common\Contracts;
+namespace NotMattPress\AiClient\Common\Contracts;
 
 /**
  * Interface for objects that support array transformation.

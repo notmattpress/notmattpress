@@ -2,7 +2,7 @@
 /**
  * Server-side rendering of the `core/search` block.
  *
- * @package WordPress
+ * @package NotMattPress
  */
 
 /**

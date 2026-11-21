@@ -15,10 +15,10 @@
  *
  * Actions are registered on the `wp_entity_actions_api_init` action, and only there,
  * with {@see wp_register_entity_actions()} and {@see wp_unregister_entity_actions()}. The
- * other functions read the registry. WordPress core registers its own
+ * other functions read the registry. NotMattPress core registers its own
  * actions the same way, from packages/core-actions.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Entity Actions
  * @since 7.2.0
  */

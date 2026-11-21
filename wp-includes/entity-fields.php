@@ -19,14 +19,14 @@
  * Fields can also be declared as files, grouped in a field collection, which
  * a `wp_entity_fields_api_init` callback registers with
  * {@see wp_register_entity_field_collection()}. A collection is for a single
- * entity. WordPress core registers its own fields this way, from
+ * entity. NotMattPress core registers its own fields this way, from
  * packages/core-fields: the defaults every post type derives from its
  * supports in code, the fields of single post types as collections.
  *
  * The registered fields are exposed by the `/wp/v2/entity-fields` REST API
  * route, see {@see WP_REST_Entity_Fields_Controller}.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Entity Fields API
  * @since 7.2.0
  */

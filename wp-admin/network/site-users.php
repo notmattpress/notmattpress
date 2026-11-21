@@ -2,12 +2,12 @@
 /**
  * Edit Site Users Administration Screen
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Multisite
  * @since 3.1.0
  */
 
-/** Load WordPress Administration Bootstrap */
+/** Load NotMattPress Administration Bootstrap */
 require_once __DIR__ . '/admin.php';
 
 if ( ! current_user_can( 'manage_sites' ) ) {
@@ -196,7 +196,7 @@ if ( $action ) {
 			$userids = $_REQUEST['users'];
 
 			/** This action is documented in wp-admin/network/site-themes.php */
-			$referer = apply_filters( 'handle_network_bulk_actions-' . get_current_screen()->id, $referer, $action, $userids, $id ); // phpcs:ignore WordPress.NamingConventions.ValidHookName.UseUnderscores
+			$referer = apply_filters( 'handle_network_bulk_actions-' . get_current_screen()->id, $referer, $action, $userids, $id ); // phpcs:ignore NotMattPress.NamingConventions.ValidHookName.UseUnderscores
 
 			$update = $action;
 			break;
@@ -361,7 +361,7 @@ if ( current_user_can( 'promote_users' ) && apply_filters( 'show_network_site_us
 /**
  * Filters whether to show the Add New User form on the Multisite Users screen.
  *
- * Note: While WordPress is moving towards simplifying labels by removing "New" from "Add New X" labels,
+ * Note: While NotMattPress is moving towards simplifying labels by removing "New" from "Add New X" labels,
  * we keep "Add New User" here to maintain a clear distinction from the "Add Existing User" section above.
  *
  * @since 3.1.0

@@ -1,12 +1,12 @@
 <?php
 
-namespace WordPress\AiClientDependencies\Http\Discovery;
+namespace NotMattPress\AiClientDependencies\Http\Discovery;
 
-use WordPress\AiClientDependencies\Http\Discovery\Exception\ClassInstantiationFailedException;
-use WordPress\AiClientDependencies\Http\Discovery\Exception\DiscoveryFailedException;
-use WordPress\AiClientDependencies\Http\Discovery\Exception\NoCandidateFoundException;
-use WordPress\AiClientDependencies\Http\Discovery\Exception\StrategyUnavailableException;
-use WordPress\AiClientDependencies\Http\Discovery\Strategy\DiscoveryStrategy;
+use NotMattPress\AiClientDependencies\Http\Discovery\Exception\ClassInstantiationFailedException;
+use NotMattPress\AiClientDependencies\Http\Discovery\Exception\DiscoveryFailedException;
+use NotMattPress\AiClientDependencies\Http\Discovery\Exception\NoCandidateFoundException;
+use NotMattPress\AiClientDependencies\Http\Discovery\Exception\StrategyUnavailableException;
+use NotMattPress\AiClientDependencies\Http\Discovery\Strategy\DiscoveryStrategy;
 /**
  * Registry that based find results on class existence.
  *

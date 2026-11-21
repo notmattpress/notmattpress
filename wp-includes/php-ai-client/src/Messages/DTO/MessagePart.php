@@ -1,16 +1,16 @@
 <?php
 
 declare (strict_types=1);
-namespace WordPress\AiClient\Messages\DTO;
+namespace NotMattPress\AiClient\Messages\DTO;
 
-use WordPress\AiClient\Common\AbstractDataTransferObject;
-use WordPress\AiClient\Common\Exception\InvalidArgumentException;
-use WordPress\AiClient\Common\Exception\RuntimeException;
-use WordPress\AiClient\Files\DTO\File;
-use WordPress\AiClient\Messages\Enums\MessagePartChannelEnum;
-use WordPress\AiClient\Messages\Enums\MessagePartTypeEnum;
-use WordPress\AiClient\Tools\DTO\FunctionCall;
-use WordPress\AiClient\Tools\DTO\FunctionResponse;
+use NotMattPress\AiClient\Common\AbstractDataTransferObject;
+use NotMattPress\AiClient\Common\Exception\InvalidArgumentException;
+use NotMattPress\AiClient\Common\Exception\RuntimeException;
+use NotMattPress\AiClient\Files\DTO\File;
+use NotMattPress\AiClient\Messages\Enums\MessagePartChannelEnum;
+use NotMattPress\AiClient\Messages\Enums\MessagePartTypeEnum;
+use NotMattPress\AiClient\Tools\DTO\FunctionCall;
+use NotMattPress\AiClient\Tools\DTO\FunctionResponse;
 /**
  * Represents a part of a message.
  *

@@ -2,7 +2,7 @@
 /**
  * Server-side rendering of the `core/template-part` block.
  *
- * @package WordPress
+ * @package NotMattPress
  */
 
 /**
@@ -10,7 +10,7 @@
  *
  * @since 5.9.0
  *
- * @global WP_Embed $wp_embed WordPress Embed object.
+ * @global WP_Embed $wp_embed NotMattPress Embed object.
  *
  * @param array $attributes The block attributes.
  *

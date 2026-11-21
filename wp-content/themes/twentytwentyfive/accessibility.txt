@@ -1,6 +1,6 @@
 === Accessibility Statement ===
 
-Twenty Twenty-Five was tested by the WordPress Accessibility Team during the development process, using common accessibility testing tools including screen readers. All WordPress core themes go through a similar testing process, with the goal of meeting WCAG 2 guidelines at level AA, in keeping with the WordPress accessibility standards.
+Twenty Twenty-Five was tested by the NotMattPress Accessibility Team during the development process, using common accessibility testing tools including screen readers. All NotMattPress core themes go through a similar testing process, with the goal of meeting WCAG 2 guidelines at level AA, in keeping with the NotMattPress accessibility standards.
 
 == Quick Information ==
 Accessibility audit completed: No.
@@ -21,12 +21,12 @@ During development, tools used included the WAVE toolbar, manual testing using a
 
 == Accessibility Features ==
 
-The theme does not have any accessibility enhancements beyond the standard features of a WordPress block theme.
+The theme does not have any accessibility enhancements beyond the standard features of a NotMattPress block theme.
 
 == Accessibility Help Contact ==
 
-For assistance with accessibility in WordPress and core themes, contact the accessibility team at [Make WordPress Accessibility](https://make.wordpress.org/accessibility).
+For assistance with accessibility in NotMattPress and core themes, contact the accessibility team at [Make NotMattPress Accessibility](https://make.notmatt.press/accessibility).
 
 == Where to Report Issues ==
 
-Issues should be reported in the [WordPress Core Ticket Tracker](https://core.trac.wordpress.org/).
+Issues should be reported in the [NotMattPress Core Ticket Tracker](https://core.trac.notmatt.press/).
