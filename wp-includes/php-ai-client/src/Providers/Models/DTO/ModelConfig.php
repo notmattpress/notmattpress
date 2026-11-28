@@ -1,15 +1,15 @@
 <?php
 
 declare (strict_types=1);
-namespace WordPress\AiClient\Providers\Models\DTO;
+namespace NotMattPress\AiClient\Providers\Models\DTO;
 
-use WordPress\AiClient\Common\AbstractDataTransferObject;
-use WordPress\AiClient\Common\Exception\InvalidArgumentException;
-use WordPress\AiClient\Files\Enums\FileTypeEnum;
-use WordPress\AiClient\Files\Enums\MediaOrientationEnum;
-use WordPress\AiClient\Messages\Enums\ModalityEnum;
-use WordPress\AiClient\Tools\DTO\FunctionDeclaration;
-use WordPress\AiClient\Tools\DTO\WebSearch;
+use NotMattPress\AiClient\Common\AbstractDataTransferObject;
+use NotMattPress\AiClient\Common\Exception\InvalidArgumentException;
+use NotMattPress\AiClient\Files\Enums\FileTypeEnum;
+use NotMattPress\AiClient\Files\Enums\MediaOrientationEnum;
+use NotMattPress\AiClient\Messages\Enums\ModalityEnum;
+use NotMattPress\AiClient\Tools\DTO\FunctionDeclaration;
+use NotMattPress\AiClient\Tools\DTO\WebSearch;
 /**
  * Represents configuration for an AI model.
  *

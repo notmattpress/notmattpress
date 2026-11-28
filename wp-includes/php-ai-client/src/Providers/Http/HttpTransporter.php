@@ -1,22 +1,22 @@
 <?php
 
 declare (strict_types=1);
-namespace WordPress\AiClient\Providers\Http;
+namespace NotMattPress\AiClient\Providers\Http;
 
-use WordPress\AiClientDependencies\Http\Discovery\Psr17FactoryDiscovery;
-use WordPress\AiClientDependencies\Http\Discovery\Psr18ClientDiscovery;
-use WordPress\AiClientDependencies\Psr\Http\Client\ClientInterface;
-use WordPress\AiClientDependencies\Psr\Http\Message\RequestFactoryInterface;
-use WordPress\AiClientDependencies\Psr\Http\Message\RequestInterface;
-use WordPress\AiClientDependencies\Psr\Http\Message\ResponseInterface;
-use WordPress\AiClientDependencies\Psr\Http\Message\StreamFactoryInterface;
-use WordPress\AiClient\Common\Exception\RuntimeException;
-use WordPress\AiClient\Providers\Http\Contracts\ClientWithOptionsInterface;
-use WordPress\AiClient\Providers\Http\Contracts\HttpTransporterInterface;
-use WordPress\AiClient\Providers\Http\DTO\Request;
-use WordPress\AiClient\Providers\Http\DTO\RequestOptions;
-use WordPress\AiClient\Providers\Http\DTO\Response;
-use WordPress\AiClient\Providers\Http\Exception\NetworkException;
+use NotMattPress\AiClientDependencies\Http\Discovery\Psr17FactoryDiscovery;
+use NotMattPress\AiClientDependencies\Http\Discovery\Psr18ClientDiscovery;
+use NotMattPress\AiClientDependencies\Psr\Http\Client\ClientInterface;
+use NotMattPress\AiClientDependencies\Psr\Http\Message\RequestFactoryInterface;
+use NotMattPress\AiClientDependencies\Psr\Http\Message\RequestInterface;
+use NotMattPress\AiClientDependencies\Psr\Http\Message\ResponseInterface;
+use NotMattPress\AiClientDependencies\Psr\Http\Message\StreamFactoryInterface;
+use NotMattPress\AiClient\Common\Exception\RuntimeException;
+use NotMattPress\AiClient\Providers\Http\Contracts\ClientWithOptionsInterface;
+use NotMattPress\AiClient\Providers\Http\Contracts\HttpTransporterInterface;
+use NotMattPress\AiClient\Providers\Http\DTO\Request;
+use NotMattPress\AiClient\Providers\Http\DTO\RequestOptions;
+use NotMattPress\AiClient\Providers\Http\DTO\Response;
+use NotMattPress\AiClient\Providers\Http\Exception\NetworkException;
 /**
  * HTTP transporter implementation using HTTPlug.
  *
@@ -75,9 +75,9 @@ class HttpTransporter implements HttpTransporterInterface
             } else {
                 $psr7Response = $this->client->sendRequest($psr7Request);
             }
-        } catch (\WordPress\AiClientDependencies\Psr\Http\Client\NetworkExceptionInterface $e) {
+        } catch (\NotMattPress\AiClientDependencies\Psr\Http\Client\NetworkExceptionInterface $e) {
             throw NetworkException::fromPsr18NetworkException($psr7Request, $e);
-        } catch (\WordPress\AiClientDependencies\Psr\Http\Client\ClientExceptionInterface $e) {
+        } catch (\NotMattPress\AiClientDependencies\Psr\Http\Client\ClientExceptionInterface $e) {
             // Handle other PSR-18 client exceptions that are not network-related
             throw new RuntimeException(sprintf('HTTP client error occurred while sending request to %s: %s', $request->getUri(), $e->getMessage()), 0, $e);
         }

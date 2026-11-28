@@ -2,7 +2,7 @@
 /**
  * Entity Actions API: WP_Entity_Actions_Registry class
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Entity Actions
  * @since 7.2.0
  */

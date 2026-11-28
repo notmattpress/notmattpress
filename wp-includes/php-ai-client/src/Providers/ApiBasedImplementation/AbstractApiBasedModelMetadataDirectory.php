@@ -1,18 +1,18 @@
 <?php
 
 declare (strict_types=1);
-namespace WordPress\AiClient\Providers\ApiBasedImplementation;
+namespace NotMattPress\AiClient\Providers\ApiBasedImplementation;
 
-use WordPress\AiClient\AiClient;
-use WordPress\AiClient\Common\Contracts\CachesDataInterface;
-use WordPress\AiClient\Common\Exception\InvalidArgumentException;
-use WordPress\AiClient\Common\Traits\WithDataCachingTrait;
-use WordPress\AiClient\Providers\Contracts\ModelMetadataDirectoryInterface;
-use WordPress\AiClient\Providers\Http\Contracts\WithHttpTransporterInterface;
-use WordPress\AiClient\Providers\Http\Contracts\WithRequestAuthenticationInterface;
-use WordPress\AiClient\Providers\Http\Traits\WithHttpTransporterTrait;
-use WordPress\AiClient\Providers\Http\Traits\WithRequestAuthenticationTrait;
-use WordPress\AiClient\Providers\Models\DTO\ModelMetadata;
+use NotMattPress\AiClient\AiClient;
+use NotMattPress\AiClient\Common\Contracts\CachesDataInterface;
+use NotMattPress\AiClient\Common\Exception\InvalidArgumentException;
+use NotMattPress\AiClient\Common\Traits\WithDataCachingTrait;
+use NotMattPress\AiClient\Providers\Contracts\ModelMetadataDirectoryInterface;
+use NotMattPress\AiClient\Providers\Http\Contracts\WithHttpTransporterInterface;
+use NotMattPress\AiClient\Providers\Http\Contracts\WithRequestAuthenticationInterface;
+use NotMattPress\AiClient\Providers\Http\Traits\WithHttpTransporterTrait;
+use NotMattPress\AiClient\Providers\Http\Traits\WithRequestAuthenticationTrait;
+use NotMattPress\AiClient\Providers\Models\DTO\ModelMetadata;
 /**
  * Base class for an API-based model metadata directory for a provider.
  *

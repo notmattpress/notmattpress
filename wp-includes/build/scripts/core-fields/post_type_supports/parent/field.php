@@ -4,7 +4,7 @@
  * `page-attributes`. Its JavaScript parts (`Edit` and `render`) are in
  * `field.tsx`, next to this file.
  *
- * @package WordPress
+ * @package NotMattPress
  */
 
 return array(

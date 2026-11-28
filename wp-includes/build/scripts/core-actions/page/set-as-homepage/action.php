@@ -5,7 +5,7 @@
  * homepage nor the posts page. Its JavaScript parts (`isEligible` and
  * `RenderModal`) are in `action.tsx`, next to this file.
  *
- * @package WordPress
+ * @package NotMattPress
  */
 
 return array(

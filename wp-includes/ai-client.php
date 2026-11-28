@@ -1,16 +1,16 @@
 <?php
 /**
- * WordPress AI Client API.
+ * NotMattPress AI Client API.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage AI
  * @since 7.0.0
  */
 
-use WordPress\AiClient\AiClient;
-use WordPress\AiClient\Files\DTO\File;
-use WordPress\AiClient\Messages\DTO\Message;
-use WordPress\AiClient\Messages\DTO\MessagePart;
+use NotMattPress\AiClient\AiClient;
+use NotMattPress\AiClient\Files\DTO\File;
+use NotMattPress\AiClient\Messages\DTO\Message;
+use NotMattPress\AiClient\Messages\DTO\MessagePart;
 
 /**
  * Returns whether AI features are supported in the current environment.
@@ -41,7 +41,7 @@ function wp_supports_ai(): bool {
 /**
  * Creates a new AI prompt builder using the default provider registry.
  *
- * This is the main entry point for generating AI content in WordPress. It returns
+ * This is the main entry point for generating AI content in NotMattPress. It returns
  * a fluent builder that can be used to configure and execute AI prompts.
  *
  * The prompt can be provided as a simple string for basic text prompts, or as more
@@ -65,7 +65,7 @@ function wp_ai_client_prompt( $prompt = null ): WP_AI_Client_Prompt_Builder {
 /**
  * Creates a new AI embedding builder using the default provider registry.
  *
- * This is the main entry point for generating embeddings in WordPress. It returns
+ * This is the main entry point for generating embeddings in NotMattPress. It returns
  * a fluent builder that can be used to configure and generate embedding vectors.
  *
  * Each input can be provided as a simple string for basic text inputs, or as more

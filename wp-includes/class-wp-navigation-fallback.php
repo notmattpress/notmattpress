@@ -4,7 +4,7 @@
  *
  * Manages fallback behavior for Navigation menus.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Navigation
  * @since 6.3.0
  */

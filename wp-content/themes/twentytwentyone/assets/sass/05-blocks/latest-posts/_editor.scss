@@ -113,7 +113,7 @@
 			}
 
 			// This is using a non-standard media query because it is directly overriding the gutenberg-provided widths.
-			// https://github.com/WordPress/gutenberg/blob/master/packages/block-library/src/latest-posts/style.scss#L28-L34
+			// https://github.com/NotMattPress/gutenberg/blob/master/packages/block-library/src/latest-posts/style.scss#L28-L34
 			@media screen and (min-width: 600px) {
 				@for $i from 2 through 6 {
 					&.columns-#{ $i } li {

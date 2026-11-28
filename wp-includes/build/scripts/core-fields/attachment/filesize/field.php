@@ -4,7 +4,7 @@
  * `@wordpress/media-fields`. Its JavaScript parts (`getValue` and
  * `isVisible`) are in `field.tsx`, next to this file.
  *
- * @package WordPress
+ * @package NotMattPress
  */
 
 return array(

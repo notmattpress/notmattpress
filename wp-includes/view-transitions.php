@@ -2,7 +2,7 @@
 /**
  * View Transitions API.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage View Transitions
  * @since 7.0.0
  */

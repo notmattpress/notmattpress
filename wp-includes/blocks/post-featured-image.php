@@ -2,7 +2,7 @@
 /**
  * Server-side rendering of the `core/post-featured-image` block.
  *
- * @package WordPress
+ * @package NotMattPress
  */
 
 /**

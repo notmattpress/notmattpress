@@ -2,7 +2,7 @@
 /**
  * Custom CSS block support.
  *
- * @package WordPress
+ * @package NotMattPress
  */
 
 /**

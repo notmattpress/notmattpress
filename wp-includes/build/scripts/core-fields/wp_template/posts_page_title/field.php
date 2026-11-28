@@ -3,7 +3,7 @@
  * The title of the page assigned as the Posts Page. The editor summary form
  * maps this field to that page's title.
  *
- * @package WordPress
+ * @package NotMattPress
  */
 
 return array(

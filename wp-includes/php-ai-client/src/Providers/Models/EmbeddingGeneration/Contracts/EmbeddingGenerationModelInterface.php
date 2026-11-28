@@ -1,10 +1,10 @@
 <?php
 
 declare (strict_types=1);
-namespace WordPress\AiClient\Providers\Models\EmbeddingGeneration\Contracts;
+namespace NotMattPress\AiClient\Providers\Models\EmbeddingGeneration\Contracts;
 
-use WordPress\AiClient\Messages\DTO\MessagePart;
-use WordPress\AiClient\Results\DTO\EmbeddingResult;
+use NotMattPress\AiClient\Messages\DTO\MessagePart;
+use NotMattPress\AiClient\Results\DTO\EmbeddingResult;
 /**
  * Interface for models that support embedding generation.
  *

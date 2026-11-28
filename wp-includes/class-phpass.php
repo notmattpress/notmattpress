@@ -3,14 +3,14 @@
  * Portable PHP password hashing framework.
  * @package phpass
  * @since 2.5.0
- * @version 0.5 / WordPress
+ * @version 0.5 / NotMattPress
  * @link https://www.openwall.com/phpass/
  */
 
 #
 # Portable PHP password hashing framework.
 #
-# Version 0.5.4 / WordPress.
+# Version 0.5.4 / NotMattPress.
 #
 # Written by Solar Designer <solar at openwall.com> in 2004-2006 and placed in
 # the public domain.  Revised in subsequent years, still public domain.
@@ -37,7 +37,7 @@
  * Portable PHP password hashing framework.
  *
  * @package phpass
- * @version 0.5 / WordPress
+ * @version 0.5 / NotMattPress
  * @link https://www.openwall.com/phpass/
  * @since 2.5.0
  */

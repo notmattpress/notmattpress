@@ -2,24 +2,24 @@
 /**
  * WP AI Client: WP_AI_Client_Builder class
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage AI
  * @since 7.2.0
  */
 
-use WordPress\AiClient\Common\Exception\InvalidArgumentException;
-use WordPress\AiClient\Common\Exception\TokenLimitReachedException;
-use WordPress\AiClient\Providers\Http\DTO\RequestOptions;
-use WordPress\AiClient\Providers\Http\Exception\ClientException;
-use WordPress\AiClient\Providers\Http\Exception\NetworkException;
-use WordPress\AiClient\Providers\Http\Exception\ServerException;
-use WordPress\AiClient\Providers\ProviderRegistry;
+use NotMattPress\AiClient\Common\Exception\InvalidArgumentException;
+use NotMattPress\AiClient\Common\Exception\TokenLimitReachedException;
+use NotMattPress\AiClient\Providers\Http\DTO\RequestOptions;
+use NotMattPress\AiClient\Providers\Http\Exception\ClientException;
+use NotMattPress\AiClient\Providers\Http\Exception\NetworkException;
+use NotMattPress\AiClient\Providers\Http\Exception\ServerException;
+use NotMattPress\AiClient\Providers\ProviderRegistry;
 
 /**
  * Base class for fluent AI client builders, returning WP_Error on failure.
  *
  * This class wraps a builder from the PHP AI Client SDK and adds
- * WordPress-specific behavior shared by all builders: WP_Error handling
+ * NotMattPress-specific behavior shared by all builders: WP_Error handling
  * instead of exceptions, and snake_case method naming proxied to the SDK's
  * camelCase methods.
  *
@@ -48,7 +48,7 @@ abstract class WP_AI_Client_Builder {
 	private object $builder;
 
 	/**
-	 * WordPress error instance, if any error occurred during method calls.
+	 * NotMattPress error instance, if any error occurred during method calls.
 	 *
 	 * @since 7.0.0
 	 * @since 7.2.0 Moved from `WP_AI_Client_Prompt_Builder` to the `WP_AI_Client_Builder` base class.
@@ -194,7 +194,7 @@ abstract class WP_AI_Client_Builder {
 	/**
 	 * Magic method to proxy snake_case method calls to their PHP AI Client camelCase counterparts.
 	 *
-	 * This allows WordPress developers to use snake_case naming conventions. It catches
+	 * This allows NotMattPress developers to use snake_case naming conventions. It catches
 	 * any exceptions thrown, stores them, and returns a WP_Error when a terminate method
 	 * is called, or false when a support check method is called.
 	 *
@@ -376,8 +376,8 @@ abstract class WP_AI_Client_Builder {
 				sprintf(
 					/* translators: 1: Method name. 2: Class name. */
 					__( 'Method %1$s does not exist on %2$s.' ),
-					$name, // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
-					get_class( $this->builder ) // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped
+					$name, // phpcs:ignore NotMattPress.Security.EscapeOutput.ExceptionNotEscaped
+					get_class( $this->builder ) // phpcs:ignore NotMattPress.Security.EscapeOutput.ExceptionNotEscaped
 				)
 			);
 		}

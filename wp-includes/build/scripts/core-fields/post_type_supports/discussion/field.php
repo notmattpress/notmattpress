@@ -4,7 +4,7 @@
  * a summary of both settings. Its JavaScript part (`render`) is in
  * `field.tsx`, next to this file.
  *
- * @package WordPress
+ * @package NotMattPress
  */
 
 return array(

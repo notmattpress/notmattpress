@@ -13,7 +13,7 @@
  *
  * @param {JQueryStatic}       $   The jQuery object.
  * @param {_.UnderscoreStatic} _   The Underscore.js object.
- * @param {Object}             wp  The WordPress global object.
+ * @param {Object}             wp  The NotMattPress global object.
  * @param {Object}             api The Customizer API.
  *
  * @return {Object} Widget-related variables.

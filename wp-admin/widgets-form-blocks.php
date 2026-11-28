@@ -2,7 +2,7 @@
 /**
  * The block-based widgets editor, for use in widgets.php.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Administration
  */
 

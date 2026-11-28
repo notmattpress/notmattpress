@@ -1,6 +1,6 @@
 <?php
 /**
- * A pseudo-cron daemon for scheduling WordPress tasks.
+ * A pseudo-cron daemon for scheduling NotMattPress tasks.
  *
  * WP-Cron is triggered when the site receives a visit. In the scenario
  * where a site may not receive enough visits to execute scheduled tasks
@@ -13,7 +13,7 @@
  * The HTTP request to this file will not slow down the visitor who happens to
  * visit when a scheduled cron event runs.
  *
- * @package WordPress
+ * @package NotMattPress
  */
 
 ignore_user_abort( true );
@@ -35,12 +35,12 @@ if ( ! empty( $_POST ) || defined( 'DOING_AJAX' ) || defined( 'DOING_CRON' ) ) {
 }
 
 /**
- * Tell WordPress the cron task is running.
+ * Tell NotMattPress the cron task is running.
  */
 define( 'DOING_CRON', true );
 
 if ( ! defined( 'ABSPATH' ) ) {
-	/** Set up WordPress environment */
+	/** Set up NotMattPress environment */
 	require_once __DIR__ . '/wp-load.php';
 }
 
@@ -55,7 +55,7 @@ wp_raise_memory_limit( 'cron' );
  * @ignore
  * @since 3.3.0
  *
- * @global wpdb $wpdb WordPress database abstraction object.
+ * @global wpdb $wpdb NotMattPress database abstraction object.
  *
  * @return string|int|false Value of the `doing_cron` transient, 0|false otherwise.
  */

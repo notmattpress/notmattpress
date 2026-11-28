@@ -2,7 +2,7 @@
 /**
  * Server-side rendering of the `core/post-comments-count` block.
  *
- * @package WordPress
+ * @package NotMattPress
  */
 
 /**

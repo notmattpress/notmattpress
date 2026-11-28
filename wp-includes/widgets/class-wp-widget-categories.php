@@ -2,7 +2,7 @@
 /**
  * Widget API: WP_Widget_Categories class
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Widgets
  * @since 4.4.0
  */
@@ -67,7 +67,7 @@ class WP_Widget_Categories extends WP_Widget {
 		/*
 		 * Although update() stores these flags as 0 or 1, they are checked loosely for back-compat:
 		 * the keys are absent for an instance that has not been saved yet, instances saved before
-		 * WordPress 2.8 stored booleans, and the_widget() passes along whatever values its caller
+		 * NotMattPress 2.8 stored booleans, and the_widget() passes along whatever values its caller
 		 * supplies.
 		 */
 		$count        = ! empty( $instance['count'] );

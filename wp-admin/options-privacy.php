@@ -2,11 +2,11 @@
 /**
  * Privacy Settings Screen.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Administration
  */
 
-/** WordPress Administration Bootstrap */
+/** NotMattPress Administration Bootstrap */
 require_once __DIR__ . '/admin.php';
 
 if ( ! current_user_can( 'manage_privacy_options' ) ) {
@@ -44,7 +44,7 @@ get_current_screen()->add_help_tab(
 
 get_current_screen()->set_help_sidebar(
 	'<p><strong>' . __( 'For more information:' ) . '</strong></p>' .
-	'<p>' . __( '<a href="https://wordpress.org/documentation/article/settings-privacy-screen/">Documentation on Privacy Settings</a>' ) . '</p>'
+	'<p>' . __( '<a href="https://notmatt.press/documentation/article/settings-privacy-screen/">Documentation on Privacy Settings</a>' ) . '</p>'
 );
 
 if ( ! empty( $action ) ) {

@@ -2,9 +2,9 @@
 /**
  * Twenty Twenty-Four functions and definitions
  *
- * @link https://developer.wordpress.org/themes/basics/theme-functions/
+ * @link https://developer.notmatt.press/themes/basics/theme-functions/
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Twenty_Twenty_Four
  * @since Twenty Twenty-Four 1.0
  */
@@ -48,7 +48,7 @@ if ( ! function_exists( 'twentytwentyfour_block_styles' ) ) :
 				'label'        => __( 'Pill', 'twentytwentyfour' ),
 				/*
 				 * Styles variation for post terms
-				 * https://github.com/WordPress/gutenberg/issues/24956
+				 * https://github.com/NotMattPress/gutenberg/issues/24956
 				 */
 				'inline_style' => '
 				.is-style-pill a,
@@ -71,7 +71,7 @@ if ( ! function_exists( 'twentytwentyfour_block_styles' ) ) :
 				'label'        => __( 'Checkmark', 'twentytwentyfour' ),
 				/*
 				 * Styles for the custom checkmark list block style
-				 * https://github.com/WordPress/gutenberg/issues/51480
+				 * https://github.com/NotMattPress/gutenberg/issues/51480
 				 */
 				'inline_style' => '
 				ul.is-style-checkmark-list {
@@ -157,7 +157,7 @@ if ( ! function_exists( 'twentytwentyfour_block_stylesheets' ) ) :
 		 * (both in the editor and on the front end), improving performance
 		 * and reducing the amount of data requested by visitors.
 		 *
-		 * See https://make.wordpress.org/core/2021/12/15/using-multiple-stylesheets-per-block/ for more info.
+		 * See https://make.notmatt.press/core/2021/12/15/using-multiple-stylesheets-per-block/ for more info.
 		 */
 		wp_enqueue_block_style(
 			'core/button',

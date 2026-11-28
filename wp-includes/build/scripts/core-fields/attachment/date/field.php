@@ -3,7 +3,7 @@
  * The date the media was added, a copy of the `date_added` field of
  * `@wordpress/media-fields`. It is plain data: it has no JavaScript parts.
  *
- * @package WordPress
+ * @package NotMattPress
  */
 
 return array(

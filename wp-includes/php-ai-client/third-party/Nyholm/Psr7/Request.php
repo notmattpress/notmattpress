@@ -1,11 +1,11 @@
 <?php
 
 declare (strict_types=1);
-namespace WordPress\AiClientDependencies\Nyholm\Psr7;
+namespace NotMattPress\AiClientDependencies\Nyholm\Psr7;
 
-use WordPress\AiClientDependencies\Psr\Http\Message\RequestInterface;
-use WordPress\AiClientDependencies\Psr\Http\Message\StreamInterface;
-use WordPress\AiClientDependencies\Psr\Http\Message\UriInterface;
+use NotMattPress\AiClientDependencies\Psr\Http\Message\RequestInterface;
+use NotMattPress\AiClientDependencies\Psr\Http\Message\StreamInterface;
+use NotMattPress\AiClientDependencies\Psr\Http\Message\UriInterface;
 /**
  * @author Tobias Nyholm <tobias.nyholm@gmail.com>
  * @author Martijn van der Ven <martijn@vanderven.se>

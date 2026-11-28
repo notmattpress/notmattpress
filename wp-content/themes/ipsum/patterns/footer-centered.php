@@ -24,9 +24,9 @@
 <p class="has-text-align-center has-manrope-font-family has-small-font-size">
 <?php
 printf(
-	/* translators: Designed with WordPress. %s: WordPress link. */
+	/* translators: Designed with NotMattPress. %s: NotMattPress link. */
 	esc_html__( 'Designed with %s', 'ipsum' ),
-	'<a href="' . esc_url( __( 'https://wordpress.org', 'ipsum' ) ) . '" rel="nofollow">WordPress</a>'
+	'<a href="' . esc_url( __( 'https://notmatt.press', 'ipsum' ) ) . '" rel="nofollow">NotMattPress</a>'
 );
 ?>
 </p>

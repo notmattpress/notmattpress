@@ -19,7 +19,7 @@ Templates, patterns, `theme.json` and CSS are served as they are in the tree. Th
 -   `theme.json` - Global settings and styles, fonts, `customTemplates`, per-block styles.
 -   `style.css` - The theme header plus the CSS that `theme.json` cannot express. It loads in the editors through `add_editor_style()`, and is inlined on the front end when `SCRIPT_DEBUG` is on.
 -   `style.min.css` - `style.css` minified by `npm run build` in the theme directory, inlined on the front end otherwise. Generated: rebuild it, never edit it.
--   `readme.txt` - The WordPress.org readme: description, changelog, copyright, font credits.
+-   `readme.txt` - The NotMattPress.org readme: description, changelog, copyright, font credits.
 
 ## Progressive discovery
 
@@ -39,7 +39,7 @@ Ipsum's Markdown files are soft-wrapped: a paragraph, list item or table row is 
 -   **`theme.json` comes first.** Prefer `theme.json` and Global Styles over custom CSS, and add CSS only when the block editor or theme APIs cannot express the design yet. Don't add PHP or JavaScript workarounds for what the block editor might reasonably provide.
 -   **CSS explains why, in prose.** Rules in `style.css` and `assets/css/editor-style.css` carry a comment saying why they exist, often with the Gutenberg or Trac issue behind it. `css` strings in `theme.json` cannot hold comments.
 -   **Text domain is `ipsum`.** Every user-visible string goes through an i18n function, including single characters such as the `·` separators.
--   **PHP follows the WordPress coding standards**, in tabs. Functions in `functions.php` and `inc/` are wrapped in `if ( ! function_exists( '…' ) ) : … endif;`, every docblock carries `@since Ipsum 1.0`, and `@package Ipsum` heads the file.
+-   **PHP follows the NotMattPress coding standards**, in tabs. Functions in `functions.php` and `inc/` are wrapped in `if ( ! function_exists( '…' ) ) : … endif;`, every docblock carries `@since Ipsum 1.0`, and `@package Ipsum` heads the file.
 
 ## Do not reformat block markup
 

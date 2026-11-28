@@ -8,7 +8,7 @@
  * Viewport width: 1400
  * Description: A pattern for a CV/Bio landing page.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Twenty_Twenty_Five
  * @since Twenty Twenty-Five 1.0
  */

@@ -1,30 +1,30 @@
 <?php
 
 declare (strict_types=1);
-namespace WordPress\AiClient\Builders;
+namespace NotMattPress\AiClient\Builders;
 
-use WordPress\AiClientDependencies\Psr\EventDispatcher\EventDispatcherInterface;
-use WordPress\AiClient\Builders\Traits\ModelConfigurationTrait;
-use WordPress\AiClient\Common\AbstractEnum;
-use WordPress\AiClient\Common\Contracts\AiClientExceptionInterface;
-use WordPress\AiClient\Common\Exception\InvalidArgumentException;
-use WordPress\AiClient\Common\Exception\RuntimeException;
-use WordPress\AiClient\Events\AfterGenerateEmbeddingEvent;
-use WordPress\AiClient\Events\BeforeGenerateEmbeddingEvent;
-use WordPress\AiClient\Files\DTO\File;
-use WordPress\AiClient\Messages\DTO\MessagePart;
-use WordPress\AiClient\Providers\ApiBasedImplementation\Contracts\ApiBasedModelInterface;
-use WordPress\AiClient\Providers\Http\DTO\RequestOptions;
-use WordPress\AiClient\Providers\ModelResolver;
-use WordPress\AiClient\Providers\Models\Contracts\ModelInterface;
-use WordPress\AiClient\Providers\Models\DTO\ModelConfig;
-use WordPress\AiClient\Providers\Models\DTO\ModelRequirements;
-use WordPress\AiClient\Providers\Models\DTO\RequiredOption;
-use WordPress\AiClient\Providers\Models\EmbeddingGeneration\Contracts\EmbeddingGenerationModelInterface;
-use WordPress\AiClient\Providers\Models\Enums\CapabilityEnum;
-use WordPress\AiClient\Providers\ProviderRegistry;
-use WordPress\AiClient\Results\DTO\Embedding;
-use WordPress\AiClient\Results\DTO\EmbeddingResult;
+use NotMattPress\AiClientDependencies\Psr\EventDispatcher\EventDispatcherInterface;
+use NotMattPress\AiClient\Builders\Traits\ModelConfigurationTrait;
+use NotMattPress\AiClient\Common\AbstractEnum;
+use NotMattPress\AiClient\Common\Contracts\AiClientExceptionInterface;
+use NotMattPress\AiClient\Common\Exception\InvalidArgumentException;
+use NotMattPress\AiClient\Common\Exception\RuntimeException;
+use NotMattPress\AiClient\Events\AfterGenerateEmbeddingEvent;
+use NotMattPress\AiClient\Events\BeforeGenerateEmbeddingEvent;
+use NotMattPress\AiClient\Files\DTO\File;
+use NotMattPress\AiClient\Messages\DTO\MessagePart;
+use NotMattPress\AiClient\Providers\ApiBasedImplementation\Contracts\ApiBasedModelInterface;
+use NotMattPress\AiClient\Providers\Http\DTO\RequestOptions;
+use NotMattPress\AiClient\Providers\ModelResolver;
+use NotMattPress\AiClient\Providers\Models\Contracts\ModelInterface;
+use NotMattPress\AiClient\Providers\Models\DTO\ModelConfig;
+use NotMattPress\AiClient\Providers\Models\DTO\ModelRequirements;
+use NotMattPress\AiClient\Providers\Models\DTO\RequiredOption;
+use NotMattPress\AiClient\Providers\Models\EmbeddingGeneration\Contracts\EmbeddingGenerationModelInterface;
+use NotMattPress\AiClient\Providers\Models\Enums\CapabilityEnum;
+use NotMattPress\AiClient\Providers\ProviderRegistry;
+use NotMattPress\AiClient\Results\DTO\Embedding;
+use NotMattPress\AiClient\Results\DTO\EmbeddingResult;
 /**
  * Fluent builder for generating embeddings.
  *

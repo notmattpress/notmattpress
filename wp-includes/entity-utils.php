@@ -2,7 +2,7 @@
 /**
  * Utilities shared by the Entity Actions and Entity Fields APIs.
  *
- * @package WordPress
+ * @package NotMattPress
  * @since 7.2.0
  */
 
@@ -57,7 +57,7 @@ function _wp_add_entity_preload_paths( $paths, $context, $route ) {
 			'wp_template_part' => array( 'wp_template_part' ),
 		);
 
-		// phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Only picks what to preload.
+		// phpcs:ignore NotMattPress.Security.NonceVerification.Recommended -- Only picks what to preload.
 		$screen   = isset( $_GET['p'] ) && is_string( $_GET['p'] ) ? sanitize_text_field( wp_unslash( $_GET['p'] ) ) : '';
 		$segments = explode( '/', trim( $screen, '/' ) );
 		if ( isset( $screen_post_types[ $segments[0] ] ) ) {

@@ -2,7 +2,7 @@
 /**
  * Navigation: Overlay with orange background.
  *
- * @package WordPress
+ * @package NotMattPress
  */
 
 return array(

@@ -2,7 +2,7 @@
 /**
  * Speculative loading functions.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Speculative Loading
  * @since 6.8.0
  */
@@ -44,7 +44,7 @@ function wp_get_speculation_rules_configuration(): ?array {
 	 * * The "mode" (whether to "prefetch" or "prerender" URLs).
 	 * * The "eagerness" (whether to speculatively load URLs in an "eager", "moderate", or "conservative" way).
 	 *
-	 * By default, the speculation rules configuration is decided by WordPress Core ("auto"). This filter can be used
+	 * By default, the speculation rules configuration is decided by NotMattPress Core ("auto"). This filter can be used
 	 * to force a certain configuration, which could for instance load URLs more or less eagerly.
 	 *
 	 * For logged-in users or for sites that are not configured to use pretty permalinks, the default value is `null`,
@@ -88,7 +88,7 @@ function wp_get_speculation_rules_configuration(): ?array {
 		! isset( $config['eagerness'] ) ||
 		'auto' === $config['eagerness'] ||
 		! WP_Speculation_Rules::is_valid_eagerness( $config['eagerness'] ) ||
-		// 'immediate' is a valid eagerness, but for safety WordPress does not allow it for document-level rules.
+		// 'immediate' is a valid eagerness, but for safety NotMattPress does not allow it for document-level rules.
 		'immediate' === $config['eagerness']
 	) {
 		$config['eagerness'] = $default_eagerness;
@@ -103,13 +103,13 @@ function wp_get_speculation_rules_configuration(): ?array {
 /**
  * Returns the default speculation rules configuration that the value 'auto' resolves to.
  *
- * WordPress Core defaults to a mode of 'prefetch' and an eagerness of 'conservative'. Hosting providers can override
+ * NotMattPress Core defaults to a mode of 'prefetch' and an eagerness of 'conservative'. Hosting providers can override
  * either default by way of the `WP_SPECULATIVE_LOADING_DEFAULT_MODE` and `WP_SPECULATIVE_LOADING_DEFAULT_EAGERNESS`
  * constants or environment variables. This only changes what the 'auto' value resolves to, so a plugin which supplies
  * an explicit mode or eagerness via the {@see 'wp_speculation_rules_configuration'} filter continues to take
  * precedence.
  *
- * Note that an eagerness of 'immediate' is not permitted as a default, since WordPress does not allow it for the
+ * Note that an eagerness of 'immediate' is not permitted as a default, since NotMattPress does not allow it for the
  * document-level rules that it generates.
  *
  * @since 7.1.0
@@ -132,7 +132,7 @@ function wp_get_speculation_rules_default_configuration(): array {
 	$eagerness         = wp_get_speculative_loading_override( 'WP_SPECULATIVE_LOADING_DEFAULT_EAGERNESS' );
 	if (
 		WP_Speculation_Rules::is_valid_eagerness( $eagerness ) &&
-		// 'immediate' is a valid eagerness, but for safety WordPress does not allow it for document-level rules.
+		// 'immediate' is a valid eagerness, but for safety NotMattPress does not allow it for document-level rules.
 		'immediate' !== $eagerness
 	) {
 		$default_eagerness = $eagerness;
@@ -183,7 +183,7 @@ function wp_get_speculative_loading_override( string $name ): ?string {
  * Plugins with features that rely on frontend URLs to exclude from prefetching or prerendering should use the
  * {@see 'wp_speculation_rules_href_exclude_paths'} filter to ensure those URL patterns are excluded.
  *
- * Additional speculation rules other than the default rule from WordPress Core can be provided by using the
+ * Additional speculation rules other than the default rule from NotMattPress Core can be provided by using the
  * {@see 'wp_load_speculation_rules'} action and amending the passed WP_Speculation_Rules object.
  *
  * @since 6.8.0
@@ -228,9 +228,9 @@ function wp_get_speculation_rules(): ?WP_Speculation_Rules {
 	 * Filters the paths for which speculative loading should be disabled.
 	 *
 	 * All paths should start in a forward slash, relative to the root document. The `*` can be used as a wildcard.
-	 * If the WordPress site is in a subdirectory, the exclude paths will automatically be prefixed as necessary.
+	 * If the NotMattPress site is in a subdirectory, the exclude paths will automatically be prefixed as necessary.
 	 *
-	 * Note that WordPress always excludes certain path patterns such as `/wp-login.php` and `/wp-admin/*`, and those
+	 * Note that NotMattPress always excludes certain path patterns such as `/wp-login.php` and `/wp-admin/*`, and those
 	 * cannot be modified using the filter.
 	 *
 	 * @since 6.8.0

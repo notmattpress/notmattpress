@@ -1,12 +1,12 @@
 <?php
 
 declare (strict_types=1);
-namespace WordPress\AiClient\Events;
+namespace NotMattPress\AiClient\Events;
 
-use WordPress\AiClient\Messages\DTO\MessagePart;
-use WordPress\AiClient\Providers\Models\Contracts\ModelInterface;
-use WordPress\AiClient\Providers\Models\Enums\CapabilityEnum;
-use WordPress\AiClient\Results\DTO\EmbeddingResult;
+use NotMattPress\AiClient\Messages\DTO\MessagePart;
+use NotMattPress\AiClient\Providers\Models\Contracts\ModelInterface;
+use NotMattPress\AiClient\Providers\Models\Enums\CapabilityEnum;
+use NotMattPress\AiClient\Results\DTO\EmbeddingResult;
 /**
  * Event dispatched after embeddings have been generated.
  *

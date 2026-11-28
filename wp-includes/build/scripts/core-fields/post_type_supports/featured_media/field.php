@@ -4,7 +4,7 @@
  * when the theme supports post thumbnails for them. Its JavaScript parts
  * (`Edit`, `render`, and `setValue`) are in `field.tsx`, next to this file.
  *
- * @package WordPress
+ * @package NotMattPress
  */
 
 return array(

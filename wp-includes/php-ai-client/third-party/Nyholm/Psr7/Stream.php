@@ -1,9 +1,9 @@
 <?php
 
 declare (strict_types=1);
-namespace WordPress\AiClientDependencies\Nyholm\Psr7;
+namespace NotMattPress\AiClientDependencies\Nyholm\Psr7;
 
-use WordPress\AiClientDependencies\Psr\Http\Message\StreamInterface;
+use NotMattPress\AiClientDependencies\Psr\Http\Message\StreamInterface;
 /**
  * @author Michael Dowling and contributors to guzzlehttp/psr7
  * @author Tobias Nyholm <tobias.nyholm@gmail.com>

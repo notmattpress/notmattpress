@@ -2,7 +2,7 @@
 /**
  * Twenty Sixteen Theme: Block Patterns
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Twenty_Sixteen
  * @since Twenty Sixteen 2.3
  */
@@ -32,10 +32,10 @@ if ( function_exists( 'register_block_pattern' ) ) {
             <div style="height:60px" aria-hidden="true" class="wp-block-spacer"></div>
             <!-- /wp:spacer -->
             <!-- wp:heading {"level":6,"style":{"typography":{"lineHeight":"1.5","fontSize":35}}} -->
-            <h6 style="font-size:35px;line-height:1.5"><strong>' . esc_html__( 'Twenty Sixteen is a modern take on the horizontal masthead with an optional right sidebar. It works perfectly for WordPress websites and blogs.', 'twentysixteen' ) . '</strong></h6>
+            <h6 style="font-size:35px;line-height:1.5"><strong>' . esc_html__( 'Twenty Sixteen is a modern take on the horizontal masthead with an optional right sidebar. It works perfectly for NotMattPress websites and blogs.', 'twentysixteen' ) . '</strong></h6>
             <!-- /wp:heading -->
             <!-- wp:paragraph {"style":{"typography":{"lineHeight":"1.8"}}} -->
-            <p style="line-height:1.8">' . esc_html__( 'Twenty Sixteen will make your WordPress website look beautiful everywhere. Take advantage of custom color options, beautiful default color schemes, a harmonious fluid grid using a mobile-first approach, and impeccable polish in every detail.', 'twentysixteen' ) . '</p>
+            <p style="line-height:1.8">' . esc_html__( 'Twenty Sixteen will make your NotMattPress website look beautiful everywhere. Take advantage of custom color options, beautiful default color schemes, a harmonious fluid grid using a mobile-first approach, and impeccable polish in every detail.', 'twentysixteen' ) . '</p>
             <!-- /wp:paragraph -->
             <!-- wp:spacer {"height":60} -->
             <div style="height:60px" aria-hidden="true" class="wp-block-spacer"></div>
@@ -64,7 +64,7 @@ if ( function_exists( 'register_block_pattern' ) ) {
             <!-- wp:columns -->
             <div class="wp-block-columns"><!-- wp:column -->
             <div class="wp-block-column"><!-- wp:paragraph {"dropCap":true} -->
-            <p class="has-drop-cap">' . esc_html__( 'Twenty Sixteen will make your WordPress website look beautiful everywhere. Take advantage of its custom color options and beautiful default color schemes.', 'twentysixteen' ) . '</p>
+            <p class="has-drop-cap">' . esc_html__( 'Twenty Sixteen will make your NotMattPress website look beautiful everywhere. Take advantage of its custom color options and beautiful default color schemes.', 'twentysixteen' ) . '</p>
             <!-- /wp:paragraph --></div>
             <!-- /wp:column -->
 
@@ -95,7 +95,7 @@ if ( function_exists( 'register_block_pattern' ) ) {
             <!-- /wp:separator -->
 
             <!-- wp:heading {"style":{"typography":{"lineHeight":"1.5","fontSize":40}}} -->
-            <h2 style="font-size:40px;line-height:1.5"><em>' . esc_html__( 'Twenty Sixteen will make your WordPress look beautiful everywhere.', 'twentysixteen' ) . '</em></h2>
+            <h2 style="font-size:40px;line-height:1.5"><em>' . esc_html__( 'Twenty Sixteen will make your NotMattPress look beautiful everywhere.', 'twentysixteen' ) . '</em></h2>
             <!-- /wp:heading -->
 
             <!-- wp:paragraph {"textColor":"medium-gray"} -->

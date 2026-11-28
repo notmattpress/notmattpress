@@ -2,7 +2,7 @@
 /**
  * Customize API: WP_Customize_Filter_Setting class
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Customize
  * @since 4.4.0
  */

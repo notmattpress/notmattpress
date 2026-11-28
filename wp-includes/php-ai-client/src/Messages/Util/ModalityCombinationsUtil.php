@@ -1,9 +1,9 @@
 <?php
 
 declare (strict_types=1);
-namespace WordPress\AiClient\Messages\Util;
+namespace NotMattPress\AiClient\Messages\Util;
 
-use WordPress\AiClient\Messages\Enums\ModalityEnum;
+use NotMattPress\AiClient\Messages\Enums\ModalityEnum;
 /**
  * Utility class for building modality combinations.
  *

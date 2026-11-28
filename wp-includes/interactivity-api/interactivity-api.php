@@ -2,7 +2,7 @@
 /**
  * Interactivity API: Functions and hooks
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Interactivity API
  * @since 6.5.0
  */

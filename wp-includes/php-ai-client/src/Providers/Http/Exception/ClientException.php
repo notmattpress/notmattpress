@@ -1,12 +1,12 @@
 <?php
 
 declare (strict_types=1);
-namespace WordPress\AiClient\Providers\Http\Exception;
+namespace NotMattPress\AiClient\Providers\Http\Exception;
 
-use WordPress\AiClient\Common\Exception\InvalidArgumentException;
-use WordPress\AiClient\Providers\Http\DTO\Request;
-use WordPress\AiClient\Providers\Http\DTO\Response;
-use WordPress\AiClient\Providers\Http\Util\ErrorMessageExtractor;
+use NotMattPress\AiClient\Common\Exception\InvalidArgumentException;
+use NotMattPress\AiClient\Providers\Http\DTO\Request;
+use NotMattPress\AiClient\Providers\Http\DTO\Response;
+use NotMattPress\AiClient\Providers\Http\Util\ErrorMessageExtractor;
 /**
  * Exception thrown for 4xx HTTP client errors.
  *

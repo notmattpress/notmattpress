@@ -2,18 +2,18 @@
 /**
  * User administration panel
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Administration
  * @since 1.0.0
  */
 
-/** WordPress Administration Bootstrap */
+/** NotMattPress Administration Bootstrap */
 require_once __DIR__ . '/admin.php';
 
 /**
  * @global WP_User    $current_user The current user, set during authentication.
  * @global WP_Roles   $wp_roles     The roles object.
- * @global wpdb       $wpdb         WordPress database abstraction object.
+ * @global wpdb       $wpdb         NotMattPress database abstraction object.
  * @global string     $usersearch   User search query, set by WP_Users_List_Table.
  * @global int        $blog_id      The current site (blog) ID on multisite.
  */
@@ -88,9 +88,9 @@ unset( $help );
 
 get_current_screen()->set_help_sidebar(
 	'<p><strong>' . __( 'For more information:' ) . '</strong></p>' .
-	'<p>' . __( '<a href="https://wordpress.org/documentation/article/users-screen/">Documentation on Managing Users</a>' ) . '</p>' .
-	'<p>' . __( '<a href="https://wordpress.org/documentation/article/roles-and-capabilities/">Descriptions of Roles and Capabilities</a>' ) . '</p>' .
-	'<p>' . __( '<a href="https://wordpress.org/support/forums/">Support forums</a>' ) . '</p>'
+	'<p>' . __( '<a href="https://notmatt.press/documentation/article/users-screen/">Documentation on Managing Users</a>' ) . '</p>' .
+	'<p>' . __( '<a href="https://notmatt.press/documentation/article/roles-and-capabilities/">Descriptions of Roles and Capabilities</a>' ) . '</p>' .
+	'<p>' . __( '<a href="https://notmatt.press/support/forums/">Support forums</a>' ) . '</p>'
 );
 
 get_current_screen()->set_screen_reader_content(
@@ -350,7 +350,7 @@ switch ( $wp_list_table->current_action() ) {
 		<ul>
 		<?php
 		/**
-		 * @global wpdb $wpdb WordPress database abstraction object.
+		 * @global wpdb $wpdb NotMattPress database abstraction object.
 		 */
 		global $wpdb;
 
@@ -634,7 +634,7 @@ switch ( $wp_list_table->current_action() ) {
 			$user_ids = array_map( 'intval', (array) $_REQUEST['users'] );
 
 			/** This action is documented in wp-admin/edit.php */
-			$sendback = apply_filters( "handle_bulk_actions-{$screen}", $sendback, $wp_list_table->current_action(), $user_ids ); // phpcs:ignore WordPress.NamingConventions.ValidHookName.UseUnderscores
+			$sendback = apply_filters( "handle_bulk_actions-{$screen}", $sendback, $wp_list_table->current_action(), $user_ids ); // phpcs:ignore NotMattPress.NamingConventions.ValidHookName.UseUnderscores
 
 			wp_safe_redirect( $sendback );
 			exit;

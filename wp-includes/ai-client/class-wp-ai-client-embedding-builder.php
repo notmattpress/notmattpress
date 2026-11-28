@@ -2,26 +2,26 @@
 /**
  * WP AI Client: WP_AI_Client_Embedding_Builder class
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage AI
  * @since 7.2.0
  */
 
-use WordPress\AiClient\AiClient;
-use WordPress\AiClient\Builders\EmbeddingBuilder;
-use WordPress\AiClient\Providers\Http\DTO\RequestOptions;
-use WordPress\AiClient\Providers\Models\Contracts\ModelInterface;
-use WordPress\AiClient\Providers\Models\DTO\ModelConfig;
-use WordPress\AiClient\Providers\ProviderRegistry;
-use WordPress\AiClient\Results\DTO\Embedding;
-use WordPress\AiClient\Results\DTO\EmbeddingResult;
+use NotMattPress\AiClient\AiClient;
+use NotMattPress\AiClient\Builders\EmbeddingBuilder;
+use NotMattPress\AiClient\Providers\Http\DTO\RequestOptions;
+use NotMattPress\AiClient\Providers\Models\Contracts\ModelInterface;
+use NotMattPress\AiClient\Providers\Models\DTO\ModelConfig;
+use NotMattPress\AiClient\Providers\ProviderRegistry;
+use NotMattPress\AiClient\Results\DTO\Embedding;
+use NotMattPress\AiClient\Results\DTO\EmbeddingResult;
 
 /**
  * Fluent builder for generating embeddings, returning WP_Error on failure.
  *
  * This class provides a fluent interface for generating embedding vectors from
  * text or file inputs. It wraps the PHP AI Client SDK's EmbeddingBuilder and
- * adds WordPress-specific behavior including WP_Error handling instead of
+ * adds NotMattPress-specific behavior including WP_Error handling instead of
  * exceptions and snake_case method naming.
  *
  * A model must be specified via `using_model()` or `using_provider_model()`.

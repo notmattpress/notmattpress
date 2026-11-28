@@ -1,8 +1,8 @@
 <?php
 
-namespace WordPress\AiClientDependencies\Http\Discovery\Strategy;
+namespace NotMattPress\AiClientDependencies\Http\Discovery\Strategy;
 
-use WordPress\AiClientDependencies\Http\Discovery\Exception\StrategyUnavailableException;
+use NotMattPress\AiClientDependencies\Http\Discovery\Exception\StrategyUnavailableException;
 /**
  * @author Tobias Nyholm <tobias.nyholm@gmail.com>
  */

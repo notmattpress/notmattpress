@@ -8,7 +8,7 @@
  * `src/index.php`, and get the title field of this collection instead, with
  * its script module.
  *
- * @package WordPress
+ * @package NotMattPress
  */
 
 return array(

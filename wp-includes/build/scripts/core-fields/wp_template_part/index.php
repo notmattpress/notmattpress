@@ -10,7 +10,7 @@
  * author field of this collection instead, with its script module. The
  * collection also defines the title field of template parts.
  *
- * @package WordPress
+ * @package NotMattPress
  */
 
 return array(

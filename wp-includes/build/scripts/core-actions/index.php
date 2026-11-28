@@ -1,6 +1,6 @@
 <?php
 /**
- * Registers the actions of WordPress core through the entity actions API, like a
+ * Registers the actions of NotMattPress core through the entity actions API, like a
  * plugin registers its own.
  *
  * The folders next to this file are the script modules of the actions:
@@ -10,11 +10,11 @@
  * folder named after its id, whose `action.php` returns the serializable
  * part of the action, and whose `action.tsx` holds its JavaScript parts.
  *
- * @package WordPress
+ * @package NotMattPress
  */
 
 /**
- * Registers the actions of WordPress core on each post type exposed in the
+ * Registers the actions of NotMattPress core on each post type exposed in the
  * REST API, from what it supports and what the current user can do:
  *
  * - `view-post`, for the viewable post types.
@@ -62,7 +62,7 @@ function register_core_entity_actions() {
 
 		// The homepage and the posts page are site settings. When the theme
 		// has a `front-page` template, the front page cannot be changed, see
-		// https://developer.wordpress.org/themes/basics/template-hierarchy/.
+		// https://developer.notmatt.press/themes/basics/template-hierarchy/.
 		$can_set_homepage = 'page' === $name &&
 			current_user_can( 'manage_options' ) &&
 			empty( get_block_templates( array( 'slug__in' => array( 'front-page' ) ) ) );

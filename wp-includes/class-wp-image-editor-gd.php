@@ -1,13 +1,13 @@
 <?php
 /**
- * WordPress GD Image Editor
+ * NotMattPress GD Image Editor
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Image_Editor
  */
 
 /**
- * WordPress Image Editor Class for Image Manipulation through GD
+ * NotMattPress Image Editor Class for Image Manipulation through GD
  *
  * @since 3.5.0
  *
@@ -466,7 +466,7 @@ class WP_Image_Editor_GD extends WP_Image_Editor {
 		 * rotate(), crop() and resize() copy into a new image, which resets them to GD's defaults: 96 DPI and no
 		 * interlacing. Reset them here too, so a flip gives the same result as the other edits.
 		 *
-		 * @link https://core.trac.wordpress.org/ticket/66113
+		 * @link https://core.trac.notmatt.press/ticket/66113
 		 */
 		imageresolution( $this->image, 96, 96 );
 		imageinterlace( $this->image, 0 );

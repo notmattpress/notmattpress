@@ -1,1 +1,1 @@
-// Deprecated in WordPress 6.9.
+// Deprecated in NotMattPress 6.9.

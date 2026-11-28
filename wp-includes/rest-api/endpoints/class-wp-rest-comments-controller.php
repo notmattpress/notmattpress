@@ -2,7 +2,7 @@
 /**
  * REST API: WP_REST_Comments_Controller class
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage REST_API
  * @since 4.7.0
  */
@@ -345,7 +345,7 @@ class WP_REST_Comments_Controller extends WP_REST_Controller {
 		 *
 		 * @since 4.7.0
 		 *
-		 * @link https://developer.wordpress.org/reference/classes/wp_comment_query/
+		 * @link https://developer.notmatt.press/reference/classes/wp_comment_query/
 		 *
 		 * @param array           $prepared_args Array of arguments for WP_Comment_Query.
 		 * @param WP_REST_Request $request       The REST API request.
@@ -807,7 +807,7 @@ class WP_REST_Comments_Controller extends WP_REST_Controller {
 			 * Validate the reaction content: the hex key of one of the curated
 			 * reaction emoji, as listed by self::get_note_reaction_keys() (e.g.
 			 * `2764` for the heart). Raw emoji bytes are rejected because the
-			 * comments table is not guaranteed to be utf8mb4 across all WordPress
+			 * comments table is not guaranteed to be utf8mb4 across all NotMattPress
 			 * installs; clients are expected to normalize before submitting.
 			 *
 			 * Read the content the same two ways prepare_item_for_database()
@@ -2407,7 +2407,7 @@ class WP_REST_Comments_Controller extends WP_REST_Controller {
 	 *
 	 * @since 7.2.0
 	 *
-	 * @global wpdb $wpdb WordPress database abstraction object.
+	 * @global wpdb $wpdb NotMattPress database abstraction object.
 	 *
 	 * @param int[] $note_ids Array of note comment IDs.
 	 */
@@ -2434,7 +2434,7 @@ class WP_REST_Comments_Controller extends WP_REST_Controller {
 		// Query 1: Get aggregated counts per emoji per note.
 		$query = "SELECT r.comment_parent, r.comment_content, COUNT(*) AS reaction_count $from $where GROUP BY r.comment_parent, r.comment_content";
 		/** @var list<object{ comment_parent: decimal-int-string, comment_content: string, reaction_count: decimal-int-string }&stdClass>|null $counts */
-		$counts = $wpdb->get_results( $query ); // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared -- It is prepared above.
+		$counts = $wpdb->get_results( $query ); // phpcs:ignore NotMattPress.DB.PreparedSQL.NotPrepared -- It is prepared above.
 
 		// Query 2: Get the current user's own reaction IDs (if logged in).
 		$my_reactions = array();
@@ -2442,7 +2442,7 @@ class WP_REST_Comments_Controller extends WP_REST_Controller {
 			$query  = "SELECT r.comment_ID, r.comment_parent, r.comment_content $from $where";
 			$query .= $wpdb->prepare( ' AND r.user_id = %d', $current_user_id );
 			/** @var list<object{ comment_ID: decimal-int-string, comment_parent: decimal-int-string, comment_content: string }&stdClass>|null $user_rows */
-			$user_rows = $wpdb->get_results( $query ); // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared -- It is prepared above.
+			$user_rows = $wpdb->get_results( $query ); // phpcs:ignore NotMattPress.DB.PreparedSQL.NotPrepared -- It is prepared above.
 
 			if ( $user_rows ) {
 				foreach ( $user_rows as $row ) {

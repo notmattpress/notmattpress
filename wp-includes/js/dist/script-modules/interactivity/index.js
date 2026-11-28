@@ -2633,7 +2633,7 @@ var warnEventHandlerBindNotSupported = (attribute) => {
 var warnWithSyncEvent = (wrongPrefix, rightPrefix) => {
   if (true) {
     warn(
-      `The usage of data-wp-${wrongPrefix} is deprecated and will stop working in WordPress 7.0. Please, use data-wp-${rightPrefix} with the withSyncEvent() helper from now on.`
+      `The usage of data-wp-${wrongPrefix} is deprecated and will stop working in NotMattPress 7.0. Please, use data-wp-${rightPrefix} with the withSyncEvent() helper from now on.`
     );
   }
 };
@@ -3223,7 +3223,7 @@ function wrapEventAsync(event) {
         case "currentTarget":
           if (true) {
             warn(
-              `Accessing the synchronous event.${prop} property in a store action without wrapping it in withSyncEvent() is deprecated and will stop working in WordPress 7.0. Please wrap the store action in withSyncEvent().`
+              `Accessing the synchronous event.${prop} property in a store action without wrapping it in withSyncEvent() is deprecated and will stop working in NotMattPress 7.0. Please wrap the store action in withSyncEvent().`
             );
           }
           break;
@@ -3232,7 +3232,7 @@ function wrapEventAsync(event) {
         case "stopPropagation":
           if (true) {
             warn(
-              `Using the synchronous event.${prop}() function in a store action without wrapping it in withSyncEvent() is deprecated and will stop working in WordPress 7.0. Please wrap the store action in withSyncEvent().`
+              `Using the synchronous event.${prop}() function in a store action without wrapping it in withSyncEvent() is deprecated and will stop working in NotMattPress 7.0. Please wrap the store action in withSyncEvent().`
             );
           }
           break;
@@ -3645,7 +3645,7 @@ var hydrateRegions = async () => {
 if (true) {
   await Promise.resolve().then(() => (init_debug_module(), debug_module_exports));
 }
-var requiredConsent = "I acknowledge that using private APIs means my theme or plugin will inevitably break in the next version of WordPress.";
+var requiredConsent = "I acknowledge that using private APIs means my theme or plugin will inevitably break in the next version of NotMattPress.";
 var privateApis = (lock) => {
   if (lock === requiredConsent) {
     return {

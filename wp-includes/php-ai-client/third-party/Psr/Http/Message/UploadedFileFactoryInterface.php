@@ -1,6 +1,6 @@
 <?php
 
-namespace WordPress\AiClientDependencies\Psr\Http\Message;
+namespace NotMattPress\AiClientDependencies\Psr\Http\Message;
 
 interface UploadedFileFactoryInterface
 {

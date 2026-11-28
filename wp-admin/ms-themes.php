@@ -2,7 +2,7 @@
 /**
  * Multisite themes administration panel.
  *
- * @package WordPress
+ * @package NotMattPress
  * @subpackage Multisite
  * @since 3.0.0
  */
